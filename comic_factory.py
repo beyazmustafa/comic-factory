@@ -1,398 +1,8 @@
-from __future__ import annotations
-
-from pathlib import Path
-from typing import Any
-
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
-
-
-VIDEO_WIDTH = 1080
-VIDEO_HEIGHT = 1920
-
-
-def _open_rgb_image(image_path: str | Path) -> Image.Image:
-    image = Image.open(image_path).convert("RGB")
-    return image
-
-
-def _fit_background(
-    image: Image.Image,
-    canvas_width: int,
-    canvas_height: int,
-    blur_radius: int = 36,
-    darken_factor: float = 0.42,
-    saturation_factor: float = 0.92,
-) -> Image.Image:
-    background = ImageOps.fit(
-        image,
-        (canvas_width, canvas_height),
-        method=Image.Resampling.LANCZOS,
-        bleed=0.0,
-        centering=(0.5, 0.5),
-    )
-
-    background = background.filter(
-        ImageFilter.GaussianBlur(radius=blur_radius)
-    )
-
-    background = ImageEnhance.Color(background).enhance(
-        saturation_factor
-    )
-
-    background = ImageEnhance.Brightness(background).enhance(
-        darken_factor
-    )
-
-    return background
-
-
-def _resize_foreground_contain(
-    image: Image.Image,
-    max_width: int,
-    max_height: int,
-) -> Image.Image:
-    foreground = image.copy()
-    foreground.thumbnail(
-        (max_width, max_height),
-        Image.Resampling.LANCZOS,
-    )
-    return foreground
-
-
-def _rounded_mask(
-    size: tuple[int, int],
-    radius: int,
-) -> Image.Image:
-    mask = Image.new("L", size, 0)
-    draw = ImageDraw.Draw(mask)
-    draw.rounded_rectangle(
-        (0, 0, size[0] - 1, size[1] - 1),
-        radius=radius,
-        fill=255,
-    )
-    return mask
-
-
-def _add_shadow(
-    canvas: Image.Image,
-    box: tuple[int, int, int, int],
-    radius: int = 32,
-    shadow_offset_y: int = 18,
-    shadow_alpha: int = 120,
-    blur_radius: int = 22,
-) -> None:
-    overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-
-    x1, y1, x2, y2 = box
-    shadow_box = (
-        x1,
-        y1 + shadow_offset_y,
-        x2,
-        y2 + shadow_offset_y,
-    )
-
-    draw.rounded_rectangle(
-        shadow_box,
-        radius=radius,
-        fill=(0, 0, 0, shadow_alpha),
-    )
-
-    overlay = overlay.filter(
-        ImageFilter.GaussianBlur(radius=blur_radius)
-    )
-
-    canvas.alpha_composite(overlay)
-
-
-def compose_comic_frame(
-    image_path: str | Path,
-    output_path: str | Path | None = None,
-    canvas_width: int = VIDEO_WIDTH,
-    canvas_height: int = VIDEO_HEIGHT,
-    side_padding: int = 56,
-    top_safe_area: int = 70,
-    bottom_safe_area: int = 330,
-    panel_corner_radius: int = 28,
-    panel_border_width: int = 4,
-    panel_border_color: tuple[int, int, int] = (255, 255, 255),
-) -> Image.Image:
-    """
-    Comic görselini dikey videoya kırpmadan yerleştirir.
-    Ana panel tamamı görünür, boş alan blur arka planla doldurulur.
-    """
-    source = _open_rgb_image(image_path)
-
-    background = _fit_background(
-        image=source,
-        canvas_width=canvas_width,
-        canvas_height=canvas_height,
-    )
-
-    available_width = canvas_width - (side_padding * 2)
-    available_height = (
-        canvas_height
-        - top_safe_area
-        - bottom_safe_area
-    )
-
-    foreground = _resize_foreground_contain(
-        image=source,
-        max_width=available_width,
-        max_height=available_height,
-    )
-
-    foreground_width, foreground_height = foreground.size
-
-    x = (canvas_width - foreground_width) // 2
-    y = top_safe_area + (
-        (available_height - foreground_height) // 2
-    )
-
-    canvas = background.convert("RGBA")
-    _add_shadow(
-        canvas=canvas,
-        box=(x, y, x + foreground_width, y + foreground_height),
-        radius=panel_corner_radius,
-    )
-
-    panel = Image.new(
-        "RGBA",
-        (foreground_width, foreground_height),
-        (255, 255, 255, 0),
-    )
-
-    mask = _rounded_mask(
-        (foreground_width, foreground_height),
-        radius=panel_corner_radius,
-    )
-
-    panel.paste(
-        foreground.convert("RGBA"),
-        (0, 0),
-        mask,
-    )
-
-    border_layer = Image.new(
-        "RGBA",
-        (foreground_width, foreground_height),
-        (0, 0, 0, 0),
-    )
-    border_draw = ImageDraw.Draw(border_layer)
-    border_draw.rounded_rectangle(
-        (
-            panel_border_width // 2,
-            panel_border_width // 2,
-            foreground_width - 1 - (panel_border_width // 2),
-            foreground_height - 1 - (panel_border_width // 2),
-        ),
-        radius=panel_corner_radius,
-        outline=panel_border_color + (255,),
-        width=panel_border_width,
-    )
-
-    panel.alpha_composite(border_layer)
-    canvas.alpha_composite(panel, (x, y))
-
-    result = canvas.convert("RGB")
-
-    if output_path is not None:
-        output_path = Path(output_path)
-        output_path.parent.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
-        result.save(output_path, quality=95)
-
-    return result
-
-
-def build_scene_image_for_video(
-    source_image_path: str | Path,
-    output_image_path: str | Path,
-    subtitle_safe_area: int = 330,
-) -> str:
-    """
-    Video sahnesinde kullanılacak görseli üretir.
-    Bunu eski full-screen resize fonksiyonunun yerine kullan.
-    """
-    compose_comic_frame(
-        image_path=source_image_path,
-        output_path=output_image_path,
-        canvas_width=VIDEO_WIDTH,
-        canvas_height=VIDEO_HEIGHT,
-        side_padding=56,
-        top_safe_area=70,
-        bottom_safe_area=subtitle_safe_area,
-    )
-    return str(output_image_path)
-
-
-# --------------------------------------------------------------------
-# ESKİ KULLANIMI BUNUNLA DEĞİŞTİR
-# --------------------------------------------------------------------
-#
-# Eğer sende buna benzer bir şey varsa:
-#
-#     image = Image.open(scene_image_path).convert("RGB")
-#     image = ImageOps.fit(image, (VIDEO_WIDTH, VIDEO_HEIGHT), Image.Resampling.LANCZOS)
-#     image.save(output_path)
-#
-# BUNUN YERİNE ŞUNU KULLAN:
-#
-#     build_scene_image_for_video(
-#         source_image_path=scene_image_path,
-#         output_image_path=output_path,
-#         subtitle_safe_area=330,
-#     )
-#
-# --------------------------------------------------------------------
-# İSTEĞE BAĞLI TEST
-# --------------------------------------------------------------------
-#
-# Tek bir görseli hızlı test etmek için:
-#
-# if __name__ == "__main__":
-#     build_scene_image_for_video(
-#         source_image_path="assets/test_comic.jpg",
-#         output_image_path="assets/test_comic_vertical.jpg",
-#         subtitle_safe_area=330,
-#     )
-#     print("Hazır: assets/test_comic_vertical.jpg")
-Bu değişiklikten sonra:
-
-comic sayfası tam görünür
-
-ekran boş kalmaz
-
-yazı için altta yer kalır
-
-video daha okunur olur
-
-Eğer istersen bir sonraki mesajda ben sana tam güncellenmiş comic_factory.py dosyasını hazırlayayım; yani sen hiç nerede ne değişecek uğraşma.
-
-a. Bana mevcut comic_factory.py içeriğini yapıştır, ben tam düzeltilmiş dosyayı vereyim
-b. İstersen sıradaki adımda altyazı kutusunu da küçültüp daha şık yapalım
-
-
-değiştirdim
-
-TL;DR
-Süper. Şimdi 2 adım var:
-
-Değiştirdiğin comic_factory.py dosyasını GitHub repo’ya da yükle
-
-Sonra Actions → Run workflow ile yeni test çalıştır
-
-Yoksa GitHub eski kodla video üretmeye devam eder.
-
-Şimdi bunu yap
-1) GitHub’a güncel dosyayı yükle
-GitHub repo: comic-factory
-
-comic_factory.py dosyasını aç
-
-Edit / kalem butonuna bas
-
-Bilgisayarındaki yeni düzeltilmiş comic_factory.py içeriğini yapıştır
-
-Commit changes yap
-
-2) Test başlat
-Sonra:
-
-Actions
-
-Comic Factory
-
-Run workflow
-
-branch main
-
-tekrar Run workflow
-
-Ne bekliyoruz?
-Yeni videoda:
-
-comic görseli tam görünmeli
-
-kenarlar blur arka plan ile dolmalı
-
-yazılar altta rahat okunmalı
-
-ana panel artık kesilmemeli
-
-Testten sonra
-Video oluşunca:
-
-Instagram veya YouTube’daki yeni videoyu aç
-
-Görselin daha okunur olup olmadığını kontrol et
-
-İstersen ilk testten sonra bir adım daha iyileştiririz:
-
-paneli biraz daha büyütürüz
-
-altyazı kutusunu küçültürüz
-
-blur arka planı daha sinematik yaparız
-
-a. GitHub’a da yükledim, şimdi test başlatıyorum
-b. İstersen sıradaki adımda altyazı kutusunu da güzelleştirelim
-
-
-27bcf623-ae70-40ed-8c2b-1e395fceb918.png
-
-TL;DR
-Hata net: Instagram değil, video dosyası oluşmamış.
-
-Log:
-
-HATA: Video bulunamadı:
-.../data/videos/latest.mp4
-Senin yüklediğin orijinal comic_factory.py içinde render_video() final videoyu üretip latest.mp4 olarak kopyalıyor ve main() bunu çağırıyor.
-
-Az önceki görsel düzenleme sırasında dosyanın ana üretim kısmı bozulmuş/truncate olmuş olabilir. Ben bu yüzden orijinal tam dosyanı baz alıp, sadece:
-
-comic görselini kırpmadan gösterme
-
-blur arka plan
-
-daha az zoom
-
-değişikliklerini ekleyerek tam çalışan dosyayı hazırladım.
-
-Hazır düzeltilmiş comic_factory.py
-
-Şimdi sadece bunu yap
-GitHub’daki mevcut:
-
-comic_factory.py
-dosyasını bu indirdiğin dosyayla tamamen değiştir ve Commit changes yap.
-
-Sonra hemen Run yapma; bana sadece A yaz.
-
-a. Dosyayı GitHub’a yükledim
-b. GitHub’da mevcut dosyayı nasıl değiştireceğimi göster 
-
-
-comic_factory.py
-Kod
-
-
-
-Kitaplık
-/
-comic_factory.py
-
-
-# superhero-shorts/comic_factory.py
-
+# comic_factory.py
 from __future__ import annotations
 
 import argparse
 import base64
-import hashlib
 import html
 import io
 import json
@@ -414,7 +24,14 @@ import imageio_ffmpeg
 import requests
 from dotenv import load_dotenv
 from openai import OpenAI
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageEnhance,
+    ImageFilter,
+    ImageFont,
+    ImageOps,
+)
 
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent
@@ -591,19 +208,18 @@ class PageImageParser(HTMLParser):
         for image_url in possible_urls:
             image_url = image_url.strip()
 
-            if not image_url:
-                continue
-
-            self.images.append(
-                {
-                    "url": image_url,
-                    "alt": alt_text,
-                }
-            )
+            if image_url:
+                self.images.append(
+                    {
+                        "url": image_url,
+                        "alt": alt_text,
+                    }
+                )
 
 
 def parse_arguments() -> argparse.Namespace:
     """Komut satırı seçeneklerini okur."""
+
     parser = argparse.ArgumentParser(
         description=(
             "Comic-book olaylarını araştırıp görsellerini "
@@ -621,8 +237,8 @@ def parse_arguments() -> argparse.Namespace:
         "--reuse-active",
         action="store_true",
         help=(
-            "Yeni konu araştırmak yerine active_event.json "
-            "içindeki olayı yeniden üretir."
+            "Yeni konu araştırmak yerine "
+            "active_event.json olayını kullanır."
         ),
     )
 
@@ -630,8 +246,8 @@ def parse_arguments() -> argparse.Namespace:
         "--upload",
         action="store_true",
         help=(
-            "Video tamamlandıktan sonra mevcut "
-            "youtube_uploader.py ile YouTube'a planlar."
+            "Video tamamlanınca youtube_uploader.py "
+            "ile YouTube'a yollar."
         ),
     )
 
@@ -646,14 +262,14 @@ def parse_arguments() -> argparse.Namespace:
         "--max-images",
         type=int,
         default=DEFAULT_MAX_IMAGE_CANDIDATES,
-        help="AI görsel seçiminde değerlendirilecek maksimum görsel.",
+        help="AI seçiminde değerlendirilecek maksimum görsel.",
     )
 
     parser.add_argument(
         "--subtitle-offset",
         type=float,
         default=0.0,
-        help="Kelime vurgusunu saniye cinsinden ileri/geri kaydırır.",
+        help="Kelime vurgusunu saniye olarak kaydırır.",
     )
 
     return parser.parse_args()
@@ -661,7 +277,8 @@ def parse_arguments() -> argparse.Namespace:
 
 def ensure_directories() -> None:
     """Gerekli proje klasörlerini oluşturur."""
-    directories = [
+
+    directories = (
         EVENT_DIRECTORY,
         RESEARCH_DIRECTORY,
         SCRIPT_DIRECTORY,
@@ -669,7 +286,7 @@ def ensure_directories() -> None:
         VIDEO_DIRECTORY,
         ASSET_ROOT,
         CANDIDATE_ROOT,
-    ]
+    )
 
     for directory in directories:
         directory.mkdir(
@@ -683,6 +300,7 @@ def load_json(
     default: Any = None,
 ) -> Any:
     """JSON dosyasını yükler."""
+
     if not file_path.exists():
         return default
 
@@ -704,6 +322,7 @@ def save_json(
     payload: Any,
 ) -> None:
     """JSON dosyasını kaydeder."""
+
     file_path.parent.mkdir(
         parents=True,
         exist_ok=True,
@@ -721,10 +340,9 @@ def save_json(
         )
 
 
-def clean_text(
-    value: Any,
-) -> str:
+def clean_text(value: Any) -> str:
     """Metni normalize eder."""
+
     return re.sub(
         r"\s+",
         " ",
@@ -732,10 +350,9 @@ def clean_text(
     )
 
 
-def safe_slug(
-    value: str,
-) -> str:
+def safe_slug(value: str) -> str:
     """Dosya sistemi için güvenli ID üretir."""
+
     value = (
         clean_text(value)
         .lower()
@@ -758,6 +375,7 @@ def safe_slug(
 
 def create_client() -> OpenAI:
     """OpenAI istemcisini oluşturur."""
+
     api_key = os.getenv(
         "OPENAI_API_KEY",
         "",
@@ -765,7 +383,7 @@ def create_client() -> OpenAI:
 
     if not api_key:
         raise ComicFactoryError(
-            ".env içinde OPENAI_API_KEY bulunamadı."
+            "OPENAI_API_KEY bulunamadı."
         )
 
     return OpenAI(
@@ -775,6 +393,7 @@ def create_client() -> OpenAI:
 
 def get_model() -> str:
     """Ana model adını döndürür."""
+
     return (
         os.getenv(
             "OPENAI_MODEL",
@@ -786,6 +405,7 @@ def get_model() -> str:
 
 def create_http_session() -> requests.Session:
     """Web sayfaları ve görseller için HTTP oturumu oluşturur."""
+
     session = requests.Session()
 
     session.headers.update(
@@ -801,7 +421,8 @@ def create_http_session() -> requests.Session:
 def run_check(
     upload_requested: bool,
 ) -> None:
-    """Ücretsiz sistem kontrolünü çalıştırır."""
+    """API kullanmadan sistem kontrolü yapar."""
+
     print()
     print("=" * 78)
     print("COMIC FACTORY - SİSTEM KONTROLÜ")
@@ -815,19 +436,12 @@ def run_check(
         "",
     ).strip():
         problems.append(
-            ".env içinde OPENAI_API_KEY yok."
-        )
-
-    if not os.getenv(
-        "OPENAI_MODEL",
-        "",
-    ).strip():
-        problems.append(
-            ".env içinde OPENAI_MODEL yok."
+            "OPENAI_API_KEY yok."
         )
 
     try:
         imageio_ffmpeg.get_ffmpeg_exe()
+
     except Exception as error:
         problems.append(
             f"FFmpeg kullanılamıyor: {error}"
@@ -856,21 +470,15 @@ def run_check(
         raise SystemExit(1)
 
     print("✓ OpenAI API anahtarı hazır")
-    print("✓ OpenAI modeli hazır")
     print("✓ FFmpeg hazır")
     print("✓ Comic klasörleri hazır")
     print()
-    print("✓ API çağrısı yapılmadı")
-    print("✓ Video üretilmedi")
-    print("✓ YouTube'a yükleme yapılmadı")
-    print()
-    print("=" * 78)
-    print("SİSTEM KONTROLÜ BAŞARILI")
-    print("=" * 78)
+    print("✓ Sistem kontrolü başarılı")
 
 
 def get_used_event_keys() -> set[str]:
     """Daha önce tamamlanmış comic olaylarını döndürür."""
+
     payload = load_json(
         USED_EVENTS_FILE,
         default={
@@ -920,6 +528,7 @@ def event_key(
     event: dict[str, Any],
 ) -> str:
     """Olay için tekrar kontrol anahtarı oluşturur."""
+
     return "|".join(
         [
             clean_text(
@@ -951,7 +560,8 @@ def event_key(
 
 
 def build_research_schema() -> dict[str, Any]:
-    """Comic event araştırması için JSON şeması."""
+    """Comic event araştırması JSON şeması."""
+
     return {
         "type": "object",
         "additionalProperties": False,
@@ -1062,6 +672,7 @@ def research_events(
     count: int,
 ) -> list[dict[str, Any]]:
     """Web araştırmasıyla yeni comic olayları bulur."""
+
     count = max(
         3,
         min(
@@ -1090,8 +701,9 @@ def research_events(
 Öncelik:
 Marvel, DC, Image, Dark Horse ve büyük Amerikan comic yayıncıları.
 
-Aradığımız şey GENEL hikâye değil.
-Spesifik tek bir olay / feat / dönüşüm / kozmik an / inanılmaz güç gösterisi.
+Aradığımız şey genel hikâye değil.
+Spesifik tek bir olay, feat, dönüşüm, kozmik an
+veya inanılmaz güç gösterisi.
 
 İzleyici:
 "Bu gerçekten çizgi romanda mı oldu?"
@@ -1103,11 +715,10 @@ Kriterler:
 - görsel olarak iyi
 - 45-60 saniyede anlatılabilir
 - doğru issue tespit edilebilir
-- web'de olayın görsellerini gösteren resmi preview,
-  inceleme veya makaleler bulunabilir
+- web'de resmi preview, inceleme veya makale görselleri bulunabilir
 
 Mümkün olduğunca:
-- resmi publisher sayfası
+- resmi publisher
 - ciddi comic journalism
 - comic database
 - issue review
@@ -1118,11 +729,10 @@ URL uydurma.
 Issue uydurma.
 
 Her olay için TAM 8 adet visual_beats oluştur.
-Bunlar videoda sırayla görmek istediğimiz comic anlarını tarif etsin.
 
 shorts_score 0-100 arasında olsun.
 
-Daha önce kullandığımız ve tekrar seçmemen gereken olay anahtarları:
+Daha önce kullanılan olaylar:
 
 {used_text}
 
@@ -1183,7 +793,7 @@ Comic ve karakter isimlerini orijinal bırak.
             "Araştırma sonucu events listesi içermiyor."
         )
 
-    used_keys = get_used_event_keys()
+    used_keys_set = get_used_event_keys()
 
     eligible_events = [
         event
@@ -1195,7 +805,7 @@ Comic ve karakter isimlerini orijinal bırak.
         and event_key(
             event
         )
-        not in used_keys
+        not in used_keys_set
     ]
 
     eligible_events.sort(
@@ -1253,6 +863,7 @@ def activate_event(
     event: dict[str, Any],
 ) -> dict[str, Any]:
     """Seçilen olayı aktif üretim konusuna dönüştürür."""
+
     active = dict(
         event
     )
@@ -1312,6 +923,7 @@ def activate_event(
         f"✓ Seçilen olay: "
         f"{clean_text(active.get('event_title'))}"
     )
+
     print(
         f"✓ Comic: "
         f"{clean_text(active.get('series'))} "
@@ -1323,6 +935,7 @@ def activate_event(
 
 def load_active_event() -> dict[str, Any]:
     """Mevcut aktif eventi yükler."""
+
     event = load_json(
         ACTIVE_EVENT_FILE
     )
@@ -1350,6 +963,7 @@ def load_active_event() -> dict[str, Any]:
 
 def build_source_schema() -> dict[str, Any]:
     """Görsel kaynak keşfi için şema."""
+
     return {
         "type": "object",
         "additionalProperties": False,
@@ -1389,6 +1003,7 @@ def discover_visual_pages(
     event: dict[str, Any],
 ) -> list[dict[str, str]]:
     """Comic panellerini gösterme ihtimali yüksek sayfaları bulur."""
+
     existing_sources = event.get(
         "sources",
         [],
@@ -1433,10 +1048,10 @@ issue sayfalarını gerçekten HTML içinde gösteren
 - comic issue review
 - ciddi comic news article
 
-Sadece ana sayfa değil, olayın geçtiği spesifik article URL'sini ver.
+Sadece ana sayfa değil,
+olayın geçtiği spesifik article URL'sini ver.
 
-Arşiv korsan indirme sitesi veya rastgele image board önermeden,
-normal web sayfalarına öncelik ver.
+Korsan arşiv veya rastgele image board önerme.
 
 URL uydurma.
 """
@@ -1596,6 +1211,7 @@ def normalize_image_url(
     image_url: str,
 ) -> str:
     """HTML içindeki görsel URL'sini tam URL'ye dönüştürür."""
+
     image_url = html.unescape(
         clean_text(
             image_url
@@ -1621,6 +1237,7 @@ def is_probably_bad_image_url(
     alt_text: str,
 ) -> bool:
     """Logo, avatar ve tracking görsellerini filtreler."""
+
     combined = (
         image_url
         + " "
@@ -1656,6 +1273,7 @@ def scrape_page_images(
     source: dict[str, str],
 ) -> list[dict[str, str]]:
     """Tek web sayfasındaki görsel URL'lerini çıkarır."""
+
     url = source[
         "url"
     ]
@@ -1684,6 +1302,7 @@ def scrape_page_images(
         parser.feed(
             response.text
         )
+
     except Exception:
         return []
 
@@ -1744,6 +1363,7 @@ def image_context_score(
     event: dict[str, Any],
 ) -> float:
     """URL ve alt metinden kaba comic-ilgi puanı hesaplar."""
+
     text = (
         item.get(
             "image_url",
@@ -1786,7 +1406,10 @@ def image_context_score(
         term = term.casefold()
 
         if (
-            len(term) >= 3
+            len(
+                term
+            )
+            >= 3
             and term in text
         ):
             score += 3.0
@@ -1819,6 +1442,7 @@ def perceptual_hash(
     image: Image.Image,
 ) -> str:
     """Benzer görselleri elemek için basit average hash üretir."""
+
     image = (
         image.convert(
             "L"
@@ -1863,6 +1487,7 @@ def download_candidate(
     output_file: Path,
 ) -> tuple[int, int, str] | None:
     """Web görselini indirip JPG'ye çevirir."""
+
     headers = {
         "Referer": raw_candidate[
             "source_page"
@@ -1963,6 +1588,7 @@ def collect_candidates(
     max_candidates: int,
 ) -> list[ImageCandidate]:
     """Kaynak sayfalarından gerçek görsel adaylarını toplar."""
+
     print()
     print("=" * 78)
     print("3/7 - COMIC GÖRSELLERİ OTOMATİK TOPLANIYOR")
@@ -2154,6 +1780,7 @@ def image_to_data_url(
     file_path: Path,
 ) -> str:
     """Yerel görseli düşük maliyetli vision thumbnail'a dönüştürür."""
+
     with Image.open(
         file_path
     ) as opened:
@@ -2194,6 +1821,7 @@ def image_to_data_url(
 
 def build_assignment_schema() -> dict[str, Any]:
     """Vision tabanlı sahne eşleştirmesi şeması."""
+
     return {
         "type": "object",
         "additionalProperties": False,
@@ -2242,6 +1870,7 @@ def assign_images_with_vision(
     candidates: list[ImageCandidate],
 ) -> list[dict[str, Any]]:
     """Görselleri gerçekten görerek 8 sahneye eşleştirir."""
+
     print()
     print("=" * 78)
     print("4/7 - AI COMIC PANELLERİNİ GÖREREK SEÇİYOR")
@@ -2273,42 +1902,36 @@ def assign_images_with_vision(
             f"Comic olayının {len(visual_beats) + 1}. önemli anı"
         )
 
-    candidate_summary = []
-
     content: list[
         dict[str, Any]
     ] = []
 
-    candidate_summary.append(
-        "EVENT:\n"
-        + clean_text(
-            event.get(
-                "event_title",
-                "",
-            )
-        )
-        + "\n\nVISUAL BEATS:\n"
-        + "\n".join(
-            f"{index}. {beat}"
-            for index, beat in enumerate(
-                visual_beats,
-                start=1,
-            )
-        )
-    )
-
     content.append(
         {
             "type": "input_text",
-            "text": "\n".join(
-                candidate_summary
-            )
-            + (
-                "\n\nAşağıdaki comic görsellerini gerçekten incele. "
-                "Her sahne için en uygun candidate_id seç. "
-                "Aynı görseli zorunlu olmadıkça tekrar kullanma. "
-                "Kapak, logo veya alakasız görsel yerine "
-                "olayı gerçekten anlatan panelleri tercih et."
+            "text": (
+                "EVENT:\n"
+                + clean_text(
+                    event.get(
+                        "event_title",
+                        "",
+                    )
+                )
+                + "\n\nVISUAL BEATS:\n"
+                + "\n".join(
+                    f"{index}. {beat}"
+                    for index, beat in enumerate(
+                        visual_beats,
+                        start=1,
+                    )
+                )
+                + (
+                    "\n\nAşağıdaki comic görsellerini gerçekten incele. "
+                    "Her sahne için en uygun candidate_id seç. "
+                    "Aynı görseli zorunlu olmadıkça tekrar kullanma. "
+                    "Kapak veya alakasız görsel yerine "
+                    "olayı gerçekten anlatan panelleri tercih et."
+                )
             ),
         }
     )
@@ -2475,6 +2098,7 @@ def build_assets(
     selected: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """Seçilmiş comic panellerini final asset klasörüne kopyalar."""
+
     event_directory = (
         ASSET_ROOT
         / clean_text(
@@ -2584,6 +2208,7 @@ def build_assets(
 
 def build_script_schema() -> dict[str, Any]:
     """Shorts script structured output şeması."""
+
     return {
         "type": "object",
         "additionalProperties": False,
@@ -2637,6 +2262,7 @@ def generate_script(
     assets: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Aktif comic event için Türkçe Shorts senaryosu üretir."""
+
     print()
     print("=" * 78)
     print("5/7 - TÜRKÇE SHORTS SENARYOSU")
@@ -2687,13 +2313,12 @@ YouTube Shorts senaryosu oluştur.
 Kurallar:
 
 - İlk cümle izleyiciyi hemen yakalasın.
-- Sanki inanılmaz bir comic olayını arkadaşına anlatıyormuş gibi yaz.
+- İnanılmaz bir comic olayını arkadaşına anlatıyormuş gibi yaz.
 - Gereksiz giriş yapma.
 - Olay her cümlede ilerlesin.
 - 120-145 kelime civarında tut.
 - Doğrulanmayan bilgi ekleme.
 - 8 scene_narrations üret.
-- Bunların birleşimi narration ile aynı olay akışını taşısın.
 - 8 kısa scene_captions üret.
 - Caption en fazla 4 kelime olsun.
 - Sahne numarası yazma.
@@ -2828,7 +2453,8 @@ def generate_voice(
     event: dict[str, Any],
     narration: str,
 ) -> None:
-    """Beğenilen yüksek enerjili Ash seslendirmeyi üretir."""
+    """Yüksek enerjili Ash seslendirmeyi üretir."""
+
     print()
     print("=" * 78)
     print("6/7 - ASH YÜKSEK ENERJİLİ SES")
@@ -2942,6 +2568,7 @@ def get_object_value(
     default: Any = None,
 ) -> Any:
     """SDK nesnesi veya dict içinden alan okur."""
+
     if isinstance(
         value,
         dict,
@@ -2963,6 +2590,7 @@ def align_words(
     narration: str,
 ) -> list[dict[str, Any]]:
     """Ses dosyasından gerçek kelime zamanlarını çıkarır."""
+
     print()
     print(
         "Gerçek kelime zamanlaması çıkarılıyor..."
@@ -3058,7 +2686,8 @@ def align_words(
 
 
 def get_ffmpeg() -> str:
-    """Bundled FFmpeg'i döndürür."""
+    """Bundled FFmpeg yolunu döndürür."""
+
     return imageio_ffmpeg.get_ffmpeg_exe()
 
 
@@ -3066,6 +2695,7 @@ def get_audio_duration(
     ffmpeg: str,
 ) -> float:
     """Ses dosyasının süresini bulur."""
+
     process = subprocess.run(
         [
             ffmpeg,
@@ -3120,9 +2750,10 @@ def get_font(
     size: int,
     comic: bool = False,
 ) -> ImageFont.ImageFont:
-    """Windows fontlarından uygun olanı yükler."""
-    candidates = (
-        [
+    """Windows ve Linux üzerinde uygun font yükler."""
+
+    if comic:
+        candidates = [
             Path(
                 r"C:\Windows\Fonts\impact.ttf"
             ),
@@ -3132,9 +2763,18 @@ def get_font(
             Path(
                 r"C:\Windows\Fonts\arialbd.ttf"
             ),
+            Path(
+                "/usr/share/fonts/truetype/dejavu/"
+                "DejaVuSansCondensed-Bold.ttf"
+            ),
+            Path(
+                "/usr/share/fonts/truetype/dejavu/"
+                "DejaVuSans-Bold.ttf"
+            ),
         ]
-        if comic
-        else [
+
+    else:
+        candidates = [
             Path(
                 r"C:\Windows\Fonts\arialbd.ttf"
             ),
@@ -3144,8 +2784,15 @@ def get_font(
             Path(
                 r"C:\Windows\Fonts\arial.ttf"
             ),
+            Path(
+                "/usr/share/fonts/truetype/dejavu/"
+                "DejaVuSans-Bold.ttf"
+            ),
+            Path(
+                "/usr/share/fonts/truetype/dejavu/"
+                "DejaVuSans.ttf"
+            ),
         ]
-    )
 
     for font_path in candidates:
         if font_path.exists():
@@ -3162,7 +2809,13 @@ def get_font(
 def resize_cover(
     image: Image.Image,
 ) -> Image.Image:
-    """Comic sayfasını kırpmadan 9:16 bulanık arka plana yerleştirir."""
+    """
+    Comic sayfasını kırpmadan 9:16 videoya yerleştirir.
+
+    Ana comic sayfası tamamen görünür.
+    Arka plan aynı görselin bulanık versiyonudur.
+    """
+
     background = ImageOps.fit(
         image,
         (
@@ -3170,7 +2823,10 @@ def resize_cover(
             VIDEO_HEIGHT,
         ),
         method=Image.Resampling.LANCZOS,
-        centering=(0.5, 0.5),
+        centering=(
+            0.5,
+            0.5,
+        ),
     )
 
     background = background.filter(
@@ -3201,7 +2857,8 @@ def resize_cover(
 
     max_width = (
         VIDEO_WIDTH
-        - side_padding * 2
+        - side_padding
+        * 2
     )
 
     max_height = (
@@ -3220,7 +2877,9 @@ def resize_cover(
         Image.Resampling.LANCZOS,
     )
 
-    foreground_width, foreground_height = foreground.size
+    foreground_width, foreground_height = (
+        foreground.size
+    )
 
     x = (
         VIDEO_WIDTH
@@ -3324,7 +2983,8 @@ def create_scene_frame(
     caption: str,
     output_file: Path,
 ) -> None:
-    """Beğenilen full-screen comic görünümünü oluşturur."""
+    """Video sahnesinin sabit temel karesini oluşturur."""
+
     source_file = (
         PROJECT_DIRECTORY
         / asset[
@@ -3594,6 +3254,7 @@ def estimated_scene_durations(
     audio_duration: float,
 ) -> list[float]:
     """Sahne değişimlerini gerçek konuşma akışına yaklaştırır."""
+
     counts = [
         max(
             1,
@@ -3699,6 +3360,7 @@ def run_ffmpeg(
     cwd: Path | None = None,
 ) -> None:
     """FFmpeg komutunu güvenli biçimde çalıştırır."""
+
     process = subprocess.run(
         command,
         cwd=(
@@ -3732,7 +3394,8 @@ def render_segment(
     duration: float,
     index: int,
 ) -> None:
-    """Tek comic görseline hafif hareket verir."""
+    """Tek comic görseline çok hafif hareket verir."""
+
     zoom_speed = (
         0.00010
         if index
@@ -3794,6 +3457,7 @@ def seconds_to_ass_time(
     seconds: float,
 ) -> str:
     """Saniyeyi ASS zamanına çevirir."""
+
     seconds = max(
         0.0,
         seconds,
@@ -3840,6 +3504,7 @@ def ass_escape(
     text: str,
 ) -> str:
     """ASS altyazı özel karakterlerini temizler."""
+
     return (
         clean_text(
             text
@@ -3864,6 +3529,7 @@ def subtitle_text(
     active_index: int,
 ) -> str:
     """Aktif kelimeyi sarı gösteren 4 kelimelik parça üretir."""
+
     chunk_start = (
         active_index
         // SUBTITLE_WORDS_PER_CHUNK
@@ -3914,6 +3580,7 @@ def create_ass(
     offset: float,
 ) -> Path:
     """Gerçek word timestamp tabanlı subtitle oluşturur."""
+
     output_file = (
         WORK_DIRECTORY
         / "precise.ass"
@@ -3935,7 +3602,7 @@ def create_ass(
             "MarginL,MarginR,MarginV,Encoding"
         ),
         (
-            "Style: Main,Arial Black,52,"
+            "Style: Main,DejaVu Sans,52,"
             "&H00FFFFFF,&H00FFFFFF,&H00101010,&H78000000,"
             "-1,0,0,0,100,100,0,0,1,4,1,2,85,85,145,1"
         ),
@@ -4008,6 +3675,7 @@ def render_video(
     subtitle_offset: float,
 ) -> Path:
     """Final Shorts videosunu oluşturur."""
+
     print()
     print("=" * 78)
     print("7/7 - FINAL COMIC SHORTS RENDER")
@@ -4045,7 +3713,9 @@ def render_video(
         audio_duration,
     )
 
-    segments = []
+    segments: list[
+        Path
+    ] = []
 
     for index, (
         asset,
@@ -4243,6 +3913,11 @@ def render_video(
         f"{audio_duration:.1f} saniye"
     )
 
+    print(
+        f"✓ latest.mp4 hazır: "
+        f"{LATEST_VIDEO_FILE}"
+    )
+
     return archive_file
 
 
@@ -4250,6 +3925,7 @@ def mark_event_used(
     event: dict[str, Any],
 ) -> None:
     """Tamamlanmış eventi tekrar seçilmemek üzere kaydeder."""
+
     payload = load_json(
         USED_EVENTS_FILE,
         default={
@@ -4277,7 +3953,7 @@ def mark_event_used(
         )
     )
 
-    if not any(
+    already_exists = any(
         isinstance(
             item,
             dict,
@@ -4287,7 +3963,9 @@ def mark_event_used(
         )
         == key
         for item in events
-    ):
+    )
+
+    if not already_exists:
         events.append(
             {
                 "event_key": key,
@@ -4314,6 +3992,7 @@ def mark_event_used(
 
 def upload_to_youtube() -> None:
     """Mevcut YouTube slot uploader'ını çalıştırır."""
+
     uploader = (
         PROJECT_DIRECTORY
         / "youtube_uploader.py"
@@ -4322,6 +4001,11 @@ def upload_to_youtube() -> None:
     if not uploader.exists():
         raise ComicFactoryError(
             "youtube_uploader.py bulunamadı."
+        )
+
+    if not LATEST_VIDEO_FILE.exists():
+        raise ComicFactoryError(
+            "YouTube yüklemesinden önce latest.mp4 bulunamadı."
         )
 
     print()
@@ -4350,6 +4034,7 @@ def upload_to_youtube() -> None:
 
 def main() -> None:
     """Comic Factory üretim hattını çalıştırır."""
+
     arguments = parse_arguments()
 
     ensure_directories()
@@ -4365,10 +4050,12 @@ def main() -> None:
     print("COMIC FACTORY - FULL AUTOMATION")
     print("=" * 78)
     print()
+
     print(
         "Araştırma -> Comic görselleri -> AI panel seçimi -> "
         "Senaryo -> Ash -> Kelime senkronu -> Video"
     )
+
     print()
 
     client = create_client()
@@ -4380,6 +4067,7 @@ def main() -> None:
             print(
                 "✓ Mevcut active event yeniden kullanılıyor:"
             )
+
             print(
                 clean_text(
                     event.get(
@@ -4456,6 +4144,11 @@ def main() -> None:
             arguments.subtitle_offset,
         )
 
+        if not LATEST_VIDEO_FILE.exists():
+            raise ComicFactoryError(
+                "Render bitti ancak data/videos/latest.mp4 oluşmadı."
+            )
+
         mark_event_used(
             event
         )
@@ -4465,9 +4158,11 @@ def main() -> None:
         print("COMIC FACTORY BAŞARIYLA TAMAMLANDI")
         print("=" * 78)
         print()
+
         print(
             "Konu:"
         )
+
         print(
             clean_text(
                 event[
@@ -4475,18 +4170,24 @@ def main() -> None:
                 ]
             )
         )
+
         print()
+
         print(
             "Comic:"
         )
+
         print(
             f"{clean_text(event['series'])} "
             f"{clean_text(event['issue'])}"
         )
+
         print()
+
         print(
             "Başlık:"
         )
+
         print(
             clean_text(
                 script[
@@ -4494,22 +4195,29 @@ def main() -> None:
                 ]
             )
         )
+
         print()
+
         print(
             "Video:"
         )
+
         print(
             r"data\videos\latest.mp4"
         )
+
         print()
+
         print(
             "Arşiv:"
         )
+
         print(
             archive_file.relative_to(
                 PROJECT_DIRECTORY
             )
         )
+
         print()
 
         if arguments.upload:
@@ -4519,6 +4227,7 @@ def main() -> None:
             print(
                 "YouTube'a yükleme yapılmadı."
             )
+
             print(
                 "Yüklemek için: "
                 "python comic_factory.py --upload"
@@ -4530,7 +4239,9 @@ def main() -> None:
             "İşlem kullanıcı tarafından durduruldu."
         )
 
-        raise SystemExit(1)
+        raise SystemExit(
+            1
+        )
 
     except Exception as error:
         print()
@@ -4538,15 +4249,21 @@ def main() -> None:
         print("COMIC FACTORY DURDU")
         print("=" * 78)
         print()
+
         print(
-            f"{type(error).__name__}: {error}"
+            f"{type(error).__name__}: "
+            f"{error}"
         )
+
         print()
+
         print(
             "Eksik video YouTube'a gönderilmedi."
         )
 
-        raise SystemExit(1)
+        raise SystemExit(
+            1
+        )
 
 
 if __name__ == "__main__":
