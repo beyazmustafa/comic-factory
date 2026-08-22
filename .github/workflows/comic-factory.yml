@@ -1,3 +1,5 @@
+# .github/workflows/comic-factory.yml
+
 name: Comic Factory
 
 on:
@@ -22,6 +24,14 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_MODEL: gpt-5.6
+
+      INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+
+      CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+      CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+      CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+
       PYTHONUNBUFFERED: "1"
 
     steps:
@@ -39,6 +49,7 @@ jobs:
           path: |
             data/events/used_events.json
             data/youtube/upload_history.json
+            data/instagram/upload_history.json
           key: comic-factory-state-${{ github.run_id }}
           restore-keys: |
             comic-factory-state-
@@ -73,9 +84,13 @@ jobs:
           print("YouTube credential dosyaları hazır.")
           PY
 
-      - name: Run Comic Factory
+      - name: Create video and upload to YouTube
         run: |
           python comic_factory.py --upload
+
+      - name: Upload video to Instagram Reels
+        run: |
+          python instagram_uploader.py
 
       - name: Save Comic Factory state
         if: always()
@@ -84,6 +99,7 @@ jobs:
           path: |
             data/events/used_events.json
             data/youtube/upload_history.json
+            data/instagram/upload_history.json
           key: comic-factory-state-${{ github.run_id }}
 
       - name: Remove temporary credentials
