@@ -1,6 +1,7 @@
-# requirements.txt
-
-openai
+google-genai
+groq
+edge-tts
+ddgs
 python-dotenv
 requests
 Pillow
