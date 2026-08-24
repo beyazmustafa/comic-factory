@@ -4,20 +4,22 @@ from __future__ import annotations
 import argparse
 import asyncio
 import base64
-import hashlib
 import io
 import json
 import math
 import os
+import random
 import re
 import shutil
 import subprocess
+import time
 import wave
 from dataclasses import asdict, dataclass
 from datetime import datetime
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
-import random
+
 import edge_tts
 import imageio_ffmpeg
 import requests
@@ -50,9 +52,11 @@ VISUAL_PLAN_FILE = PROTOTYPE_ROOT / "visual_plan.json"
 CRITIQUE_FILE = PROTOTYPE_ROOT / "director_critique.json"
 LESSONS_FILE = PROTOTYPE_ROOT / "lessons.json"
 WORDS_FILE = PROTOTYPE_ROOT / "words.json"
+ALIGNED_WORDS_FILE = PROTOTYPE_ROOT / "aligned_subtitle_words.json"
 SUBTITLE_FILE = PROTOTYPE_ROOT / "subtitles.ass"
 CONTACT_SHEET_FILE = PROTOTYPE_ROOT / "contact_sheet.jpg"
 MANIFEST_FILE = PROTOTYPE_ROOT / "manifest.json"
+VOICE_DIRECTION_FILE = PROTOTYPE_ROOT / "voice_direction.json"
 
 OUTPUT_VIDEO = DATA_DIR / "prototype" / "thor_galactus_v2.mp4"
 
@@ -70,10 +74,13 @@ MIN_IMAGE_PIXELS = 400_000
 
 MIN_REAL_RELEVANCE = 80
 MIN_RELEVANCE_FOR_REUSE = 90
-MIN_UNIQUE_VISUAL_RATIO = 0.72
 
-SUBTITLE_WORD_COUNT = 3
-SUBTITLE_MARGIN_BOTTOM = 360
+SUBTITLE_MAX_WORDS = 3
+SUBTITLE_MAX_CHARACTERS = 18
+SUBTITLE_MARGIN_LEFT = 125
+SUBTITLE_MARGIN_RIGHT = 125
+SUBTITLE_MARGIN_BOTTOM = 390
+SUBTITLE_BASE_FONT_SIZE = 56
 
 REQUEST_TIMEOUT = 25
 
@@ -87,6 +94,7 @@ GEMINI_TTS_MODEL = os.getenv(
     "gemini-3.1-flash-tts-preview",
 )
 
+# Bu ses artık sabit. Değiştirmiyoruz.
 GEMINI_TTS_VOICE = os.getenv(
     "GEMINI_TTS_VOICE",
     "Gacrux",
@@ -148,6 +156,8 @@ class PrototypeError(RuntimeError):
 
 @dataclass
 class Candidate:
+    """Gerçek comic görsel adayı."""
+
     candidate_id: str
     path: str
     source_url: str
@@ -161,6 +171,8 @@ class Candidate:
 
 @dataclass
 class RankedVisual:
+    """Bir sahne için Gemini tarafından sıralanan görsel."""
+
     candidate_id: str
     relevance_score: int
     crop_box: list[float]
@@ -169,6 +181,8 @@ class RankedVisual:
 
 @dataclass
 class Scene:
+    """Final video sahnesi."""
+
     scene_number: int
     narration: str
     visual_description: str
@@ -207,7 +221,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--edge-voice",
         action="store_true",
-        help="Gemini TTS yerine doğrudan Edge TTS kullan.",
+        help="Gemini TTS yerine Edge TTS kullan.",
     )
 
     return parser.parse_args()
@@ -353,9 +367,14 @@ def create_gemini_client() -> genai.Client:
         )
     )
 
-def is_retryable_gemini_error(error: Exception) -> bool:
-    """Geçici Gemini API hatalarının tekrar denenebilir olup olmadığını belirler."""
-    message = str(error).casefold()
+
+def is_retryable_gemini_error(
+    error: Exception,
+) -> bool:
+    """Geçici Gemini servis hatalarını ayırt eder."""
+    message = str(
+        error
+    ).casefold()
 
     retryable_terms = (
         "503",
@@ -385,7 +404,7 @@ def gemini_with_retry(
     operation_name: str,
     max_attempts: int = 5,
 ) -> Any:
-    """Geçici Gemini hatalarında exponential backoff ile işlemi tekrar dener."""
+    """Gemini işlemini exponential backoff ile tekrar dener."""
     delays = (
         10,
         20,
@@ -444,7 +463,8 @@ def gemini_with_retry(
                 f"  {type(error).__name__}: {error}"
             )
             print(
-                f"  {wait_seconds:.1f} saniye sonra tekrar denenecek."
+                f"  {wait_seconds:.1f} saniye "
+                "sonra tekrar denenecek."
             )
             print()
 
@@ -457,20 +477,28 @@ def gemini_with_retry(
         f"{max_attempts} denemeden sonra başarısız oldu: "
         f"{last_error}"
     )
-    
+
+
 def ask_json(
     client: genai.Client,
     prompt: str,
     temperature: float = 0.3,
 ) -> dict[str, Any]:
-    """Gemini'den JSON cevap alır."""
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            temperature=temperature,
-            response_mime_type="application/json",
-        ),
+    """Gemini'den retry destekli JSON cevap alır."""
+
+    def request() -> Any:
+        return client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=temperature,
+                response_mime_type="application/json",
+            ),
+        )
+
+    response = gemini_with_retry(
+        request,
+        operation_name="Gemini JSON",
     )
 
     if not response.text:
@@ -540,11 +568,15 @@ def research_event() -> list[dict[str, str]]:
             output.append(
                 {
                     "title": clean(
-                        item.get("title")
+                        item.get(
+                            "title"
+                        )
                     ),
                     "url": url,
                     "body": clean(
-                        item.get("body")
+                        item.get(
+                            "body"
+                        )
                     ),
                 }
             )
@@ -561,14 +593,16 @@ def build_storyboard(
     client: genai.Client,
     sources: list[dict[str, str]],
 ) -> dict[str, Any]:
-    """Story Editor ile 14 sahnelik anlatı oluşturur."""
+    """Story Director ile 14 sahnelik anlatı oluşturur."""
     evidence = "\n\n".join(
         (
             f"TITLE: {item['title']}\n"
             f"URL: {item['url']}\n"
             f"SNIPPET: {item['body']}"
         )
-        for item in sources[:35]
+        for item in sources[
+            :35
+        ]
     )
 
     prompt = f"""
@@ -681,11 +715,9 @@ def image_search(
         '"Thor #6" Marvel preview images',
     ]
 
-    scenes = storyboard[
+    for scene in storyboard[
         "scenes"
-    ]
-
-    for scene in scenes:
+    ]:
         visual = clean(
             scene.get(
                 "visual_description"
@@ -998,7 +1030,7 @@ def vision_rank_scenes(
     storyboard: dict[str, Any],
     candidates: list[Candidate],
 ) -> list[dict[str, Any]]:
-    """Visual Director her sahne için ilk 3 görseli ve crop'u seçer."""
+    """Visual Director her sahne için ilk 3 görseli seçer."""
     candidates = candidates[
         :MAX_VISION_IMAGES
     ]
@@ -1038,10 +1070,8 @@ Kurallar:
   [left, top, right, bottom]
 - Eğer tüm sayfa kullanılmalıysa:
   [0, 0, 1, 1]
-- Konuşma balonları ana odağı kapatmıyorsa sorun değil;
-  ancak mümkünse anlatılan aksiyonu öne çıkar.
-- crop çok dar olmasın.
-- İnsan/karakter yüzü veya ana aksiyon kesilmesin.
+- Ana karakter veya aksiyon crop dışında kalmasın.
+- Crop gereksiz dar olmasın.
 
 JSON:
 
@@ -1101,13 +1131,19 @@ Tam {SCENE_COUNT} scene döndür.
             )
         )
 
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=contents,
-        config=types.GenerateContentConfig(
-            temperature=0.12,
-            response_mime_type="application/json",
-        ),
+    def request() -> Any:
+        return client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=contents,
+            config=types.GenerateContentConfig(
+                temperature=0.12,
+                response_mime_type="application/json",
+            ),
+        )
+
+    response = gemini_with_retry(
+        request,
+        operation_name="Visual Director",
     )
 
     payload = parse_json_response(
@@ -1161,7 +1197,10 @@ def normalize_crop_box(
             for value in crop_box
         ]
 
-    except (TypeError, ValueError):
+    except (
+        TypeError,
+        ValueError,
+    ):
         return default
 
     left = max(
@@ -1323,10 +1362,13 @@ def crop_candidate(
     crop_box: list[float],
     scene_number: int,
 ) -> Path:
-    """Gemini'nin seçtiği panel bölgesini crop edip restore eder."""
+    """Seçilen panel bölgesini crop edip restore eder."""
     output = (
         RESTORED_DIR
-        / f"scene_{scene_number:02d}_{candidate.candidate_id}.png"
+        / (
+            f"scene_{scene_number:02d}_"
+            f"{candidate.candidate_id}.png"
+        )
     )
 
     with Image.open(
@@ -1510,15 +1552,23 @@ Requirements:
             }
         )
 
-    interaction = client.interactions.create(
-        model=GEMINI_IMAGE_MODEL,
-        input=interaction_input,
-        response_format={
-            "type": "image",
-            "mime_type": "image/jpeg",
-            "aspect_ratio": "9:16",
-            "image_size": "2K",
-        },
+    def request() -> Any:
+        return client.interactions.create(
+            model=GEMINI_IMAGE_MODEL,
+            input=interaction_input,
+            response_format={
+                "type": "image",
+                "mime_type": "image/jpeg",
+                "aspect_ratio": "9:16",
+                "image_size": "2K",
+            },
+        )
+
+    interaction = gemini_with_retry(
+        request,
+        operation_name=(
+            f"AI Reconstruction Scene {scene_number}"
+        ),
     )
 
     if interaction.output_image is None:
@@ -1542,7 +1592,7 @@ def build_scene_objects(
     rankings: list[dict[str, Any]],
     enable_reconstruction: bool,
 ) -> list[Scene]:
-    """Visual Director planını gerçek Scene nesnelerine çevirir."""
+    """Visual Director planını Scene nesnelerine çevirir."""
     candidate_map = {
         item.candidate_id: item
         for item in candidates
@@ -1584,7 +1634,8 @@ def build_scene_objects(
 
         if candidate is None:
             raise PrototypeError(
-                f"Candidate bulunamadı: {selected.candidate_id}"
+                f"Candidate bulunamadı: "
+                f"{selected.candidate_id}"
             )
 
         visual_file = crop_candidate(
@@ -1613,11 +1664,15 @@ def build_scene_objects(
                 Path
             ] = []
 
-            for item in ranking[:3]:
-                reference_candidate = candidate_map.get(
-                    clean(
-                        item.get(
-                            "candidate_id"
+            for item in ranking[
+                :3
+            ]:
+                reference_candidate = (
+                    candidate_map.get(
+                        clean(
+                            item.get(
+                                "candidate_id"
+                            )
                         )
                     )
                 )
@@ -1643,12 +1698,14 @@ def build_scene_objects(
                 )
 
                 print(
-                    f"🎨 Scene {number}: AI reconstruction"
+                    f"🎨 Scene {number}: "
+                    "AI reconstruction"
                 )
 
             except Exception as error:
                 print(
-                    f"! Scene {number} reconstruction başarısız: {error}"
+                    f"! Scene {number} reconstruction "
+                    f"başarısız: {error}"
                 )
 
         ranked_visuals: list[
@@ -1769,7 +1826,7 @@ def unique_visual_ratio(
 def compose_vertical(
     visual_file: Path,
 ) -> Image.Image:
-    """Comic görselini premium 9:16 kompozisyona dönüştürür."""
+    """Comic görselini 9:16 kompozisyona dönüştürür."""
     with Image.open(
         visual_file
     ) as opened:
@@ -1850,7 +1907,7 @@ def compose_vertical(
 def build_contact_sheet(
     scenes: list[Scene],
 ) -> Path:
-    """AI Director için 14 sahnelik contact sheet oluşturur."""
+    """AI Director için sahne contact sheet oluşturur."""
     columns = 4
     cell_width = 270
     cell_height = 460
@@ -1987,19 +2044,25 @@ JSON:
 }}
 """
 
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=[
-            prompt,
-            types.Part.from_bytes(
-                data=contact_sheet.read_bytes(),
-                mime_type="image/jpeg",
+    def request() -> Any:
+        return client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=[
+                prompt,
+                types.Part.from_bytes(
+                    data=contact_sheet.read_bytes(),
+                    mime_type="image/jpeg",
+                ),
+            ],
+            config=types.GenerateContentConfig(
+                temperature=0.15,
+                response_mime_type="application/json",
             ),
-        ],
-        config=types.GenerateContentConfig(
-            temperature=0.15,
-            response_mime_type="application/json",
-        ),
+        )
+
+    response = gemini_with_retry(
+        request,
+        operation_name="Supervising Director",
     )
 
     critique = parse_json_response(
@@ -2040,19 +2103,24 @@ def improve_weak_scenes(
     candidates: list[Candidate],
     critique: dict[str, Any],
 ) -> list[Scene]:
-    """Zayıf sahnelerde ikinci gerçek panel adayına geçer."""
-    weak = {
-        int(
-            number
-        )
-        for number in critique.get(
-            "weak_scenes",
-            [],
-        )
-        if str(
-            number
-        ).isdigit()
-    }
+    """Zayıf sahnelerde alternatif gerçek panel kullanır."""
+    weak: set[int] = set()
+
+    for number in critique.get(
+        "weak_scenes",
+        [],
+    ):
+        try:
+            weak.add(
+                int(
+                    number
+                )
+            )
+        except (
+            TypeError,
+            ValueError,
+        ):
+            continue
 
     candidate_map = {
         item.candidate_id: item
@@ -2065,25 +2133,16 @@ def improve_weak_scenes(
     }
 
     for scene in scenes:
-        if (
-            scene.scene_number
-            not in weak
-        ):
+        if scene.scene_number not in weak:
             continue
 
         for alternative in scene.ranked_visuals[
             1:
         ]:
-            if (
-                alternative.relevance_score
-                < 72
-            ):
+            if alternative.relevance_score < 72:
                 continue
 
-            if (
-                alternative.candidate_id
-                in currently_used
-            ):
+            if alternative.candidate_id in currently_used:
                 continue
 
             candidate = candidate_map.get(
@@ -2164,8 +2223,7 @@ Nic Klein
 KRİTİK:
 - İngilizce özel isimleri Türkçe fonetik yazıma çevirme.
 - "Thor" -> "Tor" gibi değiştirme.
-- "Galactus" -> Türkçe yazıldığı gibi mekanik okutma talimatı verme.
-- TTS'e bu özel isimleri doğal İngilizce telaffuzla söylemesini açıkça belirt.
+- İngilizce özel isimleri doğal İngilizce telaffuz et.
 - Çevresindeki Türkçe cümleler doğal İstanbul Türkçesi olsun.
 - Haber spikeri gibi konuşmasın.
 - Belgesel sesi gibi ağır olmasın.
@@ -2201,7 +2259,7 @@ def write_pcm_wave(
     path: Path,
     pcm: bytes,
 ) -> None:
-    """Gemini'nin PCM sesini WAV olarak kaydeder."""
+    """Gemini PCM sesini WAV olarak kaydeder."""
     with wave.open(
         str(
             path
@@ -2229,7 +2287,7 @@ def generate_gemini_voice(
     client: genai.Client,
     voice_direction: dict[str, Any],
 ) -> Path:
-    """Gemini TTS ile doğal narration üretir."""
+    """Gemini Gacrux ile doğal narration üretir."""
     output = (
         AUDIO_DIR
         / "narration_gemini.wav"
@@ -2246,6 +2304,7 @@ def generate_gemini_voice(
             "Voice Director narration üretmedi."
         )
 
+    # Bu prompt ve voice sabit tutuluyor.
     prompt = f"""
 Read ONLY the transcript enclosed in <TRANSCRIPT> tags.
 
@@ -2277,23 +2336,29 @@ Use natural breaths and subtle conversational rhythm.
 </TRANSCRIPT>
 """
 
-    response = client.models.generate_content(
-        model=GEMINI_TTS_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_modalities=[
-                "AUDIO"
-            ],
-            speech_config=types.SpeechConfig(
-                voice_config=types.VoiceConfig(
-                    prebuilt_voice_config=(
-                        types.PrebuiltVoiceConfig(
-                            voice_name=GEMINI_TTS_VOICE,
+    def request() -> Any:
+        return client.models.generate_content(
+            model=GEMINI_TTS_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_modalities=[
+                    "AUDIO"
+                ],
+                speech_config=types.SpeechConfig(
+                    voice_config=types.VoiceConfig(
+                        prebuilt_voice_config=(
+                            types.PrebuiltVoiceConfig(
+                                voice_name=GEMINI_TTS_VOICE,
+                            )
                         )
                     )
-                )
+                ),
             ),
-        ),
+        )
+
+    response = gemini_with_retry(
+        request,
+        operation_name="Gemini TTS",
     )
 
     try:
@@ -2370,8 +2435,7 @@ def generate_voice(
     )
 
     save_json(
-        PROTOTYPE_ROOT
-        / "voice_direction.json",
+        VOICE_DIRECTION_FILE,
         voice_direction,
     )
 
@@ -2431,7 +2495,7 @@ def groq_word_timestamps(
     audio_path: Path,
     narration: str,
 ) -> list[dict[str, Any]]:
-    """Groq Whisper ile gerçek kelime zamanları çıkarır."""
+    """Groq Whisper ile kelime zamanlarını çıkarır."""
     groq = Groq(
         api_key=require_env(
             "GROQ_API_KEY"
@@ -2537,6 +2601,702 @@ def groq_word_timestamps(
     )
 
     return words
+
+
+def normalize_alignment_word(
+    value: str,
+) -> str:
+    """Kelimeyi yalnızca timestamp eşleştirmesi için normalize eder."""
+    value = clean(
+        value
+    ).casefold()
+
+    return re.sub(
+        r"[^\wçğıöşü'-]",
+        "",
+        value,
+        flags=re.UNICODE,
+    )
+
+
+def narration_tokens(
+    narration: str,
+) -> list[str]:
+    """Gerçek Voice Director narration kelimelerini çıkarır."""
+    return [
+        token
+        for token in re.findall(
+            r"\S+",
+            narration,
+            flags=re.UNICODE,
+        )
+        if clean(
+            token
+        )
+    ]
+
+
+def word_similarity(
+    first: str,
+    second: str,
+) -> float:
+    """İki kelimenin yaklaşık eşleşme oranını döndürür."""
+    first_normalized = normalize_alignment_word(
+        first
+    )
+
+    second_normalized = normalize_alignment_word(
+        second
+    )
+
+    if (
+        not first_normalized
+        or not second_normalized
+    ):
+        return 0.0
+
+    if first_normalized == second_normalized:
+        return 1.0
+
+    return SequenceMatcher(
+        None,
+        first_normalized,
+        second_normalized,
+    ).ratio()
+
+
+def align_narration_to_timestamps(
+    narration: str,
+    whisper_words: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """
+    Ekranda her zaman gerçek narration metnini kullanır.
+
+    Groq yalnızca kelime zaman referansı sağlar.
+    """
+    script_words = narration_tokens(
+        narration
+    )
+
+    if not script_words:
+        raise PrototypeError(
+            "Narration kelimeleri bulunamadı."
+        )
+
+    if not whisper_words:
+        raise PrototypeError(
+            "Whisper timestamp bulunamadı."
+        )
+
+    aligned: list[
+        dict[str, Any]
+    ] = []
+
+    whisper_index = 0
+    previous_end = 0.0
+
+    for script_index, script_word in enumerate(
+        script_words
+    ):
+        best_index: int | None = None
+        best_score = 0.0
+
+        search_end = min(
+            len(
+                whisper_words
+            ),
+            whisper_index + 7,
+        )
+
+        for candidate_index in range(
+            whisper_index,
+            search_end,
+        ):
+            candidate = whisper_words[
+                candidate_index
+            ]
+
+            score = word_similarity(
+                script_word,
+                clean(
+                    candidate.get(
+                        "word"
+                    )
+                ),
+            )
+
+            score -= (
+                candidate_index
+                - whisper_index
+            ) * 0.025
+
+            if score > best_score:
+                best_score = score
+                best_index = candidate_index
+
+        if (
+            best_index is not None
+            and best_score >= 0.48
+        ):
+            match = whisper_words[
+                best_index
+            ]
+
+            start = float(
+                match[
+                    "start"
+                ]
+            )
+
+            end = float(
+                match[
+                    "end"
+                ]
+            )
+
+            whisper_index = min(
+                len(
+                    whisper_words
+                ),
+                best_index + 1,
+            )
+
+        else:
+            if whisper_index < len(
+                whisper_words
+            ):
+                reference = whisper_words[
+                    whisper_index
+                ]
+
+                reference_start = float(
+                    reference[
+                        "start"
+                    ]
+                )
+
+                reference_end = float(
+                    reference[
+                        "end"
+                    ]
+                )
+
+                start = max(
+                    previous_end,
+                    reference_start,
+                )
+
+                estimated_duration = max(
+                    0.10,
+                    min(
+                        0.42,
+                        reference_end
+                        - reference_start,
+                    ),
+                )
+
+                end = (
+                    start
+                    + estimated_duration
+                )
+
+            else:
+                remaining_words = max(
+                    1,
+                    len(
+                        script_words
+                    )
+                    - script_index,
+                )
+
+                last_audio_end = float(
+                    whisper_words[
+                        -1
+                    ][
+                        "end"
+                    ]
+                )
+
+                remaining_time = max(
+                    0.12,
+                    last_audio_end
+                    - previous_end,
+                )
+
+                estimated_duration = (
+                    remaining_time
+                    / remaining_words
+                )
+
+                start = previous_end
+                end = (
+                    start
+                    + estimated_duration
+                )
+
+        start = max(
+            previous_end,
+            start,
+        )
+
+        end = max(
+            start + 0.06,
+            end,
+        )
+
+        aligned.append(
+            {
+                "word": script_word,
+                "start": start,
+                "end": end,
+            }
+        )
+
+        previous_end = end
+
+    audio_end = float(
+        whisper_words[
+            -1
+        ][
+            "end"
+        ]
+    )
+
+    if (
+        aligned
+        and aligned[
+            -1
+        ][
+            "end"
+        ]
+        > audio_end + 0.5
+    ):
+        scale = (
+            audio_end
+            / aligned[
+                -1
+            ][
+                "end"
+            ]
+        )
+
+        for item in aligned:
+            item[
+                "start"
+            ] *= scale
+
+            item[
+                "end"
+            ] *= scale
+
+    save_json(
+        ALIGNED_WORDS_FILE,
+        aligned,
+    )
+
+    return aligned
+
+
+def create_subtitle_groups(
+    words: list[dict[str, Any]],
+) -> list[list[int]]:
+    """Ekran genişliğine göre 1-3 kelimelik gruplar oluşturur."""
+    groups: list[
+        list[int]
+    ] = []
+
+    current: list[
+        int
+    ] = []
+
+    current_length = 0
+
+    for index, item in enumerate(
+        words
+    ):
+        word = clean(
+            item[
+                "word"
+            ]
+        )
+
+        added_length = len(
+            word
+        )
+
+        if current:
+            added_length += 1
+
+        should_break = (
+            current
+            and (
+                len(
+                    current
+                )
+                >= SUBTITLE_MAX_WORDS
+                or current_length
+                + added_length
+                > SUBTITLE_MAX_CHARACTERS
+            )
+        )
+
+        if should_break:
+            groups.append(
+                current
+            )
+
+            current = []
+            current_length = 0
+
+        current.append(
+            index
+        )
+
+        current_length += len(
+            word
+        )
+
+        if len(
+            current
+        ) > 1:
+            current_length += 1
+
+        if re.search(
+            r"[.!?…,:;]$",
+            word,
+        ):
+            groups.append(
+                current
+            )
+
+            current = []
+            current_length = 0
+
+    if current:
+        groups.append(
+            current
+        )
+
+    return groups
+
+
+def create_word_to_group_map(
+    groups: list[list[int]],
+) -> dict[int, list[int]]:
+    """Kelime indexinden subtitle grubuna harita oluşturur."""
+    result: dict[
+        int,
+        list[int]
+    ] = {}
+
+    for group in groups:
+        for index in group:
+            result[
+                index
+            ] = group
+
+    return result
+
+
+def subtitle_scale_for_group(
+    words: list[dict[str, Any]],
+    group: list[int],
+) -> int:
+    """Uzun gruplarda altyazıyı yatay küçültür."""
+    text = " ".join(
+        clean(
+            words[
+                index
+            ][
+                "word"
+            ]
+        )
+        for index in group
+    )
+
+    length = len(
+        text
+    )
+
+    if length <= 12:
+        return 100
+
+    if length <= 16:
+        return 96
+
+    if length <= 20:
+        return 91
+
+    return 86
+
+
+def all_emphasis_words(
+    scenes: list[Scene],
+) -> set[str]:
+    """Story Director emphasis kelimelerini toplar."""
+    output: set[
+        str
+    ] = set()
+
+    for scene in scenes:
+        for word in scene.emphasis_words:
+            normalized = normalize_alignment_word(
+                word
+            )
+
+            if normalized:
+                output.add(
+                    normalized
+                )
+
+    return output
+
+
+def ass_time(
+    seconds: float,
+) -> str:
+    """Saniyeyi ASS timestamp'e çevirir."""
+    centiseconds = round(
+        max(
+            seconds,
+            0.0,
+        )
+        * 100
+    )
+
+    hours, remainder = divmod(
+        centiseconds,
+        360000,
+    )
+
+    minutes, remainder = divmod(
+        remainder,
+        6000,
+    )
+
+    secs, cs = divmod(
+        remainder,
+        100,
+    )
+
+    return (
+        f"{hours}:"
+        f"{minutes:02d}:"
+        f"{secs:02d}."
+        f"{cs:02d}"
+    )
+
+
+def ass_escape(
+    text: str,
+) -> str:
+    """ASS özel karakterlerini temizler."""
+    return (
+        clean(
+            text
+        )
+        .replace(
+            "\\",
+            r"\\"
+        )
+        .replace(
+            "{",
+            "("
+        )
+        .replace(
+            "}",
+            ")"
+        )
+    )
+
+
+def subtitle_chunk(
+    words: list[dict[str, Any]],
+    active_index: int,
+    group_map: dict[int, list[int]],
+    emphasis: set[str],
+) -> str:
+    """Safe-zone sınırlarını aşmayan dinamik subtitle üretir."""
+    group = group_map.get(
+        active_index,
+        [
+            active_index
+        ],
+    )
+
+    group_scale = subtitle_scale_for_group(
+        words,
+        group,
+    )
+
+    output: list[
+        str
+    ] = []
+
+    for index in group:
+        raw_word = ass_escape(
+            words[
+                index
+            ][
+                "word"
+            ]
+        )
+
+        normalized = normalize_alignment_word(
+            raw_word
+        )
+
+        display_word = raw_word.upper()
+
+        if index == active_index:
+            active_scale = min(
+                112,
+                group_scale + 8,
+            )
+
+            if normalized in emphasis:
+                output.append(
+                    (
+                        r"{"
+                        rf"\1c&H0030D7FF&"
+                        rf"\fscx{active_scale}"
+                        rf"\fscy{active_scale}"
+                        r"\bord5\shad2\b1"
+                        r"}"
+                        + display_word
+                        + r"{\r}"
+                    )
+                )
+
+            else:
+                output.append(
+                    (
+                        r"{"
+                        rf"\1c&H0030D7FF&"
+                        rf"\fscx{active_scale}"
+                        rf"\fscy{active_scale}"
+                        r"\b1"
+                        r"}"
+                        + display_word
+                        + r"{\r}"
+                    )
+                )
+
+        else:
+            output.append(
+                (
+                    r"{"
+                    rf"\fscx{group_scale}"
+                    rf"\fscy{group_scale}"
+                    r"}"
+                    + display_word
+                    + r"{\r}"
+                )
+            )
+
+    return " ".join(
+        output
+    )
+
+
+def create_subtitles(
+    whisper_words: list[dict[str, Any]],
+    scenes: list[Scene],
+    narration: str,
+) -> None:
+    """Gerçek narration metninden güvenli altyazı oluşturur."""
+    words = align_narration_to_timestamps(
+        narration,
+        whisper_words,
+    )
+
+    groups = create_subtitle_groups(
+        words
+    )
+
+    group_map = create_word_to_group_map(
+        groups
+    )
+
+    emphasis = all_emphasis_words(
+        scenes
+    )
+
+    lines = [
+        "[Script Info]",
+        "ScriptType: v4.00+",
+        "PlayResX: 1080",
+        "PlayResY: 1920",
+        "WrapStyle: 0",
+        "ScaledBorderAndShadow: yes",
+        "",
+        "[V4+ Styles]",
+        (
+            "Format: Name,Fontname,Fontsize,PrimaryColour,"
+            "SecondaryColour,OutlineColour,BackColour,Bold,"
+            "Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,"
+            "Angle,BorderStyle,Outline,Shadow,Alignment,"
+            "MarginL,MarginR,MarginV,Encoding"
+        ),
+        (
+            f"Style: Main,DejaVu Sans,"
+            f"{SUBTITLE_BASE_FONT_SIZE},"
+            "&H00FFFFFF,&H00FFFFFF,"
+            "&H00121212,&H00000000,"
+            "-1,0,0,0,100,100,0,0,"
+            "1,5,2,2,"
+            f"{SUBTITLE_MARGIN_LEFT},"
+            f"{SUBTITLE_MARGIN_RIGHT},"
+            f"{SUBTITLE_MARGIN_BOTTOM},"
+            "1"
+        ),
+        "",
+        "[Events]",
+        (
+            "Format: Layer,Start,End,Style,Name,"
+            "MarginL,MarginR,MarginV,Effect,Text"
+        ),
+    ]
+
+    for index, word in enumerate(
+        words
+    ):
+        start = float(
+            word[
+                "start"
+            ]
+        )
+
+        end = max(
+            start + 0.05,
+            float(
+                word[
+                    "end"
+                ]
+            ),
+        )
+
+        text = subtitle_chunk(
+            words,
+            index,
+            group_map,
+            emphasis,
+        )
+
+        lines.append(
+            "Dialogue: 0,"
+            f"{ass_time(start)},"
+            f"{ass_time(end)},"
+            "Main,,0,0,0,,"
+            f"{text}"
+        )
+
+    SUBTITLE_FILE.write_text(
+        "\n".join(
+            lines
+        ),
+        encoding="utf-8",
+    )
 
 
 def get_ffmpeg() -> str:
@@ -2731,7 +3491,7 @@ def scene_durations(
 def motion_filter(
     motion: str,
 ) -> str:
-    """Sahneye uygun FFmpeg hareket filtresi üretir."""
+    """Sahneye uygun kamera hareketi filtresi üretir."""
     motions = {
         "slow_push": (
             "zoompan="
@@ -2796,240 +3556,13 @@ def motion_filter(
     )
 
 
-def ass_time(
-    seconds: float,
-) -> str:
-    """Saniyeyi ASS timestamp'e çevirir."""
-    centiseconds = round(
-        max(
-            seconds,
-            0.0,
-        )
-        * 100
-    )
-
-    hours, remainder = divmod(
-        centiseconds,
-        360000,
-    )
-
-    minutes, remainder = divmod(
-        remainder,
-        6000,
-    )
-
-    secs, cs = divmod(
-        remainder,
-        100,
-    )
-
-    return (
-        f"{hours}:"
-        f"{minutes:02d}:"
-        f"{secs:02d}."
-        f"{cs:02d}"
-    )
-
-
-def ass_escape(
-    text: str,
-) -> str:
-    """ASS metnini escape eder."""
-    return (
-        clean(
-            text
-        )
-        .replace(
-            "\\",
-            r"\\"
-        )
-        .replace(
-            "{",
-            "("
-        )
-        .replace(
-            "}",
-            ")"
-        )
-    )
-
-
-def all_emphasis_words(
-    scenes: list[Scene],
-) -> set[str]:
-    """Subtitle Director emphasis kelimelerini toplar."""
-    output: set[
-        str
-    ] = set()
-
-    for scene in scenes:
-        for word in scene.emphasis_words:
-            normalized = re.sub(
-                r"[^\w'-]",
-                "",
-                word.casefold(),
-                flags=re.UNICODE,
-            )
-
-            if normalized:
-                output.add(
-                    normalized
-                )
-
-    return output
-
-
-def subtitle_chunk(
-    words: list[dict[str, Any]],
-    active_index: int,
-    emphasis: set[str],
-) -> str:
-    """3 kelimelik dinamik altyazı parçası üretir."""
-    start = (
-        active_index
-        // SUBTITLE_WORD_COUNT
-        * SUBTITLE_WORD_COUNT
-    )
-
-    end = min(
-        len(
-            words
-        ),
-        start
-        + SUBTITLE_WORD_COUNT,
-    )
-
-    output = []
-
-    for index in range(
-        start,
-        end,
-    ):
-        raw_word = ass_escape(
-            words[
-                index
-            ][
-                "word"
-            ]
-        )
-
-        normalized = re.sub(
-            r"[^\w'-]",
-            "",
-            raw_word.casefold(),
-            flags=re.UNICODE,
-        )
-
-        display_word = raw_word.upper()
-
-        if index == active_index:
-            if normalized in emphasis:
-                output.append(
-                    r"{\1c&H0030D7FF&"
-                    r"\fscx122\fscy122"
-                    r"\bord5\shad2\b1}"
-                    + display_word
-                    + r"{\r}"
-                )
-
-            else:
-                output.append(
-                    r"{\1c&H0030D7FF&"
-                    r"\fscx114\fscy114\b1}"
-                    + display_word
-                    + r"{\r}"
-                )
-
-        else:
-            output.append(
-                display_word
-            )
-
-    return " ".join(
-        output
-    )
-
-
-def create_subtitles(
-    words: list[dict[str, Any]],
-    scenes: list[Scene],
-) -> None:
-    """Shorts/Reels safe-zone ASS altyazı oluşturur."""
-    emphasis = all_emphasis_words(
-        scenes
-    )
-
-    lines = [
-        "[Script Info]",
-        "ScriptType: v4.00+",
-        "PlayResX: 1080",
-        "PlayResY: 1920",
-        "WrapStyle: 2",
-        "ScaledBorderAndShadow: yes",
-        "",
-        "[V4+ Styles]",
-        (
-            "Format: Name,Fontname,Fontsize,PrimaryColour,"
-            "SecondaryColour,OutlineColour,BackColour,Bold,"
-            "Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,"
-            "Angle,BorderStyle,Outline,Shadow,Alignment,"
-            "MarginL,MarginR,MarginV,Encoding"
-        ),
-        (
-            "Style: Main,DejaVu Sans,62,"
-            "&H00FFFFFF,&H00FFFFFF,&H00121212,&H00000000,"
-            "-1,0,0,0,100,100,0.5,0,1,5,2,2,"
-            f"85,85,{SUBTITLE_MARGIN_BOTTOM},1"
-        ),
-        "",
-        "[Events]",
-        (
-            "Format: Layer,Start,End,Style,Name,"
-            "MarginL,MarginR,MarginV,Effect,Text"
-        ),
-    ]
-
-    for index, word in enumerate(
-        words
-    ):
-        start = float(
-            word[
-                "start"
-            ]
-        )
-
-        end = max(
-            start
-            + 0.04,
-            float(
-                word[
-                    "end"
-                ]
-            ),
-        )
-
-        lines.append(
-            "Dialogue: 0,"
-            f"{ass_time(start)},"
-            f"{ass_time(end)},"
-            "Main,,0,0,0,,"
-            f"{subtitle_chunk(words, index, emphasis)}"
-        )
-
-    SUBTITLE_FILE.write_text(
-        "\n".join(
-            lines
-        ),
-        encoding="utf-8",
-    )
-
-
 def render_video(
     scenes: list[Scene],
     audio_file: Path,
     words: list[dict[str, Any]],
+    narration: str,
 ) -> None:
-    """V2 final prototype videosunu render eder."""
+    """V2 videosunu render eder."""
     ffmpeg = get_ffmpeg()
 
     total_duration = get_audio_duration(
@@ -3130,7 +3663,10 @@ def render_video(
                     segment_file
                 ),
             ],
-            f"Scene {scene.scene_number} render başarısız.",
+            (
+                f"Scene {scene.scene_number} "
+                "render başarısız."
+            ),
         )
 
         segment_files.append(
@@ -3191,6 +3727,7 @@ def render_video(
     create_subtitles(
         words,
         scenes,
+        narration,
     )
 
     OUTPUT_VIDEO.unlink(
@@ -3199,7 +3736,8 @@ def render_video(
 
     subtitle_filter = (
         "ass="
-        + SUBTITLE_FILE.resolve().as_posix()
+        + SUBTITLE_FILE.resolve()
+        .as_posix()
         .replace(
             ":",
             r"\:",
@@ -3285,6 +3823,10 @@ def main() -> int:
     )
 
     print(
+        "Voice              : Gacrux LOCKED"
+    )
+
+    print(
         "Visual Director    : ON"
     )
 
@@ -3305,37 +3847,56 @@ def main() -> int:
 
     client = create_gemini_client()
 
-    print("[1/10] Deep research")
+    print(
+        "[1/10] Deep research"
+    )
+
     sources = research_event()
 
-    print("[2/10] Story Director")
+    print(
+        "[2/10] Story Director"
+    )
+
     storyboard = build_storyboard(
         client,
         sources,
     )
 
-    print("[3/10] Comic visual search")
+    print(
+        "[3/10] Comic visual search"
+    )
+
     image_results = image_search(
         storyboard
     )
 
-    print("[4/10] Download + deduplicate")
+    print(
+        "[4/10] Download + deduplicate"
+    )
+
     candidates = download_candidates(
         image_results
     )
 
     print(
-        f"✓ {len(candidates)} unique visual candidates"
+        f"✓ {len(candidates)} "
+        "unique visual candidates"
     )
 
-    print("[5/10] Visual Director ranking + panel crop")
+    print(
+        "[5/10] Visual Director ranking + panel crop"
+    )
+
     rankings = vision_rank_scenes(
         client,
         storyboard,
         candidates,
     )
 
-    print("[6/10] Build visual plan")
+    print(
+        "[6/10] Build visual plan"
+    )
+
     scenes = build_scene_objects(
         client,
         storyboard,
@@ -3349,7 +3910,10 @@ def main() -> int:
         f"{unique_visual_ratio(scenes):.0%}"
     )
 
-    print("[7/10] Supervising Director critique")
+    print(
+        "[7/10] Supervising Director critique"
+    )
+
     critique = critique_visuals(
         client,
         scenes,
@@ -3377,31 +3941,41 @@ def main() -> int:
         scenes
     )
 
-    print("[8/10] Voice Director + natural TTS")
+    print(
+        "[8/10] Voice Director + natural TTS"
+    )
+
     audio_file, narration = generate_voice(
         client,
         scenes,
         arguments.edge_voice,
     )
 
-    print("[9/10] Groq word alignment")
+    print(
+        "[9/10] Groq word alignment"
+    )
+
     words = groq_word_timestamps(
         audio_file,
         narration,
     )
 
-    print("[10/10] Subtitle Director + final render")
+    print(
+        "[10/10] Subtitle Director + final render"
+    )
+
     render_video(
         scenes,
         audio_file,
         words,
+        narration,
     )
 
     save_json(
         MANIFEST_FILE,
         {
             "created_at": datetime.now().isoformat(),
-            "version": "v2",
+            "version": "v2-subtitle-sync",
             "event": (
                 "Thor #6 (2020) - "
                 "Galactus / Black Winter"
@@ -3417,6 +3991,9 @@ def main() -> int:
                 if arguments.edge_voice
                 else GEMINI_TTS_VOICE
             ),
+            "voice_locked": (
+                not arguments.edge_voice
+            ),
             "ai_reconstruction": (
                 arguments.enable_ai_reconstruction
             ),
@@ -3428,6 +4005,12 @@ def main() -> int:
             "director_critique": critique,
             "scene_count": len(
                 scenes
+            ),
+            "subtitle_sync_source": (
+                "voice_director_narration"
+            ),
+            "subtitle_timing_source": (
+                "groq_whisper"
             ),
             "output": str(
                 OUTPUT_VIDEO
@@ -3453,18 +4036,15 @@ def main() -> int:
     )
 
     print(
+        f"Voice: {GEMINI_TTS_VOICE} (LOCKED)"
+    )
+
+    print(
         "YouTube: NOT UPLOADED"
     )
 
     print(
         "Instagram: NOT UPLOADED"
-    )
-
-    print()
-
-    print(
-        "Önce videoyu izle. "
-        "Kaliteyi beğenmeden production'a geçmeyeceğiz."
     )
 
     return 0
