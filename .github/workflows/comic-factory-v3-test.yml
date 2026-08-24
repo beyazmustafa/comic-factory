@@ -1,0 +1,98 @@
+# .github/workflows/comic-factory-v3-test.yml
+
+name: Comic Factory V3 Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      ai_reconstruction:
+        description: "Eksik sahnelerde AI reconstruction kullan"
+        required: false
+        default: true
+        type: boolean
+
+      max_images:
+        description: "Maksimum görsel adayı"
+        required: false
+        default: "36"
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: comic-factory-v3-test
+  cancel-in-progress: false
+
+jobs:
+  build-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: gemini-3.5-flash-lite
+
+      GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
+      GEMINI_TTS_VOICE: Gacrux
+
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_WHISPER_MODEL: whisper-large-v3-turbo
+
+      ENABLE_AI_RECONSTRUCTION: "1"
+      MAX_AI_RECONSTRUCTIONS: "4"
+
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Download project
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Comic Factory V3
+        shell: bash
+        run: |
+          ARGS="--max-images ${{ inputs.max_images }}"
+
+          if [ "${{ inputs.ai_reconstruction }}" != "true" ]; then
+            ARGS="$ARGS --disable-ai-reconstruction"
+          fi
+
+          echo "Running:"
+          echo "python comic_factory_v3.py $ARGS"
+
+          python comic_factory_v3.py $ARGS
+
+      - name: Verify V3 video
+        if: success()
+        run: |
+          test -f data/videos/latest.mp4
+          ls -lh data/videos/latest.mp4
+
+          echo "Comic Factory V3 video hazır."
+
+      - name: Upload V3 result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comic-factory-v3-test
+          path: |
+            data/videos/latest.mp4
+            data/scripts/latest.json
+            data/scripts/storyboard.json
+            data/audio/aligned_subtitle_words.json
+            data/events/active_event.json
+            data/video_work/contact_sheet.jpg
+            data/video_work/director_critique.json
+            assets/comic_pages/**/visual_manifest.json
+          if-no-files-found: warn
+          retention-days: 7
