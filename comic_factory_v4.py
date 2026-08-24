@@ -1273,12 +1273,15 @@ def load_active_event() -> dict[str, Any]:
     return event
 
 
+# comic_factory_v4.py
+
+
 def generate_storyboard(
     client: genai.Client,
     event: dict[str, Any],
     feedback: str,
 ) -> dict[str, Any]:
-    """14 sahnelik storyboard üretir."""
+    """14 sahnelik storyboard üretir; yapısal hataları repair döngüsüne bırakır."""
     sources = "\n".join(
         (
             f"- {clean(item.get('name'))}: "
@@ -1325,9 +1328,15 @@ KAYNAKLAR:
 ÖNCEKİ REPAIR FEEDBACK:
 {feedback or "İlk üretim."}
 
-TAM {SCENE_COUNT} sahne oluştur.
+ÇOK KRİTİK YAPISAL KURAL:
+- TAM OLARAK {SCENE_COUNT} SAHNE ÜRET.
+- 13 sahne üretme.
+- 15 sahne üretme.
+- Sahne numaraları 1'den {SCENE_COUNT}'e kadar kesintisiz olsun.
+- Her scene_number yalnızca bir kez bulunsun.
+- JSON dışında hiçbir şey yazma.
 
-Kurallar:
+İÇERİK KURALLARI:
 - Toplam 120-150 Türkçe kelime.
 - İlk iki sahne güçlü hook.
 - Her sahne yeni bilgi getirir.
@@ -1344,7 +1353,8 @@ Kurallar:
   hook / context / escalation / twist / payoff / cta
 - emphasis_words 0-3 kelime.
 
-SADECE JSON:
+SADECE BU JSON ŞEMASI:
+
 {{
   "title": "...",
   "description": "...",
@@ -1364,7 +1374,7 @@ SADECE JSON:
     storyboard = ask_gemini_json(
         client,
         prompt,
-        temperature=0.52,
+        temperature=0.45,
         operation_name="Story Director",
     )
 
@@ -1373,98 +1383,156 @@ SADECE JSON:
         [],
     )
 
-    if (
-        not isinstance(
-            scenes,
-            list,
-        )
-        or len(
-            scenes
-        )
-        != SCENE_COUNT
+    if not isinstance(
+        scenes,
+        list,
     ):
-        raise ComicFactoryError(
-            f"Storyboard tam "
-            f"{SCENE_COUNT} sahne üretmedi."
+        storyboard[
+            "_structure_valid"
+        ] = False
+
+        storyboard[
+            "_structure_error"
+        ] = (
+            "scenes alanı liste değil."
+        )
+
+        storyboard[
+            "_scene_count"
+        ] = 0
+
+        return storyboard
+
+    scene_count = len(
+        scenes
+    )
+
+    storyboard[
+        "_scene_count"
+    ] = scene_count
+
+    scene_numbers: list[int] = []
+
+    for scene in scenes:
+        if not isinstance(
+            scene,
+            dict,
+        ):
+            continue
+
+        try:
+            scene_numbers.append(
+                int(
+                    scene.get(
+                        "scene_number",
+                        0,
+                    )
+                )
+            )
+
+        except (
+            TypeError,
+            ValueError,
+        ):
+            continue
+
+    expected_numbers = list(
+        range(
+            1,
+            SCENE_COUNT + 1,
+        )
+    )
+
+    structure_valid = (
+        scene_count == SCENE_COUNT
+        and scene_numbers == expected_numbers
+    )
+
+    storyboard[
+        "_structure_valid"
+    ] = structure_valid
+
+    if not structure_valid:
+        problems: list[str] = []
+
+        if scene_count != SCENE_COUNT:
+            problems.append(
+                f"TAM {SCENE_COUNT} sahne gerekli, "
+                f"{scene_count} sahne üretildi."
+            )
+
+        if scene_numbers != expected_numbers:
+            problems.append(
+                "scene_number sırası hatalı. "
+                f"Beklenen: {expected_numbers}. "
+                f"Gelen: {scene_numbers}."
+            )
+
+        storyboard[
+            "_structure_error"
+        ] = " ".join(
+            problems
+        )
+
+        return storyboard
+
+    narration_parts: list[str] = []
+
+    for scene in scenes:
+        narration = clean(
+            scene.get(
+                "narration"
+            )
+        )
+
+        visual_description = clean(
+            scene.get(
+                "visual_description"
+            )
+        )
+
+        story_role = clean(
+            scene.get(
+                "story_role"
+            )
+        )
+
+        if (
+            not narration
+            or not visual_description
+            or not story_role
+        ):
+            storyboard[
+                "_structure_valid"
+            ] = False
+
+            storyboard[
+                "_structure_error"
+            ] = (
+                "En az bir sahnede narration, "
+                "visual_description veya story_role eksik."
+            )
+
+            return storyboard
+
+        narration_parts.append(
+            narration
         )
 
     storyboard[
         "narration"
     ] = " ".join(
-        clean(
-            scene.get(
-                "narration"
-            )
-        )
-        for scene in scenes
+        narration_parts
     )
 
     return storyboard
-
-
-def score_storyboard(
-    client: genai.Client,
-    event: dict[str, Any],
-    storyboard: dict[str, Any],
-) -> dict[str, Any]:
-    """Story kalite puanı üretir."""
-    prompt = f"""
-Premium Shorts supervising story editor'sın.
-
-EVENT:
-{clean(event.get("event_title"))}
-
-SCENES:
-{json.dumps(
-    storyboard.get("scenes", []),
-    ensure_ascii=False,
-    indent=2,
-)}
-
-0-100 değerlendir:
-- hook
-- clarity
-- escalation
-- payoff
-- factual_discipline
-- visual_storytelling
-- retention
-- overall
-
-Kritik:
-- Aynı bilgi tekrar etmemeli.
-- Her narration tek görsel an taşımalı.
-- visual_description narration ile birebir uyuşmalı.
-- Final gerçek payoff taşımalı.
-
-SADECE JSON:
-{{
-  "hook": 0,
-  "clarity": 0,
-  "escalation": 0,
-  "payoff": 0,
-  "factual_discipline": 0,
-  "visual_storytelling": 0,
-  "retention": 0,
-  "overall": 0,
-  "problems": ["..."],
-  "revision_instruction": "..."
-}}
-"""
-
-    return ask_gemini_json(
-        client,
-        prompt,
-        temperature=0.10,
-        operation_name="Story Quality Check",
-    )
 
 
 def build_quality_storyboard(
     client: genai.Client,
     event: dict[str, Any],
 ) -> dict[str, Any]:
-    """Story checkpoint geçene kadar revize eder."""
+    """Story checkpoint geçene kadar yapısal ve içeriksel sorunları tamir eder."""
     print()
     print("=" * 78)
     print("2/13 - STORY REPAIR LOOP")
@@ -1476,11 +1544,71 @@ def build_quality_storyboard(
     while checkpoint_cycle_allowed(
         cycle
     ):
+        print()
+        print(
+            f"→ Story repair cycle {cycle}"
+        )
+
         storyboard = generate_storyboard(
             client,
             event,
             feedback,
         )
+
+        structure_valid = bool(
+            storyboard.get(
+                "_structure_valid",
+                False,
+            )
+        )
+
+        if not structure_valid:
+            scene_count = int(
+                storyboard.get(
+                    "_scene_count",
+                    0,
+                )
+                or 0
+            )
+
+            structure_error = clean(
+                storyboard.get(
+                    "_structure_error"
+                )
+            )
+
+            CHECKPOINTS.record(
+                name="story_structure",
+                score=0.0,
+                threshold=100.0,
+                cycle=cycle,
+                details=(
+                    structure_error
+                    or (
+                        f"Beklenen {SCENE_COUNT} sahne, "
+                        f"gelen {scene_count}."
+                    )
+                ),
+                passed=False,
+            )
+
+            feedback = (
+                "ÖNCEKİ CEVAP YAPISAL CHECKPOINT'TEN GEÇMEDİ. "
+                f"{structure_error} "
+                f"TAM OLARAK {SCENE_COUNT} sahne üret. "
+                f"scene_number değerleri 1-{SCENE_COUNT} "
+                "arasında kesintisiz ve sıralı olsun. "
+                "Hiçbir sahneyi atlama veya fazladan sahne ekleme. "
+                "İçerik kalitesini de önceki sürümden düşürme."
+            )
+
+            print(
+                "↻ Story structure başarısız. "
+                "Aynı checkpoint yeniden çalıştırılıyor."
+            )
+
+            cycle += 1
+            continue
 
         review = score_storyboard(
             client,
@@ -1504,6 +1632,9 @@ def build_quality_storyboard(
                 "problems",
                 [],
             )
+            if clean(
+                value
+            )
         )
 
         passed = CHECKPOINTS.record(
@@ -1515,25 +1646,62 @@ def build_quality_storyboard(
         )
 
         if passed:
+            storyboard.pop(
+                "_structure_valid",
+                None,
+            )
+
+            storyboard.pop(
+                "_structure_error",
+                None,
+            )
+
+            storyboard.pop(
+                "_scene_count",
+                None,
+            )
+
             save_json(
                 SCRIPT_DIR
                 / "storyboard_v4.json",
                 storyboard,
             )
 
+            print()
+            print(
+                f"✓ Story checkpoint PASS: "
+                f"{score:.2f}/100"
+            )
+
+            print(
+                f"✓ Scene count: {SCENE_COUNT}/{SCENE_COUNT}"
+            )
+
             return storyboard
 
-        feedback = clean(
+        revision_instruction = clean(
             review.get(
                 "revision_instruction"
             )
         )
 
-        if not feedback:
-            feedback = (
-                "Önceki sürümü baştan değerlendir. "
-                "En düşük puanlı alanları geliştir."
-            )
+        feedback = (
+            f"ÖNCEKİ STORY QUALITY SCORE: "
+            f"{score:.2f}/100. "
+            f"Minimum gerekli: {STORY_THRESHOLD:.2f}/100. "
+            f"Problemler: {problems or 'Belirtilmedi.'} "
+            f"Director repair instruction: "
+            f"{revision_instruction or 'Zayıf alanları geliştir.'} "
+            f"TAM {SCENE_COUNT} SAHNEYİ KORU. "
+            "İyi çalışan sahneleri gereksiz değiştirme. "
+            "Yalnız düşük puana neden olan bölümleri iyileştir. "
+            "Narration ile visual_description birebir eşleşsin."
+        )
+
+        print(
+            "↻ Story quality threshold altında. "
+            "Düzeltilip aynı checkpoint'e dönülüyor."
+        )
 
         cycle += 1
 
