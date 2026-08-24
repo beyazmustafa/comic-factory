@@ -1,13 +1,16 @@
-google-genai
-groq
-edge-tts
-ddgs
-python-dotenv
-requests
-Pillow
-imageio-ffmpeg
-google-api-python-client
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
-cloudinary
+# requirements.txt
+
+ddgs>=9.0.0
+edge-tts>=7.0.0
+google-genai>=1.0.0
+groq>=0.30.0
+imageio-ffmpeg>=0.6.0
+Pillow>=11.0.0
+python-dotenv>=1.0.0
+requests>=2.32.0
+tzdata>=2025.1
+
+# YouTube uploader
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.0
+google-api-python-client>=2.150.0
