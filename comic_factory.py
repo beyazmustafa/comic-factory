@@ -4387,34 +4387,79 @@ def select_factory_event(
     reuse_active: bool,
     count: int,
 ) -> dict[str, Any]:
-    """Select an event using the original Comic Factory research engine."""
+    """Orijinal Comic Factory araştırma motoruyla event seçer."""
     import importlib.util
 
-    module_path = ROOT / "comic_factory_event_source.py"
+    module_path = (
+        ROOT
+        / "comic_factory_event_source.py"
+    )
+
     if not module_path.exists():
         raise PrototypeError(
             "comic_factory_event_source.py bulunamadı. "
             "Bu dosya comic_factory.py ile aynı klasörde olmalı."
         )
 
-    spec = importlib.util.spec_from_file_location(
-        "comic_factory_event_source",
-        module_path,
+    module_name = (
+        "comic_factory_event_source"
     )
-    if spec is None or spec.loader is None:
-        raise PrototypeError("Event source modülü yüklenemedi.")
 
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    spec = (
+        importlib.util.spec_from_file_location(
+            module_name,
+            module_path,
+        )
+    )
+
+    if (
+        spec is None
+        or spec.loader is None
+    ):
+        raise PrototypeError(
+            "Event source modülü yüklenemedi."
+        )
+
+    module = (
+        importlib.util.module_from_spec(
+            spec
+        )
+    )
+
+    sys.modules[
+        module_name
+    ] = module
+
+    try:
+        spec.loader.exec_module(
+            module
+        )
+
+    except Exception:
+        sys.modules.pop(
+            module_name,
+            None,
+        )
+        raise
 
     if reuse_active:
         return module.load_active_event()
 
     client = module.gemini_client()
-    events = module.research_events(client, count)
+
+    events = module.research_events(
+        client,
+        count,
+    )
+
     if not events:
-        raise PrototypeError("Comic Factory event bulamadı.")
-    return module.activate_event(events[0])
+        raise PrototypeError(
+            "Comic Factory event bulamadı."
+        )
+
+    return module.activate_event(
+        events[0]
+    )
 
 
 def main() -> int:
