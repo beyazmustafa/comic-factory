@@ -6,8 +6,14 @@ on:
   workflow_dispatch:
 
   schedule:
+    # Turkey: 09:13
     - cron: "13 6 * * *"
-    - cron: "13 14 * * *"
+
+    # Turkey: 15:13
+    - cron: "13 12 * * *"
+
+    # Turkey: 21:13
+    - cron: "13 18 * * *"
 
 permissions:
   contents: read
@@ -87,7 +93,7 @@ jobs:
           print("YouTube credential dosyaları hazır.")
           PY
 
-      - name: Create video and upload to YouTube
+      - name: Create video and publish to YouTube
         run: |
           python comic_factory.py --upload
 
