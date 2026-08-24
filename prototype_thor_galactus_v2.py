@@ -17,7 +17,7 @@ from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-
+import random
 import edge_tts
 import imageio_ffmpeg
 import requests
@@ -353,7 +353,111 @@ def create_gemini_client() -> genai.Client:
         )
     )
 
+def is_retryable_gemini_error(error: Exception) -> bool:
+    """Geçici Gemini API hatalarının tekrar denenebilir olup olmadığını belirler."""
+    message = str(error).casefold()
 
+    retryable_terms = (
+        "503",
+        "unavailable",
+        "high demand",
+        "temporarily unavailable",
+        "429",
+        "resource_exhausted",
+        "rate limit",
+        "too many requests",
+        "timeout",
+        "timed out",
+        "connection reset",
+        "connection aborted",
+        "service unavailable",
+    )
+
+    return any(
+        term in message
+        for term in retryable_terms
+    )
+
+
+def gemini_with_retry(
+    operation: Any,
+    *,
+    operation_name: str,
+    max_attempts: int = 5,
+) -> Any:
+    """Geçici Gemini hatalarında exponential backoff ile işlemi tekrar dener."""
+    delays = (
+        10,
+        20,
+        40,
+        60,
+    )
+
+    last_error: Exception | None = None
+
+    for attempt in range(
+        1,
+        max_attempts + 1,
+    ):
+        try:
+            if attempt > 1:
+                print(
+                    f"→ {operation_name}: "
+                    f"{attempt}/{max_attempts}. deneme"
+                )
+
+            return operation()
+
+        except Exception as error:
+            last_error = error
+
+            if not is_retryable_gemini_error(
+                error
+            ):
+                raise
+
+            if attempt >= max_attempts:
+                break
+
+            base_delay = delays[
+                min(
+                    attempt - 1,
+                    len(delays) - 1,
+                )
+            ]
+
+            jitter = random.uniform(
+                0.0,
+                3.0,
+            )
+
+            wait_seconds = (
+                base_delay
+                + jitter
+            )
+
+            print()
+            print(
+                f"! {operation_name} geçici hata verdi:"
+            )
+            print(
+                f"  {type(error).__name__}: {error}"
+            )
+            print(
+                f"  {wait_seconds:.1f} saniye sonra tekrar denenecek."
+            )
+            print()
+
+            time.sleep(
+                wait_seconds
+            )
+
+    raise PrototypeError(
+        f"{operation_name} "
+        f"{max_attempts} denemeden sonra başarısız oldu: "
+        f"{last_error}"
+    )
+    
 def ask_json(
     client: genai.Client,
     prompt: str,
