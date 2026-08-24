@@ -1,12 +1,12 @@
-﻿# superhero-shorts/youtube_uploader.py
-
+# youtube_uploader.py
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import os
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -34,14 +34,6 @@ UPLOAD_HISTORY_FILE = YOUTUBE_DIRECTORY / "upload_history.json"
 
 ISTANBUL_TIMEZONE = ZoneInfo("Europe/Istanbul")
 
-DAILY_UPLOAD_TIMES = (
-    (12, 0),
-    (20, 0),
-)
-
-MAX_LOOKAHEAD_DAYS = 365
-MAX_CHANNEL_VIDEOS = 200
-
 CATEGORY_ID = "24"
 
 SCOPES = [
@@ -51,22 +43,22 @@ SCOPES = [
 
 
 class YouTubeUploaderError(RuntimeError):
-    """YouTube yükleme veya planlama hatası."""
+    """YouTube yükleme işlemi başarısız olduğunda oluşur."""
 
 
 def parse_arguments() -> argparse.Namespace:
     """Komut satırı seçeneklerini okur."""
     parser = argparse.ArgumentParser(
         description=(
-            "Comic Shorts videosunu Türkiye saatiyle "
-            "12:00 / 20:00 slotlarına planlar."
+            "Comic Factory videosunu YouTube Shorts'a "
+            "hemen public olarak yükler."
         )
     )
 
     parser.add_argument(
-        "--check-slot",
+        "--check",
         action="store_true",
-        help="Sadece ilk boş slotu kontrol eder.",
+        help="Bağlantıyı kontrol eder, video yüklemez.",
     )
 
     parser.add_argument(
@@ -118,7 +110,11 @@ def save_json(
         exist_ok=True,
     )
 
-    with file_path.open(
+    temporary_file = file_path.with_suffix(
+        file_path.suffix + ".tmp"
+    )
+
+    with temporary_file.open(
         "w",
         encoding="utf-8",
     ) as file:
@@ -129,25 +125,48 @@ def save_json(
             indent=2,
         )
 
+    temporary_file.replace(
+        file_path
+    )
+
 
 def validate_google_files() -> None:
-    """Google OAuth dosyalarını kontrol eder."""
+    """Google OAuth dosyalarının varlığını kontrol eder."""
     if not CLIENT_SECRET_FILE.exists():
         raise YouTubeUploaderError(
             "client_secret.json bulunamadı."
+        )
+
+    if (
+        os.getenv("CI")
+        and not TOKEN_FILE.exists()
+    ):
+        raise YouTubeUploaderError(
+            "GitHub Actions içinde token.json bulunamadı."
         )
 
 
 def credentials_have_scopes(
     credentials: Credentials,
 ) -> bool:
-    """Tokenın gerekli YouTube yetkilerine sahip olduğunu kontrol eder."""
+    """OAuth tokenının gerekli yetkilere sahip olduğunu kontrol eder."""
     try:
         return credentials.has_scopes(
             SCOPES
         )
+
     except Exception:
         return False
+
+
+def save_credentials(
+    credentials: Credentials,
+) -> None:
+    """OAuth tokenını kaydeder."""
+    TOKEN_FILE.write_text(
+        credentials.to_json(),
+        encoding="utf-8",
+    )
 
 
 def load_credentials() -> Credentials:
@@ -158,17 +177,22 @@ def load_credentials() -> Credentials:
 
     if TOKEN_FILE.exists():
         try:
-            credentials = Credentials.from_authorized_user_file(
-                str(TOKEN_FILE),
-                SCOPES,
+            credentials = (
+                Credentials.from_authorized_user_file(
+                    str(TOKEN_FILE),
+                    SCOPES,
+                )
             )
+
         except Exception:
             credentials = None
 
     if (
         credentials
         and credentials.valid
-        and credentials_have_scopes(credentials)
+        and credentials_have_scopes(
+            credentials
+        )
     ):
         return credentials
 
@@ -176,27 +200,41 @@ def load_credentials() -> Credentials:
         credentials
         and credentials.expired
         and credentials.refresh_token
-        and credentials_have_scopes(credentials)
+        and credentials_have_scopes(
+            credentials
+        )
     ):
         try:
             credentials.refresh(
                 Request()
             )
 
-            TOKEN_FILE.write_text(
-                credentials.to_json(),
-                encoding="utf-8",
+            save_credentials(
+                credentials
             )
 
             return credentials
 
-        except RefreshError:
+        except RefreshError as error:
+            if os.getenv("CI"):
+                raise YouTubeUploaderError(
+                    "YouTube OAuth token yenilenemedi. "
+                    "Yerel bilgisayarda tekrar yetkilendirip "
+                    "YOUTUBE_TOKEN_B64 secretını güncelle."
+                ) from error
+
             credentials = None
+
+    if os.getenv("CI"):
+        raise YouTubeUploaderError(
+            "GitHub Actions içinde geçerli YouTube "
+            "OAuth tokenı bulunamadı."
+        )
 
     print()
     print(
         "Google YouTube yetkisi gerekiyor. "
-        "Tarayıcı birazdan açılacak."
+        "Tarayıcı açılacak."
     )
     print()
 
@@ -213,13 +251,12 @@ def load_credentials() -> Credentials:
         ),
         success_message=(
             "YouTube bağlantısı başarılı. "
-            "Bu tarayıcı sekmesini kapatabilirsin."
+            "Bu sekmeyi kapatabilirsin."
         ),
     )
 
-    TOKEN_FILE.write_text(
-        credentials.to_json(),
-        encoding="utf-8",
+    save_credentials(
+        credentials
     )
 
     return credentials
@@ -237,43 +274,12 @@ def create_youtube_client() -> Any:
     )
 
 
-def parse_youtube_datetime(
-    value: str,
-) -> datetime | None:
-    """YouTube tarihini datetime nesnesine çevirir."""
-    value = clean_text(value)
-
-    if not value:
-        return None
-
-    try:
-        if value.endswith("Z"):
-            value = (
-                value[:-1]
-                + "+00:00"
-            )
-
-        result = datetime.fromisoformat(
-            value
-        )
-
-        if result.tzinfo is None:
-            result = result.replace(
-                tzinfo=timezone.utc
-            )
-
-        return result
-
-    except ValueError:
-        return None
-
-
 def get_channel_info(
     youtube: Any,
 ) -> dict[str, str]:
-    """Bağlı kanalın temel bilgilerini döndürür."""
+    """Bağlı YouTube kanalının temel bilgilerini döndürür."""
     response = youtube.channels().list(
-        part="snippet,contentDetails",
+        part="snippet",
         mine=True,
     ).execute()
 
@@ -288,26 +294,6 @@ def get_channel_info(
         )
 
     item = items[0]
-
-    playlist_id = (
-        item.get(
-            "contentDetails",
-            {},
-        )
-        .get(
-            "relatedPlaylists",
-            {},
-        )
-        .get(
-            "uploads",
-            "",
-        )
-    )
-
-    if not playlist_id:
-        raise YouTubeUploaderError(
-            "Uploads playlist bulunamadı."
-        )
 
     return {
         "channel_id": clean_text(
@@ -325,284 +311,7 @@ def get_channel_info(
                 "",
             )
         ),
-        "uploads_playlist_id": playlist_id,
     }
-
-
-def get_recent_video_ids(
-    youtube: Any,
-    playlist_id: str,
-) -> list[str]:
-    """Kanalın son yüklediği video ID'lerini toplar."""
-    video_ids: list[str] = []
-    page_token: str | None = None
-
-    while len(video_ids) < MAX_CHANNEL_VIDEOS:
-        response = youtube.playlistItems().list(
-            part="contentDetails",
-            playlistId=playlist_id,
-            maxResults=50,
-            pageToken=page_token,
-        ).execute()
-
-        for item in response.get(
-            "items",
-            [],
-        ):
-            video_id = clean_text(
-                item.get(
-                    "contentDetails",
-                    {},
-                ).get(
-                    "videoId",
-                    "",
-                )
-            )
-
-            if video_id:
-                video_ids.append(
-                    video_id
-                )
-
-            if len(video_ids) >= MAX_CHANNEL_VIDEOS:
-                break
-
-        page_token = response.get(
-            "nextPageToken"
-        )
-
-        if not page_token:
-            break
-
-    return video_ids
-
-
-def chunk_list(
-    values: list[str],
-    size: int,
-) -> list[list[str]]:
-    """Listeyi küçük gruplara böler."""
-    return [
-        values[
-            index:index + size
-        ]
-        for index in range(
-            0,
-            len(values),
-            size,
-        )
-    ]
-
-
-def get_future_scheduled_videos(
-    youtube: Any,
-    video_ids: list[str],
-) -> list[dict[str, Any]]:
-    """Geleceğe planlanmış videoları bulur."""
-    now_utc = datetime.now(
-        timezone.utc
-    )
-
-    scheduled: list[
-        dict[str, Any]
-    ] = []
-
-    for video_group in chunk_list(
-        video_ids,
-        50,
-    ):
-        if not video_group:
-            continue
-
-        response = youtube.videos().list(
-            part="snippet,status",
-            id=",".join(
-                video_group
-            ),
-        ).execute()
-
-        for item in response.get(
-            "items",
-            [],
-        ):
-            status = item.get(
-                "status",
-                {},
-            )
-
-            publish_at = parse_youtube_datetime(
-                status.get(
-                    "publishAt",
-                    "",
-                )
-            )
-
-            if publish_at is None:
-                continue
-
-            if publish_at <= now_utc:
-                continue
-
-            scheduled.append(
-                {
-                    "video_id": clean_text(
-                        item.get(
-                            "id",
-                            "",
-                        )
-                    ),
-                    "title": clean_text(
-                        item.get(
-                            "snippet",
-                            {},
-                        ).get(
-                            "title",
-                            "",
-                        )
-                    ),
-                    "publish_at_utc": publish_at,
-                    "publish_at_local": publish_at.astimezone(
-                        ISTANBUL_TIMEZONE
-                    ),
-                }
-            )
-
-    scheduled.sort(
-        key=lambda item: item[
-            "publish_at_utc"
-        ]
-    )
-
-    return scheduled
-
-
-def slot_is_occupied(
-    slot: datetime,
-    scheduled_videos: list[dict[str, Any]],
-) -> bool:
-    """Slotun dolu olup olmadığını kontrol eder."""
-    for video in scheduled_videos:
-        scheduled_time = video[
-            "publish_at_local"
-        ]
-
-        difference_seconds = abs(
-            (
-                scheduled_time
-                - slot
-            ).total_seconds()
-        )
-
-        if difference_seconds < 60:
-            return True
-
-    return False
-
-
-def find_next_slot(
-    scheduled_videos: list[dict[str, Any]],
-) -> datetime:
-    """İlk boş Türkiye 12:00 / 20:00 slotunu bulur."""
-    now = datetime.now(
-        ISTANBUL_TIMEZONE
-    )
-
-    for day_offset in range(
-        MAX_LOOKAHEAD_DAYS
-    ):
-        target_date = (
-            now.date()
-            + timedelta(
-                days=day_offset
-            )
-        )
-
-        for hour, minute in DAILY_UPLOAD_TIMES:
-            slot = datetime(
-                year=target_date.year,
-                month=target_date.month,
-                day=target_date.day,
-                hour=hour,
-                minute=minute,
-                second=0,
-                tzinfo=ISTANBUL_TIMEZONE,
-            )
-
-            if slot <= now:
-                continue
-
-            if slot_is_occupied(
-                slot,
-                scheduled_videos,
-            ):
-                continue
-
-            return slot
-
-    raise YouTubeUploaderError(
-        "365 gün içinde boş slot bulunamadı."
-    )
-
-
-def print_slot_result(
-    channel_info: dict[str, str],
-    scheduled_videos: list[dict[str, Any]],
-    next_slot: datetime,
-) -> None:
-    """Slot sonucunu terminale yazdırır."""
-    print()
-    print("=" * 78)
-    print("YOUTUBE - PLANLI YAYIN SLOT KONTROLÜ")
-    print("=" * 78)
-    print()
-    print(
-        "Kanal: "
-        + channel_info[
-            "channel_title"
-        ]
-    )
-    print()
-
-    if scheduled_videos:
-        print(
-            "Gelecekte planlanmış videolar:"
-        )
-        print()
-
-        for video in scheduled_videos:
-            local_time = video[
-                "publish_at_local"
-            ]
-
-            line = (
-                "- "
-                + local_time.strftime(
-                    "%d.%m.%Y %H:%M"
-                )
-                + " | "
-                + video[
-                    "title"
-                ]
-            )
-
-            print(line)
-
-    else:
-        print(
-            "Gelecekte planlanmış video bulunamadı."
-        )
-
-    print()
-    print(
-        "SONRAKİ BOŞ SLOT:"
-    )
-    print(
-        next_slot.strftime(
-            "%d.%m.%Y %H:%M"
-        )
-        + " Türkiye"
-    )
-    print()
 
 
 def load_video_metadata() -> tuple[
@@ -620,7 +329,7 @@ def load_video_metadata() -> tuple[
         dict,
     ):
         raise YouTubeUploaderError(
-            "data\\scripts\\latest.json bulunamadı."
+            r"data\scripts\latest.json bulunamadı."
         )
 
     script = payload.get(
@@ -680,6 +389,19 @@ def load_video_metadata() -> tuple[
                     tag
                 )
 
+    shorts_tags = [
+        "shorts",
+        "comic",
+        "comics",
+        "çizgi roman",
+    ]
+
+    for tag in shorts_tags:
+        if tag not in tags:
+            tags.append(
+                tag
+            )
+
     if not title:
         raise YouTubeUploaderError(
             "Video başlığı bulunamadı."
@@ -707,7 +429,12 @@ def calculate_video_hash() -> str:
     """latest.mp4 SHA256 değerini hesaplar."""
     if not VIDEO_FILE.exists():
         raise YouTubeUploaderError(
-            "data\\videos\\latest.mp4 bulunamadı."
+            r"data\videos\latest.mp4 bulunamadı."
+        )
+
+    if VIDEO_FILE.stat().st_size == 0:
+        raise YouTubeUploaderError(
+            "latest.mp4 boş."
         )
 
     digest = hashlib.sha256()
@@ -715,14 +442,9 @@ def calculate_video_hash() -> str:
     with VIDEO_FILE.open(
         "rb"
     ) as file:
-        while True:
-            block = file.read(
-                1024 * 1024
-            )
-
-            if not block:
-                break
-
+        while block := file.read(
+            1024 * 1024
+        ):
             digest.update(
                 block
             )
@@ -731,7 +453,7 @@ def calculate_video_hash() -> str:
 
 
 def load_history() -> dict[str, Any]:
-    """Yerel upload geçmişini yükler."""
+    """YouTube upload geçmişini yükler."""
     payload = load_json(
         UPLOAD_HISTORY_FILE,
         default={
@@ -763,7 +485,7 @@ def load_history() -> dict[str, Any]:
 def find_previous_upload(
     video_hash: str,
 ) -> dict[str, Any] | None:
-    """Aynı dosyanın daha önce yüklenip yüklenmediğini kontrol eder."""
+    """Aynı videonun daha önce yüklenip yüklenmediğini kontrol eder."""
     history = load_history()
 
     for upload in history[
@@ -790,49 +512,45 @@ def save_upload_history(
     video_hash: str,
     video_id: str,
     title: str,
-    slot: datetime,
 ) -> None:
-    """Başarılı upload bilgisini kaydeder."""
+    """Başarılı yüklemeyi geçmişe kaydeder."""
     history = load_history()
 
-    history[
-        "uploads"
-    ].append(
+    uploads = history.setdefault(
+        "uploads",
+        [],
+    )
+
+    if not isinstance(
+        uploads,
+        list,
+    ):
+        uploads = []
+        history[
+            "uploads"
+        ] = uploads
+
+    uploads.append(
         {
             "video_sha256": video_hash,
             "video_id": video_id,
             "title": title,
-            "publish_at": slot.isoformat(),
+            "privacy_status": "public",
             "uploaded_at": datetime.now(
                 ISTANBUL_TIMEZONE
             ).isoformat(),
         }
     )
 
+    history[
+        "uploads"
+    ] = uploads[
+        -200:
+    ]
+
     save_json(
         UPLOAD_HISTORY_FILE,
         history,
-    )
-
-
-def to_rfc3339_utc(
-    local_datetime: datetime,
-) -> str:
-    """Yerel tarihi YouTube publishAt formatına dönüştürür."""
-    utc_datetime = local_datetime.astimezone(
-        timezone.utc
-    )
-
-    return (
-        utc_datetime
-        .replace(
-            microsecond=0
-        )
-        .isoformat()
-        .replace(
-            "+00:00",
-            "Z",
-        )
     )
 
 
@@ -841,9 +559,8 @@ def upload_video(
     title: str,
     description: str,
     tags: list[str],
-    slot: datetime,
 ) -> str:
-    """Video dosyasını planlı olarak YouTube'a yükler."""
+    """Videoyu YouTube'a hemen public olarak yükler."""
     if not VIDEO_FILE.exists():
         raise YouTubeUploaderError(
             "latest.mp4 bulunamadı."
@@ -860,21 +577,22 @@ def upload_video(
     if tags:
         snippet[
             "tags"
-        ] = tags[:25]
+        ] = tags[
+            :25
+        ]
 
     body = {
         "snippet": snippet,
         "status": {
-            "privacyStatus": "private",
-            "publishAt": to_rfc3339_utc(
-                slot
-            ),
+            "privacyStatus": "public",
             "selfDeclaredMadeForKids": False,
         },
     }
 
     media = MediaFileUpload(
-        str(VIDEO_FILE),
+        str(
+            VIDEO_FILE
+        ),
         mimetype="video/mp4",
         chunksize=8 * 1024 * 1024,
         resumable=True,
@@ -889,26 +607,26 @@ def upload_video(
 
     print()
     print("=" * 78)
-    print("YOUTUBE YÜKLEME")
+    print("YOUTUBE - DİREKT PUBLIC YAYIN")
     print("=" * 78)
     print()
+
     print(
-        "Başlık: "
-        + title
+        f"Başlık: {title}"
     )
+
     print(
-        "Planlanan yayın: "
-        + slot.strftime(
-            "%d.%m.%Y %H:%M"
-        )
-        + " Türkiye"
+        "Yayın tipi: HEMEN PUBLIC"
     )
+
     print()
 
     response = None
 
     while response is None:
-        upload_status, response = request.next_chunk()
+        upload_status, response = (
+            request.next_chunk()
+        )
 
         if upload_status is not None:
             percentage = int(
@@ -936,13 +654,14 @@ def upload_video(
 
 
 def main() -> None:
-    """Slot kontrolünü veya YouTube upload işlemini çalıştırır."""
+    """YouTube bağlantısını kontrol eder veya videoyu yayınlar."""
     arguments = parse_arguments()
 
     print()
     print("=" * 78)
-    print("COMIC EVENTS - YOUTUBE UPLOADER")
+    print("COMIC FACTORY - YOUTUBE DIRECT PUBLISHER")
     print("=" * 78)
+    print()
 
     try:
         youtube = create_youtube_client()
@@ -951,38 +670,35 @@ def main() -> None:
             youtube
         )
 
-        video_ids = get_recent_video_ids(
-            youtube,
-            channel_info[
-                "uploads_playlist_id"
-            ],
+        print(
+            "Kanal: "
+            + channel_info[
+                "channel_title"
+            ]
         )
 
-        scheduled_videos = get_future_scheduled_videos(
-            youtube,
-            video_ids,
+        print(
+            "Kanal ID: "
+            + channel_info[
+                "channel_id"
+            ]
         )
 
-        next_slot = find_next_slot(
-            scheduled_videos
-        )
-
-        print_slot_result(
-            channel_info,
-            scheduled_videos,
-            next_slot,
-        )
-
-        if arguments.check_slot:
+        if arguments.check:
+            print()
             print(
-                "✓ Sadece slot kontrolü yapıldı."
+                "✓ YouTube bağlantısı başarılı."
             )
+
             print(
                 "✓ Video yüklenmedi."
             )
+
             return
 
-        title, description, tags = load_video_metadata()
+        title, description, tags = (
+            load_video_metadata()
+        )
 
         video_hash = calculate_video_hash()
 
@@ -995,9 +711,11 @@ def main() -> None:
             and not arguments.force
         ):
             print()
-            print(
-                "BU VIDEO DAHA ÖNCE YÜKLENMİŞ."
-            )
+            print("=" * 78)
+            print("BU VIDEO DAHA ÖNCE YÜKLENMİŞ")
+            print("=" * 78)
+            print()
+
             print(
                 "Video ID: "
                 + clean_text(
@@ -1007,10 +725,11 @@ def main() -> None:
                     )
                 )
             )
-            print()
+
             print(
                 "Tekrar yükleme yapılmadı."
             )
+
             return
 
         video_id = upload_video(
@@ -1018,35 +737,30 @@ def main() -> None:
             title=title,
             description=description,
             tags=tags,
-            slot=next_slot,
         )
 
         save_upload_history(
             video_hash=video_hash,
             video_id=video_id,
             title=title,
-            slot=next_slot,
         )
 
         print()
         print("=" * 78)
-        print("YOUTUBE PLANLAMASI BAŞARILI")
+        print("YOUTUBE YAYINI BAŞARILI")
         print("=" * 78)
         print()
+
         print(
-            "Video ID: "
-            + video_id
+            f"Video ID: {video_id}"
         )
+
         print(
-            "Yayın zamanı: "
-            + next_slot.strftime(
-                "%d.%m.%Y %H:%M"
-            )
-            + " Türkiye"
+            "Durum: PUBLIC"
         )
-        print()
+
         print(
-            "Video planlanan saatte otomatik yayınlanacak."
+            "Video planlanmadı; doğrudan yayınlandı."
         )
 
     except HttpError as error:
@@ -1055,9 +769,14 @@ def main() -> None:
         print("YOUTUBE API HATASI")
         print("=" * 78)
         print()
-        print(error)
 
-        raise SystemExit(1)
+        print(
+            error
+        )
+
+        raise SystemExit(
+            1
+        )
 
     except Exception as error:
         print()
@@ -1065,11 +784,15 @@ def main() -> None:
         print("HATA")
         print("=" * 78)
         print()
+
         print(
-            f"{type(error).__name__}: {error}"
+            f"{type(error).__name__}: "
+            f"{error}"
         )
 
-        raise SystemExit(1)
+        raise SystemExit(
+            1
+        )
 
 
 if __name__ == "__main__":
