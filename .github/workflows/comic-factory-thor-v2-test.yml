@@ -1,0 +1,475 @@
+# .github/workflows/comic-factory-thor-v2-test.yml
+
+name: Comic Factory Thor V2 Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      reuse_active:
+        description: "Mevcut active event'i tekrar kullan"
+        required: false
+        default: false
+        type: boolean
+
+      ai_reconstruction:
+        description: "Eksik görsellerde AI reconstruction kullan"
+        required: false
+        default: true
+        type: boolean
+
+      event_count:
+        description: "Araştırılacak comic event sayısı"
+        required: false
+        default: "6"
+        type: string
+
+      rebuild:
+        description: "Thor V2 çalışma klasörünü sıfırdan oluştur"
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: comic-factory-thor-v2-test
+  cancel-in-progress: false
+
+jobs:
+  build-video:
+    name: Build Comic Factory Video
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 180
+
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      GEMINI_MODEL: gemini-3.5-flash-lite
+      GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
+      GEMINI_TTS_VOICE: Gacrux
+      GEMINI_IMAGE_MODEL: gemini-3.1-flash-image
+
+      GROQ_WHISPER_MODEL: whisper-large-v3-turbo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Show environment
+        shell: bash
+        run: |
+          echo "============================================================"
+          echo "COMIC FACTORY + THOR V2 ENGINE"
+          echo "============================================================"
+          echo
+
+          python --version
+
+          echo "Branch: $GITHUB_REF_NAME"
+          echo "Commit: $GITHUB_SHA"
+          echo "Voice: Gacrux LOCKED"
+          echo "Reuse active: ${{ inputs.reuse_active }}"
+          echo "AI reconstruction: ${{ inputs.ai_reconstruction }}"
+          echo "Event count: ${{ inputs.event_count }}"
+          echo "Rebuild: ${{ inputs.rebuild }}"
+
+      - name: Verify required files
+        shell: bash
+        run: |
+          FAILED=0
+
+          for FILE in \
+            comic_factory.py \
+            comic_factory_event_source.py \
+            requirements.txt
+          do
+            if [ ! -f "$FILE" ]; then
+              echo "::error::$FILE bulunamadı."
+              FAILED=1
+            else
+              echo "✓ $FILE"
+            fi
+          done
+
+          if [ "$FAILED" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Verify Python dependencies
+        run: |
+          python - <<'PY'
+          import importlib
+
+          modules = {
+              "google.genai": "google-genai",
+              "groq": "groq",
+              "edge_tts": "edge-tts",
+              "imageio_ffmpeg": "imageio-ffmpeg",
+              "requests": "requests",
+              "ddgs": "ddgs",
+              "dotenv": "python-dotenv",
+              "PIL": "Pillow",
+          }
+
+          missing = []
+
+          for module, package in modules.items():
+              try:
+                  importlib.import_module(module)
+                  print(f"✓ {package}")
+              except Exception as error:
+                  print(f"✗ {package}: {error}")
+                  missing.append(package)
+
+          if missing:
+              raise SystemExit(
+                  "Eksik Python paketleri: "
+                  + ", ".join(missing)
+              )
+          PY
+
+      - name: Verify secrets
+        shell: bash
+        run: |
+          FAILED=0
+
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::GEMINI_API_KEY secret bulunamadı."
+            FAILED=1
+          else
+            echo "✓ GEMINI_API_KEY mevcut"
+          fi
+
+          if [ -z "$GROQ_API_KEY" ]; then
+            echo "::error::GROQ_API_KEY secret bulunamadı."
+            FAILED=1
+          else
+            echo "✓ GROQ_API_KEY mevcut"
+          fi
+
+          if [ "$FAILED" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Python syntax check
+        run: |
+          python -m py_compile comic_factory.py
+          python -m py_compile comic_factory_event_source.py
+
+          echo "✓ comic_factory.py syntax OK"
+          echo "✓ comic_factory_event_source.py syntax OK"
+
+      - name: Import smoke test
+        run: |
+          python - <<'PY'
+          import importlib.util
+          from pathlib import Path
+
+          path = Path("comic_factory.py")
+
+          spec = importlib.util.spec_from_file_location(
+              "comic_factory",
+              path,
+          )
+
+          if spec is None or spec.loader is None:
+              raise SystemExit(
+                  "comic_factory.py import edilemedi."
+              )
+
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+
+          print("✓ comic_factory import OK")
+
+          voice = getattr(
+              module,
+              "GEMINI_TTS_VOICE",
+              "",
+          )
+
+          print("Voice:", voice)
+
+          if voice != "Gacrux":
+              raise SystemExit(
+                  "Gacrux voice lock bozulmuş."
+              )
+
+          print("✓ Gacrux LOCKED")
+          PY
+
+      - name: Runtime check
+        run: |
+          python comic_factory.py --check
+
+      - name: Prepare directories
+        run: |
+          mkdir -p data/logs
+          mkdir -p data/videos
+          mkdir -p data/scripts
+          mkdir -p data/audio
+          mkdir -p data/events
+          mkdir -p data/prototype
+
+      - name: Build run arguments
+        id: args
+        shell: bash
+        run: |
+          ARGS="--count ${{ inputs.event_count }}"
+
+          if [ "${{ inputs.reuse_active }}" = "true" ]; then
+            ARGS="$ARGS --reuse-active"
+          fi
+
+          if [ "${{ inputs.ai_reconstruction }}" = "true" ]; then
+            ARGS="$ARGS --enable-ai-reconstruction"
+          fi
+
+          if [ "${{ inputs.rebuild }}" = "true" ]; then
+            ARGS="$ARGS --rebuild"
+          fi
+
+          echo "value=$ARGS" >> "$GITHUB_OUTPUT"
+
+          echo "============================================================"
+          echo "RUN COMMAND"
+          echo "============================================================"
+          echo "python comic_factory.py $ARGS"
+
+      - name: Run Comic Factory Thor V2
+        id: comic_factory
+        shell: bash
+        run: |
+          set -o pipefail
+
+          LOG_FILE="data/logs/comic_factory_thor_v2.log"
+
+          echo "============================================================" | tee "$LOG_FILE"
+          echo "COMIC FACTORY + THOR V2 ENGINE" | tee -a "$LOG_FILE"
+          echo "============================================================" | tee -a "$LOG_FILE"
+
+          echo "Started: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" | tee -a "$LOG_FILE"
+          echo "Voice: Gacrux LOCKED" | tee -a "$LOG_FILE"
+          echo | tee -a "$LOG_FILE"
+
+          python comic_factory.py \
+            ${{ steps.args.outputs.value }} \
+            2>&1 | tee -a "$LOG_FILE"
+
+          EXIT_CODE=${PIPESTATUS[0]}
+
+          echo | tee -a "$LOG_FILE"
+          echo "Exit code: $EXIT_CODE" | tee -a "$LOG_FILE"
+          echo "Finished: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" | tee -a "$LOG_FILE"
+
+          exit "$EXIT_CODE"
+
+      - name: Verify final video
+        if: success()
+        shell: bash
+        run: |
+          VIDEO="data/videos/latest.mp4"
+
+          echo "============================================================"
+          echo "VERIFY FINAL VIDEO"
+          echo "============================================================"
+
+          if [ ! -f "$VIDEO" ]; then
+            echo "::error::data/videos/latest.mp4 oluşturulmadı."
+            exit 1
+          fi
+
+          SIZE=$(stat -c%s "$VIDEO")
+
+          if [ "$SIZE" -lt 250000 ]; then
+            echo "::error::Video çok küçük: $SIZE bytes"
+            exit 1
+          fi
+
+          echo "✓ latest.mp4 mevcut"
+          ls -lh "$VIDEO"
+
+      - name: Verify metadata
+        if: success()
+        shell: bash
+        run: |
+          if [ ! -f data/scripts/latest.json ]; then
+            echo "::error::data/scripts/latest.json oluşturulmadı."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path(
+              "data/scripts/latest.json"
+          )
+
+          payload = json.loads(
+              path.read_text(
+                  encoding="utf-8"
+              )
+          )
+
+          script = payload.get(
+              "script",
+              {}
+          )
+
+          title = script.get(
+              "title",
+              ""
+          )
+
+          narration = script.get(
+              "narration",
+              ""
+          )
+
+          if not title:
+              raise SystemExit(
+                  "Video title boş."
+              )
+
+          if not narration:
+              raise SystemExit(
+                  "Narration boş."
+              )
+
+          print(
+              "✓ Title:",
+              title,
+          )
+
+          print(
+              "✓ Narration characters:",
+              len(narration),
+          )
+          PY
+
+      - name: Show selected event
+        if: always()
+        run: |
+          if [ -f data/events/active_event.json ]; then
+            echo
+            echo "============================================================"
+            echo "ACTIVE EVENT"
+            echo "============================================================"
+
+            python - <<'PY'
+          import json
+          from pathlib import Path
+
+          event = json.loads(
+              Path(
+                  "data/events/active_event.json"
+              ).read_text(
+                  encoding="utf-8"
+              )
+          )
+
+          print(
+              "Event:",
+              event.get(
+                  "event_title"
+              )
+          )
+
+          print(
+              "Comic:",
+              event.get(
+                  "series"
+              ),
+              event.get(
+                  "issue"
+              ),
+          )
+
+          print(
+              "Publisher:",
+              event.get(
+                  "publisher"
+              ),
+          )
+          PY
+          fi
+
+      - name: Show last log lines
+        if: always()
+        shell: bash
+        run: |
+          echo
+          echo "============================================================"
+          echo "LAST 200 LOG LINES"
+          echo "============================================================"
+
+          if [ -f data/logs/comic_factory_thor_v2.log ]; then
+            tail -n 200 data/logs/comic_factory_thor_v2.log
+          else
+            echo "Log dosyası oluşmadı."
+          fi
+
+      - name: Upload final video
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comic-factory-thor-v2-video-${{ github.run_number }}
+          path: |
+            data/videos/latest.mp4
+            data/scripts/latest.json
+            data/events/active_event.json
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload Thor V2 diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comic-factory-thor-v2-diagnostics-${{ github.run_number }}
+          path: |
+            data/logs/comic_factory_thor_v2.log
+
+            data/events/active_event.json
+            data/events/used_events.json
+
+            data/scripts/latest.json
+
+            data/audio/latest.wav
+
+            data/prototype/thor_galactus_v2/storyboard.json
+            data/prototype/thor_galactus_v2/visual_plan.json
+            data/prototype/thor_galactus_v2/director_critique.json
+            data/prototype/thor_galactus_v2/lessons.json
+            data/prototype/thor_galactus_v2/words.json
+            data/prototype/thor_galactus_v2/aligned_subtitle_words.json
+            data/prototype/thor_galactus_v2/subtitles.ass
+            data/prototype/thor_galactus_v2/contact_sheet.jpg
+            data/prototype/thor_galactus_v2/manifest.json
+            data/prototype/thor_galactus_v2/voice_direction.json
+
+            data/videos/latest.mp4
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 6
