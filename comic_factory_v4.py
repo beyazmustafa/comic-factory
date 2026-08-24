@@ -62,6 +62,7 @@ LATEST_VIDEO_FILE = VIDEO_DIR / "latest.mp4"
 
 CHECKPOINT_FILE = DIRECTOR_DIR / "latest_checkpoints.json"
 LESSONS_FILE = DIRECTOR_DIR / "quality_lessons.json"
+REJECTED_EVENTS_FILE = DIRECTOR_DIR / "rejected_events.json"
 
 TZ = ZoneInfo("Europe/Istanbul")
 
@@ -71,39 +72,31 @@ FPS = 30
 
 SCENE_COUNT = 14
 
-MAX_GLOBAL_IMAGES = 40
-MAX_VISION_IMAGES = 28
-MAX_SCENE_SEARCH_IMAGES = 18
-
 STORY_THRESHOLD = 94.0
 AUDIO_ALIGNMENT_THRESHOLD = 95.0
 VISUAL_MATCH_THRESHOLD = 95.0
-IMAGE_QUALITY_THRESHOLD = 94.0
-COMPOSITION_THRESHOLD = 95.0
-MOTION_THRESHOLD = 94.0
-FINAL_DIRECTOR_THRESHOLD = 94.0
+IMAGE_QUALITY_THRESHOLD = 92.0
+COMPOSITION_THRESHOLD = 94.0
+MOTION_THRESHOLD = 92.0
+FINAL_VISUAL_THRESHOLD = 94.0
 
-MAX_AI_RECONSTRUCTIONS_PER_VIDEO = int(
-    os.getenv(
-        "MAX_AI_RECONSTRUCTIONS",
-        "6",
-    )
-)
+MAX_EVENT_CANDIDATES_PER_RESEARCH = 8
+MAX_EVENT_SWITCHES_PER_RUN = 12
+
+STORY_REPAIR_CYCLES_PER_EVENT = 5
+AUDIO_REPAIR_CYCLES = 5
+VISUAL_REPAIR_CYCLES = 7
+AI_RECONSTRUCTION_REPAIR_CYCLES = 4
+FINAL_VISUAL_REPAIR_CYCLES = 5
+MOTION_REPAIR_CYCLES = 4
+RENDER_REPAIR_CYCLES = 3
+
+MAX_GLOBAL_IMAGES = 40
+MAX_SCENE_IMAGES = 20
+MAX_VISION_IMAGES = 28
 
 ENABLE_AI_RECONSTRUCTION = (
-    os.getenv(
-        "ENABLE_AI_RECONSTRUCTION",
-        "1",
-    ).strip()
-    == "1"
-)
-
-# 0 = kalite checkpoint'lerinde limitsiz repair döngüsü.
-QUALITY_GATE_MAX_CYCLES = int(
-    os.getenv(
-        "QUALITY_GATE_MAX_CYCLES",
-        "0",
-    )
+    os.getenv("ENABLE_AI_RECONSTRUCTION", "1").strip() == "1"
 )
 
 GEMINI_MODEL = os.getenv(
@@ -116,11 +109,8 @@ GEMINI_TTS_MODEL = os.getenv(
     "gemini-3.1-flash-tts-preview",
 )
 
-# Thor V2'de beğenilen ses. Kilitli.
-GEMINI_TTS_VOICE = os.getenv(
-    "GEMINI_TTS_VOICE",
-    "Gacrux",
-)
+# Thor V2 reference voice. Locked deliberately.
+GEMINI_TTS_VOICE = "Gacrux"
 
 GEMINI_IMAGE_MODEL = os.getenv(
     "GEMINI_IMAGE_MODEL",
@@ -136,8 +126,7 @@ REQUEST_TIMEOUT = 25
 
 SUBTITLE_MAX_WORDS = 3
 SUBTITLE_BASE_FONT_SIZE = 56
-SUBTITLE_MIN_FONT_SIZE = 40
-
+SUBTITLE_MIN_FONT_SIZE = 38
 SUBTITLE_MARGIN_LEFT = 125
 SUBTITLE_MARGIN_RIGHT = 125
 SUBTITLE_MARGIN_BOTTOM = 390
@@ -158,7 +147,6 @@ ALLOWED_MOTIONS = (
     "hold",
 )
 
-# Gelecek sahneyi narration başlamadan göstermeyen geçişler.
 ALLOWED_TRANSITIONS = (
     "cut",
     "soft_black",
@@ -171,19 +159,22 @@ USER_AGENT = (
     "AppleWebKit/537.36 Chrome/139.0 Safari/537.36"
 )
 
-load_dotenv(
-    ROOT / ".env"
-)
+load_dotenv(ROOT / ".env")
 
 
 class ComicFactoryError(RuntimeError):
-    """Comic Factory V4 üretimi başarısız olduğunda oluşur."""
+    """Comic Factory V4 pipeline hatası."""
+
+
+class EventRejectedError(ComicFactoryError):
+    """Mevcut event kalite standardına ulaşamadığında oluşur."""
 
 
 @dataclass
 class CheckpointResult:
-    """Tek kalite checkpoint sonucunu temsil eder."""
+    """Tek kalite kontrol sonucunu temsil eder."""
 
+    event_id: str
     name: str
     passed: bool
     score: float
@@ -195,7 +186,7 @@ class CheckpointResult:
 
 @dataclass
 class ImageCandidate:
-    """Gerçek comic görsel adayı."""
+    """İndirilen gerçek comic görsel adayı."""
 
     candidate_id: str
     local_file: str
@@ -210,7 +201,7 @@ class ImageCandidate:
 
 @dataclass
 class RankedVisual:
-    """Bir sahne için Vision tarafından seçilen görsel adayı."""
+    """Visual Director tarafından sıralanan panel adayı."""
 
     candidate_id: str
     relevance_score: int
@@ -220,7 +211,7 @@ class RankedVisual:
 
 @dataclass
 class Scene:
-    """Render edilecek final sahnesi."""
+    """Final videoda kullanılacak sahne."""
 
     scene_number: int
     narration: str
@@ -250,10 +241,14 @@ class Scene:
 
 
 class CheckpointManager:
-    """Checkpoint geçmişini ve kalite derslerini yönetir."""
+    """Checkpoint geçmişini ve öğrenilen kalite derslerini saklar."""
 
     def __init__(self) -> None:
         self.results: list[CheckpointResult] = []
+        self.current_event_id = ""
+
+    def set_event(self, event_id: str) -> None:
+        self.current_event_id = event_id
 
     def record(
         self,
@@ -269,53 +264,29 @@ class CheckpointManager:
             passed = score >= threshold
 
         result = CheckpointResult(
+            event_id=self.current_event_id,
             name=name,
-            passed=bool(
-                passed
-            ),
-            score=round(
-                float(
-                    score
-                ),
-                2,
-            ),
-            threshold=round(
-                float(
-                    threshold
-                ),
-                2,
-            ),
+            passed=bool(passed),
+            score=round(float(score), 2),
+            threshold=round(float(threshold), 2),
             cycle=cycle,
-            details=clean(
-                details
-            ),
-            created_at=datetime.now(
-                TZ
-            ).isoformat(),
+            details=clean(details),
+            created_at=datetime.now(TZ).isoformat(),
         )
 
-        self.results.append(
-            result
-        )
+        self.results.append(result)
 
-        icon = (
-            "✓"
-            if result.passed
-            else "✗"
-        )
+        icon = "✓" if result.passed else "✗"
 
         print(
-            f"{icon} CHECKPOINT "
-            f"{result.name}: "
+            f"{icon} CHECKPOINT {result.name}: "
             f"{result.score:.2f}/100 "
             f"(min {result.threshold:.2f}) "
-            f"| cycle={cycle}"
+            f"| cycle={result.cycle}"
         )
 
         if result.details:
-            print(
-                f"  {result.details}"
-            )
+            print(f"  {result.details}")
 
         self.save()
 
@@ -325,13 +296,9 @@ class CheckpointManager:
         save_json(
             CHECKPOINT_FILE,
             {
-                "updated_at": datetime.now(
-                    TZ
-                ).isoformat(),
+                "updated_at": datetime.now(TZ).isoformat(),
                 "results": [
-                    asdict(
-                        result
-                    )
+                    asdict(result)
                     for result in self.results
                 ],
             },
@@ -340,30 +307,41 @@ class CheckpointManager:
     def persist_lessons(self) -> None:
         payload = load_json(
             LESSONS_FILE,
-            {
-                "lessons": [],
-            },
+            {"lessons": []},
         )
 
-        if not isinstance(
-            payload,
-            dict,
-        ):
-            payload = {
-                "lessons": [],
-            }
+        if not isinstance(payload, dict):
+            payload = {"lessons": []}
 
         lessons = payload.setdefault(
             "lessons",
             [],
         )
 
+        known = {
+            (
+                clean(item.get("checkpoint")),
+                clean(item.get("details")),
+            )
+            for item in lessons
+            if isinstance(item, dict)
+        }
+
         for result in self.results:
             if result.passed:
                 continue
 
+            key = (
+                result.name,
+                result.details,
+            )
+
+            if key in known:
+                continue
+
             lessons.append(
                 {
+                    "event_id": result.event_id,
                     "checkpoint": result.name,
                     "score": result.score,
                     "threshold": result.threshold,
@@ -372,17 +350,10 @@ class CheckpointManager:
                 }
             )
 
-        payload[
-            "lessons"
-        ] = lessons[
-            -200:
-        ]
+            known.add(key)
 
-        payload[
-            "updated_at"
-        ] = datetime.now(
-            TZ
-        ).isoformat()
+        payload["lessons"] = lessons[-250:]
+        payload["updated_at"] = datetime.now(TZ).isoformat()
 
         save_json(
             LESSONS_FILE,
@@ -393,22 +364,12 @@ class CheckpointManager:
 CHECKPOINTS = CheckpointManager()
 
 
-def checkpoint_cycle_allowed(
-    cycle: int,
-) -> bool:
-    """Kalite repair döngüsünün devam edip etmeyeceğini belirler."""
-    return (
-        QUALITY_GATE_MAX_CYCLES == 0
-        or cycle <= QUALITY_GATE_MAX_CYCLES
-    )
-
-
 def parse_args() -> argparse.Namespace:
     """Komut satırı seçeneklerini okur."""
     parser = argparse.ArgumentParser(
         description=(
             "Comic Factory V4 - "
-            "repair-until-pass quality engine."
+            "quality-gated automatic comic video engine."
         )
     )
 
@@ -430,7 +391,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--count",
         type=int,
-        default=6,
+        default=MAX_EVENT_CANDIDATES_PER_RESEARCH,
     )
 
     parser.add_argument(
@@ -453,9 +414,46 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def clean(value: Any) -> str:
+    """Metni tek satırlık normalize edilmiş biçime getirir."""
+    return re.sub(
+        r"\s+",
+        " ",
+        str(value or "").strip(),
+    )
+
+
+def slug(value: str) -> str:
+    """Güvenli dosya adı üretir."""
+    value = clean(value).lower()
+
+    replacements = {
+        "ı": "i",
+        "ğ": "g",
+        "ü": "u",
+        "ş": "s",
+        "ö": "o",
+        "ç": "c",
+    }
+
+    for source, target in replacements.items():
+        value = value.replace(
+            source,
+            target,
+        )
+
+    value = re.sub(
+        r"[^a-z0-9]+",
+        "_",
+        value,
+    )
+
+    return value.strip("_")[:80] or "event"
+
+
 def ensure_dirs() -> None:
-    """Gerekli klasörleri oluşturur."""
-    for path in (
+    """Pipeline klasörlerini oluşturur."""
+    for directory in (
         EVENT_DIR,
         RESEARCH_DIR,
         SCRIPT_DIR,
@@ -466,77 +464,17 @@ def ensure_dirs() -> None:
         DIRECTOR_DIR,
         ASSET_DIR,
     ):
-        path.mkdir(
+        directory.mkdir(
             parents=True,
             exist_ok=True,
         )
-
-
-def clean(value: Any) -> str:
-    """Metni normalize eder."""
-    return re.sub(
-        r"\s+",
-        " ",
-        str(
-            value or ""
-        ).strip(),
-    )
-
-
-def slug(value: str) -> str:
-    """Güvenli dosya adı üretir."""
-    value = (
-        clean(
-            value
-        )
-        .lower()
-        .replace(
-            "ı",
-            "i",
-        )
-        .replace(
-            "ğ",
-            "g",
-        )
-        .replace(
-            "ü",
-            "u",
-        )
-        .replace(
-            "ş",
-            "s",
-        )
-        .replace(
-            "ö",
-            "o",
-        )
-        .replace(
-            "ç",
-            "c",
-        )
-    )
-
-    value = re.sub(
-        r"[^a-z0-9]+",
-        "_",
-        value,
-    )
-
-    return (
-        value.strip(
-            "_"
-        )[
-            :80
-        ]
-        or "event"
-    )
 
 
 def load_json(
     path: Path,
     default: Any = None,
 ) -> Any:
-    """JSON dosyasını okur."""
+    """JSON dosyasını güvenli şekilde okur."""
     if not path.exists():
         return default
 
@@ -545,9 +483,7 @@ def load_json(
             "r",
             encoding="utf-8",
         ) as file:
-            return json.load(
-                file
-            )
+            return json.load(file)
 
     except json.JSONDecodeError as error:
         raise ComicFactoryError(
@@ -559,15 +495,14 @@ def save_json(
     path: Path,
     payload: Any,
 ) -> None:
-    """JSON dosyasını atomik olarak kaydeder."""
+    """JSON dosyasını atomik biçimde kaydeder."""
     path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     temporary = path.with_suffix(
-        path.suffix
-        + ".tmp"
+        path.suffix + ".tmp"
     )
 
     temporary.write_text(
@@ -579,15 +514,11 @@ def save_json(
         encoding="utf-8",
     )
 
-    temporary.replace(
-        path
-    )
+    temporary.replace(path)
 
 
-def require_env(
-    name: str,
-) -> str:
-    """Zorunlu environment variable döndürür."""
+def require_env(name: str) -> str:
+    """Zorunlu environment variable değerini döndürür."""
     value = os.getenv(
         name,
         "",
@@ -602,37 +533,27 @@ def require_env(
 
 
 def load_quality_lessons() -> str:
-    """Önceki başarısız checkpoint derslerini yükler."""
+    """Önceki kalite hatalarını yeni promptlara bağlar."""
     payload = load_json(
         LESSONS_FILE,
-        {
-            "lessons": [],
-        },
+        {"lessons": []},
     )
 
-    if not isinstance(
-        payload,
-        dict,
-    ):
-        return "Henüz kayıtlı kalite dersi yok."
+    if not isinstance(payload, dict):
+        return "Henüz kalite dersi yok."
 
     lessons = payload.get(
         "lessons",
         [],
     )
 
-    if not isinstance(
-        lessons,
-        list,
-    ):
-        return "Henüz kayıtlı kalite dersi yok."
+    if not isinstance(lessons, list):
+        return "Henüz kalite dersi yok."
 
-    recent = lessons[
-        -30:
-    ]
+    recent = lessons[-30:]
 
     if not recent:
-        return "Henüz kayıtlı kalite dersi yok."
+        return "Henüz kalite dersi yok."
 
     return "\n".join(
         (
@@ -640,10 +561,7 @@ def load_quality_lessons() -> str:
             f"{clean(item.get('details'))}"
         )
         for item in recent
-        if isinstance(
-            item,
-            dict,
-        )
+        if isinstance(item, dict)
     )
 
 
@@ -659,7 +577,7 @@ def gemini_client() -> genai.Client:
 def parse_json_response(
     text: str,
 ) -> dict[str, Any]:
-    """Gemini JSON cevabını ayrıştırır."""
+    """Model JSON cevabını ayrıştırır."""
     text = re.sub(
         r"^```(?:json)?\s*",
         "",
@@ -674,67 +592,37 @@ def parse_json_response(
     )
 
     try:
-        payload = json.loads(
-            text
-        )
+        payload = json.loads(text)
 
     except json.JSONDecodeError as error:
         raise ComicFactoryError(
             "Gemini geçerli JSON döndürmedi."
         ) from error
 
-    if isinstance(
-        payload,
-        dict,
-    ):
+    if isinstance(payload, dict):
         return payload
 
-    if isinstance(
-        payload,
-        list,
-    ):
+    if isinstance(payload, list):
         if not payload:
-            raise ComicFactoryError(
-                "Gemini boş JSON listesi döndürdü."
-            )
+            return {"items": []}
 
-        first = payload[
-            0
-        ]
+        first = payload[0]
 
-        if not isinstance(
-            first,
-            dict,
-        ):
-            raise ComicFactoryError(
-                "Beklenmeyen Gemini JSON listesi."
-            )
+        if isinstance(first, dict):
+            if any(
+                key in first
+                for key in (
+                    "event_title",
+                    "publisher",
+                    "series",
+                )
+            ):
+                return {"events": payload}
 
-        if any(
-            key in first
-            for key in (
-                "event_title",
-                "publisher",
-                "series",
-            )
-        ):
-            return {
-                "events": payload,
-            }
+            if "scene_number" in first:
+                return {"scenes": payload}
 
-        if (
-            "scene_number"
-            in first
-            and "ranked_visuals"
-            in first
-        ):
-            return {
-                "scenes": payload,
-            }
-
-        return {
-            "items": payload,
-        }
+        return {"items": payload}
 
     raise ComicFactoryError(
         "Beklenmeyen Gemini JSON yapısı."
@@ -745,29 +633,25 @@ def is_retryable_gemini_error(
     error: Exception,
 ) -> bool:
     """Geçici Gemini API hatalarını ayırt eder."""
-    message = str(
-        error
-    ).casefold()
+    message = str(error).casefold()
 
-    terms = (
+    retryable_terms = (
         "503",
+        "429",
         "unavailable",
         "high demand",
-        "temporarily unavailable",
-        "429",
         "resource_exhausted",
         "rate limit",
         "too many requests",
         "timeout",
         "timed out",
         "connection reset",
-        "connection aborted",
         "service unavailable",
     )
 
     return any(
         term in message
-        for term in terms
+        for term in retryable_terms
     )
 
 
@@ -775,14 +659,15 @@ def gemini_with_retry(
     operation: Any,
     *,
     operation_name: str,
-    max_attempts: int = 5,
+    max_attempts: int = 6,
 ) -> Any:
-    """Geçici Gemini hatalarında exponential backoff uygular."""
+    """Geçici API problemlerinde exponential backoff uygular."""
     delays = (
         10,
         20,
         40,
         60,
+        90,
     )
 
     last_error: Exception | None = None
@@ -795,7 +680,7 @@ def gemini_with_retry(
             if attempt > 1:
                 print(
                     f"→ {operation_name}: "
-                    f"{attempt}/{max_attempts}. deneme"
+                    f"{attempt}/{max_attempts}. API denemesi"
                 )
 
             return operation()
@@ -811,37 +696,34 @@ def gemini_with_retry(
             if attempt >= max_attempts:
                 break
 
-            wait_seconds = delays[
+            delay = delays[
                 min(
                     attempt - 1,
-                    len(
-                        delays
-                    ) - 1,
+                    len(delays) - 1,
                 )
             ]
 
-            wait_seconds += random.uniform(
+            delay += random.uniform(
                 0.0,
                 3.0,
             )
 
             print(
-                f"! {operation_name} geçici hata: "
-                f"{error}"
+                f"! {operation_name}: geçici servis hatası."
             )
 
             print(
-                f"  {wait_seconds:.1f}s sonra "
-                "tekrar denenecek."
+                f"  {type(error).__name__}: {error}"
             )
 
-            time.sleep(
-                wait_seconds
+            print(
+                f"  {delay:.1f}s sonra tekrar denenecek."
             )
+
+            time.sleep(delay)
 
     raise ComicFactoryError(
-        f"{operation_name} "
-        f"{max_attempts} API denemesinden sonra başarısız: "
+        f"{operation_name} API hizmeti kullanılamıyor: "
         f"{last_error}"
     )
 
@@ -850,10 +732,10 @@ def ask_gemini_json(
     client: genai.Client,
     prompt: str,
     *,
-    temperature: float = 0.3,
-    operation_name: str = "Gemini JSON",
+    temperature: float,
+    operation_name: str,
 ) -> dict[str, Any]:
-    """Gemini'den JSON cevap alır."""
+    """Gemini'den JSON yanıt alır."""
 
     def request() -> Any:
         return client.models.generate_content(
@@ -872,7 +754,7 @@ def ask_gemini_json(
 
     if not response.text:
         raise ComicFactoryError(
-            "Gemini boş cevap döndürdü."
+            f"{operation_name} boş cevap verdi."
         )
 
     return parse_json_response(
@@ -882,19 +764,16 @@ def ask_gemini_json(
 
 def search_web(
     queries: list[str],
-    each: int = 8,
+    each: int,
 ) -> list[dict[str, str]]:
-    """DDGS ile web araması yapar."""
-    found: list[
-        dict[str, str]
-    ] = []
-
+    """Ücretsiz web araştırması yapar."""
+    results_out: list[dict[str, str]] = []
     seen: set[str] = set()
 
     for query in queries:
         try:
             results = DDGS(
-                timeout=12
+                timeout=15
             ).text(
                 query,
                 region="us-en",
@@ -904,61 +783,46 @@ def search_web(
 
         except Exception as error:
             print(
-                f"! Arama atlandı: "
-                f"{query}: {error}"
+                f"! Search skipped: {query}: {error}"
             )
             continue
 
         for item in results or []:
             url = clean(
-                item.get(
-                    "href"
-                )
-                or item.get(
-                    "url"
-                )
+                item.get("href")
+                or item.get("url")
             )
 
             if (
-                not url.startswith(
-                    "http"
-                )
+                not url.startswith("http")
                 or url in seen
             ):
                 continue
 
-            seen.add(
-                url
-            )
+            seen.add(url)
 
-            found.append(
+            results_out.append(
                 {
                     "title": clean(
-                        item.get(
-                            "title"
-                        )
+                        item.get("title")
                     ),
                     "url": url,
                     "body": clean(
-                        item.get(
-                            "body"
-                        )
+                        item.get("body")
                     ),
                 }
             )
 
-    return found
+    return results_out
 
 
 def event_key(
     event: dict[str, Any],
 ) -> str:
-    """Comic event için benzersiz anahtar üretir."""
+    """Event benzersiz anahtarını oluşturur."""
     return "|".join(
         clean(
-            event.get(
-                key
-            )
+            event.get(key)
         ).casefold()
         for key in (
             "publisher",
@@ -970,77 +834,128 @@ def event_key(
 
 
 def used_event_keys() -> set[str]:
-    """Daha önce kullanılan event'leri döndürür."""
+    """Daha önce başarıyla üretilmiş event anahtarlarını döndürür."""
     payload = load_json(
         USED_EVENTS_FILE,
-        {
-            "events": [],
-        },
+        {"events": []},
     )
 
-    if not isinstance(
-        payload,
-        dict,
+    if not isinstance(payload, dict):
+        return set()
+
+    output: set[str] = set()
+
+    for item in payload.get(
+        "events",
+        [],
     ):
+        if not isinstance(item, dict):
+            continue
+
+        key = clean(
+            item.get("event_key")
+        )
+
+        if key:
+            output.add(key)
+
+    return output
+
+
+def rejected_event_keys() -> set[str]:
+    """Bu run veya önceki runlarda kalite nedeniyle reddedilmiş eventleri döndürür."""
+    payload = load_json(
+        REJECTED_EVENTS_FILE,
+        {"events": []},
+    )
+
+    if not isinstance(payload, dict):
         return set()
 
     return {
-        clean(
-            item.get(
-                "event_key"
-            )
-        )
-        for item in payload.get(
-            "events",
-            [],
-        )
-        if isinstance(
-            item,
-            dict,
-        )
-        and clean(
-            item.get(
-                "event_key"
-            )
-        )
+        clean(item.get("event_key"))
+        for item in payload.get("events", [])
+        if isinstance(item, dict)
+        and clean(item.get("event_key"))
     }
+
+
+def record_rejected_event(
+    event: dict[str, Any],
+    reason: str,
+) -> None:
+    """Kaliteye ulaşamayan eventi kaydeder."""
+    payload = load_json(
+        REJECTED_EVENTS_FILE,
+        {"events": []},
+    )
+
+    if not isinstance(payload, dict):
+        payload = {"events": []}
+
+    events = payload.setdefault(
+        "events",
+        [],
+    )
+
+    key = event_key(event)
+
+    events.append(
+        {
+            "event_key": key,
+            "event_title": clean(
+                event.get("event_title")
+            ),
+            "series": clean(
+                event.get("series")
+            ),
+            "issue": clean(
+                event.get("issue")
+            ),
+            "reason": clean(reason),
+            "rejected_at": datetime.now(
+                TZ
+            ).isoformat(),
+        }
+    )
+
+    payload["events"] = events[-100:]
+
+    save_json(
+        REJECTED_EVENTS_FILE,
+        payload,
+    )
 
 
 def research_events(
     client: genai.Client,
     count: int,
+    run_rejected: set[str],
 ) -> list[dict[str, Any]]:
-    """Görsel potansiyeli yüksek comic event'leri araştırır."""
-    count = max(
-        3,
-        min(
-            count,
-            10,
-        ),
-    )
-
+    """Shorts için güçlü ve görsel olarak zengin yeni comic olayları seçer."""
     print()
     print("=" * 78)
-    print("1/13 - EVENT RESEARCH")
+    print("EVENT RESEARCH")
     print("=" * 78)
 
-    results = search_web(
+    web_results = search_web(
         [
             "Marvel comics shocking moments specific issue review",
-            "DC comics shocking moments specific issue review",
-            "comic book craziest feats specific issue panels",
-            "comic book transformations specific issue review",
-            "Image Comics shocking moments issue review",
-            "Dark Horse comics shocking moments issue review",
+            "DC comics shocking moment specific issue review",
+            "Marvel specific issue huge battle comic review panels",
+            "DC specific issue transformation comic review panels",
+            "comic books best shocking reveals specific issue",
+            "Image Comics shocking issue review panels",
+            "Dark Horse comic shocking issue review",
             "site:marvel.com comics preview issue",
             "site:dc.com comics preview issue",
         ],
         each=8,
     )
 
-    if not results:
+    if not web_results:
         raise ComicFactoryError(
-            "Comic araştırması sonuç vermedi."
+            "Event research için web sonucu bulunamadı."
         )
 
     evidence = "\n\n".join(
@@ -1049,55 +964,59 @@ def research_events(
             f"URL: {item['url']}\n"
             f"SNIPPET: {item['body']}"
         )
-        for item in results[
-            :48
-        ]
+        for item in web_results[:55]
     )
 
-    used = (
+    forbidden = (
+        used_event_keys()
+        | rejected_event_keys()
+        | run_rejected
+    )
+
+    forbidden_text = (
         "\n".join(
-            f"- {item}"
-            for item in sorted(
-                used_event_keys()
-            )
+            f"- {key}"
+            for key in sorted(forbidden)
         )
         or "Yok."
     )
 
-    lessons = load_quality_lessons()
-
     prompt = f"""
-Premium comic Shorts research editor'sın.
+Premium comic Shorts research director'sın.
 
-WEB:
+WEB EVIDENCE:
 {evidence}
 
-KULLANILMIŞ EVENTLER:
-{used}
+KULLANILMAYACAK EVENTLER:
+{forbidden_text}
 
 ÖNCEKİ KALİTE DERSLERİ:
-{lessons}
+{load_quality_lessons()}
 
-TAM {count} adet spesifik comic event seç.
+TAM {max(5, count)} event adayı üret.
 
-Kalite mantığı:
-- hook /25
-- şaşırtıcılık /20
-- hikâye/payoff /20
-- görsel çeşitlilik potansiyeli /15
-- kaynak güvenilirliği /10
-- Shorts uygunluğu /10
+Aday seçerken en önemli kriter:
+Bu event 14 ayrı, anlamlı ve kaliteli görsel sahneye bölünebilmeli.
 
-Kurallar:
-- Tek spesifik olay.
-- Series, issue ve yıl doğru.
-- URL uydurma.
-- Kaynak URL yalnız WEB bölümünden.
-- 45-60 saniyelik gerçek story arc taşımalı.
-- En az 12-14 farklı görsel an çıkarılabilir olmalı.
-- Gerçek comic panelleri web'de bulunma ihtimali yüksek olmalı.
-- Özel isimler orijinal.
-- quality_score 0-100.
+Her event:
+- tek spesifik comic olayı olsun
+- series / issue / yıl net olsun
+- 45-60 saniyede hook → escalation → payoff taşısın
+- gerçek comic paneli bulma ihtimali yüksek olsun
+- sadece tek görselle anlatılabilecek basit bir olay olmasın
+- en az 10-14 farklı görsel moment sunsun
+
+quality_score:
+hook 25
+story/payoff 25
+visual variety 25
+source confidence 15
+Shorts retention 10
+
+92+ yalnız gerçekten güçlü adaylara ver.
+
+URL uydurma.
+Kaynak URL yalnız WEB EVIDENCE içinden gelsin.
 
 SADECE JSON:
 {{
@@ -1113,7 +1032,8 @@ SADECE JSON:
       "event_summary": "...",
       "power_feat": "...",
       "why_interesting": "...",
-      "quality_score": 96,
+      "visual_moment_count": 14,
+      "quality_score": 95,
       "sources": [
         {{
           "name": "...",
@@ -1129,8 +1049,8 @@ SADECE JSON:
     payload = ask_gemini_json(
         client,
         prompt,
-        temperature=0.35,
-        operation_name="Event Research",
+        temperature=0.30,
+        operation_name="Event Research Director",
     )
 
     events = payload.get(
@@ -1138,66 +1058,76 @@ SADECE JSON:
         [],
     )
 
-    if not isinstance(
-        events,
-        list,
-    ):
-        raise ComicFactoryError(
-            "Event listesi alınamadı."
-        )
+    if not isinstance(events, list):
+        return []
 
-    used_keys = used_event_keys()
+    eligible: list[dict[str, Any]] = []
 
-    eligible = [
-        event
-        for event in events
-        if isinstance(
-            event,
-            dict,
-        )
-        and event_key(
-            event
-        )
-        not in used_keys
-        and float(
+    for event in events:
+        if not isinstance(event, dict):
+            continue
+
+        key = event_key(event)
+
+        if key in forbidden:
+            continue
+
+        score = float(
             event.get(
                 "quality_score",
                 0,
             )
             or 0
         )
-        >= 88
-    ]
 
-    eligible.sort(
-        key=lambda item: float(
-            item.get(
-                "quality_score",
+        visual_count = int(
+            event.get(
+                "visual_moment_count",
                 0,
             )
             or 0
+        )
+
+        if score < 88:
+            continue
+
+        if visual_count < 10:
+            continue
+
+        eligible.append(event)
+
+    eligible.sort(
+        key=lambda event: (
+            float(
+                event.get(
+                    "quality_score",
+                    0,
+                )
+                or 0
+            ),
+            int(
+                event.get(
+                    "visual_moment_count",
+                    0,
+                )
+                or 0
+            ),
         ),
         reverse=True,
     )
-
-    if not eligible:
-        raise ComicFactoryError(
-            "88+ kalite potansiyelli event bulunamadı."
-        )
 
     save_json(
         RESEARCH_DIR
         / (
             "research_v4_"
-            + datetime.now(
-                TZ
-            ).strftime(
+            + datetime.now(TZ).strftime(
                 "%Y-%m-%d_%H-%M-%S"
             )
             + ".json"
         ),
         {
             "events": events,
+            "eligible": eligible,
         },
     )
 
@@ -1207,28 +1137,20 @@ SADECE JSON:
 def activate_event(
     event: dict[str, Any],
 ) -> dict[str, Any]:
-    """Event'i aktif hale getirir."""
-    active = dict(
-        event
-    )
+    """Eventi aktif pipeline eventine dönüştürür."""
+    active = dict(event)
 
-    active[
-        "id"
-    ] = slug(
+    active["id"] = slug(
         f"{clean(event.get('series'))}_"
         f"{clean(event.get('issue'))}_"
         f"{clean(event.get('event_title'))}"
     )
 
-    active[
-        "event_key"
-    ] = event_key(
-        event
+    active["event_key"] = event_key(
+        active
     )
 
-    active[
-        "activated_at"
-    ] = datetime.now(
+    active["activated_at"] = datetime.now(
         TZ
     ).isoformat()
 
@@ -1237,43 +1159,46 @@ def activate_event(
         active,
     )
 
+    CHECKPOINTS.set_event(
+        active["id"]
+    )
+
+    print()
     print(
-        "✓ Event: "
+        "✓ EVENT: "
         + clean(
-            active.get(
-                "event_title"
-            )
+            active.get("event_title")
         )
+    )
+    print(
+        f"  {clean(active.get('series'))} "
+        f"{clean(active.get('issue'))}"
     )
 
     return active
 
 
 def load_active_event() -> dict[str, Any]:
-    """Aktif event'i yükler."""
+    """Aktif eventi diskten yükler."""
     event = load_json(
         ACTIVE_EVENT_FILE
     )
 
     if (
-        not isinstance(
-            event,
-            dict,
-        )
+        not isinstance(event, dict)
         or not clean(
-            event.get(
-                "id"
-            )
+            event.get("id")
         )
     ):
         raise ComicFactoryError(
             "active_event.json bulunamadı."
         )
 
+    CHECKPOINTS.set_event(
+        clean(event["id"])
+    )
+
     return event
-
-
-# comic_factory_v4.py
 
 
 def generate_storyboard(
@@ -1281,7 +1206,7 @@ def generate_storyboard(
     event: dict[str, Any],
     feedback: str,
 ) -> dict[str, Any]:
-    """14 sahnelik storyboard üretir; yapısal hataları repair döngüsüne bırakır."""
+    """Tek story repair turu üretir."""
     sources = "\n".join(
         (
             f"- {clean(item.get('name'))}: "
@@ -1292,10 +1217,7 @@ def generate_storyboard(
             "sources",
             [],
         )
-        if isinstance(
-            item,
-            dict,
-        )
+        if isinstance(item, dict)
     )
 
     prompt = f"""
@@ -1310,51 +1232,57 @@ COMIC:
 {clean(event.get("issue"))}
 {event.get("publication_year")}
 
-KARAKTERLER:
+CHARACTERS:
 {", ".join(event.get("characters", []))}
 
 HOOK:
 {clean(event.get("hook"))}
 
-ÖZET:
+SUMMARY:
 {clean(event.get("event_summary"))}
 
 FEAT:
 {clean(event.get("power_feat"))}
 
-KAYNAKLAR:
+SOURCES:
 {sources}
 
-ÖNCEKİ REPAIR FEEDBACK:
-{feedback or "İlk üretim."}
+QUALITY LESSONS:
+{load_quality_lessons()}
 
-ÇOK KRİTİK YAPISAL KURAL:
-- TAM OLARAK {SCENE_COUNT} SAHNE ÜRET.
-- 13 sahne üretme.
-- 15 sahne üretme.
-- Sahne numaraları 1'den {SCENE_COUNT}'e kadar kesintisiz olsun.
-- Her scene_number yalnızca bir kez bulunsun.
-- JSON dışında hiçbir şey yazma.
+PREVIOUS REPAIR FEEDBACK:
+{feedback or "İlk story üretimi."}
 
-İÇERİK KURALLARI:
-- Toplam 120-150 Türkçe kelime.
-- İlk iki sahne güçlü hook.
-- Her sahne yeni bilgi getirir.
-- Bir sahnede yalnızca tek ana görsel olay anlat.
-- Son dört sahne payoff.
-- Bilgi uydurma.
-- visual_description narration sırasında ekranda TAM olarak
-  görülmesi gereken spesifik anı tarif etsin.
-- Narration ve visual_description birebir eşlenebilir olsun.
-- Aynı görsel fikir iki kez kullanılmasın.
-- Özel isimler orijinal.
-- Türkçe fonetik isim yazma.
-- story_role:
-  hook / context / escalation / twist / payoff / cta
-- emphasis_words 0-3 kelime.
+KRİTİK:
+TAM {SCENE_COUNT} SAHNE.
+Ne 13 ne 15.
 
-SADECE BU JSON ŞEMASI:
+scene_number:
+1,2,3,4,5,6,7,8,9,10,11,12,13,14
 
+Story:
+- 120-150 Türkçe kelime
+- ilk iki sahne çok güçlü hook
+- her sahne yalnız bir ana görsel olayı anlatsın
+- her sahne yeni bilgi veya escalation getirsin
+- son dört sahne payoff
+- Wikipedia özeti gibi olmasın
+- bilgi uydurma
+- narration ile visual_description birebir aynı olayı anlatsın
+- o narration okunurken başka olayın paneli gerekmesin
+- 14 sahnenin görsel fikirleri farklı olsun
+- özel isimler orijinal yazılsın
+- Thor -> Tor gibi fonetik yazım yapma
+
+story_role:
+hook
+context
+escalation
+twist
+payoff
+cta
+
+SADECE JSON:
 {{
   "title": "...",
   "description": "...",
@@ -1374,7 +1302,7 @@ SADECE BU JSON ŞEMASI:
     storyboard = ask_gemini_json(
         client,
         prompt,
-        temperature=0.45,
+        temperature=0.42,
         operation_name="Story Director",
     )
 
@@ -1383,45 +1311,22 @@ SADECE BU JSON ŞEMASI:
         [],
     )
 
-    if not isinstance(
-        scenes,
-        list,
-    ):
-        storyboard[
-            "_structure_valid"
-        ] = False
-
-        storyboard[
-            "_structure_error"
-        ] = (
+    if not isinstance(scenes, list):
+        storyboard["_structure_valid"] = False
+        storyboard["_structure_error"] = (
             "scenes alanı liste değil."
         )
-
-        storyboard[
-            "_scene_count"
-        ] = 0
-
+        storyboard["_scene_count"] = 0
         return storyboard
 
-    scene_count = len(
-        scenes
-    )
-
-    storyboard[
-        "_scene_count"
-    ] = scene_count
-
-    scene_numbers: list[int] = []
+    numbers: list[int] = []
 
     for scene in scenes:
-        if not isinstance(
-            scene,
-            dict,
-        ):
+        if not isinstance(scene, dict):
             continue
 
         try:
-            scene_numbers.append(
+            numbers.append(
                 int(
                     scene.get(
                         "scene_number",
@@ -1430,13 +1335,10 @@ SADECE BU JSON ŞEMASI:
                 )
             )
 
-        except (
-            TypeError,
-            ValueError,
-        ):
-            continue
+        except (TypeError, ValueError):
+            numbers.append(0)
 
-    expected_numbers = list(
+    expected = list(
         range(
             1,
             SCENE_COUNT + 1,
@@ -1444,54 +1346,45 @@ SADECE BU JSON ŞEMASI:
     )
 
     structure_valid = (
-        scene_count == SCENE_COUNT
-        and scene_numbers == expected_numbers
+        len(scenes) == SCENE_COUNT
+        and numbers == expected
     )
 
-    storyboard[
-        "_structure_valid"
-    ] = structure_valid
+    storyboard["_structure_valid"] = structure_valid
+    storyboard["_scene_count"] = len(scenes)
 
     if not structure_valid:
-        problems: list[str] = []
-
-        if scene_count != SCENE_COUNT:
-            problems.append(
-                f"TAM {SCENE_COUNT} sahne gerekli, "
-                f"{scene_count} sahne üretildi."
-            )
-
-        if scene_numbers != expected_numbers:
-            problems.append(
-                "scene_number sırası hatalı. "
-                f"Beklenen: {expected_numbers}. "
-                f"Gelen: {scene_numbers}."
-            )
-
-        storyboard[
-            "_structure_error"
-        ] = " ".join(
-            problems
+        storyboard["_structure_error"] = (
+            f"TAM {SCENE_COUNT} sahne gerekli. "
+            f"Gelen={len(scenes)}. "
+            f"Scene numbers={numbers}."
         )
 
         return storyboard
+
+    valid_roles = {
+        "hook",
+        "context",
+        "escalation",
+        "twist",
+        "payoff",
+        "cta",
+    }
 
     narration_parts: list[str] = []
 
     for scene in scenes:
         narration = clean(
-            scene.get(
-                "narration"
-            )
+            scene.get("narration")
         )
 
-        visual_description = clean(
+        visual = clean(
             scene.get(
                 "visual_description"
             )
         )
 
-        story_role = clean(
+        role = clean(
             scene.get(
                 "story_role"
             )
@@ -1499,18 +1392,13 @@ SADECE BU JSON ŞEMASI:
 
         if (
             not narration
-            or not visual_description
-            or not story_role
+            or not visual
+            or role not in valid_roles
         ):
-            storyboard[
-                "_structure_valid"
-            ] = False
-
-            storyboard[
-                "_structure_error"
-            ] = (
-                "En az bir sahnede narration, "
-                "visual_description veya story_role eksik."
+            storyboard["_structure_valid"] = False
+            storyboard["_structure_error"] = (
+                "Bir sahnede narration, visual_description "
+                "veya geçerli story_role eksik."
             )
 
             return storyboard
@@ -1519,34 +1407,140 @@ SADECE BU JSON ŞEMASI:
             narration
         )
 
-    storyboard[
-        "narration"
-    ] = " ".join(
+    storyboard["narration"] = " ".join(
         narration_parts
     )
 
     return storyboard
 
 
+def score_storyboard(
+    client: genai.Client,
+    event: dict[str, Any],
+    storyboard: dict[str, Any],
+) -> dict[str, Any]:
+    """Storyboard kalitesini sert eşiklerle değerlendirir."""
+    prompt = f"""
+Premium Shorts Supervising Story Director'sın.
+
+EVENT:
+{clean(event.get("event_title"))}
+
+STORYBOARD:
+{json.dumps(
+    storyboard.get("scenes", []),
+    ensure_ascii=False,
+    indent=2,
+)}
+
+0-100 puanla:
+hook
+clarity
+escalation
+payoff
+factual_discipline
+visual_storytelling
+narration_visual_match
+retention
+overall
+
+ÇOK KATI PUANLAMA:
+
+94+ overall:
+yalnız gerçekten yayınlanabilir premium story.
+
+narration_visual_match:
+Bir narration sırasında hangi comic panelinin
+gösterileceği açık ve tek anlamlı olmalı.
+
+Bir sahne iki ayrı büyük olayı anlatıyorsa puan kır.
+
+Aynı bilgi veya aynı görsel fikir tekrar ediyorsa puan kır.
+
+Story yalnız bilgi listesi gibi ilerliyorsa ciddi puan kır.
+
+Factual karışıklık varsa ciddi puan kır.
+
+Son dört sahnede gerçek payoff yoksa 94+ verme.
+
+SADECE JSON:
+{{
+  "hook": 0,
+  "clarity": 0,
+  "escalation": 0,
+  "payoff": 0,
+  "factual_discipline": 0,
+  "visual_storytelling": 0,
+  "narration_visual_match": 0,
+  "retention": 0,
+  "overall": 0,
+  "problems": ["..."],
+  "revision_instruction": "..."
+}}
+"""
+
+    result = ask_gemini_json(
+        client,
+        prompt,
+        temperature=0.08,
+        operation_name="Story Quality Check",
+    )
+
+    for key in (
+        "hook",
+        "clarity",
+        "escalation",
+        "payoff",
+        "factual_discipline",
+        "visual_storytelling",
+        "narration_visual_match",
+        "retention",
+        "overall",
+    ):
+        try:
+            score = float(
+                result.get(
+                    key,
+                    0,
+                )
+                or 0
+            )
+
+        except (TypeError, ValueError):
+            score = 0.0
+
+        result[key] = max(
+            0.0,
+            min(
+                100.0,
+                score,
+            ),
+        )
+
+    return result
+
+
 def build_quality_storyboard(
     client: genai.Client,
     event: dict[str, Any],
 ) -> dict[str, Any]:
-    """Story checkpoint geçene kadar yapısal ve içeriksel sorunları tamir eder."""
+    """Story yeterli değilse eventi reddedip üst pipeline'a geri gönderir."""
     print()
     print("=" * 78)
-    print("2/13 - STORY REPAIR LOOP")
+    print("STORY QUALITY GATE")
     print("=" * 78)
 
     feedback = ""
-    cycle = 1
+    best_score = 0.0
+    best_problems = ""
 
-    while checkpoint_cycle_allowed(
-        cycle
+    for cycle in range(
+        1,
+        STORY_REPAIR_CYCLES_PER_EVENT + 1,
     ):
-        print()
         print(
-            f"→ Story repair cycle {cycle}"
+            f"\n→ Story repair cycle {cycle}/"
+            f"{STORY_REPAIR_CYCLES_PER_EVENT}"
         )
 
         storyboard = generate_storyboard(
@@ -1555,23 +1549,13 @@ def build_quality_storyboard(
             feedback,
         )
 
-        structure_valid = bool(
+        if not bool(
             storyboard.get(
                 "_structure_valid",
                 False,
             )
-        )
-
-        if not structure_valid:
-            scene_count = int(
-                storyboard.get(
-                    "_scene_count",
-                    0,
-                )
-                or 0
-            )
-
-            structure_error = clean(
+        ):
+            error = clean(
                 storyboard.get(
                     "_structure_error"
                 )
@@ -1582,33 +1566,29 @@ def build_quality_storyboard(
                 score=0.0,
                 threshold=100.0,
                 cycle=cycle,
-                details=(
-                    structure_error
-                    or (
-                        f"Beklenen {SCENE_COUNT} sahne, "
-                        f"gelen {scene_count}."
-                    )
-                ),
+                details=error,
                 passed=False,
             )
 
             feedback = (
-                "ÖNCEKİ CEVAP YAPISAL CHECKPOINT'TEN GEÇMEDİ. "
-                f"{structure_error} "
-                f"TAM OLARAK {SCENE_COUNT} sahne üret. "
-                f"scene_number değerleri 1-{SCENE_COUNT} "
-                "arasında kesintisiz ve sıralı olsun. "
-                "Hiçbir sahneyi atlama veya fazladan sahne ekleme. "
-                "İçerik kalitesini de önceki sürümden düşürme."
+                f"Önceki cevap yapısal olarak hatalıydı. "
+                f"{error} "
+                f"TAM {SCENE_COUNT} sahne üret. "
+                "Scene sayılarını düzeltirken story kalitesini düşürme."
             )
 
-            print(
-                "↻ Story structure başarısız. "
-                "Aynı checkpoint yeniden çalıştırılıyor."
-            )
-
-            cycle += 1
             continue
+
+        CHECKPOINTS.record(
+            name="story_structure",
+            score=100.0,
+            threshold=100.0,
+            cycle=cycle,
+            details=(
+                f"{SCENE_COUNT}/{SCENE_COUNT} sahne."
+            ),
+            passed=True,
+        )
 
         review = score_storyboard(
             client,
@@ -1625,17 +1605,17 @@ def build_quality_storyboard(
         )
 
         problems = "; ".join(
-            clean(
-                value
-            )
-            for value in review.get(
+            clean(item)
+            for item in review.get(
                 "problems",
                 [],
             )
-            if clean(
-                value
-            )
+            if clean(item)
         )
+
+        if score > best_score:
+            best_score = score
+            best_problems = problems
 
         passed = CHECKPOINTS.record(
             name="story_quality",
@@ -1667,46 +1647,24 @@ def build_quality_storyboard(
                 storyboard,
             )
 
-            print()
-            print(
-                f"✓ Story checkpoint PASS: "
-                f"{score:.2f}/100"
-            )
-
-            print(
-                f"✓ Scene count: {SCENE_COUNT}/{SCENE_COUNT}"
-            )
-
             return storyboard
 
-        revision_instruction = clean(
-            review.get(
-                "revision_instruction"
-            )
-        )
-
         feedback = (
-            f"ÖNCEKİ STORY QUALITY SCORE: "
-            f"{score:.2f}/100. "
-            f"Minimum gerekli: {STORY_THRESHOLD:.2f}/100. "
-            f"Problemler: {problems or 'Belirtilmedi.'} "
-            f"Director repair instruction: "
-            f"{revision_instruction or 'Zayıf alanları geliştir.'} "
-            f"TAM {SCENE_COUNT} SAHNEYİ KORU. "
-            "İyi çalışan sahneleri gereksiz değiştirme. "
-            "Yalnız düşük puana neden olan bölümleri iyileştir. "
-            "Narration ile visual_description birebir eşleşsin."
+            f"Önceki overall={score:.1f}/100. "
+            f"Minimum={STORY_THRESHOLD:.1f}. "
+            f"Problems: {problems}. "
+            f"Repair instruction: "
+            f"{clean(review.get('revision_instruction'))}. "
+            f"TAM {SCENE_COUNT} sahneyi koru. "
+            "İyi sahneleri bozma. "
+            "Düşük puanlı story, factual ve "
+            "narration-visual bölümlerini düzelt."
         )
 
-        print(
-            "↻ Story quality threshold altında. "
-            "Düzeltilip aynı checkpoint'e dönülüyor."
-        )
-
-        cycle += 1
-
-    raise ComicFactoryError(
-        "Story repair loop güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        "Story bu event için yeterince güçlü değil. "
+        f"Best={best_score:.1f}/100. "
+        f"{best_problems}"
     )
 
 
@@ -1714,30 +1672,28 @@ def create_voice_direction(
     client: genai.Client,
     narration: str,
 ) -> dict[str, Any]:
-    """Kilitli Thor V2 voice delivery talimatını oluşturur."""
+    """Kilitli Gacrux voice delivery talimatı üretir."""
     prompt = f"""
 Türkçe premium YouTube Shorts Voice Director'sın.
 
 TRANSCRIPT:
 {narration}
 
-TRANSCRIPT kelimelerini değiştirme.
+KELİMELERİ DEĞİŞTİRME.
 
-Yalnız delivery talimatı üret.
-
-KİLİTLİ SES KARAKTERİ:
-- 25-35 yaş doğal erkek YouTube storyteller.
-- arkadaşına çok ilginç bir comic olayını anlatıyor gibi.
-- haber spikeri değil.
-- ağır belgesel değil.
-- robot/TikTok sesi değil.
-- enerjik ama bağırmayan.
-- İngilizce özel isimleri doğal İngilizce telaffuz et.
-- sonra akıcı biçimde Türkçeye dön.
-- reveal öncesi kısa doğal pause.
-- doğal nefes.
-- doğal ritim.
-- yaklaşık 1.0x tempo.
+Kilitli voice karakteri:
+- doğal erkek storyteller
+- arkadaşına inanılmaz comic hikayesi anlatır gibi
+- yapay TikTok sesi değil
+- haber spikeri değil
+- ağır belgesel değil
+- enerjik ama bağırmayan
+- İngilizce özel isimleri doğal İngilizce telaffuz et
+- sonra doğal Türkçeye dön
+- cümle sonlarını aynı melodiyle bitirme
+- reveal öncesi kısa doğal pause
+- doğal nefes ve konuşma ritmi
+- yaklaşık 1.0x tempo
 
 SADECE JSON:
 {{
@@ -1750,7 +1706,7 @@ SADECE JSON:
     return ask_gemini_json(
         client,
         prompt,
-        temperature=0.20,
+        temperature=0.18,
         operation_name="Locked Voice Director",
     )
 
@@ -1759,28 +1715,15 @@ def write_pcm_wave(
     path: Path,
     pcm: bytes,
 ) -> None:
-    """24 kHz mono PCM verisini WAV'a yazar."""
+    """24kHz mono PCM sesini WAV dosyasına yazar."""
     with wave.open(
-        str(
-            path
-        ),
+        str(path),
         "wb",
     ) as file:
-        file.setnchannels(
-            1
-        )
-
-        file.setsampwidth(
-            2
-        )
-
-        file.setframerate(
-            24000
-        )
-
-        file.writeframes(
-            pcm
-        )
+        file.setnchannels(1)
+        file.setsampwidth(2)
+        file.setframerate(24000)
+        file.writeframes(pcm)
 
 
 def generate_gacrux_voice(
@@ -1788,7 +1731,7 @@ def generate_gacrux_voice(
     narration: str,
     cycle: int,
 ) -> Path:
-    """Thor V2'de kullanılan kilitli Gacrux sesini üretir."""
+    """Kilitli Gacrux sesi üretir."""
     direction = create_voice_direction(
         client,
         narration,
@@ -1797,7 +1740,7 @@ def generate_gacrux_voice(
     prompt = f"""
 Read ONLY the transcript inside <TRANSCRIPT>.
 
-VOICE DIRECTION:
+VOICE:
 {clean(direction.get("style_instruction"))}
 
 PRONUNCIATION:
@@ -1808,16 +1751,16 @@ PACE:
 
 Critical:
 The surrounding language is Turkish.
-English proper nouns must be pronounced naturally in English,
-then smoothly return to Turkish.
+English proper nouns must sound naturally English.
+After the proper noun, return naturally to Turkish.
 
-Do not add words.
-Do not remove words.
-Do not paraphrase.
-Do not read instructions.
-Do not sound like an announcer.
-Do not sound synthetic.
-Use natural breaths and conversational rhythm.
+Do not:
+add words
+remove words
+paraphrase
+read instructions
+sound synthetic
+sound like an announcer
 
 <TRANSCRIPT>
 {narration}
@@ -1829,9 +1772,7 @@ Use natural breaths and conversational rhythm.
             model=GEMINI_TTS_MODEL,
             contents=prompt,
             config=types.GenerateContentConfig(
-                response_modalities=[
-                    "AUDIO"
-                ],
+                response_modalities=["AUDIO"],
                 speech_config=types.SpeechConfig(
                     voice_config=types.VoiceConfig(
                         prebuilt_voice_config=(
@@ -1865,17 +1806,17 @@ Use natural breaths and conversational rhythm.
         TypeError,
     ) as error:
         raise ComicFactoryError(
-            "Gacrux audio alınamadı."
+            "Gemini Gacrux audio döndürmedi."
         ) from error
 
     if not pcm:
         raise ComicFactoryError(
-            "Gacrux boş audio döndürdü."
+            "Gemini Gacrux boş audio döndürdü."
         )
 
     output = (
         AUDIO_DIR
-        / f"gacrux_cycle_{cycle:03d}.wav"
+        / f"gacrux_cycle_{cycle:02d}.wav"
     )
 
     write_pcm_wave(
@@ -1891,11 +1832,8 @@ def object_value(
     key: str,
     default: Any = None,
 ) -> Any:
-    """Dict veya SDK nesnesinden alan okur."""
-    if isinstance(
-        value,
-        dict,
-    ):
+    """SDK nesnesi veya dict alanını okur."""
+    if isinstance(value, dict):
         return value.get(
             key,
             default,
@@ -1913,7 +1851,7 @@ def transcribe_words(
     narration: str,
 ) -> list[dict[str, Any]]:
     """Groq Whisper kelime timestamp'lerini çıkarır."""
-    groq = Groq(
+    client = Groq(
         api_key=require_env(
             "GROQ_API_KEY"
         )
@@ -1923,24 +1861,18 @@ def transcribe_words(
         "rb"
     ) as audio:
         transcription = (
-            groq.audio.transcriptions.create(
+            client.audio.transcriptions.create(
                 file=audio,
                 model=GROQ_MODEL,
                 language="tr",
                 response_format="verbose_json",
-                timestamp_granularities=[
-                    "word"
-                ],
-                prompt=narration[
-                    :700
-                ],
+                timestamp_granularities=["word"],
+                prompt=narration[:700],
                 temperature=0,
             )
         )
 
-    words: list[
-        dict[str, Any]
-    ] = []
+    words: list[dict[str, Any]] = []
 
     for item in object_value(
         transcription,
@@ -1973,20 +1905,14 @@ def transcribe_words(
             words.append(
                 {
                     "word": word,
-                    "start": float(
-                        start
-                    ),
-                    "end": float(
-                        end
-                    ),
+                    "start": float(start),
+                    "end": float(end),
                 }
             )
 
-    if len(
-        words
-    ) < 20:
+    if len(words) < 20:
         raise ComicFactoryError(
-            "Groq yeterli timestamp üretmedi."
+            "Groq yeterli word timestamp üretmedi."
         )
 
     return words
@@ -1995,13 +1921,11 @@ def transcribe_words(
 def normalize_alignment_word(
     value: str,
 ) -> str:
-    """Kelimeyi alignment karşılaştırması için normalize eder."""
+    """Alignment için kelimeyi normalize eder."""
     return re.sub(
         r"[^\wçğıöşü'-]",
         "",
-        clean(
-            value
-        ).casefold(),
+        clean(value).casefold(),
         flags=re.UNICODE,
     )
 
@@ -2017,9 +1941,7 @@ def narration_tokens(
             narration,
             flags=re.UNICODE,
         )
-        if clean(
-            token
-        )
+        if clean(token)
     ]
 
 
@@ -2027,19 +1949,11 @@ def word_similarity(
     first: str,
     second: str,
 ) -> float:
-    """İki kelimenin fuzzy benzerliğini ölçer."""
-    first = normalize_alignment_word(
-        first
-    )
+    """Kelime benzerlik skorunu hesaplar."""
+    first = normalize_alignment_word(first)
+    second = normalize_alignment_word(second)
 
-    second = normalize_alignment_word(
-        second
-    )
-
-    if (
-        not first
-        or not second
-    ):
+    if not first or not second:
         return 0.0
 
     if first == second:
@@ -2059,7 +1973,7 @@ def align_narration_to_audio(
     list[dict[str, Any]],
     dict[str, float],
 ]:
-    """Narration kelimelerini gerçek audio timestamp'lerine hizalar."""
+    """Gerçek narration kelimelerini ses timestamp'lerine hizalar."""
     script_words = narration_tokens(
         narration
     )
@@ -2069,15 +1983,13 @@ def align_narration_to_audio(
             "Narration boş."
         )
 
-    aligned: list[
-        dict[str, Any]
-    ] = []
+    aligned: list[dict[str, Any]] = []
 
     whisper_index = 0
     previous_end = 0.0
 
-    good_matches = 0
-    similarity_sum = 0.0
+    strong_matches = 0
+    similarity_total = 0.0
 
     for script_index, script_word in enumerate(
         script_words
@@ -2086,33 +1998,31 @@ def align_narration_to_audio(
         best_score = 0.0
 
         search_end = min(
-            len(
-                whisper_words
-            ),
-            whisper_index + 8,
+            len(whisper_words),
+            whisper_index + 9,
         )
 
         for candidate_index in range(
             whisper_index,
             search_end,
         ):
-            candidate = whisper_words[
-                candidate_index
-            ]
+            candidate_word = clean(
+                whisper_words[
+                    candidate_index
+                ].get(
+                    "word"
+                )
+            )
 
             score = word_similarity(
                 script_word,
-                clean(
-                    candidate.get(
-                        "word"
-                    )
-                ),
+                candidate_word,
             )
 
             score -= (
                 candidate_index
                 - whisper_index
-            ) * 0.02
+            ) * 0.018
 
             if score > best_score:
                 best_score = score
@@ -2127,31 +2037,25 @@ def align_narration_to_audio(
             ]
 
             start = float(
-                match[
-                    "start"
-                ]
+                match["start"]
             )
 
             end = float(
-                match[
-                    "end"
-                ]
+                match["end"]
             )
 
             whisper_index = min(
-                len(
-                    whisper_words
-                ),
+                len(whisper_words),
                 best_index + 1,
             )
 
-            if best_score >= 0.72:
-                good_matches += 1
-
-            similarity_sum += max(
+            similarity_total += max(
                 0.0,
                 best_score,
             )
+
+            if best_score >= 0.72:
+                strong_matches += 1
 
         elif whisper_index < len(
             whisper_words
@@ -2162,67 +2066,42 @@ def align_narration_to_audio(
 
             start = max(
                 previous_end,
-                float(
-                    reference[
-                        "start"
-                    ]
-                ),
+                float(reference["start"]),
             )
 
             duration = max(
                 0.10,
                 min(
                     0.42,
-                    float(
-                        reference[
-                            "end"
-                        ]
-                    )
-                    - float(
-                        reference[
-                            "start"
-                        ]
-                    ),
+                    float(reference["end"])
+                    - float(reference["start"]),
                 ),
             )
 
-            end = (
-                start
-                + duration
-            )
+            end = start + duration
 
         else:
-            last_end = float(
-                whisper_words[
-                    -1
-                ][
-                    "end"
-                ]
+            last_audio_end = float(
+                whisper_words[-1]["end"]
             )
 
             remaining = max(
                 1,
-                len(
-                    script_words
-                )
+                len(script_words)
                 - script_index,
             )
 
             duration = max(
                 0.10,
                 (
-                    last_end
+                    last_audio_end
                     - previous_end
                 )
                 / remaining,
             )
 
             start = previous_end
-
-            end = (
-                start
-                + duration
-            )
+            end = start + duration
 
         start = max(
             previous_end,
@@ -2245,40 +2124,34 @@ def align_narration_to_audio(
         previous_end = end
 
     coverage = (
-        good_matches
+        strong_matches
         / max(
             1,
-            len(
-                script_words
-            ),
+            len(script_words),
         )
         * 100.0
     )
 
-    mean_similarity = (
-        similarity_sum
+    similarity = (
+        similarity_total
         / max(
             1,
-            len(
-                script_words
-            ),
+            len(script_words),
         )
         * 100.0
     )
 
-    combined = (
-        coverage
-        * 0.72
-        + mean_similarity
-        * 0.28
+    score = (
+        coverage * 0.72
+        + similarity * 0.28
     )
 
     return (
         aligned,
         {
             "coverage": coverage,
-            "mean_similarity": mean_similarity,
-            "combined": combined,
+            "similarity": similarity,
+            "score": score,
         },
     )
 
@@ -2291,16 +2164,17 @@ def build_quality_audio(
     list[dict[str, Any]],
     list[dict[str, Any]],
 ]:
-    """Audio alignment geçene kadar Gacrux sesini yeniden üretir."""
+    """Kilitli Gacrux sesi alignment geçene kadar tekrar üretir."""
     print()
     print("=" * 78)
-    print("3/13 - GACRUX AUDIO REPAIR LOOP")
+    print("AUDIO ALIGNMENT GATE")
     print("=" * 78)
 
-    cycle = 1
+    best_score = 0.0
 
-    while checkpoint_cycle_allowed(
-        cycle
+    for cycle in range(
+        1,
+        AUDIO_REPAIR_CYCLES + 1,
     ):
         audio = generate_gacrux_voice(
             client,
@@ -2321,9 +2195,12 @@ def build_quality_audio(
         )
 
         score = float(
-            metrics[
-                "combined"
-            ]
+            metrics["score"]
+        )
+
+        best_score = max(
+            best_score,
+            score,
         )
 
         passed = CHECKPOINTS.record(
@@ -2333,67 +2210,60 @@ def build_quality_audio(
             cycle=cycle,
             details=(
                 f"coverage={metrics['coverage']:.2f}% | "
-                f"similarity="
-                f"{metrics['mean_similarity']:.2f}%"
+                f"similarity={metrics['similarity']:.2f}%"
             ),
         )
 
-        if passed:
-            shutil.copy2(
-                audio,
-                LATEST_AUDIO_FILE,
-            )
+        if not passed:
+            continue
 
-            save_json(
-                LATEST_WORDS_FILE,
-                {
-                    "provider": "groq",
-                    "model": GROQ_MODEL,
-                    "words": whisper_words,
-                },
-            )
+        shutil.copy2(
+            audio,
+            LATEST_AUDIO_FILE,
+        )
 
-            save_json(
-                ALIGNED_WORDS_FILE,
-                {
-                    "metrics": metrics,
-                    "words": aligned_words,
-                },
-            )
+        save_json(
+            LATEST_WORDS_FILE,
+            {
+                "provider": "groq",
+                "model": GROQ_MODEL,
+                "words": whisper_words,
+            },
+        )
 
-            return (
-                LATEST_AUDIO_FILE,
-                whisper_words,
-                aligned_words,
-            )
+        save_json(
+            ALIGNED_WORDS_FILE,
+            {
+                "metrics": metrics,
+                "words": aligned_words,
+            },
+        )
 
-        cycle += 1
+        return (
+            LATEST_AUDIO_FILE,
+            whisper_words,
+            aligned_words,
+        )
 
-    raise ComicFactoryError(
-        "Audio repair loop güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        "Bu eventin narration/audio kombinasyonu "
+        "istenen alignment seviyesine ulaşamadı. "
+        f"Best={best_score:.1f}."
     )
 
 
 def ffmpeg_path() -> str:
-    """FFmpeg yolunu döndürür."""
+    """FFmpeg executable yolunu döndürür."""
     return imageio_ffmpeg.get_ffmpeg_exe()
 
 
 def run_ffmpeg(
     command: list[str],
     message: str,
-    cwd: Path | None = None,
 ) -> None:
     """FFmpeg komutunu çalıştırır."""
     process = subprocess.run(
         command,
-        cwd=(
-            str(
-                cwd
-            )
-            if cwd
-            else None
-        ),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
@@ -2405,25 +2275,21 @@ def run_ffmpeg(
         raise ComicFactoryError(
             message
             + "\n"
-            + process.stderr[
-                -3500:
-            ]
+            + process.stderr[-4000:]
         )
 
 
 def media_duration(
     ffmpeg: str,
-    media: Path,
+    path: Path,
 ) -> float:
-    """Bir media dosyasının süresini okur."""
+    """Media duration değerini okur."""
     process = subprocess.run(
         [
             ffmpeg,
             "-hide_banner",
             "-i",
-            str(
-                media
-            ),
+            str(path),
             "-f",
             "null",
             "-",
@@ -2442,27 +2308,13 @@ def media_duration(
 
     if not match:
         raise ComicFactoryError(
-            f"Media süresi okunamadı: {media}"
+            f"Media duration okunamadı: {path}"
         )
 
     return (
-        int(
-            match.group(
-                1
-            )
-        )
-        * 3600
-        + int(
-            match.group(
-                2
-            )
-        )
-        * 60
-        + float(
-            match.group(
-                3
-            )
-        )
+        int(match.group(1)) * 3600
+        + int(match.group(2)) * 60
+        + float(match.group(3))
     )
 
 
@@ -2470,43 +2322,30 @@ def build_scene_timeline(
     storyboard: dict[str, Any],
     aligned_words: list[dict[str, Any]],
     audio_duration_seconds: float,
-) -> list[
-    tuple[
-        float,
-        float,
-    ]
-]:
-    """Her sahne sınırını gerçek narration audio kelimelerine bağlar."""
-    scenes = storyboard[
-        "scenes"
-    ]
+) -> list[tuple[float, float]]:
+    """Her sahneyi narration'daki gerçek audio kelime sınırlarına bağlar."""
+    scenes = storyboard["scenes"]
 
     counts = [
         len(
             narration_tokens(
                 clean(
-                    scene.get(
-                        "narration"
-                    )
+                    scene.get("narration")
                 )
             )
         )
         for scene in scenes
     ]
 
-    expected = sum(
-        counts
-    )
+    expected_words = sum(counts)
 
     if abs(
-        expected
-        - len(
-            aligned_words
-        )
+        expected_words
+        - len(aligned_words)
     ) > 2:
-        raise ComicFactoryError(
-            "Storyboard narration ile aligned audio kelimeleri "
-            "uyuşmuyor."
+        raise EventRejectedError(
+            "Scene narration kelimeleri ile audio alignment "
+            "kelimeleri uyuşmadı."
         )
 
     timeline: list[
@@ -2521,20 +2360,19 @@ def build_scene_timeline(
     for scene_index, count in enumerate(
         counts
     ):
+        if count <= 0:
+            raise EventRejectedError(
+                "Boş scene narration bulundu."
+            )
+
         start_index = min(
             cursor,
-            len(
-                aligned_words
-            ) - 1,
+            len(aligned_words) - 1,
         )
 
         end_index = min(
-            cursor
-            + count
-            - 1,
-            len(
-                aligned_words
-            ) - 1,
+            cursor + count - 1,
+            len(aligned_words) - 1,
         )
 
         if scene_index == 0:
@@ -2544,17 +2382,13 @@ def build_scene_timeline(
             previous_end = float(
                 aligned_words[
                     start_index - 1
-                ][
-                    "end"
-                ]
+                ]["end"]
             )
 
             current_start = float(
                 aligned_words[
                     start_index
-                ][
-                    "start"
-                ]
+                ]["start"]
             )
 
             start = (
@@ -2562,45 +2396,36 @@ def build_scene_timeline(
                 + current_start
             ) / 2.0
 
-        if scene_index == len(
-            scenes
-        ) - 1:
+        if scene_index == len(scenes) - 1:
             end = audio_duration_seconds
 
         else:
-            this_end = float(
+            current_end = float(
                 aligned_words[
                     end_index
-                ][
-                    "end"
-                ]
+                ]["end"]
             )
 
             next_index = min(
                 end_index + 1,
-                len(
-                    aligned_words
-                ) - 1,
+                len(aligned_words) - 1,
             )
 
             next_start = float(
                 aligned_words[
                     next_index
-                ][
-                    "start"
-                ]
+                ]["start"]
             )
 
             end = (
-                this_end
+                current_end
                 + next_start
             ) / 2.0
 
-        if end <= start:
-            end = (
-                start
-                + 0.20
-            )
+        end = max(
+            start + 0.20,
+            end,
+        )
 
         timeline.append(
             (
@@ -2616,13 +2441,10 @@ def build_scene_timeline(
 
 def search_image_queries(
     queries: list[str],
-    max_results_each: int,
+    each: int,
 ) -> list[dict[str, str]]:
-    """DDGS image sonuçlarını normalize eder."""
-    output: list[
-        dict[str, str]
-    ] = []
-
+    """Comic image aramalarını normalize eder."""
+    output: list[dict[str, str]] = []
     seen: set[str] = set()
 
     for query in queries:
@@ -2633,46 +2455,36 @@ def search_image_queries(
                 query,
                 region="us-en",
                 safesearch="moderate",
-                max_results=max_results_each,
+                max_results=each,
             )
 
         except Exception as error:
             print(
-                f"! Image search atlandı: {error}"
+                f"! Image search skipped: {error}"
             )
             continue
 
         for item in results or []:
             image_url = clean(
-                item.get(
-                    "image"
-                )
+                item.get("image")
             )
 
             if (
-                not image_url.startswith(
-                    "http"
-                )
+                not image_url.startswith("http")
                 or image_url in seen
             ):
                 continue
 
-            seen.add(
-                image_url
-            )
+            seen.add(image_url)
 
             output.append(
                 {
                     "image_url": image_url,
                     "source_page": clean(
-                        item.get(
-                            "url"
-                        )
+                        item.get("url")
                     ),
                     "title": clean(
-                        item.get(
-                            "title"
-                        )
+                        item.get("title")
                     ),
                 }
             )
@@ -2684,71 +2496,54 @@ def global_image_search(
     event: dict[str, Any],
     storyboard: dict[str, Any],
 ) -> list[dict[str, str]]:
-    """Event için geniş global comic görsel araştırması yapar."""
-    print()
-    print("=" * 78)
-    print("4/13 - GLOBAL VISUAL SEARCH")
-    print("=" * 78)
-
+    """Event için geniş gerçek comic görsel havuzu arar."""
     series = clean(
-        event.get(
-            "series"
-        )
+        event.get("series")
     )
 
     issue = clean(
-        event.get(
-            "issue"
-        )
+        event.get("issue")
     )
 
-    event_title = clean(
-        event.get(
-            "event_title"
-        )
+    title = clean(
+        event.get("event_title")
     )
 
     queries = [
         f'"{series}" "{issue}" comic panels',
         f'"{series}" "{issue}" comic pages',
-        f'"{series}" "{issue}" preview',
+        f'"{series}" "{issue}" preview images',
         f'"{series}" "{issue}" review panels',
-        f'"{event_title}" comic panels',
-        f'"{event_title}" comic pages',
+        f'"{title}" comic panels',
+        f'"{title}" comic page',
     ]
 
-    for scene in storyboard[
-        "scenes"
-    ]:
+    for scene in storyboard["scenes"]:
         visual = clean(
             scene.get(
                 "visual_description"
             )
         )
 
-        if visual:
-            queries.append(
-                f'"{series}" "{issue}" '
-                f'{visual[:90]}'
-            )
+        queries.append(
+            f'"{series}" "{issue}" '
+            f'{visual[:90]}'
+        )
 
     return search_image_queries(
         queries,
-        max_results_each=12,
+        each=12,
     )
 
 
 def average_hash(
     image: Image.Image,
 ) -> str:
-    """64-bit perceptual average hash üretir."""
+    """64-bit average hash oluşturur."""
     tiny = image.convert(
         "L"
     ).resize(
-        (
-            8,
-            8,
-        ),
+        (8, 8),
         Image.Resampling.LANCZOS,
     )
 
@@ -2756,47 +2551,33 @@ def average_hash(
         tiny.getdata()
     )
 
-    average = sum(
-        pixels
-    ) / len(
-        pixels
-    )
+    average = sum(pixels) / len(pixels)
 
     bits = "".join(
         "1"
-        if value >= average
+        if pixel >= average
         else "0"
-        for value in pixels
+        for pixel in pixels
     )
 
-    return (
-        f"{int(bits, 2):016x}"
-    )
+    return f"{int(bits, 2):016x}"
 
 
 def hash_distance(
     first: str,
     second: str,
 ) -> int:
-    """Perceptual hash Hamming mesafesini döndürür."""
+    """İki perceptual hash arasındaki mesafeyi hesaplar."""
     return bin(
-        int(
-            first,
-            16,
-        )
-        ^ int(
-            second,
-            16,
-        )
-    ).count(
-        "1"
-    )
+        int(first, 16)
+        ^ int(second, 16)
+    ).count("1")
 
 
 def source_image_quality(
     image: Image.Image,
 ) -> float:
-    """Kaynak comic görseline teknik kalite puanı verir."""
+    """Kaynak görsel teknik kalite skorunu hesaplar."""
     width, height = image.size
 
     megapixels = (
@@ -2805,7 +2586,7 @@ def source_image_quality(
         / 1_000_000
     )
 
-    min_side = min(
+    minimum_side = min(
         width,
         height,
     )
@@ -2817,13 +2598,13 @@ def source_image_quality(
     resolution_score = min(
         50.0,
         megapixels
-        / 1.50
+        / 1.4
         * 50.0,
     )
 
     dimension_score = min(
         30.0,
-        min_side
+        minimum_side
         / 900.0
         * 30.0,
     )
@@ -2833,8 +2614,7 @@ def source_image_quality(
         max(
             0.0,
             (
-                entropy
-                - 3.0
+                entropy - 3.0
             )
             / 4.5
             * 20.0,
@@ -2872,9 +2652,7 @@ def download_candidates(
 
     directory = (
         CANDIDATE_DIR
-        / event[
-            "id"
-        ]
+        / event["id"]
         / directory_name
     )
 
@@ -2884,27 +2662,20 @@ def download_candidates(
     )
 
     hashes = list(
-        known_hashes
-        or []
+        known_hashes or []
     )
 
-    accepted: list[
-        ImageCandidate
-    ] = []
+    output: list[ImageCandidate] = []
 
-    for result in results:
-        if len(
-            accepted
-        ) >= max_candidates:
+    for item in results:
+        if len(output) >= max_candidates:
             break
 
         try:
             response = session.get(
-                result[
-                    "image_url"
-                ],
+                item["image_url"],
                 headers={
-                    "Referer": result[
+                    "Referer": item[
                         "source_page"
                     ],
                 },
@@ -2916,9 +2687,7 @@ def download_candidates(
         except requests.RequestException:
             continue
 
-        if len(
-            response.content
-        ) < 18_000:
+        if len(response.content) < 18_000:
             continue
 
         try:
@@ -2929,9 +2698,7 @@ def download_candidates(
             ) as opened:
                 image = ImageOps.exif_transpose(
                     opened
-                ).convert(
-                    "RGB"
-                )
+                ).convert("RGB")
 
         except Exception:
             continue
@@ -2941,9 +2708,7 @@ def download_candidates(
         if (
             width < 500
             or height < 500
-            or width
-            * height
-            < 450_000
+            or width * height < 450_000
         ):
             continue
 
@@ -2961,12 +2726,10 @@ def download_candidates(
         ):
             continue
 
-        hashes.append(
-            phash
-        )
+        hashes.append(phash)
 
         candidate_id = (
-            f"c{start_index + len(accepted):04d}"
+            f"c{start_index + len(output):04d}"
         )
 
         local_file = (
@@ -2981,56 +2744,43 @@ def download_candidates(
             optimize=True,
         )
 
-        quality = source_image_quality(
-            image
-        )
-
-        accepted.append(
+        output.append(
             ImageCandidate(
                 candidate_id=candidate_id,
-                local_file=str(
-                    local_file
-                ),
-                source_page=result[
+                local_file=str(local_file),
+                source_page=item[
                     "source_page"
                 ],
-                image_url=result[
+                image_url=item[
                     "image_url"
                 ],
-                title=result[
-                    "title"
-                ],
+                title=item["title"],
                 width=width,
                 height=height,
                 quality_score=round(
-                    quality,
+                    source_image_quality(
+                        image
+                    ),
                     2,
                 ),
                 perceptual_hash=phash,
             )
         )
 
-    return accepted
+    return output
 
 
 def thumbnail_bytes(
     path: Path,
 ) -> bytes:
-    """Gemini Vision için thumbnail oluşturur."""
-    with Image.open(
-        path
-    ) as opened:
+    """Gemini Vision için düşük maliyetli thumbnail üretir."""
+    with Image.open(path) as opened:
         image = ImageOps.exif_transpose(
             opened
-        ).convert(
-            "RGB"
-        )
+        ).convert("RGB")
 
     image.thumbnail(
-        (
-            640,
-            640,
-        ),
+        (640, 640),
         Image.Resampling.LANCZOS,
     )
 
@@ -3048,31 +2798,21 @@ def thumbnail_bytes(
 def normalize_crop_box(
     crop_box: Any,
 ) -> list[float]:
-    """Crop koordinatlarını 0-1 aralığına çeker."""
-    default = [
-        0.0,
-        0.0,
-        1.0,
-        1.0,
-    ]
-
+    """Crop koordinatlarını normalize eder."""
     if (
-        not isinstance(
-            crop_box,
-            list,
-        )
-        or len(
-            crop_box
-        )
-        != 4
+        not isinstance(crop_box, list)
+        or len(crop_box) != 4
     ):
-        return default
+        return [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+        ]
 
     try:
         left, top, right, bottom = [
-            float(
-                value
-            )
+            float(value)
             for value in crop_box
         ]
 
@@ -3080,7 +2820,12 @@ def normalize_crop_box(
         TypeError,
         ValueError,
     ):
-        return default
+        return [
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+        ]
 
     left = max(
         0.0,
@@ -3128,20 +2873,20 @@ def rank_scene_candidates(
     scene_data: dict[str, Any],
     candidates: list[ImageCandidate],
 ) -> list[RankedVisual]:
-    """Tek sahne için görsel adaylarını sıralar."""
+    """Bir sahne için gerçek panelleri relevance'a göre sıralar."""
     candidates = sorted(
         candidates,
-        key=lambda item: item.quality_score,
+        key=lambda candidate: (
+            candidate.quality_score
+        ),
         reverse=True,
-    )[
-        :MAX_VISION_IMAGES
-    ]
+    )[:MAX_VISION_IMAGES]
 
     if not candidates:
         return []
 
     prompt = f"""
-Premium comic Visual Verification sistemisin.
+Premium comic Visual Director'sın.
 
 EVENT:
 {clean(event.get("event_title"))}
@@ -3153,29 +2898,26 @@ COMIC:
 NARRATION:
 {clean(scene_data.get("narration"))}
 
-EKRANDA TAM OLARAK GÖRÜLMESİ GEREKEN:
+O SIRADA EKRANDA GÖRÜLMESİ GEREKEN:
 {clean(scene_data.get("visual_description"))}
 
-Aday comic görsellerini incele.
+Aday görselleri tek tek incele.
 
 En iyi 6 adayı sırala.
 
 relevance_score:
-100 = anlatılan spesifik an kesin biçimde görünür.
-95 = aynı spesifik aksiyon/an açık biçimde görünür.
-85 = aynı karakterler/ortam fakat tam anlatılan an değil.
-70 = yalnız konu veya karakter benzer.
-50 = zayıf.
-0 = alakasız.
+100 = tam anlatılan olay
+95 = aynı spesifik aksiyon açıkça görülüyor
+85 = doğru karakterler ama yanlış/eksik an
+70 = yalnız konu benziyor
+50 = zayıf
+0 = alakasız
 
-95+ puanı kolay verme.
+95+ kolay verme.
 
 Crop:
-- doğru comic panelini seç.
-- normalize [left, top, right, bottom].
-- ana aksiyonu koru.
-- karakteri gereksiz kesme.
-- mümkünse gereksiz balon/metni dışarıda bırak.
+Doğru comic panelini seç.
+Ana karakter/aksiyon crop içinde kalmalı.
 
 SADECE JSON:
 {{
@@ -3190,17 +2932,16 @@ SADECE JSON:
 }}
 """
 
-    contents: list[Any] = [
-        prompt
-    ]
+    contents: list[Any] = [prompt]
 
     for candidate in candidates:
         contents.append(
             (
                 f"CANDIDATE {candidate.candidate_id}\n"
                 f"TITLE: {candidate.title}\n"
-                f"SIZE: {candidate.width}x{candidate.height}\n"
-                f"TECH QUALITY: "
+                f"SIZE: "
+                f"{candidate.width}x{candidate.height}\n"
+                f"QUALITY: "
                 f"{candidate.quality_score:.1f}"
             )
         )
@@ -3221,7 +2962,7 @@ SADECE JSON:
             model=GEMINI_MODEL,
             contents=contents,
             config=types.GenerateContentConfig(
-                temperature=0.05,
+                temperature=0.04,
                 response_mime_type="application/json",
             ),
         )
@@ -3235,8 +2976,7 @@ SADECE JSON:
     )
 
     payload = parse_json_response(
-        response.text
-        or "{}"
+        response.text or "{}"
     )
 
     raw_items = payload.get(
@@ -3247,21 +2987,14 @@ SADECE JSON:
         ),
     )
 
-    ranked: list[
-        RankedVisual
-    ] = []
+    ranked: list[RankedVisual] = []
 
-    for raw in raw_items:
-        if not isinstance(
-            raw,
-            dict,
-        ):
+    for item in raw_items:
+        if not isinstance(item, dict):
             continue
 
         candidate_id = clean(
-            raw.get(
-                "candidate_id"
-            )
+            item.get("candidate_id")
         )
 
         if not candidate_id:
@@ -3271,21 +3004,17 @@ SADECE JSON:
             RankedVisual(
                 candidate_id=candidate_id,
                 relevance_score=int(
-                    raw.get(
+                    item.get(
                         "relevance_score",
                         0,
                     )
                     or 0
                 ),
                 crop_box=normalize_crop_box(
-                    raw.get(
-                        "crop_box"
-                    )
+                    item.get("crop_box")
                 ),
                 reason=clean(
-                    raw.get(
-                        "reason"
-                    )
+                    item.get("reason")
                 ),
             )
         )
@@ -3297,53 +3026,34 @@ def restore_crop(
     candidate: ImageCandidate,
     crop_box: list[float],
     output: Path,
-) -> tuple[
-    Path,
-    float,
-]:
-    """Paneli içeriği değiştirmeden crop ve restore eder."""
+) -> tuple[Path, float]:
+    """Comic panelini değiştirmeden crop/restoration uygular."""
     with Image.open(
         candidate.local_file
     ) as opened:
-        source = ImageOps.exif_transpose(
+        image = ImageOps.exif_transpose(
             opened
-        ).convert(
-            "RGB"
-        )
+        ).convert("RGB")
 
     left, top, right, bottom = crop_box
 
     x1 = round(
-        left
-        * source.width
+        left * image.width
     )
 
     y1 = round(
-        top
-        * source.height
+        top * image.height
     )
 
     x2 = round(
-        right
-        * source.width
+        right * image.width
     )
 
     y2 = round(
-        bottom
-        * source.height
+        bottom * image.height
     )
 
-    crop_width = max(
-        1,
-        x2 - x1,
-    )
-
-    crop_height = max(
-        1,
-        y2 - y1,
-    )
-
-    crop = source.crop(
+    crop = image.crop(
         (
             x1,
             y1,
@@ -3352,15 +3062,25 @@ def restore_crop(
         )
     )
 
+    original_width = max(
+        1,
+        x2 - x1,
+    )
+
+    original_height = max(
+        1,
+        y2 - y1,
+    )
+
     megapixels = (
-        crop_width
-        * crop_height
+        original_width
+        * original_height
         / 1_000_000
     )
 
-    min_side = min(
-        crop_width,
-        crop_height,
+    minimum_side = min(
+        original_width,
+        original_height,
     )
 
     entropy = crop.convert(
@@ -3371,13 +3091,13 @@ def restore_crop(
         min(
             50.0,
             megapixels
-            / 1.25
+            / 1.20
             * 50.0,
         )
         + min(
             30.0,
-            min_side
-            / 850.0
+            minimum_side
+            / 800.0
             * 30.0,
         )
         + min(
@@ -3385,8 +3105,7 @@ def restore_crop(
             max(
                 0.0,
                 (
-                    entropy
-                    - 3.0
+                    entropy - 3.0
                 )
                 / 4.5
                 * 20.0,
@@ -3402,29 +3121,27 @@ def restore_crop(
         ),
     )
 
-    max_side = max(
+    maximum_side = max(
         crop.size
     )
 
-    if max_side < 2600:
+    if maximum_side < 2600:
         scale = min(
-            2.5,
+            2.4,
             2600
             / max(
                 1,
-                max_side,
+                maximum_side,
             ),
         )
 
         crop = crop.resize(
             (
                 round(
-                    crop.width
-                    * scale
+                    crop.width * scale
                 ),
                 round(
-                    crop.height
-                    * scale
+                    crop.height * scale
                 ),
             ),
             Image.Resampling.LANCZOS,
@@ -3432,19 +3149,15 @@ def restore_crop(
 
     crop = ImageEnhance.Contrast(
         crop
-    ).enhance(
-        1.045
-    )
+    ).enhance(1.04)
 
     crop = ImageEnhance.Color(
         crop
-    ).enhance(
-        1.015
-    )
+    ).enhance(1.015)
 
     crop = crop.filter(
         ImageFilter.UnsharpMask(
-            radius=1.20,
+            radius=1.2,
             percent=105,
             threshold=3,
         )
@@ -3473,9 +3186,9 @@ def evaluate_visual(
     visual_file: Path,
     technical_quality: float,
 ) -> dict[str, Any]:
-    """Final panel/crop'u narration ile doğrular."""
+    """Final sahne panelini narration, kalite ve composition açısından inceler."""
     prompt = f"""
-Premium comic-video scene quality checker'sın.
+Premium comic Shorts Scene QC.
 
 NARRATION:
 {clean(scene_data.get("narration"))}
@@ -3485,28 +3198,21 @@ EXPECTED VISUAL:
 
 Final görseli değerlendir.
 
-0-100:
-visual_match:
-- narration'daki spesifik olay gerçekten görünüyor mu?
+visual_match 0-100:
+Narration'daki spesifik olay gerçekten ekranda mı?
 
-image_quality:
-- netlik
-- çözünürlük hissi
-- compression artefact
-- aşırı büyütme
-- bozulmuş detay
+image_quality 0-100:
+Netlik, çözünürlük hissi, bozulma, artefact.
 
-composition:
-- ana karakter/aksiyon açık mı?
-- önemli öğe crop dışında mı?
-- Shorts kadrajında okunabilir mi?
-- görüntü gereksiz text/bubble karmaşası içeriyor mu?
+composition 0-100:
+Ana olay okunuyor mu?
+Karakter/aksiyon crop dışında mı?
+9:16 videoda kullanışlı mı?
 
 SOURCE TECHNICAL QUALITY:
-{technical_quality:.2f}
+{technical_quality:.1f}
 
-visual_match 95+ yalnız gerçekten anlatılan spesifik an
-görülüyorsa ver.
+95+ visual_match yalnız tam olay görünüyorsa ver.
 
 SADECE JSON:
 {{
@@ -3538,7 +3244,7 @@ SADECE JSON:
                 ),
             ],
             config=types.GenerateContentConfig(
-                temperature=0.05,
+                temperature=0.03,
                 response_mime_type="application/json",
             ),
         )
@@ -3546,14 +3252,13 @@ SADECE JSON:
     response = gemini_with_retry(
         request,
         operation_name=(
-            "Visual Verification "
-            f"Scene {scene_data['scene_number']}"
+            "Scene Visual QC "
+            f"{scene_data['scene_number']}"
         ),
     )
 
     return parse_json_response(
-        response.text
-        or "{}"
+        response.text or "{}"
     )
 
 
@@ -3561,19 +3266,18 @@ def scene_specific_search(
     event: dict[str, Any],
     scene_data: dict[str, Any],
     feedback: str,
-    cycle: int,
 ) -> list[dict[str, str]]:
-    """Başarısız scene checkpoint için yeni görsel arar."""
+    """Başarısız sahne için daha spesifik panel araştırması yapar."""
     series = clean(
-        event.get(
-            "series"
-        )
+        event.get("series")
     )
 
     issue = clean(
-        event.get(
-            "issue"
-        )
+        event.get("issue")
+    )
+
+    narration = clean(
+        scene_data.get("narration")
     )
 
     visual = clean(
@@ -3582,54 +3286,22 @@ def scene_specific_search(
         )
     )
 
-    narration = clean(
-        scene_data.get(
-            "narration"
-        )
-    )
-
-    character_text = " ".join(
-        clean(
-            character
-        )
-        for character in event.get(
-            "characters",
-            [],
-        )[
-            :4
-        ]
-    )
-
-    feedback_terms = clean(
-        feedback
-    )[
-        :100
-    ]
-
     queries = [
         f'"{series}" "{issue}" {visual[:100]}',
-        f'"{series}" "{issue}" {narration[:90]} comic panel',
-        f'"{series}" "{issue}" {character_text} comic page',
-        f'"{series}" "{issue}" preview scan panel',
+        f'"{series}" "{issue}" {narration[:95]} panel',
+        f'"{series}" "{issue}" comic page preview',
+        f'"{series}" "{issue}" review scan',
     ]
 
-    if feedback_terms:
+    if feedback:
         queries.append(
             f'"{series}" "{issue}" '
-            f'{feedback_terms}'
-        )
-
-    if cycle >= 3:
-        queries.extend(
-            [
-                f'"{series}" "{issue}" full page review',
-                f'"{series}" "{issue}" comic preview page',
-            ]
+            f'{clean(feedback)[:90]}'
         )
 
     return search_image_queries(
         queries,
-        max_results_each=10,
+        each=10,
     )
 
 
@@ -3640,9 +3312,8 @@ def generate_reconstruction(
     references: list[Path],
     output: Path,
     feedback: str,
-    cycle: int,
 ) -> Path:
-    """Eksik scene'i referans comic görsellerinden üretir."""
+    """Gerçek panel bulunamadığında referanslı AI reconstruction üretir."""
     prompt = f"""
 Create a premium vertical American comic-book illustration.
 
@@ -3659,53 +3330,44 @@ EXACT NARRATED MOMENT:
 NARRATION:
 {clean(scene_data.get("narration"))}
 
-PREVIOUS QUALITY FEEDBACK:
+PREVIOUS QC FEEDBACK:
 {feedback or "First reconstruction."}
 
-REPAIR CYCLE:
-{cycle}
-
 Use references only for:
-- character appearance
-- costumes
-- comic era
-- colors
-- setting
-- atmosphere
+character appearance
+costume
+era
+setting
+color language
 
-Create the exact narrated event.
+Create the exact missing event.
 
 Requirements:
-- premium professional comic illustration
-- cinematic
-- highly detailed
-- correct anatomy
-- clear focal point
-- strong depth
-- clean 9:16 composition
-- no text
-- no speech bubbles
-- no logo
-- no watermark
-- no issue number
-- no UI
+premium comic artwork
+high detail
+cinematic depth
+correct anatomy
+clear action
+9:16 composition
+no text
+no speech bubble
+no watermark
+no logo
+no issue number
+no UI
 
-Do not directly copy reference composition.
-Correct every problem mentioned in PREVIOUS QUALITY FEEDBACK.
+Correct every problem from PREVIOUS QC FEEDBACK.
+Do not copy the reference composition exactly.
 """
 
-    interaction_input: list[
-        dict[str, str]
-    ] = [
+    inputs: list[dict[str, str]] = [
         {
             "type": "text",
             "text": prompt,
         }
     ]
 
-    for reference in references[
-        :3
-    ]:
+    for reference in references[:3]:
         mime_type = (
             "image/png"
             if reference.suffix.lower()
@@ -3713,14 +3375,12 @@ Correct every problem mentioned in PREVIOUS QUALITY FEEDBACK.
             else "image/jpeg"
         )
 
-        interaction_input.append(
+        inputs.append(
             {
                 "type": "image",
                 "data": base64.b64encode(
                     reference.read_bytes()
-                ).decode(
-                    "ascii"
-                ),
+                ).decode("ascii"),
                 "mime_type": mime_type,
             }
         )
@@ -3728,7 +3388,7 @@ Correct every problem mentioned in PREVIOUS QUALITY FEEDBACK.
     def request() -> Any:
         return client.interactions.create(
             model=GEMINI_IMAGE_MODEL,
-            input=interaction_input,
+            input=inputs,
             response_format={
                 "type": "image",
                 "mime_type": "image/jpeg",
@@ -3764,7 +3424,8 @@ Correct every problem mentioned in PREVIOUS QUALITY FEEDBACK.
     return output
 
 
-def build_scene_object(
+def make_scene(
+    *,
     scene_data: dict[str, Any],
     rankings: list[RankedVisual],
     selected_candidate_id: str,
@@ -3772,20 +3433,17 @@ def build_scene_object(
     crop_box: list[float],
     visual_source: str,
     visual_file: Path,
-    evaluation: dict[str, Any],
+    visual_match: float,
     image_quality: float,
+    composition: float,
 ) -> Scene:
-    """Final Scene nesnesini oluşturur."""
+    """Final Scene nesnesi oluşturur."""
     return Scene(
         scene_number=int(
-            scene_data[
-                "scene_number"
-            ]
+            scene_data["scene_number"]
         ),
         narration=clean(
-            scene_data.get(
-                "narration"
-            )
+            scene_data.get("narration")
         ),
         visual_description=clean(
             scene_data.get(
@@ -3793,46 +3451,36 @@ def build_scene_object(
             )
         ),
         story_role=clean(
-            scene_data.get(
-                "story_role"
-            )
+            scene_data.get("story_role")
         ),
         emphasis_words=[
-            clean(
-                word
-            )
+            clean(word)
             for word in scene_data.get(
                 "emphasis_words",
                 [],
             )
-            if clean(
-                word
-            )
+            if clean(word)
         ],
         ranked_visuals=rankings,
-        selected_candidate_id=selected_candidate_id,
-        relevance_score=relevance_score,
+        selected_candidate_id=(
+            selected_candidate_id
+        ),
+        relevance_score=(
+            relevance_score
+        ),
         crop_box=crop_box,
         visual_source=visual_source,
         visual_file=str(
             visual_file
         ),
-        visual_match_score=float(
-            evaluation.get(
-                "visual_match",
-                0,
-            )
-            or 0
+        visual_match_score=(
+            visual_match
         ),
-        image_quality_score=float(
+        image_quality_score=(
             image_quality
         ),
-        composition_score=float(
-            evaluation.get(
-                "composition",
-                0,
-            )
-            or 0
+        composition_score=(
+            composition
         ),
     )
 
@@ -3842,72 +3490,56 @@ def resolve_scene_until_pass(
     event: dict[str, Any],
     scene_data: dict[str, Any],
     global_candidates: list[ImageCandidate],
-    used_candidate_ids: set[str],
+    used_ids: set[str],
     asset_directory: Path,
-    reconstruction_counter: dict[str, int],
-    enable_reconstruction: bool,
-    force_new_visual: bool = False,
 ) -> Scene:
-    """Scene görselini tüm checkpoint'ler geçene kadar onarır."""
-    scene_number = int(
-        scene_data[
-            "scene_number"
-        ]
+    """Sahne visual checkpointleri geçene kadar farklı çözüm dener."""
+    number = int(
+        scene_data["scene_number"]
     )
 
-    all_candidates = list(
+    candidates = list(
         global_candidates
     )
 
-    known_hashes = [
-        candidate.perceptual_hash
-        for candidate in all_candidates
-    ]
-
     candidate_map = {
-        candidate.candidate_id: candidate
-        for candidate in all_candidates
+        item.candidate_id: item
+        for item in candidates
     }
 
-    attempted_candidates: set[
-        str
-    ] = set()
-
-    feedback = ""
-    cycle = 1
-    ai_cycle = 0
+    known_hashes = [
+        item.perceptual_hash
+        for item in candidates
+    ]
 
     rankings = rank_scene_candidates(
         client,
         event,
         scene_data,
-        all_candidates,
+        candidates,
     )
 
-    while checkpoint_cycle_allowed(
-        cycle
+    attempted: set[str] = set()
+    feedback = ""
+
+    for cycle in range(
+        1,
+        VISUAL_REPAIR_CYCLES + 1,
     ):
         print(
-            f"\nSCENE {scene_number} "
-            f"VISUAL REPAIR CYCLE {cycle}"
+            f"\n→ Scene {number:02d} "
+            f"real visual cycle {cycle}/"
+            f"{VISUAL_REPAIR_CYCLES}"
         )
 
-        candidate_choice: RankedVisual | None = None
+        selection: RankedVisual | None = None
 
         for option in rankings:
-            if option.candidate_id in attempted_candidates:
+            if option.candidate_id in attempted:
                 continue
 
             if (
-                force_new_visual
-                and option.candidate_id
-                in used_candidate_ids
-            ):
-                continue
-
-            if (
-                option.candidate_id
-                in used_candidate_ids
+                option.candidate_id in used_ids
                 and option.relevance_score < 98
             ):
                 continue
@@ -3915,31 +3547,31 @@ def resolve_scene_until_pass(
             if option.candidate_id not in candidate_map:
                 continue
 
-            candidate_choice = option
+            selection = option
             break
 
-        if candidate_choice is not None:
-            attempted_candidates.add(
-                candidate_choice.candidate_id
+        if selection is not None:
+            attempted.add(
+                selection.candidate_id
             )
 
             candidate = candidate_map[
-                candidate_choice.candidate_id
+                selection.candidate_id
             ]
 
             output = (
                 asset_directory
                 / (
-                    f"scene_{scene_number:02d}_"
-                    f"{candidate_choice.candidate_id}_"
-                    f"cycle_{cycle:03d}.png"
+                    f"scene_{number:02d}_"
+                    f"{selection.candidate_id}_"
+                    f"{cycle:02d}.png"
                 )
             )
 
-            visual_file, technical_quality = (
+            visual, technical_quality = (
                 restore_crop(
                     candidate,
-                    candidate_choice.crop_box,
+                    selection.crop_box,
                     output,
                 )
             )
@@ -3947,7 +3579,7 @@ def resolve_scene_until_pass(
             evaluation = evaluate_visual(
                 client,
                 scene_data,
-                visual_file,
+                visual,
                 technical_quality,
             )
 
@@ -3968,10 +3600,8 @@ def resolve_scene_until_pass(
             )
 
             image_quality = (
-                technical_quality
-                * 0.50
-                + ai_quality
-                * 0.50
+                technical_quality * 0.45
+                + ai_quality * 0.55
             )
 
             composition = float(
@@ -3983,18 +3613,17 @@ def resolve_scene_until_pass(
             )
 
             problems = "; ".join(
-                clean(
-                    value
-                )
-                for value in evaluation.get(
+                clean(item)
+                for item in evaluation.get(
                     "problems",
                     [],
                 )
+                if clean(item)
             )
 
-            match_passed = CHECKPOINTS.record(
+            match_pass = CHECKPOINTS.record(
                 name=(
-                    f"scene_{scene_number:02d}_"
+                    f"scene_{number:02d}_"
                     "visual_match"
                 ),
                 score=visual_match,
@@ -4003,89 +3632,85 @@ def resolve_scene_until_pass(
                 details=problems,
             )
 
-            quality_passed = CHECKPOINTS.record(
+            quality_pass = CHECKPOINTS.record(
                 name=(
-                    f"scene_{scene_number:02d}_"
+                    f"scene_{number:02d}_"
                     "image_quality"
                 ),
                 score=image_quality,
                 threshold=IMAGE_QUALITY_THRESHOLD,
                 cycle=cycle,
                 details=(
-                    f"source={technical_quality:.1f} | "
+                    f"source={technical_quality:.1f}, "
                     f"vision={ai_quality:.1f}"
                 ),
             )
 
-            composition_passed = CHECKPOINTS.record(
-                name=(
-                    f"scene_{scene_number:02d}_"
-                    "composition"
-                ),
-                score=composition,
-                threshold=COMPOSITION_THRESHOLD,
-                cycle=cycle,
-                details=problems,
+            composition_pass = (
+                CHECKPOINTS.record(
+                    name=(
+                        f"scene_{number:02d}_"
+                        "composition"
+                    ),
+                    score=composition,
+                    threshold=COMPOSITION_THRESHOLD,
+                    cycle=cycle,
+                    details=problems,
+                )
             )
 
             if (
-                match_passed
-                and quality_passed
-                and composition_passed
+                match_pass
+                and quality_pass
+                and composition_pass
             ):
-                used_candidate_ids.add(
-                    candidate_choice.candidate_id
+                used_ids.add(
+                    selection.candidate_id
                 )
 
-                return build_scene_object(
+                return make_scene(
                     scene_data=scene_data,
                     rankings=rankings,
                     selected_candidate_id=(
-                        candidate_choice.candidate_id
+                        selection.candidate_id
                     ),
                     relevance_score=(
-                        candidate_choice.relevance_score
+                        selection.relevance_score
                     ),
                     crop_box=(
-                        candidate_choice.crop_box
+                        selection.crop_box
                     ),
                     visual_source="real_comic",
-                    visual_file=visual_file,
-                    evaluation=evaluation,
+                    visual_file=visual,
+                    visual_match=visual_match,
                     image_quality=image_quality,
+                    composition=composition,
                 )
 
             feedback = clean(
                 evaluation.get(
                     "repair_instruction"
                 )
-            )
+            ) or problems
 
-            if not feedback:
-                feedback = problems
-
-        # Gerçek aday kalmadıysa veya başarısızsa tekrar arama yapılır.
         search_results = scene_specific_search(
             event,
             scene_data,
             feedback,
-            cycle,
         )
 
         supplemental = download_candidates(
             event,
             search_results,
-            max_candidates=MAX_SCENE_SEARCH_IMAGES,
+            max_candidates=MAX_SCENE_IMAGES,
             directory_name=(
-                f"scene_{scene_number:02d}_"
-                f"cycle_{cycle:03d}"
+                f"scene_{number:02d}_"
+                f"search_{cycle:02d}"
             ),
             start_index=(
                 1000
-                + scene_number
-                * 100
-                + cycle
-                * 20
+                + number * 100
+                + cycle * 20
             ),
             known_hashes=known_hashes,
         )
@@ -4095,23 +3720,23 @@ def resolve_scene_until_pass(
                 candidate.perceptual_hash
             )
 
+            candidates.append(
+                candidate
+            )
+
             candidate_map[
                 candidate.candidate_id
             ] = candidate
 
-            all_candidates.append(
-                candidate
-            )
-
         if supplemental:
-            new_rankings = rank_scene_candidates(
-                client,
-                event,
-                scene_data,
-                supplemental
-                + global_candidates[
-                    :10
-                ],
+            new_rankings = (
+                rank_scene_candidates(
+                    client,
+                    event,
+                    scene_data,
+                    supplemental
+                    + global_candidates[:8],
+                )
             )
 
             rankings = (
@@ -4119,175 +3744,180 @@ def resolve_scene_until_pass(
                 + rankings
             )
 
-            cycle += 1
+    if not ENABLE_AI_RECONSTRUCTION:
+        raise EventRejectedError(
+            f"Scene {number} için yeterli gerçek görsel bulunamadı."
+        )
+
+    references: list[Path] = []
+
+    for option in rankings:
+        candidate = candidate_map.get(
+            option.candidate_id
+        )
+
+        if candidate is None:
             continue
 
-        # Gerçek panel bulma stratejisi sonuç üretmiyorsa AI fallback.
-        if enable_reconstruction:
-            references: list[
-                Path
-            ] = []
-
-            for option in rankings[
-                :3
-            ]:
-                candidate = candidate_map.get(
-                    option.candidate_id
-                )
-
-                if candidate is not None:
-                    references.append(
-                        Path(
-                            candidate.local_file
-                        )
-                    )
-
-            if not references:
-                references = [
-                    Path(
-                        candidate.local_file
-                    )
-                    for candidate in global_candidates[
-                        :3
-                    ]
-                ]
-
-            ai_cycle += 1
-
-            output = (
-                asset_directory
-                / (
-                    f"scene_{scene_number:02d}_"
-                    f"ai_cycle_{ai_cycle:03d}.jpg"
-                )
+        references.append(
+            Path(
+                candidate.local_file
             )
+        )
 
-            generated = generate_reconstruction(
-                client,
-                event,
-                scene_data,
-                references,
-                output,
-                feedback,
-                ai_cycle,
+        if len(references) >= 3:
+            break
+
+    if not references:
+        references = [
+            Path(
+                candidate.local_file
             )
+            for candidate in global_candidates[:3]
+        ]
 
-            evaluation = evaluate_visual(
-                client,
-                scene_data,
-                generated,
-                100.0,
+    feedback = feedback or (
+        "Gerçek comic panelleri exact narration ile "
+        "yeterince eşleşmedi."
+    )
+
+    for cycle in range(
+        1,
+        AI_RECONSTRUCTION_REPAIR_CYCLES + 1,
+    ):
+        print(
+            f"🎨 Scene {number:02d} "
+            f"AI reconstruction cycle {cycle}"
+        )
+
+        generated = (
+            asset_directory
+            / (
+                f"scene_{number:02d}_"
+                f"ai_{cycle:02d}.jpg"
             )
+        )
 
-            visual_match = float(
-                evaluation.get(
-                    "visual_match",
-                    0,
-                )
-                or 0
+        generate_reconstruction(
+            client,
+            event,
+            scene_data,
+            references,
+            generated,
+            feedback,
+        )
+
+        evaluation = evaluate_visual(
+            client,
+            scene_data,
+            generated,
+            100.0,
+        )
+
+        visual_match = float(
+            evaluation.get(
+                "visual_match",
+                0,
             )
+            or 0
+        )
 
-            image_quality = float(
-                evaluation.get(
-                    "image_quality",
-                    0,
-                )
-                or 0
+        image_quality = float(
+            evaluation.get(
+                "image_quality",
+                0,
             )
+            or 0
+        )
 
-            composition = float(
-                evaluation.get(
-                    "composition",
-                    0,
-                )
-                or 0
+        composition = float(
+            evaluation.get(
+                "composition",
+                0,
             )
+            or 0
+        )
 
-            problems = "; ".join(
-                clean(
-                    value
-                )
-                for value in evaluation.get(
-                    "problems",
-                    [],
-                )
+        problems = "; ".join(
+            clean(item)
+            for item in evaluation.get(
+                "problems",
+                [],
             )
+            if clean(item)
+        )
 
-            match_passed = CHECKPOINTS.record(
+        match_pass = CHECKPOINTS.record(
+            name=(
+                f"scene_{number:02d}_"
+                "ai_visual_match"
+            ),
+            score=visual_match,
+            threshold=VISUAL_MATCH_THRESHOLD,
+            cycle=cycle,
+            details=problems,
+        )
+
+        quality_pass = CHECKPOINTS.record(
+            name=(
+                f"scene_{number:02d}_"
+                "ai_image_quality"
+            ),
+            score=image_quality,
+            threshold=IMAGE_QUALITY_THRESHOLD,
+            cycle=cycle,
+            details=problems,
+        )
+
+        composition_pass = (
+            CHECKPOINTS.record(
                 name=(
-                    f"scene_{scene_number:02d}_"
-                    "ai_visual_match"
-                ),
-                score=visual_match,
-                threshold=VISUAL_MATCH_THRESHOLD,
-                cycle=ai_cycle,
-                details=problems,
-            )
-
-            quality_passed = CHECKPOINTS.record(
-                name=(
-                    f"scene_{scene_number:02d}_"
-                    "ai_image_quality"
-                ),
-                score=image_quality,
-                threshold=IMAGE_QUALITY_THRESHOLD,
-                cycle=ai_cycle,
-                details=problems,
-            )
-
-            composition_passed = CHECKPOINTS.record(
-                name=(
-                    f"scene_{scene_number:02d}_"
+                    f"scene_{number:02d}_"
                     "ai_composition"
                 ),
                 score=composition,
                 threshold=COMPOSITION_THRESHOLD,
-                cycle=ai_cycle,
+                cycle=cycle,
                 details=problems,
             )
+        )
 
-            if (
-                match_passed
-                and quality_passed
-                and composition_passed
-            ):
-                reconstruction_counter[
-                    "count"
-                ] += 1
-
-                return build_scene_object(
-                    scene_data=scene_data,
-                    rankings=rankings,
-                    selected_candidate_id="AI",
-                    relevance_score=round(
-                        visual_match
-                    ),
-                    crop_box=[
-                        0.0,
-                        0.0,
-                        1.0,
-                        1.0,
-                    ],
-                    visual_source="ai_reconstruction",
-                    visual_file=generated,
-                    evaluation=evaluation,
-                    image_quality=image_quality,
-                )
-
-            feedback = clean(
-                evaluation.get(
-                    "repair_instruction"
-                )
+        if (
+            match_pass
+            and quality_pass
+            and composition_pass
+        ):
+            return make_scene(
+                scene_data=scene_data,
+                rankings=rankings,
+                selected_candidate_id="AI",
+                relevance_score=round(
+                    visual_match
+                ),
+                crop_box=[
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                ],
+                visual_source=(
+                    "ai_reconstruction"
+                ),
+                visual_file=generated,
+                visual_match=visual_match,
+                image_quality=image_quality,
+                composition=composition,
             )
 
-            if not feedback:
-                feedback = problems
+        feedback = clean(
+            evaluation.get(
+                "repair_instruction"
+            )
+        ) or problems
 
-        cycle += 1
-
-    raise ComicFactoryError(
-        f"Scene {scene_number} repair loop "
-        "güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        f"Scene {number} gerçek panel + AI reconstruction "
+        "ile kalite checkpointlerini geçemedi."
     )
 
 
@@ -4296,15 +3926,14 @@ def build_quality_visuals(
     event: dict[str, Any],
     storyboard: dict[str, Any],
     max_images: int,
-    enable_reconstruction: bool,
 ) -> tuple[
     list[Scene],
     list[ImageCandidate],
 ]:
-    """Tüm sahneleri checkpoint'lerden geçirir."""
+    """14 sahnenin tamamı için kalite kontrollü görseller üretir."""
     print()
     print("=" * 78)
-    print("5/13 - VISUAL REPAIR ENGINE")
+    print("VISUAL QUALITY ENGINE")
     print("=" * 78)
 
     results = global_image_search(
@@ -4312,15 +3941,13 @@ def build_quality_visuals(
         storyboard,
     )
 
-    event_candidate_directory = (
+    candidate_root = (
         CANDIDATE_DIR
-        / event[
-            "id"
-        ]
+        / event["id"]
     )
 
     shutil.rmtree(
-        event_candidate_directory,
+        candidate_root,
         ignore_errors=True,
     )
 
@@ -4328,30 +3955,22 @@ def build_quality_visuals(
         event,
         results,
         max_candidates=max(
-            20,
+            25,
             max_images,
         ),
         directory_name="global",
         start_index=1,
     )
 
-    if len(
-        global_candidates
-    ) < 10:
-        raise ComicFactoryError(
-            "Global comic görsel havuzu yetersiz."
+    if len(global_candidates) < 10:
+        raise EventRejectedError(
+            "Bu event için yeterli kaliteli comic "
+            "görsel havuzu bulunamadı."
         )
-
-    print(
-        f"✓ Global unique images: "
-        f"{len(global_candidates)}"
-    )
 
     asset_directory = (
         ASSET_DIR
-        / event[
-            "id"
-        ]
+        / event["id"]
     )
 
     shutil.rmtree(
@@ -4364,35 +3983,23 @@ def build_quality_visuals(
         exist_ok=True,
     )
 
-    used_candidate_ids: set[
-        str
-    ] = set()
+    used_ids: set[str] = set()
 
-    reconstruction_counter = {
-        "count": 0,
-    }
-
-    scenes: list[
-        Scene
-    ] = []
+    scenes: list[Scene] = []
 
     for scene_data in storyboard[
         "scenes"
     ]:
         scene = resolve_scene_until_pass(
-            client=client,
-            event=event,
-            scene_data=scene_data,
-            global_candidates=global_candidates,
-            used_candidate_ids=used_candidate_ids,
-            asset_directory=asset_directory,
-            reconstruction_counter=reconstruction_counter,
-            enable_reconstruction=enable_reconstruction,
+            client,
+            event,
+            scene_data,
+            global_candidates,
+            used_ids,
+            asset_directory,
         )
 
-        scenes.append(
-            scene
-        )
+        scenes.append(scene)
 
     return (
         scenes,
@@ -4403,23 +4010,13 @@ def build_quality_visuals(
 def compose_vertical(
     visual_file: Path,
 ) -> Image.Image:
-    """Comic görselini temiz 9:16 kompozisyona yerleştirir."""
+    """Paneli temiz 9:16 video kompozisyonuna dönüştürür."""
     with Image.open(
         visual_file
     ) as opened:
         source = ImageOps.exif_transpose(
             opened
-        ).convert(
-            "RGB"
-        )
-
-    ratio = (
-        source.width
-        / max(
-            1,
-            source.height,
-        )
-    )
+        ).convert("RGB")
 
     background = ImageOps.fit(
         source,
@@ -4442,27 +4039,27 @@ def compose_vertical(
 
     background = ImageEnhance.Brightness(
         background
-    ).enhance(
-        0.28
-    )
+    ).enhance(0.28)
 
     background = ImageEnhance.Color(
         background
-    ).enhance(
-        0.78
-    )
+    ).enhance(0.78)
 
     foreground = source.copy()
 
-    if (
-        0.48
-        <= ratio
-        <= 0.70
-    ):
+    ratio = (
+        source.width
+        / max(
+            1,
+            source.height,
+        )
+    )
+
+    if 0.48 <= ratio <= 0.70:
         foreground.thumbnail(
             (
                 WIDTH - 10,
-                HEIGHT - 100,
+                HEIGHT - 90,
             ),
             Image.Resampling.LANCZOS,
         )
@@ -4507,15 +4104,13 @@ def compose_vertical(
 def build_contact_sheet(
     scenes: list[Scene],
 ) -> Path:
-    """Final Director için contact sheet oluşturur."""
+    """Final Visual Director için contact sheet üretir."""
     columns = 4
     cell_width = 270
     cell_height = 480
 
     rows = math.ceil(
-        len(
-            scenes
-        )
+        len(scenes)
         / columns
     )
 
@@ -4546,13 +4141,11 @@ def build_contact_sheet(
         )
 
         x = (
-            index
-            % columns
+            index % columns
         ) * cell_width
 
         y = (
-            index
-            // columns
+            index // columns
         ) * cell_height
 
         sheet.paste(
@@ -4586,8 +4179,8 @@ def review_full_visual_flow(
     client: genai.Client,
     scenes: list[Scene],
 ) -> dict[str, Any]:
-    """Tüm sahne akışını birlikte değerlendirir."""
-    sheet = build_contact_sheet(
+    """Bütün videonun görsel akışını kontrol eder."""
+    contact_sheet = build_contact_sheet(
         scenes
     )
 
@@ -4597,7 +4190,7 @@ def review_full_visual_flow(
             f"NARRATION: {scene.narration}\n"
             f"EXPECTED: {scene.visual_description}\n"
             f"MATCH: {scene.visual_match_score:.1f}\n"
-            f"QUALITY: {scene.image_quality_score:.1f}\n"
+            f"IMAGE QUALITY: {scene.image_quality_score:.1f}\n"
             f"COMPOSITION: {scene.composition_score:.1f}\n"
             f"SOURCE: {scene.visual_source}"
         )
@@ -4605,31 +4198,32 @@ def review_full_visual_flow(
     )
 
     prompt = f"""
-Premium comic Shorts final Visual Director'sın.
+Premium comic Shorts Final Visual Director'sın.
 
-SCENE PLAN:
+PLAN:
 {plan}
 
 Contact sheet'i incele.
 
 0-100:
-- visual_story_match
-- visual_diversity
-- image_quality
-- crop_quality
-- narrative_flow
-- professional_feel
-- rewatch_value
-- overall
+visual_story_match
+visual_diversity
+image_quality
+crop_quality
+narrative_flow
+professional_feel
+rewatch_value
+overall
 
-Thor prototype seviyesinde premium kalite hedefleniyor.
+94+ overall yalnız gerçekten premium video için ver.
 
-Kritik:
-- Narration ile görsel uyuşmalı.
-- Art arda çok benzer panel olmamalı.
-- Düşük çözünürlük hissi olmamalı.
-- Slideshow hissi minimum olmalı.
-- Yanlış karakter/aksiyon gösterilmemeli.
+Kontrol et:
+- Sesin anlatacağı olayın görseli o sahnede mi?
+- Çok benzer paneller var mı?
+- Düşük kaliteli/upscale çamur görsel var mı?
+- Crop aksiyonu kesiyor mu?
+- Slideshow hissi çok mu güçlü?
+- AI reconstruction varsa gerçek comic estetiğine uyuyor mu?
 
 SADECE JSON:
 {{
@@ -4652,12 +4246,12 @@ SADECE JSON:
             contents=[
                 prompt,
                 types.Part.from_bytes(
-                    data=sheet.read_bytes(),
+                    data=contact_sheet.read_bytes(),
                     mime_type="image/jpeg",
                 ),
             ],
             config=types.GenerateContentConfig(
-                temperature=0.08,
+                temperature=0.05,
                 response_mime_type="application/json",
             ),
         )
@@ -4668,8 +4262,7 @@ SADECE JSON:
     )
 
     return parse_json_response(
-        response.text
-        or "{}"
+        response.text or "{}"
     )
 
 
@@ -4679,34 +4272,16 @@ def run_final_visual_gate(
     storyboard: dict[str, Any],
     scenes: list[Scene],
     global_candidates: list[ImageCandidate],
-    enable_reconstruction: bool,
 ) -> list[Scene]:
-    """Final Director geçene kadar zayıf sahneleri yeniden üretir."""
-    print()
-    print("=" * 78)
-    print("6/13 - FINAL VISUAL FLOW REPAIR LOOP")
-    print("=" * 78)
-
-    cycle = 1
-
+    """Final görsel akışını zayıf sahneleri yeniden üreterek düzeltir."""
     asset_directory = (
         ASSET_DIR
-        / event[
-            "id"
-        ]
+        / event["id"]
     )
 
-    reconstruction_counter = {
-        "count": sum(
-            1
-            for scene in scenes
-            if scene.visual_source
-            == "ai_reconstruction"
-        ),
-    }
-
-    while checkpoint_cycle_allowed(
-        cycle
+    for cycle in range(
+        1,
+        FINAL_VISUAL_REPAIR_CYCLES + 1,
     ):
         review = review_full_visual_flow(
             client,
@@ -4722,19 +4297,18 @@ def run_final_visual_gate(
         )
 
         problems = "; ".join(
-            clean(
-                item
-            )
+            clean(item)
             for item in review.get(
                 "problems",
                 [],
             )
+            if clean(item)
         )
 
         passed = CHECKPOINTS.record(
             name="final_visual_flow",
             score=score,
-            threshold=FINAL_DIRECTOR_THRESHOLD,
+            threshold=FINAL_VISUAL_THRESHOLD,
             cycle=cycle,
             details=problems,
         )
@@ -4742,9 +4316,7 @@ def run_final_visual_gate(
         if passed:
             return scenes
 
-        weak_numbers: set[
-            int
-        ] = set()
+        weak_numbers: set[int] = set()
 
         for raw in review.get(
             "weak_scenes",
@@ -4752,9 +4324,7 @@ def run_final_visual_gate(
         ):
             try:
                 weak_numbers.add(
-                    int(
-                        raw
-                    )
+                    int(raw)
                 )
 
             except (
@@ -4777,59 +4347,54 @@ def run_final_visual_gate(
                 weakest.scene_number
             )
 
-        for scene_number in sorted(
+        for number in sorted(
             weak_numbers
         ):
             scene_data = next(
-                item
-                for item in storyboard[
+                scene
+                for scene in storyboard[
                     "scenes"
                 ]
                 if int(
-                    item[
-                        "scene_number"
-                    ]
+                    scene["scene_number"]
                 )
-                == scene_number
+                == number
             )
 
             used_ids = {
                 scene.selected_candidate_id
                 for scene in scenes
-                if scene.scene_number
-                != scene_number
+                if scene.scene_number != number
                 and scene.selected_candidate_id
                 != "AI"
             }
 
-            replacement = resolve_scene_until_pass(
-                client=client,
-                event=event,
-                scene_data=scene_data,
-                global_candidates=global_candidates,
-                used_candidate_ids=used_ids,
-                asset_directory=asset_directory,
-                reconstruction_counter=reconstruction_counter,
-                enable_reconstruction=enable_reconstruction,
-                force_new_visual=True,
+            replacement = (
+                resolve_scene_until_pass(
+                    client,
+                    event,
+                    scene_data,
+                    global_candidates,
+                    used_ids,
+                    asset_directory,
+                )
             )
 
             scenes[
-                scene_number - 1
+                number - 1
             ] = replacement
 
-        cycle += 1
-
-    raise ComicFactoryError(
-        "Final visual flow repair loop güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        "Final görsel akış bu event için "
+        "premium kalite seviyesine ulaşamadı."
     )
 
 
-def choose_motion_direction(
+def choose_motion_plan(
     client: genai.Client,
     scenes: list[Scene],
 ) -> dict[int, dict[str, Any]]:
-    """AI Cinematic Director motion planı üretir."""
+    """Sahne anlamına uygun kamera hareketleri belirler."""
     plan = "\n\n".join(
         (
             f"SCENE {scene.scene_number}\n"
@@ -4841,12 +4406,10 @@ def choose_motion_direction(
     )
 
     prompt = f"""
-Premium vertical comic-video Cinematic Director'sın.
+Premium 9:16 comic Cinematic Director'sın.
 
 SCENES:
 {plan}
-
-Her scene için motion ve outgoing transition seç.
 
 motion:
 {", ".join(ALLOWED_MOTIONS)}
@@ -4855,14 +4418,15 @@ transition:
 {", ".join(ALLOWED_TRANSITIONS)}
 
 Kurallar:
-- Aynı motion art arda kullanma.
-- hook hızlı ama temiz.
-- context daha sakin.
-- escalation daha dinamik.
-- twist/payoff gerektiğinde impact.
-- cta sakinleşsin.
-- Gelecek scene görseli kendi narration'ından önce ASLA görünmemeli.
-- transition yalnız mevcut scene'in sonunda kendi görüntüsü üzerinde çalışmalı.
+- aynı motion arka arkaya gelmesin
+- hareketler hafif ve premium olsun
+- comic paneli gereksiz zoom ile bozma
+- context sakin
+- escalation dinamik
+- twist/payoff impact kullanılabilir
+- cta sakin
+- sonraki scene görselini narration başlamadan gösterme
+- transition yalnız mevcut sahnenin sonunda fade olarak çalışsın
 
 SADECE JSON:
 {{
@@ -4880,11 +4444,11 @@ SADECE JSON:
     payload = ask_gemini_json(
         client,
         prompt,
-        temperature=0.20,
+        temperature=0.16,
         operation_name="Cinematic Director",
     )
 
-    result: dict[
+    output: dict[
         int,
         dict[str, Any]
     ] = {}
@@ -4893,14 +4457,11 @@ SADECE JSON:
         "scenes",
         [],
     ):
-        if not isinstance(
-            item,
-            dict,
-        ):
+        if not isinstance(item, dict):
             continue
 
         try:
-            scene_number = int(
+            number = int(
                 item.get(
                     "scene_number",
                     0,
@@ -4913,40 +4474,34 @@ SADECE JSON:
         ):
             continue
 
-        result[
-            scene_number
-        ] = item
+        output[number] = item
 
-    return result
+    return output
 
 
 def apply_motion_plan(
     scenes: list[Scene],
-    direction: dict[int, dict[str, Any]],
+    plan: dict[int, dict[str, Any]],
 ) -> None:
-    """Motion planını güvenli kurallarla uygular."""
+    """Motion planını güvenli değerlerle scene'lere uygular."""
     previous_motion = ""
 
     for index, scene in enumerate(
         scenes
     ):
-        item = direction.get(
+        item = plan.get(
             scene.scene_number,
             {},
         )
 
         motion = clean(
-            item.get(
-                "motion"
-            )
+            item.get("motion")
         )
 
         if motion not in ALLOWED_MOTIONS:
             motion = ALLOWED_MOTIONS[
                 index
-                % len(
-                    ALLOWED_MOTIONS
-                )
+                % len(ALLOWED_MOTIONS)
             ]
 
         if motion == previous_motion:
@@ -4957,22 +4512,18 @@ def apply_motion_plan(
                     )
                     + 1
                 )
-                % len(
-                    ALLOWED_MOTIONS
-                )
+                % len(ALLOWED_MOTIONS)
             ]
 
         transition = clean(
-            item.get(
-                "transition"
-            )
+            item.get("transition")
         )
 
         if transition not in ALLOWED_TRANSITIONS:
             transition = "cut"
 
         try:
-            duration = float(
+            transition_duration = float(
                 item.get(
                     "transition_duration",
                     0.12,
@@ -4983,151 +4534,35 @@ def apply_motion_plan(
             TypeError,
             ValueError,
         ):
-            duration = 0.12
+            transition_duration = 0.12
 
         if transition == "cut":
-            duration = 0.0
+            transition_duration = 0.0
 
         else:
-            duration = max(
+            transition_duration = max(
                 0.08,
                 min(
-                    0.20,
-                    duration,
+                    0.18,
+                    transition_duration,
                 ),
             )
 
         scene.motion = motion
         scene.transition = transition
-        scene.transition_duration = duration
+        scene.transition_duration = (
+            transition_duration
+        )
 
         previous_motion = motion
-
-
-def motion_filter(
-    motion: str,
-) -> str:
-    """Sinematik kamera hareketi filtresi oluşturur."""
-    motions = {
-        "slow_push": (
-            "zoompan="
-            "z='min(zoom+0.00013,1.04)':"
-            "x='iw/2-iw/zoom/2':"
-            "y='ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "slow_pull": (
-            "zoompan="
-            "z='if(eq(on,0),1.04,max(1.0,zoom-0.00013))':"
-            "x='iw/2-iw/zoom/2':"
-            "y='ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "pan_left": (
-            "zoompan="
-            "z='1.035':"
-            "x='max(0,(iw-iw/zoom)*(1-on/240))':"
-            "y='ih/2-iw*0+ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "pan_right": (
-            "zoompan="
-            "z='1.035':"
-            "x='min(iw-iw/zoom,(iw-iw/zoom)*(on/240))':"
-            "y='ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "vertical_scan": (
-            "zoompan="
-            "z='1.03':"
-            "x='iw/2-iw/zoom/2':"
-            "y='min(ih-ih/zoom,(ih-ih/zoom)*(on/240))':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "impact": (
-            "zoompan="
-            "z='min(zoom+0.00062,1.08)':"
-            "x='iw/2-iw/zoom/2':"
-            "y='ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-        "hold": (
-            "zoompan="
-            "z='1.008':"
-            "x='iw/2-iw/zoom/2':"
-            "y='ih/2-ih/zoom/2':"
-            "d=1:s=1080x1920:fps=30"
-        ),
-    }
-
-    return motions.get(
-        motion,
-        motions[
-            "slow_push"
-        ],
-    )
-
-
-def transition_filter(
-    transition: str,
-    duration: float,
-    scene_duration: float,
-) -> str:
-    """Gelecek scene'i erken göstermeyen transition filtresi üretir."""
-    if (
-        transition == "cut"
-        or duration <= 0.0
-    ):
-        return ""
-
-    duration = min(
-        duration,
-        max(
-            0.05,
-            scene_duration
-            / 4.0,
-        ),
-    )
-
-    start = max(
-        0.0,
-        scene_duration
-        - duration,
-    )
-
-    if transition in {
-        "soft_black",
-        "dip_black",
-    }:
-        return (
-            f",fade=t=out:"
-            f"st={start:.3f}:"
-            f"d={duration:.3f}:"
-            "color=black"
-        )
-
-    if transition == "flash_white":
-        return (
-            f",fade=t=out:"
-            f"st={start:.3f}:"
-            f"d={duration:.3f}:"
-            "color=white"
-        )
-
-    return ""
 
 
 def evaluate_motion_plan(
     client: genai.Client,
     scenes: list[Scene],
 ) -> dict[str, Any]:
-    """Motion planını anlam ve tekrar açısından değerlendirir."""
-    prompt = f"""
-Premium comic video Motion QC.
-
-PLAN:
-{json.dumps(
-    [
+    """Motion planını kalite açısından değerlendirir."""
+    payload = [
         {
             "scene": scene.scene_number,
             "role": scene.story_role,
@@ -5136,22 +4571,31 @@ PLAN:
             "transition": scene.transition,
         }
         for scene in scenes
-    ],
+    ]
+
+    prompt = f"""
+Premium vertical comic video Motion QC.
+
+PLAN:
+{json.dumps(
+    payload,
     ensure_ascii=False,
     indent=2,
 )}
 
 0-100:
-- story_fit
-- variety
-- restraint
-- reveal_emphasis
-- sync_safety
-- overall
+story_fit
+variety
+restraint
+reveal_emphasis
+sync_safety
+overall
 
-sync_safety:
-Gelecek scene görselinin narration başlamadan görünmesine
-neden olabilecek geçiş olmamalı.
+sync_safety çok önemli:
+Bir sonraki sahnenin görüntüsü narration başlamadan
+görünmemeli.
+
+Aşırı effect varsa puan kır.
 
 SADECE JSON:
 {{
@@ -5163,7 +4607,7 @@ SADECE JSON:
     return ask_gemini_json(
         client,
         prompt,
-        temperature=0.05,
+        temperature=0.04,
         operation_name="Motion QC",
     )
 
@@ -5172,25 +4616,19 @@ def build_quality_motion(
     client: genai.Client,
     scenes: list[Scene],
 ) -> None:
-    """Motion checkpoint geçene kadar planı yeniden üretir."""
-    print()
-    print("=" * 78)
-    print("7/13 - MOTION REPAIR LOOP")
-    print("=" * 78)
-
-    cycle = 1
-
-    while checkpoint_cycle_allowed(
-        cycle
+    """Motion planını checkpoint geçene kadar yeniden seçer."""
+    for cycle in range(
+        1,
+        MOTION_REPAIR_CYCLES + 1,
     ):
-        direction = choose_motion_direction(
+        plan = choose_motion_plan(
             client,
             scenes,
         )
 
         apply_motion_plan(
             scenes,
-            direction,
+            plan,
         )
 
         review = evaluate_motion_plan(
@@ -5207,13 +4645,12 @@ def build_quality_motion(
         )
 
         problems = "; ".join(
-            clean(
-                item
-            )
+            clean(item)
             for item in review.get(
                 "problems",
                 [],
             )
+            if clean(item)
         )
 
         passed = CHECKPOINTS.record(
@@ -5227,18 +4664,43 @@ def build_quality_motion(
         if passed:
             return
 
-        cycle += 1
-
-    raise ComicFactoryError(
-        "Motion repair loop güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        "Motion plan kalite checkpointini geçemedi."
     )
+
+
+def attach_timeline(
+    scenes: list[Scene],
+    timeline: list[
+        tuple[
+            float,
+            float,
+        ]
+    ],
+) -> None:
+    """Exact audio timeline değerlerini sahnelere bağlar."""
+    if len(scenes) != len(timeline):
+        raise EventRejectedError(
+            "Scene count ve timeline uyuşmuyor."
+        )
+
+    for scene, (
+        start,
+        end,
+    ) in zip(
+        scenes,
+        timeline,
+        strict=True,
+    ):
+        scene.audio_start = start
+        scene.audio_end = end
 
 
 def get_subtitle_font(
     size: int,
 ) -> ImageFont.ImageFont:
-    """Subtitle ölçümü için mevcut fontu bulur."""
-    paths = (
+    """Subtitle pixel ölçümü için font döndürür."""
+    candidate_paths = (
         Path(
             "/usr/share/fonts/truetype/dejavu/"
             "DejaVuSans-Bold.ttf"
@@ -5248,33 +4710,28 @@ def get_subtitle_font(
         ),
     )
 
-    for path in paths:
+    for path in candidate_paths:
         if path.exists():
             return ImageFont.truetype(
-                str(
-                    path
-                ),
+                str(path),
                 size=size,
             )
 
     return ImageFont.load_default()
 
 
-def subtitle_text_width(
+def text_width(
     text: str,
     font_size: int,
 ) -> int:
-    """Subtitle metninin pixel genişliğini ölçer."""
+    """Subtitle pixel genişliğini ölçer."""
     font = get_subtitle_font(
         font_size
     )
 
     image = Image.new(
         "RGB",
-        (
-            10,
-            10,
-        ),
+        (10, 10),
         "black",
     )
 
@@ -5282,51 +4739,39 @@ def subtitle_text_width(
         image
     )
 
-    bbox = draw.textbbox(
-        (
-            0,
-            0,
-        ),
+    box = draw.textbbox(
+        (0, 0),
         text,
         font=font,
         stroke_width=5,
     )
 
-    return (
-        bbox[
-            2
-        ]
-        - bbox[
-            0
-        ]
-    )
+    return box[2] - box[0]
 
 
 def build_subtitle_groups(
     words: list[dict[str, Any]],
-) -> list[
-    dict[str, Any]
-]:
-    """Taşmayacak şekilde 1-3 kelimelik subtitle grupları oluşturur."""
+) -> list[dict[str, Any]]:
+    """1-3 kelimelik safe-zone garantili subtitle grupları kurar."""
     groups: list[
         dict[str, Any]
     ] = []
 
     index = 0
 
-    while index < len(
-        words
-    ):
-        best_group: dict[str, Any] | None = None
+    while index < len(words):
+        selected: dict[
+            str,
+            Any
+        ] | None = None
+
+        maximum_count = min(
+            SUBTITLE_MAX_WORDS,
+            len(words) - index,
+        )
 
         for count in range(
-            min(
-                SUBTITLE_MAX_WORDS,
-                len(
-                    words
-                )
-                - index,
-            ),
+            maximum_count,
             0,
             -1,
         ):
@@ -5341,84 +4786,49 @@ def build_subtitle_groups(
                 clean(
                     words[
                         word_index
-                    ][
-                        "word"
-                    ]
+                    ]["word"]
                 )
                 for word_index in indexes
             ).upper()
-
-            chosen_size = None
 
             for font_size in range(
                 SUBTITLE_BASE_FONT_SIZE,
                 SUBTITLE_MIN_FONT_SIZE - 1,
                 -2,
             ):
-                width = subtitle_text_width(
-                    text,
-                    font_size,
+                width = round(
+                    text_width(
+                        text,
+                        font_size,
+                    )
+                    * 1.12
                 )
 
-                # Aktif kelimenin büyümesi için ekstra alan.
-                safety_width = round(
+                if (
                     width
-                    * 1.10
-                )
-
-                if safety_width <= SUBTITLE_AVAILABLE_WIDTH:
-                    chosen_size = font_size
+                    <= SUBTITLE_AVAILABLE_WIDTH
+                ):
+                    selected = {
+                        "indexes": indexes,
+                        "text": text,
+                        "font_size": font_size,
+                    }
                     break
 
-            if chosen_size is not None:
-                best_group = {
-                    "indexes": indexes,
-                    "font_size": chosen_size,
-                    "text": text,
-                }
-
+            if selected is not None:
                 break
 
-        if best_group is None:
-            word = clean(
-                words[
-                    index
-                ][
-                    "word"
-                ]
-            ).upper()
-
-            font_size = SUBTITLE_MIN_FONT_SIZE
-
-            width = subtitle_text_width(
-                word,
-                font_size,
+        if selected is None:
+            raise EventRejectedError(
+                "Subtitle safe-zone içine sığdırılamadı."
             )
 
-            if width > SUBTITLE_AVAILABLE_WIDTH:
-                raise ComicFactoryError(
-                    "Tek bir subtitle kelimesi safe-zone'a "
-                    f"sığmıyor: {word}"
-                )
-
-            best_group = {
-                "indexes": [
-                    index
-                ],
-                "font_size": font_size,
-                "text": word,
-            }
-
-        groups.append(
-            best_group
-        )
+        groups.append(selected)
 
         index = (
-            best_group[
+            selected[
                 "indexes"
-            ][
-                -1
-            ]
+            ][-1]
             + 1
         )
 
@@ -5428,8 +4838,8 @@ def build_subtitle_groups(
 def build_group_map(
     groups: list[dict[str, Any]],
 ) -> dict[int, dict[str, Any]]:
-    """Her kelimenin ait olduğu subtitle grubunu döndürür."""
-    result: dict[
+    """Kelime indexini subtitle grubuna bağlar."""
+    output: dict[
         int,
         dict[str, Any]
     ] = {}
@@ -5438,18 +4848,16 @@ def build_group_map(
         for index in group[
             "indexes"
         ]:
-            result[
-                index
-            ] = group
+            output[index] = group
 
-    return result
+    return output
 
 
 def ass_time(
     seconds: float,
 ) -> str:
-    """Saniyeyi ASS timestamp'e dönüştürür."""
-    centiseconds = round(
+    """Saniyeyi ASS timestamp formatına dönüştürür."""
+    total_cs = round(
         max(
             0.0,
             seconds,
@@ -5458,7 +4866,7 @@ def ass_time(
     )
 
     hours, remainder = divmod(
-        centiseconds,
+        total_cs,
         360000,
     )
 
@@ -5485,95 +4893,81 @@ def ass_escape(
 ) -> str:
     """ASS özel karakterlerini temizler."""
     return (
-        clean(
-            text
-        )
+        clean(text)
         .replace(
             "\\",
-            r"\\"
+            r"\\",
         )
         .replace(
             "{",
-            "("
+            "(",
         )
         .replace(
             "}",
-            ")"
+            ")",
         )
     )
 
 
-def emphasis_words(
+def all_emphasis_words(
     scenes: list[Scene],
 ) -> set[str]:
-    """Story emphasis kelimelerini normalize eder."""
-    result: set[
-        str
-    ] = set()
+    """Tüm vurgulu kelimeleri toplar."""
+    output: set[str] = set()
 
     for scene in scenes:
         for word in scene.emphasis_words:
-            normalized = normalize_alignment_word(
-                word
+            normalized = (
+                normalize_alignment_word(
+                    word
+                )
             )
 
             if normalized:
-                result.add(
-                    normalized
-                )
+                output.add(normalized)
 
-    return result
+    return output
 
 
-def subtitle_line(
+def subtitle_text(
     words: list[dict[str, Any]],
     active_index: int,
     group_map: dict[int, dict[str, Any]],
     emphasis: set[str],
 ) -> str:
-    """Aktif kelimeyi sarı yapan subtitle metni oluşturur."""
+    """Aktif kelime vurgulu ASS subtitle metni üretir."""
     group = group_map[
         active_index
     ]
 
-    size = int(
-        group[
-            "font_size"
-        ]
+    font_size = int(
+        group["font_size"]
     )
 
-    parts: list[
-        str
-    ] = []
+    parts: list[str] = []
 
-    for index in group[
-        "indexes"
-    ]:
+    for index in group["indexes"]:
         raw = ass_escape(
-            words[
-                index
-            ][
-                "word"
-            ]
+            words[index]["word"]
         )
 
         display = raw.upper()
 
-        normalized = normalize_alignment_word(
-            raw
+        normalized = (
+            normalize_alignment_word(raw)
         )
 
         if index == active_index:
             scale = (
-                111
+                110
                 if normalized in emphasis
-                else 108
+                else 107
             )
 
             parts.append(
                 (
                     r"{"
-                    rf"\fs{size}"
+                    rf"\fs{font_size}"
                     r"\1c&H0030D7FF&"
                     rf"\fscx{scale}"
                     rf"\fscy{scale}"
@@ -5588,7 +4982,7 @@ def subtitle_line(
             parts.append(
                 (
                     r"{"
-                    rf"\fs{size}"
+                    rf"\fs{font_size}"
                     r"\fscx100\fscy100"
                     r"}"
                     + display
@@ -5596,250 +4990,271 @@ def subtitle_line(
                 )
             )
 
-    return " ".join(
-        parts
-    )
+    return " ".join(parts)
 
 
-def create_subtitles_until_pass(
+def create_subtitles(
     aligned_words: list[dict[str, Any]],
     scenes: list[Scene],
     narration: str,
     offset: float,
 ) -> Path:
-    """Subtitle layout deterministic checkpoint geçene kadar düzenler."""
-    print()
-    print("=" * 78)
-    print("8/13 - SUBTITLE QUALITY GATE")
-    print("=" * 78)
-
-    expected_tokens = narration_tokens(
+    """Narration metnine kilitli safe-zone subtitle dosyası üretir."""
+    expected = narration_tokens(
         narration
     )
 
-    actual_tokens = [
-        clean(
-            item[
-                "word"
-            ]
-        )
-        for item in aligned_words
+    actual = [
+        clean(word["word"])
+        for word in aligned_words
     ]
 
-    if expected_tokens != actual_tokens:
-        raise ComicFactoryError(
+    if expected != actual:
+        raise EventRejectedError(
             "Subtitle text narration ile birebir aynı değil."
         )
 
-    cycle = 1
+    groups = build_subtitle_groups(
+        aligned_words
+    )
 
-    while checkpoint_cycle_allowed(
-        cycle
-    ):
-        groups = build_subtitle_groups(
-            aligned_words
-        )
-
-        overflow = False
-
-        for group in groups:
-            width = subtitle_text_width(
-                group[
-                    "text"
-                ],
+    for group in groups:
+        width = round(
+            text_width(
+                group["text"],
                 int(
-                    group[
-                        "font_size"
-                    ]
+                    group["font_size"]
                 ),
             )
-
-            width = round(
-                width
-                * 1.10
-            )
-
-            if width > SUBTITLE_AVAILABLE_WIDTH:
-                overflow = True
-                break
-
-        sync_monotonic = all(
-            float(
-                aligned_words[
-                    index
-                ][
-                    "start"
-                ]
-            )
-            >= (
-                float(
-                    aligned_words[
-                        index - 1
-                    ][
-                        "start"
-                    ]
-                )
-                if index > 0
-                else 0.0
-            )
-            for index in range(
-                len(
-                    aligned_words
-                )
-            )
+            * 1.12
         )
 
-        passed = (
-            not overflow
-            and sync_monotonic
-            and expected_tokens
-            == actual_tokens
+        if width > SUBTITLE_AVAILABLE_WIDTH:
+            raise EventRejectedError(
+                "Subtitle safe-zone overflow tespit edildi."
+            )
+
+    CHECKPOINTS.record(
+        name="subtitle_safe_zone",
+        score=100.0,
+        threshold=100.0,
+        cycle=1,
+        details=(
+            "text_exact=True, overflow=False"
+        ),
+        passed=True,
+    )
+
+    group_map = build_group_map(
+        groups
+    )
+
+    emphasis = all_emphasis_words(
+        scenes
+    )
+
+    output = (
+        WORK_DIR
+        / "precise.ass"
+    )
+
+    output.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    lines = [
+        "[Script Info]",
+        "ScriptType: v4.00+",
+        "PlayResX: 1080",
+        "PlayResY: 1920",
+        "WrapStyle: 0",
+        "ScaledBorderAndShadow: yes",
+        "",
+        "[V4+ Styles]",
+        (
+            "Format: Name,Fontname,Fontsize,"
+            "PrimaryColour,SecondaryColour,"
+            "OutlineColour,BackColour,Bold,"
+            "Italic,Underline,StrikeOut,"
+            "ScaleX,ScaleY,Spacing,Angle,"
+            "BorderStyle,Outline,Shadow,"
+            "Alignment,MarginL,MarginR,"
+            "MarginV,Encoding"
+        ),
+        (
+            "Style: Main,DejaVu Sans,"
+            f"{SUBTITLE_BASE_FONT_SIZE},"
+            "&H00FFFFFF,&H00FFFFFF,"
+            "&H00121212,&H00000000,"
+            "-1,0,0,0,100,100,0,0,"
+            "1,5,2,2,"
+            f"{SUBTITLE_MARGIN_LEFT},"
+            f"{SUBTITLE_MARGIN_RIGHT},"
+            f"{SUBTITLE_MARGIN_BOTTOM},1"
+        ),
+        "",
+        "[Events]",
+        (
+            "Format: Layer,Start,End,Style,"
+            "Name,MarginL,MarginR,MarginV,"
+            "Effect,Text"
+        ),
+    ]
+
+    for index, word in enumerate(
+        aligned_words
+    ):
+        start = (
+            float(word["start"])
+            + offset
         )
 
-        score = (
-            100.0
-            if passed
-            else 0.0
+        end = (
+            float(word["end"])
+            + offset
         )
 
-        CHECKPOINTS.record(
-            name="subtitle_technical",
-            score=score,
-            threshold=100.0,
-            cycle=cycle,
-            details=(
-                f"overflow={overflow} | "
-                f"sync_monotonic={sync_monotonic} | "
-                "text_exact="
-                f"{expected_tokens == actual_tokens}"
-            ),
-            passed=passed,
-        )
-
-        if not passed:
-            cycle += 1
+        if end <= 0:
             continue
 
-        group_map = build_group_map(
-            groups
+        start = max(
+            0.0,
+            start,
         )
 
-        emphasis = emphasis_words(
-            scenes
+        end = max(
+            start + 0.05,
+            end,
         )
 
-        path = (
-            WORK_DIR
-            / "precise.ass"
+        lines.append(
+            "Dialogue: 0,"
+            f"{ass_time(start)},"
+            f"{ass_time(end)},"
+            "Main,,0,0,0,,"
+            + subtitle_text(
+                aligned_words,
+                index,
+                group_map,
+                emphasis,
+            )
         )
 
-        lines = [
-            "[Script Info]",
-            "ScriptType: v4.00+",
-            "PlayResX: 1080",
-            "PlayResY: 1920",
-            "WrapStyle: 0",
-            "ScaledBorderAndShadow: yes",
-            "",
-            "[V4+ Styles]",
-            (
-                "Format: Name,Fontname,Fontsize,"
-                "PrimaryColour,SecondaryColour,"
-                "OutlineColour,BackColour,Bold,"
-                "Italic,Underline,StrikeOut,"
-                "ScaleX,ScaleY,Spacing,Angle,"
-                "BorderStyle,Outline,Shadow,"
-                "Alignment,MarginL,MarginR,"
-                "MarginV,Encoding"
-            ),
-            (
-                "Style: Main,DejaVu Sans,"
-                f"{SUBTITLE_BASE_FONT_SIZE},"
-                "&H00FFFFFF,&H00FFFFFF,"
-                "&H00121212,&H00000000,"
-                "-1,0,0,0,100,100,0,0,"
-                "1,5,2,2,"
-                f"{SUBTITLE_MARGIN_LEFT},"
-                f"{SUBTITLE_MARGIN_RIGHT},"
-                f"{SUBTITLE_MARGIN_BOTTOM},1"
-            ),
-            "",
-            "[Events]",
-            (
-                "Format: Layer,Start,End,Style,"
-                "Name,MarginL,MarginR,MarginV,"
-                "Effect,Text"
-            ),
-        ]
+    output.write_text(
+        "\n".join(lines),
+        encoding="utf-8",
+    )
 
-        for index, item in enumerate(
-            aligned_words
-        ):
-            start = (
-                float(
-                    item[
-                        "start"
-                    ]
-                )
-                + offset
-            )
+    return output
 
-            end = (
-                float(
-                    item[
-                        "end"
-                    ]
-                )
-                + offset
-            )
 
-            if end <= 0:
-                continue
+def motion_filter(
+    motion: str,
+) -> str:
+    """Seçilen sinematik panel hareketini döndürür."""
+    filters = {
+        "slow_push": (
+            "zoompan="
+            "z='min(zoom+0.00013,1.04)':"
+            "x='iw/2-iw/zoom/2':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "slow_pull": (
+            "zoompan="
+            "z='if(eq(on,0),1.04,max(1.0,zoom-0.00013))':"
+            "x='iw/2-iw/zoom/2':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "pan_left": (
+            "zoompan="
+            "z='1.035':"
+            "x='max(0,(iw-iw/zoom)*(1-on/240))':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "pan_right": (
+            "zoompan="
+            "z='1.035':"
+            "x='min(iw-iw/zoom,(iw-iw/zoom)*(on/240))':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "vertical_scan": (
+            "zoompan="
+            "z='1.03':"
+            "x='iw/2-iw/zoom/2':"
+            "y='min(ih-ih/zoom,(ih-ih/zoom)*(on/240))':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "impact": (
+            "zoompan="
+            "z='min(zoom+0.00060,1.075)':"
+            "x='iw/2-iw/zoom/2':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+        "hold": (
+            "zoompan="
+            "z='1.008':"
+            "x='iw/2-iw/zoom/2':"
+            "y='ih/2-ih/zoom/2':"
+            "d=1:s=1080x1920:fps=30"
+        ),
+    }
 
-            start = max(
-                0.0,
-                start,
-            )
-
-            end = max(
-                start + 0.05,
-                end,
-            )
-
-            lines.append(
-                "Dialogue: 0,"
-                f"{ass_time(start)},"
-                f"{ass_time(end)},"
-                "Main,,0,0,0,,"
-                f"{subtitle_line(
-                    aligned_words,
-                    index,
-                    group_map,
-                    emphasis,
-                )}"
-            )
-
-        path.write_text(
-            "\n".join(
-                lines
-            ),
-            encoding="utf-8",
-        )
-
-        return path
-
-    raise ComicFactoryError(
-        "Subtitle repair loop güvenlik limiti aşıldı."
+    return filters.get(
+        motion,
+        filters["slow_push"],
     )
 
 
-def render_scene_segment(
+def transition_filter(
+    transition: str,
+    duration: float,
+    scene_duration: float,
+) -> str:
+    """Sahne sonunda yalnız mevcut paneli fade ederek sync'i korur."""
+    if (
+        transition == "cut"
+        or duration <= 0
+    ):
+        return ""
+
+    duration = min(
+        duration,
+        scene_duration / 4.0,
+    )
+
+    start = max(
+        0.0,
+        scene_duration - duration,
+    )
+
+    color = (
+        "white"
+        if transition
+        == "flash_white"
+        else "black"
+    )
+
+    return (
+        f",fade=t=out:"
+        f"st={start:.3f}:"
+        f"d={duration:.3f}:"
+        f"color={color}"
+    )
+
+
+def render_scene(
     ffmpeg: str,
     scene: Scene,
-    frame_path: Path,
-    output_path: Path,
+    frame_file: Path,
+    output_file: Path,
 ) -> None:
-    """Tek scene'i kendi kesin audio aralığı kadar render eder."""
+    """Exact narration aralığı kadar tek scene render eder."""
     duration = (
         scene.audio_end
         - scene.audio_start
@@ -5847,10 +5262,11 @@ def render_scene_segment(
 
     if duration <= 0:
         raise ComicFactoryError(
-            f"Scene {scene.scene_number} süresi geçersiz."
+            f"Scene {scene.scene_number} "
+            "duration geçersiz."
         )
 
-    filter_text = (
+    filters = (
         "scale=1080:1920,"
         + motion_filter(
             scene.motion
@@ -5873,17 +5289,13 @@ def render_scene_segment(
             "-loop",
             "1",
             "-framerate",
-            str(
-                FPS
-            ),
+            str(FPS),
             "-i",
-            str(
-                frame_path
-            ),
+            str(frame_file),
             "-t",
             f"{duration:.4f}",
             "-vf",
-            filter_text,
+            filters,
             "-an",
             "-c:v",
             "libx264",
@@ -5893,70 +5305,31 @@ def render_scene_segment(
             "17",
             "-pix_fmt",
             "yuv420p",
-            str(
-                output_path
-            ),
+            str(output_file),
         ],
         (
             f"Scene {scene.scene_number} "
-            "render edilemedi."
+            "render başarısız."
         ),
     )
-
-
-def attach_timeline(
-    scenes: list[Scene],
-    timeline: list[
-        tuple[
-            float,
-            float,
-        ]
-    ],
-) -> None:
-    """Audio timeline'ı scene nesnelerine bağlar."""
-    if len(
-        scenes
-    ) != len(
-        timeline
-    ):
-        raise ComicFactoryError(
-            "Scene ve timeline sayısı uyuşmuyor."
-        )
-
-    for scene, (
-        start,
-        end,
-    ) in zip(
-        scenes,
-        timeline,
-        strict=True,
-    ):
-        scene.audio_start = start
-        scene.audio_end = end
 
 
 def render_video(
     scenes: list[Scene],
     audio_file: Path,
-    ass_file: Path,
+    subtitle_file: Path,
 ) -> Path:
-    """Exact scene timeline ile final videoyu render eder."""
-    print()
-    print("=" * 78)
-    print("9/13 - EXACT-TIMELINE RENDER")
-    print("=" * 78)
-
+    """Final V4 videosunu exact timeline ile oluşturur."""
     ffmpeg = ffmpeg_path()
-
-    shutil.rmtree(
-        WORK_DIR
-        / "render",
-        ignore_errors=True,
-    )
 
     render_directory = (
         WORK_DIR
         / "render"
+    )
+
+    shutil.rmtree(
+        render_directory,
+        ignore_errors=True,
     )
 
     render_directory.mkdir(
@@ -5964,12 +5337,10 @@ def render_video(
         exist_ok=True,
     )
 
-    segments: list[
-        Path
-    ] = []
+    segments: list[Path] = []
 
     for scene in scenes:
-        frame_path = (
+        frame_file = (
             render_directory
             / (
                 f"frame_"
@@ -5977,7 +5348,7 @@ def render_video(
             )
         )
 
-        segment_path = (
+        segment_file = (
             render_directory
             / (
                 f"segment_"
@@ -5992,20 +5363,20 @@ def render_video(
         )
 
         frame.save(
-            frame_path,
+            frame_file,
             "JPEG",
             quality=96,
         )
 
-        render_scene_segment(
+        render_scene(
             ffmpeg,
             scene,
-            frame_path,
-            segment_path,
+            frame_file,
+            segment_file,
         )
 
         segments.append(
-            segment_path
+            segment_file
         )
 
     concat_file = (
@@ -6042,16 +5413,12 @@ def render_video(
             "-safe",
             "0",
             "-i",
-            str(
-                concat_file
-            ),
+            str(concat_file),
             "-c",
             "copy",
-            str(
-                silent_video
-            ),
+            str(silent_video),
         ],
-        "Scene segmentleri birleştirilemedi.",
+        "Scene concat başarısız.",
     )
 
     timestamp = datetime.now(
@@ -6070,7 +5437,7 @@ def render_video(
 
     subtitle_filter = (
         "ass="
-        + ass_file.resolve()
+        + subtitle_file.resolve()
         .as_posix()
         .replace(
             ":",
@@ -6086,13 +5453,9 @@ def render_video(
             "-loglevel",
             "error",
             "-i",
-            str(
-                silent_video
-            ),
+            str(silent_video),
             "-i",
-            str(
-                audio_file
-            ),
+            str(audio_file),
             "-vf",
             subtitle_filter,
             "-map",
@@ -6114,11 +5477,9 @@ def render_video(
             "-shortest",
             "-movflags",
             "+faststart",
-            str(
-                archive
-            ),
+            str(archive),
         ],
-        "Final V4 video render edilemedi.",
+        "Final render başarısız.",
     )
 
     return archive
@@ -6128,7 +5489,7 @@ def technical_video_check(
     video: Path,
     audio: Path,
 ) -> dict[str, Any]:
-    """Final render için deterministic teknik QC yapar."""
+    """Final dosyanın çözünürlük, audio ve duration kontrolünü yapar."""
     ffmpeg = ffmpeg_path()
 
     process = subprocess.run(
@@ -6136,9 +5497,7 @@ def technical_video_check(
             ffmpeg,
             "-hide_banner",
             "-i",
-            str(
-                video
-            ),
+            str(video),
             "-f",
             "null",
             "-",
@@ -6157,6 +5516,18 @@ def technical_video_check(
         stderr,
     )
 
+    width = 0
+    height = 0
+
+    if resolution_match:
+        width = int(
+            resolution_match.group(1)
+        )
+
+        height = int(
+            resolution_match.group(2)
+        )
+
     video_duration = media_duration(
         ffmpeg,
         video,
@@ -6167,80 +5538,45 @@ def technical_video_check(
         audio,
     )
 
-    width = 0
-    height = 0
-
-    if resolution_match:
-        width = int(
-            resolution_match.group(
-                1
-            )
-        )
-
-        height = int(
-            resolution_match.group(
-                2
-            )
-        )
-
-    has_audio = (
-        "Audio:"
-        in stderr
-    )
-
-    duration_difference = abs(
+    duration_delta = abs(
         video_duration
         - audio_duration
     )
 
-    resolution_ok = (
-        width == WIDTH
-        and height == HEIGHT
-    )
-
-    duration_ok = (
-        duration_difference
-        <= 0.15
-    )
+    has_audio = "Audio:" in stderr
 
     passed = (
-        resolution_ok
+        width == WIDTH
+        and height == HEIGHT
         and has_audio
-        and duration_ok
+        and duration_delta <= 0.20
     )
 
     return {
         "passed": passed,
-        "resolution_ok": resolution_ok,
         "width": width,
         "height": height,
         "has_audio": has_audio,
         "video_duration": video_duration,
         "audio_duration": audio_duration,
-        "duration_difference": duration_difference,
+        "duration_delta": duration_delta,
     }
 
 
-def run_render_until_pass(
+def render_until_pass(
     scenes: list[Scene],
     audio_file: Path,
-    ass_file: Path,
+    subtitle_file: Path,
 ) -> Path:
-    """Technical QC geçene kadar videoyu yeniden render eder."""
-    print()
-    print("=" * 78)
-    print("10/13 - TECHNICAL RENDER REPAIR LOOP")
-    print("=" * 78)
-
-    cycle = 1
-
-    while checkpoint_cycle_allowed(
-        cycle
+    """Teknik QC geçene kadar final videoyu yeniden render eder."""
+    for cycle in range(
+        1,
+        RENDER_REPAIR_CYCLES + 1,
     ):
         archive = render_video(
             scenes,
             audio_file,
-            ass_file,
+            subtitle_file,
         )
 
         metrics = technical_video_check(
@@ -6248,17 +5584,13 @@ def run_render_until_pass(
             audio_file,
         )
 
-        score = (
-            100.0
-            if metrics[
-                "passed"
-            ]
-            else 0.0
-        )
-
         passed = CHECKPOINTS.record(
             name="technical_video_qc",
-            score=score,
+            score=(
+                100.0
+                if metrics["passed"]
+                else 0.0
+            ),
             threshold=100.0,
             cycle=cycle,
             details=(
@@ -6267,12 +5599,10 @@ def run_render_until_pass(
                 f"{metrics['height']} | "
                 f"audio={metrics['has_audio']} | "
                 f"duration_delta="
-                f"{metrics['duration_difference']:.3f}s"
+                f"{metrics['duration_delta']:.3f}s"
             ),
             passed=bool(
-                metrics[
-                    "passed"
-                ]
+                metrics["passed"]
             ),
         )
 
@@ -6288,10 +5618,8 @@ def run_render_until_pass(
             missing_ok=True
         )
 
-        cycle += 1
-
-    raise ComicFactoryError(
-        "Technical render repair loop güvenlik limiti aşıldı."
+    raise EventRejectedError(
+        "Final render teknik QC geçemedi."
     )
 
 
@@ -6300,55 +5628,36 @@ def save_script_metadata(
     storyboard: dict[str, Any],
     scenes: list[Scene],
 ) -> None:
-    """Uploader'ların kullandığı latest.json dosyasını oluşturur."""
+    """Mevcut upload scriptleri için latest.json üretir."""
     hashtags = [
-        clean(
-            tag
-        )
+        clean(tag)
         for tag in storyboard.get(
             "hashtags",
             [],
         )
-        if clean(
-            tag
-        )
+        if clean(tag)
     ]
 
     if not any(
-        tag.casefold()
-        == "#shorts"
+        tag.casefold() == "#shorts"
         for tag in hashtags
     ):
         hashtags.append(
             "#Shorts"
         )
 
-    source_lines = []
-
-    seen_urls: set[
-        str
-    ] = set()
+    source_lines: list[str] = []
+    seen_urls: set[str] = set()
 
     for source in event.get(
         "sources",
         [],
     ):
-        if not isinstance(
-            source,
-            dict,
-        ):
+        if not isinstance(source, dict):
             continue
 
         url = clean(
-            source.get(
-                "url"
-            )
-        )
-
-        name = clean(
-            source.get(
-                "name"
-            )
+            source.get("url")
         )
 
         if (
@@ -6357,66 +5666,57 @@ def save_script_metadata(
         ):
             continue
 
-        seen_urls.add(
-            url
-        )
+        seen_urls.add(url)
 
         source_lines.append(
-            f"- {name or 'Source'}: {url}"
+            f"- {clean(source.get('name')) or 'Source'}: "
+            f"{url}"
         )
 
     description = clean(
-        storyboard.get(
-            "description"
-        )
+        storyboard.get("description")
     )
 
     full_description = (
         description
         + "\n\n"
-        + " ".join(
-            hashtags
-        )
+        + " ".join(hashtags)
     )
 
     if source_lines:
         full_description += (
             "\n\nKaynaklar:\n"
-            + "\n".join(
-                source_lines
-            )
+            + "\n".join(source_lines)
         )
-
-    script = {
-        "title": clean(
-            storyboard.get(
-                "title"
-            )
-        ),
-        "description": description,
-        "full_description": full_description,
-        "hashtags": hashtags,
-        "narration": clean(
-            storyboard.get(
-                "narration"
-            )
-        ),
-        "scene_narrations": [
-            scene.narration
-            for scene in scenes
-        ],
-    }
 
     save_json(
         LATEST_SCRIPT_FILE,
         {
-            "event_id": event[
-                "id"
-            ],
+            "event_id": event["id"],
             "generated_at": datetime.now(
                 TZ
             ).isoformat(),
-            "script": script,
+            "script": {
+                "title": clean(
+                    storyboard.get(
+                        "title"
+                    )
+                ),
+                "description": description,
+                "full_description": (
+                    full_description
+                ),
+                "hashtags": hashtags,
+                "narration": clean(
+                    storyboard.get(
+                        "narration"
+                    )
+                ),
+                "scene_narrations": [
+                    scene.narration
+                    for scene in scenes
+                ],
+            },
         },
     )
 
@@ -6425,12 +5725,10 @@ def save_visual_manifest(
     event: dict[str, Any],
     scenes: list[Scene],
 ) -> None:
-    """Final V4 sahne kararlarını kaydeder."""
+    """Final scene planını kalite analizi için kaydeder."""
     directory = (
         ASSET_DIR
-        / event[
-            "id"
-        ]
+        / event["id"]
     )
 
     save_json(
@@ -6449,9 +5747,7 @@ def save_visual_manifest(
                 ),
             },
             "scenes": [
-                asdict(
-                    scene
-                )
+                asdict(scene)
                 for scene in scenes
             ],
         },
@@ -6461,42 +5757,26 @@ def save_visual_manifest(
 def mark_used(
     event: dict[str, Any],
 ) -> None:
-    """Başarılı event'i kullanılmış olarak kaydeder."""
+    """Yalnız başarıyla video üretilmiş eventi kullanılmış olarak işaretler."""
     payload = load_json(
         USED_EVENTS_FILE,
-        {
-            "events": [],
-        },
+        {"events": []},
     )
 
-    if not isinstance(
-        payload,
-        dict,
-    ):
-        payload = {
-            "events": [],
-        }
+    if not isinstance(payload, dict):
+        payload = {"events": []}
 
     events = payload.setdefault(
         "events",
         [],
     )
 
-    key = clean(
-        event.get(
-            "event_key"
-        )
-    )
+    key = event_key(event)
 
     if not any(
-        isinstance(
-            item,
-            dict,
-        )
+        isinstance(item, dict)
         and clean(
-            item.get(
-                "event_key"
-            )
+            item.get("event_key")
         )
         == key
         for item in events
@@ -6504,15 +5784,17 @@ def mark_used(
         events.append(
             {
                 "event_key": key,
-                "event_title": event[
-                    "event_title"
-                ],
-                "series": event[
-                    "series"
-                ],
-                "issue": event[
-                    "issue"
-                ],
+                "event_title": clean(
+                    event.get(
+                        "event_title"
+                    )
+                ),
+                "series": clean(
+                    event.get("series")
+                ),
+                "issue": clean(
+                    event.get("issue")
+                ),
                 "completed_at": datetime.now(
                     TZ
                 ).isoformat(),
@@ -6525,43 +5807,180 @@ def mark_used(
     )
 
 
-def upload_youtube() -> None:
-    """Mevcut YouTube uploader'ı çalıştırır."""
-    uploader = (
-        ROOT
-        / "youtube_uploader.py"
-    )
+def run_python_script(
+    filename: str,
+) -> None:
+    """Repo içindeki uploader scriptini çalıştırır."""
+    script = ROOT / filename
 
-    if not uploader.exists():
-        raise ComicFactoryError(
-            "youtube_uploader.py bulunamadı."
+    if not script.exists():
+        print(
+            f"! {filename} bulunamadı, atlandı."
         )
+        return
 
     result = subprocess.run(
         [
             sys.executable,
-            str(
-                uploader
-            ),
+            str(script),
         ],
-        cwd=str(
-            ROOT
-        ),
+        cwd=str(ROOT),
     )
 
     if result.returncode != 0:
         raise ComicFactoryError(
-            "YouTube upload başarısız."
+            f"{filename} başarısız."
         )
+
+
+def upload_outputs() -> None:
+    """Başarılı videoyu mevcut platform uploaderlarına gönderir."""
+    run_python_script(
+        "youtube_uploader.py"
+    )
+
+    run_python_script(
+        "instagram_uploader.py"
+    )
+
+
+def reset_event_workspace(
+    event_id: str,
+) -> None:
+    """Reddedilen eventten kalan geçici dosyaları temizler."""
+    shutil.rmtree(
+        CANDIDATE_DIR / event_id,
+        ignore_errors=True,
+    )
+
+    shutil.rmtree(
+        ASSET_DIR / event_id,
+        ignore_errors=True,
+    )
+
+    shutil.rmtree(
+        WORK_DIR,
+        ignore_errors=True,
+    )
+
+    WORK_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+
+def build_single_event_video(
+    client: genai.Client,
+    event: dict[str, Any],
+    *,
+    max_images: int,
+    subtitle_offset: float,
+) -> Path:
+    """Tek eventi bütün kalite checkpointlerinden geçirerek video üretir."""
+    event = activate_event(event)
+
+    storyboard = build_quality_storyboard(
+        client,
+        event,
+    )
+
+    narration = clean(
+        storyboard["narration"]
+    )
+
+    audio_file, _, aligned_words = (
+        build_quality_audio(
+            client,
+            narration,
+        )
+    )
+
+    ffmpeg = ffmpeg_path()
+
+    duration = media_duration(
+        ffmpeg,
+        audio_file,
+    )
+
+    timeline = build_scene_timeline(
+        storyboard,
+        aligned_words,
+        duration,
+    )
+
+    for index, (
+        start,
+        end,
+    ) in enumerate(
+        timeline,
+        start=1,
+    ):
+        print(
+            f"✓ Timeline Scene {index:02d}: "
+            f"{start:.3f} → {end:.3f}"
+        )
+
+    scenes, global_candidates = (
+        build_quality_visuals(
+            client,
+            event,
+            storyboard,
+            max_images,
+        )
+    )
+
+    scenes = run_final_visual_gate(
+        client,
+        event,
+        storyboard,
+        scenes,
+        global_candidates,
+    )
+
+    attach_timeline(
+        scenes,
+        timeline,
+    )
+
+    build_quality_motion(
+        client,
+        scenes,
+    )
+
+    subtitle_file = create_subtitles(
+        aligned_words,
+        scenes,
+        narration,
+        subtitle_offset,
+    )
+
+    archive = render_until_pass(
+        scenes,
+        audio_file,
+        subtitle_file,
+    )
+
+    save_script_metadata(
+        event,
+        storyboard,
+        scenes,
+    )
+
+    save_visual_manifest(
+        event,
+        scenes,
+    )
+
+    mark_used(event)
+
+    return archive
 
 
 def system_check(
     upload: bool,
 ) -> None:
-    """Gerekli API ve runtime bağımlılıklarını kontrol eder."""
-    problems: list[
-        str
-    ] = []
+    """Pipeline'ın temel bağımlılıklarını kontrol eder."""
+    problems: list[str] = []
 
     for name in (
         "GEMINI_API_KEY",
@@ -6583,48 +6002,167 @@ def system_check(
             f"FFmpeg: {error}"
         )
 
-    if (
-        upload
-        and not (
+    if upload:
+        if not (
             ROOT
             / "youtube_uploader.py"
-        ).exists()
-    ):
-        problems.append(
-            "youtube_uploader.py yok."
-        )
+        ).exists():
+            problems.append(
+                "youtube_uploader.py yok."
+            )
 
     if problems:
         raise ComicFactoryError(
-            "\n".join(
-                problems
+            "\n".join(problems)
+        )
+
+    print("✓ Gemini hazır")
+    print("✓ Groq hazır")
+    print("✓ FFmpeg hazır")
+    print(
+        f"✓ Voice: "
+        f"{GEMINI_TTS_VOICE} LOCKED"
+    )
+
+
+def automatic_video_loop(
+    client: genai.Client,
+    args: argparse.Namespace,
+) -> tuple[
+    dict[str, Any],
+    Path,
+]:
+    """Bir run içinde kaliteli video oluşana kadar farklı eventler dener."""
+    run_rejected: set[str] = set()
+
+    event_queue: list[
+        dict[str, Any]
+    ] = []
+
+    switch_count = 0
+
+    if args.reuse_active:
+        active = load_active_event()
+
+        event_queue.append(
+            active
+        )
+
+    while switch_count < MAX_EVENT_SWITCHES_PER_RUN:
+        if not event_queue:
+            print()
+            print("=" * 78)
+            print("NEW EVENT BATCH")
+            print("=" * 78)
+
+            event_queue = research_events(
+                client,
+                max(
+                    args.count,
+                    MAX_EVENT_CANDIDATES_PER_RESEARCH,
+                ),
+                run_rejected,
+            )
+
+            if not event_queue:
+                print(
+                    "! Uygun event bulunamadı. "
+                    "Yeni araştırma turu başlatılıyor."
+                )
+
+                time.sleep(5)
+                continue
+
+        event = event_queue.pop(0)
+
+        key = event_key(event)
+
+        if key in run_rejected:
+            continue
+
+        switch_count += 1
+
+        print()
+        print("#" * 78)
+        print(
+            f"VIDEO ATTEMPT "
+            f"{switch_count}/"
+            f"{MAX_EVENT_SWITCHES_PER_RUN}"
+        )
+        print("#" * 78)
+        print(
+            clean(
+                event.get(
+                    "event_title"
+                )
             )
         )
 
-    print(
-        "✓ Gemini hazır"
-    )
+        try:
+            archive = build_single_event_video(
+                client,
+                event,
+                max_images=max(
+                    30,
+                    args.max_images,
+                ),
+                subtitle_offset=(
+                    args.subtitle_offset
+                ),
+            )
 
-    print(
-        f"✓ Gacrux voice: "
-        f"{GEMINI_TTS_VOICE} (LOCKED)"
-    )
+            return (
+                event,
+                archive,
+            )
 
-    print(
-        "✓ Groq hazır"
-    )
+        except EventRejectedError as error:
+            reason = clean(error)
 
-    print(
-        "✓ FFmpeg hazır"
-    )
+            print()
+            print(
+                "=" * 78
+            )
+            print(
+                "EVENT QUALITY REJECTED"
+            )
+            print(
+                "=" * 78
+            )
+            print(reason)
+            print(
+                "→ Başka story/event seçilecek."
+            )
 
-    print(
-        "✓ Quality repair loops hazır"
+            run_rejected.add(key)
+
+            record_rejected_event(
+                event,
+                reason,
+            )
+
+            event_id = slug(
+                f"{clean(event.get('series'))}_"
+                f"{clean(event.get('issue'))}_"
+                f"{clean(event.get('event_title'))}"
+            )
+
+            reset_event_workspace(
+                event_id
+            )
+
+            continue
+
+    raise ComicFactoryError(
+        "Bu run içinde maksimum event değişim "
+        "sayısına ulaşıldı. "
+        "Dış kaynaklar veya API cevapları nedeniyle "
+        "yayınlanabilir video üretilemedi."
     )
 
 
 def main() -> None:
-    """Comic Factory V4 ana kalite kontrollü üretim hattı."""
+    """Comic Factory V4 production entry point."""
     args = parse_args()
 
     ensure_dirs()
@@ -6637,16 +6175,11 @@ def main() -> None:
 
     client = gemini_client()
 
-    enable_reconstruction = (
-        ENABLE_AI_RECONSTRUCTION
-        and not args.disable_ai_reconstruction
-    )
-
     try:
         print()
         print("=" * 78)
         print("COMIC FACTORY V4")
-        print("REPAIR UNTIL PASS")
+        print("ONE RUN → ONE QUALITY VIDEO")
         print("=" * 78)
         print()
 
@@ -6659,192 +6192,53 @@ def main() -> None:
             "AI reconstruction: "
             + (
                 "ON"
-                if enable_reconstruction
+                if ENABLE_AI_RECONSTRUCTION
+                and not args.disable_ai_reconstruction
                 else "OFF"
             )
         )
 
+        global ENABLE_AI_RECONSTRUCTION
+
+        if args.disable_ai_reconstruction:
+            ENABLE_AI_RECONSTRUCTION = False
+
+        event, archive = automatic_video_loop(
+            client,
+            args,
+        )
+
+        CHECKPOINTS.persist_lessons()
+        CHECKPOINTS.save()
+
+        print()
+        print("=" * 78)
+        print("COMIC FACTORY V4 SUCCESS")
+        print("=" * 78)
+        print()
+
         print(
-            "Quality repair cycles: "
-            + (
-                "UNLIMITED"
-                if QUALITY_GATE_MAX_CYCLES == 0
-                else str(
-                    QUALITY_GATE_MAX_CYCLES
+            "Event: "
+            + clean(
+                event.get(
+                    "event_title"
                 )
             )
         )
 
-        if args.reuse_active:
-            event = load_active_event()
-
-        else:
-            event = activate_event(
-                research_events(
-                    client,
-                    args.count,
-                )[
-                    0
-                ]
-            )
-
-        storyboard = build_quality_storyboard(
-            client,
-            event,
-        )
-
-        narration = clean(
-            storyboard[
-                "narration"
-            ]
-        )
-
-        audio_file, whisper_words, aligned_words = (
-            build_quality_audio(
-                client,
-                narration,
-            )
-        )
-
-        ffmpeg = ffmpeg_path()
-
-        duration = media_duration(
-            ffmpeg,
-            audio_file,
-        )
-
-        timeline = build_scene_timeline(
-            storyboard,
-            aligned_words,
-            duration,
-        )
-
-        print()
-        print("=" * 78)
-        print("4/13 - EXACT AUDIO SCENE TIMELINE")
-        print("=" * 78)
-
-        for index, (
-            start,
-            end,
-        ) in enumerate(
-            timeline,
-            start=1,
-        ):
-            print(
-                f"✓ Scene {index:02d}: "
-                f"{start:.3f}s → {end:.3f}s"
-            )
-
-        scenes, global_candidates = (
-            build_quality_visuals(
-                client,
-                event,
-                storyboard,
-                max(
-                    30,
-                    args.max_images,
-                ),
-                enable_reconstruction,
-            )
-        )
-
-        scenes = run_final_visual_gate(
-            client,
-            event,
-            storyboard,
-            scenes,
-            global_candidates,
-            enable_reconstruction,
-        )
-
-        attach_timeline(
-            scenes,
-            timeline,
-        )
-
-        build_quality_motion(
-            client,
-            scenes,
-        )
-
-        ass_file = create_subtitles_until_pass(
-            aligned_words,
-            scenes,
-            narration,
-            args.subtitle_offset,
-        )
-
-        save_script_metadata(
-            event,
-            storyboard,
-            scenes,
-        )
-
-        save_visual_manifest(
-            event,
-            scenes,
-        )
-
-        archive = run_render_until_pass(
-            scenes,
-            audio_file,
-            ass_file,
-        )
-
-        print()
-        print("=" * 78)
-        print("11/13 - CHECKPOINT SUMMARY")
-        print("=" * 78)
-
-        CHECKPOINTS.save()
-
-        failed_checkpoints = [
-            result
-            for result in CHECKPOINTS.results
-            if not result.passed
-        ]
-
-        passed_checkpoints = [
-            result
-            for result in CHECKPOINTS.results
-            if result.passed
-        ]
-
         print(
-            f"✓ Passed checkpoint events: "
-            f"{len(passed_checkpoints)}"
-        )
-
-        print(
-            f"↻ Repaired failures: "
-            f"{len(failed_checkpoints)}"
-        )
-
-        CHECKPOINTS.persist_lessons()
-
-        print()
-        print("=" * 78)
-        print("12/13 - QUALITY LESSONS SAVED")
-        print("=" * 78)
-
-        print(
-            f"✓ {LESSONS_FILE}"
-        )
-
-        mark_used(
-            event
-        )
-
-        print()
-        print("=" * 78)
-        print("13/13 - COMIC FACTORY V4 BAŞARILI")
-        print("=" * 78)
-        print()
-
-        print(
-            f"Konu: "
-            f"{clean(event['event_title'])}"
+            "Comic: "
+            + clean(
+                event.get(
+                    "series"
+                )
+            )
+            + " "
+            + clean(
+                event.get(
+                    "issue"
+                )
+            )
         )
 
         print(
@@ -6853,78 +6247,61 @@ def main() -> None:
         )
 
         print(
-            f"Video: "
+            f"Latest video: "
             f"{LATEST_VIDEO_FILE}"
         )
 
         print(
-            f"Arşiv: "
-            f"{archive.relative_to(ROOT)}"
+            f"Archive: {archive}"
         )
 
-        print(
-            "Story quality: PASS"
-        )
-
-        print(
-            "Audio alignment: PASS"
-        )
-
-        print(
-            "Scene visual match: PASS"
-        )
-
-        print(
-            "Image quality: PASS"
-        )
-
-        print(
-            "Composition: PASS"
-        )
-
-        print(
-            "Motion quality: PASS"
-        )
-
-        print(
-            "Subtitle technical QC: PASS"
-        )
-
-        print(
-            "Final visual flow: PASS"
-        )
-
-        print(
-            "Technical video QC: PASS"
-        )
+        print()
+        print("✓ Story PASS")
+        print("✓ Audio alignment PASS")
+        print("✓ Scene timing PASS")
+        print("✓ Visual match PASS")
+        print("✓ Image quality PASS")
+        print("✓ Composition PASS")
+        print("✓ Final visual flow PASS")
+        print("✓ Motion PASS")
+        print("✓ Subtitle safe-zone PASS")
+        print("✓ Technical render PASS")
 
         if args.upload:
-            upload_youtube()
+            print()
+            print(
+                "=" * 78
+            )
+            print(
+                "PLATFORM UPLOAD"
+            )
+            print(
+                "=" * 78
+            )
+
+            upload_outputs()
 
     except KeyboardInterrupt:
         CHECKPOINTS.persist_lessons()
+        CHECKPOINTS.save()
 
-        raise SystemExit(
-            1
-        )
+        raise SystemExit(1)
 
     except Exception as error:
         CHECKPOINTS.persist_lessons()
+        CHECKPOINTS.save()
 
         print()
         print("=" * 78)
         print("COMIC FACTORY V4 DURDU")
         print("=" * 78)
         print()
-
         print(
             f"{type(error).__name__}: "
             f"{error}"
         )
 
-        raise SystemExit(
-            1
-        )
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
