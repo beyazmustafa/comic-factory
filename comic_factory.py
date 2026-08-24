@@ -384,7 +384,7 @@ def gemini_client() -> genai.Client:
 def parse_json_response(
     text: str,
 ) -> dict[str, Any]:
-    """AI JSON cevabını ayrıştırır."""
+    """Gemini JSON cevabını güvenli biçimde ayrıştırır."""
 
     text = text.strip()
 
@@ -408,20 +408,61 @@ def parse_json_response(
 
     except json.JSONDecodeError as error:
         raise ComicFactoryError(
-            "AI geçerli JSON döndürmedi."
+            "Gemini geçerli JSON döndürmedi."
         ) from error
 
-    if not isinstance(
+    if isinstance(
         payload,
         dict,
     ):
-        raise ComicFactoryError(
-            "AI JSON nesnesi döndürmedi."
-        )
+        return payload
 
-    return payload
+    if isinstance(
+        payload,
+        list,
+    ):
+        if not payload:
+            raise ComicFactoryError(
+                "Gemini boş JSON listesi döndürdü."
+            )
 
+        first_item = payload[
+            0
+        ]
 
+        if not isinstance(
+            first_item,
+            dict,
+        ):
+            raise ComicFactoryError(
+                "Gemini beklenmeyen JSON listesi döndürdü."
+            )
+
+        if (
+            "event_title"
+            in first_item
+            or "publisher"
+            in first_item
+            or "series"
+            in first_item
+        ):
+            return {
+                "events": payload,
+            }
+
+        if (
+            "scene_number"
+            in first_item
+            or "candidate_id"
+            in first_item
+        ):
+            return {
+                "assignments": payload,
+            }
+
+    raise ComicFactoryError(
+        "Gemini beklenmeyen JSON yapısı döndürdü."
+    )
 def ask_gemini_json(
     client: genai.Client,
     prompt: str,
