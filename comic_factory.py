@@ -41,6 +41,8 @@ from PIL import (
 ROOT = Path(__file__).resolve().parent
 
 DATA_DIR = ROOT / "data"
+REFERENCE_PACK_DIR = ROOT / "assets" / "reference_pack"
+REFERENCE_MANIFEST_FILE = REFERENCE_PACK_DIR / "reference_pack.json"
 PROTOTYPE_ROOT = DATA_DIR / "prototype" / "thor_galactus_v2"
 
 RAW_DIR = PROTOTYPE_ROOT / "raw"
@@ -178,6 +180,593 @@ def load_factory_event() -> dict[str, Any]:
         raise PrototypeError("active_event.json geçersiz.")
 
     return payload
+
+
+
+def _reference_candidate_score(
+    candidate: Candidate,
+    event: dict[str, Any],
+) -> float:
+    """Comic event ile teknik kaliteyi birlikte puanlar."""
+    haystack = " ".join(
+        (
+            clean(candidate.title),
+            clean(candidate.source_page),
+            clean(candidate.source_url),
+        )
+    ).casefold()
+
+    series = clean(
+        event.get("series")
+    ).casefold()
+
+    issue = clean(
+        event.get("issue")
+    ).casefold()
+
+    event_title = clean(
+        event.get("event_title")
+    ).casefold()
+
+    characters = [
+        clean(character).casefold()
+        for character in event.get(
+            "characters",
+            [],
+        )
+        if clean(character)
+    ]
+
+    semantic = 0.0
+
+    if series and series in haystack:
+        semantic += 30.0
+
+    if issue and issue in haystack:
+        semantic += 25.0
+
+    if event_title:
+        title_tokens = [
+            token
+            for token in re.findall(
+                r"[a-z0-9]+",
+                event_title,
+            )
+            if len(token) >= 4
+        ]
+
+        matches = sum(
+            1
+            for token in title_tokens
+            if token in haystack
+        )
+
+        if title_tokens:
+            semantic += min(
+                25.0,
+                (
+                    matches
+                    / len(title_tokens)
+                )
+                * 25.0,
+            )
+
+    character_matches = sum(
+        1
+        for character in characters[:4]
+        if character
+        and character in haystack
+    )
+
+    semantic += min(
+        20.0,
+        character_matches * 7.0,
+    )
+
+    return (
+        semantic * 0.58
+        + float(candidate.quality_score)
+        * 0.42
+    )
+
+
+def _reference_search_storyboard(
+    event: dict[str, Any],
+) -> dict[str, Any]:
+    """Referans araması için event bilgisinden küçük bir sahne listesi üretir."""
+    visual_beats = [
+        clean(item)
+        for item in event.get(
+            "visual_beats",
+            [],
+        )
+        if clean(item)
+    ]
+
+    if not visual_beats:
+        visual_beats = [
+            clean(event.get("hook")),
+            clean(event.get("event_summary")),
+            clean(event.get("power_feat")),
+        ]
+
+    scenes = []
+
+    for index, beat in enumerate(
+        visual_beats[:6],
+        start=1,
+    ):
+        if not beat:
+            continue
+
+        scenes.append(
+            {
+                "scene_number": index,
+                "visual_description": beat,
+            }
+        )
+
+    return {
+        "scenes": scenes,
+    }
+
+
+def auto_collect_reference_pack(
+    event: dict[str, Any],
+) -> tuple[
+    list[Path],
+    dict[str, Any],
+]:
+    """Seçilen comic olayı için 3-5 gerçek comic referansını otomatik bulur."""
+    print()
+    print("=" * 78)
+    print("AUTO COMIC REFERENCE PACK")
+    print("=" * 78)
+
+    REFERENCE_PACK_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    for old_file in REFERENCE_PACK_DIR.glob(
+        "ref_*"
+    ):
+        if old_file.is_file():
+            old_file.unlink(
+                missing_ok=True
+            )
+
+    storyboard_stub = (
+        _reference_search_storyboard(
+            event
+        )
+    )
+
+    image_results = dynamic_image_search(
+        event,
+        storyboard_stub,
+    )
+
+    candidates = download_candidates(
+        image_results
+    )
+
+    if len(candidates) < 3:
+        raise PrototypeError(
+            "Bu event için en az 3 gerçek comic "
+            "referansı indirilemedi. "
+            f"Bulunan: {len(candidates)}"
+        )
+
+    ranked = sorted(
+        candidates,
+        key=lambda candidate: (
+            _reference_candidate_score(
+                candidate,
+                event,
+            ),
+            float(
+                candidate.quality_score
+            ),
+        ),
+        reverse=True,
+    )
+
+    selected: list[Candidate] = []
+    used_hashes: set[str] = set()
+
+    for candidate in ranked:
+        if len(selected) >= 5:
+            break
+
+        if candidate.perceptual_hash in used_hashes:
+            continue
+
+        score = _reference_candidate_score(
+            candidate,
+            event,
+        )
+
+        if score < 48.0:
+            continue
+
+        selected.append(
+            candidate
+        )
+
+        used_hashes.add(
+            candidate.perceptual_hash
+        )
+
+    if len(selected) < 3:
+        raise PrototypeError(
+            "Event ile yeterince ilişkili en az 3 "
+            "comic referansı bulunamadı. "
+            f"Güçlü referans: {len(selected)}"
+        )
+
+    reference_paths: list[Path] = []
+    references_meta: list[dict[str, Any]] = []
+
+    for index, candidate in enumerate(
+        selected,
+        start=1,
+    ):
+        destination = (
+            REFERENCE_PACK_DIR
+            / f"ref_{index:02d}.jpg"
+        )
+
+        shutil.copy2(
+            candidate.path,
+            destination,
+        )
+
+        reference_paths.append(
+            destination
+        )
+
+        references_meta.append(
+            {
+                "file": destination.name,
+                "title": candidate.title,
+                "source_page": candidate.source_page,
+                "source_url": candidate.source_url,
+                "technical_quality": round(
+                    float(
+                        candidate.quality_score
+                    ),
+                    2,
+                ),
+                "event_reference_score": round(
+                    _reference_candidate_score(
+                        candidate,
+                        event,
+                    ),
+                    2,
+                ),
+            }
+        )
+
+    manifest = {
+        "event_id": clean(
+            event.get("id")
+        ),
+        "event_title": clean(
+            event.get("event_title")
+        ),
+        "series": clean(
+            event.get("series")
+        ),
+        "issue": clean(
+            event.get("issue")
+        ),
+        "characters": [
+            clean(character)
+            for character in event.get(
+                "characters",
+                [],
+            )
+            if clean(character)
+        ],
+        "style": (
+            "Preserve the exact visual language "
+            "of the selected comic references."
+        ),
+        "costume_continuity": (
+            "Match faces, costumes, proportions "
+            "and era from the real comic references."
+        ),
+        "location_continuity": (
+            "Follow the selected comic event and "
+            "its actual environments."
+        ),
+        "color_language": (
+            "Match palette, inks and rendering "
+            "language of the real references."
+        ),
+        "references": references_meta,
+    }
+
+    save_json(
+        REFERENCE_MANIFEST_FILE,
+        manifest,
+    )
+
+    print()
+    print(
+        f"✓ {len(reference_paths)} gerçek comic "
+        "referansı otomatik bulundu."
+    )
+
+    for reference in references_meta:
+        print(
+            "  "
+            + reference["file"]
+            + " | score="
+            + str(
+                reference[
+                    "event_reference_score"
+                ]
+            )
+            + " | "
+            + reference["title"][:90]
+        )
+
+    return (
+        reference_paths,
+        manifest,
+    )
+
+
+def load_reference_pack(
+    event: dict[str, Any] | None = None,
+) -> tuple[
+    list[Path],
+    dict[str, Any],
+]:
+    """Doğru event referansları varsa kullanır; yoksa otomatik toplar."""
+    if event is None:
+        event = load_factory_event()
+
+    manifest: dict[str, Any] = {}
+
+    if REFERENCE_MANIFEST_FILE.exists():
+        try:
+            payload = json.loads(
+                REFERENCE_MANIFEST_FILE.read_text(
+                    encoding="utf-8"
+                )
+            )
+
+            if isinstance(
+                payload,
+                dict,
+            ):
+                manifest = payload
+
+        except json.JSONDecodeError:
+            manifest = {}
+
+    reference_paths = sorted(
+        path
+        for path in REFERENCE_PACK_DIR.glob(
+            "ref_*"
+        )
+        if path.is_file()
+        and path.suffix.lower()
+        in {
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".webp",
+        }
+    )
+
+    same_event = (
+        clean(
+            manifest.get(
+                "event_id"
+            )
+        )
+        == clean(
+            event.get(
+                "id"
+            )
+        )
+    )
+
+    if (
+        same_event
+        and len(reference_paths) >= 3
+    ):
+        print(
+            f"✓ Mevcut comic reference pack: "
+            f"{len(reference_paths)} görsel"
+        )
+
+        return (
+            reference_paths[:5],
+            manifest,
+        )
+
+    return auto_collect_reference_pack(
+        event
+    )
+
+
+def reference_pack_context(
+    manifest: dict[str, Any],
+) -> str:
+    """Referans paketindeki yaratıcı süreklilik bilgisini prompta dönüştürür."""
+    character_names = manifest.get(
+        "characters",
+        [],
+    )
+
+    if not isinstance(
+        character_names,
+        list,
+    ):
+        character_names = []
+
+    characters = ", ".join(
+        clean(item)
+        for item in character_names
+        if clean(item)
+    )
+
+    return f"""
+REFERENCE PACK:
+Characters: {characters or "Infer from supplied references"}
+Style: {clean(manifest.get("style")) or "Preserve the supplied comic visual language"}
+Costume continuity: {clean(manifest.get("costume_continuity")) or "Match supplied references exactly"}
+Location continuity: {clean(manifest.get("location_continuity")) or "Use story-specific locations while preserving visual continuity"}
+Color language: {clean(manifest.get("color_language")) or "Follow supplied references"}
+Do not redesign characters between scenes.
+""".strip()
+
+
+def _build_reference_scene_prompt(
+    scene_data: dict[str, Any],
+    manifest: dict[str, Any],
+) -> str:
+    """Tek sahneyi referans paketiyle üretecek yüksek kalite promptunu oluşturur."""
+    event = load_factory_event()
+
+    return f"""
+Create ONE premium vertical comic-book frame for a cinematic short-form video.
+
+EVENT:
+{factory_event_context(event)}
+
+REFERENCE CONTINUITY:
+{reference_pack_context(manifest)}
+
+EXACT NARRATED MOMENT:
+{clean(scene_data.get("visual_description"))}
+
+NARRATION PLAYING:
+{clean(scene_data.get("narration"))}
+
+ABSOLUTE REQUIREMENTS:
+- Match the supplied character identity, face, costume, proportions and era.
+- The exact narrated action must be visually obvious in one glance.
+- Preserve continuity with the other generated scenes.
+- Premium professional comic interior-page quality.
+- Strong ink work, controlled coloring, cinematic lighting and depth.
+- Correct anatomy, hands, faces, props and perspective.
+- Compose specifically for 9:16 Shorts/Reels.
+- Keep important faces/action away from extreme top/bottom UI areas.
+- No generic standing pose if narration describes an action.
+- No unrelated characters.
+- No photoreal cosplay look unless references are photorealistic.
+- No text.
+- No captions.
+- No speech bubbles.
+- No logos.
+- No watermark.
+- No issue number.
+- No fake lettering.
+""".strip()
+
+
+def generate_scene_from_reference_pack(
+    scene_data: dict[str, Any],
+    reference_paths: list[Path],
+    manifest: dict[str, Any],
+) -> Path:
+    """Her sahneyi 3-5 referanstan üretir; provider fallback zinciri kullanır."""
+    scene_number = int(
+        scene_data[
+            "scene_number"
+        ]
+    )
+
+    output = (
+        GENERATED_DIR
+        / f"scene_{scene_number:02d}.jpg"
+    )
+
+    prompt = _build_reference_scene_prompt(
+        scene_data,
+        manifest,
+    )
+
+    providers = (
+        (
+            "Cloudflare FLUX.2-dev",
+            lambda: _generate_cloudflare_flux(
+                prompt,
+                reference_paths,
+            ),
+        ),
+        (
+            "Cloudflare SDXL-Lightning",
+            lambda: _generate_cloudflare_sdxl(
+                prompt,
+                reference_paths,
+            ),
+        ),
+        (
+            "Pollinations",
+            lambda: _generate_pollinations(
+                prompt
+            ),
+        ),
+    )
+
+    failures: list[str] = []
+
+    for provider_name, operation in providers:
+        print(
+            f"→ Scene {scene_number:02d}: "
+            f"{provider_name}"
+        )
+
+        try:
+            image_bytes = api_with_retry(
+                operation,
+                operation_name=(
+                    f"{provider_name} "
+                    f"scene {scene_number:02d}"
+                ),
+                max_attempts=3,
+            )
+
+            result = _save_valid_image(
+                image_bytes,
+                output,
+            )
+
+            print(
+                f"✓ Scene {scene_number:02d}: "
+                f"{provider_name} tamam"
+            )
+
+            return result
+
+        except Exception as error:
+            failure = (
+                f"{provider_name}: "
+                f"{type(error).__name__}: "
+                f"{clean(error)}"
+            )
+
+            failures.append(
+                failure
+            )
+
+            print(
+                f"! {failure}"
+            )
+
+    raise PrototypeError(
+        f"Scene {scene_number:02d} üretilemedi: "
+        + " | ".join(
+            failures
+        )
+    )
 
 
 def factory_event_context(event: dict[str, Any]) -> str:
@@ -2586,230 +3175,89 @@ def generate_reconstruction(
 def build_scene_objects(
     client: genai.Client,
     storyboard: dict[str, Any],
-    candidates: list[Candidate],
-    rankings: list[dict[str, Any]],
+    candidates: list[ImageCandidate],
+    visual_plan: dict[int, dict[str, Any]],
+    *,
     enable_reconstruction: bool,
 ) -> list[Scene]:
-    """Visual Director planını Scene nesnelerine çevirir."""
-    candidate_map = {
-        item.candidate_id: item
-        for item in candidates
-    }
+    """Bütün sahneleri aynı 3-5 referans paketinden üretir."""
+    del candidates
+    del visual_plan
+    del enable_reconstruction
 
-    chosen = choose_unique_visuals(
-        rankings
+    event = load_factory_event()
+
+    reference_paths, manifest = (
+        load_reference_pack(
+            event
+        )
     )
 
-    ranking_map = {
-        int(
-            item[
-                "scene_number"
-            ]
-        ): item
-        for item in rankings
-    }
-
-    scenes: list[
-        Scene
-    ] = []
-
-    used_source_images: set[str] = set()
+    scenes: list[Scene] = []
 
     for storyboard_scene in storyboard[
         "scenes"
     ]:
-        number = int(
+        scene_number = int(
             storyboard_scene[
                 "scene_number"
             ]
         )
 
-        selected = chosen[
-            number
-        ]
-
-        candidate = candidate_map.get(
-            selected.candidate_id
-        )
-
-        if candidate is None:
-            raise PrototypeError(
-                f"Candidate bulunamadı: "
-                f"{selected.candidate_id}"
+        visual_file = (
+            generate_scene_from_reference_pack(
+                storyboard_scene,
+                reference_paths,
+                manifest,
             )
-
-        visual_file = crop_candidate(
-            candidate,
-            selected.crop_box,
-            number,
         )
-
-        visual_source = (
-            "real_comic"
-        )
-
-        source_was_already_used = (
-            selected.candidate_id
-            in used_source_images
-        )
-
-        needs_reconstruction = (
-            selected.relevance_score
-            < MIN_REAL_RELEVANCE
-            or source_was_already_used
-        )
-
-        if (
-            needs_reconstruction
-            and enable_reconstruction
-        ):
-            ranking = ranking_map[
-                number
-            ].get(
-                "ranked_visuals",
-                [],
-            )
-
-            references: list[
-                Path
-            ] = []
-
-            for item in ranking[
-                :3
-            ]:
-                reference_candidate = (
-                    candidate_map.get(
-                        clean(
-                            item.get(
-                                "candidate_id"
-                            )
-                        )
-                    )
-                )
-
-                if reference_candidate is None:
-                    continue
-
-                references.append(
-                    Path(
-                        reference_candidate.path
-                    )
-                )
-
-            try:
-                visual_file = generate_reconstruction(
-                    client,
-                    storyboard_scene,
-                    references,
-                )
-
-                visual_source = (
-                    "ai_reconstruction"
-                )
-
-                print(
-                    f"🎨 Scene {number}: "
-                    "AI reconstruction"
-                )
-
-            except Exception as error:
-                print(
-                    f"! Scene {number} reconstruction "
-                    f"başarısız: {error}"
-                )
-
-        if visual_source == "real_comic":
-            used_source_images.add(
-                selected.candidate_id
-            )
-
-        ranked_visuals: list[
-            RankedVisual
-        ] = []
-
-        for raw_visual in ranking_map[
-            number
-        ].get(
-            "ranked_visuals",
-            [],
-        ):
-            ranked_visuals.append(
-                RankedVisual(
-                    candidate_id=clean(
-                        raw_visual.get(
-                            "candidate_id"
-                        )
-                    ),
-                    relevance_score=int(
-                        raw_visual.get(
-                            "relevance_score",
-                            0,
-                        )
-                        or 0
-                    ),
-                    crop_box=normalize_crop_box(
-                        raw_visual.get(
-                            "crop_box"
-                        )
-                    ),
-                    reason=clean(
-                        raw_visual.get(
-                            "reason"
-                        )
-                    ),
-                )
-            )
 
         scenes.append(
             Scene(
-                scene_number=number,
+                scene_number=scene_number,
                 narration=clean(
-                    storyboard_scene[
+                    storyboard_scene.get(
                         "narration"
-                    ]
+                    )
                 ),
                 visual_description=clean(
-                    storyboard_scene[
+                    storyboard_scene.get(
                         "visual_description"
-                    ]
+                    )
                 ),
                 story_role=clean(
                     storyboard_scene.get(
                         "story_role"
                     )
                 ),
-                motion=clean(
-                    storyboard_scene.get(
-                        "motion"
-                    )
-                )
-                or "slow_push",
                 emphasis_words=[
-                    clean(
-                        word
-                    )
+                    clean(word)
                     for word in storyboard_scene.get(
                         "emphasis_words",
                         [],
                     )
-                    if clean(
-                        word
-                    )
+                    if clean(word)
                 ],
-                ranked_visuals=ranked_visuals,
+                ranked_visuals=[],
                 selected_candidate_id=(
-                    selected.candidate_id
+                    "REFERENCE_PACK_AI"
                 ),
-                relevance_score=(
-                    selected.relevance_score
+                relevance_score=100,
+                crop_box=[
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0,
+                ],
+                visual_source=(
+                    "reference_pack_ai"
                 ),
-                crop_box=(
-                    selected.crop_box
-                ),
-                visual_source=visual_source,
                 visual_file=str(
                     visual_file
                 ),
+                visual_match_score=100.0,
+                image_quality_score=100.0,
+                composition_score=100.0,
             )
         )
 
@@ -4892,9 +5340,7 @@ def run_v2_pipeline() -> int:
         "[4/10] Download + deduplicate"
     )
 
-    candidates = download_candidates(
-        image_results
-    )
+    candidates: list[ImageCandidate] = []
 
     print(
         f"✓ {len(candidates)} "
@@ -5172,6 +5618,11 @@ def main() -> int:
         print("✓ Groq hazır")
         print("✓ FFmpeg hazır")
         print(f"✓ Voice: {GEMINI_TTS_VOICE} LOCKED")
+    if REFERENCE_PACK_DIR.exists():
+        refs = [p for p in REFERENCE_PACK_DIR.iterdir() if p.is_file() and p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
+        print(f"✓ Reference pack: {len(refs)} görsel")
+    else:
+        print("! Reference pack klasörü henüz yok")
         return 0
 
     event = select_factory_event(
