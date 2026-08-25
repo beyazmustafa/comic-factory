@@ -1,3 +1,5 @@
+# .github/workflows/comic-factory-thor-v2.yml
+
 name: Comic Factory Thor V2
 
 on:
@@ -11,73 +13,362 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-video:
+    name: Run Thor V2 Factory
     runs-on: ubuntu-latest
     timeout-minutes: 180
 
     env:
       PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+
       GEMINI_MODEL: gemini-3.5-flash-lite
       GEMINI_TTS_MODEL: gemini-3.1-flash-tts-preview
       GEMINI_TTS_VOICE: Gacrux
-      GEMINI_IMAGE_MODEL: gemini-3.1-flash-image
+
       GROQ_WHISPER_MODEL: whisper-large-v3-turbo
 
+      POLLINATIONS_IMAGE_MODEL: zimage
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
 
-      - name: Install
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
+
+      - name: Verify required files
+        shell: bash
+        run: |
+          FAILED=0
+
+          if [ ! -f comic_factory.py ]; then
+            echo "::error::comic_factory.py bulunamadı."
+            FAILED=1
+          else
+            echo "✓ comic_factory.py"
+          fi
+
+          if [ ! -f comic_factory_event_source.py ]; then
+            echo "::error::comic_factory_event_source.py bulunamadı."
+            FAILED=1
+          else
+            echo "✓ comic_factory_event_source.py"
+          fi
+
+          if [ ! -f requirements.txt ]; then
+            echo "::error::requirements.txt bulunamadı."
+            FAILED=1
+          else
+            echo "✓ requirements.txt"
+          fi
+
+          if [ "$FAILED" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Verify secrets
+        shell: bash
+        run: |
+          FAILED=0
+
+          check_secret() {
+            NAME="$1"
+            VALUE="$2"
+
+            if [ -z "$VALUE" ]; then
+              echo "::error::$NAME secret bulunamadı."
+              FAILED=1
+            else
+              echo "✓ $NAME mevcut"
+            fi
+          }
+
+          check_secret \
+            "GEMINI_API_KEY" \
+            "$GEMINI_API_KEY"
+
+          check_secret \
+            "GROQ_API_KEY" \
+            "$GROQ_API_KEY"
+
+          check_secret \
+            "CLOUDFLARE_ACCOUNT_ID" \
+            "$CLOUDFLARE_ACCOUNT_ID"
+
+          check_secret \
+            "CLOUDFLARE_API_TOKEN" \
+            "$CLOUDFLARE_API_TOKEN"
+
+          check_secret \
+            "POLLINATIONS_API_KEY" \
+            "$POLLINATIONS_API_KEY"
+
+          if [ "$FAILED" -ne 0 ]; then
+            exit 1
+          fi
 
       - name: Syntax check
         run: |
           python -m py_compile comic_factory.py
           python -m py_compile comic_factory_event_source.py
 
+          echo "✓ comic_factory.py syntax OK"
+          echo "✓ comic_factory_event_source.py syntax OK"
+
       - name: Runtime check
         run: |
           python comic_factory.py --check
 
-      - name: Run Thor V2 Factory
+      - name: Prepare directories
         run: |
-          python comic_factory.py --rebuild --enable-ai-reconstruction
+          mkdir -p data/videos
+          mkdir -p data/audio
+          mkdir -p data/scripts
+          mkdir -p data/events
+          mkdir -p data/logs
+          mkdir -p data/prototype
+          mkdir -p assets/reference_pack
 
-      - name: Verify video
+      - name: Run Thor V2 Factory
+        id: factory
+        shell: bash
         run: |
-          test -s data/videos/latest.mp4
-          ls -lh data/videos/latest.mp4
+          set -o pipefail
+
+          LOG_FILE="data/logs/comic_factory.log"
+
+          echo "============================================================" \
+            | tee "$LOG_FILE"
+
+          echo "COMIC FACTORY + THOR V2 ENGINE" \
+            | tee -a "$LOG_FILE"
+
+          echo "============================================================" \
+            | tee -a "$LOG_FILE"
+
+          echo "Started: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+            | tee -a "$LOG_FILE"
+
+          echo "Voice: Gacrux LOCKED" \
+            | tee -a "$LOG_FILE"
+
+          echo \
+            | tee -a "$LOG_FILE"
+
+          python comic_factory.py \
+            --rebuild \
+            --enable-ai-reconstruction \
+            2>&1 | tee -a "$LOG_FILE"
+
+          EXIT_CODE=${PIPESTATUS[0]}
+
+          echo \
+            | tee -a "$LOG_FILE"
+
+          echo "Exit code: $EXIT_CODE" \
+            | tee -a "$LOG_FILE"
+
+          echo "Finished: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+            | tee -a "$LOG_FILE"
+
+          exit "$EXIT_CODE"
+
+      - name: Verify final video
+        if: success()
+        shell: bash
+        run: |
+          VIDEO="data/videos/latest.mp4"
+
+          if [ ! -f "$VIDEO" ]; then
+            echo "::error::latest.mp4 oluşturulmadı."
+            exit 1
+          fi
+
+          SIZE=$(stat -c%s "$VIDEO")
+
+          if [ "$SIZE" -lt 250000 ]; then
+            echo "::error::Video çok küçük: $SIZE bytes"
+            exit 1
+          fi
+
+          echo "✓ Video oluşturuldu"
+          ls -lh "$VIDEO"
+
+      - name: Verify metadata
+        if: success()
+        shell: bash
+        run: |
+          if [ ! -f data/scripts/latest.json ]; then
+            echo "::error::latest.json oluşturulmadı."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path(
+              "data/scripts/latest.json"
+          )
+
+          payload = json.loads(
+              path.read_text(
+                  encoding="utf-8"
+              )
+          )
+
+          script = payload.get(
+              "script",
+              {}
+          )
+
+          title = script.get(
+              "title",
+              ""
+          )
+
+          narration = script.get(
+              "narration",
+              ""
+          )
+
+          if not title:
+              raise SystemExit(
+                  "Video title boş."
+              )
+
+          if not narration:
+              raise SystemExit(
+                  "Narration boş."
+              )
+
+          print(
+              "✓ Title:",
+              title,
+          )
+
+          print(
+              "✓ Narration length:",
+              len(narration),
+          )
+          PY
+
+      - name: Show active event
+        if: always()
+        shell: bash
+        run: |
+          if [ ! -f data/events/active_event.json ]; then
+            echo "active_event.json yok."
+            exit 0
+          fi
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          event = json.loads(
+              Path(
+                  "data/events/active_event.json"
+              ).read_text(
+                  encoding="utf-8"
+              )
+          )
+
+          print(
+              "Event:",
+              event.get(
+                  "event_title"
+              ),
+          )
+
+          print(
+              "Comic:",
+              event.get(
+                  "series"
+              ),
+              event.get(
+                  "issue"
+              ),
+          )
+          PY
+
+      - name: Show reference pack
+        if: always()
+        shell: bash
+        run: |
+          echo
+          echo "============================================================"
+          echo "REFERENCE PACK"
+          echo "============================================================"
+
+          if [ -d assets/reference_pack ]; then
+            find assets/reference_pack \
+              -maxdepth 1 \
+              -type f \
+              -print
+          else
+            echo "Reference pack klasörü oluşmadı."
+          fi
+
+      - name: Show final log
+        if: always()
+        shell: bash
+        run: |
+          echo
+          echo "============================================================"
+          echo "LAST 200 LOG LINES"
+          echo "============================================================"
+
+          if [ -f data/logs/comic_factory.log ]; then
+            tail -n 200 \
+              data/logs/comic_factory.log
+          else
+            echo "Log dosyası oluşmadı."
+          fi
 
       - name: Upload video
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: thor-v2-factory-video
+          name: thor-v2-factory-video-${{ github.run_number }}
           path: |
             data/videos/latest.mp4
             data/scripts/latest.json
             data/events/active_event.json
+            assets/reference_pack/**
           if-no-files-found: error
           retention-days: 7
+          compression-level: 0
 
       - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: thor-v2-factory-diagnostics
+          name: thor-v2-factory-diagnostics-${{ github.run_number }}
           path: |
-            data/prototype/**
+            data/logs/**
             data/audio/**
             data/scripts/**
             data/events/**
+            data/prototype/**
+            assets/reference_pack/**
           if-no-files-found: warn
           retention-days: 7
+          compression-level: 6
