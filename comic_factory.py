@@ -20,6 +20,7 @@ from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote, urlsplit, urlunsplit
 
 import edge_tts
 import imageio_ffmpeg
@@ -560,6 +561,61 @@ def clean(value: Any) -> str:
         " ",
         str(value or "").strip(),
     )
+
+
+def safe_http_url(value: Any) -> str:
+    """Unicode içeren URL'yi güvenli ASCII HTTP URL'sine dönüştürür."""
+    url = clean(value)
+
+    if not url.startswith(("http://", "https://")):
+        return ""
+
+    try:
+        parts = urlsplit(url)
+
+        hostname = (
+            parts.hostname.encode("idna").decode("ascii")
+            if parts.hostname
+            else ""
+        )
+
+        if not hostname:
+            return ""
+
+        netloc = hostname
+
+        if parts.port:
+            netloc += f":{parts.port}"
+
+        if parts.username:
+            credentials = quote(parts.username, safe="")
+
+            if parts.password:
+                credentials += ":" + quote(
+                    parts.password,
+                    safe="",
+                )
+
+            netloc = credentials + "@" + netloc
+
+        return urlunsplit(
+            (
+                parts.scheme,
+                netloc,
+                quote(
+                    parts.path,
+                    safe="/:@-._~!$&'()*+,;=",
+                ),
+                quote(
+                    parts.query,
+                    safe="=&?/:@-._~!$'()*+,;",
+                ),
+                quote(parts.fragment, safe=""),
+            )
+        )
+
+    except Exception:
+        return ""
 
 
 def require_env(name: str) -> str:
@@ -1183,21 +1239,44 @@ def download_candidates(
             break
 
         try:
-            response = session.get(
-                item[
+            image_url = safe_http_url(
+                item.get(
                     "image_url"
-                ],
-                headers={
-                    "Referer": item[
-                        "source_page"
-                    ]
-                },
+                )
+            )
+
+            source_page = safe_http_url(
+                item.get(
+                    "source_page"
+                )
+            )
+
+            if not image_url:
+                continue
+
+            request_headers = {
+                "User-Agent": USER_AGENT,
+            }
+
+            if source_page:
+                request_headers[
+                    "Referer"
+                ] = source_page
+
+            response = session.get(
+                image_url,
+                headers=request_headers,
                 timeout=REQUEST_TIMEOUT,
             )
 
             response.raise_for_status()
 
-        except requests.RequestException:
+        except (
+            requests.RequestException,
+            UnicodeEncodeError,
+            UnicodeError,
+            ValueError,
+        ):
             continue
 
         if len(
@@ -1281,12 +1360,8 @@ def download_candidates(
             path=str(
                 file_path
             ),
-            source_url=item[
-                "image_url"
-            ],
-            source_page=item[
-                "source_page"
-            ],
+            source_url=image_url,
+            source_page=source_page,
             title=item[
                 "title"
             ],
