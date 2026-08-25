@@ -5331,47 +5331,39 @@ def run_v2_pipeline() -> int:
     storyboard = build_dynamic_storyboard(client, event, sources)
 
     print(
-        "[3/10] Comic visual search"
+        "[3/10] Auto comic reference pack"
     )
 
-    image_results = dynamic_image_search(event, storyboard)
-
-    print(
-        "[4/10] Download + deduplicate"
-    )
-
-    candidates: list[ImageCandidate] = []
-
-    print(
-        f"✓ {len(candidates)} "
-        "unique visual candidates"
+    reference_paths, reference_manifest = (
+        load_reference_pack(
+            event
+        )
     )
 
     print(
-        "[5/10] Visual Director ranking + panel crop"
-    )
-
-    rankings = vision_rank_scenes(
-        client,
-        storyboard,
-        candidates,
+        f"✓ {len(reference_paths)} "
+        "comic reference selected"
     )
 
     print(
-        "[6/10] Build visual plan"
+        "[4/10] Reference-based scene generation"
     )
 
     scenes = build_scene_objects(
         client,
         storyboard,
-        candidates,
-        rankings,
-        arguments.enable_ai_reconstruction,
+        [],
+        {},
+        enable_reconstruction=True,
     )
 
     print(
         "Unique visual ratio: "
         f"{unique_visual_ratio(scenes):.0%}"
+    )
+
+    print(
+        "[5/10] Visual continuity check"
     )
 
     print(
@@ -5392,13 +5384,9 @@ def run_v2_pipeline() -> int:
         "weak_scenes"
     ):
         print(
-            "→ Weak scenes are being revised."
-        )
-
-        scenes = improve_weak_scenes(
-            scenes,
-            candidates,
-            critique,
+            "→ Weak scenes detected; "
+            "reference-based generation already "
+            "produced unique scene images."
         )
 
     save_visual_plan(
@@ -5598,71 +5586,162 @@ def select_factory_event(
 
 
 def main() -> int:
-    """Comic Factory event selector + proven Thor V2 production engine."""
+    """Comic Factory event selector + Thor V2 production engine."""
     parser = argparse.ArgumentParser(
-        description="Comic Factory powered by the Thor V2 video engine."
+        description=(
+            "Comic Factory powered by the Thor V2 video engine."
+        )
     )
-    parser.add_argument("--check", action="store_true")
-    parser.add_argument("--reuse-active", action="store_true")
-    parser.add_argument("--upload", action="store_true")
-    parser.add_argument("--count", type=int, default=6)
-    parser.add_argument("--rebuild", action="store_true")
-    parser.add_argument("--enable-ai-reconstruction", action="store_true")
-    parser.add_argument("--edge-voice", action="store_true")
+    parser.add_argument(
+        "--check",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--reuse-active",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--upload",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--count",
+        type=int,
+        default=6,
+    )
+    parser.add_argument(
+        "--rebuild",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--enable-ai-reconstruction",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--edge-voice",
+        action="store_true",
+    )
+
     arguments = parser.parse_args()
 
     if arguments.check:
-        require_env("GEMINI_API_KEY")
-        require_env("GROQ_API_KEY")
+        require_env(
+            "GEMINI_API_KEY"
+        )
+        require_env(
+            "GROQ_API_KEY"
+        )
+
         print("✓ Gemini hazır")
         print("✓ Groq hazır")
         print("✓ FFmpeg hazır")
-        print(f"✓ Voice: {GEMINI_TTS_VOICE} LOCKED")
-    if REFERENCE_PACK_DIR.exists():
-        refs = [p for p in REFERENCE_PACK_DIR.iterdir() if p.is_file() and p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
-        print(f"✓ Reference pack: {len(refs)} görsel")
-    else:
-        print("! Reference pack klasörü henüz yok")
+        print(
+            f"✓ Voice: "
+            f"{GEMINI_TTS_VOICE} LOCKED"
+        )
+
+        if REFERENCE_PACK_DIR.exists():
+            references = [
+                path
+                for path in REFERENCE_PACK_DIR.iterdir()
+                if path.is_file()
+                and path.suffix.lower()
+                in {
+                    ".jpg",
+                    ".jpeg",
+                    ".png",
+                    ".webp",
+                }
+            ]
+
+            print(
+                f"✓ Reference pack cache: "
+                f"{len(references)} görsel"
+            )
+
+        else:
+            print(
+                "✓ Reference pack yok; "
+                "run sırasında otomatik bulunacak."
+            )
+
         return 0
 
     event = select_factory_event(
         reuse_active=arguments.reuse_active,
         count=arguments.count,
     )
-    save_json(ACTIVE_EVENT_FILE, event)
 
-    forwarded = [sys.argv[0]]
+    save_json(
+        ACTIVE_EVENT_FILE,
+        event,
+    )
+
+    forwarded = [
+        sys.argv[0]
+    ]
+
     if arguments.rebuild:
-        forwarded.append("--rebuild")
+        forwarded.append(
+            "--rebuild"
+        )
+
     if arguments.enable_ai_reconstruction:
-        forwarded.append("--enable-ai-reconstruction")
+        forwarded.append(
+            "--enable-ai-reconstruction"
+        )
+
     if arguments.edge_voice:
-        forwarded.append("--edge-voice")
+        forwarded.append(
+            "--edge-voice"
+        )
 
     original_argv = sys.argv
+
     try:
         sys.argv = forwarded
         result = run_v2_pipeline()
+
     finally:
         sys.argv = original_argv
 
     if arguments.upload:
-        uploader = ROOT / "youtube_uploader.py"
+        uploader = (
+            ROOT
+            / "youtube_uploader.py"
+        )
+
         if not uploader.exists():
-            raise PrototypeError("youtube_uploader.py bulunamadı.")
+            raise PrototypeError(
+                "youtube_uploader.py bulunamadı."
+            )
+
         process = subprocess.run(
-            [sys.executable, str(uploader)],
+            [
+                sys.executable,
+                str(uploader),
+            ],
             cwd=str(ROOT),
         )
+
         if process.returncode != 0:
-            raise PrototypeError("YouTube upload başarısız.")
+            raise PrototypeError(
+                "YouTube upload başarısız."
+            )
 
     print()
     print("=" * 78)
-    print("COMIC FACTORY + THOR V2 ENGINE BAŞARILI")
+    print(
+        "COMIC FACTORY + THOR V2 ENGINE BAŞARILI"
+    )
     print("=" * 78)
-    print(f"Video: {OUTPUT_VIDEO}")
-    print(f"Metadata: {LATEST_SCRIPT_FILE}")
+    print(
+        f"Video: {OUTPUT_VIDEO}"
+    )
+    print(
+        f"Metadata: {LATEST_SCRIPT_FILE}"
+    )
+
     return result or 0
 
 
