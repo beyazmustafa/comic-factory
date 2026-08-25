@@ -23,6 +23,7 @@ from typing import Any
 from urllib.parse import quote, urlsplit, urlunsplit
 
 import edge_tts
+import httpx
 import imageio_ffmpeg
 import requests
 from ddgs import DDGS
@@ -858,6 +859,139 @@ def gemini_with_retry(
         f"{operation_name} "
         f"{max_attempts} denemeden sonra başarısız oldu: "
         f"{last_error}"
+    )
+
+
+
+def is_retryable_api_error(
+    error: Exception,
+) -> bool:
+    """Geçici ağ ve servis hatalarını retry edilebilir olarak sınıflandırır."""
+    if isinstance(
+        error,
+        (
+            httpx.RemoteProtocolError,
+            httpx.ConnectError,
+            httpx.ConnectTimeout,
+            httpx.ReadTimeout,
+            httpx.WriteTimeout,
+            httpx.PoolTimeout,
+            ConnectionError,
+            TimeoutError,
+        ),
+    ):
+        return True
+
+    message = str(error).casefold()
+
+    retryable_terms = (
+        "429",
+        "500",
+        "502",
+        "503",
+        "504",
+        "remoteprotocolerror",
+        "server disconnected",
+        "connection reset",
+        "connection closed",
+        "connection aborted",
+        "connection refused",
+        "temporarily unavailable",
+        "service unavailable",
+        "high demand",
+        "resource_exhausted",
+        "rate limit",
+        "too many requests",
+        "timeout",
+        "timed out",
+    )
+
+    return any(
+        term in message
+        for term in retryable_terms
+    )
+
+
+def api_with_retry(
+    operation: Any,
+    *,
+    operation_name: str,
+    max_attempts: int = 6,
+) -> Any:
+    """Geçici ağ/API hatalarında exponential backoff ile işlemi tekrarlar."""
+    delays = (
+        10,
+        20,
+        40,
+        60,
+        90,
+    )
+
+    last_error: Exception | None = None
+
+    for attempt in range(
+        1,
+        max_attempts + 1,
+    ):
+        try:
+            if attempt > 1:
+                print(
+                    f"→ {operation_name}: "
+                    f"retry {attempt}/{max_attempts}"
+                )
+
+            return operation()
+
+        except Exception as error:
+            last_error = error
+
+            if not is_retryable_api_error(
+                error
+            ):
+                raise
+
+            if attempt >= max_attempts:
+                break
+
+            delay = delays[
+                min(
+                    attempt - 1,
+                    len(delays) - 1,
+                )
+            ]
+
+            jitter = random.uniform(
+                0.0,
+                2.5,
+            )
+
+            wait_seconds = (
+                delay
+                + jitter
+            )
+
+            print()
+            print(
+                f"! {operation_name}: "
+                "geçici bağlantı/API hatası."
+            )
+            print(
+                f"  {type(error).__name__}: "
+                f"{error}"
+            )
+            print(
+                f"  {wait_seconds:.1f}s sonra "
+                "tekrar denenecek..."
+            )
+
+            time.sleep(
+                wait_seconds
+            )
+
+    raise PrototypeError(
+        f"{operation_name} "
+        f"{max_attempts} denemede tamamlanamadı. "
+        f"Son hata: {last_error}"
     )
 
 
