@@ -112,6 +112,16 @@ GEMINI_IMAGE_MODEL = os.getenv(
     "gemini-3.1-flash-image",
 )
 
+CLOUDFLARE_SDXL_MODEL = "@cf/bytedance/stable-diffusion-xl-lightning"
+CLOUDFLARE_FLUX_MODEL = "@cf/black-forest-labs/flux-2-dev"
+POLLINATIONS_IMAGE_MODEL = os.getenv(
+    "POLLINATIONS_IMAGE_MODEL",
+    "zimage",
+)
+RECONSTRUCTION_WIDTH = 1024
+RECONSTRUCTION_HEIGHT = 1792
+
+
 GROQ_MODEL = os.getenv(
     "GROQ_WHISPER_MODEL",
     "whisper-large-v3-turbo",
@@ -2006,12 +2016,477 @@ def crop_candidate(
     return output
 
 
+def _cloudflare_credentials() -> tuple[str, str] | None:
+    """Cloudflare Workers AI kimlik bilgilerini döndürür."""
+    account_id = os.getenv(
+        "CLOUDFLARE_ACCOUNT_ID",
+        "",
+    ).strip()
+
+    api_token = os.getenv(
+        "CLOUDFLARE_API_TOKEN",
+        "",
+    ).strip()
+
+    if not account_id or not api_token:
+        return None
+
+    return account_id, api_token
+
+
+def _reference_image_bytes(
+    path: Path,
+    *,
+    max_size: int,
+) -> bytes:
+    """Referans görseli API limitlerine uygun JPEG'e küçültür."""
+    with Image.open(path) as opened:
+        image = ImageOps.exif_transpose(
+            opened
+        ).convert("RGB")
+
+    image.thumbnail(
+        (
+            max_size,
+            max_size,
+        ),
+        Image.Resampling.LANCZOS,
+    )
+
+    buffer = io.BytesIO()
+
+    image.save(
+        buffer,
+        "JPEG",
+        quality=92,
+        optimize=True,
+    )
+
+    return buffer.getvalue()
+
+
+def _decode_cloudflare_image_response(
+    response: requests.Response,
+) -> bytes:
+    """Cloudflare image cevabını binary veya Base64 JSON'dan çözer."""
+    content_type = response.headers.get(
+        "Content-Type",
+        "",
+    ).casefold()
+
+    if content_type.startswith("image/"):
+        if not response.content:
+            raise PrototypeError(
+                "Cloudflare boş image cevabı döndürdü."
+            )
+
+        return response.content
+
+    try:
+        payload = response.json()
+
+    except ValueError as error:
+        raise PrototypeError(
+            "Cloudflare image cevabı JSON/image değil."
+        ) from error
+
+    result = payload.get(
+        "result"
+    )
+
+    encoded: str = ""
+
+    if isinstance(
+        result,
+        str,
+    ):
+        encoded = result
+
+    elif isinstance(
+        result,
+        dict,
+    ):
+        encoded = clean(
+            result.get(
+                "image"
+            )
+            or result.get(
+                "b64_json"
+            )
+            or result.get(
+                "data"
+            )
+        )
+
+    if not encoded:
+        encoded = clean(
+            payload.get(
+                "image"
+            )
+        )
+
+    if encoded.startswith(
+        "data:image"
+    ):
+        encoded = encoded.split(
+            ",",
+            1,
+        )[-1]
+
+    if not encoded:
+        raise PrototypeError(
+            "Cloudflare image payload içinde görsel bulunamadı."
+        )
+
+    try:
+        return base64.b64decode(
+            encoded
+        )
+
+    except Exception as error:
+        raise PrototypeError(
+            "Cloudflare Base64 görseli çözülemedi."
+        ) from error
+
+
+def _save_valid_image(
+    image_bytes: bytes,
+    output: Path,
+) -> Path:
+    """API çıktısını doğrular ve yüksek kaliteli JPEG olarak kaydeder."""
+    try:
+        with Image.open(
+            io.BytesIO(
+                image_bytes
+            )
+        ) as opened:
+            image = ImageOps.exif_transpose(
+                opened
+            ).convert("RGB")
+
+    except Exception as error:
+        raise PrototypeError(
+            "Reconstruction API geçerli görsel döndürmedi."
+        ) from error
+
+    if (
+        image.width < 512
+        or image.height < 512
+    ):
+        raise PrototypeError(
+            "Reconstruction görsel çözünürlüğü yetersiz."
+        )
+
+    output.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    image.save(
+        output,
+        "JPEG",
+        quality=96,
+        optimize=True,
+    )
+
+    return output
+
+
+def _reconstruction_prompt(
+    scene_data: dict[str, Any],
+) -> str:
+    """Bütün reconstruction sağlayıcılarının ortak promptunu oluşturur."""
+    event = load_factory_event()
+
+    event_context = factory_event_context(
+        event
+    )
+
+    return f"""
+Create a premium vertical American comic-book interior-panel illustration.
+
+COMIC EVENT:
+{event_context}
+
+EXACT MOMENT THAT MUST BE VISIBLE:
+{clean(scene_data["visual_description"])}
+
+NARRATION PLAYING DURING THIS IMAGE:
+{clean(scene_data["narration"])}
+
+REFERENCE RULE:
+Use supplied comic references only for character identity, costume continuity,
+era, environment, props, palette and comic visual language.
+Do not copy a source panel composition exactly.
+
+QUALITY:
+- premium professional comic interior-page quality
+- exact narrated action must be immediately obvious
+- accurate character identity and costume
+- strong ink linework and professional coloring
+- cinematic depth and readable silhouette
+- accurate anatomy, faces, hands and props
+- dynamic composition designed for a 9:16 Shorts/Reels frame
+- avoid generic AI poses
+- avoid photorealism unless the reference comic itself is photorealistic
+- consistent perspective and lighting
+- crisp details without oversharpening
+
+STRICTLY FORBIDDEN:
+- text
+- captions
+- speech bubbles
+- logos
+- watermark
+- issue number
+- UI
+- fake comic lettering
+- extra limbs
+- malformed hands
+""".strip()
+
+
+def _generate_cloudflare_sdxl(
+    prompt: str,
+    reference_paths: list[Path],
+) -> bytes:
+    """Ücretsiz SDXL-Lightning img2img ile reconstruction dener."""
+    credentials = _cloudflare_credentials()
+
+    if credentials is None:
+        raise PrototypeError(
+            "Cloudflare credentials yok."
+        )
+
+    account_id, api_token = credentials
+
+    url = (
+        "https://api.cloudflare.com/client/v4/accounts/"
+        f"{account_id}/ai/run/"
+        f"{CLOUDFLARE_SDXL_MODEL}"
+    )
+
+    payload: dict[str, Any] = {
+        "prompt": prompt,
+        "negative_prompt": (
+            "text, captions, speech bubbles, watermark, logo, "
+            "photorealistic cosplay, generic AI pose, malformed hands, "
+            "extra fingers, extra limbs, blurry face, low detail"
+        ),
+        "width": RECONSTRUCTION_WIDTH,
+        "height": RECONSTRUCTION_HEIGHT,
+        "num_steps": 8,
+        "strength": 0.68,
+        "guidance": 7.5,
+        "seed": random.randint(
+            1,
+            2_147_483_647,
+        ),
+    }
+
+    if reference_paths:
+        payload[
+            "image_b64"
+        ] = base64.b64encode(
+            _reference_image_bytes(
+                reference_paths[0],
+                max_size=1024,
+            )
+        ).decode(
+            "ascii"
+        )
+
+    response = requests.post(
+        url,
+        headers={
+            "Authorization": (
+                f"Bearer {api_token}"
+            ),
+            "Content-Type": (
+                "application/json"
+            ),
+        },
+        json=payload,
+        timeout=180,
+    )
+
+    if response.status_code >= 400:
+        raise PrototypeError(
+            "Cloudflare SDXL HTTP "
+            f"{response.status_code}: "
+            f"{response.text[:500]}"
+        )
+
+    return _decode_cloudflare_image_response(
+        response
+    )
+
+
+def _generate_cloudflare_flux(
+    prompt: str,
+    reference_paths: list[Path],
+) -> bytes:
+    """FLUX.2-dev multi-reference ile yüksek kalite fallback üretir."""
+    credentials = _cloudflare_credentials()
+
+    if credentials is None:
+        raise PrototypeError(
+            "Cloudflare credentials yok."
+        )
+
+    account_id, api_token = credentials
+
+    url = (
+        "https://api.cloudflare.com/client/v4/accounts/"
+        f"{account_id}/ai/run/"
+        f"{CLOUDFLARE_FLUX_MODEL}"
+    )
+
+    data = {
+        "prompt": prompt,
+        "width": str(
+            RECONSTRUCTION_WIDTH
+        ),
+        "height": str(
+            RECONSTRUCTION_HEIGHT
+        ),
+        "steps": "25",
+        "guidance": "4.5",
+        "seed": str(
+            random.randint(
+                1,
+                2_147_483_647,
+            )
+        ),
+    }
+
+    files: list[
+        tuple[
+            str,
+            tuple[
+                str,
+                bytes,
+                str,
+            ],
+        ]
+    ] = []
+
+    for index, reference_path in enumerate(
+        reference_paths[:4]
+    ):
+        files.append(
+            (
+                f"input_image_{index}",
+                (
+                    f"reference_{index}.jpg",
+                    _reference_image_bytes(
+                        reference_path,
+                        max_size=512,
+                    ),
+                    "image/jpeg",
+                ),
+            )
+        )
+
+    response = requests.post(
+        url,
+        headers={
+            "Authorization": (
+                f"Bearer {api_token}"
+            ),
+        },
+        data=data,
+        files=files or None,
+        timeout=300,
+    )
+
+    if response.status_code >= 400:
+        raise PrototypeError(
+            "Cloudflare FLUX HTTP "
+            f"{response.status_code}: "
+            f"{response.text[:500]}"
+        )
+
+    return _decode_cloudflare_image_response(
+        response
+    )
+
+
+def _generate_pollinations(
+    prompt: str,
+) -> bytes:
+    """Pollinations text-to-image son fallback'ini çalıştırır."""
+    api_key = os.getenv(
+        "POLLINATIONS_API_KEY",
+        "",
+    ).strip()
+
+    if not api_key:
+        raise PrototypeError(
+            "POLLINATIONS_API_KEY yok."
+        )
+
+    encoded_prompt = quote(
+        prompt,
+        safe="",
+    )
+
+    url = (
+        "https://gen.pollinations.ai/image/"
+        f"{encoded_prompt}"
+    )
+
+    response = requests.get(
+        url,
+        headers={
+            "Authorization": (
+                f"Bearer {api_key}"
+            ),
+            "User-Agent": USER_AGENT,
+        },
+        params={
+            "model": (
+                POLLINATIONS_IMAGE_MODEL
+            ),
+            "width": (
+                RECONSTRUCTION_WIDTH
+            ),
+            "height": (
+                RECONSTRUCTION_HEIGHT
+            ),
+            "nologo": "true",
+            "enhance": "true",
+            "seed": random.randint(
+                1,
+                2_147_483_647,
+            ),
+        },
+        timeout=300,
+    )
+
+    if response.status_code >= 400:
+        raise PrototypeError(
+            "Pollinations HTTP "
+            f"{response.status_code}: "
+            f"{response.text[:500]}"
+        )
+
+    if not response.content:
+        raise PrototypeError(
+            "Pollinations boş görsel döndürdü."
+        )
+
+    return response.content
+
+
 def generate_reconstruction(
     client: genai.Client,
     scene_data: dict[str, Any],
     reference_paths: list[Path],
 ) -> Path:
-    """Eksik sahneyi referans comic görsellerinden oluşturur."""
+    """SDXL → FLUX → Pollinations fallback zinciriyle sahne üretir."""
+    del client
+
     scene_number = int(
         scene_data[
             "scene_number"
@@ -2023,114 +2498,89 @@ def generate_reconstruction(
         / f"scene_{scene_number:02d}.jpg"
     )
 
-    event = load_factory_event()
-    event_context = factory_event_context(
-        event
+    prompt = _reconstruction_prompt(
+        scene_data
     )
 
-    prompt = f"""
-Create a premium 9:16 American comic-book illustration.
-
-This is an artistic reconstruction for this exact comic event:
-{event_context}
-
-EXACT MOMENT:
-{clean(scene_data["visual_description"])}
-
-NARRATION:
-{clean(scene_data["narration"])}
-
-Use supplied references for:
-- exact character appearance and costumes
-- continuity with the selected comic issue/event
-- comic-era color language
-- location, props and atmosphere
-- the visual identity of the supplied source material
-
-Do NOT copy a source panel composition exactly.
-
-Requirements:
-- exceptionally detailed professional comic artwork
-- premium modern comic interior-page quality, not generic AI art
-- cinematic 9:16 composition designed for Shorts/Reels
-- exact action described in EXACT MOMENT must be visually obvious
-- clear focal subject
-- dynamic lighting appropriate to the scene
-- accurate faces, hands, anatomy, costumes and props
-- preserve character identity from references
-- rich linework, controlled inks, professional coloring and depth
-- no generic pose when the narration describes a specific action
-- no text
-- no speech bubble
-- no logo
-- no watermark
-- no issue number
-- no UI
-- no fake caption
-""".strip()
-
-    interaction_input: list[
-        dict[str, str]
-    ] = [
-        {
-            "type": "text",
-            "text": prompt,
-        }
-    ]
-
-    for reference_path in reference_paths[
-        :3
-    ]:
-        mime_type = (
-            "image/png"
-            if reference_path.suffix.lower()
-            == ".png"
-            else "image/jpeg"
-        )
-
-        interaction_input.append(
-            {
-                "type": "image",
-                "data": base64.b64encode(
-                    reference_path.read_bytes()
-                ).decode(
-                    "ascii"
-                ),
-                "mime_type": mime_type,
-            }
-        )
-
-    def request() -> Any:
-        return client.interactions.create(
-            model=GEMINI_IMAGE_MODEL,
-            input=interaction_input,
-            response_format={
-                "type": "image",
-                "mime_type": "image/jpeg",
-                "aspect_ratio": "9:16",
-                "image_size": "2K",
-            },
-        )
-
-    interaction = gemini_with_retry(
-        request,
-        operation_name=(
-            f"AI Reconstruction Scene {scene_number}"
+    providers = (
+        (
+            "Cloudflare SDXL-Lightning",
+            lambda: _generate_cloudflare_sdxl(
+                prompt,
+                reference_paths,
+            ),
+        ),
+        (
+            "Cloudflare FLUX.2-dev",
+            lambda: _generate_cloudflare_flux(
+                prompt,
+                reference_paths,
+            ),
+        ),
+        (
+            "Pollinations",
+            lambda: _generate_pollinations(
+                prompt
+            ),
         ),
     )
 
-    if interaction.output_image is None:
-        raise PrototypeError(
-            "Gemini Image görsel döndürmedi."
+    failures: list[str] = []
+
+    for provider_name, operation in providers:
+        print(
+            f"→ Scene {scene_number:02d} reconstruction: "
+            f"{provider_name}"
         )
 
-    output.write_bytes(
-        base64.b64decode(
-            interaction.output_image.data
+        try:
+            image_bytes = api_with_retry(
+                operation,
+                operation_name=(
+                    f"{provider_name} Scene "
+                    f"{scene_number:02d}"
+                ),
+                max_attempts=3,
+            )
+
+            result = _save_valid_image(
+                image_bytes,
+                output,
+            )
+
+            print(
+                f"✓ Scene {scene_number:02d}: "
+                f"{provider_name} başarılı"
+            )
+
+            return result
+
+        except Exception as error:
+            failure = (
+                f"{provider_name}: "
+                f"{type(error).__name__}: "
+                f"{clean(error)}"
+            )
+
+            failures.append(
+                failure
+            )
+
+            print(
+                f"! {failure}"
+            )
+
+            print(
+                "  → Sıradaki reconstruction "
+                "sağlayıcısına geçiliyor."
+            )
+
+    raise PrototypeError(
+        "Tüm reconstruction sağlayıcıları başarısız: "
+        + " | ".join(
+            failures
         )
     )
-
-    return output
 
 
 def build_scene_objects(
