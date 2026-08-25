@@ -79,7 +79,7 @@ MIN_IMAGE_WIDTH = 500
 MIN_IMAGE_HEIGHT = 500
 MIN_IMAGE_PIXELS = 400_000
 
-MIN_REAL_RELEVANCE = 80
+MIN_REAL_RELEVANCE = 90
 MIN_RELEVANCE_FOR_REUSE = 90
 
 SUBTITLE_MAX_WORDS = 3
@@ -1581,11 +1581,16 @@ def vision_rank_scenes(
         ]
     )
 
+    event = load_factory_event()
+    event_context = factory_event_context(
+        event
+    )
+
     prompt = f"""
 Sen premium comic video Visual Director'sın.
 
 EVENT:
-Thor #6 (2020), Thor / Galactus / Black Winter.
+{event_context}
 
 SAHNELER:
 {scenes_text}
@@ -1596,9 +1601,14 @@ Her sahne için EN İYİ 3 adayı sırala.
 
 Kurallar:
 - Sadece karakter aynı diye yüksek puan verme.
-- Anlatılan olay gerçekten görüntüde bulunmalı.
+- Anlatılan TAM olay gerçekten görüntüde bulunmalı.
+- Karakter doğru ama aksiyon/olay yanlışsa 70 puanın üstüne çıkma.
+- Başka issue, fan art, poster, kapak veya alakasız illustration ise ciddi puan kır.
 - Kapak, gerçek olay panelinden düşük değerlidir.
-- Aynı resmi her sahneye vermekten kaçın.
+- Aynı source image farklı sahnelerde KULLANILMAMALI.
+- Aynı sayfanın farklı gerçek panelleri kullanılabilir; crop bölgeleri gerçekten farklı olmalı.
+- 90+ yalnızca anlatımla açıkça eşleşen gerçek panel için ver.
+- Emin değilsen düşük puan ver; sistem AI reconstruction kullanacak.
 - Bir comic sayfasının içindeki doğru paneli crop etmek gerekiyorsa
   crop_box döndür.
 - crop_box normalize 0-1 koordinatıdır:
@@ -1867,13 +1877,6 @@ def choose_unique_visuals(
                 selected = option
                 break
 
-            if (
-                used_count == 1
-                and option.relevance_score
-                >= MIN_RELEVANCE_FOR_REUSE
-            ):
-                selected = option
-                break
 
         chosen[
             scene_number
@@ -2020,10 +2023,16 @@ def generate_reconstruction(
         / f"scene_{scene_number:02d}.jpg"
     )
 
+    event = load_factory_event()
+    event_context = factory_event_context(
+        event
+    )
+
     prompt = f"""
 Create a premium 9:16 American comic-book illustration.
 
-This is an artistic reconstruction for a video about Thor #6 (2020).
+This is an artistic reconstruction for this exact comic event:
+{event_context}
 
 EXACT MOMENT:
 {clean(scene_data["visual_description"])}
@@ -2032,21 +2041,25 @@ NARRATION:
 {clean(scene_data["narration"])}
 
 Use supplied references for:
-- Thor's appearance
-- Galactus's appearance
-- costume continuity
+- exact character appearance and costumes
+- continuity with the selected comic issue/event
 - comic-era color language
-- cosmic atmosphere
+- location, props and atmosphere
+- the visual identity of the supplied source material
 
 Do NOT copy a source panel composition exactly.
 
 Requirements:
 - exceptionally detailed professional comic artwork
-- cinematic composition
+- premium modern comic interior-page quality, not generic AI art
+- cinematic 9:16 composition designed for Shorts/Reels
+- exact action described in EXACT MOMENT must be visually obvious
 - clear focal subject
-- dynamic lighting
-- dramatic cosmic scale
-- correct readable anatomy
+- dynamic lighting appropriate to the scene
+- accurate faces, hands, anatomy, costumes and props
+- preserve character identity from references
+- rich linework, controlled inks, professional coloring and depth
+- no generic pose when the narration describes a specific action
 - no text
 - no speech bubble
 - no logo
@@ -2150,6 +2163,8 @@ def build_scene_objects(
         Scene
     ] = []
 
+    used_source_images: set[str] = set()
+
     for storyboard_scene in storyboard[
         "scenes"
     ]:
@@ -2183,9 +2198,19 @@ def build_scene_objects(
             "real_comic"
         )
 
-        if (
+        source_was_already_used = (
+            selected.candidate_id
+            in used_source_images
+        )
+
+        needs_reconstruction = (
             selected.relevance_score
             < MIN_REAL_RELEVANCE
+            or source_was_already_used
+        )
+
+        if (
+            needs_reconstruction
             and enable_reconstruction
         ):
             ranking = ranking_map[
@@ -2242,6 +2267,11 @@ def build_scene_objects(
                     f"! Scene {number} reconstruction "
                     f"başarısız: {error}"
                 )
+
+        if visual_source == "real_comic":
+            used_source_images.add(
+                selected.candidate_id
+            )
 
         ranked_visuals: list[
             RankedVisual
