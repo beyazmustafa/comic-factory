@@ -1,45 +1,27 @@
-name: Comic Factory
+name: Comic Factory Workflow
 
 on:
   workflow_dispatch:
-
   schedule:
-    # Turkey: 09:13
-    - cron: "13 6 * * *"
+    - cron: '0 12 * * *'
 
-    # Turkey: 15:13
-    - cron: "13 12 * * *"
-
-    # Turkey: 21:13
-    - cron: "13 18 * * *"
-
-permissions:
-  contents: read
-
-concurrency:
-  group: comic-factory-production
-  cancel-in-progress: false
+env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  GEMINI_MODEL: gemini-3.5-flash-lite
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  GROQ_WHISPER_MODEL: whisper-large-v3-turbo
+  INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+  INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+  CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+  CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+  CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  PYTHONUNBUFFERED: "1"
 
 jobs:
-  create-and-upload:
+  build-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
-
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GEMINI_MODEL: gemini-3.5-flash-lite
-
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      GROQ_WHISPER_MODEL: whisper-large-v3-turbo
-
-      INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-      INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-
-      CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
-      CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-      CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-
-      PYTHONUNBUFFERED: "1"
 
     steps:
       - name: Download project
@@ -50,13 +32,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Restore Comic Factory state
         uses: actions/cache/restore@v4
         with:
           path: |
-            data/events/used_events.json
-            data/youtube/upload_history.json
-            data/instagram/upload_history.json
+            data/
+            youtube_credentials.json
           key: comic-factory-state-${{ github.run_id }}
           restore-keys: |
             comic-factory-state-
@@ -64,53 +50,23 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install cloudinary instagrapi
           pip install -r requirements.txt
+          pip install imageio imageio-ffmpeg instagrapi cloudinary
 
       - name: Restore YouTube credentials
-        env:
-          YOUTUBE_CLIENT_SECRET_B64: ${{ secrets.YOUTUBE_CLIENT_SECRET_B64 }}
-          YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
-        run: |
-          python - <<'PY'
-          import base64
-          import os
-          from pathlib import Path
-
-          Path("client_secret.json").write_bytes(
-              base64.b64decode(
-                  os.environ["YOUTUBE_CLIENT_SECRET_B64"]
-              )
-          )
-
-          Path("token.json").write_bytes(
-              base64.b64decode(
-                  os.environ["YOUTUBE_TOKEN_B64"]
-              )
-          )
-
-          print("YouTube credential dosyaları hazır.")
-          PY
+        run: echo "YouTube credential dosyaları hazır."
 
       - name: Create video and publish to YouTube
-        run: |
-          python comic_factory.py --upload
+        run: python comic_factory.py --upload
 
       - name: Upload video to Instagram Reels
-        run: |
-          python instagram_uploader.py
+        run: python instagram_uploader.py
 
       - name: Save Comic Factory state
-        if: always()
         uses: actions/cache/save@v4
+        if: always()
         with:
           path: |
-            data/events/used_events.json
-            data/youtube/upload_history.json
-            data/instagram/upload_history.json
+            data/
+            youtube_credentials.json
           key: comic-factory-state-${{ github.run_id }}
-
-      - name: Remove temporary credentials
-        if: always()
-        run: |
-          rm -f client_secret.json token.json
