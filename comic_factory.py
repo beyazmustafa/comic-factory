@@ -51,11 +51,9 @@ async def generate_flux_image_async(prompt: str, output_path: Path) -> bool:
     url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run/{CLOUDFLARE_FLUX_MODEL}"
     headers = {"Authorization": f"Bearer {api_token}"}
     
+    # HATA BURADAYDI ÇÖZÜLDÜ: Sadece prompt gönderiyoruz.
     payload = {
-        "prompt": build_art_prompt(prompt),
-        "width": 768,
-        "height": 1344,
-        "num_steps": 8
+        "prompt": build_art_prompt(prompt)
     }
 
     try:
