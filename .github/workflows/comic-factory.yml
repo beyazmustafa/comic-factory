@@ -1,72 +1,218 @@
-name: Comic Factory Workflow
+name: Comic Factory Studio
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * *'
+    inputs:
+      task:
+        description: "İşlem"
+        type: choice
+        default: preview
+        options: [preview, create_and_publish, publish_preview]
+      topic:
+        description: "Konu — boş bırakırsan otomatik seçilir"
+        type: string
+        default: ""
+      duration:
+        description: "Hedef video süresi (20–120 saniye)"
+        type: string
+        default: "55"
+      brief:
+        description: "Anlatım / üslup isteği (isteğe bağlı)"
+        type: string
+        default: ""
+      ai_reconstruction:
+        description: "Eksik panellerde AI görsel üretimine izin ver"
+        type: boolean
+        default: false
+      platforms:
+        description: "Yükleme hedefi"
+        type: choice
+        default: both
+        options: [both, youtube, instagram]
+      preview_run_id:
+        description: "publish_preview için önceki Actions çalışmasının sayısal ID'si"
+        type: string
+        default: ""
 
-env:
-  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-  GEMINI_MODEL: gemini-3.5-flash-lite
-  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-  GROQ_WHISPER_MODEL: whisper-large-v3-turbo
-  INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-  INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-  CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
-  CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-  CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-  PYTHONUNBUFFERED: "1"
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: comic-factory-studio
+  cancel-in-progress: false
 
 jobs:
-  build-and-publish:
+  studio:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONUNBUFFERED: "1"
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL }}
+      GEMINI_TTS_VOICE: ${{ vars.GEMINI_TTS_VOICE }}
+      INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+      CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+      CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+      CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+      YOUTUBE_CLIENT_SECRET_B64: ${{ secrets.YOUTUBE_CLIENT_SECRET_B64 }}
+      YOUTUBE_CLIENT_SECRETS_B64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_B64 }}
+      GOOGLE_CLIENT_SECRET_B64: ${{ secrets.GOOGLE_CLIENT_SECRET_B64 }}
+      CLIENT_SECRET_B64: ${{ secrets.CLIENT_SECRET_B64 }}
+      YOUTUBE_CLIENT_SECRET_JSON: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
+      YOUTUBE_CREDENTIALS_B64: ${{ secrets.YOUTUBE_CREDENTIALS_B64 }}
+      TOKEN_B64: ${{ secrets.TOKEN_B64 }}
+      YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+      YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
 
     steps:
-      - name: Download project
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
 
-      - name: Install ffmpeg
+      - name: Install media tools
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install -r requirements.txt
 
-      - name: Restore Comic Factory state
+      - name: Restore event and publishing history
         uses: actions/cache/restore@v4
         with:
           path: |
-            data/
-            youtube_credentials.json
-          key: comic-factory-state-${{ github.run_id }}
+            data/events/
+            data/director/quality_lessons.json
+            data/director/rejected_events.json
+            data/youtube/
+            data/instagram/
+            data/publishing/
+          key: comic-factory-history-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
+            comic-factory-history-
             comic-factory-state-
 
-      - name: Install dependencies
+      - name: Check code and setup
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install imageio imageio-ffmpeg instagrapi cloudinary
+          python -m unittest discover -s tests -v
+          python comic_factory.py --check
 
-      - name: Restore YouTube credentials
-        run: echo "YouTube credential dosyaları hazır."
+      - name: Validate chosen preview
+        if: inputs.task == 'publish_preview'
+        env:
+          PREVIEW_RUN_ID: ${{ inputs.preview_run_id }}
+        run: |
+          python - <<'PY'
+          import os
+          value = os.environ['PREVIEW_RUN_ID']
+          if not value.isdecimal() or int(value) <= 0:
+              raise SystemExit('Önceki Actions çalışmasının sayısal run ID değerini yaz.')
+          PY
 
-      - name: Create video and publish to YouTube
-        run: python comic_factory.py --upload
+      - name: Download the chosen preview
+        if: inputs.task == 'publish_preview'
+        uses: actions/download-artifact@v4
+        with:
+          name: comic-preview-${{ inputs.preview_run_id }}
+          path: data/incoming
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.preview_run_id }}
 
-      - name: Upload video to Instagram Reels
-        run: python instagram_uploader.py
+      - name: Produce or publish
+        id: produce
+        env:
+          FACTORY_TASK: ${{ inputs.task }}
+          FACTORY_TOPIC: ${{ inputs.topic }}
+          FACTORY_DURATION: ${{ inputs.duration }}
+          FACTORY_BRIEF: ${{ inputs.brief }}
+          FACTORY_ALLOW_AI: ${{ inputs.ai_reconstruction }}
+          FACTORY_PLATFORMS: ${{ inputs.platforms }}
+        run: |
+          mkdir -p data/logs
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+          task = os.environ['FACTORY_TASK']
+          args = [sys.executable, '-u', 'comic_factory.py']
+          if task == 'publish_preview':
+              args += ['--publish-run', 'data/incoming']
+          else:
+              args += ['--topic', os.environ['FACTORY_TOPIC'], '--duration', os.environ['FACTORY_DURATION']]
+              if os.environ['FACTORY_BRIEF'].strip():
+                  args += ['--brief', os.environ['FACTORY_BRIEF']]
+              if os.environ['FACTORY_ALLOW_AI'] == 'true':
+                  args += ['--allow-ai']
+              if task == 'create_and_publish':
+                  args += ['--publish']
+          args += ['--platforms', os.environ['FACTORY_PLATFORMS']]
+          with Path('data/logs/studio.log').open('w', encoding='utf-8') as log:
+              process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
+              for line in process.stdout:
+                  print(line, end='', flush=True)
+                  log.write(line)
+                  log.flush()
+              raise SystemExit(process.wait())
+          PY
 
-      - name: Save Comic Factory state
-        uses: actions/cache/save@v4
+      - name: Save preview and review page
+        if: always() && steps.produce.outputs.run_directory != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: comic-preview-${{ github.run_id }}
+          path: ${{ steps.produce.outputs.run_directory }}/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+      - name: Save diagnostics
         if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comic-diagnostics-${{ github.run_id }}
+          path: |
+            data/logs/
+            data/runs/*/run.json
+            data/runs/*/checkpoints.json
+            data/director/
+            data/research/
+            data/publishing/
+            data/incoming/publication.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Save event and publishing history
+        if: always()
+        uses: actions/cache/save@v4
         with:
           path: |
-            data/
-            youtube_credentials.json
-          key: comic-factory-state-${{ github.run_id }}
+            data/events/
+            data/director/quality_lessons.json
+            data/director/rejected_events.json
+            data/youtube/
+            data/instagram/
+            data/publishing/
+          key: comic-factory-history-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Show next action
+        if: always()
+        env:
+          CURRENT_RUN: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a', encoding='utf-8') as output:
+              output.write('## Comic Factory\n\n')
+              output.write('Önizleme artifact ZIP dosyasını indir, çıkart ve `review.html` dosyasını aç.\n\n')
+              output.write('Beğendiğin videoyu yüklemek için aynı workflow içinde `publish_preview` seç.\n\n')
+              output.write('Bu çalışmanın ID değeri: **' + os.environ['CURRENT_RUN'] + '**\n')
+          PY
