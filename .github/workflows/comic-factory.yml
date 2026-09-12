@@ -182,6 +182,8 @@ jobs:
             data/logs/
             data/runs/*/run.json
             data/runs/*/checkpoints.json
+            data/runs/*/storyboard.json
+            data/runs/*/audio_diagnostics/
             data/director/
             data/research/
             data/publishing/

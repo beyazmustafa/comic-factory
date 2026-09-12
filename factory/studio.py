@@ -77,6 +77,7 @@ def collect_diagnostics(engine, directory: Path) -> None:
         (engine.SCRIPT_DIR / "storyboard.json", "storyboard.json"),
         (engine.WORK_DIR / "contact_sheet.jpg", "contact_sheet.jpg"),
         (engine.ALIGNED_WORDS_FILE, "aligned_words.json"),
+        (engine.LATEST_WORDS_FILE, "word_timestamps.json"),
         (engine.WORK_DIR / "precise.ass", "captions.ass"),
     ]
     for source, name in pairs:
@@ -96,6 +97,8 @@ def build(settings: Settings, topic: str, panel_dir: Path | None = None) -> Path
     )
     directory = ROOT / "data" / "runs" / run_id
     directory.mkdir(parents=True)
+    # Write attempts directly into this run so failures survive artifact collection.
+    engine.AUDIO_DIAGNOSTICS_DIR = directory / "audio_diagnostics"
     manifest = {
         "schema_version": 1,
         "run_id": run_id,
@@ -109,6 +112,7 @@ def build(settings: Settings, topic: str, panel_dir: Path | None = None) -> Path
         engine.LATEST_SCRIPT_FILE,
         engine.LATEST_VIDEO_FILE,
         engine.LATEST_AUDIO_FILE,
+        engine.LATEST_WORDS_FILE,
         engine.ALIGNED_WORDS_FILE,
         engine.SCRIPT_DIR / "storyboard.json",
     ):

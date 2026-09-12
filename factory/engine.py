@@ -21,7 +21,7 @@ from ddgs import DDGS
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
-from groq import Groq
+from groq import Groq, GroqError
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +30,7 @@ EVENT_DIR = DATA / "events"
 RESEARCH_DIR = DATA / "research"
 SCRIPT_DIR = DATA / "scripts"
 AUDIO_DIR = DATA / "audio"
+AUDIO_DIAGNOSTICS_DIR = AUDIO_DIR / "alignment_diagnostics"
 VIDEO_DIR = DATA / "videos"
 CANDIDATE_DIR = DATA / "comic_candidates"
 WORK_DIR = DATA / "video_work"
@@ -97,6 +98,10 @@ class ComicFactoryError(RuntimeError):
 
 class EventRejectedError(ComicFactoryError):
     """Mevcut event kalite standardına ulaşamadığında oluşur."""
+
+
+class AudioAlignmentError(ComicFactoryError):
+    """Ses sorunu konunun reddedilmesine veya değiştirilmesine yol açmaz."""
 
 
 @dataclass
@@ -474,7 +479,16 @@ def rejected_event_keys() -> set[str]:
     return {
         clean(item.get("event_key"))
         for item in payload.get("events", [])
-        if isinstance(item, dict) and clean(item.get("event_key"))
+        if isinstance(item, dict)
+        and clean(item.get("event_key"))
+        # Legacy audio failures were incorrectly cached as rejected stories.
+        # Keep the history, but allow these specific cases to be researched again.
+        and not clean(item.get("reason")).startswith(
+            (
+                "Geçersiz veya sırasız ses zamanları.",
+                "Bu eventin narration/audio kombinasyonu istenen alignment seviyesine ulaşamadı.",
+            )
+        )
     }
 
 
@@ -802,71 +816,180 @@ def object_value(value: Any, key: str, default: Any = None) -> Any:
     return getattr(value, key, default)
 
 
-def transcribe_words(audio_path: Path, narration: str) -> list[dict[str, Any]]:
-    """Groq Whisper kelime timestamp'lerini çıkarır."""
-    client = Groq(api_key=require_env("GROQ_API_KEY"), timeout=120, max_retries=2)
-    with audio_path.open("rb") as audio:
+def transcribe_words(
+    audio_path: Path,
+    narration: str,
+    *,
+    model: str | None = None,
+    diagnostics_path: Path | None = None,
+) -> list[dict[str, Any]]:
+    """Preserve the unmodified ASR response before validating word times.
+
+    Do not feed the expected script back as a prompt: this is a check of the
+    actual recording, including words that TTS may have omitted or changed.
+    """
+    model = model or GROQ_MODEL
+    with (
+        Groq(api_key=require_env("GROQ_API_KEY"), timeout=120, max_retries=2) as client,
+        audio_path.open("rb") as audio,
+    ):
         transcription = client.audio.transcriptions.create(
             file=audio,
-            model=GROQ_MODEL,
+            model=model,
             language="tr",
             response_format="verbose_json",
-            timestamp_granularities=["word"],
-            prompt=narration[:700],
+            timestamp_granularities=["word", "segment"],
             temperature=0,
+        )
+    if diagnostics_path is not None:
+        response = (
+            transcription.model_dump(mode="json")
+            if hasattr(transcription, "model_dump")
+            else transcription
+        )
+        save_json(
+            diagnostics_path,
+            {
+                "provider": "groq",
+                "model": model,
+                "expected_narration": narration,
+                "response": response,
+            },
         )
     words: list[dict[str, Any]] = []
     for item in object_value(transcription, "words", []) or []:
         word = clean(object_value(item, "word", ""))
         start = object_value(item, "start")
         end = object_value(item, "end")
-        if word and start is not None and (end is not None):
-            words.append({"word": word, "start": float(start), "end": float(end)})
-    if len(words) < 20:
-        raise ComicFactoryError("Groq yeterli word timestamp üretmedi.")
+        if word:
+            words.append({"word": word, "start": start, "end": end})
+    if not words:
+        raise AudioAlignmentError("Groq kelime zamanları döndürmedi.")
     return words
 
 
-def align_narration_to_audio(narration, whisper_words):
+def align_narration_to_audio(narration, whisper_words, audio_duration=None):
     try:
-        return core.align_words(narration, whisper_words)
+        return core.align_words(narration, whisper_words, audio_duration)
     except ValueError as error:
-        raise EventRejectedError(str(error)) from error
+        raise AudioAlignmentError(str(error)) from error
 
 
 def build_quality_audio(
     client: genai.Client, narration: str
 ) -> tuple[Path, list[dict[str, Any]], list[dict[str, Any]]]:
-    """Gacrux sesi alignment geçene kadar tekrar üretir."""
+    """Re-transcribe the same audio before spending another TTS attempt."""
     print()
     print("=" * 78)
     print("AUDIO ALIGNMENT GATE")
     print("=" * 78)
+    print("Ses işleme sürümü: 2026-09-12-audio-1")
     best_score = 0.0
+    models = list(dict.fromkeys([GROQ_MODEL, "whisper-large-v3"]))
+    diagnostics = AUDIO_DIAGNOSTICS_DIR / slug(
+        CHECKPOINTS.current_event_id or "narration"
+    )
+    diagnostics.mkdir(parents=True, exist_ok=True)
+    (diagnostics / "narration.txt").write_text(narration, encoding="utf-8")
+    attempts = []
+    last_error = ""
+    recoverable = (
+        ComicFactoryError,
+        GroqError,
+        ValueError,
+        TypeError,
+        KeyError,
+        OSError,
+    )
     for cycle in range(1, AUDIO_REPAIR_CYCLES + 1):
-        audio = generate_gacrux_voice(client, narration, cycle)
-        whisper_words = transcribe_words(audio, narration)
-        aligned_words, metrics = align_narration_to_audio(narration, whisper_words)
-        score = float(metrics["score"])
-        best_score = max(best_score, score)
-        passed = CHECKPOINTS.record(
-            name="audio_alignment",
-            score=score,
-            threshold=AUDIO_ALIGNMENT_THRESHOLD,
-            cycle=cycle,
-            details=f"coverage={metrics['coverage']:.2f}% | similarity={metrics['similarity']:.2f}%",
-        )
-        if not passed:
+        check_budget()
+        attempt_dir = diagnostics / f"cycle_{cycle:02d}"
+        attempt_dir.mkdir(parents=True, exist_ok=True)
+        print(f"→ Ses denemesi {cycle}/{AUDIO_REPAIR_CYCLES}")
+        try:
+            audio = generate_gacrux_voice(client, narration, cycle)
+            shutil.copy2(audio, attempt_dir / "narration.wav")
+            duration = media_duration(ffmpeg_path(), audio)
+        except recoverable as error:
+            last_error = f"{type(error).__name__}: {error}"
+            attempts.append(
+                {"cycle": cycle, "stage": "tts", "status": "error", "error": last_error}
+            )
+            save_json(diagnostics / "attempts.json", attempts)
+            CHECKPOINTS.record(
+                name="audio_generation",
+                score=0,
+                threshold=100,
+                cycle=cycle,
+                details=last_error,
+            )
             continue
-        shutil.copy2(audio, LATEST_AUDIO_FILE)
-        save_json(
-            LATEST_WORDS_FILE,
-            {"provider": "groq", "model": GROQ_MODEL, "words": whisper_words},
-        )
-        save_json(ALIGNED_WORDS_FILE, {"metrics": metrics, "words": aligned_words})
-        return (LATEST_AUDIO_FILE, whisper_words, aligned_words)
-    raise EventRejectedError(
-        f"Bu eventin narration/audio kombinasyonu istenen alignment seviyesine ulaşamadı. Best={best_score:.1f}."
+        for index, model in enumerate(models, 1):
+            check_budget()
+            if index > 1:
+                print(f"→ Aynı ses yeniden çözümleniyor: {model}")
+            attempt = {
+                "cycle": cycle,
+                "stage": "alignment",
+                "model": model,
+                "duration": duration,
+            }
+            prefix = f"asr_{index:02d}_{slug(model)}"
+            score = 0.0
+            try:
+                whisper_words = transcribe_words(
+                    audio,
+                    narration,
+                    model=model,
+                    diagnostics_path=attempt_dir / f"{prefix}_raw.json",
+                )
+                aligned_words, metrics = align_narration_to_audio(
+                    narration, whisper_words, duration
+                )
+                save_json(
+                    attempt_dir / f"{prefix}_aligned.json",
+                    {"metrics": metrics, "words": aligned_words},
+                )
+                score = float(metrics["score"])
+                best_score = max(best_score, score)
+                details = (
+                    f"model={model} | coverage={metrics['coverage']:.2f}% | "
+                    f"similarity={metrics['similarity']:.2f}% | timing={metrics['timing_coverage']:.2f}%"
+                )
+                attempt.update(
+                    status="passed"
+                    if score >= AUDIO_ALIGNMENT_THRESHOLD
+                    else "below_threshold",
+                    metrics=metrics,
+                )
+                last_error = details
+            except recoverable as error:
+                score = 0.0
+                last_error = f"{type(error).__name__}: {error}"
+                details = f"model={model} | {last_error}"
+                attempt.update(status="error", error=last_error)
+            attempts.append(attempt)
+            save_json(diagnostics / "attempts.json", attempts)
+            passed = CHECKPOINTS.record(
+                name="audio_alignment",
+                score=score,
+                threshold=AUDIO_ALIGNMENT_THRESHOLD,
+                cycle=cycle,
+                details=details,
+            )
+            if not passed:
+                continue
+            shutil.copy2(audio, LATEST_AUDIO_FILE)
+            save_json(
+                LATEST_WORDS_FILE,
+                {"provider": "groq", "model": model, "words": whisper_words},
+            )
+            save_json(ALIGNED_WORDS_FILE, {"metrics": metrics, "words": aligned_words})
+            return (LATEST_AUDIO_FILE, whisper_words, aligned_words)
+    raise AudioAlignmentError(
+        f"Ses hizalaması {AUDIO_REPAIR_CYCLES} ses denemesinde tamamlanamadı. "
+        f"En iyi puan={best_score:.2f}; gereken={AUDIO_ALIGNMENT_THRESHOLD:.2f}. "
+        f"Konu elenmedi. Ses ve ham kelime zamanları audio_diagnostics klasöründe. Son durum: {last_error}"
     )
 
 
@@ -2040,7 +2163,7 @@ def configure(settings, topic="", panel_dir=None):
         GEMINI_TTS_VOICE, \
         GEMINI_IMAGE_MODEL, \
         GROQ_MODEL
-    global API_CALLS, STARTED_AT, CHECKPOINTS, MAX_GLOBAL_IMAGES
+    global API_CALLS, STARTED_AT, CHECKPOINTS, MAX_GLOBAL_IMAGES, AUDIO_DIAGNOSTICS_DIR
     SETTINGS = settings
     TOPIC = topic.strip()
     PANEL_DIR = panel_dir
@@ -2068,6 +2191,7 @@ def configure(settings, topic="", panel_dir=None):
     API_CALLS = 0
     STARTED_AT = time.monotonic()
     CHECKPOINTS = CheckpointManager()
+    AUDIO_DIAGNOSTICS_DIR = AUDIO_DIR / "alignment_diagnostics"
 
 
 def check_budget():

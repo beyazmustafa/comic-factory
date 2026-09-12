@@ -40,24 +40,53 @@ def normalize_word(word: str) -> str:
     return re.sub(r"[^\w]", "", value).replace("ı", "i")
 
 
-def align_words(narration: str, timestamps: list[dict]) -> tuple[list[dict], dict]:
+def align_words(
+    narration: str, timestamps: list[dict], audio_duration: float | None = None
+) -> tuple[list[dict], dict]:
     """Global alignment prevents a repeated word from skipping the rest of a sentence.
 
-    A script token may match two ASR tokens (e.g. a Turkish suffix). Unmatched
-    tokens are interpolated inside the available audio, and lower the score.
+    Split/joined tokens are matched in both directions. Zero-duration ASR
+    words retain their text but are not reliable timing anchors. Estimated
+    timestamps lower timing coverage; malformed/out-of-order data is rejected
+    for re-transcription, never silently sorted into a different sentence.
     """
     tokens = narration.split()
     if not tokens or not timestamps:
         raise ValueError("Hizalama için metin ve kelime zamanları gerekli.")
+    if audio_duration is not None and (
+        not math.isfinite(audio_duration) or audio_duration <= 0
+    ):
+        raise ValueError("Ses süresi pozitif ve sonlu olmalı.")
+    prepared = []
     previous_start = -1.0
-    for item in timestamps:
-        start, end = float(item["start"]), float(item["end"])
+    ignored_punctuation = 0
+    for index, item in enumerate(timestamps):
+        if not normalize_word(str(item.get("word", ""))):
+            ignored_punctuation += 1
+            continue
+        try:
+            start, end = float(item["start"]), float(item["end"])
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError(
+                f"{index + 1}. ASR kelimesinde zaman bilgisi eksik."
+            ) from error
         if (
-            not (math.isfinite(start) and math.isfinite(end) and 0 <= start < end)
+            not (math.isfinite(start) and math.isfinite(end) and 0 <= start <= end)
             or start < previous_start
         ):
-            raise ValueError("Geçersiz veya sırasız ses zamanları.")
+            raise ValueError(
+                f"Geçersiz veya sırasız ses zamanları: ASR kelimesi {index + 1}."
+            )
+        if audio_duration is not None:
+            # Whisper timestamps have 20 ms resolution; allow only that rounding.
+            if end > audio_duration + 0.02:
+                raise ValueError(f"{index + 1}. ASR kelimesi kayıt süresinin dışında.")
+            start, end = min(start, audio_duration), min(end, audio_duration)
+        prepared.append({"word": str(item["word"]), "start": start, "end": end})
         previous_start = start
+    if not prepared:
+        raise ValueError("Konuşma tanıma sonucu zamanlanabilir kelime içermiyor.")
+    timestamps = prepared
     a = [normalize_word(word) for word in tokens]
     b = [normalize_word(str(item["word"])) for item in timestamps]
     n, m = len(a), len(b)
@@ -83,23 +112,39 @@ def align_words(narration: str, timestamps: list[dict]) -> tuple[list[dict], dic
                         options.append(
                             (i + 1, j + 2, value + 1.8 * (1 - merged) + 0.10, merged)
                         )
+                if i + 1 < n:
+                    joined = SequenceMatcher(None, a[i] + a[i + 1], b[j]).ratio()
+                    if joined >= 0.96:
+                        options.append(
+                            (i + 2, j + 1, value + 1.8 * (1 - joined) + 0.10, joined)
+                        )
             for ni, nj, cost, similarity in options:
                 if cost < costs[ni][nj]:
                     costs[ni][nj] = cost
                     parents[ni, nj] = (i, j, similarity)
     anchors = {}
+    reliable_timing = set()
     scores = [0.0] * n
     i, j = n, m
     while i or j:
         pi, pj, similarity = parents[i, j]
         if i > pi and j > pj and similarity >= 0.5:
-            anchors[pi] = (
-                float(timestamps[pj]["start"]),
-                float(timestamps[j - 1]["end"]),
-            )
-            scores[pi] = similarity
+            start = timestamps[pj]["start"]
+            end = max(word["end"] for word in timestamps[pj:j])
+            weight = sum(max(1, len(word)) for word in a[pi:i])
+            cursor = start
+            for position in range(pi, i):
+                scores[position] = similarity
+                boundary = cursor + (end - start) * max(1, len(a[position])) / weight
+                if end > start:
+                    anchors[position] = (cursor, boundary)
+                    if i - pi == 1 and all(
+                        word["end"] > word["start"] for word in timestamps[pj:j]
+                    ):
+                        reliable_timing.add(position)
+                cursor = boundary
         i, j = pi, pj
-    total_end = float(timestamps[-1]["end"])
+    total_end = max(word["end"] for word in timestamps)
     aligned = []
     index = 0
     while index < n:
@@ -122,16 +167,31 @@ def align_words(narration: str, timestamps: list[dict]) -> tuple[list[dict], dic
             )
         index = stop
     previous_end = 0.0
-    for item in aligned:
+    for index, item in enumerate(aligned):
         item["start"] = max(previous_end, item["start"])
         item["end"] = max(item["start"], min(total_end, item["end"]))
+        if item["end"] <= item["start"]:
+            reliable_timing.discard(index)
+        item["timing_source"] = "asr" if index in reliable_timing else "estimated"
         previous_end = item["end"]
     coverage = sum(value >= 0.72 for value in scores) / n * 100
     similarity = sum(scores) / n * 100
-    score = coverage * 0.72 + similarity * 0.28
+    timing_coverage = len(reliable_timing) / n * 100
+    score = min(coverage * 0.72 + similarity * 0.28, timing_coverage)
     if any(item["end"] <= item["start"] for item in aligned):
         score = min(score, 50.0)
-    return aligned, {"coverage": coverage, "similarity": similarity, "score": score}
+    return aligned, {
+        "coverage": coverage,
+        "similarity": similarity,
+        "timing_coverage": timing_coverage,
+        "score": score,
+        "estimated_word_indices": [i for i in range(n) if i not in reliable_timing],
+        "unmatched_words": [tokens[i] for i in range(n) if scores[i] < 0.72],
+        "zero_duration_asr_words": sum(
+            word["start"] == word["end"] for word in timestamps
+        ),
+        "ignored_asr_punctuation": ignored_punctuation,
+    }
 
 
 def scene_timeline(

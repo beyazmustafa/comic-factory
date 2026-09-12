@@ -80,6 +80,16 @@ GEMINI / GROQ / INSTAGRAM / CLOUDINARY secret adları korunur. YouTube için mev
 
 Kimlik dosyaları artifact veya cache kapsamına alınmaz. Olay ve yükleme geçmişi Actions cache ile saklanır; GitHub cache'in silinmesi geçmişin kaybına yol açabilir. Önemli yayın geçmişlerini ayrıca yedeklemek gerekir.
 
+## Ses eşleştirmesi başarısız olduğunda
+
+Ses yaması `2026-09-12-audio-1` ile geçersiz zaman bilgisi yalnız o çözümleme denemesini başarısız yapar. Önce ayarlı Whisper modeli, gerekirse **aynı ses kaydında** `whisper-large-v3` denenir. İkisi de geçemezse yeni ses üretilir; varsayılan sınır üç ses kaydı ve en çok altı çözümleme çağrısıdır. SDK'nın ağ hatası tekrarları bu çağrıların içinde ayrıca çalışabilir. Ses denemeleri tükenirse konu değiştirilmeden hata raporu hazırlanır.
+
+Sıfır süreli kelimeler kesin zaman verisi sayılmaz. Uygun aralık varsa tahmini zaman alırlar ve `timing_coverage` puanını düşürürler. Bölünmüş/birleşmiş Türkçe kelimeler iki yönde eşleşir; ASR'nin tek kelime olarak verdiği zamanın ikiye bölünmesi de tahmin olarak işaretlenir. Sırasız, ters veya kayıt dışındaki zamanlar yeni çözümleme gerektirir. 95 puan eşiği korunur; eksik kelimeler veya çözülemeyen zamanlar puan kaybettirir. Senaryo, doğruluğunu sınamak için ses tanıma isteğine hazır cevap olarak verilmez.
+
+**Artifacts → `comic-diagnostics-...`** paketindeki `audio_diagnostics` klasörü denenen WAV kayıtlarını, beklenen anlatımı, ham tanıma yanıtlarını, hizalama puanlarını ve hata nedenlerini içerir. `attempts.json` her ses/model sonucunu gösterir. Bir hata sürerse bu ZIP'i paylaş; sesin gerçekten eksik okunmasını ve konuşma tanıma hatasını kayıt üzerinden ayırabiliriz. Eski sürümde yalnız bilinen ses hizalama hataları yüzünden elenen konular yeniden seçilebilir; geçmiş kayıtlar saklanır.
+
+Düzeltmeyi repoya ekledikten sonra güncel daldan **Run workflow → preview** başlat. GitHub, eski çalışmadaki **Re-run jobs** için aynı commit'i kullanır; bu düğme yeni kodu almaz. [GitHub yeniden çalıştırma belgesi](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/re-run-workflows-and-jobs).
+
 ## Kontroller
 
 ```powershell
@@ -92,3 +102,5 @@ python comic_factory.py --check
 ## Teknik başvurular
 
 Model adları ve ses arabirimi için [Google model listesi](https://ai.google.dev/gemini-api/docs/models) ve [Google ses üretimi belgesi](https://ai.google.dev/gemini-api/docs/speech-generation) kontrol edildi. Secrets aktarımı için [GitHub Actions secrets belgesi](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) temel alındı.
+
+Konuşma tanıma modelleri, Türkçe dil seçimi ve kelime/segment zamanları için [Groq ses tanıma belgesi](https://console.groq.com/docs/speech-to-text) temel alındı.
