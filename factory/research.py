@@ -142,7 +142,7 @@ class Fetcher:
 
 
 def shortlist(api, topic, used):
-    evidence = api.grounded(f"""Find up to {api.settings.max_events} specific significant/surprising events in Marvel/DC comic history for an original Turkish explainer.
+    evidence = api.grounded(f"""Find up to {api.settings.max_events} specific significant/surprising events throughout comic history (Marvel, DC, independent publishers, manga and European comics) for an original Turkish explainer.
 Requested topic: {topic or "automatic: historical importance, popular heroes and surprising niche value"}.
 Exclude already used IDs/titles: {json.dumps(used, ensure_ascii=False)}.
 Only candidates with legitimate public publisher previews or illustrated reviews containing multiple actual story panels. Give exact series, issue, year, publisher and universe. Do not conflate adaptations. Include sources.""")

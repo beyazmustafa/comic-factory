@@ -201,12 +201,9 @@ class Api:
             except Exception:
                 pass
 
-    def video_json(self, label, prompt, video, reference_uri=None):
+    def video_json(self, label, prompt, video):
         with self.uploaded_video(video) as uri:
-            parts = (
-                [("REFERENCE editing/delivery", reference_uri)] if reference_uri else []
-            )
-            return self.json(label, prompt, videos=parts + [("CANDIDATE video", uri)])
+            return self.json(label, prompt, videos=[("CANDIDATE video", uri)])
 
     def close(self):
         self.client.close()

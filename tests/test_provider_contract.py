@@ -42,7 +42,6 @@ class ProviderContractTests(TemporaryTest):
                 "Fixture",
                 "Observe",
                 videos=[
-                    ("REFERENCE", "https://www.youtube.com/watch?v=yIZLrxqUUbg"),
                     (
                         "CANDIDATE",
                         "https://generativelanguage.googleapis.com/v1beta/files/fixture",
@@ -53,7 +52,7 @@ class ProviderContractTests(TemporaryTest):
             api.close()
         self.assertEqual(result, {"observed": True})
         parts = [p for c in requests[0]["contents"] for p in c["parts"]]
-        self.assertEqual(len([p for p in parts if "fileData" in p]), 2)
+        self.assertEqual(len([p for p in parts if "fileData" in p]), 1)
         self.assertEqual(
             requests[0]["generationConfig"]["responseMimeType"], "application/json"
         )

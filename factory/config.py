@@ -4,12 +4,11 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "2026-09-14-studio-2"
+VERSION = "2026-09-14-studio-3"
 
 
 @dataclass(frozen=True)
 class Settings:
-    reference_url: str = "https://www.youtube.com/watch?v=yIZLrxqUUbg"
     target_seconds: int = 150
     max_events: int = 3
     max_pages: int = 28
@@ -74,7 +73,6 @@ class Settings:
             "gemini_model",
             "tts_model",
             "whisper_model",
-            "reference_url",
             "music_file",
         ):
             if not isinstance(getattr(result, key), str):

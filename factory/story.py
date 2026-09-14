@@ -24,7 +24,7 @@ def validate_story(value, panels, facts, max_shots=40):
             raise ValueError(f"Sahne {i + 1}: panel/metin geçersiz.")
         if not isinstance(ids, list) or not ids or any(k not in fl for k in ids):
             raise ValueError(f"Sahne {i + 1}: kaynak kanıtı eksik.")
-        if row.get("motion") not in {"push", "pull", "left", "right", "hold"}:
+        if row.get("motion") not in {"push", "pull", "left", "right", "up", "down", "hold"}:
             raise ValueError("Kamera hareketi geçersiz.")
         if any(v in text for v in ("<", ">", "http://", "https://", chr(96) * 3)):
             raise ValueError("Anlatım düz metin olmalı.")
@@ -38,6 +38,7 @@ def validate_story(value, panels, facts, max_shots=40):
                 "narration": text,
                 "fact_ids": list(dict.fromkeys(ids)),
                 "motion": row["motion"],
+                "emphasis": row.get("emphasis", "normal") if row.get("emphasis", "normal") in {"normal", "danger", "reveal", "turn"} else "normal",
             }
         )
     if len(usage) < min(6, len(shots)):
@@ -74,15 +75,15 @@ def create(api, event, panels, facts, style):
     for attempt in range(api.settings.repair_attempts):
         draft = api.json(
             "Panellere bağlı Türkçe anlatım",
-            f"""Write an ORIGINAL Turkish comic-history explainer using ONLY supplied facts and panels. Do not translate the reference script.
+            f"""Write an ORIGINAL Turkish comic-history explainer using ONLY supplied facts and panels. Use an energetic natural Turkish voice and evidence-supported chronology.
 EVENT {json.dumps(event, ensure_ascii=False)}
 FACTS {json.dumps(facts, ensure_ascii=False)}
 PANELS {json.dumps(inventory, ensure_ascii=False)}
-REFERENCE RHYTHM {style.get("story_structure", "")}
+EDITING RHYTHM {style.get("story_structure", "")}
 DELIVERY {style.get("narrator_delivery", "")}
 Target {api.settings.target_seconds} seconds, {round(api.settings.target_seconds * 1.8)}..{round(api.settings.target_seconds * 2.2)} Turkish words, around {desired} shots but at most {api.settings.max_shots}. Adapt duration to VERIFIED material, never invent scenes to fill time.
-First line directly states the extraordinary event and matches the opening panel. Concrete cause/effect, coherent evidence-supported chronology, escalation, factual payoff. No generic intro, invented dialogue, filler, or subscribe CTA. Original proper-name spelling. Each shot 3..30 words, supplied panel_id and 1+ fact_ids. Each panel at most 3 times; at least 6 unique panels. Page IDs are not chronological page numbers. Unseen action cannot be claimed as visible; context must be explicit.
-Return {{"title":"Turkish","description":"Turkish","shots":[{{"panel_id":"","narration":"Turkish","fact_ids":[],"motion":"push|pull|left|right|hold"}}]}}.
+First line directly states the extraordinary event and matches the opening panel. Concrete cause/effect, coherent evidence-supported chronology, escalation, factual payoff. No generic intro, invented dialogue, filler, or subscribe CTA. Original proper-name spelling. Favor short 3..12 word beats, vary push/pull and vertical movement according to the visible action. Most shots use normal emphasis (yellow captions); use danger/reveal/turn only for meaningful story beats. Each shot 3..30 words, supplied panel_id and 1+ fact_ids. Each panel at most 3 times; at least 6 unique panels. Page IDs are not chronological page numbers. Unseen action cannot be claimed as visible; context must be explicit.
+Return {{"title":"Turkish","description":"Turkish","shots":[{{"panel_id":"","narration":"Turkish","fact_ids":[],"motion":"push|pull|left|right|up|down|hold","emphasis":"normal|danger|reveal|turn"}}]}}.
 REPAIR FEEDBACK {feedback}""",
         )
         try:

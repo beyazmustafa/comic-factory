@@ -7,7 +7,8 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import reference, research, panels, story, voice, render, quality
+from . import research, panels, story, voice, render, quality
+from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
 from .core import file_hash, save_json
@@ -76,22 +77,9 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             raise FactoryError("GROQ_API_KEY bu çalışmaya aktarılmamış.")
         checkpoints = Checkpoints(directory)
         api = api_factory(settings, directory)
-        stage("Referans video")
-        local = ROOT / "reference.mp4"
-        ref_key = signature(
-            [
-                settings.reference_url,
-                settings.gemini_model,
-                file_hash(local) if local.exists() else None,
-            ]
-        )
-        style = checkpoints.read("reference", ref_key)
-        if style is None:
-            style = reference.analyze(api, cache)
-            checkpoints.save(
-                "reference", ref_key, style, [directory / "reference_profile.json"]
-            )
-        reference.validate_style(style)
+        stage("Sabit kurgu profili")
+        style = load_style()
+        save_json(directory / "editing_profile.json", style)
         if voice_only:
             stage("Türkçe ses karşılaştırması")
             voice.select_voice(api, style, cache)
@@ -307,7 +295,7 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             },
             "sources": sources,
             "voice": selection,
-            "reference": style["reference_url"],
+            "editing_profile": style["profile_id"],
         }
         save_json(directory / "metadata.json", metadata)
         manifest.update(

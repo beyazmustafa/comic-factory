@@ -1,6 +1,6 @@
 # Comic Factory Studio
 
-Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-2**.
+Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-3**.
 
 Sistem konuyu seçer, gerçek çizgi roman sayfalarını araştırır, panel ve kaynak kanıtına bağlı özgün Türkçe anlatım yazar. Türkçe ses, altyazı kelimeleri ve sahne değişimleri aynı metne bağlıdır.
 
@@ -13,9 +13,9 @@ GitHub → **Actions → Comic Factory Studio → Run workflow**.
 | `preview` | Otomatik konu seçimi, araştırma, video ve inceleme paketi. |
 | `create_and_publish` | Kontrolleri geçen videoyu seçilen YouTube / Instagram hesabına yükler. |
 | `publish_preview` | `preview_run_id` ile seçtiğin hazır videonun aynısını yükler. |
-| `voice_test` | Referansa göre Orus, Gacrux ve Fenrir seslerini karşılaştırır. |
+| `voice_test` | Sabit anlatım yönergesiyle Orus, Gacrux ve Fenrir seslerini karşılaştırır. |
 
-Konu boşsa Marvel/DC tarihinden önemli, şaşırtıcı olaylar araştırılır; kahraman popülerliği ve bilginin niş değeri sıralamada kullanılır. Belirli olay istiyorsan konu alanına yaz. Süre 20–165 saniye arasında hedeftir; varsayılan 150 saniye. Gerçek süre doğrulanmış malzeme ve konuşma hızına bağlıdır.
+Konu boşsa Çizgi roman tarihinden (Marvel/DC, bağımsız yayınlar, manga ve Avrupa çizgi romanları) önemli, şaşırtıcı olaylar araştırılır; kahraman popülerliği ve bilginin niş değeri sıralamada kullanılır. Belirli olay istiyorsan konu alanına yaz. Süre 20–165 saniye arasında hedeftir; varsayılan 150 saniye. Gerçek süre doğrulanmış malzeme ve konuşma hızına bağlıdır.
 
 Ses `auto` olduğunda aynı Türkçe metin üç sesle okunur. Kayıtları dinleyen model doğallık, telaffuz ve anlatım enerjisini değerlendirir. Ses adından seçim yapılmaz. Örnekleri inceleme sayfasından kendin de dinleyebilirsin; menüden istediğin sesi seçebilirsin.
 
@@ -23,13 +23,13 @@ Ses `auto` olduğunda aynı Türkçe metin üç sesle okunur. Kayıtları dinley
 
 Yarım kalan bu sürümün üretimine devam etmek için yeni bir `preview` çalışması açıp **resume_run_id** alanına eski sayısal çalışma ID'sini yaz. Aynı konu/süre/ses ayarlarıyla tamamlanan aşamalar korunur. Değişen ayarlar ilgili aşamayı geçersiz kılar. Başarılı ses bölümleri ortak cache kaybolsa bile indirilen devam kaydından kullanılabilir. Önceki sürümlerin kayıtları bu sürüme devam kaydı olamaz.
 
-## Referans ve görüntü
+## Sabit kurgu ve görüntü
 
-[Gönderdiğin referans](https://www.youtube.com/watch?v=yIZLrxqUUbg) Gemini'ye video olarak verilir. Analiz; farklı zamanlardan gözlemler, panel yerleşimi, altyazı rengi/konumu ve kelime düzeni, zoom, geçiş, anlatım temposu ve hikâye yapısını çıkarır. Gözlem alınamazsa stil uydurulmaz. Erişebildiğin referans dosyası `reference.mp4` adıyla projeye konursa analiz ve son karşılaştırma bu dosyayı kullanır.
+Geliştirme sırasında sağlanan 164,34 saniyelik 720×1280, 30 FPS MP4 açılıp başlangıç, orta ve son bölümlerinden kareler incelendi. Kurgu kuralları `factory/style.py` içine aktarıldı. Üretimde referans dosyası veya URL'si okunmaz, indirilmez, analiz edilmez ve referansla karşılaştırma yapılmaz. Pakete referans video eklenmez.
 
-Profil **reference_profile.json** dosyasındadır. Paneli bütünüyle gösterme, alana doldurma, sayfa gösterme, pan/zoom, kesme, dissolve ve slide desteklenir. Font ailesi DejaVu Sans / Condensed Bold ile yaklaşık eşlenir. Özel maskeler, referansın tam font dosyası, logosu veya karmaşık efektleri otomatik kopyalanmaz. Desteklenmeyen gözlenen özellikler profilde tutulur.
+Tam ekran panel kadrajı, %12'ye kadar yaklaşma/uzaklaşma, yatay ve dikey pan; 5 karelik bulanık dikey geçiş kullanılır. Altyazı ekran yüksekliğinin %62'sinde, kalın siyah konturlu sarı büyük harflerdir. Tehlike, sürpriz ve yön değişimi sahneleri kırmızı, yeşil veya turkuaz vurgu alır. Kelimeler gerçek ses zamanlarına göre tek tek görünür. Font mevcut Türkçe destekli kalın fontla yaklaşık eşlenir; kaynak videonun birebir fontu veya tüm efektleri kopyalanmaz.
 
-Bu paket hazırlanırken referansın görüntü ve ses akışı yerel ortamda oynatılamadı; birebir benzerlik doğrulanmış değildir. İlk gerçek videonun görünümü GitHub'daki analizle belirlenecek. Son video da modele görüntü ve ses olarak verilip referansla karşılaştırılır. Yalnız yerleşim sorunu varsa bir kez render düzeltmesi yapılır. Son kararı ilk gerçek önizlemeyi izleyerek ver.
+Her çalışmanın ayarları `editing_profile.json` dosyasındadır. Son kalite kontrolüne yalnız üretilen video gönderilir; Türkçe anlatım, senkron, panel/anlatım uyumu ve okunabilirlik değerlendirilir. Yerleşim hatalarında en fazla bir render düzeltmesi yapılır.
 
 ## Kaynak, ses ve eşleşme
 
@@ -37,8 +37,8 @@ Bu paket hazırlanırken referansın görüntü ve ses akışı yerel ortamda oy
 - Sayfa, seri/sayı/yıl kanıtına ve kaynak metinde gerçekten bulunan bir alıntıya bağlanır. Her anlatım cümlesi bilinen panel ve kanıt kimliği taşır. İkinci kontrol cümleyi gerçek kırpılmış panelle karşılaştırır.
 - Gemini TTS kısa konuşma bölümleri üretir. Groq Whisper large-v3 gerçek kaydı çözer. Bozuk zamanlar gelirse aynı kayıtta ikinci ASR modeli denenir. Senaryo ASR'ye telkin eden bir prompt olarak verilmez.
 - Ters/sırasız zamanlar kabul edilmez. Eksik/fazladan kelimeler ve tahmini zamanlar puanı düşürür. Eşik altında yalnız sorunlu ses bölümü yeniden üretilir; konu araştırması başa dönmez.
-- Bölümler gerçek ses örneği sayısıyla birleştirilir; sahneler toplam 30 fps çizelgesine yerleştirilir. Türkçe büyük harfler korunur. Altyazı kelime grubu referansın gözlenen biçiminden gelir; konuşulan kelime vurgulanır.
-- Çıktı 1080×1920, 30 fps H.264/AAC MP4'tür. Video tamamen decode edilir; ses akışı ve süre farkı kontrol edilir. Referansta müzik varsa basit özgün bir fon üretilip konuşmaya göre kısılır. Referans müziği kopyalanmaz. Kendi müziğin `music_file` ile seçilebilir.
+- Bölümler gerçek ses örneği sayısıyla birleştirilir; sahneler toplam 30 fps çizelgesine yerleştirilir. Türkçe büyük harfler korunur. Altyazı biçimi sabit kurgu profilinden gelir; konuşulan kelime vurgulanır.
+- Çıktı 1080×1920, 30 fps H.264/AAC MP4'tür. Video tamamen decode edilir; ses akışı ve süre farkı kontrol edilir. Varsayılan müziksizdir. Kurgu profilinde müzik açılırsa basit özgün fon konuşmaya göre kısılır. Kendi müziğin `music_file` ile seçilebilir.
 
 Model puanları öznel değerlendirmedir; ölçülmüş doğruluk yüzdesi değildir. Kaynak tanıma ve ASR hata yapabilir. Yeterli gerçek panel bulunmayan otomatik konuda sıradaki aday denenir. Sorunlu çıktı hazır ilan edilmez; mevcut önizleme ve raporlar korunur.
 
@@ -65,7 +65,7 @@ python comic_factory.py --topic "" --duration 150 --voice auto
 
 Yerelde FFmpeg, FFprobe ve DejaVu fontları gerekir; Actions bunları kurar. Gerçek FFmpeg entegrasyon testi: `CF_RUN_MEDIA_TESTS=1 python -m unittest tests.test_media -v`. Test çizilmiş basit paneller ve ton sinyali kullanır; gerçek Türkçe ses kalitesini ölçmez.
 
-`data/runs/` çıktıları, `data/cache-v2/` analiz/ses cache'ini, `data/events/` kullanılan olayları, `data/publishing/` yayın kayıtlarını tutar. Bunlar Git'e eklenmez. Önizleme artifact'ları 30 gün; cache kayıtları GitHub'ın cache politikası boyunca saklanır.
+`data/runs/` çıktıları, `data/cache-v2/` ses cache'ini, `data/events/` kullanılan olayları, `data/publishing/` yayın kayıtlarını tutar. Bunlar Git'e eklenmez. Önizleme artifact'ları 30 gün; cache kayıtları GitHub'ın cache politikası boyunca saklanır.
 
 ## API belgeleri
 

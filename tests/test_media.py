@@ -12,6 +12,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 from factory import core, render, voice
 from factory.config import Settings
+from factory.style import load_style
 from tests.test_studio import script_fixture, style, timestamps
 
 
@@ -49,6 +50,9 @@ class RealMediaTests(unittest.TestCase):
             page_path = root / panels[0]["page_file"]
             page_path.parent.mkdir(parents=True, exist_ok=True)
             page.save(page_path)
+            script["shots"][2]["motion"] = "up"
+            script["shots"][3]["motion"] = "down"
+            script["shots"][1]["emphasis"] = "danger"
             words = timestamps(script["narration"], 0.15)
             duration = len(words) * 0.15
             t = np.arange(round(duration * voice.RATE)) / voice.RATE
@@ -62,10 +66,10 @@ class RealMediaTests(unittest.TestCase):
             audio = root / "narration.wav"
             voice.write_wave(audio, (samples * 32767).astype("<i2"))
             results = []
-            for transition in ("cut", "slide"):
+            for transition in ("cut", "slide", "whip"):
                 api = SimpleNamespace(directory=root, settings=Settings(), check=Mock())
                 profile = {
-                    **style(),
+                    **load_style(),
                     "transition": transition,
                     "music_present": transition == "slide",
                 }

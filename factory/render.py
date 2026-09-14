@@ -78,6 +78,8 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
     center_x = round(WIDTH * style["caption_x"])
     available = min(820, 2 * (center_x - 80), 2 * (WIDTH - 110 - center_x))
     for i, word in enumerate(words):
+        emphasis = style.get("emphasis_colors", {}).get(word.get("emphasis"))
+        current_color = ass_color(emphasis) if emphasis else active
         mode, count = style["caption_mode"], style["caption_words"]
         if mode == "single":
             first, last = i, i + 1
@@ -98,7 +100,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         if size < 24:
             raise FactoryError("Altyazı güvenli ekran alanına sığmıyor.")
         text = " ".join(
-            "{\\1c" + (active if first + j == i else normal) + "}" + escape_ass(token)
+            "{\\1c" + (current_color if first + j == i else normal) + "}" + escape_ass(token)
             for j, token in enumerate(texts)
         )
         start, end = max(0, word["start"] + offset), word["end"] + offset
@@ -171,7 +173,7 @@ def motion_filter(motion, frames, amount):
         zoom = f"1+{amount}*(1-{progress})"
     elif motion == "hold":
         zoom = "1"
-    elif motion in {"left", "right"}:
+    elif motion in {"left", "right", "up", "down"}:
         zoom = str(1 + amount)
     else:
         zoom = f"1+{amount}*{progress}"
@@ -180,7 +182,12 @@ def motion_filter(motion, frames, amount):
         x = f"(iw-iw/zoom)*{progress}"
     elif motion == "left":
         x = f"(iw-iw/zoom)*(1-{progress})"
-    return f"zoompan=z='{zoom}':x='{x}':y='(ih-ih/zoom)/2':d={frames}:s={WIDTH}x{HEIGHT}:fps={FPS},setsar=1,format=yuv420p"
+    y = "(ih-ih/zoom)/2"
+    if motion == "down":
+        y = f"(ih-ih/zoom)*{progress}"
+    elif motion == "up":
+        y = f"(ih-ih/zoom)*(1-{progress})"
+    return f"zoompan=z='{zoom}':x='{x}':y='{y}':d={frames}:s={WIDTH}x{HEIGHT}:fps={FPS},setsar=1,format=yuv420p"
 
 
 def original_music(path, duration):
@@ -208,8 +215,16 @@ def build(api, story, panels, style, audio_path, words, duration):
     directory = api.directory
     work = directory / "render"
     work.mkdir(exist_ok=True)
+    caption_words, cursor = [], 0
+    for shot in story["shots"]:
+        count = len(shot["narration"].split())
+        caption_words.extend({**w, "emphasis": shot.get("emphasis", "normal")}
+                             for w in words[cursor:cursor + count])
+        cursor += count
+    if cursor != len(words):
+        raise FactoryError("Sahne ve altyazı kelime sayısı uyuşmuyor.")
     subtitle = captions(
-        words, style, directory / "captions.ass", api.settings.caption_offset
+        caption_words, style, directory / "captions.ass", api.settings.caption_offset
     )
     timeline = scene_timeline(story["shots"], words, duration, FPS)
     lookup = {p["id"]: p for p in panels}
@@ -266,8 +281,10 @@ def build(api, story, panels, style, audio_path, words, duration):
             frames = round((timeline[i][1] - timeline[i][0]) * FPS)
             if i:
                 previous_frames = round((timeline[i - 1][1] - timeline[i - 1][0]) * FPS)
-                effect = "slideleft" if style["transition"] == "slide" else "fade"
+                effect = {"slide": "slideleft", "whip": "slideup"}.get(style["transition"], "fade")
                 graph = f"[0:v]trim=start_frame={previous_frames},setpts=PTS-STARTPTS[tail];[1:v]setpts=PTS-STARTPTS[next];[tail][next]xfade=transition={effect}:duration={pad / FPS}:offset=0[v]"
+                if style["transition"] == "whip":
+                    graph = graph[:-3] + f"[transition];[transition]gblur=sigma=1:sigmaV=18:steps=2:enable='lt(t,{pad / FPS})'[v]"
                 args = common + [
                     "-i",
                     str(clips[i - 1]),
@@ -357,6 +374,8 @@ def build(api, story, panels, style, audio_path, words, duration):
         "18",
         "-pix_fmt",
         "yuv420p",
+        "-color_range",
+        "tv",
         "-r",
         str(FPS),
         "-c:a",

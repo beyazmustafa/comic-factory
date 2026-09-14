@@ -314,4 +314,7 @@ def check_video(video: Path, audio: Path) -> dict:
         "audio_duration": audio_duration,
         "duration_delta": delta,
         "decode_returncode": decode.returncode,
+        "video_codec": picture.get("codec_name"),
+        "pixel_format": picture.get("pix_fmt"),
+        "audio_codec": sound.get("codec_name"),
     }

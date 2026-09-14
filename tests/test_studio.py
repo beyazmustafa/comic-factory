@@ -13,7 +13,7 @@ from factory import (
     core,
     panels,
     quality,
-    reference,
+    style as editing,
     render,
     research,
     state,
@@ -165,39 +165,26 @@ class SourceTests(TemporaryTest):
             with self.assertRaises(ValueError):
                 research.public_url(url)
 
-    def test_observed_reference_and_spread_required(self):
-        reference.validate_style(style())
-        for values in (
-            {"video_observed": False},
-            {"observations": [{"second": 0, "visual_detail": "x"}] * 6},
-            {"caption_y": float("nan")},
-        ):
-            with self.assertRaises(FactoryError):
-                reference.validate_style({**style(), **values})
-
-    def test_youtube_id_and_lookalike_host(self):
-        self.assertEqual(
-            reference.video_id("https://youtube.com/shorts/yIZLrxqUUbg?si=x"),
-            "yIZLrxqUUbg",
-        )
-        with self.assertRaises(ValueError):
-            reference.video_id("https://youtube.com.attacker.test/watch?v=yIZLrxqUUbg")
+    def test_fixed_style_validated_offline(self):
+        editing.validate_style(editing.load_style())
+        with self.assertRaises(FactoryError):
+            editing.validate_style({**editing.load_style(), "caption_y": float("nan")})
 
     def test_quality_rejects_unobserved_video_and_nan(self):
         good = {
             "candidate_observed": True,
-            "reference_observed": True,
+
             "turkish_narration": True,
             "no_critical_errors": True,
             "subtitle_sync": 95,
             "scene_match": 95,
             "delivery": 90,
-            "style_match": 90,
+            "visual_readability": 90,
             "observations": [{"second": i, "detail": "visible"} for i in (1, 40, 80)],
         }
         self.assertTrue(quality.validate_review(dict(good))["passed"])
         for values in (
-            {"reference_observed": False},
+            {"candidate_observed": False},
             {"subtitle_sync": float("nan")},
             {"observations": []},
         ):

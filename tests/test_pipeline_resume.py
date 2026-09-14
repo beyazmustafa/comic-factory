@@ -3,7 +3,7 @@ import os
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 from PIL import Image
-from factory import core, panels, reference, research, story, studio, voice
+from factory import core, panels, research, story, studio, voice
 from factory.api import SpeechFailure
 from factory.config import Settings
 from tests.test_studio import TemporaryTest, script_fixture, style
@@ -34,11 +34,6 @@ class PipelineResumeTests(TemporaryTest):
                 calls=0,
             )
 
-        def analyze(api, cache):
-            result = style()
-            core.save_json(api.directory / "reference_profile.json", result)
-            return result
-
         def catalog(api, event, pages, articles):
             for panel in inventory:
                 for field in ("file", "page_file"):
@@ -56,7 +51,7 @@ class PipelineResumeTests(TemporaryTest):
             core.save_json(api.directory / "voice_selection.json", result)
             return result
 
-        self.enterContext(patch.object(reference, "analyze", side_effect=analyze))
+        # The production profile is loaded locally, including on resume.
         shortlist = self.enterContext(
             patch.object(
                 research, "shortlist", return_value=[event, {**event, "id": "other"}]
