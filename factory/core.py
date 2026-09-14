@@ -12,8 +12,6 @@ import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from PIL import ImageFont
-
 
 def save_json(path: Path, payload: dict | list) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -124,11 +122,14 @@ def align_words(
                     parents[ni, nj] = (i, j, similarity)
     anchors = {}
     reliable_timing = set()
+    matched_asr = set()
     scores = [0.0] * n
     i, j = n, m
     while i or j:
         pi, pj, similarity = parents[i, j]
         if i > pi and j > pj and similarity >= 0.5:
+            if similarity >= 0.72:
+                matched_asr.update(range(pj, j))
             start = timestamps[pj]["start"]
             end = max(word["end"] for word in timestamps[pj:j])
             weight = sum(max(1, len(word)) for word in a[pi:i])
@@ -177,13 +178,18 @@ def align_words(
     coverage = sum(value >= 0.72 for value in scores) / n * 100
     similarity = sum(scores) / n * 100
     timing_coverage = len(reliable_timing) / n * 100
-    score = min(coverage * 0.72 + similarity * 0.28, timing_coverage)
+    speech_precision = len(matched_asr) / m * 100
+    score = min(coverage * 0.72 + similarity * 0.28, timing_coverage, speech_precision)
     if any(item["end"] <= item["start"] for item in aligned):
         score = min(score, 50.0)
     return aligned, {
         "coverage": coverage,
         "similarity": similarity,
         "timing_coverage": timing_coverage,
+        "speech_precision": speech_precision,
+        "extra_asr_words": [
+            timestamps[i]["word"] for i in range(m) if i not in matched_asr
+        ],
         "score": score,
         "estimated_word_indices": [i for i in range(n) if i not in reliable_timing],
         "unmatched_words": [tokens[i] for i in range(n) if scores[i] < 0.72],
@@ -223,82 +229,10 @@ def ass_time(seconds: float) -> str:
     return f"{hours}:{minutes:02d}:{seconds:02d}.{centiseconds:02d}"
 
 
-def caption_font(size: int):
-    for filename in (
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "DejaVuSans-Bold.ttf",
-        "C:/Windows/Fonts/arialbd.ttf",
-    ):
-        try:
-            return ImageFont.truetype(filename, size)
-        except OSError:
-            pass
-    raise ValueError("Türkçe altyazı için DejaVu Sans veya Arial Bold fontu gerekli.")
-
-
 def escape_ass(text: str) -> str:
     return (
         text.replace("\\", "＼").replace("{", "(").replace("}", ")").replace("\n", " ")
     )
-
-
-def create_captions(words: list[dict], output: Path, offset: float = 0.0) -> Path:
-    """Sliding current + next word; spoken word is amber, next word is white."""
-    font_name = (
-        "Arial" if Path("C:/Windows/Fonts/arialbd.ttf").exists() else "DejaVu Sans"
-    )
-    lines = [
-        "[Script Info]",
-        "ScriptType: v4.00+",
-        "PlayResX: 1080",
-        "PlayResY: 1920",
-        "WrapStyle: 2",
-        "ScaledBorderAndShadow: yes",
-        "",
-        "[V4+ Styles]",
-        "Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding",
-        f"Style: Main,{font_name},60,&H00FFFFFF,&H00FFFFFF,&H00101014,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,2,140,140,360,1",
-        "",
-        "[Events]",
-        "Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text",
-    ]
-    for index, item in enumerate(words):
-        current = (
-            str(item["word"]).translate(str.maketrans({"i": "İ", "ı": "I"})).upper()
-        )
-        following = (
-            str(words[index + 1]["word"])
-            .translate(str.maketrans({"i": "İ", "ı": "I"}))
-            .upper()
-            if index + 1 < len(words)
-            else ""
-        )
-        for size in range(60, 27, -2):
-            text = (current + " " + following).strip()
-            if caption_font(size).getlength(text) <= 760:
-                break
-        else:
-            following = ""
-            size = 36
-            while size > 18 and caption_font(size).getlength(current) > 760:
-                size -= 2
-            if caption_font(size).getlength(current) > 760:
-                raise ValueError("Tek kelime altyazı alanına sığmıyor.")
-        start = max(0.0, float(item["start"]) + offset)
-        end = float(item["end"]) + offset
-        if index + 1 < len(words):
-            end = min(end, float(words[index + 1]["start"]) + offset)
-        if end <= start:
-            continue
-        text = f"{{\\fs{size}\\1c&H0046C7FF&}}{escape_ass(current)}"
-        if following:
-            text += f" {{\\1c&H00FFFFFF&}}{escape_ass(following)}"
-        lines.append(
-            f"Dialogue: 0,{ass_time(start)},{ass_time(end)},Main,,0,0,0,,{text}"
-        )
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text("\n".join(lines), encoding="utf-8")
-    return output
 
 
 def ffmpeg_binary() -> str:

@@ -90,6 +90,15 @@ def validate_run(directory: Path) -> tuple[dict, Path, Path]:
     manifest = json.loads((directory / "run.json").read_text(encoding="utf-8"))
     if manifest.get("status") != "ready" or not manifest.get("technical_passed"):
         raise ValueError("Bu çalışma yayın için hazır değil.")
+    review = directory / "quality_review.json"
+    if (
+        manifest.get("schema") != 2
+        or manifest.get("quality_passed") is not True
+        or not review.is_file()
+        or file_hash(review) != manifest.get("quality_sha256")
+        or json.loads(review.read_text()).get("passed") is not True
+    ):
+        raise ValueError("Bu videonun görüntü/ses kontrol kaydı eksik veya değişmiş.")
     video, metadata = directory / "video.mp4", directory / "metadata.json"
     for path, key in ((video, "video_sha256"), (metadata, "metadata_sha256")):
         if not path.is_file() or file_hash(path) != manifest.get(key):

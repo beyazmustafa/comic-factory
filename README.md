@@ -1,106 +1,76 @@
 # Comic Factory Studio
 
-Tek komut, tek GitHub Actions akışı: kaynaklı konu seçimi → Türkçe senaryo → ses → kelime zamanları → gerçek çizgi roman panelleri → montaj → önizleme → YouTube / Instagram.
+Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-2**.
 
-## GitHub üzerinden kullanım
+Sistem konuyu seçer, gerçek çizgi roman sayfalarını araştırır, panel ve kaynak kanıtına bağlı özgün Türkçe anlatım yazar. Türkçe ses, altyazı kelimeleri ve sahne değişimleri aynı metne bağlıdır.
 
-**Actions → Comic Factory Studio → Run workflow** ekranı tek çalışma alanıdır.
+## Kullanım
 
-| İşlem | Davranış |
+GitHub → **Actions → Comic Factory Studio → Run workflow**.
+
+| İşlem | Sonuç |
 | --- | --- |
-| `preview` | Videoyu üretir; önizleme ZIP dosyasını hazırlar. |
-| `create_and_publish` | Yeni videoyu üretir, kontroller geçerse seçilen platformlara yükler. |
-| `publish_preview` | Önceki çalışmanın videosunu yeniden üretmeden yükler. `preview_run_id` gerekir. |
+| `preview` | Otomatik konu seçimi, araştırma, video ve inceleme paketi. |
+| `create_and_publish` | Kontrolleri geçen videoyu seçilen YouTube / Instagram hesabına yükler. |
+| `publish_preview` | `preview_run_id` ile seçtiğin hazır videonun aynısını yükler. |
+| `voice_test` | Referansa göre Orus, Gacrux ve Fenrir seslerini karşılaştırır. |
 
-`topic` alanına **Thor'un Galactus'u öldürdüğü olay — Thor (2020) #6** gibi belirli bir olay yaz. Boş bırakırsan sistem popüler kahramanlar ve az bilinen olaylar arasından araştırır. `duration` hedef süredir; sesin gerçek süresi konuşma hızına bağlıdır. `brief` alanına anlatım isteğini yazabilirsin.
+Konu boşsa Marvel/DC tarihinden önemli, şaşırtıcı olaylar araştırılır; kahraman popülerliği ve bilginin niş değeri sıralamada kullanılır. Belirli olay istiyorsan konu alanına yaz. Süre 20–165 saniye arasında hedeftir; varsayılan 150 saniye. Gerçek süre doğrulanmış malzeme ve konuşma hızına bağlıdır.
 
-Önce `preview` kullan. Çalışmanın **Artifacts** bölümündeki `comic-preview-<sayısal Actions ID>` dosyasını indir, ZIP'i çıkart, `review.html` dosyasını aç. Video, senaryo ve tüm sahneler aynı sayfadadır. Yükleme için aynı ekranı tekrar açıp `publish_preview` ve önceki çalışmanın sayısal ID değerini seç. ID çalışma özetinde yazılır. Önizlemeler 30 gün tutulur; sonrasında yerel dosyaları kullanabilir veya yeni önizleme üretebilirsin.
+Ses `auto` olduğunda aynı Türkçe metin üç sesle okunur. Kayıtları dinleyen model doğallık, telaffuz ve anlatım enerjisini değerlendirir. Ses adından seçim yapılmaz. Örnekleri inceleme sayfasından kendin de dinleyebilirsin; menüden istediğin sesi seçebilirsin.
 
-Bir platforma yükleme başarılı, diğerine başarısız olursa başarılı gönderim geçmişe kaydedilir. Sonucu belirsiz bir ağ kesintisinde program körlemesine yeniden paylaşmaz; `publication.json` ve `data/publishing` kaydı hangi platformun kontrol edilmesi gerektiğini gösterir.
+Çalışma sonunda **comic-preview-RUN_ID** artifact ZIP dosyasını indir, çıkart ve **review.html** dosyasını aç. Video, ses örnekleri, her sahnenin paneli ve kaynak bağlantısı aynı sayfadadır. Başarısız üretimde de mevcut dosyalar kaydedilir.
 
-İlk kalite değerlendirmesi için otomatik günlük yayın yerine elle çalıştırma kullanılır. Günlük çalışma istenirse aynı workflow'a zamanlama eklenebilir; yeni bir üretim dosyası gerekmez.
+Yarım kalan bu sürümün üretimine devam etmek için yeni bir `preview` çalışması açıp **resume_run_id** alanına eski sayısal çalışma ID'sini yaz. Aynı konu/süre/ses ayarlarıyla tamamlanan aşamalar korunur. Değişen ayarlar ilgili aşamayı geçersiz kılar. Başarılı ses bölümleri ortak cache kaybolsa bile indirilen devam kaydından kullanılabilir. Önceki sürümlerin kayıtları bu sürüme devam kaydı olamaz.
 
-## Yerel kullanım
+## Referans ve görüntü
 
-Python **3.12**, **FFmpeg + FFprobe** ve Türkçe karakter destekli **DejaVu Sans / Arial Bold** gerekir.
+[Gönderdiğin referans](https://www.youtube.com/watch?v=yIZLrxqUUbg) Gemini'ye video olarak verilir. Analiz; farklı zamanlardan gözlemler, panel yerleşimi, altyazı rengi/konumu ve kelime düzeni, zoom, geçiş, anlatım temposu ve hikâye yapısını çıkarır. Gözlem alınamazsa stil uydurulmaz. Erişebildiğin referans dosyası `reference.mp4` adıyla projeye konursa analiz ve son karşılaştırma bu dosyayı kullanır.
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -r requirements.txt
-.\.venv\Scripts\python comic_factory.py --check
-.\.venv\Scripts\python comic_factory.py --topic "Thor (2020) #6: Thor ve Galactus" --duration 55
-```
+Profil **reference_profile.json** dosyasındadır. Paneli bütünüyle gösterme, alana doldurma, sayfa gösterme, pan/zoom, kesme, dissolve ve slide desteklenir. Font ailesi DejaVu Sans / Condensed Bold ile yaklaşık eşlenir. Özel maskeler, referansın tam font dosyası, logosu veya karmaşık efektleri otomatik kopyalanmaz. Desteklenmeyen gözlenen özellikler profilde tutulur.
 
-Kendi panel klasörünü kullanmak için:
+Bu paket hazırlanırken referansın görüntü ve ses akışı yerel ortamda oynatılamadı; birebir benzerlik doğrulanmış değildir. İlk gerçek videonun görünümü GitHub'daki analizle belirlenecek. Son video da modele görüntü ve ses olarak verilip referansla karşılaştırılır. Yalnız yerleşim sorunu varsa bir kez render düzeltmesi yapılır. Son kararı ilk gerçek önizlemeyi izleyerek ver.
 
-```powershell
-.\.venv\Scripts\python comic_factory.py --topic "Thor (2020) #6" --panel-dir "C:\ComicPaneller\Thor"
-```
+## Kaynak, ses ve eşleşme
 
-Önizlemeyi yüklemek için:
+- Yayınevi önizlemeleri ve kamuya açık resimli yazılardaki gerçek görseller indirilir. Kapak, fan art, ilgisiz sayfa ve reklamlar görsel kontrolde elenir. Görseli AI ile yeniden çizen bir adım yoktur; kırpma, ölçekleme ve hafif netleştirme yapılır.
+- Sayfa, seri/sayı/yıl kanıtına ve kaynak metinde gerçekten bulunan bir alıntıya bağlanır. Her anlatım cümlesi bilinen panel ve kanıt kimliği taşır. İkinci kontrol cümleyi gerçek kırpılmış panelle karşılaştırır.
+- Gemini TTS kısa konuşma bölümleri üretir. Groq Whisper large-v3 gerçek kaydı çözer. Bozuk zamanlar gelirse aynı kayıtta ikinci ASR modeli denenir. Senaryo ASR'ye telkin eden bir prompt olarak verilmez.
+- Ters/sırasız zamanlar kabul edilmez. Eksik/fazladan kelimeler ve tahmini zamanlar puanı düşürür. Eşik altında yalnız sorunlu ses bölümü yeniden üretilir; konu araştırması başa dönmez.
+- Bölümler gerçek ses örneği sayısıyla birleştirilir; sahneler toplam 30 fps çizelgesine yerleştirilir. Türkçe büyük harfler korunur. Altyazı kelime grubu referansın gözlenen biçiminden gelir; konuşulan kelime vurgulanır.
+- Çıktı 1080×1920, 30 fps H.264/AAC MP4'tür. Video tamamen decode edilir; ses akışı ve süre farkı kontrol edilir. Referansta müzik varsa basit özgün bir fon üretilip konuşmaya göre kısılır. Referans müziği kopyalanmaz. Kendi müziğin `music_file` ile seçilebilir.
 
-```powershell
-.\.venv\Scripts\python comic_factory.py --publish-run "data\runs\CALISMA_KIMLIGI" --platforms both
-```
+Model puanları öznel değerlendirmedir; ölçülmüş doğruluk yüzdesi değildir. Kaynak tanıma ve ASR hata yapabilir. Yeterli gerçek panel bulunmayan otomatik konuda sıradaki aday denenir. Sorunlu çıktı hazır ilan edilmez; mevcut önizleme ve raporlar korunur.
 
-## Dosyalar
+## Mevcut secrets ve yayın
 
-| Dosya / klasör | İşlev |
-| --- | --- |
-| `comic_factory.py` | Tek çalıştırma komutu |
-| `.github/workflows/comic-factory.yml` | Tek Actions ekranı |
-| `factory.json` | Süre, ses, sahne, kalite ve deneme sınırları |
-| `factory/engine.py` | Konu, senaryo, ses, görsel ve montaj |
-| `factory/core.py` | Kelime hizalama, altyazı ve medya doğrulama |
-| `factory/studio.py` | İş akışı ve önizleme paketleri |
-| `factory/publishing.py` | Aynı çıktıyı platformlara gönderme ve gönderim geçmişi |
-| `factory/publishers/` | Mevcut YouTube ve Instagram API kodlarının uyarlanmış halleri |
-| `tests/` | Ağ çağrısı yapmayan işlev testleri |
-| `privacy-policy.html` | Mevcut gizlilik sayfası |
+Workflow mevcut **18 secret eşlemesini** korur: Gemini, Groq, Instagram/Cloudinary ve YouTube JSON/base64 seçenekleri. Değerleri kod dosyalarına yazman gerekmez. `factory.json` yalnız üretim ayarları içindir.
 
-Eski V3, V4 ve Thor prototipleri ayrı çalıştırılan dosyalar olarak kullanılmaz. V4'ün işe yarayan bölümleri tek motor içine taşınmıştır.
+Repo variables alanındaki `GEMINI_MODEL`, `GEMINI_TTS_MODEL` ve `GROQ_WHISPER_MODEL` varsayılan modelleri değiştirebilir. Actions menüsünde seçtiğin ses `GEMINI_TTS_VOICE` değişkeninden önceliklidir. Servis kotaları ve olası ücretler mevcut hesaplarına bağlıdır; ücretsiz çalışma garantisi yoktur.
 
-## Kalite davranışı
+Varsayılan sınırlar: 120 Gemini isteği, 3 aday olay, ses bölümü başına 3 üretim, aynı kayıt için 2 ASR modeli ve 100 dakikalık işlem bütçesi. Üretim/kontrol sınırlarına ulaşıldığında dosyalar korunur.
 
-- Türkçe anlatım; özel isimlerin metni korunur. Gacrux varsayılan sestir. Anlatım talimatı `brief` ve senaryoya göre üretilir.
-- Ekranda konuşulan kelime ve sonraki kelime bulunur. Konuşulan kelime renk değiştirir. Kaydırmalı pencere önceki kelimeyi ekranda tutmaz.
-- Kelimeler gerçek ses zamanlarına küresel eşleştirmeyle bağlanır. Eksik tanınan kelimeler sesin dışına taşırılmaz ve hizalama puanını düşürür.
-- Sahne sınırları kare ızgarasına oturur. Bağımsız yuvarlamalardan kaynaklanan birikimli ses/görüntü kayması önlenir.
-- 1080 × 1920, H.264, AAC, 30 FPS; kontrollü yakınlaşma ve kaydırma; ses seviyesi normalizasyonu.
-- Gerçek panellerde kırpma, boyutlandırma ve hafif netleştirme kullanılır. Ana görselin rengi değiştirilmez. AI çizimi varsayılan olarak kapalıdır.
-- Arama ve üretim denemelerinin ayrı sınırları vardır. Konu açıkça istendiğinde başarısızlık başka kahramanın videosuna çevrilmez.
-- Yapay zekâ kalite puanları editoryal tahmindir, olgusal doğruluk veya güzel video garantisi değildir. Puanları videoları izleyerek kalibre etmeliyiz. Yapısal kontroller, kaynak URL eşleştirmesi ve gerçek FFmpeg çözme kontrolü ayrıca uygulanır.
-- `factory.json` içindeki görsel eşiği, kaynak panelin gerçek çözünürlüğüne göre ayarlanmıştır; tüm sayfayı panelden daha büyük olduğu için otomatik üstün sayan eski ölçüm düzeltilmiştir. Eşikler çalışma sırasında kendiliğinden düşürülmez.
+Yayınlanan dosyanın özeti kaydedilir. Başarılı yükleme tekrar gönderilmez. Önceki gönderimin sonucu belirsizse otomatik tekrar gönderilmez; `publication.json` ve platform hesabından kontrol edilebilir. YouTube varsayılan görünürlüğü public'tir. `preview` yayın yapmaz.
 
-Arama kaynakları ve bulunan paneller her konu için yeterli olmayabilir. Bu sürüm film klibini otomatik bulup kesmez; böyle bir işlev eklendi diye varsayılmamalıdır. Önce çizgi roman videosu akışının gerçek örneklerini değerlendireceğiz.
+## Geliştirme
 
-## Mevcut secrets
+Tek giriş `comic_factory.py`, tek üretim workflow'u `.github/workflows/comic-factory.yml`.
 
-GEMINI / GROQ / INSTAGRAM / CLOUDINARY secret adları korunur. YouTube için mevcut `token.json`, `client_secret.json`, uygun eski `youtube_credentials.json` veya workflow'daki JSON/base64 secret eşlemeleri okunur. Paket yeni API anahtarı içermez ve senden secrets değerlerini paylaşmanı istemez.
-
-Kimlik dosyaları artifact veya cache kapsamına alınmaz. Olay ve yükleme geçmişi Actions cache ile saklanır; GitHub cache'in silinmesi geçmişin kaybına yol açabilir. Önemli yayın geçmişlerini ayrıca yedeklemek gerekir.
-
-## Ses eşleştirmesi başarısız olduğunda
-
-Ses yaması `2026-09-12-audio-1` ile geçersiz zaman bilgisi yalnız o çözümleme denemesini başarısız yapar. Önce ayarlı Whisper modeli, gerekirse **aynı ses kaydında** `whisper-large-v3` denenir. İkisi de geçemezse yeni ses üretilir; varsayılan sınır üç ses kaydı ve en çok altı çözümleme çağrısıdır. SDK'nın ağ hatası tekrarları bu çağrıların içinde ayrıca çalışabilir. Ses denemeleri tükenirse konu değiştirilmeden hata raporu hazırlanır.
-
-Sıfır süreli kelimeler kesin zaman verisi sayılmaz. Uygun aralık varsa tahmini zaman alırlar ve `timing_coverage` puanını düşürürler. Bölünmüş/birleşmiş Türkçe kelimeler iki yönde eşleşir; ASR'nin tek kelime olarak verdiği zamanın ikiye bölünmesi de tahmin olarak işaretlenir. Sırasız, ters veya kayıt dışındaki zamanlar yeni çözümleme gerektirir. 95 puan eşiği korunur; eksik kelimeler veya çözülemeyen zamanlar puan kaybettirir. Senaryo, doğruluğunu sınamak için ses tanıma isteğine hazır cevap olarak verilmez.
-
-**Artifacts → `comic-diagnostics-...`** paketindeki `audio_diagnostics` klasörü denenen WAV kayıtlarını, beklenen anlatımı, ham tanıma yanıtlarını, hizalama puanlarını ve hata nedenlerini içerir. `attempts.json` her ses/model sonucunu gösterir. Bir hata sürerse bu ZIP'i paylaş; sesin gerçekten eksik okunmasını ve konuşma tanıma hatasını kayıt üzerinden ayırabiliriz. Eski sürümde yalnız bilinen ses hizalama hataları yüzünden elenen konular yeniden seçilebilir; geçmiş kayıtlar saklanır.
-
-Düzeltmeyi repoya ekledikten sonra güncel daldan **Run workflow → preview** başlat. GitHub, eski çalışmadaki **Re-run jobs** için aynı commit'i kullanır; bu düğme yeni kodu almaz. [GitHub yeniden çalıştırma belgesi](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/re-run-workflows-and-jobs).
-
-## Kontroller
-
-```powershell
+```bash
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python comic_factory.py --check
+python comic_factory.py --topic "" --duration 150 --voice auto
 ```
 
-`--check` kurulum kontrolüdür; API servislerinin çevrimiçi veya hesabın yetkili olduğunu iddia etmez. İlk gerçek üretim ve gerçek platform yüklemesi senin GitHub ortamında doğrulanacaktır.
+Yerelde FFmpeg, FFprobe ve DejaVu fontları gerekir; Actions bunları kurar. Gerçek FFmpeg entegrasyon testi: `CF_RUN_MEDIA_TESTS=1 python -m unittest tests.test_media -v`. Test çizilmiş basit paneller ve ton sinyali kullanır; gerçek Türkçe ses kalitesini ölçmez.
 
-## Teknik başvurular
+`data/runs/` çıktıları, `data/cache-v2/` analiz/ses cache'ini, `data/events/` kullanılan olayları, `data/publishing/` yayın kayıtlarını tutar. Bunlar Git'e eklenmez. Önizleme artifact'ları 30 gün; cache kayıtları GitHub'ın cache politikası boyunca saklanır.
 
-Model adları ve ses arabirimi için [Google model listesi](https://ai.google.dev/gemini-api/docs/models) ve [Google ses üretimi belgesi](https://ai.google.dev/gemini-api/docs/speech-generation) kontrol edildi. Secrets aktarımı için [GitHub Actions secrets belgesi](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) temel alındı.
+## API belgeleri
 
-Konuşma tanıma modelleri, Türkçe dil seçimi ve kelime/segment zamanları için [Groq ses tanıma belgesi](https://console.groq.com/docs/speech-to-text) temel alındı.
+- [Gemini video ve YouTube analizi](https://ai.google.dev/gemini-api/docs/video-understanding)
+- [Gemini Türkçe ses üretimi](https://ai.google.dev/gemini-api/docs/speech-generation)
+- [Google Search ile araştırma](https://ai.google.dev/gemini-api/docs/google-search)
+- [Groq konuşma çözümleme](https://console.groq.com/docs/speech-to-text)
+- [GitHub Git Trees API](https://docs.github.com/en/rest/git/trees?apiVersion=2022-11-28)

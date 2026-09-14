@@ -1,53 +1,62 @@
 name: Comic Factory Studio
-
-on:
+'on':
   workflow_dispatch:
     inputs:
       task:
-        description: "İşlem"
+        description: İşlem
         type: choice
         default: preview
-        options: [preview, create_and_publish, publish_preview]
+        options:
+        - preview
+        - create_and_publish
+        - publish_preview
+        - voice_test
       topic:
-        description: "Konu — boş bırakırsan otomatik seçilir"
+        description: Konu — boşsa çizgi roman tarihinden otomatik seçilir
         type: string
-        default: ""
+        default: ''
       duration:
-        description: "Hedef video süresi (20–120 saniye)"
+        description: Hedef süre, saniye (20–165)
         type: string
-        default: "55"
-      brief:
-        description: "Anlatım / üslup isteği (isteğe bağlı)"
-        type: string
-        default: ""
-      ai_reconstruction:
-        description: "Eksik panellerde AI görsel üretimine izin ver"
-        type: boolean
-        default: false
+        default: '150'
+      voice:
+        description: Türkçe anlatıcı — auto üç sesi karşılaştırır
+        type: choice
+        default: auto
+        options:
+        - auto
+        - Orus
+        - Gacrux
+        - Fenrir
+        - Puck
       platforms:
-        description: "Yükleme hedefi"
+        description: Yayın hedefi
         type: choice
         default: both
-        options: [both, youtube, instagram]
-      preview_run_id:
-        description: "publish_preview için önceki Actions çalışmasının sayısal ID'si"
+        options:
+        - both
+        - youtube
+        - instagram
+      resume_run_id:
+        description: Yarım kalan bu sürümün sayısal run ID'si; yeni üretimde boş
         type: string
-        default: ""
-
+        default: ''
+      preview_run_id:
+        description: publish_preview için hazır videonun sayısal run ID'si
+        type: string
+        default: ''
 permissions:
   contents: read
   actions: read
-
 concurrency:
   group: comic-factory-studio
   cancel-in-progress: false
-
 jobs:
   studio:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     env:
-      PYTHONUNBUFFERED: "1"
+      PYTHONUNBUFFERED: '1'
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
@@ -69,152 +78,143 @@ jobs:
       TOKEN_B64: ${{ secrets.TOKEN_B64 }}
       YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
       YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
-
+      GROQ_WHISPER_MODEL: ${{ vars.GROQ_WHISPER_MODEL }}
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-
-      - name: Install media tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-dejavu-core
-          python -m pip install -r requirements.txt
-
-      - name: Restore event and publishing history
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            data/events/
-            data/director/quality_lessons.json
-            data/director/rejected_events.json
-            data/youtube/
-            data/instagram/
-            data/publishing/
-          key: comic-factory-history-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            comic-factory-history-
-            comic-factory-state-
-
-      - name: Check code and setup
-        run: |
-          python -m unittest discover -s tests -v
-          python comic_factory.py --check
-
-      - name: Validate chosen preview
-        if: inputs.task == 'publish_preview'
-        env:
-          PREVIEW_RUN_ID: ${{ inputs.preview_run_id }}
-        run: |
-          python - <<'PY'
-          import os
-          value = os.environ['PREVIEW_RUN_ID']
-          if not value.isdecimal() or int(value) <= 0:
-              raise SystemExit('Önceki Actions çalışmasının sayısal run ID değerini yaz.')
-          PY
-
-      - name: Download the chosen preview
-        if: inputs.task == 'publish_preview'
-        uses: actions/download-artifact@v4
-        with:
-          name: comic-preview-${{ inputs.preview_run_id }}
-          path: data/incoming
-          github-token: ${{ github.token }}
-          run-id: ${{ inputs.preview_run_id }}
-
-      - name: Produce or publish
-        id: produce
-        env:
-          FACTORY_TASK: ${{ inputs.task }}
-          FACTORY_TOPIC: ${{ inputs.topic }}
-          FACTORY_DURATION: ${{ inputs.duration }}
-          FACTORY_BRIEF: ${{ inputs.brief }}
-          FACTORY_ALLOW_AI: ${{ inputs.ai_reconstruction }}
-          FACTORY_PLATFORMS: ${{ inputs.platforms }}
-        run: |
-          mkdir -p data/logs
-          python - <<'PY'
-          import os
-          import subprocess
-          import sys
-          from pathlib import Path
-          task = os.environ['FACTORY_TASK']
-          args = [sys.executable, '-u', 'comic_factory.py']
-          if task == 'publish_preview':
-              args += ['--publish-run', 'data/incoming']
-          else:
-              args += ['--topic', os.environ['FACTORY_TOPIC'], '--duration', os.environ['FACTORY_DURATION']]
-              if os.environ['FACTORY_BRIEF'].strip():
-                  args += ['--brief', os.environ['FACTORY_BRIEF']]
-              if os.environ['FACTORY_ALLOW_AI'] == 'true':
-                  args += ['--allow-ai']
-              if task == 'create_and_publish':
-                  args += ['--publish']
-          args += ['--platforms', os.environ['FACTORY_PLATFORMS']]
-          with Path('data/logs/studio.log').open('w', encoding='utf-8') as log:
-              process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
-              for line in process.stdout:
-                  print(line, end='', flush=True)
-                  log.write(line)
-                  log.flush()
-              raise SystemExit(process.wait())
-          PY
-
-      - name: Save preview and review page
-        if: always() && steps.produce.outputs.run_directory != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: comic-preview-${{ github.run_id }}
-          path: ${{ steps.produce.outputs.run_directory }}/
-          if-no-files-found: error
-          retention-days: 30
-          compression-level: 0
-
-      - name: Save diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: comic-diagnostics-${{ github.run_id }}
-          path: |
-            data/logs/
-            data/runs/*/run.json
-            data/runs/*/checkpoints.json
-            data/runs/*/storyboard.json
-            data/runs/*/audio_diagnostics/
-            data/director/
-            data/research/
-            data/publishing/
-            data/incoming/publication.json
-          if-no-files-found: warn
-          retention-days: 14
-
-      - name: Save event and publishing history
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            data/events/
-            data/director/quality_lessons.json
-            data/director/rejected_events.json
-            data/youtube/
-            data/instagram/
-            data/publishing/
-          key: comic-factory-history-${{ github.run_id }}-${{ github.run_attempt }}
-
-      - name: Show next action
-        if: always()
-        env:
-          CURRENT_RUN: ${{ github.run_id }}
-        run: |
-          python - <<'PY'
-          import os
-          from pathlib import Path
-          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a', encoding='utf-8') as output:
-              output.write('## Comic Factory\n\n')
-              output.write('Önizleme artifact ZIP dosyasını indir, çıkart ve `review.html` dosyasını aç.\n\n')
-              output.write('Beğendiğin videoyu yüklemek için aynı workflow içinde `publish_preview` seç.\n\n')
-              output.write('Bu çalışmanın ID değeri: **' + os.environ['CURRENT_RUN'] + '**\n')
-          PY
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: pip
+    - name: Install media tools
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-dejavu-extra
+        python -m pip install -r requirements.txt
+    - name: Restore history and successful audio
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          data/events/
+          data/cache-v2/
+          data/youtube/
+          data/instagram/
+          data/publishing/
+        key: comic-factory-studio-v2-${{ github.run_id }}-${{ github.run_attempt }}
+        restore-keys: |
+          comic-factory-studio-v2-
+          comic-factory-history-
+          comic-factory-state-
+    - name: Check code and setup
+      run: |
+        python -m unittest discover -s tests -v
+        python comic_factory.py --check
+    - name: Validate previous run
+      id: previous
+      env:
+        TASK: ${{ inputs.task }}
+        RESUME: ${{ inputs.resume_run_id }}
+        PREVIEW: ${{ inputs.preview_run_id }}
+      run: |
+        python - <<'PY'
+        import os
+        task=os.environ['TASK']
+        resume,preview=os.environ['RESUME'].strip(),os.environ['PREVIEW'].strip()
+        if resume and (task in ('publish_preview','voice_test') or preview):
+            raise SystemExit('Devam ID değeri yalnız üretim için kullanılabilir.')
+        value=preview if task=='publish_preview' else resume
+        if task=='publish_preview' and not value:
+            raise SystemExit('Hazır videonun preview_run_id değerini yaz.')
+        if value and (not value.isdecimal() or int(value)<=0):
+            raise SystemExit('Çalışma ID değeri pozitif tam sayı olmalı.')
+        with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+            output.write('run_id='+value+'\n')
+        PY
+    - name: Download saved work
+      if: steps.previous.outputs.run_id != ''
+      uses: actions/download-artifact@v4
+      with:
+        name: comic-preview-${{ steps.previous.outputs.run_id }}
+        path: data/incoming
+        github-token: ${{ github.token }}
+        run-id: ${{ steps.previous.outputs.run_id }}
+    - name: Produce or publish
+      id: produce
+      env:
+        TASK: ${{ inputs.task }}
+        TOPIC: ${{ inputs.topic }}
+        DURATION: ${{ inputs.duration }}
+        VOICE: ${{ inputs.voice }}
+        PLATFORMS: ${{ inputs.platforms }}
+        RESUME: ${{ inputs.resume_run_id }}
+      run: |
+        mkdir -p data/logs
+        python - <<'PY'
+        import os,sys,subprocess
+        from pathlib import Path
+        task=os.environ['TASK']
+        args=[sys.executable,'-u','comic_factory.py']
+        if task=='publish_preview':
+            args+=['--publish-run','data/incoming']
+        else:
+            args+=['--topic',os.environ['TOPIC'],'--duration',os.environ['DURATION'],'--voice',os.environ['VOICE']]
+            if os.environ['RESUME'].strip(): args+=['--resume-run','data/incoming']
+            if task=='voice_test': args+=['--voice-test']
+            if task=='create_and_publish': args+=['--publish']
+        args+=['--platforms',os.environ['PLATFORMS']]
+        with Path('data/logs/studio.log').open('w',encoding='utf-8') as log:
+            process=subprocess.Popen(args,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace')
+            for line in process.stdout:
+                print(line,end='',flush=True)
+                log.write(line);log.flush()
+            raise SystemExit(process.wait())
+        PY
+    - name: Save video, sources, voices and resumable work
+      if: always() && steps.produce.outputs.run_directory != ''
+      uses: actions/upload-artifact@v4
+      with:
+        name: comic-preview-${{ github.run_id }}
+        path: |
+          ${{ steps.produce.outputs.run_directory }}/
+          !${{ steps.produce.outputs.run_directory }}/render/
+        if-no-files-found: error
+        retention-days: 30
+        compression-level: 0
+    - name: Save diagnostics
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: comic-diagnostics-${{ github.run_id }}
+        path: |
+          data/logs/
+          data/runs/*/run.json
+          data/runs/*/diagnostics/
+          data/publishing/
+          data/incoming/publication.json
+        if-no-files-found: warn
+        retention-days: 14
+    - name: Save history and successful audio
+      if: always()
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          data/events/
+          data/cache-v2/
+          data/youtube/
+          data/instagram/
+          data/publishing/
+        key: comic-factory-studio-v2-${{ github.run_id }}-${{ github.run_attempt }}
+    - name: Show result
+      if: always()
+      env:
+        CURRENT_RUN: ${{ github.run_id }}
+      run: |
+        python - <<'PY'
+        import os
+        from pathlib import Path
+        text='# Comic Factory Studio\n\n'
+        text+='Önizleme artifact ZIP dosyasını çıkart ve review.html dosyasını aç. Video, ses örnekleri ve kaynaklar aynı yerde.\n\n'
+        text+='Hazır videoyu yüklemek için publish_preview; yarım kalan üretim için preview ve resume_run_id kullan.\n\n'
+        text+='Bu çalışmanın ID değeri: '+os.environ['CURRENT_RUN']+'\n'
+        with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a',encoding='utf-8') as output:
+            output.write(text)
+        PY
