@@ -1,6 +1,6 @@
 # Comic Factory Studio
 
-Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-4**.
+Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-5**.
 
 Sistem konuyu seçer, gerçek çizgi roman sayfalarını araştırır, panel ve kaynak kanıtına bağlı özgün Türkçe anlatım yazar. Türkçe ses, altyazı kelimeleri ve sahne değişimleri aynı metne bağlıdır.
 
@@ -78,3 +78,7 @@ Yerelde FFmpeg, FFprobe ve DejaVu fontları gerekir; Actions bunları kurar. Ger
 ## Studio 4: bağımsız kaynak araştırması
 
 Gemini Google Search araç çağrısı kaldırıldı. DDGS ile kaynaklar bulunur, gerçek sayfa metinleri indirilir ve konu seçimine verilir. Konu adaylarında yalnız okunmuş kaynak URL adresleri kabul edilir. discovery.json arama ve erişim sonuçlarını saklar. Model ve ses kotaları geçerlidir. 2.5 Flash erişim hatası alındıysa GEMINI_MODEL değişkenini erişilebilir 3.7 Flash modeline ayarlayın.
+
+## Studio 5: konu yanıtı uyumluluğu
+
+Konu seçimi çağrısında kök JSON listesi events nesnesine dönüştürülür. Nesne yanıtları değişmez. Liste üyeleri nesne olmalıdır; diğer API çağrılarında beklenmeyen kök listeler reddedilir. Kaynak ve konu doğrulamaları aynı şekilde uygulanır.

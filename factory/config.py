@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "2026-09-14-studio-4"
+VERSION = "2026-09-14-studio-5"
 
 
 @dataclass(frozen=True)

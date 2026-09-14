@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Action Comics 1000. Sayı Kilometre Taşı ve 80 Yıllık Superman Mirası",
+    "publisher": "DC Comics",
+    "series": "Action Comics",
+    "issue": "#1000",
+    "year": 2018,
+    "universe": "DC Universe",
+    "characters": [
+      "Superman",
+      "Lois Lane",
+      "Jon Kent",
+      "Vandal Savage",
+      "Maggie Sawyer",
+      "Brainiac"
+    ],
+    "summary": "Superman'in 80 yıllık yayın serüvenini kutlayan bu anıtsal sayıda, Dan Jurgens, Peter J. Tomasi, Marv Wolfman ve Geoff Johns gibi usta yazarların kaleme aldığı hikâyeler yer alıyor. Vandal Savage'ın Hypertime tuzağıyla Superman'i geçmiş kimliklerine hapsederek engellemeye çalışmasından Metropolis halkının kahramanlık gününü kutlamasına kadar Çelik Adam'ın geçmişi, bugünü ve simgesel gücü detaylı panellerle onurlandırılıyor.",
+    "importance": 98,
+    "popularity": 96,
+    "niche": 15,
+    "source_urls": [
+      "https://comic-watch.com/comic-book-reviews/action1000"
+    ]
+  },
+  {
+    "title": "Amazing Spider-Man'in 1000. Sayı Dönüm Noktası ve Ravage Tehdidi",
+    "publisher": "Marvel Comics",
+    "series": "Amazing Spider-Man",
+    "issue": "#1000 (#36)",
+    "year": 2026,
+    "universe": "Marvel Universe",
+    "characters": [
+      "Spider-Man",
+      "Peter Parker",
+      "Aunt May",
+      "Ravage",
+      "Uncle Ben",
+      "Harry Osborn"
+    ],
+    "summary": "Joe Kelly ve Pepe Larraz liderliğinde hazırlanan tarihi sayıda, May Hala'nın hastaneye kaldırılmasıyla başlayan şok edici olaylar örgüsü ve Peter Parker'ın geçmişini sorgulatan gizemli yeni süper kötü Ravage ile yüzleşmesi işleniyor. Sayı ayrıca Dan Slott, Brian Michael Bendis, Frank Miller ve Noah Hawley gibi önemli isimlerin özel anma hikâyelerine yer vererek Spider-Man tarihinin en büyük dönüm noktalarından birini resmediyor.",
+    "importance": 95,
+    "popularity": 94,
+    "niche": 20,
+    "source_urls": [
+      "https://www.marvel.com/articles/comics/amazing-spider-man-1000-presents-the-biggest-issue-in-spider-history"
+    ]
+  },
+  {
+    "title": "Action Comics 1100. Sayı Dönüm Noktası ve Superboy'un Epoch Mücadelesi",
+    "publisher": "DC Comics",
+    "series": "Action Comics",
+    "issue": "#1100",
+    "year": 2026,
+    "universe": "DC Universe",
+    "characters": [
+      "Superman",
+      "Superboy",
+      "Epoch"
+    ],
+    "summary": "1938'den beri devam eden serinin 1100. sayısında genç Superboy, kendisini Dünya'ya getiren Kripton mekiğinden yaptığı zırhla Solar City'de zaman yolcusu düşman Epoch ile yüzleşiyor. Mark Waid, Joshua Williamson, Sophie Campbell ve Dan Slott'ın yazdığı; Skylar Patridge, Ryan Sook ve Dan Mora'nın çizdiği bu dönüm noktası sayısı Superman'in zengin mirasını ve geleceğini kutluyor.",
+    "importance": 90,
+    "popularity": 88,
+    "niche": 25,
+    "source_urls": [
+      "https://bleedingcool.com/comics/action-comics-1100-preview-supermans-landmark-1100th-issue/"
+    ]
+  }
+]

@@ -185,6 +185,7 @@ def shortlist(api, topic, used):
         f"""Choose up to {api.settings.max_events} specific significant/surprising historical comic events from ONLY the fetched articles below. No new facts or links. Exclude used IDs/titles {json.dumps(used, ensure_ascii=False)}. Require exact series, issue/chapter, year, publisher and universe supported by articles. Prefer public publisher previews and illustrated reviews with actual interior panels. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
 {json.dumps(evidence, ensure_ascii=False)}
 Return {{"events":[{{"title":"Turkish","publisher":"","series":"exact original title","issue":"","year":2000,"universe":"","characters":[],"summary":"Turkish","importance":0,"popularity":0,"niche":0,"source_urls":[]}}]}}. Scores 0..100 are editorial judgments.""",
+        list_key="events",
     )
     candidates = []
     for row in payload.get("events", []):
