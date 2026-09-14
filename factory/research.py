@@ -141,14 +141,48 @@ class Fetcher:
         }
 
 
+def discover_evidence(api, topic):
+    """Read independent search results before asking the model for candidates."""
+    import random
+    queries = ([f'{topic} comic issue review panels', f'{topic} comic publisher preview']
+               if topic else random.sample([
+                   'Marvel comics historic turning point issue review panels',
+                   'DC comics shocking transformation issue review panels',
+                   'independent comics landmark issue illustrated review',
+                   'comic book first appearance origin issue retrospective panels',
+                   'manga historic story arc chapter illustrated review',
+                   'European comics classic album illustrated review',
+               ], 3))
+    rows = search(queries, each=6)
+    fetcher, articles, failures = Fetcher(), [], []
+    try:
+        for row in rows[:18]:
+            api.check()
+            try:
+                article = fetcher.article(row['url'])
+                if len(article['text']) < 180 or not article['images']:
+                    continue
+                articles.append({**article, 'text': article['text'][:9000]})
+                if len(articles) == 8:
+                    break
+            except (requests.RequestException, ValueError, OSError, KeyError) as error:
+                failures.append({'url': row['url'], 'error': type(error).__name__})
+    finally:
+        fetcher.session.close()
+    evidence = {'provider': 'independent_web_search', 'queries': queries,
+                'articles': articles, 'failures': failures}
+    save_json(api.directory / 'research' / 'discovery.json', evidence)
+    if not articles:
+        raise SourceUnavailable('Web aramasında okunabilir resimli kaynak bulunamadı; discovery.json kaydedildi. Modelden kaynak uydurması istenmedi.')
+    return evidence
+
+
 def shortlist(api, topic, used):
-    evidence = api.grounded(f"""Find up to {api.settings.max_events} specific significant/surprising events throughout comic history (Marvel, DC, independent publishers, manga and European comics) for an original Turkish explainer.
-Requested topic: {topic or "automatic: historical importance, popular heroes and surprising niche value"}.
-Exclude already used IDs/titles: {json.dumps(used, ensure_ascii=False)}.
-Only candidates with legitimate public publisher previews or illustrated reviews containing multiple actual story panels. Give exact series, issue, year, publisher and universe. Do not conflate adaptations. Include sources.""")
+    evidence = discover_evidence(api, topic)
+    allowed_urls = {article['url'] for article in evidence['articles']}
     payload = api.json(
         "Konu adayları",
-        f"""Turn ONLY this researched evidence into candidates. No new facts or links. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
+        f"""Choose up to {api.settings.max_events} specific significant/surprising historical comic events from ONLY the fetched articles below. No new facts or links. Exclude used IDs/titles {json.dumps(used, ensure_ascii=False)}. Require exact series, issue/chapter, year, publisher and universe supported by articles. Prefer public publisher previews and illustrated reviews with actual interior panels. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
 {json.dumps(evidence, ensure_ascii=False)}
 Return {{"events":[{{"title":"Turkish","publisher":"","series":"exact original title","issue":"","year":2000,"universe":"","characters":[],"summary":"Turkish","importance":0,"popularity":0,"niche":0,"source_urls":[]}}]}}. Scores 0..100 are editorial judgments.""",
     )
@@ -158,6 +192,12 @@ Return {{"events":[{{"title":"Turkish","publisher":"","series":"exact original t
             clean(row.get(k))
             for k in ("title", "publisher", "series", "issue", "universe", "summary")
         ):
+            continue
+        urls = row.get('source_urls')
+        if not isinstance(urls, list):
+            continue
+        row['source_urls'] = list(dict.fromkeys(u for u in urls if isinstance(u, str) and u in allowed_urls))
+        if not row['source_urls']:
             continue
         if type(row.get("year")) is not int or not 1930 <= row["year"] <= 2100:
             continue

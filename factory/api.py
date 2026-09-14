@@ -150,31 +150,6 @@ class Api:
         save_json(path, value)
         return value
 
-    def grounded(self, prompt):
-        response = self.request(
-            "Kaynaklı araştırma",
-            lambda: self.client.models.generate_content(
-                model=self.settings.gemini_model,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    tools=[types.Tool(google_search=types.GoogleSearch())],
-                    automatic_function_calling=types.AutomaticFunctionCallingConfig(
-                        disable=True
-                    ),
-                ),
-            ),
-        )
-        sources = []
-        for candidate in response.candidates or []:
-            metadata = getattr(candidate, "grounding_metadata", None)
-            for chunk in getattr(metadata, "grounding_chunks", None) or []:
-                web = getattr(chunk, "web", None)
-                if web and web.uri:
-                    sources.append({"url": web.uri, "title": web.title or ""})
-        result = {"text": response.text or "", "sources": sources}
-        save_json(self.directory / "research" / "grounded.json", result)
-        return result
-
     @contextmanager
     def uploaded_video(self, path):
         uploaded = self.request(
