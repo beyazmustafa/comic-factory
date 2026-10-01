@@ -1,4 +1,135 @@
-run_id: 36881317397  attempt: 1  event: workflow_dispatch
-produce step outcome: skipped
+run_id: 36881426394  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261001T150920854693Z/run.json
+{
+  "schema": 2,
+  "version": "2026-10-01-archive-1",
+  "status": "failed",
+  "stage": "Konuşma ve kelime zamanları",
+  "topic": "",
+  "settings": {
+    "target_seconds": 150,
+    "max_events": 3,
+    "max_pages": 16,
+    "max_shots": 40,
+    "max_api_calls": 120,
+    "max_minutes": 100,
+    "repair_attempts": 3,
+    "chunk_words": 42,
+    "alignment_threshold": 95,
+    "panel_threshold": 90,
+    "gemini_model": "gemini-3.7-flash",
+    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
+    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
+    "edge_voices": "tr-TR-AhmetNeural,tr-TR-EmelNeural",
+    "tts_model": "gemini-3.1-flash-tts-preview",
+    "whisper_model": "whisper-large-v3",
+    "voice": "auto",
+    "music_file": "",
+    "music_gain_db": -25,
+    "caption_offset": 0,
+    "source": "archive",
+    "archive_query": "mediatype:texts AND collection:(comics)",
+    "archive_max_year": 1963,
+    "archive_scan_limit": 72
+  },
+  "run_id": "36881426394",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 57
+}
+--- data/runs/20261001T150920854693Z/diagnostics/provider_events.json
+[
+  "Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.",
+  "Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Türkçe ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quot); edge-tts sesine geçildi."
+]
+--- data/runs/20261001T150920854693Z/diagnostics/providers.json
+{
+  "gemini": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash"
+  ],
+  "groq": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ],
+  "errors": [],
+  "gemini_chain": [
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-2.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3-flash-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-pro",
+    "gemini-omni-1.1-flash",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest"
+  ],
+  "groq_chain": [],
+  "groq_text_chain": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ]
+}
+--- data/runs/20261001T150920854693Z/diagnostics/api_016.json
+{
+  "provider": "gemini",
+  "response_text": "{\n  \"pages\": [\n    {\n      \"page_id\": \"page_007\",\n      \"page_role\": \"interior\",\n      \"panels\": [\n        {\n          \"number\": 1,\n          \"keep\": true,\n          \"characters\": [],\n          \"action\": \"New York limanında devasa bir tsunami dalgası oluşuyor, sığınaklar su altında kalıyor, gaz tesislerinde yangınlar çıkıyor ve yeraltındaki işçiler vanaları kapatmaya çalışırken gaz boruları büyük bir patlamayla havaya uçuyor.\",\n          \"ocr\": \"MOMENTS AFTER THE BLAST, A HUGE TIDAL WAVE GATHERED MOMENTUM IN LOWER NEW YORK HARBOR!\\nLIKE A HUGE BATTERING RAM, IT SWEPT OVER LOWER MANHATTAN!\\nTHE SHELTERS BECAME POOLS OF DEATH WHERE THOUSANDS DROWNED!\\nYAAAARRGH!\\nARRREEEE!\\nHEEEELP!\\nSHEETS OF FLAME ROARED ABOVE THE GAS WORKS ON THE EAST RIVER DRIVE!\\nIN THE LABYRINTHINE CELLARS BENEATH, PANICKED WORKERS RUSHED TO SHUT OFF THE HUGE RESERVOIR TANKS BURIED DEEP IN THE EARTH...\\nSHUT OFF THESE GAS RESERVOIRS! HURRY! THE FIRES ARE GETTING CLOSER!\\nIF THEY BLOW, EVERYTHING WILL GO A MILE IN THE AIR!\\nTOO LATE! THE GAS MAINS EXPLODED WITH THE IMPACT OF AN EARTHQUAKE!\\nBLAM!\",\n          \"narrative_fact\": \"Patlamadan hemen sonra New York limanında devasa bir tsunami dalgası oluştu.\",\n          \"confidence\": 95\n        }\n      ],\n      \"facts\": [\n        {\n          \"text\": \"Patlamadan hemen sonra New York limanında devasa bir tsunami dalgası oluştu.\",\n          \"quote\": \"MOMENTS AFTER THE BLAST, A HUGE TIDAL WAVE GATHERED MOMENTUM IN LOWER NEW YORK HARBOR!\"\n        },\n        {\n          \"text\": \"Sığınaklar binlerce insanın boğulduğu ölüm havuzlarına dönüştü.\",\n          \"quote\": \"THE SHELTERS BECAME POOLS OF DEATH WHERE THOUSANDS DROWNED!\"\n        }\n      ]\n    },\n    {\n      \"page_id\": \"page_008\",\n      \"page_role\": \"interior\",\n      \"panels\": [\n        {\n          \"number\": 1,\n          \"keep\": true,\n          \"characters\": [],\n          \"action\": \"Metro istasyonunda mahsur kalan insanlar, Central Park'ın sular altında kalması, George Washington Köprüsü'nün yıkılması ve Lincoln Tüneli'nin çökerek sular altında kalması gösteriliyor.\",\n          \"ocr\": \"THE INDEPENDENT SUBWAY HAD JUST DRAWN INTO THE WEST FIFTIETH STREET STATION WHEN THE CRUSHING BLOW FELL!\\nYIIIIIII!\\nWHEN THE STUNNED SURVIVORS EMERGED...\\nWH- WHAT HAPPENED? IT LOOKS LIKE TH
 --- studio.log (son 300 satır)
-(log yok)
+
+→ Sabit kurgu profili
+
+→ Olay, gerçek sayfalar ve Türkçe senaryo
+Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Nükleer Kıyametin Eşiğinde: Soğuk Savaşın Dehşeti
+Arşiv sayfası panelleri: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.
+Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+
+→ Türkçe ses seçimi
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+
+→ Konuşma ve kelime zamanları
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 97.5/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 92.1/100 | whisper-large-v3
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 92.1/100 | whisper-large-v3
+Ses bölümü 2, deneme 3
+Gemini TTS yanıt vermiyor (Türkçe ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quot); edge-tts sesine geçildi.
+Ses eşleştirme: 87.2/100 | whisper-large-v3
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
