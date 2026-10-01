@@ -80,7 +80,7 @@ def create(api, event, panels, facts, style):
         for p in panels
     ]
     mode = (
-        "MODE: complete public-domain Golden Age issue. Retell THE STORY itself beat by beat in panel reading order (page then panel), like a narrated comic: who, what happens, the twist, the ending as actually shown. Mention the year/publisher once at most. "
+        "MODE: complete public-domain Golden Age issue. Pick the ONE story in the issue that contains the hero's single most bizarre, shocking or dramatic moment (a death, betrayal, grotesque villain, impossible power, cruel twist). Use panels from that story only; ignore other stories in the issue. Open on that moment, then explain how it came to be and how it ends, beat by beat in panel order, present tense, like a top comics-recap Shorts narrator. Mention year/publisher at most once, late. "
         if event.get("identifier")
         else "MODE: comic-history explainer about a notable event. "
     )

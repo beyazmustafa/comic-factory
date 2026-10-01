@@ -14,9 +14,9 @@ Sistem Internet Archive'dan **kamu malı (public domain) bir Altın Çağ çizgi
 | Konu | otomatik (arşivden rastgele dilim) | — |
 | Süre | 150 sn | `factory.json → target_seconds` |
 | Platform | yalnız `youtube` | Repo variable `SCHEDULED_PLATFORMS` (`both`, `youtube`, `instagram`) |
-| Görünürlük | `unlisted` | Repo variable `YOUTUBE_VISIBILITY` (`public`, `unlisted`, `private`) |
+| Görünürlük | `public` (Shorts rafına ancak public video düşer) | Repo variable `YOUTUBE_VISIBILITY` (`public`, `unlisted`, `private`) |
 
-İlk videolar `unlisted` çıkar; beğendiğin videoyu YouTube Studio'dan public yaparsın, kanal otomatik public'e geçsin istediğinde `YOUTUBE_VISIBILITY=public` değişkenini eklersin.
+Videolar doğrudan public yayınlanır; başlık ve açıklamaya `#Shorts` eklenir. Önce görmek istersen `YOUTUBE_VISIBILITY=unlisted` değişkeni eklersin. Her videonun senaryosu ve kare şeridi `data/history/videos/<run_id>/` altına kaydedilir.
 
 Kullanılan sayılar `data/history/issues/` altında **repoya commit edilir** (workflow `contents: write` izniyle kendi commit'ini atar). Böylece cache silinse bile aynı sayı bir daha seçilmez. Bu klasörü silmek geçmişi sıfırlar.
 
@@ -114,7 +114,7 @@ Repo variables alanındaki `GEMINI_MODEL`, `GEMINI_TTS_MODEL` ve `GROQ_WHISPER_M
 
 Varsayılan sınırlar: 120 Gemini isteği, 3 aday sayı, ses bölümü başına 3 üretim, aynı kayıt için 2 ASR modeli ve 100 dakikalık işlem bütçesi. Üretim/kontrol sınırlarına ulaşıldığında dosyalar korunur.
 
-Yayınlanan dosyanın özeti kaydedilir. Başarılı yükleme tekrar gönderilmez. Önceki gönderimin sonucu belirsizse otomatik tekrar gönderilmez; `publication.json` ve platform hesabından kontrol edilebilir. YouTube görünürlüğü `YOUTUBE_VISIBILITY` değişkeninden gelir; boşsa unlisted. `preview` yayın yapmaz.
+Yayınlanan dosyanın özeti kaydedilir. Başarılı yükleme tekrar gönderilmez. Önceki gönderimin sonucu belirsizse otomatik tekrar gönderilmez; `publication.json` ve platform hesabından kontrol edilebilir. YouTube görünürlüğü `YOUTUBE_VISIBILITY` değişkeninden gelir; boşsa public. `preview` yayın yapmaz.
 
 ## Geliştirme
 

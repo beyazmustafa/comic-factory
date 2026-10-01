@@ -41,7 +41,7 @@ class Settings:
     archive_theme_query: str = (
         'subject:(superhero OR superheroes OR "super hero" OR "super heroes" OR heroes) OR '
         'title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR '
-        '"amazing man" OR wonder OR captain OR marvel OR "black" OR "blue" OR "green" OR mask OR phantom OR atom OR "super")'
+        '"amazing man" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR "fighting")'
     )
     source: str = "archive"
     archive_query: str = "mediatype:texts AND collection:(comics)"

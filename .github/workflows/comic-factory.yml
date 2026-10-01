@@ -71,7 +71,7 @@ jobs:
       PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'youtube' }}
       RESUME: ${{ inputs.resume_run_id || '' }}
       PREVIEW: ${{ inputs.preview_run_id || '' }}
-      YOUTUBE_VISIBILITY: ${{ vars.YOUTUBE_VISIBILITY || 'unlisted' }}
+      YOUTUBE_VISIBILITY: ${{ vars.YOUTUBE_VISIBILITY || 'public' }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
@@ -190,6 +190,16 @@ jobs:
           for f in data/runs/*/research/rejected_candidates.json; do [ -f "$f" ] && { echo "--- $f"; head -c 4000 "$f"; echo; }; done
           for f in $(ls data/runs/*/diagnostics/story_*.json data/runs/*/diagnostics/panel_matches_*.json 2>/dev/null | tail -n 4); do echo "--- $f"; python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(json.dumps({k: d[k] for k in d if k in ('error','failures','passed')}, ensure_ascii=False)[:3000])" "$f"; done
           echo "--- studio.log (son 300 satır)"
+          # Evaluation bundle: narration + a frame strip of the finished video, small enough to commit.
+          for d in data/runs/*/; do
+            if [ -f "$d/video.mp4" ] && [ -f "$d/story.json" ]; then
+              out="data/history/videos/${{ github.run_id }}"; mkdir -p "$out"
+              cp "$d/story.json" "$out/story.json"
+              [ -f "$d/quality_review.json" ] && cp "$d/quality_review.json" "$out/quality_review.json"
+              [ -f "$d/metadata.json" ] && cp "$d/metadata.json" "$out/metadata.json"
+              ffmpeg -v error -y -i "$d/video.mp4" -vf "fps=1/6,scale=216:-1,tile=8x3" -frames:v 1 -q:v 6 "$out/frames.jpg" || true
+            fi
+          done
           tail -n 300 data/logs/studio.log 2>/dev/null || echo "(log yok)"
         } > data/logs/last_run.txt
         # data/history is tracked; everything else under data/ is ignored, so a

@@ -13,7 +13,7 @@ class ScheduleTests(unittest.TestCase):
         self.assertIn("cron: '0 6,15 * * *'", text)  # 09:00 / 18:00 Türkiye
         self.assertIn("inputs.task || 'create_and_publish'", text)
         self.assertIn("vars.SCHEDULED_PLATFORMS || 'youtube'", text)
-        self.assertIn("vars.YOUTUBE_VISIBILITY || 'unlisted'", text)
+        self.assertIn("vars.YOUTUBE_VISIBILITY || 'public'", text)
         self.assertIn("contents: write", text)
         self.assertIn("git add -A data/history", text)
         self.assertIn("poppler-utils", text)

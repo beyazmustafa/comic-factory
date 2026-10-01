@@ -169,8 +169,11 @@ def load_video_metadata() -> tuple[str, str, list[str]]:
             tags.append(tag)
     if not title:
         raise YouTubeUploaderError("Video başlığı bulunamadı.")
-    if len(title) > 100:
-        title = title[:97].rstrip() + "..."
+    # Shorts eligibility: vertical video + #Shorts in title/description.
+    if "#shorts" not in title.lower():
+        title = (title[:88].rstrip() + "..." if len(title) > 91 else title) + " #Shorts"
+    if "#shorts" not in description.lower():
+        description = "#Shorts #comics #superhero\n\n" + description
     if len(description) > 5000:
         description = description[:5000]
     return (title, description, tags)
