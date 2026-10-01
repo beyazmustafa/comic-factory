@@ -1,11 +1,11 @@
-run_id: 36881426394  attempt: 1  event: workflow_dispatch
+run_id: 36885461042  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261001T150920854693Z/run.json
+--- data/runs/20261001T154449463120Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
   "status": "failed",
-  "stage": "Konuşma ve kelime zamanları",
+  "stage": "Olay, gerçek sayfalar ve Türkçe senaryo",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -16,7 +16,7 @@ produce step outcome: failure
     "max_minutes": 100,
     "repair_attempts": 3,
     "chunk_words": 42,
-    "alignment_threshold": 95,
+    "alignment_threshold": 86,
     "panel_threshold": 90,
     "gemini_model": "gemini-3.7-flash",
     "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
@@ -33,21 +33,20 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36881426394",
-  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 57
+  "run_id": "36885461042",
+  "error": "FactoryError: Panellere bağlı Türkçe anlatım: geçerli JSON alınamadı; yanıt tanı dosyasında.",
+  "api_calls": 23
 }
---- data/runs/20261001T150920854693Z/diagnostics/provider_events.json
+--- data/runs/20261001T154449463120Z/diagnostics/provider_events.json
 [
   "Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.",
-  "Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Türkçe ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quot); edge-tts sesine geçildi."
+  "Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı Türkçe anlatım: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor."
 ]
---- data/runs/20261001T150920854693Z/diagnostics/providers.json
+--- data/runs/20261001T154449463120Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -69,9 +68,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -100,10 +99,14 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T150920854693Z/diagnostics/api_016.json
+--- data/runs/20261001T154449463120Z/diagnostics/api_022.json
 {
   "provider": "gemini",
-  "response_text": "{\n  \"pages\": [\n    {\n      \"page_id\": \"page_007\",\n      \"page_role\": \"interior\",\n      \"panels\": [\n        {\n          \"number\": 1,\n          \"keep\": true,\n          \"characters\": [],\n          \"action\": \"New York limanında devasa bir tsunami dalgası oluşuyor, sığınaklar su altında kalıyor, gaz tesislerinde yangınlar çıkıyor ve yeraltındaki işçiler vanaları kapatmaya çalışırken gaz boruları büyük bir patlamayla havaya uçuyor.\",\n          \"ocr\": \"MOMENTS AFTER THE BLAST, A HUGE TIDAL WAVE GATHERED MOMENTUM IN LOWER NEW YORK HARBOR!\\nLIKE A HUGE BATTERING RAM, IT SWEPT OVER LOWER MANHATTAN!\\nTHE SHELTERS BECAME POOLS OF DEATH WHERE THOUSANDS DROWNED!\\nYAAAARRGH!\\nARRREEEE!\\nHEEEELP!\\nSHEETS OF FLAME ROARED ABOVE THE GAS WORKS ON THE EAST RIVER DRIVE!\\nIN THE LABYRINTHINE CELLARS BENEATH, PANICKED WORKERS RUSHED TO SHUT OFF THE HUGE RESERVOIR TANKS BURIED DEEP IN THE EARTH...\\nSHUT OFF THESE GAS RESERVOIRS! HURRY! THE FIRES ARE GETTING CLOSER!\\nIF THEY BLOW, EVERYTHING WILL GO A MILE IN THE AIR!\\nTOO LATE! THE GAS MAINS EXPLODED WITH THE IMPACT OF AN EARTHQUAKE!\\nBLAM!\",\n          \"narrative_fact\": \"Patlamadan hemen sonra New York limanında devasa bir tsunami dalgası oluştu.\",\n          \"confidence\": 95\n        }\n      ],\n      \"facts\": [\n        {\n          \"text\": \"Patlamadan hemen sonra New York limanında devasa bir tsunami dalgası oluştu.\",\n          \"quote\": \"MOMENTS AFTER THE BLAST, A HUGE TIDAL WAVE GATHERED MOMENTUM IN LOWER NEW YORK HARBOR!\"\n        },\n        {\n          \"text\": \"Sığınaklar binlerce insanın boğulduğu ölüm havuzlarına dönüştü.\",\n          \"quote\": \"THE SHELTERS BECAME POOLS OF DEATH WHERE THOUSANDS DROWNED!\"\n        }\n      ]\n    },\n    {\n      \"page_id\": \"page_008\",\n      \"page_role\": \"interior\",\n      \"panels\": [\n        {\n          \"number\": 1,\n          \"keep\": true,\n          \"characters\": [],\n          \"action\": \"Metro istasyonunda mahsur kalan insanlar, Central Park'ın sular altında kalması, George Washington Köprüsü'nün yıkılması ve Lincoln Tüneli'nin çökerek sular altında kalması gösteriliyor.\",\n          \"ocr\": \"THE INDEPENDENT SUBWAY HAD JUST DRAWN INTO THE WEST FIFTIETH STREET STATION WHEN THE CRUSHING BLOW FELL!\\nYIIIIIII!\\nWHEN THE STUNNED SURVIVORS EMERGED...\\nWH- WHAT HAPPENED? IT LOOKS LIKE TH
+  "response_text": "{\n  \"title\": \"Atom Savaşları ve Soğuk Savaş Korkusu\",\n  \"description\": \"1952 tarihli bu klasik sayı, nükleer çağın dehşetini ve askeri gerilimleri Altın Çağ çizgi roman estetiğiyle yansıtır.\",\n  \"shots\": [\n    {\n      \"panel_id\": \"panel_000\",\n      \"narration\": \"Rus delege kürsüde barış çağrısı yaparken, iki sistemin bir arada yaşayacağını iddia ediyordu.\",\n      \"fact_ids\": [\n        \"fact_000\"\n      ],\n      \"motion\": \"push\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"panel_001\",\n      \"narration\": \"Komuta merkezindeki operatörler ise sıradan bir nöbet geçiriyordu.\",\n      \"fact_ids\": [\n        \"fact_001\"\n      ],\n      \"motion\": \"hold\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"panel_002\",\n      \"narration\": \"Kanada'nın Quebec eyaletinden gelen gizemli uçak sesleri her şeyi değiştirdi.\",\n      \"fact_ids\": [\n        \"fact_002\"\n      ],\n      \"motion\": \"left\",\n      \"emphasis\": \"danger\"\n    },\n    {\n      \"panel_id\": \"panel_003\",\n      \"narration\": \"Maine üzerindeki tanımlanamayan yüksek irtifa uçuşları rapor ediliyordu.\",\n      \"fact_ids\": [\n        \"fact_003\"\n      ],\n      \"motion\": \"push\",\n      \"emphasis\": \"danger\"\n    },\n    {\n      \"panel_id\": \"panel_004\",\n      \"narration\": \"Boston'dan gelen acil haberle uçakların Rus yapımı MKV-4 ağır jet bombardıman uçakları olduğu anlaşıldı.\",\n      \"fact_ids\": [\n        \"fact_003\"\n      ],\n      \"motion\": \"push\",\n      \"emphasis\": \"reveal\"\n    },\n    {\n      \"panel_id\": \"panel_005\",\n      \"narration\": \"On savaş uçağımız düşürülmüştü ve kırk Rus bombacısı dalga dalga geliyordu.\",\n      \"fact_ids\": [\n        \"fact_004\"\n      ],\n      \"motion\": \"up\",\n      \"emphasis\": \"danger\"\n    },\n    {\n      \"panel_id\": \"panel_006\",\n      \"narration\": \"Tüm önleyici savaş uçakları çoktan üslerinden ayrılmıştı.\",\n      \"fact_ids\": [\n        \"fact_004\"\n      ],\n      \"motion\": \"hold\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"panel_007\",\n      \"narration\": \"Kızılların Schenectady üzerinde olduğu haberi odadaki gerilimi tırmandırdı.\",\n      \"fact_ids\": [\n        \"fact_005\"\n      ],\n      \"motion\": \"right\",\n    
+--- data/runs/20261001T154449463120Z/diagnostics/api_023.json
+{
+  "provider": "gemini",
+  "response_text": "{\"title\": \"Atom Savaşları\", \"description\": \"1952 Altın Çağ çizgi romanından nükleer kıyamet ve Soğuk Savaş gerilimi.\", \"shots\": [{\"panel_id\": \"panel_000\", \"narration\": \"Rus delege, kürsüden barış ve dostluk mesajları vererek iki sistemin birlikte yaşayacağını haykırıyor!\", \"fact_ids\": [\"fact_000\"], \"motion\": \"push\", \"emphasis\": \"normal\"}, {\"panel_id\": \"panel_001\", \"narration\": \"Karargah röle panelinde görevli operatörler sessiz geçen altı aylık vardiyanın monotonluğundan sıkılıyor.\", \"fact_ids\": [\"fact_001\"], \"motion\": \"hold\", \"emphasis\": \"normal\"}, {\"panel_id\": \"panel_002\", \"narration\": \"Kanada Quebec'ten yükseklerde uçan tanımlanamayan uçak sesleri rapor ediliyor!\", \"fact_ids\": [\"fact_002\"], \"motion\": \"up\", \"emphasis\": \"danger\"}, {\"panel_id\": \"panel_003\", \"narration\": \"Albay Winters Maine üzerindeki gizemli uçak raporlarını endişeyle takip ediyor.\", \"fact_ids\": [\"fact_002\"], \"motion\": \"pull\", \"emphasis\": \"normal\"}, {\"panel_id\": \"panel_004\", \"narration\": \"Boston'dan gelen acil haberle uçakların Rus yapımı MKV-4 ağır jet bombardıman uçakları olduğu anlaşılıyor!\", \"fact_ids\": [\"fact_003\"], \"motion\": \"push\", \"emphasis\": \"reveal\"}, {\"panel_id\": \"panel_005\", \"narration\": \"On savaş uçağımız düşürülüyor; kırk düşman bombacısı durmaksızın üzerimize geliyor!\", \"fact_ids\": [\"fact_004\"], \"motion\": \"down\", \"emphasis\": \"danger\"}, {\"panel_id\": \"panel_006\", \"narration\": \"Tüm önleyici jetler üslerinden yirmi dakika önce havalanmış durumda.\", \"fact_ids\": [\"fact_004\"], \"motion\": \"hold\", \"emphasis\": \"normal\"}, {\"panel_id\": \"panel_007\", \"narration\": \"Kızılların Schenectady üzerinde olduğu haberi karargahta büyük bir panik yaratıyor.\", \"fact_ids\": [\"fact_004\"], \"motion\": \"right\", \"emphasis\": \"danger\"}, {\"panel_id\": \"panel_008\", \"narration\": \"Hatalı plotlama yüzünden önleyici jetlerin şehirden uzaklaştırıldığı anlaşılıyor!\", \"fact_ids\": [\"fact_005\"], \"motion\": \"left\", \"emphasis\": \"turn\"}, {\"panel_id\": \"panel_009\", \"narration\": \"Kırk bin feet yükseklikteki Sovyet bombardıman uçakları hedef üzerindeki ölüm dalışına hazırlanıyor.\", \"fact_ids\": [\"fact_005\"], \"motion\": \"down\", \"emphasis\": \"danger\"}, {\"panel_id\": \"pa
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -113,23 +116,7 @@ Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: Nükleer Kıyametin Eşiğinde: Soğuk Savaşın Dehşeti
-Arşiv sayfası panelleri: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.
-Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-
-→ Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.5/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 92.1/100 | whisper-large-v3
-Ses bölümü 2, deneme 2
-Ses eşleştirme: 92.1/100 | whisper-large-v3
-Ses bölümü 2, deneme 3
-Gemini TTS yanıt vermiyor (Türkçe ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quot); edge-tts sesine geçildi.
-Ses eşleştirme: 87.2/100 | whisper-large-v3
-HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Atom Savaşları ve Soğuk Savaş Korkusu
+Panellere bağlı Türkçe anlatım: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.
+HATA: Panellere bağlı Türkçe anlatım: geçerli JSON alınamadı; yanıt tanı dosyasında.
