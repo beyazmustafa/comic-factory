@@ -1,0 +1,48 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 68,
+  "scene_match": 65,
+  "delivery": 65,
+  "visual_readability": 62,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Action hook opens on comic cover/action panel with clear yellow captions."
+    },
+    {
+      "second": 20,
+      "detail": "Mid-section pans panel with character dialogue speech bubbles, readable yellow caption."
+    },
+    {
+      "second": 45,
+      "detail": "Panels transition smoothly via whip transition during space flight sequence."
+    },
+    {
+      "second": 75,
+      "detail": "Character interaction scene showing Lew's hostility towards Regina and Dan."
+    },
+    {
+      "second": 100,
+      "detail": "Red Knight origins shown in panel frames with consistent single-word caption style."
+    },
+    {
+      "second": 120,
+      "detail": "Ending panel shows final conflict with sound effects in the panel, closing narration cleanly."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The candidate presents the full comic documentary with clear narration sync, readable captions, and steady pacing across all shots.",
+  "review_mode": "video",
+  "turkish_narration": true,
+  "passed": false,
+  "failed_checks": [
+    "subtitle_sync",
+    "scene_match",
+    "delivery",
+    "visual_readability"
+  ],
+  "subjective_assessment": true
+}

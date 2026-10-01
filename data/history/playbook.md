@@ -7,4 +7,4 @@
 - Title: curiosity-driven, 45-70 characters, names the hero or villain, never a lie.
 - Character ID: introduce the hero's core power or alter-ego within the first three shots.
 - Sensory Onomatopoeia: incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text.
-- Pacing: maintain total script duration between 35 and 45 seconds to increase retention rate on Shorts.
+- Pacing: keep total video duration strictly between 35 and 45 seconds to maximize retention on Shorts.

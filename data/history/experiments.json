@@ -54,6 +54,16 @@
       "name": "tighter_duration_target",
       "change": "Cap total video duration under 45 seconds by keeping narration strictly between 80 and 110 words total.",
       "rationale": "Shorter Golden Age recaps prevent mid-video drop-off and boost completion rate on YouTube Shorts."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36940443992",
+    "chosen_at": "2026-10-01T23:24:20+00:00",
+    "experiment": {
+      "name": "action_verb_titles",
+      "change": "Use an imperative action verb at the start of the title to heighten immediate curiosity.",
+      "rationale": "Starting titles with high-energy action verbs can boost initial click-through rates on short-form feeds."
     }
   }
 ]
