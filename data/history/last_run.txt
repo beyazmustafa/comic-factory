@@ -1,11 +1,11 @@
-run_id: 36926794909  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261001T211107096896Z/run.json
+run_id: 36929578237  attempt: 1  event: workflow_dispatch
+produce step outcome: cancelled
+--- data/runs/20261001T213508597868Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "building",
+  "stage": "Öğrenme: oyun kitabı ve deney",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -14,7 +14,7 @@ produce step outcome: success
     "max_shots": 40,
     "max_api_calls": 120,
     "max_minutes": 100,
-    "repair_attempts": 3,
+    "repair_attempts": 4,
     "chunk_words": 42,
     "alignment_threshold": 86,
     "panel_threshold": 85,
@@ -30,64 +30,22 @@ produce step outcome: success
     "caption_offset": 0,
     "language": "en",
     "channel_theme": "superheroes",
-    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR marvel OR \"black\" OR \"blue\" OR \"green\" OR mask OR phantom OR atom OR \"super\")",
+    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
     "source": "archive",
     "archive_query": "mediatype:texts AND collection:(comics)",
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36926794909",
-  "resumed_from": "36917663428",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "0f2cf316a3bf768a9c1e87f0a18a74456b0874684b735b27b7529841f44b1c52",
-  "metadata_sha256": "62bd8ac107b3c56639886e29e9a456742f0c6c62deaff858dd02800dd6057951",
-  "quality_sha256": "56448e3b255173a815bfd64737fc90722c5095ee095f03932779d891a9c0ee78",
-  "api_calls": 71,
-  "duration": 57.44,
-  "voice": "Christopher",
-  "event": {
-    "identifier": "exciting-comics-001",
-    "title": "The Dawn of Exciting Heroes",
-    "year": 1940,
-    "publisher": "Better-Standard-Pines",
-    "description": "Ambroise 'Dipthong' Jones' cover-to-cover scans of Exciting Comics #1 , edited by Mark Bowen.",
-    "subjects": [
-      "Golden Age Comic Books",
-      "superhero comics"
-    ],
-    "public_domain_evidence": "inferred: publisher 'standard' (closed before 1964, unrenewed Golden Age catalogue)",
-    "downloads": 0,
-    "imagecount": 0,
-    "url": "https://archive.org/details/exciting-comics-001",
-    "id": "ia_3f5979992af0ba18",
-    "series": "Exciting Comics",
-    "issue": "1",
-    "summary": "An explosive 1940 premiere issue featuring classic Golden Age superhero adventures and thrilling battles against early villains.",
-    "universe": "Golden Age (public domain)",
-    "source_urls": [
-      "https://archive.org/details/exciting-comics-001"
-    ],
-    "selection_score": 78.0
-  }
+  "run_id": "36929578237"
 }
---- data/runs/20261001T211107096896Z/diagnostics/provider_events.json
+--- data/runs/20261001T213508597868Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
+  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261001T211107096896Z/diagnostics/providers.json
+--- data/runs/20261001T213508597868Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -109,9 +67,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -140,21 +98,7 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T211107096896Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261001T211107096896Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_003", "reason": "The narration claims a vicious acid attack happens right in court, but the image shows a doctor/medical professional speaking about acid destroying sight in a hospital/corridor setting, not a courtroom attack as described."}, {"shot_id": "shot_005", "reason": "While the panel shows the character restoring his eyesight and disguising himself, the claim of 'granting him incredible dark vision' is not supported by the provided text or evidence."}, {"shot_id": "shot_018", "reason": "The caption notes Tony changed while in the car, though the active shifting is not visually shown as he is already outside in costume."}, {"shot_id": "shot_023", "reason": "The narration claims the vigilante catches a live bullet barehanded, but the image shows characters with their hands up and Carol holding a gun; no bullet-catching action is visible."}, {"shot_id": "shot_030", "reason": "Shot 030 image shows Major Mars fighting and meeting the space emperor/guards, but the evidence and narration in fact_021 correspond to page 17 (shot 031 context), not the provided page/crop for shot_030."}]}
---- data/runs/20261001T211107096896Z/diagnostics/panel_matches_2.json
-{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "Narration claims an intruder breaks in, but the dialogue in the panel clearly states he is a former friend ('guy you once befriended')."}, {"shot_id": "shot_001", "reason": "Narration describes a warning about a killer, but the panel depicts the visitor ordering Colby into the closet."}, {"shot_id": "shot_002", "reason": "Narration states the gunman arrives with lethal orders, but the character is actually revealed to be an assassin delivering a message from Olly Snate."}, {"shot_id": "shot_003", "reason": "Narration mentions the informant striking back and shouting Olly Snate's name, whereas the panel shows the aftermath of throwing a shoe and discussing the plot at a table."}, {"shot_id": "shot_004", "reason": "Narration claims gangsters spray vitriol in court, but the image shows a hospital or medical corridor with a doctor stating the acid destroyed his sight."}]}
---- data/runs/20261001T211107096896Z/diagnostics/panel_matches_3.json
-{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The narration describes acid blinding the district attorney, but the panel and evidence only show an intruder entering the room."}, {"shot_id": "shot_001", "reason": "The narration states an informant rushes in to warn Colby, but the panel shows Colby ordering the person into a closet."}, {"shot_id": "shot_002", "reason": "The narration claims Snate's assassin arrives with deadly orders, matching the character delivering a threatening message from Olly Snate."}, {"shot_id": "shot_003", "reason": "The narration states gangsters spray vitriol in the courtroom, but the panel shows medical professionals discussing the aftermath where acid has destroyed his sight."}, {"shot_id": "shot_004", "reason": "The narration mentions the chemical attack destroying his sight, and the panel shows Colby grieving with facial scars, though the dialogue focuses on Snate going free."}, {"shot_id": "shot_005", "reason": "The narration claims 'Carol Smith arranges a miraculous operation', but the caption states 'A surgeon provided by the mystery girl performs miraculous operation. Colby is ready to remove the bandages.' There is no Carol Smith mentioned or shown."}, {"shot_id": "shot_006", "reason": "The narration claims Tony gains supernatural dark sight, transforming into the shadowy Mask. The text says his eyesight is restored and he is working undercover/disguised; nothing about supernatural dark sight."}, {"shot_id": "shot_016", "reason": "The narration claims the Mask catches a live bullet in his bare hand, but the image shows characters holding their hands up in surrender; no bullet catching is visible."}, {"shot_id": "shot_020", "reason": "The panel shows Major Mars leaping to confront the Space Emperor, though infiltration is broader context."}]}
---- data/runs/20261001T211107096896Z/diagnostics/story_2.json
-{"error": "Panel üçten fazla kullanılamaz."}
 --- studio.log (son 300 satır)
-Kayıtlı aşama kullanılıyor: story
-Kayıtlı aşama kullanılıyor: voice
-Kayıtlı aşama kullanılıyor: audio
-Kayıtlı aşama kullanılıyor: render
 
 → Sabit kurgu profili
 
@@ -163,48 +107,3 @@ Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-
-→ Olay, gerçek sayfalar ve senaryo
-Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: The Dawn of Exciting Heroes
-Denetimi geçemeyen 9 sahne çıkarıldı; 13 sahne kaldı.
-
-→ Türkçe ses seçimi
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261001T211107096896Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: The Mask Strikes and Major Mars Face Shadows on Jupiter
-Görünürlük: unlisted
-
-Yükleme: %20
-Yükleme: %40
-Yükleme: %60
-Yükleme: %80

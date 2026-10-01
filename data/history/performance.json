@@ -44,6 +44,13 @@
       "change": "Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text of that shot.",
       "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
     },
-    "stats": {}
+    "stats": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 1.0,
+      "views_per_hour": 1.0,
+      "fetched_at": "2026-10-01T21:35:08+00:00"
+    }
   }
 ]
