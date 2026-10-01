@@ -342,19 +342,26 @@ class Api:
                 [name, types.Part.from_uri(file_uri=uri, mime_type="video/mp4")]
             )
 
-        def generate(model):
-            return self.client.models.generate_content(
-                model=model,
-                contents=contents,
-                config=types.GenerateContentConfig(
-                    temperature=0.2,
-                    max_output_tokens=16384,
-                    response_mime_type="application/json",
-                    automatic_function_calling=types.AutomaticFunctionCallingConfig(
-                        disable=True
-                    ),
-                ),
+        def config(thinking):
+            options = dict(
+                temperature=0.2,
+                max_output_tokens=65536,
+                response_mime_type="application/json",
+                automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
             )
+            if thinking:
+                # Thinking tokens share the output budget on Gemini 3.x; keep
+                # them small so long JSON answers are not cut off.
+                options["thinking_config"] = types.ThinkingConfig(thinking_budget=1024)
+            return types.GenerateContentConfig(**options)
+
+        def generate(model):
+            try:
+                return self.client.models.generate_content(model=model, contents=contents, config=config(True))
+            except Exception as error:
+                if "thinking" not in str(error).casefold():
+                    raise
+                return self.client.models.generate_content(model=model, contents=contents, config=config(False))
 
         for strict in (False, True):
             text, provider = self._generate_text(label, prompt, images, audio, video_uri, videos, generate, contents)
@@ -362,9 +369,11 @@ class Api:
             try:
                 value = parse_object(text, list_key=list_key)
             except ValueError as error:
-                save_json(path, {"provider": provider, "response_text": text[:6000], "error": str(error),
+                save_json(path, {"provider": provider,
                                  "model": self.groq_model if provider == "groq" else self.model,
-                                 "info": getattr(self, "last_response_info", {})})
+                                 "info": getattr(self, "last_response_info", {}),
+                                 "error": str(error), "response_length": len(text),
+                                 "response_text": text[:6000]})
                 if strict:
                     raise FactoryError(
                         f"{label}: geçerli JSON alınamadı; yanıt tanı dosyasında."
