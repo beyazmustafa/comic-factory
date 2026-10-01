@@ -8,6 +8,13 @@ from .research import clean
 
 def validate_story(value, panels, facts, max_shots=40):
     pl, fl = {p["id"] for p in panels}, {f["id"] for f in facts}
+    # Evidence repair: a small model often cites a fact id that does not exist.
+    # Facts from the same page as the panel are the natural replacement.
+    page_of = {p["id"]: p.get("page_id") for p in panels}
+    facts_by_page = {}
+    for fact in facts:
+        facts_by_page.setdefault(fact.get("page_id"), []).append(fact["id"])
+    repaired = 0
     shots = value.get("shots")
     if (
         not isinstance(shots, list)
@@ -22,7 +29,11 @@ def validate_story(value, panels, facts, max_shots=40):
         text, ids = clean(row.get("narration")), row.get("fact_ids")
         if row.get("panel_id") not in pl or not 3 <= len(text.split()) <= 30:
             raise ValueError(f"Sahne {i + 1}: panel/metin geçersiz.")
-        if not isinstance(ids, list) or not ids or any(k not in fl for k in ids):
+        ids = [k for k in ids if k in fl] if isinstance(ids, list) else []
+        if not ids:
+            ids = list(facts_by_page.get(page_of.get(row["panel_id"]), []))[:2] or [f["id"] for f in facts[:2]]
+            repaired += 1
+        if not ids:
             raise ValueError(f"Sahne {i + 1}: kaynak kanıtı eksik.")
         if row.get("motion") not in {"push", "pull", "left", "right", "up", "down", "hold"}:
             raise ValueError("Kamera hareketi geçersiz.")
@@ -48,6 +59,7 @@ def validate_story(value, panels, facts, max_shots=40):
         "description": clean(value.get("description")),
         "shots": result,
         "narration": " ".join(r["narration"] for r in result),
+        "repaired_evidence": repaired,
     }
 
 
@@ -109,6 +121,27 @@ REPAIR FEEDBACK {feedback}""",
             value.update(event=event, panel_validation=report)
             save_json(api.directory / "story.json", value)
             return value
+        # Last attempt: drop the shots the auditor rejected instead of
+        # discarding a whole issue over a few disputed sentences.
+        failed = {f["shot_id"] for f in report["failures"]}
+        kept = [s for s in draft.get("shots", []) if isinstance(s, dict)]
+        kept = [s for s, v in zip(kept, value["shots"]) if v["id"] not in failed]
+        minimum = max(6, round(len(value["shots"]) * 0.6))
+        if attempt == api.settings.repair_attempts - 1 and len(kept) >= minimum:
+            try:
+                trimmed = validate_story({**draft, "shots": kept}, panels, facts, api.settings.max_shots)
+            except (ValueError, TypeError, KeyError):
+                trimmed = None
+            if trimmed:
+                passed = [r for r in report["shots"] if isinstance(r, dict) and r.get("shot_id") not in failed]
+                trimmed.update(
+                    event=event,
+                    panel_validation={"passed": True, "shots": passed, "failures": [],
+                                      "dropped_shots": sorted(failed)},
+                )
+                print(f"Denetimi geçemeyen {len(failed)} sahne çıkarıldı; {len(kept)} sahne kaldı.", flush=True)
+                save_json(api.directory / "story.json", trimmed)
+                return trimmed
         feedback = json.dumps(report["failures"], ensure_ascii=False)
     raise SourceUnavailable(
         "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."

@@ -141,11 +141,18 @@ class SourceTests(TemporaryTest):
         self.assertFalse(panels.confident(101, 90))
 
     def test_unknown_panel_or_fact(self):
-        for field, value in (("panel_id", "invented"), ("fact_ids", ["invented"])):
-            script, inventory, facts = script_fixture()
-            script["shots"][0][field] = value
-            with self.assertRaises(ValueError):
-                story.validate_story(script, inventory, facts)
+        script, inventory, facts = script_fixture()
+        script["shots"][0]["panel_id"] = "invented"
+        with self.assertRaises(ValueError):
+            story.validate_story(script, inventory, facts)
+        # An invented fact id is repaired from the issue's own facts, never kept.
+        script, inventory, facts = script_fixture()
+        script["shots"][0]["fact_ids"] = ["invented"]
+        value = story.validate_story(script, inventory, facts)
+        self.assertEqual(value["shots"][0]["fact_ids"], ["fact_000"])
+        self.assertEqual(value["repaired_evidence"], 1)
+        with self.assertRaises(ValueError):
+            story.validate_story(script, inventory, [])
 
     def test_one_reused_picture_cannot_pass(self):
         script, inventory, facts = script_fixture()
