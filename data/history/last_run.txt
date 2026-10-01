@@ -1,6 +1,6 @@
-run_id: 36873350496  attempt: 1  event: workflow_dispatch
+run_id: 36874120010  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261001T140446903410Z/run.json
+--- data/runs/20261001T141019116160Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -19,7 +19,7 @@ produce step outcome: failure
     "alignment_threshold": 95,
     "panel_threshold": 90,
     "gemini_model": "gemini-3.7-flash",
-    "gemini_fallback_models": "gemini-3.7-flash,gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash",
+    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
     "groq_model": "meta-llama/llama-4-scout-17b-16e-instruct",
     "edge_voices": "tr-TR-AhmetNeural,tr-TR-EmelNeural",
     "tts_model": "gemini-3.1-flash-tts-preview",
@@ -33,15 +33,19 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36873350496",
-  "error": "FactoryError: Arşiv sayfası panelleri: ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-  "api_calls": 7
+  "run_id": "36874120010",
+  "error": "ModelUnavailable: Arşiv sayı adayları (Groq): NotFoundError: Error code: 404 - {'error': {'message': 'The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}",
+  "api_calls": 10
 }
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Olay, gerçek sayfalar ve Türkçe senaryo
-Olay araştırılıyor: Suçun İllüzyonisti: Suç Dünyasının Houdini'si
-Arşiv sayfası panelleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-HATA: Arşiv sayfası panelleri: ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.8-flash-lite kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.1-flash kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: Gemini yanıt vermedi; Groq meta-llama/llama-4-scout-17b-16e-instruct kullanılıyor.
+HATA: Arşiv sayı adayları (Groq): NotFoundError: Error code: 404 - {'error': {'message': 'The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
