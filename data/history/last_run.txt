@@ -1,6 +1,6 @@
-run_id: 36892207457  attempt: 1  event: workflow_dispatch
+run_id: 36894736665  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261001T162903826419Z/run.json
+--- data/runs/20261001T172408373593Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -33,43 +33,27 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36892207457",
+  "run_id": "36894736665",
   "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
-  "api_calls": 85
+  "api_calls": 103
 }
---- data/runs/20261001T162903826419Z/diagnostics/provider_events.json
+--- data/runs/20261001T172408373593Z/diagnostics/provider_events.json
 [
   "Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı Türkçe anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Fai",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-120b kullanılamadı, atlanacak.",
-  "Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-20b kullanılamadı, atlanacak.",
-  "Panellere bağlı Türkçe anlatım: Groq qwen/qwen3.8-27b kullanılamadı, atlanacak.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım (Groq openai/gpt-oss-120b): APIStatusError: Error code: 413 - {'error); Gemini'ye dönüldü.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.",
-  "Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü."
+  "Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor."
 ]
---- data/runs/20261001T162903826419Z/diagnostics/providers.json
+--- data/runs/20261001T172408373593Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -91,9 +75,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -122,41 +106,153 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261001T172408373593Z/diagnostics/api_098.json
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=465 candidates_tokens_details=None prompt_token_count=6448 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=1024\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: '"
+  },
+  "error": "Expecting ',' delimiter: line 29 column 81 (char 1013)",
+  "response_length": 1350,
+  "response_text": "{\n  \"shots\": [\n    {\n      \"shot_id\": \"shot_020\",\n      \"match_score\": 100,\n      \"supported\": true,\n      \"crop_ok\": true,\n      \"reason\": \"Karakterlerin parayla araba alıp daha büyük soygunlar planlaması hem görsel hem de diyalog metniyle tam olarak uyuşmaktadır.\"\n    },\n    {\n      \"shot_id\": \"shot_021\",\n      \"match_score\": 100,\n      \"supported\": true,\n      \"crop_ok\": true,\n      \"reason\": \"Zırhlı aracın kapısında zaman kilidi olduğunu belirten diyalog kırpılan panelde net bir şekilde görülmektedir.\"\n    },\n    {\n      \"shot_id\": \"shot_022\",\n      \"match_score\": 75,\n      \"supported\": true,\n      \"crop_ok\": false,\n      \"reason\": \"Metin kombinasyonu bilmediğini ifade eden diyaloğu içerse de, kırpılan görselde kurbanın yüzü veya yalvarma eylemi değil, sadece dışarıdan aracın görüntüsü yer almaktadır.\"\n    },\n    {\n      \"shot_id\": \"shot_023\",\n      \"match_score\": 95,\n      \"supported\": true,\n      \"crop_ok\": true,\n      \"reason\": \"Şiddet anı ve kurbanın vurulmamak için çığlık attığı diyalog (\"NO, DON'T HIT... AIIIE!\") görselde açıkça görülmektedir.\"\n    },\n    {\n      \"shot_id\": \"shot_024\",\n      \"match_score\": 95,\n      \"supported\": true,\n      \"crop_ok\": true,\n      \"reason\": \"Ortakların adamların şifreyi bilmediğini anlayıp aracı başka yere sürme kararı diyalog metni ve görselle tam olarak desteklenmektedir.\"\n    }\n  ]\n}"
+}
+--- data/runs/20261001T172408373593Z/research/rejected_candidates.json
+[
+  {
+    "event": {
+      "identifier": "fawcett-beware-terror-tales-002",
+      "title": "Ateş Gözlü Hayalet: Korku Masallarının Gizemi",
+      "year": 1952,
+      "publisher": "",
+      "description": "",
+      "subjects": [
+        "maxon",
+        "terror",
+        "tales",
+        "hiss",
+        "fiery",
+        "beware",
+        "fire",
+        "flame",
+        "eyes",
+        "safe",
+        "terror tales",
+        "fire ghost"
+      ],
+      "public_domain_evidence": "inferred: publisher 'fawcett' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 5836,
+      "imagecount": 0,
+      "url": "https://archive.org/details/fawcett-beware-terror-tales-002",
+      "id": "ia_0c540d5df43e69e3",
+      "series": "Beware Terror Tales",
+      "issue": "2",
+      "summary": "Fawcett'ın bu nadir sayısında, alevli gözlere sahip bir hayaletin ve 'Hiss' adlı gizemli bir varlığın etrafında dönen, klasik altın çağ korku unsurlarıyla dolu bir hikaye anlatılıyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/fawcett-beware-terror-tales-002"
+      ],
+      "selection_score": 63.800000000000004
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  },
+  {
+    "event": {
+      "identifier": "atomic-war-01",
+      "title": "Nükleer Kıyametin Şafağı: 1952'nin Korkunç Kehaneti",
+      "year": 1952,
+      "publisher": "",
+      "description": "",
+      "subjects": [
+        "edwards",
+        "russian",
+        "colonel",
+        "motioned",
+        "recon",
+        "soldier",
+        "defense",
+        "bonds",
+        "field",
+        "savings",
+        "savings bonds",
+        "russian soldier"
+      ],
+      "public_domain_evidence": "inferred: publisher 'ace' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 8081,
+      "imagecount": 0,
+      "url": "https://archive.org/details/atomic-war-01",
+      "id": "ia_0d8b9f776fad93b3",
+      "series": "Atomic War",
+      "issue": "1",
+      "summary": "Soğuk Savaş'ın en karanlık döneminde yayınlanan bu eser, atom bombasının New York üzerindeki hayali etkilerini ve Rus askerleriyle girilen nükleer çatışmayı dehşet verici bir gerçekçilikle sunuyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/atomic-war-01"
+      ],
+      "selection_score": 61.6
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  },
+  {
+    "event": {
+      "identifier": "crimes-incorporated-012-1950-06.-fox-dregs-ia",
+      "title": "Suç Şirketi: Pete Morisi'nin Çizgileriyle Yeraltı Dünyası",
+      "year": 1950,
+      "publisher": "",
+      "description": "Crimes Incorporate 12, June 1950, Fox Feature Syndicate, NY NY, 36 pages 10 cents. https://www.comics.org/issue/66180/ Featuring two stories from Pete Morisi.",
+      "subjects": [
+        "Comic Book",
+        "Crime Comics",
+        "Fox",
+        "Pete Morisi",
+        "Pre-Code"
+      ],
+      "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 403,
+      "imagecount": 0,
+      "url": "https://archive.org/details/crimes-incorporated-012-1950-06.-fox-dregs-ia",
+      "id": "ia_01a4e7fa22617818",
+      "series": "Crimes Incorporated",
+      "issue": "12",
+      "summary": "1950'lerin sansür öncesi dönemine ait bu suç antolojisi, Pete Morisi'nin sert çizgileriyle yeraltı dünyasının acımasız ve şaşırtıcı infaz hikayelerini belgeliyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/crimes-incorporated-012-1950-06.-fox-dregs-ia"
+      ],
+      "selection_score": 55.6
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  }
+]
+--- data/runs/20261001T172408373593Z/diagnostics/panel_matches_3.json
+{"passed": false, "failures": [{"shot_id": "shot_007", "reason": "Anlatımda dövüşü kazanana ödül verileceği iddia ediliyor ancak panel diyalogunda yerel dövüşçünün kazanmasının gerekmediği, sadece ilk raundun sonuna kadar ayakta kalmasının yeterli olduğu açıkça belirtiliyor."}, {"shot_id": "shot_023", "reason": "The narration describes the victim pleading; the panel shows the victim shouting 'No don't hit' while being assaulted."}, {"shot_id": "shot_029", "reason": "Karakterin benzinle ıslattığı sahnede 'boğuyor' ifadesi abartılı veya hatalı bir çeviri/ekleme olmuş, metinde sadece ıslatma geçiyor."}]}
+--- data/runs/20261001T172408373593Z/diagnostics/story_1.json
+{"error": "Sahne 4: kaynak kanıtı eksik."}
+--- data/runs/20261001T172408373593Z/diagnostics/story_2.json
+{"error": "Sahne 2: kaynak kanıtı eksik."}
+--- data/runs/20261001T172408373593Z/diagnostics/story_3.json
+{"error": "Sahne 4: kaynak kanıtı eksik."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Olay, gerçek sayfalar ve Türkçe senaryo
 Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: Kızıl Gözlerin Laneti ve Zalim Derebeyi
-Arşiv sayfası panelleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Cümle-panel eşleşmesi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı Türkçe anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Fai
-Olay araştırılıyor: Aya Fırlatılan Mermi ve Ay Prensesinin Savaşı
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-120b kullanılamadı, atlanacak.
-Panellere bağlı Türkçe anlatım: Groq openai/gpt-oss-20b kullanılamadı, atlanacak.
-Panellere bağlı Türkçe anlatım: Groq qwen/qwen3.8-27b kullanılamadı, atlanacak.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım (Groq openai/gpt-oss-120b): APIStatusError: Error code: 413 - {'error); Gemini'ye dönüldü.
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.
-Olay araştırılıyor: Aydaki Adamın Gizemi
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.
-Panellere bağlı Türkçe anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı Türkçe anlatım: Groq başarısız (Panellere bağlı Türkçe anlatım: Groq modeli kalmadı.); Gemini'ye dönüldü.
+Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Ateş Gözlü Hayalet: Korku Masallarının Gizemi
+Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Nükleer Kıyametin Şafağı: 1952'nin Korkunç Kehaneti
+Olay araştırılıyor: Suç Şirketi: Pete Morisi'nin Çizgileriyle Yeraltı Dünyası
+Cümle-panel eşleşmesi: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
 HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
