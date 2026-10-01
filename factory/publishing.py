@@ -153,6 +153,12 @@ def publish_run(directory: Path, platforms: str) -> dict:
                     youtube.save_upload_history(
                         manifest["video_sha256"], identifier, title
                     )
+                    try:
+                        from .learning import record_publication
+
+                        record_publication(directory, "youtube", identifier)
+                    except Exception as error:
+                        print(f"Performans kaydı yazılamadı: {type(error).__name__}: {error}")
             else:
                 from .publishers import instagram
 

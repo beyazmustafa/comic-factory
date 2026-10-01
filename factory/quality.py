@@ -1,7 +1,7 @@
 import json
 import math
 import subprocess
-from .core import ffmpeg_binary, inspect_media, save_json
+from .core import ffmpeg_binary, inspect_media, save_json, language_name
 from .api import FactoryError
 from .style import validate_style
 
@@ -80,11 +80,11 @@ def validate_review(report, duration=None):
 def review(api, video, story, style):
     duration = float(inspect_media(video)["format"]["duration"])
     prompt = f"""Watch/listen to the ENTIRE generated CANDIDATE. Evaluate actual decoded output, never plans. Explicitly set observed=false if inaccessible.
-Evaluate panel framing, caption readability, pacing and Turkish narrator energy against the production settings below. Assess only this generated video.
+Evaluate panel framing, caption readability, pacing and {language_name(api)} narrator energy against the production settings below. Assess only this generated video.
 SCRIPT {json.dumps(story["shots"], ensure_ascii=False)}
 PRODUCTION SETTINGS {json.dumps(style, ensure_ascii=False)}
-Check burned Turkish words vs heard speech including later scenes/joins, matching panel changes, cut-off faces/actions, Turkish glyph readability, audio artifacts, uncomfortable pauses and coherent payoff.
-Return {{"candidate_observed":true,"turkish_narration":true,"no_critical_errors":true,"subtitle_sync":0,"scene_match":0,"delivery":0,"visual_readability":0,"observations":[{{"second":0,"detail":"Turkish concrete audible/visible observation"}}],"issues":[],"style_adjustments":{{}},"summary":"Turkish"}}.
+Check burned caption words vs heard speech including later scenes/joins, matching panel changes, cut-off faces/actions, glyph readability, audio artifacts, uncomfortable pauses and coherent payoff.
+Return {{"candidate_observed":true,"turkish_narration":true (true when narration is in {language_name(api)}),"no_critical_errors":true,"subtitle_sync":0,"scene_match":0,"delivery":0,"visual_readability":0,"observations":[{{"second":0,"detail":"Turkish concrete audible/visible observation"}}],"issues":[],"style_adjustments":{{}},"summary":"Turkish"}}.
 Scores 0..100 are subjective assessments, not measured accuracy. At least SIX observations across start/middle/end of the candidate ({duration:.2f}s). If only layout/color/crop/zoom/transition issues exist, propose style_adjustments restricted to {sorted(ADJUSTABLE)}. Never hide a speech or source problem as a layout change."""
     try:
         report = api.video_json("Üretilen video kontrolü", prompt, video)
@@ -129,8 +129,8 @@ def frame_review(api, video, story, style, duration):
     frames = extract_frames(video, duration, api.directory / "diagnostics" / "frames")
     judged = api.json(
         "Kare incelemesi",
-        f"""These are still frames from the generated vertical video at the listed seconds. Judge ONLY what is visible: Turkish caption readability (size, stroke, Turkish glyphs ÇĞİÖŞÜ), whether the comic panel fills the frame without cut faces or balloons, and overall layout. Production settings: {json.dumps(style, ensure_ascii=False)}
-Return {{"visual_readability":0,"framing_ok":true,"observations":[{{"second":0,"detail":"Turkish concrete visible observation"}}],"issues":[],"style_adjustments":{{}}}}. One observation per frame; scores 0..100. style_adjustments restricted to {sorted(ADJUSTABLE)}.""",
+        f"""These are still frames from the generated vertical video at the listed seconds. Judge ONLY what is visible: caption readability (size, stroke, special glyphs), whether the comic panel fills the frame without cut faces or balloons, and overall layout. Production settings: {json.dumps(style, ensure_ascii=False)}
+Return {{"visual_readability":0,"framing_ok":true,"observations":[{{"second":0,"detail":"{language_name(api)} concrete visible observation"}}],"issues":[],"style_adjustments":{{}}}}. One observation per frame; scores 0..100. style_adjustments restricted to {sorted(ADJUSTABLE)}.""",
         images=[(f"frame at {second}s", path) for second, path in frames],
     )
     observations = []

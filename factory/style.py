@@ -27,11 +27,11 @@ STYLE = {'profile_id': 'comic-history-tr-v1',
  'panel_max_height': 1.0,
  'panel_center_y': 0.5,
  'music_present': False,
- 'narrator_delivery': 'Enerjik, merak uyandıran doğal Türkçe. İlk cümlede olaya gir; önemli '
-                      'sözcükleri vurgula, kısa dramatik duraklarla gerilimi artır. Bağırma. '
-                      'Cümle sonlarını yutma.',
- 'story_structure': 'Çarpıcı olay → nedeni → artan tehlike → doğrulanmış sürpriz → somut '
-                    'sonuç.',
+ 'narrator_delivery': 'Energetic, curiosity-driven storytelling like a top comics-recap Shorts '
+                      'narrator: open on the shocking moment, stress key words, build tension '
+                      'with short dramatic pauses, land every sentence ending. Natural, not shouted.',
+ 'story_structure': 'Shocking hook (first 2 seconds) → who/why → escalating danger → verified '
+                    'twist → concrete payoff; end on the strongest image, no outro.',
  'emphasis_colors': {'danger': '#FF2020', 'reveal': '#00FF40', 'turn': '#00FFFF'}}
 
 

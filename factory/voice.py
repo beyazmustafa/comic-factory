@@ -11,14 +11,31 @@ import numpy as np
 from google.genai import types
 from groq import Groq
 from .api import FactoryError, ProviderOverloaded, SpeechFailure
-from .core import align_words, ffmpeg_binary, file_hash, save_json
+from .core import align_words, ffmpeg_binary, file_hash, save_json, language_name
 
 RATE = 24000
 GEMINI_VOICES = ("Orus", "Gacrux", "Fenrir", "Puck")
 # Gemini voice → Microsoft edge-tts voice used when Gemini TTS is unavailable.
 EDGE_FALLBACK = {"Orus": "Ahmet", "Fenrir": "Ahmet", "Puck": "Ahmet", "Gacrux": "Emel"}
-EDGE_VOICE_IDS = {"Ahmet": "tr-TR-AhmetNeural", "Emel": "tr-TR-EmelNeural"}
-AUDITION_TEXT = "Bir kahramanın en büyük gücü, bir anda en korkunç düşmanına dönüşebilir. Thor bunu öğrendiğinde artık çok geçti. Çünkü asıl tehlike dışarıda değil, kendi bedeninin içindeydi. Peki bu noktaya nasıl geldi?"
+EDGE_VOICE_IDS = {"Ahmet": "tr-TR-AhmetNeural", "Emel": "tr-TR-EmelNeural",
+                  "Christopher": "en-US-ChristopherNeural", "Guy": "en-US-GuyNeural"}
+EDGE_DEFAULT = {"tr": "Ahmet", "en": "Christopher"}
+AUDITION_TEXTS = {
+    "tr": "Bir kahramanın en büyük gücü, bir anda en korkunç düşmanına dönüşebilir. Thor bunu öğrendiğinde artık çok geçti. Çünkü asıl tehlike dışarıda değil, kendi bedeninin içindeydi. Peki bu noktaya nasıl geldi?",
+    "en": "A hero's greatest power can become his deadliest enemy in a single heartbeat. By the time the Black Terror understood that, it was already too late. Because the real danger was never outside. It was inside his own body. So how did it come to this?",
+}
+AUDITION_TEXT = AUDITION_TEXTS["tr"]
+
+
+def language_of(api):
+    return getattr(api.settings, "language", "en")
+
+
+def edge_voice_for(api, voice):
+    """The edge-tts stand-in for a Gemini voice, in the run's language."""
+    if language_of(api) == "tr":
+        return EDGE_FALLBACK.get(voice, "Ahmet")
+    return EDGE_DEFAULT.get(language_of(api), "Christopher")
 
 
 def read_wave(path):
@@ -98,22 +115,22 @@ def synthesize(api, text, voice, style, path):
     if voice in EDGE_VOICE_IDS:
         return edge_synthesize(text, voice, path)
     if getattr(api, "tts_fallback", False):
-        return edge_synthesize(text, EDGE_FALLBACK.get(voice, "Ahmet"), path)
+        return edge_synthesize(text, edge_voice_for(api, voice), path)
     try:
         return gemini_synthesize(api, text, voice, style, path)
     except ProviderOverloaded as error:
         api.tts_fallback = True
         api.note(f"Gemini TTS yanıt vermiyor ({str(error)[:120]}); edge-tts sesine geçildi.")
-        return edge_synthesize(text, EDGE_FALLBACK.get(voice, "Ahmet"), path)
+        return edge_synthesize(text, edge_voice_for(api, voice), path)
 
 
 def gemini_synthesize(api, text, voice, style, path):
-    prompt = f"""Read ONLY the exact Turkish text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
+    prompt = f"""Read ONLY the exact {language_name(api)} text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
-Fluent natural Turkish, confident comic-story energy, varied emphasis, short dramatic pauses, consistent narrator identity. Clear English proper names within Turkish. No newsreader monotone, shouting, growling or whispering. Roughly 125–150 Turkish words/minute.
+Fluent natural {language_name(api)}, confident comic-story energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.
 <transcript>{text}</transcript>"""
     response = api.request(
-        "Türkçe ses " + voice,
+        "Ses " + voice,
         lambda: api.client.models.generate_content(
             model=api.settings.tts_model,
             contents=prompt,
@@ -163,7 +180,7 @@ Fluent natural Turkish, confident comic-story energy, varied emphasis, short dra
     return path
 
 
-def transcribe(path, model, diagnostics):
+def transcribe(path, model, diagnostics, language="en"):
     key = os.getenv("GROQ_API_KEY", "").strip()
     if not key:
         raise SpeechFailure("GROQ_API_KEY bu çalışmaya aktarılmamış.")
@@ -174,7 +191,7 @@ def transcribe(path, model, diagnostics):
         response = client.audio.transcriptions.create(
             file=source,
             model=model,
-            language="tr",
+            language=language,
             response_format="verbose_json",
             timestamp_granularities=["word", "segment"],
             temperature=0,
@@ -195,7 +212,7 @@ def align_clip(api, path, text, directory):
     for i, model in enumerate(models):
         api.check()
         try:
-            raw = transcribe(path, model, directory / f"asr_{i + 1}_raw.json")
+            raw = transcribe(path, model, directory / f"asr_{i + 1}_raw.json", language_of(api))
             words, metrics = align_words(text, raw, duration)
             save_json(
                 directory / f"asr_{i + 1}_alignment.json",
@@ -222,7 +239,7 @@ def select_voice(api, style, cache):
         save_json(api.directory / "voice_selection.json", result)
         return result
     if getattr(api, "tts_fallback", False):
-        result = {"voice": "Ahmet", "selection": "edge_fallback"}
+        result = {"voice": EDGE_DEFAULT.get(language_of(api), "Christopher"), "selection": "edge_fallback"}
         save_json(api.directory / "voice_selection.json", result)
         return result
     key = hashlib.sha256(
@@ -232,7 +249,8 @@ def select_voice(api, style, cache):
                 api.settings.whisper_model,
                 api.settings.alignment_threshold,
                 style.get("narrator_delivery"),
-                AUDITION_TEXT,
+                AUDITION_TEXTS.get(language_of(api), AUDITION_TEXT),
+                language_of(api),
             ],
             ensure_ascii=False,
         ).encode()
@@ -251,16 +269,15 @@ def select_voice(api, style, cache):
         if getattr(api, "tts_fallback", False):
             break
         try:
-            path = synthesize(
-                api, AUDITION_TEXT, name, style, directory / (name + ".wav")
-            )
-            alignment[name] = align_clip(api, path, AUDITION_TEXT, directory / name)["metrics"]["score"]
+            text = AUDITION_TEXTS.get(language_of(api), AUDITION_TEXT)
+            path = synthesize(api, text, name, style, directory / (name + ".wav"))
+            alignment[name] = align_clip(api, path, text, directory / name)["metrics"]["score"]
             viable[name] = path
         except SpeechFailure as error:
             errors[name] = str(error)
     save_json(directory / "failed_auditions.json", errors)
     if getattr(api, "tts_fallback", False):
-        result = {"voice": "Ahmet", "selection": "edge_fallback", "errors": errors}
+        result = {"voice": EDGE_DEFAULT.get(language_of(api), "Christopher"), "selection": "edge_fallback", "errors": errors}
         save_json(api.directory / "voice_selection.json", result)
         return result
     if not viable:
@@ -270,8 +287,8 @@ def select_voice(api, style, cache):
     try:
         judged = api.json(
             "Türkçe ses karşılaştırması",
-            f"""Listen to these SAME Turkish passages. Rank only supplied recordings from actual audio, never voice names. Assess natural Turkish pronunciation, proper names, engaging storytelling, clear articulation and target delivery: {style.get("narrator_delivery", "")}
-Return {{"voices":[{{"voice":"","naturalness":0,"pronunciation":0,"energy":0,"reason":"Turkish audible evidence"}}]}}. Scores 0..100.""",
+            f"""Listen to these SAME {language_name(api)} passages. Rank only supplied recordings from actual audio, never voice names. Assess natural {language_name(api)} pronunciation, proper names, engaging storytelling, clear articulation and target delivery: {style.get("narrator_delivery", "")}
+Return {{"voices":[{{"voice":"","naturalness":0,"pronunciation":0,"energy":0,"reason":"{language_name(api)} audible evidence"}}]}}. Scores 0..100.""",
             audio=list(viable.items()),
             list_key="voices",
         )

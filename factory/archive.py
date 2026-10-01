@@ -27,7 +27,7 @@ from PIL import Image, ImageOps
 
 from .api import SourceUnavailable
 from .config import ROOT
-from .core import save_json
+from .core import save_json, language_name
 from .research import clean, public_url
 
 SEARCH_URL = "https://archive.org/advancedsearch.php"
@@ -149,6 +149,8 @@ def build_query(topic, settings):
     base = settings.archive_query
     date = f"date:[1920-01-01 TO {settings.archive_max_year}-12-31]"
     parts = [f"({base})", date]
+    if not topic and settings.channel_theme == "superheroes" and settings.archive_theme_query.strip():
+        parts.append(f"({settings.archive_theme_query})")
     if topic:
         # A free-text topic narrows the archive search instead of the open web.
         safe = re.sub(r'[^\w\s\-\'"]', " ", topic)
@@ -313,9 +315,9 @@ def shortlist(api, topic, used, archive=None):
     allowed = {item["identifier"]: item for item in items[:60]}
     payload = api.json(
         "Arşiv sayı adayları",
-        f"""Below are Internet Archive comic issues whose metadata declares them public domain. Pick up to {api.settings.max_events} issues most likely to contain ONE strong, surprising, self-contained Golden Age story (crime, horror, jungle, sci-fi, superhero, romance twists all qualify). Use ONLY the listed identifiers; invent nothing. Requested topic: {topic or "automatic"}.
+        f"""Below are Internet Archive comic issues whose metadata declares them public domain. Pick up to {api.settings.max_events} issues most likely to contain ONE strong, surprising, self-contained Golden Age story. Channel focus: {api.settings.channel_theme} — strongly prefer SUPERHERO issues (costumed heroes, villains, origins, deaths, betrayals, shocking twists, bizarre powers); crime/horror only if no hero issue fits. Judge by title/series/description which issue promises the most attention-grabbing event for a global YouTube Shorts audience. Use ONLY the listed identifiers; invent nothing. Requested topic: {topic or "automatic"}.
 {json.dumps(list(allowed.values()), ensure_ascii=False)}
-Return {{"events":[{{"identifier":"","title":"Turkish hook title","series":"exact original series title","issue":"issue number or empty","summary":"Turkish one-sentence expectation based only on metadata","importance":0,"popularity":0,"niche":0}}]}}. Scores 0..100 are editorial judgments.""",
+Return {{"events":[{{"identifier":"","title":"{language_name(api)} hook title (curiosity-driven, no clickbait lies)","series":"exact original series title","issue":"issue number or empty","summary":"Turkish one-sentence expectation based only on metadata","importance":0,"popularity":0,"niche":0}}]}}. Scores 0..100 are editorial judgments.""",
         list_key="events",
     )
     candidates = []

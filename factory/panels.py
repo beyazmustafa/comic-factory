@@ -2,7 +2,7 @@ import json
 import math
 from PIL import Image
 from .api import SourceUnavailable
-from .core import file_hash, save_json
+from .core import file_hash, save_json, language_name
 from .research import clean
 
 
@@ -49,7 +49,7 @@ def catalog(api, event, pages, articles):
             f"""Read these ACTUAL page images and fetched article text. Target exact event: {json.dumps(event, ensure_ascii=False)}
 SOURCES: {json.dumps(context, ensure_ascii=False)}
 The source must explicitly identify the exact series/issue/year. Matching a character alone is insufficient. Reject covers, fan art, ads, unrelated issues and promotional collages.
-Return {{"pages":[{{"page_id":"","belongs_to_issue":true,"source_evidence_quote":"exact >=18-character substring identifying the issue from article","page_role":"interior|cover|other","confidence":0,"panels":[{{"bbox":[left,top,right,bottom],"reading_order":1,"characters":[],"action":"only visible action in Turkish","ocr":"exact visible original dialogue or empty","narrative_fact":"Turkish supported fact","confidence":0}}],"facts":[{{"text":"Turkish event fact","quote":"exact article substring supporting it"}}]}}]}}.
+Return {{"pages":[{{"page_id":"","belongs_to_issue":true,"source_evidence_quote":"exact >=18-character substring identifying the issue from article","page_role":"interior|cover|other","confidence":0,"panels":[{{"bbox":[left,top,right,bottom],"reading_order":1,"characters":[],"action":"only visible action in {language_name(api)}","ocr":"exact visible original dialogue or empty","narrative_fact":"{language_name(api)} supported fact","confidence":0}}],"facts":[{{"text":"{language_name(api)} event fact","quote":"exact article substring supporting it"}}]}}]}}.
 All confidence values 0..100. Coordinates are fractions 0..1 in original image, x then y. Give 1..8 panels in reading order; never infer unseen action or missing ending.""",
             images=[(p["id"], api.directory / p["file"]) for p in batch],
             list_key="pages",
@@ -161,9 +161,9 @@ def verify_shots(api, shots, inventory, facts):
         ]
         review = api.json(
             "Cümle-panel eşleşmesi",
-            f"""Independently audit the Turkish narration against its ACTUAL cropped panel and provided evidence. Matching character alone is insufficient. Claimed action must be visible; context lines must clearly sound like context and be supported by quoted evidence. Check crop preserves faces/action/relevant dialogue.
+            f"""Independently audit the {language_name(api)} narration against its ACTUAL cropped panel and provided evidence. Matching character alone is insufficient. Claimed action must be visible; context lines must clearly sound like context and be supported by quoted evidence. Check crop preserves faces/action/relevant dialogue.
 {json.dumps(data, ensure_ascii=False)}
-Return {{"shots":[{{"shot_id":"","match_score":0,"supported":true,"crop_ok":true,"reason":"Turkish specific explanation"}}]}}. Scores 0..100; 90+ only for clear specific matches.""",
+Return {{"shots":[{{"shot_id":"","match_score":0,"supported":true,"crop_ok":true,"reason":"{language_name(api)} specific explanation"}}]}}. Scores 0..100; 90+ only for clear specific matches.""",
             images=[
                 (s["id"], api.directory / pl[s["panel_id"]]["file"]) for s in batch
             ],
@@ -360,7 +360,7 @@ def catalog_archive(api, event, pages, articles):
             f"""These are ACTUAL interior pages of the public-domain issue {json.dumps({k: event.get(k) for k in ('title', 'series', 'issue', 'year', 'publisher')}, ensure_ascii=False)}. Panels are already cut and numbered with red labels (counts per page: {json.dumps(layout)}). Do not propose coordinates.
 For every numbered panel describe ONLY what is visible. Transcribe visible dialogue/captions exactly (original language). Mark keep=false for ads, text pages, mislabelled boxes, half panels or boxes that cut faces/speech balloons.
 Also list story facts established by these pages; each fact must quote exact visible text (>=18 characters) from a balloon or caption on these pages.
-Return {{"pages":[{{"page_id":"","page_role":"interior|cover|ad|text|other","panels":[{{"number":1,"keep":true,"characters":[],"action":"visible action in Turkish","ocr":"exact visible text or empty","narrative_fact":"Turkish supported fact","confidence":0}}],"facts":[{{"text":"Turkish story fact","quote":"exact visible text"}}]}}]}}. Confidence 0..100.""",
+Return {{"pages":[{{"page_id":"","page_role":"interior|cover|ad|text|other","panels":[{{"number":1,"keep":true,"characters":[],"action":"visible action in {language_name(api)}","ocr":"exact visible text or empty","narrative_fact":"{language_name(api)} supported fact","confidence":0}}],"facts":[{{"text":"{language_name(api)} story fact","quote":"exact visible text"}}]}}]}}. Confidence 0..100.""",
             images=images,
             list_key="pages",
         )

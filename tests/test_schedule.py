@@ -115,7 +115,7 @@ class VoiceFallbackTests(unittest.TestCase):
         from factory.api import ProviderOverloaded
 
         with tempfile.TemporaryDirectory() as temporary:
-            api = SimpleNamespace(settings=Mock(tts_model="t"), note=Mock(), directory=Path(temporary))
+            api = SimpleNamespace(settings=Mock(tts_model="t", language="tr"), note=Mock(), directory=Path(temporary))
             edge = patch.object(voice, "edge_synthesize", side_effect=lambda text, name, path: (name, path))
             gemini = patch.object(voice, "gemini_synthesize", side_effect=ProviderOverloaded("503"))
             with edge as edge_mock, gemini:
@@ -247,3 +247,59 @@ class JsonRepairTests(unittest.TestCase):
         from factory.api import version_key
         names = ["gemini-3.5-flash-lite", "gemini-3-flash-preview", "gemini-2.5-pro", "gemini-3.1-flash-lite"]
         self.assertEqual(sorted(names, key=version_key, reverse=True)[-2:], ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"])
+
+
+class LearningTests(unittest.TestCase):
+    def test_playbook_and_experiment_are_written_and_fed_to_writer(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory import learning
+        from factory.config import Settings
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            with patch.object(learning, "ROOT", root):
+                api = SimpleNamespace(settings=Settings(), directory=root / "run", note=Mock(), run_id="42", json=Mock(return_value={
+                    "playbook": "- Hook in 8 words.\n- End on the strongest panel.\n- Red emphasis only for mortal danger, max 3 per video.",
+                    "experiment": {"name": "short hook", "change": "First sentence under 8 words.", "rationale": "Retention."},
+                    "verdict_on_last_experiment": "unknown",
+                }))
+                extras = learning.evolve(api, {})
+                self.assertIn("Hook in 8 words", extras["playbook"])
+                self.assertEqual(extras["experiment"]["name"], "short hook")
+                self.assertTrue((root / "data" / "history" / "playbook.md").is_file())
+                experiments = json.loads((root / "data" / "history" / "experiments.json").read_text())
+                self.assertEqual(experiments[0]["run_id"], "42")
+                # A publication is recorded with the run's profile and the experiment it carried.
+                run = root / "run"
+                run.mkdir(parents=True, exist_ok=True)
+                (run / "run.json").write_text(json.dumps({"run_id": "42", "duration": 100.0, "voice": "Christopher",
+                                                           "event": {"title": "T", "series": "S", "issue": "1", "year": 1950, "publisher": "Fox"}}))
+                (run / "metadata.json").write_text(json.dumps({"script": {"title": "Hero Falls", "shots": [
+                    {"narration": "The hero falls.", "emphasis": "danger"}, {"narration": "Nobody saw it coming at all.", "emphasis": "normal"}]}}))
+                (run / "quality_review.json").write_text(json.dumps({"review_mode": "frames", "subtitle_sync": 97, "issues": ["x"]}))
+                learning.record_publication(run, "youtube", "abc123")
+                learning.record_publication(run, "youtube", "abc123")
+                rows = learning.load_performance()
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(rows[0]["profile"]["shots"], 2)
+                self.assertEqual(rows[0]["experiment"]["name"], "short hook")
+
+    def test_model_failure_keeps_existing_playbook(self):
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory import learning
+        from factory.config import Settings
+
+        with tempfile.TemporaryDirectory() as temporary:
+            with patch.object(learning, "ROOT", Path(temporary)):
+                api = SimpleNamespace(settings=Settings(), directory=Path(temporary) / "run", note=Mock(), run_id="1",
+                                      json=Mock(side_effect=RuntimeError("down")))
+                extras = learning.evolve(api, {})
+                self.assertIn("Hook", extras["playbook"])
+                self.assertIsNone(extras["experiment"])

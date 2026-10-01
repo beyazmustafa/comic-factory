@@ -194,10 +194,15 @@ jobs:
         } > data/logs/last_run.txt
         # data/history is tracked; everything else under data/ is ignored, so a
         # hard reset to the remote branch only refreshes the history files.
+        # The run may have updated tracked history files (playbook, performance,
+        # experiments); keep a snapshot so the reset below cannot discard them.
+        rm -rf data/logs/history_snapshot && mkdir -p data/logs/history_snapshot
+        cp -r data/history/. data/logs/history_snapshot/ 2>/dev/null || true
         for attempt in 1 2 3 4; do
           git fetch origin "${{ github.ref_name }}"
           git reset -q --hard "origin/${{ github.ref_name }}"
           mkdir -p data/history
+          cp -r data/logs/history_snapshot/. data/history/
           cp data/logs/last_run.txt data/history/last_run.txt
           git add -A data/history
           if git diff --cached --quiet; then echo "Kayıt değişmedi."; break; fi

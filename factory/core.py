@@ -319,3 +319,13 @@ def check_video(video: Path, audio: Path) -> dict:
         "pixel_format": picture.get("pix_fmt"),
         "audio_codec": sound.get("codec_name"),
     }
+
+
+LANGUAGE_NAMES = {"en": "English", "tr": "Turkish"}
+
+
+def language_name(api) -> str:
+    """Human name of the run language, tolerant of light-weight test doubles."""
+    settings = getattr(api, "settings", None)
+    code = getattr(settings, "language", "en")
+    return LANGUAGE_NAMES.get(code if isinstance(code, str) else "en", "English")

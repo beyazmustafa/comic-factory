@@ -163,7 +163,7 @@ def load_video_metadata() -> tuple[str, str, list[str]]:
             tag = clean_text(hashtag).lstrip("#")
             if tag and tag not in tags:
                 tags.append(tag)
-    shorts_tags = ["shorts", "comic", "comics", "çizgi roman"]
+    shorts_tags = ["shorts", "comics", "comic books", "superhero", "golden age comics", "comic recap"]
     for tag in shorts_tags:
         if tag not in tags:
             tags.append(tag)
@@ -246,8 +246,8 @@ def upload_video(youtube: Any, title: str, description: str, tags: list[str]) ->
         "title": title,
         "description": description,
         "categoryId": CATEGORY_ID,
-        "defaultLanguage": "tr",
-        "defaultAudioLanguage": "tr",
+        "defaultLanguage": os.getenv("FACTORY_LANGUAGE", "en"),
+        "defaultAudioLanguage": os.getenv("FACTORY_LANGUAGE", "en"),
     }
     if tags:
         snippet["tags"] = tags[:25]

@@ -20,5 +20,8 @@
   "archive_max_year": 1963,
   "archive_scan_limit": 72,
   "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
-  "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct"
+  "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
+  "language": "en",
+  "channel_theme": "superheroes",
+  "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural"
 }

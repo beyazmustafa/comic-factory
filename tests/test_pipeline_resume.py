@@ -3,7 +3,7 @@ import os
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 from PIL import Image
-from factory import archive, core, panels, research, story, studio, voice
+from factory import archive, core, learning, panels, research, story, studio, voice
 from factory.api import SpeechFailure
 from factory.config import Settings
 from tests.test_studio import TemporaryTest, script_fixture, style
@@ -21,6 +21,7 @@ class PipelineResumeTests(TemporaryTest):
             "year": 2000,
         }
         self.enterContext(patch.object(studio, "ROOT", self.root))
+        self.enterContext(patch.object(learning, "ROOT", self.root))
         self.enterContext(
             patch.dict(os.environ, {"GROQ_API_KEY": "fixture"}, clear=True)
         )
@@ -103,6 +104,7 @@ class PipelineResumeTests(TemporaryTest):
             "url": "https://archive.org/details/hand-of-fate-23",
         }
         self.enterContext(patch.object(studio, "ROOT", self.root))
+        self.enterContext(patch.object(learning, "ROOT", self.root))
         self.enterContext(patch.object(archive, "ROOT", self.root))
         self.enterContext(
             patch.dict(os.environ, {"GROQ_API_KEY": "fixture"}, clear=True)

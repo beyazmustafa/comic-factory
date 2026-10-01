@@ -37,6 +37,12 @@ Her iki kademede de hâlâ korunan markaların adı geçiyorsa (Disney, MAD, Mar
 
 Sorgu `factory.json → archive_query` ile değişir (varsayılan `mediatype:texts AND collection:(comics)`). Popüler kayıtlar listenin başında toplandığı için her koşu ilk sayfaya ek olarak iki **rastgele** sonuç sayfası okur; böylece günlük koşular farklı dilimler görür. Elle çalıştırırken "Konu" alanı arşiv aramasını daraltır (ör. `jungle`, `crime`, `horror`, `science fiction`, `Fox`).
 
+## Dil, konu ve kendi kendine öğrenme
+
+- `factory.json → language` (`en` varsayılan): anlatım, altyazı, ASR dili ve YouTube dil etiketi buradan gelir. Ses: Gemini TTS; kota dolarsa edge-tts `en-US-ChristopherNeural` (derin, enerjik anlatıcı), Türkçe için `tr-TR-AhmetNeural`.
+- `channel_theme: superheroes`: arşiv araması süper kahraman sayılarına (`archive_theme_query`) daraltılır; model, bir Shorts izleyicisi için en çarpıcı olayı vadeden sayıyı seçer.
+- Öğrenme döngüsü (`factory/learning.py`): her yüklenen video `data/history/performance.json` içine kurgu profili (kanca uzunluğu, sahne sayısı, vurgu dağılımı, süre) ve kalite raporuyla yazılır; sonraki koşular YouTube'dan izlenme/beğeni/yorum sayılarını çeker (saat başına izlenme ile normalize). Her koşunun başında model bu tabloyu, son kalite raporunu ve `data/history/playbook.md` dosyasını okuyup oyun kitabını yeniden yazar ve o video için **tek bir ölçülebilir deney** seçer (`data/history/experiments.json`). Senaryo yazarı oyun kitabı + deneyi alır; bir sonraki koşu deneyin rakamlarla sonucunu görür ve "tutuldu/düştü" kararı verir. Dosyalar repoya commit edildiği için ilerleme kalıcıdır ve elle düzenlenebilir (oyun kitabına kendi kuralını yazabilirsin).
+
 ## Yoğunluk hatalarına karşı sağlayıcı zinciri
 
 Tek bir modele bağlı kalınmaz; her istek sırayla şunları dener (`factory/api.py`):

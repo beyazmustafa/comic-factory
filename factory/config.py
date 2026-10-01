@@ -25,7 +25,7 @@ class Settings:
     # Vision-capable Groq model used when every Gemini model is unavailable.
     groq_model: str = "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct"
     # Free Microsoft neural voices used when Gemini TTS is unavailable.
-    edge_voices: str = "tr-TR-AhmetNeural,tr-TR-EmelNeural"
+    edge_voices: str = "en-US-ChristopherNeural,en-US-GuyNeural"
     tts_model: str = "gemini-3.1-flash-tts-preview"
     whisper_model: str = "whisper-large-v3"
     voice: str = "auto"
@@ -34,6 +34,15 @@ class Settings:
     caption_offset: float = 0
     # "archive": complete public-domain issues from the Internet Archive (default).
     # "web": the older publisher-preview search path.
+    # Narration/caption language and the channel's editorial focus.
+    language: str = "en"
+    channel_theme: str = "superheroes"
+    # Extra Internet Archive filter applied when channel_theme is superheroes.
+    archive_theme_query: str = (
+        'subject:(superhero OR superheroes OR "super hero" OR "super heroes" OR heroes) OR '
+        'title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR '
+        '"amazing man" OR wonder OR captain OR marvel OR "black" OR "blue" OR "green" OR mask OR phantom OR atom OR "super")'
+    )
     source: str = "archive"
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
@@ -83,7 +92,7 @@ class Settings:
             value = getattr(result, key)
             if type(value) not in (int, float) or not low <= value <= high:
                 raise ValueError(f"Geçersiz {key}")
-        if result.voice not in {"auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"}:
+        if result.voice not in {"auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel", "Christopher", "Guy"}:
             raise ValueError("Desteklenmeyen ses.")
         for key in (
             "gemini_model",
@@ -91,12 +100,17 @@ class Settings:
             "whisper_model",
             "music_file",
             "archive_query",
+            "archive_theme_query",
+            "language",
+            "channel_theme",
             "gemini_fallback_models",
             "groq_model",
             "edge_voices",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")
+        if result.language not in {"en", "tr"}:
+            raise ValueError("language en veya tr olmalı.")
         if result.source not in {"archive", "web"}:
             raise ValueError("source archive veya web olmalı.")
         if not result.archive_query.strip():

@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import archive, research, panels, story, voice, render, quality
+from . import archive, learning, research, panels, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -91,7 +91,12 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             )
             save_json(directory / "run.json", manifest)
             return directory
-        stage("Olay, gerçek sayfalar ve Türkçe senaryo")
+        stage("Öğrenme: oyun kitabı ve deney")
+        api.run_id = manifest["run_id"]
+        learned = learning.evolve(api, style)
+        style = {**style, **learned}
+        save_json(directory / "editing_profile.json", style)
+        stage("Olay, gerçek sayfalar ve senaryo")
         story_key = signature(
             [
                 topic,
@@ -292,22 +297,24 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         sources = sorted({p["source_url"] for p in inventory if p["id"] in used_panels})
         event = bundle["event"]
         licence = (
-            "\nSayfalar: Internet Archive, kamu malı (public domain) olarak işaretlenmiş sayı."
+            "\nPages: public-domain Golden Age issue scanned on the Internet Archive."
             if settings.source == "archive"
             else ""
         )
         description = (
             script["description"]
-            + f"\n\nÇizgi roman: {event['series']} #{event['issue']} ({event['year']})"
+            + f"\n\nComic: {event['series']} #{event['issue']} ({event['year']})"
             + licence
-            + "\nKaynaklar:\n"
+            + "\nSources:\n"
             + "\n".join(sources)
         )
         hashtags = [
-            "çizgiroman",
+            "comics",
             "shorts",
+            "superhero" if settings.channel_theme == "superheroes" else "comicbooks",
             str(event.get("publisher", "comics")).lower().replace(" ", ""),
         ]
+        os.environ["FACTORY_LANGUAGE"] = settings.language
         metadata = {
             "script": {
                 **script,
