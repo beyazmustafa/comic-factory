@@ -23,7 +23,8 @@ GROQ_EXCLUDE = ("whisper", "tts", "guard", "embedding", "orpheus", "playai", "co
 def version_key(name):
     numbers = [float(n) for n in re.findall(r"\d+(?:\.\d+)?", name)]
     lower = name.casefold()
-    return (numbers[0] if numbers else 0.0, "flash" in lower, "lite" not in lower, "preview" not in lower, "pro" in lower, name)
+    # Full models of any version beat "lite" ones: lite models drop JSON keys.
+    return ("lite" not in lower, numbers[0] if numbers else 0.0, "flash" in lower, "preview" not in lower, "pro" in lower, name)
 
 
 class FactoryError(RuntimeError):
@@ -52,18 +53,43 @@ def is_model_unavailable(error):
     return code == 404 or "not_found" in text or "no longer available" in text or "is not found" in text
 
 
+ORPHAN_KEYS = {"panel": "panel_id", "shot": "shot_id", "page": "page_id", "fact": "fact_id", "source": "source_id"}
+
+
+def repair_json(text):
+    """Fix the one systematic defect small models produce in JSON mode: an
+    object that starts with a bare id string instead of "<name>_id": "...".
+    {"shot_036", "match_score": 95} → {"shot_id": "shot_036", "match_score": 95}
+    """
+    def fix(match):
+        value = match.group(1)
+        kind = value.split("_")[0]
+        key = ORPHAN_KEYS.get(kind, "id")
+        return '{"%s": "%s",' % (key, value)
+
+    return re.sub(r'\{\s*"((?:panel|shot|page|fact|source)_[0-9]{2,4})"\s*,', fix, text)
+
+
 def parse_object(text, list_key=None):
     fence = chr(96) * 3
     cleaned = re.sub("^" + fence + r"(?:json)?\s*|\s*" + fence + "$", "", text.strip())
-    try:
-        value = json.loads(cleaned)
-    except ValueError:
-        # Prose around the object, or a fence followed by commentary: take the
-        # outermost {...} span and try once more before giving up.
-        start, end = cleaned.find("{"), cleaned.rfind("}")
-        if start < 0 or end <= start:
-            raise
-        value = json.loads(cleaned[start : end + 1])
+    start, end = cleaned.find("{"), cleaned.rfind("}")
+    lstart, lend = cleaned.find("["), cleaned.rfind("]")
+    candidates = [cleaned]
+    if start >= 0 and end > start:
+        candidates.append(cleaned[start : end + 1])
+    if lstart >= 0 and lend > lstart and (start < 0 or lstart < start):
+        candidates.append(cleaned[lstart : lend + 1])
+    candidates += [repair_json(c) for c in list(candidates)]
+    value, error = None, None
+    for candidate in candidates:
+        try:
+            value = json.loads(candidate)
+            break
+        except ValueError as failure:
+            error = failure
+    if value is None:
+        raise error if error else ValueError("JSON yok.")
     # Some providers return the requested collection without its outer object.
     # Normalize only when the caller explicitly names that collection.
     if isinstance(value, list) and list_key and all(isinstance(item, dict) for item in value):
@@ -397,6 +423,15 @@ class Api:
 
     def _generate_text(self, label, prompt, images, audio, video_uri, videos, generate, contents):
         provider = "gemini"
+        live = self.live_models()
+        text_only = not (images or audio or video_uri or videos)
+        if text_only and self.groq_text_models and (not live or "lite" in live[0].casefold()):
+            # Only small Gemini models are left: a strong Groq text model writes better JSON.
+            try:
+                self.note(f"{label}: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.")
+                return self.groq_json(label, prompt, []), "groq"
+            except (ProviderOverloaded, FactoryError) as error:
+                self.note(f"{label}: Groq başarısız ({str(error)[:100]}); Gemini'ye dönüldü.")
         try:
             response = self.gemini(label, generate)
             text = ""

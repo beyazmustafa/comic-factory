@@ -232,3 +232,18 @@ class JsonRobustnessTests(unittest.TestCase):
             from factory.api import FactoryError
             with self.assertRaises(FactoryError):
                 api.json("Deneme", "Return JSON", images=[("p", picture)])
+
+
+class JsonRepairTests(unittest.TestCase):
+    def test_orphan_ids_are_restored(self):
+        from factory.api import parse_object
+        broken = '[{"shot_id": "shot_000", "match_score": 90}, {"shot_036", "match_score": 95, "supported": true}]'
+        value = parse_object(broken, list_key="shots")
+        self.assertEqual(value["shots"][1]["shot_id"], "shot_036")
+        story = '{"shots": [{"panel_003", "narration": "x", "fact_ids": ["fact_001"]}]}'
+        self.assertEqual(parse_object(story)["shots"][0]["panel_id"], "panel_003")
+
+    def test_lite_models_sort_last(self):
+        from factory.api import version_key
+        names = ["gemini-3.5-flash-lite", "gemini-3-flash-preview", "gemini-2.5-pro", "gemini-3.1-flash-lite"]
+        self.assertEqual(sorted(names, key=version_key, reverse=True)[-2:], ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"])

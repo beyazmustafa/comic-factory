@@ -169,7 +169,12 @@ Return {{"shots":[{{"shot_id":"","match_score":0,"supported":true,"crop_ok":true
             ],
             list_key="shots",
         )
-        reports.extend(review.get("shots", []))
+        rows = [r for r in review.get("shots", []) if isinstance(r, dict)]
+        if rows and len(rows) == len(batch) and not all(r.get("shot_id") for r in rows):
+            # Same order as sent: restore ids a small model dropped.
+            for row, shot in zip(rows, batch):
+                row.setdefault("shot_id", shot["id"])
+        reports.extend(rows)
     by_id = {r.get("shot_id"): r for r in reports if isinstance(r, dict)}
     failures = []
     for shot in shots:
