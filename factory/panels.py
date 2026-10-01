@@ -200,11 +200,17 @@ from PIL import ImageDraw
 
 
 def _light_mask(gray, paper):
-    return gray >= max(150, paper - 38)
+    # Yellowed Golden Age paper with JPEG noise: be generous about "paper".
+    return gray >= max(140, paper - 50)
 
 
-def _gutter_runs(fraction, minimum_run, threshold=0.965):
-    """Return (start, end) index ranges where almost every pixel is paper."""
+def _gutter_runs(fraction, minimum_run, threshold=0.9, dark=None, reach=8):
+    """Return (start, end) index ranges where almost every pixel is paper.
+
+    With `dark` (per-row/column fraction of ink-dark pixels), a run counts only
+    when a panel border line sits within `reach` pixels on at least one side;
+    pale sky inside a panel has no border next to it and is left alone.
+    """
     runs, start = [], None
     for index, value in enumerate(fraction):
         if value >= threshold:
@@ -216,7 +222,15 @@ def _gutter_runs(fraction, minimum_run, threshold=0.965):
             start = None
     if start is not None and len(fraction) - start >= minimum_run:
         runs.append((start, len(fraction)))
-    return runs
+    if dark is None:
+        return runs
+    kept = []
+    for s, e in runs:
+        before = dark[max(0, s - reach) : s].max() if s > 0 else 0.0
+        after = dark[e : e + reach].max() if e < len(dark) else 0.0
+        if max(before, after) >= 0.5:
+            kept.append((s, e))
+    return kept
 
 
 def _content_box(mask):
@@ -227,7 +241,7 @@ def _content_box(mask):
     return int(cols[0]), int(rows[0]), int(cols[-1]) + 1, int(rows[-1]) + 1
 
 
-def _split(mask, box, axis, depth, output, min_w, min_h, fallback=False):
+def _split(mask, box, axis, depth, output, min_w, min_h, fallback=False, ink=None):
     l, t, r, b = box
     region = mask[t:b, l:r]
     if region.size == 0:
@@ -242,23 +256,24 @@ def _split(mask, box, axis, depth, output, min_w, min_h, fallback=False):
         output.append((l, t, r, b))
         return
     fraction = region.mean(axis=1 if axis == 0 else 0)
+    dark = ink[t:b, l:r].mean(axis=1 if axis == 0 else 0) if ink is not None else None
     length = height if axis == 0 else width
     runs = [
         (s, e)
-        for s, e in _gutter_runs(fraction, max(3, length // 150))
+        for s, e in _gutter_runs(fraction, max(2, length // 400), dark=dark)
         if s > (min_h if axis == 0 else min_w) * 0.5 and e < length - (min_h if axis == 0 else min_w) * 0.5
     ]
     if not runs:
         if not fallback and depth < 4:
             # No gutter this way: try the other direction once before accepting.
-            _split(mask, (l, t, r, b), 1 - axis, depth, output, min_w, min_h, fallback=True)
+            _split(mask, (l, t, r, b), 1 - axis, depth, output, min_w, min_h, fallback=True, ink=ink)
         else:
             output.append((l, t, r, b))
         return
     cuts = [0] + [(s + e) // 2 for s, e in runs] + [length]
     for start, end in zip(cuts, cuts[1:]):
         child = (l, t + start, r, t + end) if axis == 0 else (l + start, t, l + end, b)
-        _split(mask, child, 1 - axis, depth + 1, output, min_w, min_h)
+        _split(mask, child, 1 - axis, depth + 1, output, min_w, min_h, ink=ink)
 
 
 def segment_page(picture, limit=12):
@@ -269,11 +284,12 @@ def segment_page(picture, limit=12):
     height, width = gray.shape
     paper = float(np.percentile(gray, 88))
     mask = _light_mask(gray, paper)
+    ink = gray < max(60, paper - 110)  # panel border lines and lettering
     content = _content_box(mask)
     if content is None:
         return []
     boxes = []
-    _split(mask, content, 0, 0, boxes, width * 0.12, height * 0.08)
+    _split(mask, content, 0, 0, boxes, width * 0.12, height * 0.08, ink=ink)
     cleaned = []
     for l, t, r, b in boxes:
         w, h = r - l, b - t
@@ -358,7 +374,7 @@ def catalog_archive(api, event, pages, articles):
         data = api.json(
             "Arşiv sayfası panelleri",
             f"""These are ACTUAL interior pages of the public-domain issue {json.dumps({k: event.get(k) for k in ('title', 'series', 'issue', 'year', 'publisher')}, ensure_ascii=False)}. Panels are already cut and numbered with red labels (counts per page: {json.dumps(layout)}). Do not propose coordinates.
-For every numbered panel describe ONLY what is visible. Transcribe visible dialogue/captions exactly (original language). Mark keep=false for ads, text pages, mislabelled boxes, half panels or boxes that cut faces/speech balloons.
+For every numbered panel describe ONLY what is visible. Transcribe visible dialogue/captions exactly (original language). Mark keep=false for ads, text pages, mislabelled boxes, half panels, boxes that cut faces/speech balloons, and boxes that contain MORE THAN ONE panel (a video shot must show exactly one panel).
 Also list story facts established by these pages; each fact must quote exact visible text (>=18 characters) from a balloon or caption on these pages.
 Return {{"pages":[{{"page_id":"","page_role":"interior|cover|ad|text|other","panels":[{{"number":1,"keep":true,"characters":[],"action":"visible action in {language_name(api)}","ocr":"exact visible text or empty","narrative_fact":"{language_name(api)} supported fact","confidence":0}}],"facts":[{{"text":"{language_name(api)} story fact","quote":"exact visible text"}}]}}]}}. Confidence 0..100.""",
             images=images,
