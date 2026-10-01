@@ -1,11 +1,11 @@
-run_id: 36933358927  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261001T221115860734Z/run.json
+run_id: 36935841783  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261001T223521534284Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,59 +36,28 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36933358927",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "edbd8e60020cefa0ffc436362f60cb9800cf7dd49d4260811054b7eec4d4500b",
-  "metadata_sha256": "a343e95da55deb0956504ab0b845ac9e26f9785ad87b4c0699fc34fadcaeccad",
-  "quality_sha256": "7e32c50c8dc7333755f50458aff2092b397c9277310defd8ee600107d1962da4",
-  "api_calls": 81,
-  "duration": 46.69,
-  "voice": "Christopher",
-  "event": {
-    "identifier": "weird-comics-004",
-    "title": "Weird Comics #4: Golden Age Superhero Thrills",
-    "year": 1940,
-    "publisher": "Fox Feature Syndicate",
-    "description": "Cover-to-cover scans of Weird Comics #4 (Fox, 1940). Scanned and edited by Mark Bowen. If you're a Golden Age comics collector interested in the digital preservation of these pop cultural artifacts and making them accessible to not just the few who can afford to collect these books, drop me a line at barkmowen@gmail.com so we can discuss the options you have at your disposal for safely getting your rare comics scanned!",
-    "subjects": [
-      "superhero comics",
-      "Golden Age comic books",
-      "Thor"
-    ],
-    "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
-    "downloads": 487,
-    "imagecount": 0,
-    "url": "https://archive.org/details/weird-comics-004",
-    "id": "ia_48c89938ffcbeaaf",
-    "series": "Weird Comics",
-    "issue": "4",
-    "summary": "Fox Feature Syndicate delivers a bizarre slice of 1940 superhero action and strange heroic encounters.",
-    "universe": "Golden Age (public domain)",
-    "source_urls": [
-      "https://archive.org/details/weird-comics-004"
-    ],
-    "selection_score": 78.0,
-    "_source": "archive"
-  }
+  "run_id": "36935841783",
+  "error": "FactoryError: Bitmiş videoda düzeltilmesi gereken noktalar var: turkish_narration, subtitle_sync, scene_match, delivery, visual_readability. Önizleme ve raporlar kaydedildi.",
+  "api_calls": 81
 }
---- data/runs/20261001T221115860734Z/diagnostics/provider_events.json
+--- data/runs/20261001T223521534284Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Konu adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261001T221115860734Z/diagnostics/providers.json
+--- data/runs/20261001T223521534284Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -141,69 +110,20 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T221115860734Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261001T221115860734Z/research/rejected_candidates.json
+--- data/runs/20261001T223521534284Z/audio/chunk_000/failures.json
 [
-  {
-    "event": {
-      "title": "Absolute Joker Reveals His True Form",
-      "publisher": "DC Comics",
-      "series": "Absolute Batman",
-      "issue": "15",
-      "year": 2025,
-      "universe": "Absolute Universe",
-      "characters": [
-        "The Joker",
-        "Alfred"
-      ],
-      "summary": "Jack Grimm V reveals his true form as a horrifying clown monster, showing the ability to transform himself into a blood-chilling monster.",
-      "importance": 88,
-      "popularity": 85,
-      "niche": 30,
-      "source_urls": [
-        "https://www.cbr.com/10-most-terrifying-joker-moments/"
-      ],
-      "id": "b201c67787e14d091c53",
-      "selection_score": 69.85,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
-  },
-  {
-    "event": {
-      "title": "The Joker Wears His Own Face Upside Down",
-      "publisher": "DC Comics",
-      "series": "Batman and Robin",
-      "issue": "15",
-      "year": 2013,
-      "universe": "DC Universe",
-      "characters": [
-        "The Joker",
-        "Robin"
-      ],
-      "summary": "The Joker wears his disgusting skin mask upside down to unsettle Robin, creating one of the most overwhelmingly scary visuals in DC Comics history.",
-      "importance": 85,
-      "popularity": 90,
-      "niche": 25,
-      "source_urls": [
-        "https://www.cbr.com/10-most-terrifying-joker-moments/"
-      ],
-      "id": "66a17335859f4abd9ca0",
-      "selection_score": 68.25,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
-  }
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25."
 ]
---- data/runs/20261001T221115860734Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_009", "reason": "The provided evidence for shot_009 describes the gold hoard warning rather than Grant blowing up a machine gun nest."}, {"shot_id": "shot_010", "reason": "The image shows full page 6 instead of a cropped panel, and the cited evidence regarding the gold hoard does not support the narration."}, {"shot_id": "shot_011", "reason": "The image displays the full page 7 rather than a cropped panel, and the narration embellishes beyond the quoted evidence."}, {"shot_id": "shot_012", "reason": "The image is a full page view and the cited evidence pertains to smiting clouds rather than the storm sweeping the territory."}, {"shot_id": "shot_013", "reason": "A full page image is provided instead of a cropped panel, and the evidence does not match the mountain quake action."}, {"shot_id": "shot_014", "reason": "The image shows a full page instead of a cropped panel, and the cited evidence refers to Thor's hammer rather than the bandit panic."}, {"shot_id": "shot_025", "reason": "Grant confronts Wong, but destroying his invading forces completely is not supported as Wong is shown asking where his army is."}, {"shot_id": "shot_026", "reason": "While a lightning bolt appears in the first panel, 'unstoppable divine wrath' is an unsupported exaggeration."}]}
---- data/runs/20261001T221115860734Z/diagnostics/panel_matches_2.json
-{"passed": false, "failures": [{"shot_id": "shot_007", "reason": "The image shows page 5 (shot_006 repeated), but the narration describes Wong cursing his deserting dogs and Grant riding a thunderbolt, which corresponds to multiple separate panels rather than a single coherent action matching this specific view."}, {"shot_id": "shot_011", "reason": "Although visible in the comic page, the provided evidence (fact_004) pertains to smiting clouds rather than earthquakes and bandit panic."}, {"shot_id": "shot_012", "reason": "The narration describes driving bandits into the snow, but the provided evidence (fact_005) incorrectly cites Thor's hammer attack from a different panel."}, {"shot_id": "shot_013", "reason": "The narration describes an avalanche and screaming sentry, but the provided evidence (fact_005) is misaligned with this scene."}]}
---- data/runs/20261001T221115860734Z/diagnostics/panel_matches_3.json
-{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The panel shows Grant saying the line about the hammer, but mountain demolition is shown in a separate panel on the same page."}, {"shot_id": "shot_006", "reason": "While the narration matches the top panel showing bandits fleeing into the snow, the provided evidence (fact_002) is about Grant and does not support this specific narration."}, {"shot_id": "shot_010", "reason": "The provided evidence discusses bandits robbing the gold hoard and does not support the action of Grant blasting a machine gun nest."}, {"shot_id": "shot_012", "reason": "Evidence focuses on the storm and clouds rather than the mountains quaking and the bandit army panicking."}, {"shot_id": "shot_013", "reason": "Evidence mentions Thor's hammer but fails to support driving the bandits higher into the snow-capped mountains."}, {"shot_id": "shot_014", "reason": "Evidence regarding Thor's hammer does not support a sentry screaming in terror from an avalanche."}, {"shot_id": "shot_015", "reason": "The narration describes an avalanche, but the provided evidence discusses Grant attacking with Thor's hammer, creating a mismatch."}, {"shot_id": "shot_022", "reason": "The evidence quote discusses Wong coming with a new army rather than Grant dismantling it, making the claim unsupported by the provided quote."}, {"shot_id": "shot_023", "reason": "The evidence quote is unrelated to publication facts about Fox Feature Syndicate or 1940."}]}
---- data/runs/20261001T221115860734Z/diagnostics/panel_matches_4.json
-{"passed": false, "failures": [{"shot_id": "shot_005", "reason": "The provided evidence (fact_002) discusses Grant speeding to the Forbidden City, which does not support the narration about bandits fleeing into snowy mountain passes."}, {"shot_id": "shot_009", "reason": "The narration describes the mountains quaking, but the provided evidence (fact_004) only quotes Grant smiting the clouds, failing to support this specific action."}, {"shot_id": "shot_014", "reason": "The narration states that General Wong approaches with a fresh army, but the provided panel from page 12 shows Wong captured and demanding where his army is."}, {"shot_id": "shot_015", "reason": "The provided evidence fact_008 refers to page 11 regarding bandits, whereas the page image shows Grant confronting Wong on page 12, resulting in a mismatch between the cited evidence and the panel."}]}
+--- data/runs/20261001T223521534284Z/voice_audition/failed_auditions.json
+{}
+--- data/runs/20261001T223521534284Z/diagnostics/panel_matches_1.json
+{"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Coll claims victory, but the crop and dialogue show the White Queen capturing the Red Knight, contradicting the stated action."}, {"shot_id": "shot_003", "reason": "The narration claims Regina teases Dan about being her knight, but the provided evidence (fact_013) discusses Lew Coll hating Dan, making the narrative unsupported by the evidence."}, {"shot_id": "shot_015", "reason": "The evidence (fact_005) describes a defective wire rather than secondary stage ignition, although the panel visually depicts the ignition."}, {"shot_id": "shot_019", "reason": "Narration claims Coll prepares to brave the atmosphere, whereas the evidence and panel show him already losing consciousness from staying too long."}, {"shot_id": "shot_033", "reason": "The narration discusses publication details (Charlton, August 1955), whereas the provided evidence and panel text exclusively describe Lew Coll testing his heat shield."}, {"shot_id": "shot_038", "reason": "The Red Knight crashes through a wall/window near guards (though 'financial mart' might be inferred from page context rather than strictly visible interior detail, the action of crashing through a building is clear)."}]}
+--- data/runs/20261001T223521534284Z/diagnostics/panel_matches_2.json
+{"passed": false, "failures": [{"shot_id": "shot_003", "reason": "The narration claims a move puts the red pieces in check, but the dialogue and action in the panel explicitly show capturing the Red Knight with the White Queen."}, {"shot_id": "shot_020", "reason": "The evidence provided (fact_013) is Regina's dialogue remarking to Dan, whereas the shot depicts Dan and Lew conversing directly."}, {"shot_id": "shot_022", "reason": "The evidence provided (fact_013) does not match the visual and textual subject of alien fumes altering thinking shown in the panel."}, {"shot_id": "shot_024", "reason": "While the image shows a Red Knight chess piece, the provided quote in fact_016 ('IF I WERE YOU, RED KNIGHT...') does not match the actual dialogue present in the cropped panel ('THE RED KNIGHT... MY FAVORITE INSTRUMENT OF ATTACK!')."}]}
+--- data/runs/20261001T223521534284Z/diagnostics/panel_matches_4.json
+{"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Lew is moving his Red Knight piece, but the panel actually depicts a hand capturing the Red Knight with the White Queen."}, {"shot_id": "shot_017", "reason": "The text mentions electrical heat applied to the dust, though the evidence mapping uses fact_008 which describes the mountains."}, {"shot_id": "shot_022", "reason": "The narration claims Dan is inspecting silicate ore, but the evidence provided (Regina's dialogue about poisoning) does not support this specific action."}]}
+--- data/runs/20261001T223521534284Z/diagnostics/story_3.json
+{"error": "Anlatım düz metin olmalı."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -213,26 +133,21 @@ Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
 Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Absolute Joker Reveals His True Form
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Joker Wears His Own Face Upside Down
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Weird Comics #4: Golden Age Superhero Thrills
-Denetimi geçemeyen 4 sahne çıkarıldı; 13 sahne kaldı.
+Konu adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Konu adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Önizleme kaynağı: Kaynaklı, kullanılmamış bir olay bulunamadı; araştırma kaydedildi.
+Olay araştırılıyor: The Beetle's Bizarre Battle in Golden Age Charlton!
+Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Denetimi geçemeyen 3 sahne çıkarıldı; 30 sahne kaldı.
 
 → Türkçe ses seçimi
 Ses eşleştirme: 100.0/100 | whisper-large-v3
@@ -241,13 +156,24 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 1, deneme 2
+Ses eşleştirme: 95.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 92.1/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 97.4/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 97.6/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 94.4/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
+Ses eşleştirme: 92.5/100 | whisper-large-v3-turbo
+Ses bölümü 7, deneme 1
+Ses eşleştirme: 95.0/100 | whisper-large-v3
+Ses bölümü 8, deneme 1
+Ses eşleştirme: 96.6/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261001T221115860734Z/review.html
+HATA: Bitmiş videoda düzeltilmesi gereken noktalar var: turkish_narration, subtitle_sync, scene_match, delivery, visual_readability. Önizleme ve raporlar kaydedildi.

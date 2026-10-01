@@ -35,6 +35,16 @@
       "name": "dialogue_hook",
       "change": "Start the hook with a direct quote from a speech balloon in the first panel.",
       "rationale": "Using an in-world quote immediately immerses the viewer into the action faster than third-person exposition."
+    },
+    "verdict": "dropped"
+  },
+  {
+    "run_id": "36935841783",
+    "chosen_at": "2026-10-01T22:36:29+00:00",
+    "experiment": {
+      "name": "color_coded_keywords",
+      "change": "Highlight key nouns in yellow to draw visual focus to plot-critical objects in the captions.",
+      "rationale": "Color-coding key nouns helps viewers quickly grasp the central conflict and objects of interest in fast-paced Shorts."
     }
   }
 ]
