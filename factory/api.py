@@ -242,7 +242,13 @@ class Api:
 
     def live_models(self):
         self.discover()
-        return [m for m in self.models if m not in self.dead]
+        live = [m for m in self.models if m not in self.dead]
+        skip = getattr(self, "skip_once", "")
+        if skip and len(live) > 1 and skip in live:
+            # One bad answer: let the next model take this call first.
+            live.remove(skip)
+            live.append(skip)
+        return live
 
     def gemini(self, label, operation_for_model, attempts=3):
         """Run operation_for_model(model) over the Gemini chain."""
@@ -363,8 +369,10 @@ class Api:
                     raise
                 return self.client.models.generate_content(model=model, contents=contents, config=config(False))
 
+        self.skip_once = ""
         for strict in (False, True):
             text, provider = self._generate_text(label, prompt, images, audio, video_uri, videos, generate, contents)
+            self.skip_once = ""
             path = self.directory / "diagnostics" / f"api_{self.calls:03}.json"
             try:
                 value = parse_object(text, list_key=list_key)
@@ -378,7 +386,8 @@ class Api:
                     raise FactoryError(
                         f"{label}: geçerli JSON alınamadı; yanıt tanı dosyasında."
                     ) from error
-                self.note(f"{label}: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.")
+                self.note(f"{label}: {self.model} bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.")
+                self.skip_once = self.model if provider == "gemini" else ""
                 reminder = "\n\nSTRICT OUTPUT: reply with exactly ONE complete, valid JSON object and nothing else. No markdown, no commentary, no trailing text. Keep strings short so the object is not truncated."
                 contents[1] = prompt + reminder
                 prompt = prompt + reminder

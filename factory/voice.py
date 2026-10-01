@@ -273,6 +273,7 @@ def select_voice(api, style, cache):
             f"""Listen to these SAME Turkish passages. Rank only supplied recordings from actual audio, never voice names. Assess natural Turkish pronunciation, proper names, engaging storytelling, clear articulation and target delivery: {style.get("narrator_delivery", "")}
 Return {{"voices":[{{"voice":"","naturalness":0,"pronunciation":0,"energy":0,"reason":"Turkish audible evidence"}}]}}. Scores 0..100.""",
             audio=list(viable.items()),
+            list_key="voices",
         )
     except FactoryError as error:
         # No model can listen right now: keep the voice Whisper understood best.

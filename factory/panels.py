@@ -52,6 +52,7 @@ The source must explicitly identify the exact series/issue/year. Matching a char
 Return {{"pages":[{{"page_id":"","belongs_to_issue":true,"source_evidence_quote":"exact >=18-character substring identifying the issue from article","page_role":"interior|cover|other","confidence":0,"panels":[{{"bbox":[left,top,right,bottom],"reading_order":1,"characters":[],"action":"only visible action in Turkish","ocr":"exact visible original dialogue or empty","narrative_fact":"Turkish supported fact","confidence":0}}],"facts":[{{"text":"Turkish event fact","quote":"exact article substring supporting it"}}]}}]}}.
 All confidence values 0..100. Coordinates are fractions 0..1 in original image, x then y. Give 1..8 panels in reading order; never infer unseen action or missing ending.""",
             images=[(p["id"], api.directory / p["file"]) for p in batch],
+            list_key="pages",
         )
         lookup = {p["id"]: p for p in batch}
         for observed in data.get("pages", []):
@@ -166,6 +167,7 @@ Return {{"shots":[{{"shot_id":"","match_score":0,"supported":true,"crop_ok":true
             images=[
                 (s["id"], api.directory / pl[s["panel_id"]]["file"]) for s in batch
             ],
+            list_key="shots",
         )
         reports.extend(review.get("shots", []))
     by_id = {r.get("shot_id"): r for r in reports if isinstance(r, dict)}
@@ -355,6 +357,7 @@ For every numbered panel describe ONLY what is visible. Transcribe visible dialo
 Also list story facts established by these pages; each fact must quote exact visible text (>=18 characters) from a balloon or caption on these pages.
 Return {{"pages":[{{"page_id":"","page_role":"interior|cover|ad|text|other","panels":[{{"number":1,"keep":true,"characters":[],"action":"visible action in Turkish","ocr":"exact visible text or empty","narrative_fact":"Turkish supported fact","confidence":0}}],"facts":[{{"text":"Turkish story fact","quote":"exact visible text"}}]}}]}}. Confidence 0..100.""",
             images=images,
+            list_key="pages",
         )
         lookup = {p["id"]: p for p in batch}
         for observed in data.get("pages", []):
