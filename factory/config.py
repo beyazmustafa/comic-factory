@@ -20,6 +20,7 @@ class Settings:
     alignment_threshold: float = 95
     panel_threshold: float = 90
     gemini_model: str = "gemini-3.8-flash"
+    gemini_fallback_model: str = "gemini-3.8-flash"
     tts_model: str = "gemini-3.1-flash-tts-preview"
     whisper_model: str = "whisper-large-v3"
     voice: str = "auto"
@@ -43,6 +44,7 @@ class Settings:
             raise ValueError("factory.json bilinmeyen veya eski ayarlar içeriyor.")
         for env, key in (
             ("GEMINI_MODEL", "gemini_model"),
+            ("GEMINI_FALLBACK_MODEL", "gemini_fallback_model"),
             ("GEMINI_TTS_MODEL", "tts_model"),
             ("GEMINI_TTS_VOICE", "voice"),
             ("GROQ_WHISPER_MODEL", "whisper_model"),
@@ -83,6 +85,7 @@ class Settings:
             "whisper_model",
             "music_file",
             "archive_query",
+            "gemini_fallback_model",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")

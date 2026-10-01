@@ -34,3 +34,33 @@ class VisibilityTests(unittest.TestCase):
         with patch.dict(os.environ, {"YOUTUBE_VISIBILITY": "scheduled"}, clear=True):
             with self.assertRaises(youtube.YouTubeUploaderError):
                 youtube.visibility()
+
+
+class FallbackModelTests(unittest.TestCase):
+    def test_overloaded_primary_switches_to_fallback_model(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import Mock
+        from factory.api import Api, FactoryError
+        from factory.config import Settings
+
+        class Overloaded(Exception):
+            code = 503
+
+        with tempfile.TemporaryDirectory() as temporary, patch("factory.api.time.sleep"):
+            api = Api(Settings(gemini_model="primary", gemini_fallback_model="backup"), Path(temporary), client=Mock())
+            seen = []
+
+            def operation():
+                seen.append(api.model)
+                if api.model == "primary":
+                    raise Overloaded("high demand")
+                return "ok"
+
+            self.assertEqual(api.request("Deneme", operation), "ok")
+            self.assertEqual(seen.count("primary"), 5)
+            self.assertEqual(seen[-1], "backup")
+            # A hard error is never retried against the fallback.
+            api = Api(Settings(gemini_model="primary", gemini_fallback_model="backup"), Path(temporary), client=Mock())
+            with self.assertRaises(FactoryError):
+                api.request("Deneme", Mock(side_effect=ValueError("bad request")))

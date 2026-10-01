@@ -56,6 +56,10 @@ class Api:
         self.client = client or genai.Client(
             api_key=key, http_options=types.HttpOptions(timeout=180000)
         )
+        self.model = settings.gemini_model
+        self.fallback_model = getattr(settings, "gemini_fallback_model", "") or ""
+        if self.fallback_model == self.model:
+            self.fallback_model = ""
 
     def check(self, requesting=False):
         if requesting and self.calls >= self.settings.max_api_calls:
@@ -67,8 +71,14 @@ class Api:
                 "İşlem süresi sınırına ulaşıldı; kayıtlı aşamalardan devam edilebilir."
             )
 
-    def request(self, label, operation):
-        for attempt in range(3):
+    def request(self, label, operation, attempts=5):
+        """Retry transient provider errors with growing waits.
+
+        Overload (503/429) can last minutes; an unattended scheduled run must
+        outlast it. After the attempts are spent on the primary model, one more
+        round runs on the fallback model when the settings name one.
+        """
+        for attempt in range(attempts):
             self.check(requesting=True)
             self.calls += 1
             try:
@@ -99,11 +109,22 @@ class Api:
                         "error": str(error)[:1200],
                     },
                 )
-                if not transient or attempt == 2:
+                if not transient:
                     raise FactoryError(
                         f"{label}: {type(error).__name__}: {str(error)[:500]}"
                     ) from error
-                time.sleep(3 * 2**attempt)
+                if attempt == attempts - 1:
+                    if self.fallback_model:
+                        print(
+                            f"{label}: {self.model} yanıt vermiyor; {self.fallback_model} modeline geçildi.",
+                            flush=True,
+                        )
+                        self.model, self.fallback_model = self.fallback_model, ""
+                        return self.request(label, operation, attempts=3)
+                    raise FactoryError(
+                        f"{label}: {type(error).__name__}: {str(error)[:500]}"
+                    ) from error
+                time.sleep(min(90, 5 * 2**attempt))
 
     def json(self, label, prompt, *, images=(), audio=(), video_uri=None, videos=(), list_key=None):
         contents = [
@@ -132,7 +153,7 @@ class Api:
         response = self.request(
             label,
             lambda: self.client.models.generate_content(
-                model=self.settings.gemini_model,
+                model=self.model,
                 contents=contents,
                 config=types.GenerateContentConfig(
                     temperature=0.2,
