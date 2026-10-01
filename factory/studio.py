@@ -109,6 +109,15 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             ]
         )
         bundle = checkpoints.read("story", story_key)
+        if bundle is None and resume_run and (directory / "story_bundle.json").exists():
+            # A resumed run keeps its finished story even if the key format changed.
+            try:
+                candidate_bundle = json.loads((directory / "story_bundle.json").read_text(encoding="utf-8"))
+                if all((directory / p["file"]).is_file() for p in candidate_bundle.get("panels", [])):
+                    bundle = candidate_bundle
+                    print("Önceki çalışmanın senaryosu kullanılıyor.", flush=True)
+            except (ValueError, KeyError, TypeError):
+                bundle = None
         if bundle is None:
             used = load_used()
             candidates = []
