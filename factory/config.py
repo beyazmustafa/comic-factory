@@ -43,7 +43,10 @@ class Settings:
         'title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR '
         '"amazing man" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR "fighting")'
     )
-    source: str = "archive"
+    # "auto": Marvel/DC moments from official previews & illustrated reviews first,
+    #         public-domain archive issues when previews cannot supply enough panels.
+    # "archive": only complete public-domain issues. "web": only previews.
+    source: str = "auto"
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
     archive_scan_limit: int = 72
@@ -111,7 +114,7 @@ class Settings:
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"archive", "web"}:
+        if result.source not in {"auto", "archive", "web"}:
             raise ValueError("source archive veya web olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")

@@ -148,7 +148,7 @@ class PipelineResumeTests(TemporaryTest):
 
         self.enterContext(patch.object(voice, "select_voice", side_effect=select))
         with self.assertRaises(SpeechFailure):
-            studio.generate(Settings(), api_factory=api_factory)
+            studio.generate(Settings(source="archive"), api_factory=api_factory)
         self.assertEqual(shortlist.call_count, 1)
         self.assertEqual(collected.call_count, 1)
         web_shortlist.assert_not_called()

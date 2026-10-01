@@ -82,7 +82,7 @@ def create(api, event, panels, facts, style):
     mode = (
         "MODE: complete public-domain Golden Age issue. Pick the ONE story in the issue that contains the hero's single most bizarre, shocking or dramatic moment (a death, betrayal, grotesque villain, impossible power, cruel twist). Use panels from that story only; ignore other stories in the issue. Open on that moment, then explain how it came to be and how it ends, beat by beat in panel order, present tense, like a top comics-recap Shorts narrator. Mention year/publisher at most once, late. "
         if event.get("identifier")
-        else "MODE: comic-history explainer about a notable event. "
+        else "MODE: one famous Marvel/DC superhero moment, using ONLY the official preview/review panels supplied. Open on the shocking moment itself, then the setup, then the consequence; present tense, hero and villain named; claim only what the panels show or the quoted sources state. "
     )
     feedback = ""
     desired = min(

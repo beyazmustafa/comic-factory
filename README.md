@@ -24,6 +24,11 @@ GitHub zamanlanmış koşuları yoğun saatlerde geciktirebilir; dakika gelince 
 
 > **Dakika sınırı:** Private repoda ücretsiz Actions süresi ayda 2000 dakikadır. Bir üretim 30–60 dakika sürer; günde iki koşu ayda 1800–3600 dakika eder. Repo **public** yapılırsa Actions sınırsızdır (kodda hiçbir gizli bilgi yok; secrets zaten repo ayarlarında). Private kalacaksa `factory.json → max_minutes` değerini 45'e çekmek ve `cron` satırını günde bire indirmek gerekir.
 
+## Kaynak seçimi (`source`)
+
+- `auto` (varsayılan): önce Marvel/DC süper kahraman anları — yalnız yayıncıların resmî önizleme sayfaları ve resimli basın incelemelerindeki paneller (yorum/anlatım amaçlı, sınırlı sayıda panel). Bu yol telif açısından tamamen risksiz değildir; telif iddiası gelirse `source: archive` yapılır. Yeterli doğrulanmış panel bulunamazsa aynı koşuda kamu malı arşiv sayılarına geçilir.
+- `archive`: yalnız kamu malı Altın Çağ sayıları. `web`: yalnız önizlemeler.
+
 ## Kaynak: neden kamu malı arşiv
 
 Referans alınan Shorts formatı (gerçek sayı, panel panel, kesintisiz anlatım) ancak bir sayının **tüm sayfalarıyla** çıkar. Marvel/DC gibi güncel sayıların tamamını indirip yüklemek telif ihlalidir ve Content ID ile kanalı kapattırır; bu yüzden sistem yalnız 1964 öncesi, telifi yenilenmemiş sayıları kullanır.

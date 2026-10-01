@@ -110,16 +110,26 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         bundle = checkpoints.read("story", story_key)
         if bundle is None:
             used = load_used()
-            from_archive = settings.source == "archive"
-            candidates = (
-                archive.shortlist(api, topic, used)
-                if from_archive
-                else research.shortlist(api, topic, used)
-            )
+            candidates = []
+            if settings.source in {"auto", "web"}:
+                try:
+                    candidates += [{**e, "_source": "web"} for e in research.shortlist(api, topic, used)]
+                except SourceUnavailable as error:
+                    print(f"Önizleme kaynağı: {error}", flush=True)
+                    if settings.source == "web":
+                        raise
+            if settings.source in {"auto", "archive"}:
+                try:
+                    candidates += [{**e, "_source": "archive"} for e in archive.shortlist(api, topic, used)]
+                except SourceUnavailable as error:
+                    if not candidates:
+                        raise
+                    print(f"Arşiv kaynağı: {error}", flush=True)
             fetcher = research.Fetcher()
             failures = []
             try:
                 for event in candidates:
+                    from_archive = event.get("_source") == "archive"
                     print("Olay araştırılıyor: " + event["title"], flush=True)
                     try:
                         if from_archive:
@@ -298,8 +308,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         event = bundle["event"]
         licence = (
             "\nPages: public-domain Golden Age issue scanned on the Internet Archive."
-            if settings.source == "archive"
-            else ""
+            if event.get("_source") == "archive" or settings.source == "archive"
+            else "\nPanels: official publisher previews and press coverage, used for commentary."
         )
         description = (
             script["description"]
@@ -345,7 +355,7 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             ROOT / "data" / "events" / "v2" / (event["id"] + ".json"),
             {**event, "run_id": manifest["run_id"], "status": "ready"},
         )
-        if settings.source == "archive":
+        if event.get("_source") == "archive" or settings.source == "archive":
             archive.remember_issue(event, manifest["run_id"])
         return directory
     except Exception as error:

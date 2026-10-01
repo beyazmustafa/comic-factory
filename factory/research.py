@@ -144,15 +144,28 @@ class Fetcher:
 def discover_evidence(api, topic):
     """Read independent search results before asking the model for candidates."""
     import random
-    queries = ([f'{topic} comic issue review panels', f'{topic} comic publisher preview']
-               if topic else random.sample([
+    heroes = [
+        "Spider-Man", "Batman", "Superman", "Wolverine", "Hulk", "Thanos", "Joker", "Deadpool",
+        "Venom", "Thor", "Iron Man", "Captain America", "Doctor Doom", "Flash", "Wonder Woman",
+        "Green Lantern", "Daredevil", "Punisher", "Doctor Strange", "Magneto", "Darkseid",
+        "Ghost Rider", "Black Panther", "Silver Surfer", "Galactus", "Harley Quinn", "Moon Knight",
+    ]
+    if topic:
+        queries = [f'{topic} comic issue review panels', f'{topic} comic publisher preview']
+    elif getattr(api.settings, "channel_theme", "") == "superheroes":
+        picks = random.sample(heroes, 3)
+        queries = [f'{picks[0]} comic shocking moment issue preview pages',
+                   f'{picks[1]} comic bizarre moment issue review panels',
+                   f'{picks[2]} comic preview interior pages site:marvel.com OR site:dc.com OR site:cbr.com OR site:bleedingcool.com OR site:aiptcomics.com']
+    else:
+        queries = random.sample([
                    'Marvel comics historic turning point issue review panels',
                    'DC comics shocking transformation issue review panels',
                    'independent comics landmark issue illustrated review',
                    'comic book first appearance origin issue retrospective panels',
                    'manga historic story arc chapter illustrated review',
                    'European comics classic album illustrated review',
-               ], 3))
+               ], 3)
     rows = search(queries, each=6)
     fetcher, articles, failures = Fetcher(), [], []
     try:
@@ -182,7 +195,7 @@ def shortlist(api, topic, used):
     allowed_urls = {article['url'] for article in evidence['articles']}
     payload = api.json(
         "Konu adayları",
-        f"""Choose up to {api.settings.max_events} specific significant/surprising historical comic events from ONLY the fetched articles below. No new facts or links. Exclude used IDs/titles {json.dumps(used, ensure_ascii=False)}. Require exact series, issue/chapter, year, publisher and universe supported by articles. Prefer public publisher previews and illustrated reviews with actual interior panels. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
+        f"""Choose up to {api.settings.max_events} specific SHOCKING superhero moments (a death, a betrayal, a bizarre transformation, a villain's cruelest act, an impossible feat) from ONLY the fetched articles below — the kind of moment a global YouTube Shorts audience stops scrolling for. No new facts or links. Exclude used IDs/titles {json.dumps(used, ensure_ascii=False)}. Require exact series, issue/chapter, year, publisher and universe supported by articles. Prefer public publisher previews and illustrated reviews with actual interior panels. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
 {json.dumps(evidence, ensure_ascii=False)}
 Return {{"events":[{{"title":"Turkish","publisher":"","series":"exact original title","issue":"","year":2000,"universe":"","characters":[],"summary":"Turkish","importance":0,"popularity":0,"niche":0,"source_urls":[]}}]}}. Scores 0..100 are editorial judgments.""",
         list_key="events",
