@@ -1,0 +1,42 @@
+run_id: 36871384963  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261001T134921761816Z/run.json
+{
+  "schema": 2,
+  "version": "2026-10-01-archive-1",
+  "status": "failed",
+  "stage": "Olay, gerçek sayfalar ve Türkçe senaryo",
+  "topic": "",
+  "settings": {
+    "target_seconds": 150,
+    "max_events": 3,
+    "max_pages": 16,
+    "max_shots": 40,
+    "max_api_calls": 120,
+    "max_minutes": 100,
+    "repair_attempts": 3,
+    "chunk_words": 42,
+    "alignment_threshold": 95,
+    "panel_threshold": 90,
+    "gemini_model": "gemini-3.7-flash",
+    "tts_model": "gemini-3.1-flash-tts-preview",
+    "whisper_model": "whisper-large-v3",
+    "voice": "auto",
+    "music_file": "",
+    "music_gain_db": -25,
+    "caption_offset": 0,
+    "source": "archive",
+    "archive_query": "mediatype:texts AND collection:(comics)",
+    "archive_max_year": 1963,
+    "archive_scan_limit": 72
+  },
+  "run_id": "36871384963",
+  "error": "FactoryError: Arşiv sayı adayları: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "api_calls": 3
+}
+--- studio.log (son 300 satır)
+
+→ Sabit kurgu profili
+
+→ Olay, gerçek sayfalar ve Türkçe senaryo
+HATA: Arşiv sayı adayları: ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
