@@ -1,0 +1,11 @@
+[
+  {
+    "run_id": "36917663428",
+    "chosen_at": "2026-10-01T20:05:00+00:00",
+    "experiment": {
+      "name": "early_power_reveal",
+      "change": "Explicitly state the hero's core power or identity within the first three shots immediately following the hook.",
+      "rationale": "Establishing the protagonist's specific stakes and abilities early will ground viewer context before the main conflict escalates."
+    }
+  }
+]
