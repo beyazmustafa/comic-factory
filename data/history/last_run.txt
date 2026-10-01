@@ -1,11 +1,11 @@
-run_id: 36917663428  attempt: 1  event: workflow_dispatch
+run_id: 36919188371  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261001T200455335981Z/run.json
+--- data/runs/20261001T202918743604Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
   "status": "failed",
-  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
+  "stage": "Olay, gerçek sayfalar ve senaryo",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,72 +36,31 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36917663428",
-  "error": "FactoryError: Kare incelemesi: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent'",
-  "api_calls": 63
+  "run_id": "36919188371",
+  "error": "FactoryError: Arşiv sayı adayları: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent'",
+  "api_calls": 2
 }
---- data/runs/20261001T200455335981Z/diagnostics/provider_events.json
+--- data/runs/20261001T202918743604Z/diagnostics/provider_events.json
 [
-  "Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.",
-  "Video kontrolü Gemini'de yapılamadı (Geçici video yükleme: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authenti); kare incelemesine geçildi."
+  "Oyun kitabı güncellenemedi (FactoryError: Oyun kitabı güncelleme: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authen); mevcut kurallar kullanılıyor."
 ]
---- data/runs/20261001T200455335981Z/diagnostics/providers.json
+--- data/runs/20261001T202918743604Z/diagnostics/providers.json
 {
-  "gemini": [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-flash-latest",
-    "gemini-flash-lite-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-3-flash-preview",
-    "gemini-3.1-pro-preview",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-omni-flash-preview",
-    "gemini-omni-1.1-flash",
-    "gemini-3.6-flash",
-    "gemini-3.7-flash",
-    "gemini-3.8-flash"
-  ],
+  "gemini": [],
   "groq": [
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
-  "errors": [],
+  "errors": [
+    "gemini list: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https"
+  ],
   "gemini_chain": [
     "gemini-3.7-flash",
     "gemini-3.8-flash",
-    "gemini-2.5-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.1-pro-preview",
-    "gemini-3-flash-preview",
-    "gemini-2.5-pro",
-    "gemini-omni-1.1-flash",
-    "gemini-flash-latest",
-    "gemini-omni-flash-preview",
-    "gemini-pro-latest",
-    "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-2.5-flash-lite",
-    "gemini-flash-lite-latest"
+    "gemini-3.8-flash-lite",
+    "gemini-3.1-flash",
+    "gemini-2.5-flash"
   ],
   "groq_chain": [],
   "groq_text_chain": [
@@ -110,59 +69,12 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T200455335981Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261001T200455335981Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_010", "reason": "The evidence cites page 007 instead of page 009 where Grant returns to the temple."}, {"shot_id": "shot_011", "reason": "While the visual shows Grant pushing dynamos, the provided evidence references page 007 instead of page 009."}, {"shot_id": "shot_012", "reason": "The evidence cites page 012, but the panel is on page 10 where Grant reports to the Llama."}, {"shot_id": "shot_013", "reason": "The evidence cites page 013, whereas the panel is from page 10."}, {"shot_id": "shot_014", "reason": "The evidence cites page 013 instead of page 10 where Wong's new army is discussed."}, {"shot_id": "shot_021", "reason": "The narration claims Sally escapes, but the panel shows her confronted by the wizard, and the provided evidence references an unrelated scene."}, {"shot_id": "shot_022", "reason": "The crop still shows the forest scene rather than leading her into a palace, and the evidence is mismatched."}, {"shot_id": "shot_023", "reason": "The image shows the wizard asking about Jimmy, but the provided evidence incorrectly points to page 16."}, {"shot_id": "shot_024", "reason": "The narration does not match the dialogue ('Would you like to see your dear friend Jimmy?') or visual action, and the evidence is irrelevant."}, {"shot_id": "shot_025", "reason": "The narration describes Sally recoiling in terror at a shocking sight, but the panel shows a wizard speaking to Sally with the dialogue 'WELL, HE IS HERE! I HAVE KEPT HIM FOR YOU!'. The evidence provided is about the wizard rejecting an alliance over gold, which does not match."}, {"shot_id": "shot_026", "reason": "The narration claims her dear friend Jimmy has turned into slippery snakes, but the panel shows the wizard pointing and talking to Sally. There are no snakes visible."}, {"shot_id": "shot_030", "reason": "The narration incorrectly claims 'He boasts', but the provided evidence and panel show it is the sorceress speaking ('My power is far greater than yours!')."}]}
---- data/runs/20261001T200455335981Z/diagnostics/panel_matches_3.json
-{"passed": false, "failures": [{"shot_id": "shot_008", "reason": "The narration describes Grant pursuing enemies with lightning blasts, but the provided evidence quote refers to a machine gun nest being blown to bits, failing to support the claim."}, {"shot_id": "shot_009", "reason": "The narration describes Grant returning to the temple and finding dynamos shaken loose, but the cited evidence refers entirely to a machine gun nest."}, {"shot_id": "shot_023", "reason": "The provided image shows an entirely different panel with dialogue about keeping someone, failing to match the narration and evidence about the hall bursting into flames."}]}
---- data/runs/20261001T200455335981Z/diagnostics/story_2.json
-{"error": "Panel üçten fazla kullanılamaz."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncellenemedi (FactoryError: Oyun kitabı güncelleme: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authen); mevcut kurallar kullanılıyor.
 
 → Olay, gerçek sayfalar ve senaryo
-Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: The Bizarre Golden Age Debut of Thor
-Arşiv sayfası panelleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Denetimi geçemeyen 3 sahne çıkarıldı; 21 sahne kaldı.
-
-→ Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 7, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Video kontrolü Gemini'de yapılamadı (Geçici video yükleme: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authenti); kare incelemesine geçildi.
-HATA: Kare incelemesi: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent'
+HATA: Arşiv sayı adayları: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent'
