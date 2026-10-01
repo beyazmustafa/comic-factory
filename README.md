@@ -89,6 +89,17 @@ Her çalışmanın ayarları `editing_profile.json` dosyasındadır. Son kalite 
 
 Model puanları öznel değerlendirmedir; ölçülmüş doğruluk yüzdesi değildir. Kaynak tanıma ve ASR hata yapabilir. Yeterli gerçek panel bulunmayan otomatik konuda sıradaki aday denenir. Sorunlu çıktı hazır ilan edilmez; mevcut önizleme ve raporlar korunur.
 
+## YouTube yetkisi düştüğünde
+
+Koşu `YouTube OAuth token yenilenemedi` derse Google yenileme anahtarını iptal etmiştir (test modundaki OAuth uygulamalarında 7 günde bir olur). Bilgisayarında bir kez:
+
+```bash
+pip install google-auth google-auth-oauthlib
+python tools/youtube_authorize.py client_secret.json
+```
+
+Tarayıcı açılır, izin verirsin; betik `YOUTUBE_TOKEN_B64` değerini basar, GitHub'daki secret'ı bununla güncellersin. Kalıcı çözüm: Google Cloud Console → OAuth consent screen → **Publishing status: In production** (o zaman anahtar düşmez). Üretilmiş ama yüklenememiş videoyu `publish_preview` ile sonradan yükleyebilirsin; aynı sayı tekrar üretilmez.
+
 ## Mevcut secrets ve yayın
 
 Workflow mevcut **18 secret eşlemesini** korur: Gemini, Groq, Instagram/Cloudinary ve YouTube JSON/base64 seçenekleri. Değerleri kod dosyalarına yazman gerekmez. `factory.json` yalnız üretim ayarları içindir.
