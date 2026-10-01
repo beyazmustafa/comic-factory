@@ -362,7 +362,9 @@ class Api:
             try:
                 value = parse_object(text, list_key=list_key)
             except ValueError as error:
-                save_json(path, {"provider": provider, "response_text": text, "error": str(error)})
+                save_json(path, {"provider": provider, "response_text": text[:6000], "error": str(error),
+                                 "model": self.groq_model if provider == "groq" else self.model,
+                                 "info": getattr(self, "last_response_info", {})})
                 if strict:
                     raise FactoryError(
                         f"{label}: geçerli JSON alınamadı; yanıt tanı dosyasında."
@@ -379,7 +381,23 @@ class Api:
         provider = "gemini"
         try:
             response = self.gemini(label, generate)
-            text = response.text or ""
+            text = ""
+            try:
+                text = response.text or ""
+            except Exception:
+                text = ""
+            if not text:
+                # Collect text parts manually; some responses expose no .text.
+                for candidate in getattr(response, "candidates", None) or []:
+                    parts = getattr(getattr(candidate, "content", None), "parts", None) or []
+                    text = "".join(str(getattr(p, "text", "") or "") for p in parts)
+                    if text:
+                        break
+            self.last_response_info = {
+                "finish_reason": str(getattr(getattr(response, "candidates", [None])[0] if getattr(response, "candidates", None) else None, "finish_reason", "")),
+                "prompt_feedback": str(getattr(response, "prompt_feedback", "") or "")[:300],
+                "usage": str(getattr(response, "usage_metadata", "") or "")[:300],
+            }
         except ProviderOverloaded as error:
             # Audio and video only exist on Gemini; images and text can move to Groq.
             if audio or video_uri or videos or not (self.groq_models or (self.groq_text_models and not images)):
