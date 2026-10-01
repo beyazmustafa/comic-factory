@@ -22,13 +22,15 @@ def validate_story(value, panels, facts, max_shots=40):
         or not clean(value.get("title"))
     ):
         raise ValueError("Başlık veya sahne sayısı geçersiz.")
-    result, usage = [], Counter()
+    result, usage, skipped = [], Counter(), []
     for i, row in enumerate(shots):
         if not isinstance(row, dict):
             raise ValueError("Geçersiz sahne.")
         text, ids = clean(row.get("narration")), row.get("fact_ids")
-        if row.get("panel_id") not in pl or not 3 <= len(text.split()) <= 30:
-            raise ValueError(f"Sahne {i + 1}: panel/metin geçersiz.")
+        if row.get("panel_id") not in pl or not 3 <= len(text.split()) <= 40:
+            # One bad shot must not sink the draft: skip it, keep the rest.
+            skipped.append(i + 1)
+            continue
         ids = [k for k in ids if k in fl] if isinstance(ids, list) else []
         if not ids:
             ids = list(facts_by_page.get(page_of.get(row["panel_id"]), []))[:2] or [f["id"] for f in facts[:2]]
@@ -41,7 +43,8 @@ def validate_story(value, panels, facts, max_shots=40):
             raise ValueError("Anlatım düz metin olmalı.")
         usage[row["panel_id"]] += 1
         if usage[row["panel_id"]] > 3:
-            raise ValueError("Panel üçten fazla kullanılamaz.")
+            skipped.append(i + 1)
+            continue
         result.append(
             {
                 "id": f"shot_{i:03}",
@@ -52,14 +55,19 @@ def validate_story(value, panels, facts, max_shots=40):
                 "emphasis": row.get("emphasis", "normal") if row.get("emphasis", "normal") in {"normal", "danger", "reveal", "turn"} else "normal",
             }
         )
-    if len(usage) < min(6, len(shots)):
+    if len(result) < 4 or len(skipped) > len(shots) * 0.4:
+        raise ValueError(f"Çok fazla geçersiz sahne: {skipped}.")
+    if len(usage) < min(6, len(result)):
         raise ValueError("Yeterli farklı panel yok.")
+    for index, row in enumerate(result):
+        row["id"] = f"shot_{index:03}"
     return {
         "title": clean(value["title"]),
         "description": clean(value.get("description")),
         "shots": result,
         "narration": " ".join(r["narration"] for r in result),
         "repaired_evidence": repaired,
+        "skipped_shots": skipped,
     }
 
 
@@ -128,8 +136,7 @@ REPAIR FEEDBACK {feedback}""",
         # Last attempt: drop the shots the auditor rejected instead of
         # discarding a whole issue over a few disputed sentences.
         failed = {f["shot_id"] for f in report["failures"]}
-        kept = [s for s in draft.get("shots", []) if isinstance(s, dict)]
-        kept = [s for s, v in zip(kept, value["shots"]) if v["id"] not in failed]
+        kept = [s for s in value["shots"] if s["id"] not in failed]
         minimum = max(8, round(len(value["shots"]) * 0.7))
         if attempt == api.settings.repair_attempts - 1 and len(kept) >= minimum:
             try:

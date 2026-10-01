@@ -425,7 +425,7 @@ class Api:
         provider = "gemini"
         live = self.live_models()
         text_only = not (images or audio or video_uri or videos)
-        if text_only and self.groq_text_models and len(prompt) < 14000 and (not live or "lite" in live[0].casefold()):
+        if text_only and self.groq_text_models and len(prompt) < 6000 and (not live or "lite" in live[0].casefold()):
             # Only small Gemini models are left: a strong Groq text model writes better JSON.
             try:
                 self.note(f"{label}: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.")

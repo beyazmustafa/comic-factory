@@ -143,6 +143,12 @@ class SourceTests(TemporaryTest):
     def test_unknown_panel_or_fact(self):
         script, inventory, facts = script_fixture()
         script["shots"][0]["panel_id"] = "invented"
+        # A single invented panel is skipped; the remaining shots survive.
+        value = story.validate_story(script, inventory, facts)
+        self.assertEqual(value["skipped_shots"], [1])
+        self.assertEqual(len(value["shots"]), 5)
+        for shot in script["shots"][:3]:
+            shot["panel_id"] = "invented"
         with self.assertRaises(ValueError):
             story.validate_story(script, inventory, facts)
         # An invented fact id is repaired from the issue's own facts, never kept.
