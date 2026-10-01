@@ -46,5 +46,14 @@
       "change": "Highlight key nouns in yellow to draw visual focus to plot-critical objects in the captions.",
       "rationale": "Color-coding key nouns helps viewers quickly grasp the central conflict and objects of interest in fast-paced Shorts."
     }
+  },
+  {
+    "run_id": "36938063740",
+    "chosen_at": "2026-10-01T23:02:07+00:00",
+    "experiment": {
+      "name": "tighter_duration_target",
+      "change": "Cap total video duration under 45 seconds by keeping narration strictly between 80 and 110 words total.",
+      "rationale": "Shorter Golden Age recaps prevent mid-video drop-off and boost completion rate on YouTube Shorts."
+    }
   }
 ]

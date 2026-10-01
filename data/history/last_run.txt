@@ -1,11 +1,11 @@
-run_id: 36935841783  attempt: 1  event: workflow_dispatch
+run_id: 36938063740  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261001T223521534284Z/run.json
+--- data/runs/20261001T230123079238Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
   "status": "failed",
-  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
+  "stage": "Olay, gerçek sayfalar ve senaryo",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,16 +36,17 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36935841783",
-  "error": "FactoryError: Bitmiş videoda düzeltilmesi gereken noktalar var: turkish_narration, subtitle_sync, scene_match, delivery, visual_readability. Önizleme ve raporlar kaydedildi.",
-  "api_calls": 81
+  "run_id": "36938063740",
+  "resumed_from": "36935841783",
+  "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
+  "api_calls": 83
 }
---- data/runs/20261001T223521534284Z/diagnostics/provider_events.json
+--- data/runs/20261001T230123079238Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Konu adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Konu adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Konu adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
@@ -54,10 +55,10 @@ produce step outcome: failure
   "Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
+  "Gerçek sayfa ve paneller: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.1-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor."
 ]
---- data/runs/20261001T223521534284Z/diagnostics/providers.json
+--- data/runs/20261001T230123079238Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -110,32 +111,158 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T223521534284Z/audio/chunk_000/failures.json
+--- data/runs/20261001T230123079238Z/diagnostics/api_064.json
+{
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=718 candidates_tokens_details=None prompt_token_count=6979 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=6979\n)] thoughts_token_count=994 tool_use_prompt_token_count=N"
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 2327,
+  "response_text": "[\n  {\n    \"title\": \"The Blue Beetle's Hostile Friend\",\n    \"description\": \"A mysterious, hostile Lew Coll shocks his own fiancée, Regina White.\",\n    \"shots\": [\n      {\n        \"panel_id\": \"panel_019\",\n        \"narration\": \"A mysterious, hostile Lew Coll shocks his own fiancée, Regina White.\",\n        \"fact_ids\": [\n          \"fact_013\"\n        ],\n        \"motion\": \"push\",\n        \"emphasis\": \"danger\"\n      },\n      {\n        \"panel_004\",\n        \"narration\": \"Lew Coll was a brilliant physicist building a vital heat shield.\",\n        \"fact_ids\": [\n          \"fact_000\",\n          \"fact_001\"\n        ],\n        \"motion\": \"hold\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_003\",\n        \"narration\": \"He tests his invention on a rocket heading for Saturn.\",\n        \"fact_ids\": [\n          \"fact_008\"\n        ],\n        \"motion\": \"up\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_005\",\n        \"narration\": \"But the rocket fails, and the Blue Beetle intervenes.\",\n        \"fact_ids\": [\n          \"fact_003\",\n          \"fact_004\"\n        ],\n        \"motion\": \"left\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_008\",\n        \"narration\": \"Using powers from an ancient scarab, he fixes the circuit.\",\n        \"fact_ids\": [\n          \"fact_005\",\n          \"fact_006\"\n        ],\n        \"motion\": \"pull\",\n        \"emphasis\": \"reveal\"\n      },\n      {\n        \"panel_013\",\n        \"narration\": \"Coll reaches Saturn, finding glass-like mountains of silicon.\",\n        \"fact_ids\": [\n          \"fact_009\"\n        ],\n        \"motion\": \"right\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_016\",\n        \"narration\": \"He returns, but the methane atmosphere has changed him.\",\n        \"fact
+--- data/runs/20261001T230123079238Z/audio/chunk_000/failures.json
 [
   "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25."
 ]
---- data/runs/20261001T223521534284Z/voice_audition/failed_auditions.json
+--- data/runs/20261001T230123079238Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261001T223521534284Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Coll claims victory, but the crop and dialogue show the White Queen capturing the Red Knight, contradicting the stated action."}, {"shot_id": "shot_003", "reason": "The narration claims Regina teases Dan about being her knight, but the provided evidence (fact_013) discusses Lew Coll hating Dan, making the narrative unsupported by the evidence."}, {"shot_id": "shot_015", "reason": "The evidence (fact_005) describes a defective wire rather than secondary stage ignition, although the panel visually depicts the ignition."}, {"shot_id": "shot_019", "reason": "Narration claims Coll prepares to brave the atmosphere, whereas the evidence and panel show him already losing consciousness from staying too long."}, {"shot_id": "shot_033", "reason": "The narration discusses publication details (Charlton, August 1955), whereas the provided evidence and panel text exclusively describe Lew Coll testing his heat shield."}, {"shot_id": "shot_038", "reason": "The Red Knight crashes through a wall/window near guards (though 'financial mart' might be inferred from page context rather than strictly visible interior detail, the action of crashing through a building is clear)."}]}
---- data/runs/20261001T223521534284Z/diagnostics/panel_matches_2.json
-{"passed": false, "failures": [{"shot_id": "shot_003", "reason": "The narration claims a move puts the red pieces in check, but the dialogue and action in the panel explicitly show capturing the Red Knight with the White Queen."}, {"shot_id": "shot_020", "reason": "The evidence provided (fact_013) is Regina's dialogue remarking to Dan, whereas the shot depicts Dan and Lew conversing directly."}, {"shot_id": "shot_022", "reason": "The evidence provided (fact_013) does not match the visual and textual subject of alien fumes altering thinking shown in the panel."}, {"shot_id": "shot_024", "reason": "While the image shows a Red Knight chess piece, the provided quote in fact_016 ('IF I WERE YOU, RED KNIGHT...') does not match the actual dialogue present in the cropped panel ('THE RED KNIGHT... MY FAVORITE INSTRUMENT OF ATTACK!')."}]}
---- data/runs/20261001T223521534284Z/diagnostics/panel_matches_4.json
-{"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Lew is moving his Red Knight piece, but the panel actually depicts a hand capturing the Red Knight with the White Queen."}, {"shot_id": "shot_017", "reason": "The text mentions electrical heat applied to the dust, though the evidence mapping uses fact_008 which describes the mountains."}, {"shot_id": "shot_022", "reason": "The narration claims Dan is inspecting silicate ore, but the evidence provided (Regina's dialogue about poisoning) does not support this specific action."}]}
---- data/runs/20261001T223521534284Z/diagnostics/story_3.json
+--- data/runs/20261001T230123079238Z/research/rejected_candidates.json
+[
+  {
+    "event": {
+      "title": "Eddie Brock and Venom's Toxic Reunion",
+      "publisher": "Marvel",
+      "series": "Venom",
+      "issue": "1",
+      "year": 2026,
+      "universe": "Marvel Universe",
+      "characters": [
+        "Eddie Brock",
+        "Venom Symbiote",
+        "Carnage",
+        "Spider-Man"
+      ],
+      "summary": "Eddie Brock and the Venom symbiote reunite in Venom #1 after Eddie previously hosted the serial killer symbiote Carnage, sparking tension and deep concern among the power players of the wider Marvel Universe.",
+      "importance": 90,
+      "popularity": 85,
+      "niche": 40,
+      "source_urls": [
+        "https://www.marvel.com/articles/comics/venom-1-preview-rekindles-eddie-brock-reunites-with-venom-symbiote"
+      ],
+      "id": "304d8b9e4bf33644f85e",
+      "selection_score": 73.75,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
+  },
+  {
+    "event": {
+      "title": "Fred Myers Transforms into The Amazing Venom",
+      "publisher": "Marvel",
+      "series": "The Amazing Venom",
+      "issue": "1",
+      "year": 2026,
+      "universe": "Marvel Universe",
+      "characters": [
+        "Fred Myers",
+        "Passenger",
+        "Hela",
+        "Knull"
+      ],
+      "summary": "Former Boomerang villain Fred Myers undergoes a bizarre transformation, bonding with a red-and-blue symbiote named Passenger to become 'Comeback' in the deadly fallout of Hela and Knull's war over Earth.",
+      "importance": 85,
+      "popularity": 80,
+      "niche": 45,
+      "source_urls": [
+        "https://www.flickeringmyth.com/comic-book-preview-the-amazing-venom-1/",
+        "https://www.marvel.com/comics/issue/133700/the_amazing_venom_2026_1"
+      ],
+      "id": "30af9babcf0fd34c0515",
+      "selection_score": 71.75,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
+  },
+  {
+    "event": {
+      "identifier": "blue-beetle-021-charlton-aug-1955-36p-c-2c",
+      "title": "The Beetle's Bizarre Bug-Eyed Battle",
+      "year": 1955,
+      "publisher": "",
+      "description": "Blue Beetle (Charlton)",
+      "subjects": [
+        "Blue Beetle (Charlton)"
+      ],
+      "public_domain_evidence": "inferred: publisher 'charlton' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 92,
+      "imagecount": 0,
+      "url": "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c",
+      "id": "ia_c982bee420242fe4",
+      "series": "Blue Beetle (Charlton)",
+      "issue": "021",
+      "summary": "Blue Beetle faces a shocking twist involving a mysterious villain in this classic 1955 Charlton issue.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c"
+      ],
+      "selection_score": 73.0,
+      "_source": "archive"
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  },
+  {
+    "event": {
+      "identifier": "captain-science-1-images",
+      "title": "Journey Into The Unknown Cosmos With Captain Science",
+      "year": 1950,
+      "publisher": "Youthful Magazines, Inc.",
+      "description": "Captain Science No. 1",
+      "subjects": [
+        "Science Fiction",
+        "Comic Books"
+      ],
+      "public_domain_evidence": "inferred: publisher 'youthful' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 209,
+      "imagecount": 0,
+      "url": "https://archive.org/details/captain-science-1-images",
+      "id": "ia_31817d8dbead493a",
+      "series": "Captain Science",
+      "issue": "1",
+      "summary": "Captain Science uncovers bizarre alien powers and cosmic threats in his thrilling debut issue.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/captain-science-1-images"
+      ],
+      "selection_score": 63.0,
+      "_source": "ar
+--- data/runs/20261001T230123079238Z/diagnostics/panel_matches_3.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The narration claims Captain Science watches an alien vaporize his own ship, but the panel shows the ship exploding on its own after speeding off, and Captain Science is not present in this panel."}, {"shot_id": "shot_006", "reason": "The panel shows an explosion, but the text provided as evidence ('HE DESTROYED THE SHIP WITH HIMSELF') does not match the visual context of the ship vanishing into thin air; the narration is not supported by the specific evidence provided."}]}
+--- data/runs/20261001T230123079238Z/diagnostics/panel_matches_4.json
+{"passed": false, "failures": [{"shot_id": "shot_006", "reason": "While the characters are present, the dialogue in the panel refers to 'the universe' and 'my dream', not the 'army of two' formation mentioned in the evidence quote."}]}
+--- data/runs/20261001T230123079238Z/diagnostics/story_3.json
 {"error": "Anlatım düz metin olmalı."}
+--- data/runs/20261001T230123079238Z/diagnostics/story_4.json
+{"error": "Yeterli farklı panel yok."}
 --- studio.log (son 300 satır)
+Kayıtlı aşama kullanılıyor: story
+Kayıtlı aşama kullanılıyor: voice
+Kayıtlı aşama kullanılıyor: audio
+Kayıtlı aşama kullanılıyor: render
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
 Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Konu adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Konu adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
@@ -144,36 +271,16 @@ Konu adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Önizleme kaynağı: Kaynaklı, kullanılmamış bir olay bulunamadı; araştırma kaydedildi.
-Olay araştırılıyor: The Beetle's Bizarre Battle in Golden Age Charlton!
-Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-Denetimi geçemeyen 3 sahne çıkarıldı; 30 sahne kaldı.
-
-→ Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 95.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 92.1/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 97.4/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 94.4/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 92.5/100 | whisper-large-v3-turbo
-Ses bölümü 7, deneme 1
-Ses eşleştirme: 95.0/100 | whisper-large-v3
-Ses bölümü 8, deneme 1
-Ses eşleştirme: 96.6/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-HATA: Bitmiş videoda düzeltilmesi gereken noktalar var: turkish_narration, subtitle_sync, scene_match, delivery, visual_readability. Önizleme ve raporlar kaydedildi.
+Olay araştırılıyor: Eddie Brock and Venom's Toxic Reunion
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Gerçek sayfa ve paneller: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Fred Myers Transforms into The Amazing Venom
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: The Beetle's Bizarre Bug-Eyed Battle
+Panellere bağlı anlatım: gemini-3.1-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Olay araştırılıyor: Journey Into The Unknown Cosmos With Captain Science
+HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
