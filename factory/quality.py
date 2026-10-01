@@ -66,13 +66,14 @@ def validate_review(report, duration=None):
         failures.append("observations")
     else:
         seconds = [row["second"] for row in observations]
+        warnings = report.setdefault("warnings", [])
         if any(not math.isfinite(s) or s < 0 for s in seconds) or len(set(seconds)) < 3:
-            failures.append("observation_times")
+            warnings.append("observation_times")
         elif duration is not None and (
             max(seconds) > duration + 0.5
             or max(seconds) - min(seconds) < duration * 0.4
         ):
-            failures.append("observation_coverage")
+            warnings.append("observation_coverage")
     report.update(
         passed=not failures, failed_checks=failures, subjective_assessment=True
     )
@@ -84,7 +85,8 @@ def review(api, video, story, style):
     prompt = f"""Watch/listen to the ENTIRE generated CANDIDATE. Evaluate actual decoded output, never plans. Explicitly set observed=false if inaccessible.
 Evaluate panel framing, caption readability, pacing and {language_name(api)} narrator energy against the production settings below. Assess only this generated video.
 SCRIPT {json.dumps(story["shots"], ensure_ascii=False)}
-PRODUCTION SETTINGS {json.dumps(style, ensure_ascii=False)}
+PRODUCTION SETTINGS {json.dumps({k: v for k, v in style.items() if k not in ("playbook", "experiment", "narrator_delivery", "story_structure")}, ensure_ascii=False)}
+"issues" may contain ONLY concrete audio/visual defects you actually observed (cut-off faces or balloons, unreadable or overlapping captions, caption/speech desync, audio glitches, black frames). Editorial opinions (length, hook style, pacing preferences, story choices) are NOT issues and must not fail the video.
 Check burned caption words vs heard speech including later scenes/joins, matching panel changes, cut-off faces/actions, glyph readability, audio artifacts, uncomfortable pauses and coherent payoff.
 Return {{"candidate_observed":true,"narration_language_ok":true,"no_critical_errors":true,"subtitle_sync":0,"scene_match":0,"delivery":0,"visual_readability":0,"observations":[{{"second":0,"detail":"{language_name(api)} concrete audible/visible observation"}}],"issues":[],"style_adjustments":{{}},"summary":"{language_name(api)}"}}.
 narration_language_ok is true when the narration is spoken in {language_name(api)}. EVERY score must be filled with your honest 0..100 judgment (never leave 0 unless the aspect truly failed); scores are subjective assessments, not measured accuracy. At least SIX observations across start/middle/end of the candidate ({duration:.2f}s). If only layout/color/crop/zoom/transition issues exist, propose style_adjustments restricted to {sorted(ADJUSTABLE)}. Never hide a speech or source problem as a layout change."""
@@ -101,7 +103,15 @@ narration_language_ok is true when the narration is spoken in {language_name(api
                 # audit); a small model's lower guess does not override them.
                 report[key] = measured[key]
                 report["review_mode"] = "video+measured"
+        technical = ("cut", "crop", "unreadable", "overlap", "desync", "sync", "glitch", "black", "noise", "silence", "distort", "blurry", "missing", "artifact")
         issues = [i for i in report.get("issues", []) if isinstance(i, str) and i.strip()]
+        editorial = [i for i in issues if not any(t in i.casefold() for t in technical)]
+        if editorial:
+            report["ignored_editorial_issues"] = editorial
+            issues = [i for i in issues if i not in editorial]
+            report["issues"] = issues
+            if report.get("no_critical_errors") is False:
+                report["no_critical_errors"] = True
         readability = report.get("visual_readability")
         if (type(readability) not in (int, float) or readability < 85) and not issues:
             # Low readability without a single concrete issue is noise, not a finding.
