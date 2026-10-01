@@ -15,6 +15,16 @@
       "name": "sensory_onomatopoeia_emphasis",
       "change": "Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text of that shot.",
       "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36929835132",
+    "chosen_at": "2026-10-01T21:52:39+00:00",
+    "experiment": {
+      "name": "ultra_short_middle_shot",
+      "change": "Include exactly one 2-word shot in the middle of the video to create a sharp pacing drop.",
+      "rationale": "Sudden rhythm shifts keep viewer retention high on YouTube Shorts by disrupting predictability."
     }
   }
 ]

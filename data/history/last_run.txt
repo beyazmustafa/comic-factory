@@ -1,11 +1,11 @@
-run_id: 36929578237  attempt: 1  event: workflow_dispatch
-produce step outcome: cancelled
---- data/runs/20261001T213508597868Z/run.json
+run_id: 36929835132  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261001T215000833777Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "building",
-  "stage": "Öğrenme: oyun kitabı ve deney",
+  "status": "failed",
+  "stage": "Olay, gerçek sayfalar ve senaryo",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -31,21 +31,41 @@ produce step outcome: cancelled
     "language": "en",
     "channel_theme": "superheroes",
     "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
-    "source": "archive",
+    "source": "auto",
     "archive_query": "mediatype:texts AND collection:(comics)",
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36929578237"
+  "run_id": "36929835132",
+  "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
+  "api_calls": 97
 }
---- data/runs/20261001T213508597868Z/diagnostics/provider_events.json
+--- data/runs/20261001T215000833777Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
+  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
+  "Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to v",
+  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
+  "Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to v"
 ]
---- data/runs/20261001T213508597868Z/diagnostics/providers.json
+--- data/runs/20261001T215000833777Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -68,8 +88,8 @@ produce step outcome: cancelled
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -98,6 +118,117 @@ produce step outcome: cancelled
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261001T215000833777Z/research/rejected_candidates.json
+[
+  {
+    "event": {
+      "title": "Absolute Harley Quinn's Dark Parentage Revealed",
+      "publisher": "DC Comics",
+      "series": "Absolute Batman",
+      "issue": "#22",
+      "year": 2026,
+      "universe": "Absolute Universe",
+      "characters": [
+        "Absolute Harley Quinn",
+        "Dr. Arkham",
+        "Absolute Joker"
+      ],
+      "summary": "Absolute Harley Quinn uncovers unsettling family secrets in her childhood home, discovering that her mother is the sinister Dr. Arkham and her biological father is Absolute Joker (Jack Grimm V).",
+      "importance": 95,
+      "popularity": 90,
+      "niche": 30,
+      "source_urls": [
+        "https://www.cbr.com/absolute-batman-22-harley-quinn-mother-doctor-arkham/"
+      ],
+      "id": "f4679642de0803578a13",
+      "selection_score": 74.25,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
+  },
+  {
+    "event": {
+      "title": "The Secret Leader of the Harley Quinn Revenge Squad",
+      "publisher": "DC Comics",
+      "series": "Harley Quinn",
+      "issue": "#65",
+      "year": 2026,
+      "universe": "DC",
+      "characters": [
+        "Harley Quinn",
+        "Batquinn"
+      ],
+      "summary": "Harley Quinn faces a tense confrontation and a massive identity crisis as the shocking, heavily redacted identity of the secret leader behind the Harley Quinn Revenge Squad is brought to light.",
+      "importance": 88,
+      "popularity": 82,
+      "niche": 35,
+      "source_urls": [
+        "https://bleedingcool.com/comics/harley-quinn-65-preview-the-twist-no-one-didnt-not-see-not-coming/"
+      ],
+      "id": "d9b6c4e9cbf744f645ba",
+      "selection_score": 70.6,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 4 panel, 3 kanıt."
+  },
+  {
+    "event": {
+      "title": "Batquinn's Gritty Vigilante Transformation",
+      "publisher": "DC Comics",
+      "series": "Harley Quinn",
+      "issue": "#60",
+      "year": 2026,
+      "universe": "DC",
+      "characters": [
+        "Harley Quinn",
+        "Batquinn"
+      ],
+      "summary": "Harley Quinn undergoes a shocking rebranding and transformation into 'Batquinn', adopting a darker, grittier Batman-inspired vigilante persona fueled by DC K.O. energy.",
+      "importance": 85,
+      "popularity": 80,
+      "niche": 40,
+      "source_urls": [
+        "https://bleedingcool.com/comics/harley-quinn-60-preview-batquinn-and-the-gritty-gotham-gag/"
+      ],
+      "id": "9ac5927d926095dd1b3d",
+      "selection_score": 70.25,
+      "_source": "web"
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  },
+  {
+    "event": {
+      "identifier": "weird-comics-004",
+      "title": "Thor’s Surprising Showdown in Weird Comics #4",
+      "year": 1940,
+      "publisher": "Fox Feature Syndicate",
+      "description": "Cover-to-cover scans of Weird Comics #4 (Fox, 1940). Scanned and edited by Mark Bowen. If you're a Golden Age comics collector interested in the digital preservation of these pop cultural artifacts and making them accessible to not just the few who can afford to collect these books, drop me a line at barkmowen@gmail.com so we can discuss the options you have at your disposal for safely getting your rare comics scanned!",
+      "subjects": [
+        "superhero comics",
+        "Golden Age comic books",
+        "Thor"
+      ],
+      "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 487,
+      "imagecount": 0,
+      "url": "https://archive.org/details/weird-comics-004",
+      "id": "ia_48c89938ffcbeaaf",
+      "series": "Weird Comics",
+      "issue": "4",
+      "summary": "Weird Comics #4'te Thor ve diğer süper kahramanların epik bir çatışması bekleniyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/weird-comics-004"
+      ],
+      "selecti
+--- data/runs/20261001T215000833777Z/diagnostics/story_1.json
+{"error": "Sahne 32: panel/metin geçersiz."}
+--- data/runs/20261001T215000833777Z/diagnostics/story_2.json
+{"error": "Sahne 20: panel/metin geçersiz."}
+--- data/runs/20261001T215000833777Z/diagnostics/story_3.json
+{"error": "Sahne 28: panel/metin geçersiz."}
+--- data/runs/20261001T215000833777Z/diagnostics/story_4.json
+{"error": "Sahne 17: panel/metin geçersiz."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -107,3 +238,36 @@ Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+
+→ Olay, gerçek sayfalar ve senaryo
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Olay araştırılıyor: Absolute Harley Quinn's Dark Parentage Revealed
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: The Secret Leader of the Harley Quinn Revenge Squad
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: Batquinn's Gritty Vigilante Transformation
+Bir arama kaynağı yanıt vermedi: DDGSException
+Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
+Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
+Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to v
+Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
+Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to v
+Olay araştırılıyor: Thor’s Surprising Showdown in Weird Comics #4
+Olay araştırılıyor: Blue Beetle’s Shocking Identity Crisis
+Olay araştırılıyor: Captain Science’s First Space Adventure
+HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
