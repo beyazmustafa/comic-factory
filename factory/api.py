@@ -393,11 +393,15 @@ class Api:
                     text = "".join(str(getattr(p, "text", "") or "") for p in parts)
                     if text:
                         break
-            self.last_response_info = {
-                "finish_reason": str(getattr(getattr(response, "candidates", [None])[0] if getattr(response, "candidates", None) else None, "finish_reason", "")),
-                "prompt_feedback": str(getattr(response, "prompt_feedback", "") or "")[:300],
-                "usage": str(getattr(response, "usage_metadata", "") or "")[:300],
-            }
+            try:
+                candidates = list(getattr(response, "candidates", None) or [])
+                self.last_response_info = {
+                    "finish_reason": str(getattr(candidates[0], "finish_reason", "")) if candidates else "",
+                    "prompt_feedback": str(getattr(response, "prompt_feedback", "") or "")[:300],
+                    "usage": str(getattr(response, "usage_metadata", "") or "")[:300],
+                }
+            except Exception:
+                self.last_response_info = {}
         except ProviderOverloaded as error:
             # Audio and video only exist on Gemini; images and text can move to Groq.
             if audio or video_uri or videos or not (self.groq_models or (self.groq_text_models and not images)):
