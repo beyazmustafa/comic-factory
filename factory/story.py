@@ -36,7 +36,7 @@ def validate_story(value, panels, facts, max_shots=40):
         if not ids:
             raise ValueError(f"Sahne {i + 1}: kaynak kanıtı eksik.")
         if row.get("motion") not in {"push", "pull", "left", "right", "up", "down", "hold"}:
-            raise ValueError("Kamera hareketi geçersiz.")
+            row["motion"] = "hold"
         if any(v in text for v in ("<", ">", "http://", "https://", chr(96) * 3)):
             raise ValueError("Anlatım düz metin olmalı.")
         usage[row["panel_id"]] += 1
