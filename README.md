@@ -1,27 +1,64 @@
 # Comic Factory Studio
 
-Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-09-14-studio-5**.
+Türkçe çizgi roman hikâyeleri için tek GitHub Actions çalışma alanı. Sürüm: **2026-10-01-archive-1**.
 
-Sistem konuyu seçer, gerçek çizgi roman sayfalarını araştırır, panel ve kaynak kanıtına bağlı özgün Türkçe anlatım yazar. Türkçe ses, altyazı kelimeleri ve sahne değişimleri aynı metne bağlıdır.
+Sistem Internet Archive'dan **kamu malı (public domain) bir Altın Çağ çizgi roman sayısının tamamını** indirir, hikâye sayfalarını panellere böler, panellere bağlı özgün Türkçe anlatım yazar, Türkçe seslendirir ve kelime kelime altyazılı dikey video üretir. Günde iki kez kendi kendine çalışır ve YouTube kanalına yükler.
 
-## Kullanım
+## Günde iki yükleme nasıl çalışır
+
+`.github/workflows/comic-factory.yml` içindeki `schedule` satırı workflow'u her gün **09:00 ve 18:00** (Türkiye saati; cron `0 6,15 * * *` UTC) tetikler. Zamanlanmış koşuda elle girilen alanlar boş olduğu için şu varsayılanlar devreye girer:
+
+| Ayar | Zamanlanmış değer | Nereden değişir |
+| --- | --- | --- |
+| İşlem | `create_and_publish` | — |
+| Konu | otomatik (arşivden rastgele dilim) | — |
+| Süre | 150 sn | `factory.json → target_seconds` |
+| Platform | yalnız `youtube` | Repo variable `SCHEDULED_PLATFORMS` (`both`, `youtube`, `instagram`) |
+| Görünürlük | `unlisted` | Repo variable `YOUTUBE_VISIBILITY` (`public`, `unlisted`, `private`) |
+
+İlk videolar `unlisted` çıkar; beğendiğin videoyu YouTube Studio'dan public yaparsın, kanal otomatik public'e geçsin istediğinde `YOUTUBE_VISIBILITY=public` değişkenini eklersin.
+
+Kullanılan sayılar `data/history/issues/` altında **repoya commit edilir** (workflow `contents: write` izniyle kendi commit'ini atar). Böylece cache silinse bile aynı sayı bir daha seçilmez. Bu klasörü silmek geçmişi sıfırlar.
+
+GitHub zamanlanmış koşuları yoğun saatlerde geciktirebilir; dakika gelince değil, birkaç dakika–yarım saat sonra başlaması normaldir. Zamanlanmış koşular yalnız varsayılan branch'te çalışır.
+
+> **Dakika sınırı:** Private repoda ücretsiz Actions süresi ayda 2000 dakikadır. Bir üretim 30–60 dakika sürer; günde iki koşu ayda 1800–3600 dakika eder. Repo **public** yapılırsa Actions sınırsızdır (kodda hiçbir gizli bilgi yok; secrets zaten repo ayarlarında). Private kalacaksa `factory.json → max_minutes` değerini 45'e çekmek ve `cron` satırını günde bire indirmek gerekir.
+
+## Kaynak: neden kamu malı arşiv
+
+Referans alınan Shorts formatı (gerçek sayı, panel panel, kesintisiz anlatım) ancak bir sayının **tüm sayfalarıyla** çıkar. Marvel/DC gibi güncel sayıların tamamını indirip yüklemek telif ihlalidir ve Content ID ile kanalı kapattırır; bu yüzden sistem yalnız 1964 öncesi, telifi yenilenmemiş sayıları kullanır.
+
+Seçim iki kademelidir (`factory/archive.py`):
+
+1. Arşiv kaydı açık bir kamu malı beyanı taşıyorsa (`licenseurl`, `rights`, açıklamada "public domain") → kabul (`declared`).
+2. Beyan yoksa: tarih ≤ `archive_max_year` (1963) **ve** yayıncı/koleksiyon, 1964'ten önce kapanmış ve kataloğu yenilenmemiş yayınevlerinden biriyse (Ace, Fox, Fiction House, Lev Gleason, Charlton, Nedor/Standard, Avon, Ajax-Farrell, Centaur, Prize, Hillman, Ziff-Davis, Youthful, Star, Toby, St. John, Quality, Fawcett…) → kabul (`inferred`).
+
+Her iki kademede de hâlâ korunan markaların adı geçiyorsa (Disney, MAD, Marvel/Timely/Atlas, DC/National, Archie, Harvey, Dell, EC, Classics Illustrated, King Features karakterleri, Captain Marvel/Shazam, Plastic Man, The Spirit…) sayı reddedilir. Kanıt `research/archive_search.json` ve `events/*/sources/source_000.json` içine yazılır ve video açıklamasında kaynak bağlantısı verilir. Not: Internet Archive'daki üst veri gönüllü girilir; filtre dikkatli ama kusursuz değildir. Şüpheli bir sayı görürsen `data/history/issues/` kaydı dururken videoyu kaldırman yeterlidir; `PROTECTED_MARKERS` listesine kelime eklemek o yayıncıyı kalıcı olarak engeller.
+
+Sorgu `factory.json → archive_query` ile değişir (varsayılan `mediatype:texts AND collection:(comics)`). Popüler kayıtlar listenin başında toplandığı için her koşu ilk sayfaya ek olarak iki **rastgele** sonuç sayfası okur; böylece günlük koşular farklı dilimler görür. Elle çalıştırırken "Konu" alanı arşiv aramasını daraltır (ör. `jungle`, `crime`, `horror`, `science fiction`, `Fox`).
+
+## Sayfadan panele
+
+- İndirme sırası: `_images.zip` (ham tarama) → `.cbz` → `_jp2.zip` → `.pdf` (poppler) → `.cbr` (7z). Biri açılmazsa sıradaki denenir; hepsi başarısızsa `download_errors.json` kaydedilir ve sıradaki aday sayıya geçilir.
+- Paneller **kodla** kesilir (`factory/panels.py → segment_page`): sayfa gri tona çevrilir, kâğıt rengi kestirilir, neredeyse tamamen kâğıt olan satır/sütun şeritleri "oluk" sayılır ve sayfa önce yatay, sonra dikey şeritlere bölünerek paneller bulunur. Model koordinat tahmin etmez; sayfanın üstüne kırmızı numaralarla işaretlenmiş panelleri **tarif eder** ve görünen konuşmaları aynen yazar. Eski sistemdeki "panel tahmini tutmuyor" sorununun çözümü budur.
+- Kapak (ilk sayfa), reklam ve düz metin sayfaları panel sayısı/kaplama oranıyla elenir; ≥4 ardışık panelli sayfadan oluşan ilk hikâye bloğu alınır (`max_pages` kadar).
+- Anlatım kanıtı: sayfadaki görünür balon/altyazı metninden ≥18 karakterlik birebir alıntı. Arşivdeki OCR metni (`_djvu.txt`) varsa kaynağa eklenir.
+- Senaryo bu kaynakta "tarih anlatımı" değil, **hikâyenin kendisini** panel sırasıyla anlatır (kim, ne oluyor, dönüş, gerçek son).
+
+`factory.json → source` değeri `web` yapılırsa eski yayınevi-önizleme yolu kullanılır.
+
+## Elle kullanım
 
 GitHub → **Actions → Comic Factory Studio → Run workflow**.
 
 | İşlem | Sonuç |
 | --- | --- |
-| `preview` | Otomatik konu seçimi, araştırma, video ve inceleme paketi. |
+| `preview` | Otomatik sayı seçimi, indirme, video ve inceleme paketi; yüklemez. |
 | `create_and_publish` | Kontrolleri geçen videoyu seçilen YouTube / Instagram hesabına yükler. |
 | `publish_preview` | `preview_run_id` ile seçtiğin hazır videonun aynısını yükler. |
 | `voice_test` | Sabit anlatım yönergesiyle Orus, Gacrux ve Fenrir seslerini karşılaştırır. |
 
-Konu boşsa Çizgi roman tarihinden (Marvel/DC, bağımsız yayınlar, manga ve Avrupa çizgi romanları) önemli, şaşırtıcı olaylar araştırılır; kahraman popülerliği ve bilginin niş değeri sıralamada kullanılır. Belirli olay istiyorsan konu alanına yaz. Süre 20–165 saniye arasında hedeftir; varsayılan 150 saniye. Gerçek süre doğrulanmış malzeme ve konuşma hızına bağlıdır.
-
-Ses `auto` olduğunda aynı Türkçe metin üç sesle okunur. Kayıtları dinleyen model doğallık, telaffuz ve anlatım enerjisini değerlendirir. Ses adından seçim yapılmaz. Örnekleri inceleme sayfasından kendin de dinleyebilirsin; menüden istediğin sesi seçebilirsin.
-
-Çalışma sonunda **comic-preview-RUN_ID** artifact ZIP dosyasını indir, çıkart ve **review.html** dosyasını aç. Video, ses örnekleri, her sahnenin paneli ve kaynak bağlantısı aynı sayfadadır. Başarısız üretimde de mevcut dosyalar kaydedilir.
-
-Yarım kalan bu sürümün üretimine devam etmek için yeni bir `preview` çalışması açıp **resume_run_id** alanına eski sayısal çalışma ID'sini yaz. Aynı konu/süre/ses ayarlarıyla tamamlanan aşamalar korunur. Değişen ayarlar ilgili aşamayı geçersiz kılar. Başarılı ses bölümleri ortak cache kaybolsa bile indirilen devam kaydından kullanılabilir. Önceki sürümlerin kayıtları bu sürüme devam kaydı olamaz.
+Çalışma sonunda **comic-preview-RUN_ID** artifact ZIP dosyasını indir, çıkart ve **review.html** dosyasını aç. Video, ses örnekleri, her sahnenin paneli ve kaynak bağlantısı aynı sayfadadır. Yarım kalan üretimi `resume_run_id` ile sürdürebilirsin.
 
 ## Sabit kurgu ve görüntü
 
@@ -33,8 +70,8 @@ Her çalışmanın ayarları `editing_profile.json` dosyasındadır. Son kalite 
 
 ## Kaynak, ses ve eşleşme
 
-- Yayınevi önizlemeleri ve kamuya açık resimli yazılardaki gerçek görseller indirilir. Kapak, fan art, ilgisiz sayfa ve reklamlar görsel kontrolde elenir. Görseli AI ile yeniden çizen bir adım yoktur; kırpma, ölçekleme ve hafif netleştirme yapılır.
-- Sayfa, seri/sayı/yıl kanıtına ve kaynak metinde gerçekten bulunan bir alıntıya bağlanır. Her anlatım cümlesi bilinen panel ve kanıt kimliği taşır. İkinci kontrol cümleyi gerçek kırpılmış panelle karşılaştırır.
+- Varsayılan kaynak (`archive`) Internet Archive'daki kamu malı sayının gerçek taramalarıdır; `web` kaynağında yayınevi önizlemeleri indirilir. Görseli AI ile yeniden çizen bir adım yoktur; kırpma, ölçekleme ve hafif netleştirme yapılır.
+- Her anlatım cümlesi bilinen panel ve kanıt kimliği taşır; kanıt arşiv üst verisi ve sayfada görünen metinden birebir alıntıdır. İkinci kontrol cümleyi gerçek kırpılmış panelle karşılaştırır.
 - Gemini TTS kısa konuşma bölümleri üretir. Groq Whisper large-v3 gerçek kaydı çözer. Bozuk zamanlar gelirse aynı kayıtta ikinci ASR modeli denenir. Senaryo ASR'ye telkin eden bir prompt olarak verilmez.
 - Ters/sırasız zamanlar kabul edilmez. Eksik/fazladan kelimeler ve tahmini zamanlar puanı düşürür. Eşik altında yalnız sorunlu ses bölümü yeniden üretilir; konu araştırması başa dönmez.
 - Bölümler gerçek ses örneği sayısıyla birleştirilir; sahneler toplam 30 fps çizelgesine yerleştirilir. Türkçe büyük harfler korunur. Altyazı biçimi sabit kurgu profilinden gelir; konuşulan kelime vurgulanır.
@@ -48,9 +85,9 @@ Workflow mevcut **18 secret eşlemesini** korur: Gemini, Groq, Instagram/Cloudin
 
 Repo variables alanındaki `GEMINI_MODEL`, `GEMINI_TTS_MODEL` ve `GROQ_WHISPER_MODEL` varsayılan modelleri değiştirebilir. Actions menüsünde seçtiğin ses `GEMINI_TTS_VOICE` değişkeninden önceliklidir. Servis kotaları ve olası ücretler mevcut hesaplarına bağlıdır; ücretsiz çalışma garantisi yoktur.
 
-Varsayılan sınırlar: 120 Gemini isteği, 3 aday olay, ses bölümü başına 3 üretim, aynı kayıt için 2 ASR modeli ve 100 dakikalık işlem bütçesi. Üretim/kontrol sınırlarına ulaşıldığında dosyalar korunur.
+Varsayılan sınırlar: 120 Gemini isteği, 3 aday sayı, ses bölümü başına 3 üretim, aynı kayıt için 2 ASR modeli ve 100 dakikalık işlem bütçesi. Üretim/kontrol sınırlarına ulaşıldığında dosyalar korunur.
 
-Yayınlanan dosyanın özeti kaydedilir. Başarılı yükleme tekrar gönderilmez. Önceki gönderimin sonucu belirsizse otomatik tekrar gönderilmez; `publication.json` ve platform hesabından kontrol edilebilir. YouTube varsayılan görünürlüğü public'tir. `preview` yayın yapmaz.
+Yayınlanan dosyanın özeti kaydedilir. Başarılı yükleme tekrar gönderilmez. Önceki gönderimin sonucu belirsizse otomatik tekrar gönderilmez; `publication.json` ve platform hesabından kontrol edilebilir. YouTube görünürlüğü `YOUTUBE_VISIBILITY` değişkeninden gelir; boşsa unlisted. `preview` yayın yapmaz.
 
 ## Geliştirme
 

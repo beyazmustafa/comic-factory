@@ -1,7 +1,7 @@
 {
   "target_seconds": 150,
   "max_events": 3,
-  "max_pages": 28,
+  "max_pages": 16,
   "max_shots": 40,
   "max_api_calls": 120,
   "max_minutes": 100,
@@ -15,5 +15,8 @@
   "voice": "auto",
   "music_file": "",
   "music_gain_db": -25,
-  "caption_offset": 0
+  "caption_offset": 0,
+  "source": "archive",
+  "archive_max_year": 1963,
+  "archive_scan_limit": 72
 }

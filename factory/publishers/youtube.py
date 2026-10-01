@@ -210,6 +210,14 @@ def find_previous_upload(video_hash: str) -> dict[str, Any] | None:
     return None
 
 
+def visibility() -> str:
+    """YOUTUBE_VISIBILITY repo variable: unlisted (default), public or private."""
+    value = clean_text(os.getenv("YOUTUBE_VISIBILITY", "")).lower() or "unlisted"
+    if value not in {"public", "unlisted", "private"}:
+        raise YouTubeUploaderError("YOUTUBE_VISIBILITY public, unlisted veya private olmalı.")
+    return value
+
+
 def save_upload_history(video_hash: str, video_id: str, title: str) -> None:
     """Başarılı yüklemeyi geçmişe kaydeder."""
     history = load_history()
@@ -222,7 +230,7 @@ def save_upload_history(video_hash: str, video_id: str, title: str) -> None:
             "video_sha256": video_hash,
             "video_id": video_id,
             "title": title,
-            "privacy_status": "public",
+            "privacy_status": visibility(),
             "uploaded_at": datetime.now(ISTANBUL_TIMEZONE).isoformat(),
         }
     )
@@ -231,7 +239,7 @@ def save_upload_history(video_hash: str, video_id: str, title: str) -> None:
 
 
 def upload_video(youtube: Any, title: str, description: str, tags: list[str]) -> str:
-    """Videoyu YouTube'a hemen public olarak yükler."""
+    """Videoyu YouTube'a YOUTUBE_VISIBILITY görünürlüğüyle yükler."""
     if not VIDEO_FILE.exists():
         raise YouTubeUploaderError("latest.mp4 bulunamadı.")
     snippet: dict[str, Any] = {
@@ -246,7 +254,7 @@ def upload_video(youtube: Any, title: str, description: str, tags: list[str]) ->
     body = {
         "snippet": snippet,
         "status": {
-            "privacyStatus": os.getenv("YOUTUBE_VISIBILITY", "public"),
+            "privacyStatus": visibility(),
             "selfDeclaredMadeForKids": False,
         },
     }
@@ -254,15 +262,18 @@ def upload_video(youtube: Any, title: str, description: str, tags: list[str]) ->
         str(VIDEO_FILE), mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True
     )
     request = youtube.videos().insert(
-        part="snippet,status", body=body, media_body=media, notifySubscribers=True
+        part="snippet,status",
+        body=body,
+        media_body=media,
+        notifySubscribers=visibility() == "public",
     )
     print()
     print("=" * 78)
-    print("YOUTUBE - DİREKT PUBLIC YAYIN")
+    print("YOUTUBE YÜKLEME")
     print("=" * 78)
     print()
     print(f"Başlık: {title}")
-    print("Yayın tipi: HEMEN PUBLIC")
+    print(f"Görünürlük: {visibility()}")
     print()
     response = None
     while response is None:

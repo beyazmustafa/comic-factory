@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "2026-09-14-studio-5"
+VERSION = "2026-10-01-archive-1"
 
 
 @dataclass(frozen=True)
@@ -26,6 +26,12 @@ class Settings:
     music_file: str = ""
     music_gain_db: float = -25
     caption_offset: float = 0
+    # "archive": complete public-domain issues from the Internet Archive (default).
+    # "web": the older publisher-preview search path.
+    source: str = "archive"
+    archive_query: str = "mediatype:texts AND collection:(comics)"
+    archive_max_year: int = 1963
+    archive_scan_limit: int = 72
 
     @classmethod
     def load(cls, path=None, **overrides):
@@ -54,6 +60,8 @@ class Settings:
             ("max_minutes", 10, 150),
             ("repair_attempts", 1, 4),
             ("chunk_words", 20, 70),
+            ("archive_max_year", 1920, 1963),
+            ("archive_scan_limit", 16, 120),
         ):
             value = getattr(result, key)
             if type(value) is not int or not low <= value <= high:
@@ -74,9 +82,14 @@ class Settings:
             "tts_model",
             "whisper_model",
             "music_file",
+            "archive_query",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")
+        if result.source not in {"archive", "web"}:
+            raise ValueError("source archive veya web olmalı.")
+        if not result.archive_query.strip():
+            raise ValueError("archive_query boş olamaz.")
         return result
 
     def to_dict(self):

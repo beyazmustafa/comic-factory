@@ -1,5 +1,9 @@
 name: Comic Factory Studio
 'on':
+  schedule:
+    # Günde iki üretim + yükleme: 09:00 ve 18:00 Türkiye saati (UTC+3).
+    # GitHub zamanlanmış koşuları yoğunlukta 10-30 dk geciktirebilir.
+    - cron: '0 6,15 * * *'
   workflow_dispatch:
     inputs:
       task:
@@ -46,7 +50,7 @@ name: Comic Factory Studio
         type: string
         default: ''
 permissions:
-  contents: read
+  contents: write
   actions: read
 concurrency:
   group: comic-factory-studio
@@ -54,9 +58,18 @@ concurrency:
 jobs:
   studio:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 120
     env:
       PYTHONUNBUFFERED: '1'
+      # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
+      TASK: ${{ inputs.task || 'create_and_publish' }}
+      TOPIC: ${{ inputs.topic || '' }}
+      DURATION: ${{ inputs.duration || '150' }}
+      VOICE: ${{ inputs.voice || 'auto' }}
+      PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'youtube' }}
+      RESUME: ${{ inputs.resume_run_id || '' }}
+      PREVIEW: ${{ inputs.preview_run_id || '' }}
+      YOUTUBE_VISIBILITY: ${{ vars.YOUTUBE_VISIBILITY || 'unlisted' }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
@@ -88,7 +101,7 @@ jobs:
     - name: Install media tools
       run: |
         sudo apt-get update -qq
-        sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-dejavu-extra
+        sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-dejavu-extra poppler-utils p7zip-full
         python -m pip install -r requirements.txt
     - name: Restore history and successful audio
       uses: actions/cache/restore@v4
@@ -110,10 +123,6 @@ jobs:
         python comic_factory.py --check
     - name: Validate previous run
       id: previous
-      env:
-        TASK: ${{ inputs.task }}
-        RESUME: ${{ inputs.resume_run_id }}
-        PREVIEW: ${{ inputs.preview_run_id }}
       run: |
         python - <<'PY'
         import os
@@ -139,13 +148,6 @@ jobs:
         run-id: ${{ steps.previous.outputs.run_id }}
     - name: Produce or publish
       id: produce
-      env:
-        TASK: ${{ inputs.task }}
-        TOPIC: ${{ inputs.topic }}
-        DURATION: ${{ inputs.duration }}
-        VOICE: ${{ inputs.voice }}
-        PLATFORMS: ${{ inputs.platforms }}
-        RESUME: ${{ inputs.resume_run_id }}
       run: |
         mkdir -p data/logs
         python - <<'PY'
@@ -168,6 +170,21 @@ jobs:
                 log.write(line);log.flush()
             raise SystemExit(process.wait())
         PY
+    - name: Record used issues in the repository
+      if: always()
+      run: |
+        git config user.name "comic-factory-bot"
+        git config user.email "comic-factory-bot@users.noreply.github.com"
+        git add -A data/history || true
+        if git diff --cached --quiet; then
+          echo "Kullanılmış sayı kaydı değişmedi."
+        else
+          git commit -m "history: kullanılan sayı kaydı (run ${{ github.run_id }})"
+          for attempt in 1 2 3; do
+            git pull --rebase origin "${{ github.ref_name }}" && git push origin "HEAD:${{ github.ref_name }}" && break
+            sleep 10
+          done
+        fi
     - name: Save video, sources, voices and resumable work
       if: always() && steps.produce.outputs.run_directory != ''
       uses: actions/upload-artifact@v4

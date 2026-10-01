@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import research, panels, story, voice, render, quality
+from . import archive, research, panels, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -25,7 +25,10 @@ def emit_directory(directory):
 
 def load_used():
     used = set()
-    for path in (ROOT / "data" / "events").rglob("*.json"):
+    paths = list((ROOT / "data" / "events").rglob("*.json")) + list(
+        (ROOT / "data" / "history").rglob("*.json")
+    )
+    for path in paths:
         try:
             data = json.loads(path.read_text())
             rows = data if isinstance(data, list) else data.get("events", [data])
@@ -33,7 +36,7 @@ def load_used():
                 rows = list(rows.values())
             for item in rows:
                 if isinstance(item, dict):
-                    for key in ("id", "event_id", "title", "event_title"):
+                    for key in ("id", "event_id", "title", "event_title", "identifier"):
                         if item.get(key):
                             used.add(str(item[key]).casefold())
         except (ValueError, TypeError, AttributeError):
@@ -101,15 +104,27 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         )
         bundle = checkpoints.read("story", story_key)
         if bundle is None:
-            candidates = research.shortlist(api, topic, load_used())
+            used = load_used()
+            from_archive = settings.source == "archive"
+            candidates = (
+                archive.shortlist(api, topic, used)
+                if from_archive
+                else research.shortlist(api, topic, used)
+            )
             fetcher = research.Fetcher()
             failures = []
             try:
                 for event in candidates:
                     print("Olay araştırılıyor: " + event["title"], flush=True)
                     try:
-                        pages, articles = research.collect_pages(api, event, fetcher)
-                        inventory, facts = panels.catalog(api, event, pages, articles)
+                        if from_archive:
+                            pages, articles = archive.collect_pages(api, event)
+                            inventory, facts = panels.catalog_archive(
+                                api, event, pages, articles
+                            )
+                        else:
+                            pages, articles = research.collect_pages(api, event, fetcher)
+                            inventory, facts = panels.catalog(api, event, pages, articles)
                         script = story.create(api, event, inventory, facts, style)
                         bundle = {
                             "event": event,
@@ -276,9 +291,16 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         used_panels = {s["panel_id"] for s in script["shots"]}
         sources = sorted({p["source_url"] for p in inventory if p["id"] in used_panels})
         event = bundle["event"]
+        licence = (
+            "\nSayfalar: Internet Archive, kamu malı (public domain) olarak işaretlenmiş sayı."
+            if settings.source == "archive"
+            else ""
+        )
         description = (
             script["description"]
-            + f"\n\nÇizgi roman: {event['series']} #{event['issue']} ({event['year']})\nKaynaklar:\n"
+            + f"\n\nÇizgi roman: {event['series']} #{event['issue']} ({event['year']})"
+            + licence
+            + "\nKaynaklar:\n"
             + "\n".join(sources)
         )
         hashtags = [
@@ -316,6 +338,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             ROOT / "data" / "events" / "v2" / (event["id"] + ".json"),
             {**event, "run_id": manifest["run_id"], "status": "ready"},
         )
+        if settings.source == "archive":
+            archive.remember_issue(event, manifest["run_id"])
         return directory
     except Exception as error:
         manifest.update(

@@ -5,7 +5,8 @@ __pycache__/
 token.json
 client_secret.json
 youtube_credentials.json
-data/
+data/*
+!data/history/
 assets/
 *.log
 .DS_Store

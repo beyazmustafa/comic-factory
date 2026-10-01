@@ -67,6 +67,11 @@ def create(api, event, panels, facts, style):
         }
         for p in panels
     ]
+    mode = (
+        "MODE: complete public-domain Golden Age issue. Retell THE STORY itself beat by beat in panel reading order (page then panel), like a narrated comic: who, what happens, the twist, the ending as actually shown. Mention the year/publisher once at most. "
+        if event.get("identifier")
+        else "MODE: comic-history explainer about a notable event. "
+    )
     feedback = ""
     desired = min(
         api.settings.max_shots,
@@ -75,7 +80,8 @@ def create(api, event, panels, facts, style):
     for attempt in range(api.settings.repair_attempts):
         draft = api.json(
             "Panellere bağlı Türkçe anlatım",
-            f"""Write an ORIGINAL Turkish comic-history explainer using ONLY supplied facts and panels. Use an energetic natural Turkish voice and evidence-supported chronology.
+            f"""Write an ORIGINAL Turkish narration using ONLY supplied facts and panels. Use an energetic natural Turkish voice and evidence-supported chronology.
+{mode}
 EVENT {json.dumps(event, ensure_ascii=False)}
 FACTS {json.dumps(facts, ensure_ascii=False)}
 PANELS {json.dumps(inventory, ensure_ascii=False)}
