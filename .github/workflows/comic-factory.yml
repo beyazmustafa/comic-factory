@@ -186,6 +186,7 @@ jobs:
           for f in data/runs/*/run.json; do [ -f "$f" ] && { echo "--- $f"; cat "$f"; echo; }; done
           for f in data/runs/*/diagnostics/provider_events.json data/runs/*/diagnostics/providers.json; do [ -f "$f" ] && { echo "--- $f"; cat "$f"; echo; }; done
           for f in $(grep -l '"response_text"' data/runs/*/diagnostics/api_*.json 2>/dev/null | tail -n 3); do echo "--- $f"; head -c 2500 "$f"; echo; done
+          for f in data/runs/*/audio/*/failures.json data/runs/*/voice_audition/failed_auditions.json; do [ -f "$f" ] && { echo "--- $f"; head -c 3000 "$f"; echo; }; done
           for f in data/runs/*/research/rejected_candidates.json; do [ -f "$f" ] && { echo "--- $f"; head -c 4000 "$f"; echo; }; done
           for f in $(ls data/runs/*/diagnostics/story_*.json data/runs/*/diagnostics/panel_matches_*.json 2>/dev/null | tail -n 4); do echo "--- $f"; python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(json.dumps({k: d[k] for k in d if k in ('error','failures','passed')}, ensure_ascii=False)[:3000])" "$f"; done
           echo "--- studio.log (son 300 satır)"
