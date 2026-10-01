@@ -30,6 +30,16 @@ class ProviderOverloaded(FactoryError):
     """A provider kept answering 429/503; the caller may try another one."""
 
 
+class ModelUnavailable(FactoryError):
+    """The model name is retired or not served to this key; try the next one."""
+
+
+def is_model_unavailable(error):
+    code = getattr(error, "code", None) or getattr(error, "status_code", None)
+    text = str(error).casefold()
+    return code == 404 or "not_found" in text or "no longer available" in text or "is not found" in text
+
+
 def parse_object(text, list_key=None):
     fence = chr(96) * 3
     value = json.loads(
@@ -140,6 +150,10 @@ class Api:
                     },
                 )
                 if not transient:
+                    if is_model_unavailable(error):
+                        raise ModelUnavailable(
+                            f"{label}: {type(error).__name__}: {str(error)[:300]}"
+                        ) from error
                     raise FactoryError(
                         f"{label}: {type(error).__name__}: {str(error)[:500]}"
                     ) from error
@@ -160,10 +174,11 @@ class Api:
                 result = self.request(label, lambda: operation_for_model(model), attempts)
                 self.model = model
                 return result
-            except ProviderOverloaded as error:
+            except (ProviderOverloaded, ModelUnavailable) as error:
                 self.dead.add(model)
                 errors.append(str(error))
-                self.note(f"{label}: {model} yanıt vermiyor, bu koşuda atlanacak.")
+                reason = "kapalı/erişilemez" if isinstance(error, ModelUnavailable) else "yanıt vermiyor"
+                self.note(f"{label}: {model} {reason}, bu koşuda atlanacak.")
         raise ProviderOverloaded("; ".join(errors) or f"{label}: Gemini modeli kalmadı.")
 
     # ------------------------------------------------------------------ groq

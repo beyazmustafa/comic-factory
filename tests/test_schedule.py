@@ -56,14 +56,19 @@ class ProviderChainTests(unittest.TestCase):
             api = self.make_api(temporary)
             seen = []
 
+            class Retired(Exception):
+                code = 404
+
             def operation(model):
                 seen.append(model)
-                if model != "stable":
+                if model == "primary":
                     raise Overloaded("high demand")
+                if model == "backup":
+                    raise Retired("This model is no longer available to new users.")
                 return "ok"
 
             self.assertEqual(api.gemini("Deneme", operation), "ok")
-            self.assertEqual(seen, ["primary"] * 3 + ["backup"] * 3 + ["stable"])
+            self.assertEqual(seen, ["primary"] * 3 + ["backup"] + ["stable"])
             self.assertEqual(api.dead, {"primary", "backup"})
             seen.clear()
             self.assertEqual(api.gemini("Deneme", operation), "ok")
