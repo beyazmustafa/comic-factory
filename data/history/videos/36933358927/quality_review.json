@@ -1,0 +1,46 @@
+{
+  "candidate_observed": true,
+  "turkish_narration": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95,
+  "scene_match": 95,
+  "delivery": 90,
+  "visual_readability": 95,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Opening shot starts with the dialogue hook 'Watch this hammer!' matching the speech balloon."
+    },
+    {
+      "second": 5,
+      "detail": "High Valhalla weapon shatters the mountain peak with clear visual framing and punchy pacing."
+    },
+    {
+      "second": 12,
+      "detail": "Wong's machine gunners blast away; subtitle word-by-word display is clean and legible."
+    },
+    {
+      "second": 19,
+      "detail": "Grant speeding across the sky on a thunderbolt with vibrant color and smooth transition."
+    },
+    {
+      "second": 28,
+      "detail": "Storm unleashes with red danger emphasis matching production settings."
+    },
+    {
+      "second": 35,
+      "detail": "Avalanche descends with the sound effect CRASH! integrated naturally into the narration."
+    },
+    {
+      "second": 45,
+      "detail": "Ending shot cleanly concludes the sequence as Grant and Glenda fly back to civilization."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The candidate video successfully executes the script with high visual readability, accurate subtitle synchronization, and energetic narration matching all production settings.",
+  "review_mode": "video",
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

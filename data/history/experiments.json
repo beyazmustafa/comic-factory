@@ -25,6 +25,16 @@
       "name": "ultra_short_middle_shot",
       "change": "Include exactly one 2-word shot in the middle of the video to create a sharp pacing drop.",
       "rationale": "Sudden rhythm shifts keep viewer retention high on YouTube Shorts by disrupting predictability."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36933358927",
+    "chosen_at": "2026-10-01T22:13:55+00:00",
+    "experiment": {
+      "name": "dialogue_hook",
+      "change": "Start the hook with a direct quote from a speech balloon in the first panel.",
+      "rationale": "Using an in-world quote immediately immerses the viewer into the action faster than third-person exposition."
     }
   }
 ]

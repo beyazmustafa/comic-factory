@@ -1,0 +1,287 @@
+{
+  "script": {
+    "title": "Thor's Mighty Hammer Transforms Grant Into An Unstoppable God!",
+    "description": "Grant transforms into Thor using a magical hammer to battle General Wong in 1940 Fox Feature Syndicate classic comics.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_000",
+        "narration": "\"Watch this hammer!\" Grant transforms into Thor's divine image!",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_000",
+        "narration": "High Valhalla's weapon shatters a mountain peak!",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_001",
+        "narration": "Grant leaps instantly to free Glenda from danger.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_001",
+        "narration": "Wong's machine gunners blast away with bursting shrapnel!",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_001",
+        "narration": "Suddenly Glenda is hit and falls to the ground!",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "down",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_002",
+        "narration": "Grant speeds across the sky on a crackling thunderbolt!",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_003",
+        "narration": "He warns the Grand Llama about the gold heist.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_004",
+        "narration": "Grant smites the clouds to unleash a violent storm!",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_005",
+        "narration": "Using Thor's hammer, Grant attacks the retreating horde.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_005",
+        "narration": "An avalanche descends with a tremendous CRASH!",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "down",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_006",
+        "narration": "Grant relentlessly pursues bandits, hurling explosive blasts.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_007",
+        "narration": "He reports to the Llama that bandits are annihilated.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_009",
+        "narration": "Back to civilization Grant and Glenda fly!",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "pull",
+        "emphasis": "reveal"
+      }
+    ],
+    "narration": "\"Watch this hammer!\" Grant transforms into Thor's divine image! High Valhalla's weapon shatters a mountain peak! Grant leaps instantly to free Glenda from danger. Wong's machine gunners blast away with bursting shrapnel! Suddenly Glenda is hit and falls to the ground! Grant speeds across the sky on a crackling thunderbolt! He warns the Grand Llama about the gold heist. Grant smites the clouds to unleash a violent storm! Using Thor's hammer, Grant attacks the retreating horde. An avalanche descends with a tremendous CRASH! Grant relentlessly pursues bandits, hurling explosive blasts. He reports to the Llama that bandits are annihilated. Back to civilization Grant and Glenda fly!",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "identifier": "weird-comics-004",
+      "title": "Weird Comics #4: Golden Age Superhero Thrills",
+      "year": 1940,
+      "publisher": "Fox Feature Syndicate",
+      "description": "Cover-to-cover scans of Weird Comics #4 (Fox, 1940). Scanned and edited by Mark Bowen. If you're a Golden Age comics collector interested in the digital preservation of these pop cultural artifacts and making them accessible to not just the few who can afford to collect these books, drop me a line at barkmowen@gmail.com so we can discuss the options you have at your disposal for safely getting your rare comics scanned!",
+      "subjects": [
+        "superhero comics",
+        "Golden Age comic books",
+        "Thor"
+      ],
+      "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 487,
+      "imagecount": 0,
+      "url": "https://archive.org/details/weird-comics-004",
+      "id": "ia_48c89938ffcbeaaf",
+      "series": "Weird Comics",
+      "issue": "4",
+      "summary": "Fox Feature Syndicate delivers a bizarre slice of 1940 superhero action and strange heroic encounters.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/weird-comics-004"
+      ],
+      "selection_score": 78.0,
+      "_source": "archive"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [
+        {
+          "shot_id": "shot_000",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Narration accurately captures the dialogue and transformation events depicted on the page."
+        },
+        {
+          "shot_id": "shot_001",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Narration precisely matches the bottom panel where the hammer shatters a mountain peak."
+        },
+        {
+          "shot_id": "shot_002",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Narration directly corresponds to the text and action in the top-left panel of page 4."
+        },
+        {
+          "shot_id": "shot_003",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Narration is strongly supported by the panels showing the machine gunners and bursting shrapnel."
+        },
+        {
+          "shot_id": "shot_004",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Narration matches the bottom panel text and depiction of Glenda falling to the ground."
+        },
+        {
+          "shot_id": "shot_006",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes Grant speeding across the sky on a thunderbolt, directly supported by fact_002 and visible in the bottom panel."
+        },
+        {
+          "shot_id": "shot_007",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration states he warns the Grand Llama about the gold heist, supported by fact_003 and visible in the top-left panel dialogue."
+        },
+        {
+          "shot_id": "shot_008",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes Grant smiting the clouds to unleash a storm, directly supported by fact_004 and the top-right panel."
+        },
+        {
+          "shot_id": "shot_010",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The top-left panel of page 8 clearly depicts Grant attacking with Thor's hammer, fully matching the narration and quoted evidence."
+        },
+        {
+          "shot_id": "shot_011",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The bottom-right panel of page 8 clearly shows the avalanche descending with a tremendous crash, matching the narration."
+        },
+        {
+          "shot_id": "shot_012",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The top panel of page 9 accurately depicts Grant pursuing bandits and hurling explosive blasts, matching the narration."
+        },
+        {
+          "shot_id": "shot_013",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The top-left panel of page 10 clearly shows Grant reporting to the Llama that the bandits were annihilated."
+        },
+        {
+          "shot_id": "shot_016",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately matches the caption text visible in panel 5: 'BACK TO CIVILIZATION GRANT AND GLENDA FLY!'."
+        }
+      ],
+      "failures": [],
+      "dropped_shots": [
+        "shot_005",
+        "shot_009",
+        "shot_014",
+        "shot_015"
+      ]
+    },
+    "full_description": "Grant transforms into Thor using a magical hammer to battle General Wong in 1940 Fox Feature Syndicate classic comics.\n\nComic: Weird Comics #4 (1940)\nPages: public-domain Golden Age issue scanned on the Internet Archive.\nSources:\nhttps://archive.org/details/weird-comics-004",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "foxfeaturesyndicate"
+    ],
+    "instagram_caption": "Thor's Mighty Hammer Transforms Grant Into An Unstoppable God!\n\nGrant transforms into Thor using a magical hammer to battle General Wong in 1940 Fox Feature Syndicate classic comics."
+  },
+  "sources": [
+    "https://archive.org/details/weird-comics-004"
+  ],
+  "voice": {
+    "voice": "Christopher",
+    "selection": "edge_fallback",
+    "errors": {}
+  },
+  "editing_profile": "comic-history-tr-v1"
+}

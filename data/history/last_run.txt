@@ -1,11 +1,11 @@
-run_id: 36929835132  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261001T215000833777Z/run.json
+run_id: 36933358927  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261001T221115860734Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Olay, gerçek sayfalar ve senaryo",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,11 +36,43 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36929835132",
-  "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
-  "api_calls": 97
+  "run_id": "36933358927",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "edbd8e60020cefa0ffc436362f60cb9800cf7dd49d4260811054b7eec4d4500b",
+  "metadata_sha256": "a343e95da55deb0956504ab0b845ac9e26f9785ad87b4c0699fc34fadcaeccad",
+  "quality_sha256": "7e32c50c8dc7333755f50458aff2092b397c9277310defd8ee600107d1962da4",
+  "api_calls": 81,
+  "duration": 46.69,
+  "voice": "Christopher",
+  "event": {
+    "identifier": "weird-comics-004",
+    "title": "Weird Comics #4: Golden Age Superhero Thrills",
+    "year": 1940,
+    "publisher": "Fox Feature Syndicate",
+    "description": "Cover-to-cover scans of Weird Comics #4 (Fox, 1940). Scanned and edited by Mark Bowen. If you're a Golden Age comics collector interested in the digital preservation of these pop cultural artifacts and making them accessible to not just the few who can afford to collect these books, drop me a line at barkmowen@gmail.com so we can discuss the options you have at your disposal for safely getting your rare comics scanned!",
+    "subjects": [
+      "superhero comics",
+      "Golden Age comic books",
+      "Thor"
+    ],
+    "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
+    "downloads": 487,
+    "imagecount": 0,
+    "url": "https://archive.org/details/weird-comics-004",
+    "id": "ia_48c89938ffcbeaaf",
+    "series": "Weird Comics",
+    "issue": "4",
+    "summary": "Fox Feature Syndicate delivers a bizarre slice of 1940 superhero action and strange heroic encounters.",
+    "universe": "Golden Age (public domain)",
+    "source_urls": [
+      "https://archive.org/details/weird-comics-004"
+    ],
+    "selection_score": 78.0,
+    "_source": "archive"
+  }
 }
---- data/runs/20261001T215000833777Z/diagnostics/provider_events.json
+--- data/runs/20261001T221115860734Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -54,18 +86,9 @@ produce step outcome: failure
   "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
-  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
-  "Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to v",
-  "Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to ",
-  "Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': \"Failed to v"
+  "Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261001T215000833777Z/diagnostics/providers.json
+--- data/runs/20261001T221115860734Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -87,9 +110,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -118,117 +141,69 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T215000833777Z/research/rejected_candidates.json
+--- data/runs/20261001T221115860734Z/voice_audition/failed_auditions.json
+{}
+--- data/runs/20261001T221115860734Z/research/rejected_candidates.json
 [
   {
     "event": {
-      "title": "Absolute Harley Quinn's Dark Parentage Revealed",
+      "title": "Absolute Joker Reveals His True Form",
       "publisher": "DC Comics",
       "series": "Absolute Batman",
-      "issue": "#22",
-      "year": 2026,
+      "issue": "15",
+      "year": 2025,
       "universe": "Absolute Universe",
       "characters": [
-        "Absolute Harley Quinn",
-        "Dr. Arkham",
-        "Absolute Joker"
+        "The Joker",
+        "Alfred"
       ],
-      "summary": "Absolute Harley Quinn uncovers unsettling family secrets in her childhood home, discovering that her mother is the sinister Dr. Arkham and her biological father is Absolute Joker (Jack Grimm V).",
-      "importance": 95,
-      "popularity": 90,
+      "summary": "Jack Grimm V reveals his true form as a horrifying clown monster, showing the ability to transform himself into a blood-chilling monster.",
+      "importance": 88,
+      "popularity": 85,
       "niche": 30,
       "source_urls": [
-        "https://www.cbr.com/absolute-batman-22-harley-quinn-mother-doctor-arkham/"
+        "https://www.cbr.com/10-most-terrifying-joker-moments/"
       ],
-      "id": "f4679642de0803578a13",
-      "selection_score": 74.25,
+      "id": "b201c67787e14d091c53",
+      "selection_score": 69.85,
       "_source": "web"
     },
     "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
   },
   {
     "event": {
-      "title": "The Secret Leader of the Harley Quinn Revenge Squad",
+      "title": "The Joker Wears His Own Face Upside Down",
       "publisher": "DC Comics",
-      "series": "Harley Quinn",
-      "issue": "#65",
-      "year": 2026,
-      "universe": "DC",
+      "series": "Batman and Robin",
+      "issue": "15",
+      "year": 2013,
+      "universe": "DC Universe",
       "characters": [
-        "Harley Quinn",
-        "Batquinn"
+        "The Joker",
+        "Robin"
       ],
-      "summary": "Harley Quinn faces a tense confrontation and a massive identity crisis as the shocking, heavily redacted identity of the secret leader behind the Harley Quinn Revenge Squad is brought to light.",
-      "importance": 88,
-      "popularity": 82,
-      "niche": 35,
-      "source_urls": [
-        "https://bleedingcool.com/comics/harley-quinn-65-preview-the-twist-no-one-didnt-not-see-not-coming/"
-      ],
-      "id": "d9b6c4e9cbf744f645ba",
-      "selection_score": 70.6,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 4 panel, 3 kanıt."
-  },
-  {
-    "event": {
-      "title": "Batquinn's Gritty Vigilante Transformation",
-      "publisher": "DC Comics",
-      "series": "Harley Quinn",
-      "issue": "#60",
-      "year": 2026,
-      "universe": "DC",
-      "characters": [
-        "Harley Quinn",
-        "Batquinn"
-      ],
-      "summary": "Harley Quinn undergoes a shocking rebranding and transformation into 'Batquinn', adopting a darker, grittier Batman-inspired vigilante persona fueled by DC K.O. energy.",
+      "summary": "The Joker wears his disgusting skin mask upside down to unsettle Robin, creating one of the most overwhelmingly scary visuals in DC Comics history.",
       "importance": 85,
-      "popularity": 80,
-      "niche": 40,
+      "popularity": 90,
+      "niche": 25,
       "source_urls": [
-        "https://bleedingcool.com/comics/harley-quinn-60-preview-batquinn-and-the-gritty-gotham-gag/"
+        "https://www.cbr.com/10-most-terrifying-joker-moments/"
       ],
-      "id": "9ac5927d926095dd1b3d",
-      "selection_score": 70.25,
+      "id": "66a17335859f4abd9ca0",
+      "selection_score": 68.25,
       "_source": "web"
     },
-    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
-  },
-  {
-    "event": {
-      "identifier": "weird-comics-004",
-      "title": "Thor’s Surprising Showdown in Weird Comics #4",
-      "year": 1940,
-      "publisher": "Fox Feature Syndicate",
-      "description": "Cover-to-cover scans of Weird Comics #4 (Fox, 1940). Scanned and edited by Mark Bowen. If you're a Golden Age comics collector interested in the digital preservation of these pop cultural artifacts and making them accessible to not just the few who can afford to collect these books, drop me a line at barkmowen@gmail.com so we can discuss the options you have at your disposal for safely getting your rare comics scanned!",
-      "subjects": [
-        "superhero comics",
-        "Golden Age comic books",
-        "Thor"
-      ],
-      "public_domain_evidence": "inferred: publisher 'fox' (closed before 1964, unrenewed Golden Age catalogue)",
-      "downloads": 487,
-      "imagecount": 0,
-      "url": "https://archive.org/details/weird-comics-004",
-      "id": "ia_48c89938ffcbeaaf",
-      "series": "Weird Comics",
-      "issue": "4",
-      "summary": "Weird Comics #4'te Thor ve diğer süper kahramanların epik bir çatışması bekleniyor.",
-      "universe": "Golden Age (public domain)",
-      "source_urls": [
-        "https://archive.org/details/weird-comics-004"
-      ],
-      "selecti
---- data/runs/20261001T215000833777Z/diagnostics/story_1.json
-{"error": "Sahne 32: panel/metin geçersiz."}
---- data/runs/20261001T215000833777Z/diagnostics/story_2.json
-{"error": "Sahne 20: panel/metin geçersiz."}
---- data/runs/20261001T215000833777Z/diagnostics/story_3.json
-{"error": "Sahne 28: panel/metin geçersiz."}
---- data/runs/20261001T215000833777Z/diagnostics/story_4.json
-{"error": "Sahne 17: panel/metin geçersiz."}
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
+  }
+]
+--- data/runs/20261001T221115860734Z/diagnostics/panel_matches_1.json
+{"passed": false, "failures": [{"shot_id": "shot_009", "reason": "The provided evidence for shot_009 describes the gold hoard warning rather than Grant blowing up a machine gun nest."}, {"shot_id": "shot_010", "reason": "The image shows full page 6 instead of a cropped panel, and the cited evidence regarding the gold hoard does not support the narration."}, {"shot_id": "shot_011", "reason": "The image displays the full page 7 rather than a cropped panel, and the narration embellishes beyond the quoted evidence."}, {"shot_id": "shot_012", "reason": "The image is a full page view and the cited evidence pertains to smiting clouds rather than the storm sweeping the territory."}, {"shot_id": "shot_013", "reason": "A full page image is provided instead of a cropped panel, and the evidence does not match the mountain quake action."}, {"shot_id": "shot_014", "reason": "The image shows a full page instead of a cropped panel, and the cited evidence refers to Thor's hammer rather than the bandit panic."}, {"shot_id": "shot_025", "reason": "Grant confronts Wong, but destroying his invading forces completely is not supported as Wong is shown asking where his army is."}, {"shot_id": "shot_026", "reason": "While a lightning bolt appears in the first panel, 'unstoppable divine wrath' is an unsupported exaggeration."}]}
+--- data/runs/20261001T221115860734Z/diagnostics/panel_matches_2.json
+{"passed": false, "failures": [{"shot_id": "shot_007", "reason": "The image shows page 5 (shot_006 repeated), but the narration describes Wong cursing his deserting dogs and Grant riding a thunderbolt, which corresponds to multiple separate panels rather than a single coherent action matching this specific view."}, {"shot_id": "shot_011", "reason": "Although visible in the comic page, the provided evidence (fact_004) pertains to smiting clouds rather than earthquakes and bandit panic."}, {"shot_id": "shot_012", "reason": "The narration describes driving bandits into the snow, but the provided evidence (fact_005) incorrectly cites Thor's hammer attack from a different panel."}, {"shot_id": "shot_013", "reason": "The narration describes an avalanche and screaming sentry, but the provided evidence (fact_005) is misaligned with this scene."}]}
+--- data/runs/20261001T221115860734Z/diagnostics/panel_matches_3.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The panel shows Grant saying the line about the hammer, but mountain demolition is shown in a separate panel on the same page."}, {"shot_id": "shot_006", "reason": "While the narration matches the top panel showing bandits fleeing into the snow, the provided evidence (fact_002) is about Grant and does not support this specific narration."}, {"shot_id": "shot_010", "reason": "The provided evidence discusses bandits robbing the gold hoard and does not support the action of Grant blasting a machine gun nest."}, {"shot_id": "shot_012", "reason": "Evidence focuses on the storm and clouds rather than the mountains quaking and the bandit army panicking."}, {"shot_id": "shot_013", "reason": "Evidence mentions Thor's hammer but fails to support driving the bandits higher into the snow-capped mountains."}, {"shot_id": "shot_014", "reason": "Evidence regarding Thor's hammer does not support a sentry screaming in terror from an avalanche."}, {"shot_id": "shot_015", "reason": "The narration describes an avalanche, but the provided evidence discusses Grant attacking with Thor's hammer, creating a mismatch."}, {"shot_id": "shot_022", "reason": "The evidence quote discusses Wong coming with a new army rather than Grant dismantling it, making the claim unsupported by the provided quote."}, {"shot_id": "shot_023", "reason": "The evidence quote is unrelated to publication facts about Fox Feature Syndicate or 1940."}]}
+--- data/runs/20261001T221115860734Z/diagnostics/panel_matches_4.json
+{"passed": false, "failures": [{"shot_id": "shot_005", "reason": "The provided evidence (fact_002) discusses Grant speeding to the Forbidden City, which does not support the narration about bandits fleeing into snowy mountain passes."}, {"shot_id": "shot_009", "reason": "The narration describes the mountains quaking, but the provided evidence (fact_004) only quotes Grant smiting the clouds, failing to support this specific action."}, {"shot_id": "shot_014", "reason": "The narration states that General Wong approaches with a fresh army, but the provided panel from page 12 shows Wong captured and demanding where his army is."}, {"shot_id": "shot_015", "reason": "The provided evidence fact_008 refers to page 11 regarding bandits, whereas the page image shows Grant confronting Wong on page 12, resulting in a mismatch between the cited evidence and the panel."}]}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -250,24 +225,29 @@ Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanaca
 → Olay, gerçek sayfalar ve senaryo
 Bir arama kaynağı yanıt vermedi: DDGSException
 Bir arama kaynağı yanıt vermedi: DDGSException
-Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Olay araştırılıyor: Absolute Harley Quinn's Dark Parentage Revealed
+Olay araştırılıyor: Absolute Joker Reveals His True Form
 Bir arama kaynağı yanıt vermedi: DDGSException
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Secret Leader of the Harley Quinn Revenge Squad
+Olay araştırılıyor: The Joker Wears His Own Face Upside Down
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Batquinn's Gritty Vigilante Transformation
 Bir arama kaynağı yanıt vermedi: DDGSException
-Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
-Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
-Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to v
-Panellere bağlı anlatım: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Panellere bağlı anlatım: Groq openai/gpt-oss-120b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-120b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to 
-Panellere bağlı anlatım: Groq openai/gpt-oss-20b isteği reddetti: Panellere bağlı anlatım (Groq openai/gpt-oss-20b): BadRequestError: Error code: 400 - {'error': {'message': "Failed to v
-Olay araştırılıyor: Thor’s Surprising Showdown in Weird Comics #4
-Olay araştırılıyor: Blue Beetle’s Shocking Identity Crisis
-Olay araştırılıyor: Captain Science’s First Space Adventure
-HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
+Olay araştırılıyor: Weird Comics #4: Golden Age Superhero Thrills
+Denetimi geçemeyen 4 sahne çıkarıldı; 13 sahne kaldı.
+
+→ Türkçe ses seçimi
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+
+→ Konuşma ve kelime zamanları
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+
+→ Dikey video ve eşzamanlı altyazı
+
+→ Bitmiş videonun görüntü ve ses kontrolü
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261001T221115860734Z/review.html
