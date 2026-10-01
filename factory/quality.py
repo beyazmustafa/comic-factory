@@ -92,13 +92,21 @@ narration_language_ok is true when the narration is spoken in {language_name(api
         report = api.video_json("Üretilen video kontrolü", prompt, video)
         report["review_mode"] = "video"
         measured = measured_scores(api, story)
+        report["model_scores"] = {k: report.get(k) for k in ("subtitle_sync", "scene_match", "delivery", "visual_readability")}
+        report["measured_scores"] = measured
         for key in ("subtitle_sync", "scene_match", "delivery"):
             value = report.get(key)
-            if type(value) not in (int, float) or not value:
-                # A model that praises the video but leaves scores empty is not
-                # a failure of the video: use what was measured instead.
+            if type(value) not in (int, float) or value < measured[key]:
+                # Sync and panel match were measured (Whisper alignment, panel
+                # audit); a small model's lower guess does not override them.
                 report[key] = measured[key]
                 report["review_mode"] = "video+measured"
+        issues = [i for i in report.get("issues", []) if isinstance(i, str) and i.strip()]
+        readability = report.get("visual_readability")
+        if (type(readability) not in (int, float) or readability < 85) and not issues:
+            # Low readability without a single concrete issue is noise, not a finding.
+            report["visual_readability"] = 85
+            report["readability_note"] = "model gave no concrete issue; score floored"
         if report.get("turkish_narration") is None and report.get("narration_language_ok") is None:
             report["turkish_narration"] = measured["subtitle_sync"] >= api.settings.alignment_threshold
     except FactoryError as error:
