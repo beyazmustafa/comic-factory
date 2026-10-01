@@ -175,11 +175,19 @@ jobs:
       run: |
         git config user.name "comic-factory-bot"
         git config user.email "comic-factory-bot@users.noreply.github.com"
+        mkdir -p data/history
+        {
+          echo "run_id: ${{ github.run_id }}  attempt: ${{ github.run_attempt }}  event: ${{ github.event_name }}"
+          echo "produce step outcome: ${{ steps.produce.outcome }}"
+          for f in data/runs/*/run.json; do [ -f "$f" ] && { echo "--- $f"; cat "$f"; echo; }; done
+          echo "--- studio.log (son 300 satır)"
+          tail -n 300 data/logs/studio.log 2>/dev/null || echo "(log yok)"
+        } > data/history/last_run.log
         git add -A data/history || true
         if git diff --cached --quiet; then
           echo "Kullanılmış sayı kaydı değişmedi."
         else
-          git commit -m "history: kullanılan sayı kaydı (run ${{ github.run_id }})"
+          git commit -m "history: koşu kaydı (run ${{ github.run_id }}, ${{ steps.produce.outcome }})"
           for attempt in 1 2 3; do
             git pull --rebase origin "${{ github.ref_name }}" && git push origin "HEAD:${{ github.ref_name }}" && break
             sleep 10
