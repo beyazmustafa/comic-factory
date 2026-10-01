@@ -64,6 +64,16 @@
       "name": "action_verb_titles",
       "change": "Use an imperative action verb at the start of the title to heighten immediate curiosity.",
       "rationale": "Starting titles with high-energy action verbs can boost initial click-through rates on short-form feeds."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36941641160",
+    "chosen_at": "2026-10-01T23:39:34+00:00",
+    "experiment": {
+      "name": "question_hook",
+      "change": "Start the hook with a direct question addressing the viewer to boost initial engagement.",
+      "rationale": "Direct questions create a cognitive open loop that forces viewers to watch further to find the answer."
     }
   }
 ]

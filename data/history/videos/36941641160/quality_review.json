@@ -1,0 +1,61 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": false,
+  "subtitle_sync": 92.10526315789474,
+  "scene_match": 95,
+  "delivery": 92.10526315789474,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The hook is a statement rather than the required direct question for the experiment."
+    },
+    {
+      "second": 121,
+      "detail": "Total duration is 2:01, which is significantly longer than the 35-45 second requirement."
+    },
+    {
+      "second": 121,
+      "detail": "The pacing is too slow for a Shorts-style documentary."
+    },
+    {
+      "second": 121,
+      "detail": "The experiment 'question_hook' was not implemented."
+    },
+    {
+      "second": 121,
+      "detail": "Narration is energetic and clear."
+    },
+    {
+      "second": 121,
+      "detail": "Visuals and captions are well-aligned and readable."
+    }
+  ],
+  "issues": [
+    "Duration exceeds limit",
+    "Experiment not implemented",
+    "Hook not a question"
+  ],
+  "style_adjustments": {},
+  "summary": "The video is well-produced in terms of visual quality and narration energy, but it fails significantly on the duration constraint and the experiment requirement.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 90,
+    "scene_match": 95,
+    "delivery": 80,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 92.10526315789474,
+    "scene_match": 85.0,
+    "delivery": 92.10526315789474
+  },
+  "turkish_narration": true,
+  "passed": false,
+  "failed_checks": [
+    "no_critical_errors",
+    "observation_times"
+  ],
+  "subjective_assessment": true
+}
