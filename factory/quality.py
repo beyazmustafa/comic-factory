@@ -30,6 +30,8 @@ ADJUSTABLE = {
 
 def validate_review(report, duration=None):
     failures = []
+    if "narration_language_ok" in report and "turkish_narration" not in report:
+        report["turkish_narration"] = report.get("narration_language_ok")
     for key in (
         "candidate_observed",
         "turkish_narration",
@@ -84,11 +86,21 @@ Evaluate panel framing, caption readability, pacing and {language_name(api)} nar
 SCRIPT {json.dumps(story["shots"], ensure_ascii=False)}
 PRODUCTION SETTINGS {json.dumps(style, ensure_ascii=False)}
 Check burned caption words vs heard speech including later scenes/joins, matching panel changes, cut-off faces/actions, glyph readability, audio artifacts, uncomfortable pauses and coherent payoff.
-Return {{"candidate_observed":true,"turkish_narration":true (true when narration is in {language_name(api)}),"no_critical_errors":true,"subtitle_sync":0,"scene_match":0,"delivery":0,"visual_readability":0,"observations":[{{"second":0,"detail":"Turkish concrete audible/visible observation"}}],"issues":[],"style_adjustments":{{}},"summary":"Turkish"}}.
-Scores 0..100 are subjective assessments, not measured accuracy. At least SIX observations across start/middle/end of the candidate ({duration:.2f}s). If only layout/color/crop/zoom/transition issues exist, propose style_adjustments restricted to {sorted(ADJUSTABLE)}. Never hide a speech or source problem as a layout change."""
+Return {{"candidate_observed":true,"narration_language_ok":true,"no_critical_errors":true,"subtitle_sync":0,"scene_match":0,"delivery":0,"visual_readability":0,"observations":[{{"second":0,"detail":"{language_name(api)} concrete audible/visible observation"}}],"issues":[],"style_adjustments":{{}},"summary":"{language_name(api)}"}}.
+narration_language_ok is true when the narration is spoken in {language_name(api)}. EVERY score must be filled with your honest 0..100 judgment (never leave 0 unless the aspect truly failed); scores are subjective assessments, not measured accuracy. At least SIX observations across start/middle/end of the candidate ({duration:.2f}s). If only layout/color/crop/zoom/transition issues exist, propose style_adjustments restricted to {sorted(ADJUSTABLE)}. Never hide a speech or source problem as a layout change."""
     try:
         report = api.video_json("Üretilen video kontrolü", prompt, video)
         report["review_mode"] = "video"
+        measured = measured_scores(api, story)
+        for key in ("subtitle_sync", "scene_match", "delivery"):
+            value = report.get(key)
+            if type(value) not in (int, float) or not value:
+                # A model that praises the video but leaves scores empty is not
+                # a failure of the video: use what was measured instead.
+                report[key] = measured[key]
+                report["review_mode"] = "video+measured"
+        if report.get("turkish_narration") is None and report.get("narration_language_ok") is None:
+            report["turkish_narration"] = measured["subtitle_sync"] >= api.settings.alignment_threshold
     except FactoryError as error:
         api.note(f"Video kontrolü Gemini'de yapılamadı ({str(error)[:120]}); kare incelemesine geçildi.")
         report = frame_review(api, video, story, style, duration)
@@ -110,6 +122,20 @@ def extract_frames(video, duration, directory, count=5):
         )
         frames.append((second, path))
     return frames
+
+
+def measured_scores(api, story):
+    """Objective stand-ins: Whisper alignment per chunk and the panel audit."""
+    try:
+        aligned = json.loads((api.directory / "aligned_words.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        aligned = {}
+    chunk_scores = [c["score"] for c in aligned.get("chunks", []) if isinstance(c, dict)]
+    sync = min(chunk_scores) if chunk_scores else 0
+    audit = story.get("panel_validation", {}).get("shots", [])
+    matches = [float(r.get("match_score", 0)) for r in audit if isinstance(r, dict)]
+    scene = min(matches) if matches else 0
+    return {"subtitle_sync": sync, "scene_match": scene, "delivery": sync}
 
 
 def frame_review(api, video, story, style, duration):

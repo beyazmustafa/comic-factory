@@ -97,6 +97,7 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         style = {**style, **learned}
         save_json(directory / "editing_profile.json", style)
         stage("Olay, gerçek sayfalar ve senaryo")
+        # Playbook/experiment change every run; a resumed run must keep its story.
         story_key = signature(
             [
                 topic,
@@ -104,7 +105,7 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
                 settings.max_shots,
                 settings.panel_threshold,
                 settings.gemini_model,
-                style,
+                {k: v for k, v in style.items() if k not in ("playbook", "experiment")},
             ]
         )
         bundle = checkpoints.read("story", story_key)
