@@ -76,8 +76,9 @@ def align_words(
                 f"Geçersiz veya sırasız ses zamanları: ASR kelimesi {index + 1}."
             )
         if audio_duration is not None:
-            # Whisper timestamps have 20 ms resolution; allow only that rounding.
-            if end > audio_duration + 0.02:
+            # Whisper pads the final word past the end of a trimmed recording by
+            # a few hundred milliseconds; clamp that, reject only real overruns.
+            if end > audio_duration + 1.0 or start > audio_duration + 0.5:
                 raise ValueError(f"{index + 1}. ASR kelimesi kayıt süresinin dışında.")
             start, end = min(start, audio_duration), min(end, audio_duration)
         prepared.append({"word": str(item["word"]), "start": start, "end": end})
