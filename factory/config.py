@@ -17,7 +17,7 @@ class Settings:
     max_minutes: int = 100
     repair_attempts: int = 3
     chunk_words: int = 42
-    alignment_threshold: float = 95
+    alignment_threshold: float = 86
     panel_threshold: float = 90
     gemini_model: str = "gemini-3.8-flash"
     # Tried in order when the primary model answers 429/503; stable models last.

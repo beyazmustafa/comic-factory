@@ -7,7 +7,7 @@
   "max_minutes": 100,
   "repair_attempts": 3,
   "chunk_words": 42,
-  "alignment_threshold": 95,
+  "alignment_threshold": 86,
   "panel_threshold": 90,
   "gemini_model": "gemini-3.8-flash",
   "tts_model": "gemini-3.1-flash-tts-preview",
