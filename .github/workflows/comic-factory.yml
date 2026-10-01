@@ -182,7 +182,7 @@ jobs:
           for f in data/runs/*/run.json; do [ -f "$f" ] && { echo "--- $f"; cat "$f"; echo; }; done
           echo "--- studio.log (son 300 satır)"
           tail -n 300 data/logs/studio.log 2>/dev/null || echo "(log yok)"
-        } > data/history/last_run.log
+        } > data/history/last_run.txt
         git add -A data/history || true
         if git diff --cached --quiet; then
           echo "Kullanılmış sayı kaydı değişmedi."
