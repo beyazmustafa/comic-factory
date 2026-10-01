@@ -102,6 +102,7 @@ DELIVERY {style.get("narrator_delivery", "")}
 LEARNED PLAYBOOK (follow; it is updated from real audience data):
 {style.get("playbook", "")}
 THIS VIDEO'S EXPERIMENT (apply exactly once, it will be measured): {json.dumps(style.get("experiment"), ensure_ascii=False)}
+HOOK RULE: the very first sentence must state the single most shocking event of the story in <= 12 words, in present tense, naming the hero or villain; never start with "Meanwhile", "In this issue" or scene-setting.
 Target {api.settings.target_seconds} seconds, {round(api.settings.target_seconds * 1.8)}..{round(api.settings.target_seconds * 2.2)} {language_name(api)} words, around {desired} shots but at most {api.settings.max_shots}. Adapt duration to VERIFIED material, never invent scenes to fill time.
 First line directly states the extraordinary event and matches the opening panel. Concrete cause/effect, coherent evidence-supported chronology, escalation, factual payoff. No generic intro, invented dialogue, filler, or subscribe CTA. Original proper-name spelling. Favor short 3..12 word beats, vary push/pull and vertical movement according to the visible action. Most shots use normal emphasis (yellow captions); use danger/reveal/turn only for meaningful story beats. Each shot 3..30 words, supplied panel_id and 1+ fact_ids. Each panel at most 3 times; at least 6 unique panels. Page IDs are not chronological page numbers. Unseen action cannot be claimed as visible; context must be explicit.
 Return {{"title":"{language_name(api)}","description":"{language_name(api)}","shots":[{{"panel_id":"","narration":"{language_name(api)}","fact_ids":[],"motion":"push|pull|left|right|up|down|hold","emphasis":"normal|danger|reveal|turn"}}]}}.
@@ -129,7 +130,7 @@ REPAIR FEEDBACK {feedback}""",
         failed = {f["shot_id"] for f in report["failures"]}
         kept = [s for s in draft.get("shots", []) if isinstance(s, dict)]
         kept = [s for s, v in zip(kept, value["shots"]) if v["id"] not in failed]
-        minimum = max(6, round(len(value["shots"]) * 0.6))
+        minimum = max(8, round(len(value["shots"]) * 0.7))
         if attempt == api.settings.repair_attempts - 1 and len(kept) >= minimum:
             try:
                 trimmed = validate_story({**draft, "shots": kept}, panels, facts, api.settings.max_shots)

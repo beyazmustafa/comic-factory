@@ -5,7 +5,7 @@
   "max_shots": 40,
   "max_api_calls": 120,
   "max_minutes": 100,
-  "repair_attempts": 3,
+  "repair_attempts": 4,
   "chunk_words": 42,
   "alignment_threshold": 86,
   "panel_threshold": 85,
