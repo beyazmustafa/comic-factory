@@ -161,7 +161,7 @@ class DiscoveryTests(unittest.TestCase):
             api.groq_client = groq
             found = api.discover()
             self.assertEqual(api.models, ["gemini-3.7-flash", "gemini-3.8-flash", "gemini-3.9-flash", "gemini-3.9-pro"])
-            self.assertEqual(api.groq_models, ["qwen/qwen3-vl-32b", "meta-llama/llama-4-maverick-17b-128e-instruct"])
+            self.assertEqual(api.groq_models, ["meta-llama/llama-4-maverick-17b-128e-instruct", "qwen/qwen3-vl-32b"])
             self.assertEqual(found["errors"], [])
             self.assertTrue((Path(temporary) / "diagnostics" / "providers.json").is_file())
 
