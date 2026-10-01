@@ -13,14 +13,17 @@ from .core import save_json
 
 GROQ_IMAGE_LIMIT = 5  # Groq vision requests accept at most five images.
 # Model names that never answer a JSON text/vision request.
-GEMINI_EXCLUDE = ("tts", "image", "embedding", "live", "audio", "veo", "imagen", "robotics", "computer-use", "deep-research")
-GROQ_VISION_HINTS = ("llama-4", "maverick", "scout", "vision", "vl")
-GROQ_EXCLUDE = ("whisper", "tts", "guard", "embedding", "orpheus", "playai", "compound")
+GEMINI_EXCLUDE = ("tts", "image", "embedding", "live", "audio", "veo", "imagen", "robotics", "computer-use",
+                  "deep-research", "lyria", "banana", "transcribe", "customtools", "antigravity", "gemma")
+GROQ_VISION_HINTS = ("llama-4", "maverick", "scout", "vision", "-vl", "/qwen3-vl", "qwen-vl")
+GROQ_TEXT_HINTS = ("gpt-oss-120b", "gpt-oss-20b", "qwen", "llama-3.3-70b", "kimi", "deepseek")
+GROQ_EXCLUDE = ("whisper", "tts", "guard", "embedding", "orpheus", "playai", "compound", "allam")
 
 
 def version_key(name):
     numbers = [float(n) for n in re.findall(r"\d+(?:\.\d+)?", name)]
-    return (numbers[0] if numbers else 0.0, "flash" in name, "pro" in name, name)
+    lower = name.casefold()
+    return (numbers[0] if numbers else 0.0, "flash" in lower, "lite" not in lower, "preview" not in lower, "pro" in lower, name)
 
 
 class FactoryError(RuntimeError):
@@ -51,9 +54,16 @@ def is_model_unavailable(error):
 
 def parse_object(text, list_key=None):
     fence = chr(96) * 3
-    value = json.loads(
-        re.sub("^" + fence + r"(?:json)?\s*|\s*" + fence + "$", "", text.strip())
-    )
+    cleaned = re.sub("^" + fence + r"(?:json)?\s*|\s*" + fence + "$", "", text.strip())
+    try:
+        value = json.loads(cleaned)
+    except ValueError:
+        # Prose around the object, or a fence followed by commentary: take the
+        # outermost {...} span and try once more before giving up.
+        start, end = cleaned.find("{"), cleaned.rfind("}")
+        if start < 0 or end <= start:
+            raise
+        value = json.loads(cleaned[start : end + 1])
     # Some providers return the requested collection without its outer object.
     # Normalize only when the caller explicitly names that collection.
     if isinstance(value, list) and list_key and all(isinstance(item, dict) for item in value):
@@ -123,6 +133,7 @@ class Api:
         self.groq_models = [
             m.strip() for m in str(getattr(settings, "groq_model", "") or "").split(",") if m.strip()
         ]
+        self.groq_text_models = []
         self.groq_model = self.groq_models[0] if self.groq_models else ""
         self.groq_client = None
         self.events = []
@@ -220,7 +231,11 @@ class Api:
             vision = [m for m in listed if m not in configured and any(h in m.casefold() for h in GROQ_VISION_HINTS)]
             self.groq_models = configured + sorted(vision, key=version_key, reverse=True)
             self.groq_model = self.groq_models[0] if self.groq_models else ""
+            # Text-only requests (story, ranking, candidates) can use any strong chat model.
+            text = [m for m in listed if m not in self.groq_models and any(h in m.casefold() for h in GROQ_TEXT_HINTS)]
+            self.groq_text_models = sorted(text, key=lambda m: GROQ_TEXT_HINTS.index(next(h for h in GROQ_TEXT_HINTS if h in m.casefold())))
         found["gemini_chain"], found["groq_chain"] = list(self.models), list(self.groq_models)
+        found["groq_text_chain"] = list(self.groq_text_models)
         save_json(self.directory / "diagnostics" / "providers.json", found)
         self.discovered = found
         return found
@@ -274,7 +289,8 @@ class Api:
 
         self.discover()
         errors = []
-        for model in [m for m in self.groq_models if m not in self.dead]:
+        candidates = list(self.groq_models) + ([] if images else list(self.groq_text_models))
+        for model in [m for m in candidates if m not in self.dead]:
             def call(model=model):
                 response = self.groq().chat.completions.create(
                     model=model,
@@ -332,6 +348,7 @@ class Api:
                 contents=contents,
                 config=types.GenerateContentConfig(
                     temperature=0.2,
+                    max_output_tokens=16384,
                     response_mime_type="application/json",
                     automatic_function_calling=types.AutomaticFunctionCallingConfig(
                         disable=True
@@ -339,13 +356,33 @@ class Api:
                 ),
             )
 
+        for strict in (False, True):
+            text, provider = self._generate_text(label, prompt, images, audio, video_uri, videos, generate, contents)
+            path = self.directory / "diagnostics" / f"api_{self.calls:03}.json"
+            try:
+                value = parse_object(text, list_key=list_key)
+            except ValueError as error:
+                save_json(path, {"provider": provider, "response_text": text, "error": str(error)})
+                if strict:
+                    raise FactoryError(
+                        f"{label}: geçerli JSON alınamadı; yanıt tanı dosyasında."
+                    ) from error
+                self.note(f"{label}: bozuk JSON geldi; sıkı istemle bir kez daha deneniyor.")
+                reminder = "\n\nSTRICT OUTPUT: reply with exactly ONE complete, valid JSON object and nothing else. No markdown, no commentary, no trailing text. Keep strings short so the object is not truncated."
+                contents[1] = prompt + reminder
+                prompt = prompt + reminder
+                continue
+            save_json(path, {"provider": provider, "model": self.groq_model if provider == "groq" else self.model, "value": value})
+            return value
+
+    def _generate_text(self, label, prompt, images, audio, video_uri, videos, generate, contents):
         provider = "gemini"
         try:
             response = self.gemini(label, generate)
             text = response.text or ""
         except ProviderOverloaded as error:
             # Audio and video only exist on Gemini; images and text can move to Groq.
-            if audio or video_uri or videos or not self.groq_models:
+            if audio or video_uri or videos or not (self.groq_models or (self.groq_text_models and not images)):
                 raise FactoryError(
                     f"{label}: Gemini modelleri yanıt vermedi ve bu istek Groq'a taşınamaz: {error}"
                 ) from error
@@ -357,16 +394,7 @@ class Api:
                     f"{label}: hiçbir sağlayıcı yanıt vermedi. Gemini: {str(error)[:200]} | Groq: {str(groq_error)[:200]}"
                 ) from groq_error
             provider = "groq"
-        path = self.directory / "diagnostics" / f"api_{self.calls:03}.json"
-        try:
-            value = parse_object(text, list_key=list_key)
-        except ValueError as error:
-            save_json(path, {"provider": provider, "response_text": text, "error": str(error)})
-            raise FactoryError(
-                f"{label}: geçerli JSON alınamadı; yanıt tanı dosyasında."
-            ) from error
-        save_json(path, {"provider": provider, "model": self.groq_model if provider == "groq" else self.model, "value": value})
-        return value
+        return text, provider
 
     # ----------------------------------------------------------------- video
     @contextmanager

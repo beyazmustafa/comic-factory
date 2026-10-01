@@ -177,3 +177,58 @@ class DiscoveryTests(unittest.TestCase):
             api.client.models.list.side_effect = RuntimeError("offline")
             api.discover()
             self.assertEqual(api.models, ["a", "b"])
+
+
+class JsonRobustnessTests(unittest.TestCase):
+    def test_prose_wrapped_object_is_parsed(self):
+        from factory.api import parse_object
+        self.assertEqual(parse_object('Here you go:\n```json\n{"a": 1}\n```\nHope this helps'), {"a": 1})
+        with self.assertRaises(ValueError):
+            parse_object("no object here")
+
+    def test_broken_json_is_retried_once_with_strict_prompt(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import Mock
+        from factory.api import Api, FactoryError
+        from factory.config import Settings
+
+        with tempfile.TemporaryDirectory() as temporary, patch.dict("os.environ", {}, clear=True):
+            api = Api(Settings(gemini_model="m", gemini_fallback_models=""), Path(temporary), client=Mock())
+            api.client.models.list.side_effect = RuntimeError("offline")
+            api.client.models.generate_content.side_effect = [Mock(text="not json {"), Mock(text='{"ok": true}')]
+            self.assertEqual(api.json("Deneme", "Return JSON"), {"ok": True})
+            second = api.client.models.generate_content.call_args_list[1].kwargs["contents"][1]
+            self.assertIn("STRICT OUTPUT", second)
+            api.client.models.generate_content.side_effect = [Mock(text="bad"), Mock(text="still bad")]
+            with self.assertRaises(FactoryError):
+                api.json("Deneme", "Return JSON")
+
+    def test_text_only_request_can_use_groq_text_models(self):
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory.api import Api
+        from factory.config import Settings
+
+        class Overloaded(Exception):
+            code = 503
+
+        with tempfile.TemporaryDirectory() as temporary, patch("factory.api.time.sleep"), \
+                patch.dict("os.environ", {"GROQ_API_KEY": "x"}):
+            api = Api(Settings(gemini_model="m", gemini_fallback_models="", groq_model=""), Path(temporary), client=Mock())
+            api.client.models.list.return_value = []
+            api.client.models.generate_content.side_effect = Overloaded("503")
+            groq = Mock()
+            groq.models.list.return_value = SimpleNamespace(data=[SimpleNamespace(id="openai/gpt-oss-120b"), SimpleNamespace(id="whisper-large-v3")])
+            groq.chat.completions.create.return_value = Mock(choices=[Mock(message=Mock(content='{"events": []}'))])
+            api.groq_client = groq
+            self.assertEqual(api.json("Deneme", "Return JSON"), {"events": []})
+            self.assertEqual(groq.chat.completions.create.call_args.kwargs["model"], "openai/gpt-oss-120b")
+            from PIL import Image
+            picture = Path(temporary) / "p.jpg"
+            Image.new("RGB", (32, 32), "red").save(picture)
+            from factory.api import FactoryError
+            with self.assertRaises(FactoryError):
+                api.json("Deneme", "Return JSON", images=[("p", picture)])
