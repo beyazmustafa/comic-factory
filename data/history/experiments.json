@@ -7,5 +7,14 @@
       "change": "Explicitly state the hero's core power or identity within the first three shots immediately following the hook.",
       "rationale": "Establishing the protagonist's specific stakes and abilities early will ground viewer context before the main conflict escalates."
     }
+  },
+  {
+    "run_id": "36926794909",
+    "chosen_at": "2026-10-01T21:12:09+00:00",
+    "experiment": {
+      "name": "sensory_onomatopoeia_emphasis",
+      "change": "Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text of that shot.",
+      "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
+    }
   }
 ]

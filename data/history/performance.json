@@ -1,0 +1,49 @@
+[
+  {
+    "video_id": "00KCQwbym6Y",
+    "platform": "youtube",
+    "run_id": "36926794909",
+    "published_at": "2026-10-01T21:22:27+00:00",
+    "event": {
+      "title": "The Dawn of Exciting Heroes",
+      "series": "Exciting Comics",
+      "issue": "1",
+      "year": 1940,
+      "publisher": "Better-Standard-Pines"
+    },
+    "profile": {
+      "shots": 13,
+      "words": 154,
+      "duration": 57.4,
+      "words_per_minute": 161,
+      "hook": "Meanwhile, crime boss Olly Snate builds a ruthless mob to tackle armored cars.",
+      "hook_words": 13,
+      "title": "The Mask Strikes and Major Mars Face Shadows on Jupiter",
+      "title_length": 55,
+      "emphasis": {
+        "normal": 6,
+        "danger": 4,
+        "turn": 2,
+        "reveal": 1
+      }
+    },
+    "voice": "Christopher",
+    "review": {
+      "mode": "video",
+      "scores": {
+        "subtitle_sync": 90,
+        "scene_match": 95,
+        "delivery": 90,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Energetic comic documentary recap with accurate panel sequencing and synchronized single-word captions."
+    },
+    "experiment": {
+      "name": "sensory_onomatopoeia_emphasis",
+      "change": "Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text of that shot.",
+      "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
+    },
+    "stats": {}
+  }
+]
