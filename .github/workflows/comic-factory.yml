@@ -33,6 +33,8 @@ name: Comic Factory Studio
         - Gacrux
         - Fenrir
         - Puck
+        - Ahmet
+        - Emel
       platforms:
         description: Yayın hedefi
         type: choice
@@ -92,6 +94,8 @@ jobs:
       YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
       YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
       GROQ_WHISPER_MODEL: ${{ vars.GROQ_WHISPER_MODEL }}
+      GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS }}
+      GROQ_MODEL: ${{ vars.GROQ_MODEL }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5

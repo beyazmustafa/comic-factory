@@ -18,5 +18,7 @@
   "caption_offset": 0,
   "source": "archive",
   "archive_max_year": 1963,
-  "archive_scan_limit": 72
+  "archive_scan_limit": 72,
+  "gemini_fallback_models": "gemini-3.7-flash,gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash",
+  "groq_model": "meta-llama/llama-4-scout-17b-16e-instruct"
 }

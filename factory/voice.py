@@ -5,13 +5,19 @@ import math
 import os
 import shutil
 import wave
+import subprocess
+import sys
 import numpy as np
 from google.genai import types
 from groq import Groq
-from .api import SpeechFailure
-from .core import align_words, file_hash, save_json
+from .api import FactoryError, ProviderOverloaded, SpeechFailure
+from .core import align_words, ffmpeg_binary, file_hash, save_json
 
 RATE = 24000
+GEMINI_VOICES = ("Orus", "Gacrux", "Fenrir", "Puck")
+# Gemini voice → Microsoft edge-tts voice used when Gemini TTS is unavailable.
+EDGE_FALLBACK = {"Orus": "Ahmet", "Fenrir": "Ahmet", "Puck": "Ahmet", "Gacrux": "Emel"}
+EDGE_VOICE_IDS = {"Ahmet": "tr-TR-AhmetNeural", "Emel": "tr-TR-EmelNeural"}
 AUDITION_TEXT = "Bir kahramanın en büyük gücü, bir anda en korkunç düşmanına dönüşebilir. Thor bunu öğrendiğinde artık çok geçti. Çünkü asıl tehlike dışarıda değil, kendi bedeninin içindeydi. Peki bu noktaya nasıl geldi?"
 
 
@@ -59,7 +65,49 @@ def trim_edges(samples):
     return samples[start:end]  # Preserve pauses within speech.
 
 
+def edge_synthesize(text, voice, path):
+    """Free, keyless Microsoft neural TTS (edge-tts); output converted to 24 kHz PCM."""
+    identifier = EDGE_VOICE_IDS.get(voice, voice)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    media = path.with_suffix(".mp3")
+    try:
+        subprocess.run(
+            [sys.executable, "-m", "edge_tts", "--voice", identifier, "--rate", "+4%",
+             "--text", text, "--write-media", str(media)],
+            check=True, capture_output=True, text=True, timeout=240,
+        )
+        subprocess.run(
+            [ffmpeg_binary(), "-y", "-v", "error", "-i", str(media), "-ac", "1", "-ar", str(RATE),
+             "-c:a", "pcm_s16le", str(path)],
+            check=True, capture_output=True, text=True, timeout=240,
+        )
+    except (subprocess.SubprocessError, OSError) as error:
+        detail = getattr(error, "stderr", "") or str(error)
+        raise SpeechFailure(f"edge-tts başarısız: {str(detail)[:300]}") from error
+    finally:
+        try:
+            media.unlink()
+        except OSError:
+            pass
+    write_wave(path, trim_edges(read_wave(path)))
+    return path
+
+
 def synthesize(api, text, voice, style, path):
+    """Gemini TTS; on provider overload the matching edge-tts voice is used."""
+    if voice in EDGE_VOICE_IDS:
+        return edge_synthesize(text, voice, path)
+    if getattr(api, "tts_fallback", False):
+        return edge_synthesize(text, EDGE_FALLBACK.get(voice, "Ahmet"), path)
+    try:
+        return gemini_synthesize(api, text, voice, style, path)
+    except ProviderOverloaded as error:
+        api.tts_fallback = True
+        api.note(f"Gemini TTS yanıt vermiyor ({str(error)[:120]}); edge-tts sesine geçildi.")
+        return edge_synthesize(text, EDGE_FALLBACK.get(voice, "Ahmet"), path)
+
+
+def gemini_synthesize(api, text, voice, style, path):
     prompt = f"""Read ONLY the exact Turkish text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
 Fluent natural Turkish, confident comic-story energy, varied emphasis, short dramatic pauses, consistent narrator identity. Clear English proper names within Turkish. No newsreader monotone, shouting, growling or whispering. Roughly 125–150 Turkish words/minute.
@@ -173,6 +221,10 @@ def select_voice(api, style, cache):
         result = {"voice": api.settings.voice, "selection": "user"}
         save_json(api.directory / "voice_selection.json", result)
         return result
+    if getattr(api, "tts_fallback", False):
+        result = {"voice": "Ahmet", "selection": "edge_fallback"}
+        save_json(api.directory / "voice_selection.json", result)
+        return result
     key = hashlib.sha256(
         json.dumps(
             [
@@ -194,27 +246,48 @@ def select_voice(api, style, cache):
             save_json(api.directory / "voice_selection.json", result)
             return result
     directory.mkdir(exist_ok=True)
-    viable, errors = {}, {}
+    viable, errors, alignment = {}, {}, {}
     for name in ("Orus", "Gacrux", "Fenrir"):
+        if getattr(api, "tts_fallback", False):
+            break
         try:
             path = synthesize(
                 api, AUDITION_TEXT, name, style, directory / (name + ".wav")
             )
-            align_clip(api, path, AUDITION_TEXT, directory / name)
+            alignment[name] = align_clip(api, path, AUDITION_TEXT, directory / name)["metrics"]["score"]
             viable[name] = path
         except SpeechFailure as error:
             errors[name] = str(error)
     save_json(directory / "failed_auditions.json", errors)
+    if getattr(api, "tts_fallback", False):
+        result = {"voice": "Ahmet", "selection": "edge_fallback", "errors": errors}
+        save_json(api.directory / "voice_selection.json", result)
+        return result
     if not viable:
         raise SpeechFailure(
             "Hiçbir ses örneği eşleşme kontrolünü geçmedi; örnekler saklandı."
         )
-    judged = api.json(
-        "Türkçe ses karşılaştırması",
-        f"""Listen to these SAME Turkish passages. Rank only supplied recordings from actual audio, never voice names. Assess natural Turkish pronunciation, proper names, engaging storytelling, clear articulation and target delivery: {style.get("narrator_delivery", "")}
+    try:
+        judged = api.json(
+            "Türkçe ses karşılaştırması",
+            f"""Listen to these SAME Turkish passages. Rank only supplied recordings from actual audio, never voice names. Assess natural Turkish pronunciation, proper names, engaging storytelling, clear articulation and target delivery: {style.get("narrator_delivery", "")}
 Return {{"voices":[{{"voice":"","naturalness":0,"pronunciation":0,"energy":0,"reason":"Turkish audible evidence"}}]}}. Scores 0..100.""",
-        audio=list(viable.items()),
-    )
+            audio=list(viable.items()),
+        )
+    except FactoryError as error:
+        # No model can listen right now: keep the voice Whisper understood best.
+        api.note(f"Ses karşılaştırması yapılamadı ({str(error)[:120]}); eşleşme puanına göre seçildi.")
+        best = max(viable, key=lambda name: alignment.get(name, 0))
+        result = {
+            "voice": best,
+            "selection": "alignment_only",
+            "alignment_scores": alignment,
+            "tts_model": api.settings.tts_model,
+        }
+        save_json(directory / "selection.json", result)
+        save_json(api.directory / "voice_selection.json", result)
+        shutil.copytree(directory, saved, dirs_exist_ok=True)
+        return result
     rankings = []
     for row in judged.get("voices", []):
         if not isinstance(row, dict) or row.get("voice") not in viable:

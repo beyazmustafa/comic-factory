@@ -37,6 +37,16 @@ Her iki kademede de hâlâ korunan markaların adı geçiyorsa (Disney, MAD, Mar
 
 Sorgu `factory.json → archive_query` ile değişir (varsayılan `mediatype:texts AND collection:(comics)`). Popüler kayıtlar listenin başında toplandığı için her koşu ilk sayfaya ek olarak iki **rastgele** sonuç sayfası okur; böylece günlük koşular farklı dilimler görür. Elle çalıştırırken "Konu" alanı arşiv aramasını daraltır (ör. `jungle`, `crime`, `horror`, `science fiction`, `Fox`).
 
+## Yoğunluk hatalarına karşı sağlayıcı zinciri
+
+Tek bir modele bağlı kalınmaz; her istek sırayla şunları dener (`factory/api.py`):
+
+1. `gemini_model` (varsayılan `gemini-3.8-flash`; repo variable `GEMINI_MODEL` ile değişir)
+2. `gemini_fallback_models` listesi: `gemini-3.7-flash, gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.0-flash` (`GEMINI_FALLBACK_MODELS` ile değişir)
+3. Hepsi 429/503 verirse metin+görsel işler **Groq**'un görsel destekli modeline geçer (`groq_model`, varsayılan `meta-llama/llama-4-scout-17b-16e-instruct`; mevcut `GROQ_API_KEY` kullanılır).
+
+503 veren model o koşuda bir daha denenmez; böylece her çağrıda dakikalar kaybedilmez. Ses için Gemini TTS düşerse ücretsiz ve anahtarsız **edge-tts** Türkçe sesleri (`Ahmet`, `Emel`) devreye girer; video kontrolünü yapacak Gemini yoksa karelerden görsel inceleme + Whisper'ın ölçtüğü senkron puanı kullanılır. Hangi yedeğin ne zaman devreye girdiği `diagnostics/provider_events.json` dosyasına yazılır.
+
 ## Sayfadan panele
 
 - İndirme sırası: `_images.zip` (ham tarama) → `.cbz` → `_jp2.zip` → `.pdf` (poppler) → `.cbr` (7z). Biri açılmazsa sıradaki denenir; hepsi başarısızsa `download_errors.json` kaydedilir ve sıradaki aday sayıya geçilir.

@@ -36,31 +36,87 @@ class VisibilityTests(unittest.TestCase):
                 youtube.visibility()
 
 
-class FallbackModelTests(unittest.TestCase):
-    def test_overloaded_primary_switches_to_fallback_model(self):
-        import tempfile
+class ProviderChainTests(unittest.TestCase):
+    def make_api(self, temporary, **overrides):
         from pathlib import Path
         from unittest.mock import Mock
-        from factory.api import Api, FactoryError
+        from factory.api import Api
         from factory.config import Settings
+        settings = Settings(gemini_model="primary", gemini_fallback_models="backup,stable", **overrides)
+        return Api(settings, Path(temporary), client=Mock())
+
+    def test_overloaded_models_are_skipped_for_the_rest_of_the_run(self):
+        import tempfile
+        from factory.api import FactoryError
 
         class Overloaded(Exception):
             code = 503
 
         with tempfile.TemporaryDirectory() as temporary, patch("factory.api.time.sleep"):
-            api = Api(Settings(gemini_model="primary", gemini_fallback_model="backup"), Path(temporary), client=Mock())
+            api = self.make_api(temporary)
             seen = []
 
-            def operation():
-                seen.append(api.model)
-                if api.model == "primary":
+            def operation(model):
+                seen.append(model)
+                if model != "stable":
                     raise Overloaded("high demand")
                 return "ok"
 
-            self.assertEqual(api.request("Deneme", operation), "ok")
-            self.assertEqual(seen.count("primary"), 5)
-            self.assertEqual(seen[-1], "backup")
-            # A hard error is never retried against the fallback.
-            api = Api(Settings(gemini_model="primary", gemini_fallback_model="backup"), Path(temporary), client=Mock())
+            self.assertEqual(api.gemini("Deneme", operation), "ok")
+            self.assertEqual(seen, ["primary"] * 3 + ["backup"] * 3 + ["stable"])
+            self.assertEqual(api.dead, {"primary", "backup"})
+            seen.clear()
+            self.assertEqual(api.gemini("Deneme", operation), "ok")
+            self.assertEqual(seen, ["stable"])
             with self.assertRaises(FactoryError):
-                api.request("Deneme", Mock(side_effect=ValueError("bad request")))
+                api.gemini("Deneme", lambda model: (_ for _ in ()).throw(ValueError("bad request")))
+
+    def test_json_moves_to_groq_when_gemini_is_down_but_not_for_audio(self):
+        import tempfile
+        from unittest.mock import Mock
+        from factory.api import FactoryError
+
+        class Overloaded(Exception):
+            code = 503
+
+        with tempfile.TemporaryDirectory() as temporary, patch("factory.api.time.sleep"), \
+                patch.dict("os.environ", {"GROQ_API_KEY": "x"}):
+            api = self.make_api(temporary)
+            api.client.models.generate_content.side_effect = Overloaded("high demand")
+            groq = Mock()
+            groq.chat.completions.create.return_value = Mock(choices=[Mock(message=Mock(content='{"events": [1]}'))])
+            api.groq_client = groq
+            from PIL import Image
+            from pathlib import Path
+            picture = Path(temporary) / "p.jpg"
+            Image.new("RGB", (64, 64), "red").save(picture)
+            value = api.json("Deneme", "Return JSON", images=[("page", picture)], list_key="events")
+            self.assertEqual(value, {"events": [1]})
+            sent = groq.chat.completions.create.call_args.kwargs
+            self.assertEqual(sent["response_format"], {"type": "json_object"})
+            self.assertEqual(sent["messages"][0]["content"][2]["type"], "image_url")
+            (Path(temporary) / "a.wav").write_bytes(b"RIFF")
+            with self.assertRaises(FactoryError):
+                api.json("Deneme", "Return JSON", audio=[("a", Path(temporary) / "a.wav")])
+
+
+class VoiceFallbackTests(unittest.TestCase):
+    def test_gemini_tts_overload_switches_to_edge_voice(self):
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory import voice
+        from factory.api import ProviderOverloaded
+
+        with tempfile.TemporaryDirectory() as temporary:
+            api = SimpleNamespace(settings=Mock(tts_model="t"), note=Mock(), directory=Path(temporary))
+            edge = patch.object(voice, "edge_synthesize", side_effect=lambda text, name, path: (name, path))
+            gemini = patch.object(voice, "gemini_synthesize", side_effect=ProviderOverloaded("503"))
+            with edge as edge_mock, gemini:
+                result = voice.synthesize(api, "Merhaba", "Gacrux", {}, Path(temporary) / "a.wav")
+                self.assertEqual(result[0], "Emel")
+                self.assertTrue(api.tts_fallback)
+                # Later chunks go straight to edge-tts without touching Gemini again.
+                voice.synthesize(api, "Merhaba", "Orus", {}, Path(temporary) / "b.wav")
+                self.assertEqual(edge_mock.call_count, 2)

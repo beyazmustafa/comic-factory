@@ -20,7 +20,12 @@ class Settings:
     alignment_threshold: float = 95
     panel_threshold: float = 90
     gemini_model: str = "gemini-3.8-flash"
-    gemini_fallback_model: str = "gemini-3.8-flash"
+    # Tried in order when the primary model answers 429/503; stable models last.
+    gemini_fallback_models: str = "gemini-3.7-flash,gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash"
+    # Vision-capable Groq model used when every Gemini model is unavailable.
+    groq_model: str = "meta-llama/llama-4-scout-17b-16e-instruct"
+    # Free Microsoft neural voices used when Gemini TTS is unavailable.
+    edge_voices: str = "tr-TR-AhmetNeural,tr-TR-EmelNeural"
     tts_model: str = "gemini-3.1-flash-tts-preview"
     whisper_model: str = "whisper-large-v3"
     voice: str = "auto"
@@ -44,7 +49,8 @@ class Settings:
             raise ValueError("factory.json bilinmeyen veya eski ayarlar içeriyor.")
         for env, key in (
             ("GEMINI_MODEL", "gemini_model"),
-            ("GEMINI_FALLBACK_MODEL", "gemini_fallback_model"),
+            ("GEMINI_FALLBACK_MODELS", "gemini_fallback_models"),
+            ("GROQ_MODEL", "groq_model"),
             ("GEMINI_TTS_MODEL", "tts_model"),
             ("GEMINI_TTS_VOICE", "voice"),
             ("GROQ_WHISPER_MODEL", "whisper_model"),
@@ -77,7 +83,7 @@ class Settings:
             value = getattr(result, key)
             if type(value) not in (int, float) or not low <= value <= high:
                 raise ValueError(f"Geçersiz {key}")
-        if result.voice not in {"auto", "Orus", "Gacrux", "Fenrir", "Puck"}:
+        if result.voice not in {"auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"}:
             raise ValueError("Desteklenmeyen ses.")
         for key in (
             "gemini_model",
@@ -85,7 +91,9 @@ class Settings:
             "whisper_model",
             "music_file",
             "archive_query",
-            "gemini_fallback_model",
+            "gemini_fallback_models",
+            "groq_model",
+            "edge_voices",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")
