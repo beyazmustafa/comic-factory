@@ -1,11 +1,11 @@
-run_id: 36902177592  attempt: 1  event: workflow_dispatch
+run_id: 36907315984  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261001T180830671474Z/run.json
+--- data/runs/20261001T183130126621Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
   "status": "failed",
-  "stage": "Türkçe ses seçimi",
+  "stage": "Konuşma ve kelime zamanları",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -33,11 +33,11 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36902177592",
-  "error": "SpeechFailure: Ses örneklerinin doğallık/telaffuzu yeterli bulunmadı; kayıtlar saklandı.",
-  "api_calls": 68
+  "run_id": "36907315984",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 71
 }
---- data/runs/20261001T180830671474Z/diagnostics/provider_events.json
+--- data/runs/20261001T183130126621Z/diagnostics/provider_events.json
 [
   "Arşiv sayı adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -45,15 +45,16 @@ produce step outcome: failure
   "Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Türkçe ses karşılaştırması: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak."
+  "Arşiv sayı adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayı adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Arşiv sayfası panelleri: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Gemini TTS yanıt vermiyor (Türkçe ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current qu); edge-tts sesine geçildi."
 ]
---- data/runs/20261001T180830671474Z/diagnostics/providers.json
+--- data/runs/20261001T183130126621Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -76,8 +77,8 @@ produce step outcome: failure
   ],
   "groq": [
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -106,12 +107,24 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T180830671474Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_022", "reason": "Karakter gazetede gördüğünü iddia ediyor ancak kanıt metninde doğrudan gazete ilanından ziyade hayalet köy olduğu vurgulanıyor; bağlam kısmen destekleniyor."}]}
---- data/runs/20261001T180830671474Z/diagnostics/panel_matches_3.json
-{"passed": true, "failures": []}
---- data/runs/20261001T180830671474Z/diagnostics/story_2.json
-{"error": "Kamera hareketi geçersiz."}
+--- data/runs/20261001T183130126621Z/diagnostics/api_034.json
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=2517 candidates_tokens_details=None prompt_token_count=3587 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=3252\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT:"
+  },
+  "error": "Expecting property name enclosed in double quotes: line 8 column 11 (char 119)",
+  "response_length": 8235,
+  "response_text": "{\n  \"pages\": [\n    {\n      \"page_id\": \"page_014\",\n      \"page_role\": \"interior\",\n      \"panels\": [\n        {\n          *   \"number\": 1,\n          *   \"keep\": true,\n          *   \"characters\": [\"John Wild\", \"The Lunk\"],\n          *   \"action\": \"Yazar John Wild, daktilosundan çıkan devasa ve ürkünç yaratığa (The Lunk) ateş ediyor.\",\n          *   \"ocr\": \"THE DEVIL'S CREATION. IT IS USELESS, JOHN WILD! A MERE MORTAL LIKE YOU CAN NEVER DESTROY THE LUNK!\",\n          *   \"narrative_fact\": \"John Wild, kendi yarattığı kurgusal canavarın gerçeğe dönüşmesiyle dehşete kapılır.\",\n          *   \"confidence\": 100\n        },\n        {\n          *   \"number\": 2,\n          *   \"keep\": true,\n          *   \"characters\": [\"John Wild\"],\n          *   \"action\": \"John Wild telefonda endişeli bir şekilde konuşuyor.\",\n          *   \"ocr\": \"CURSE THE LUNK! WHY I EVER CREATE ANYTHING AS MONSTROUS AS THAT! THE PHONE... THAT MUST BE MANNING, MY PUBLISHER!\",\n          *   \"narrative_fact\": \"John Wild yarattığı canavardan pişmanlık duymaktadır.\",\n          *   \"confidence\": 100\n        },\n        {\n          *   \"number\": 3,\n          *   \"keep\": true,\n          *   \"characters\": [\"John Wild\"],\n          *   \"action\": \"John Wild telefonda yayıncısıyla konuşuyor.\",\n          *   \"ocr\": \"GOOD HEAVENS, MANN... WHERE'S THE REST OF THAT MANUSCRIPT? YOU'RE LATE--! VERY LATE!\",\n          *   \"narrative_fact\": \"Yayıncısı John'dan el yazmasının geri kalanını istemektedir.\",\n          *   \"confidence\": 100\n        },\n        {\n          *   \"number\": 4,\n          *   \"keep\": true,\n          *   \"characters\": [],\n          *   \"action\": \"El yazması kağıdında bir bıçak ve cinayet sahnesi tasviri okunuyor.\",\n          *   \"ocr\": \
+--- data/runs/20261001T183130126621Z/diagnostics/panel_matches_1.json
+{"passed": false, "failures": [{"shot_id": "shot_014", "reason": "Bıçaklı saldırı anı ve John'un kaçışı net bir şekilde görünmektedir, ancak 'kanlı' ifadesi renklendirmeden kaynaklı bir dramatizasyondur."}, {"shot_id": "shot_016", "reason": "Görselde John 'He's gone! It must have been a dream--a nightmare!' diyor, yani kötü bir kabus olduğunu sanıyor değil, kabus olmasını umuyor/şüphe ediyor ancak anlatı bunu kesin bir yargı gibi veriyor. Kanıt yetersiz/çelişkili."}, {"shot_id": "shot_020", "reason": "Anlatım ve görsel dikiz aynasına bakan sürücüyü gösterse de, verilen kanıt metni panel içeriğiyle uyuşmuyor."}, {"shot_id": "shot_021", "reason": "Anlatım ve görsel takip edildiğini belirten karakteri gösteriyor, ancak kanıt metni panel ile eşleşmiyor."}, {"shot_id": "shot_022", "reason": "Far ışığındaki gölge figür görseli anlatımla uyuşuyor, ancak kanıt metni kaza sonrasındaki enkazı konu alıyor."}, {"shot_id": "shot_023", "reason": "Araba kazası görseli anlatımı destekliyor, fakat kanıt metni enkazdan çıkan figürü tanımlıyor."}, {"shot_id": "shot_024", "reason": "Karakterin kollarının kırıldığını belirten anlatım görselle uyuşsa da, kanıt metni farklı bir sahneyi aktarıyor."}]}
+--- data/runs/20261001T183130126621Z/diagnostics/panel_matches_2.json
+{"passed": false, "failures": [{"shot_id": "shot_020", "reason": "Anlatımda yazarın hastaneye sığındığı söyleniyor ancak panelde yalnızca ormanda koşturan yazar görülüyor, hastaneye sığınma sahnesi bu panele ait değil."}, {"shot_id": "shot_031", "reason": "Görsel (shot_031) havada uçuşan kağıtları ve şaşkın adamı gösterirken, anlatı masada kitabın belirmesinden bahsediyor; bu olay önceki shot'ın sağ panelinde geçmektedir."}]}
+--- data/runs/20261001T183130126621Z/diagnostics/panel_matches_3.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "Doğrulama eksik."}, {"shot_id": "shot_001", "reason": "Doğrulama eksik."}, {"shot_id": "shot_002", "reason": "Doğrulama eksik."}, {"shot_id": "shot_003", "reason": "Doğrulama eksik."}, {"shot_id": "shot_004", "reason": "Doğrulama eksik."}, {"shot_id": "shot_014", "reason": "Anlatımda hastaneye sığındığı belirtilmesine karşın, kırpılan görsel çalılıklar ve ağaçlar arasında koşan karakteri göstermektedir."}, {"shot_id": "shot_026", "reason": "Kırpılan panelde sürücünün benzin istasyonuna yanaştığı değil, arabasının içinde yağmurlu havada konuştuğu görülmektedir; benzin istasyonu detayı bu panelde yoktur."}]}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -123,17 +136,21 @@ Arşiv sayı adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanac
 Arşiv sayı adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Arşiv sayı adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Arşiv sayı adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: Ateş Gözlü Hayalet: Korku Vadisi
-Arşiv sayfası panelleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayfası panelleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Arşiv sayı adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Ateş Hayaletinin İntikamı
+Arşiv sayfası panelleri: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Denetimi geçemeyen 7 sahne çıkarıldı; 30 sahne kaldı.
 
 → Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Türkçe ses karşılaştırması: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-HATA: Ses örneklerinin doğallık/telaffuzu yeterli bulunmadı; kayıtlar saklandı.
+Gemini TTS yanıt vermiyor (Türkçe ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current qu); edge-tts sesine geçildi.
+
+→ Konuşma ve kelime zamanları
+Ses bölümü 1, deneme 1
+Ses bölümü 1, deneme 2
+Ses bölümü 1, deneme 3
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
