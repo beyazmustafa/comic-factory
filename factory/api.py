@@ -12,6 +12,15 @@ from PIL import Image, ImageOps
 from .core import save_json
 
 GROQ_IMAGE_LIMIT = 5  # Groq vision requests accept at most five images.
+# Model names that never answer a JSON text/vision request.
+GEMINI_EXCLUDE = ("tts", "image", "embedding", "live", "audio", "veo", "imagen", "robotics", "computer-use", "deep-research")
+GROQ_VISION_HINTS = ("llama-4", "maverick", "scout", "vision", "vl")
+GROQ_EXCLUDE = ("whisper", "tts", "guard", "embedding", "orpheus", "playai", "compound")
+
+
+def version_key(name):
+    numbers = [float(n) for n in re.findall(r"\d+(?:\.\d+)?", name)]
+    return (numbers[0] if numbers else 0.0, "flash" in name, "pro" in name, name)
 
 
 class FactoryError(RuntimeError):
@@ -111,9 +120,13 @@ class Api:
         self.models = list(dict.fromkeys(chain))
         self.model = self.models[0]
         self.dead = set()
-        self.groq_model = str(getattr(settings, "groq_model", "") or "").strip()
+        self.groq_models = [
+            m.strip() for m in str(getattr(settings, "groq_model", "") or "").split(",") if m.strip()
+        ]
+        self.groq_model = self.groq_models[0] if self.groq_models else ""
         self.groq_client = None
         self.events = []
+        self.discovered = None
 
     # ------------------------------------------------------------------ core
     def check(self, requesting=False):
@@ -163,7 +176,57 @@ class Api:
                     ) from error
                 time.sleep(min(60, 5 * 2**attempt))
 
+    # -------------------------------------------------------------- discovery
+    def discover(self):
+        """Ask each provider which models this key can use; cache per run.
+
+        Configured names come first (when the provider lists them), then the
+        provider's other text/vision models, newest first. Discovery failure
+        falls back to the configured names alone.
+        """
+        if self.discovered is not None:
+            return self.discovered
+        found = {"gemini": [], "groq": [], "errors": []}
+        try:
+            for model in self.client.models.list():
+                name = str(getattr(model, "name", "") or "").replace("models/", "")
+                actions = [str(a) for a in (getattr(model, "supported_actions", None) or [])]
+                if not name or (actions and "generateContent" not in actions):
+                    continue
+                if any(word in name.casefold() for word in GEMINI_EXCLUDE):
+                    continue
+                found["gemini"].append(name)
+        except Exception as error:
+            found["errors"].append(f"gemini list: {type(error).__name__}: {str(error)[:200]}")
+        try:
+            if os.getenv("GROQ_API_KEY", "").strip():
+                for model in self.groq().models.list().data:
+                    identifier = str(getattr(model, "id", "") or "")
+                    if identifier and not any(w in identifier.casefold() for w in GROQ_EXCLUDE):
+                        found["groq"].append(identifier)
+        except Exception as error:
+            found["errors"].append(f"groq list: {type(error).__name__}: {str(error)[:200]}")
+        if found["gemini"]:
+            listed = set(found["gemini"])
+            configured = [m for m in self.models if m in listed]
+            others = sorted(
+                (m for m in listed if m not in configured and ("flash" in m or "pro" in m)),
+                key=version_key, reverse=True,
+            )
+            self.models = configured + others
+        if found["groq"]:
+            listed = found["groq"]
+            configured = [m for m in self.groq_models if m in listed]
+            vision = [m for m in listed if m not in configured and any(h in m.casefold() for h in GROQ_VISION_HINTS)]
+            self.groq_models = configured + sorted(vision, key=version_key, reverse=True)
+            self.groq_model = self.groq_models[0] if self.groq_models else ""
+        found["gemini_chain"], found["groq_chain"] = list(self.models), list(self.groq_models)
+        save_json(self.directory / "diagnostics" / "providers.json", found)
+        self.discovered = found
+        return found
+
     def live_models(self):
+        self.discover()
         return [m for m in self.models if m not in self.dead]
 
     def gemini(self, label, operation_for_model, attempts=3):
@@ -185,8 +248,8 @@ class Api:
     def groq(self):
         if self.groq_client is None:
             key = os.getenv("GROQ_API_KEY", "").strip()
-            if not key or not self.groq_model:
-                raise FactoryError("Groq yedeği için GROQ_API_KEY ve groq_model gerekli.")
+            if not key:
+                raise FactoryError("Groq yedeği için GROQ_API_KEY gerekli.")
             from groq import Groq
 
             self.groq_client = Groq(api_key=key, timeout=120, max_retries=0)
@@ -209,17 +272,32 @@ class Api:
                 {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + encoded}}
             )
 
-        def call():
-            response = self.groq().chat.completions.create(
-                model=self.groq_model,
-                messages=[{"role": "user", "content": content}],
-                temperature=0.2,
-                max_completion_tokens=8192,
-                response_format={"type": "json_object"},
-            )
-            return response.choices[0].message.content or ""
+        self.discover()
+        errors = []
+        for model in [m for m in self.groq_models if m not in self.dead]:
+            def call(model=model):
+                response = self.groq().chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": content}],
+                    temperature=0.2,
+                    max_completion_tokens=8192,
+                    response_format={"type": "json_object"},
+                )
+                return response.choices[0].message.content or ""
 
-        return self.request(label + " (Groq)", call, attempts=4)
+            try:
+                text = self.request(f"{label} (Groq {model})", call, attempts=4)
+                self.groq_model = model
+                return text
+            except (ProviderOverloaded, ModelUnavailable) as error:
+                self.dead.add(model)
+                errors.append(str(error))
+                self.note(f"{label}: Groq {model} kullanılamadı, atlanacak.")
+            except FactoryError as error:
+                # e.g. a text-only model refusing images: try the next one.
+                errors.append(str(error))
+                self.note(f"{label}: Groq {model} isteği reddetti: {str(error)[:120]}")
+        raise ProviderOverloaded("; ".join(errors) or f"{label}: Groq modeli kalmadı.")
 
     # ------------------------------------------------------------------ json
     def json(self, label, prompt, *, images=(), audio=(), video_uri=None, videos=(), list_key=None):
@@ -267,12 +345,17 @@ class Api:
             text = response.text or ""
         except ProviderOverloaded as error:
             # Audio and video only exist on Gemini; images and text can move to Groq.
-            if audio or video_uri or videos or not self.groq_model:
+            if audio or video_uri or videos or not self.groq_models:
                 raise FactoryError(
                     f"{label}: Gemini modelleri yanıt vermedi ve bu istek Groq'a taşınamaz: {error}"
                 ) from error
-            self.note(f"{label}: Gemini yanıt vermedi; Groq {self.groq_model} kullanılıyor.")
-            text = self.groq_json(label, prompt, images)
+            self.note(f"{label}: Gemini yanıt vermedi; Groq zinciri deneniyor.")
+            try:
+                text = self.groq_json(label, prompt, images)
+            except ProviderOverloaded as groq_error:
+                raise FactoryError(
+                    f"{label}: hiçbir sağlayıcı yanıt vermedi. Gemini: {str(error)[:200]} | Groq: {str(groq_error)[:200]}"
+                ) from groq_error
             provider = "groq"
         path = self.directory / "diagnostics" / f"api_{self.calls:03}.json"
         try:

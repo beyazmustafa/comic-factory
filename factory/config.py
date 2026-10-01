@@ -23,7 +23,7 @@ class Settings:
     # Tried in order when the primary model answers 429/503; stable models last.
     gemini_fallback_models: str = "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash"
     # Vision-capable Groq model used when every Gemini model is unavailable.
-    groq_model: str = "meta-llama/llama-4-scout-17b-16e-instruct"
+    groq_model: str = "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct"
     # Free Microsoft neural voices used when Gemini TTS is unavailable.
     edge_voices: str = "tr-TR-AhmetNeural,tr-TR-EmelNeural"
     tts_model: str = "gemini-3.1-flash-tts-preview"

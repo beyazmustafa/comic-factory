@@ -125,3 +125,55 @@ class VoiceFallbackTests(unittest.TestCase):
                 # Later chunks go straight to edge-tts without touching Gemini again.
                 voice.synthesize(api, "Merhaba", "Orus", {}, Path(temporary) / "b.wav")
                 self.assertEqual(edge_mock.call_count, 2)
+
+
+class DiscoveryTests(unittest.TestCase):
+    def test_chain_is_rebuilt_from_what_the_providers_list(self):
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory.api import Api
+        from factory.config import Settings
+
+        with tempfile.TemporaryDirectory() as temporary, patch.dict("os.environ", {"GROQ_API_KEY": "x"}):
+            settings = Settings(
+                gemini_model="gemini-3.7-flash",
+                gemini_fallback_models="gemini-2.5-flash,gemini-3.8-flash",
+                groq_model="meta-llama/llama-4-scout-17b-16e-instruct",
+            )
+            api = Api(settings, Path(temporary), client=Mock())
+            api.client.models.list.return_value = [
+                SimpleNamespace(name="models/gemini-3.8-flash", supported_actions=["generateContent"]),
+                SimpleNamespace(name="models/gemini-3.9-pro", supported_actions=["generateContent"]),
+                SimpleNamespace(name="models/gemini-3.9-flash", supported_actions=["generateContent"]),
+                SimpleNamespace(name="models/gemini-3.1-flash-tts", supported_actions=["generateContent"]),
+                SimpleNamespace(name="models/embedding-001", supported_actions=["embedContent"]),
+                SimpleNamespace(name="models/gemini-3.7-flash", supported_actions=["generateContent"]),
+            ]
+            groq = Mock()
+            groq.models.list.return_value = SimpleNamespace(data=[
+                SimpleNamespace(id="whisper-large-v3"),
+                SimpleNamespace(id="meta-llama/llama-4-maverick-17b-128e-instruct"),
+                SimpleNamespace(id="llama-3.3-70b-versatile"),
+                SimpleNamespace(id="qwen/qwen3-vl-32b"),
+            ])
+            api.groq_client = groq
+            found = api.discover()
+            self.assertEqual(api.models, ["gemini-3.7-flash", "gemini-3.8-flash", "gemini-3.9-flash", "gemini-3.9-pro"])
+            self.assertEqual(api.groq_models, ["qwen/qwen3-vl-32b", "meta-llama/llama-4-maverick-17b-128e-instruct"])
+            self.assertEqual(found["errors"], [])
+            self.assertTrue((Path(temporary) / "diagnostics" / "providers.json").is_file())
+
+    def test_discovery_failure_keeps_configured_names(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import Mock
+        from factory.api import Api
+        from factory.config import Settings
+
+        with tempfile.TemporaryDirectory() as temporary, patch.dict("os.environ", {}, clear=True):
+            api = Api(Settings(gemini_model="a", gemini_fallback_models="b"), Path(temporary), client=Mock())
+            api.client.models.list.side_effect = RuntimeError("offline")
+            api.discover()
+            self.assertEqual(api.models, ["a", "b"])
