@@ -38,6 +38,16 @@ MAX_YEAR = 1963  # US works first published before 1964 needed renewal; DCM veri
 MAX_DOWNLOAD = 400_000_000
 PAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".jp2", ".webp", ".gif", ".bmp", ".tif", ".tiff")
 PD_MARKERS = ("publicdomain", "public domain", "public-domain", "pdm", "cc0")
+# Words that mark a Golden Age superhero issue (public-domain heroes and generic hero titles).
+HERO_MARKERS = (
+    "superhero", "super hero", "super-hero", "hero", "heroes", "terror", "daredevil", "samson", "yank",
+    "flame", "beetle", "amazing man", "amazing-man", "wonder", "captain", "mask", "phantom", "atom",
+    "super", "exciting", "mystery men", "thrilling", "startling", "fantastic", "fighting", "stuntman",
+    "cat-man", "catman", "black owl", "green lama", "miss masque", "hangman", "silver streak",
+    "crimebuster", "lightning", "bulletman", "spy smasher", "ibis", "mr. scarlet", "minute-man",
+    "pyroman", "doll man", "blackhawk", "kid eternity", "airboy", "skyman", "boy commandos",
+    "liberty", "patriot", "invincible", "marvel", "magno", "blue bolt", "dynamic", "steel", "rocket",
+)
 
 # Golden Age publishers that closed before 1964 and whose issues were, as a
 # rule, never copyright-renewed; the Digital Comic Museum catalogue is built on
@@ -288,9 +298,10 @@ def shortlist(api, topic, used, archive=None):
                 visited.append(page)
             except (requests.RequestException, ValueError) as error:
                 failures.append({"page": page, "error": type(error).__name__})
-    finally:
+    except BaseException:
         if archive is None:
             client.close()
+        raise
     items = []
     for row in rows:
         item = eligible(row, api.settings)
@@ -303,6 +314,37 @@ def shortlist(api, topic, used, archive=None):
             continue  # Single stories/ads rarely carry a full narrative.
         items.append(item)
     items = list({i["identifier"]: i for i in items}.values())
+    if api.settings.channel_theme == "superheroes":
+        def heroic(item):
+            text = " ".join([item["title"], item.get("description", ""), " ".join(item.get("subjects", []))]).casefold()
+            return any(m in text for m in HERO_MARKERS)
+        heroes = [i for i in items if heroic(i)]
+        if len(heroes) >= 3:
+            items = heroes
+        else:
+            # Look deeper into the catalogue before settling for non-hero issues.
+            extra_rows = []
+            try:
+                for page in random.sample(range(2, last_page + 1), min(4, max(0, last_page - 1))):
+                    api.check()
+                    docs, _ = client.search(query, rows=100, page=page)
+                    extra_rows.extend(docs)
+                    visited.append(page)
+            except (requests.RequestException, ValueError) as error:
+                failures.append({"page": "hero-search", "error": type(error).__name__})
+            for row in extra_rows:
+                item = eligible(row, api.settings)
+                if item and item["identifier"] not in {i["identifier"] for i in items}:
+                    item["id"] = issue_key(item["identifier"])
+                    if item["id"] in used or item["identifier"].casefold() in used:
+                        continue
+                    if item["imagecount"] and item["imagecount"] < 16:
+                        continue
+                    items.append(item)
+            heroes = [i for i in items if heroic(i)]
+            items = heroes if heroes else items
+    if archive is None:
+        client.close()
     save_json(
         api.directory / "research" / "archive_search.json",
         {"query": query, "pages": visited, "raw_rows": len(rows), "eligible": items, "failures": failures},
