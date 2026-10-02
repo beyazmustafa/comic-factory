@@ -163,6 +163,21 @@ def refresh_stats(note=print) -> list[dict]:
                         del history[:-40]
                         row["stats"]["views_24h"] = views_at(history, 24)
                         row["stats"]["views_72h"] = views_at(history, 72)
+        try:
+            analytics = youtube.create_analytics_client()
+            if analytics is not None:
+                from datetime import timedelta
+
+                today = datetime.now(timezone.utc).date()
+                retention = youtube.video_retention(
+                    analytics, ids, (today - timedelta(days=90)).isoformat(), today.isoformat()
+                )
+                for row in rows:
+                    extra = retention.get(row.get("video_id"))
+                    if extra:
+                        row.setdefault("stats", {}).update(extra)
+        except Exception as error:
+            note(f"YouTube Analytics (retention) alınamadı ({type(error).__name__}: {str(error)[:120]}).")
         save_json(performance_path(), rows)
     except Exception as error:  # Stats are a bonus; production never waits on them.
         note(f"YouTube istatistikleri alınamadı ({type(error).__name__}: {str(error)[:120]}).")
@@ -186,11 +201,15 @@ def views_at(history, hour):
 
 
 def score_of(row):
-    """Comparable performance: views at 24h when known, else views per hour."""
+    """Comparable performance: views at 24h when known, else views per hour.
+    Retention (average view percentage) multiplies in when Analytics is available,
+    because on Shorts a video that is watched to the end is what gets pushed."""
     stats = row.get("stats") or {}
+    retention = stats.get("average_view_percentage")
+    weight = (0.5 + float(retention) / 100) if isinstance(retention, (int, float)) else 1.0
     if stats.get("views_24h") is not None:
-        return float(stats["views_24h"]), "views_24h"
-    return float(stats.get("views_per_hour") or 0), "views_per_hour"
+        return float(stats["views_24h"]) * weight, "views_24h" + ("*retention" if weight != 1.0 else "")
+    return float(stats.get("views_per_hour") or 0) * weight, "views_per_hour" + ("*retention" if weight != 1.0 else "")
 
 
 def judge_experiments(rows, experiments):

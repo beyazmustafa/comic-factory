@@ -28,6 +28,9 @@ from pathlib import Path
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
+    # İzlenme süresi / retention için (öğrenme döngüsü). Cloud projesinde
+    # "YouTube Analytics API" etkin olmalı.
+    "https://www.googleapis.com/auth/yt-analytics.readonly",
 ]
 
 

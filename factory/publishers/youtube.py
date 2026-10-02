@@ -28,6 +28,9 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
 ]
+# Optional: watch-time / retention from YouTube Analytics. Older tokens without
+# it keep working for uploads; learning simply gets fewer signals.
+ANALYTICS_SCOPE = "https://www.googleapis.com/auth/yt-analytics.readonly"
 
 
 class YouTubeUploaderError(RuntimeError):
@@ -87,6 +90,12 @@ def load_credentials() -> Credentials:
     if TOKEN_FILE.exists():
         try:
             credentials = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
+            try:
+                granted = set(json.loads(TOKEN_FILE.read_text(encoding="utf-8-sig")).get("scopes") or [])
+                if ANALYTICS_SCOPE in granted:
+                    credentials = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES + [ANALYTICS_SCOPE])
+            except Exception:
+                pass
         except Exception:
             credentials = None
     if credentials and credentials.valid and credentials_have_scopes(credentials):
@@ -129,6 +138,42 @@ def create_youtube_client() -> Any:
     """YouTube Data API istemcisini oluşturur."""
     credentials = load_credentials()
     return build("youtube", "v3", credentials=credentials, cache_discovery=False)
+
+
+def create_analytics_client() -> Any | None:
+    """YouTube Analytics istemcisi; token bu yetkiyi taşımıyorsa None."""
+    credentials = load_credentials()
+    if not credentials.has_scopes([ANALYTICS_SCOPE]):
+        return None
+    return build("youtubeAnalytics", "v2", credentials=credentials, cache_discovery=False)
+
+
+def video_retention(analytics: Any, video_ids: list[str], start_date: str, end_date: str) -> dict[str, dict]:
+    """averageViewPercentage / averageViewDuration / views per video (lifetime window)."""
+    if not video_ids:
+        return {}
+    response = (
+        analytics.reports()
+        .query(
+            ids="channel==MINE",
+            startDate=start_date,
+            endDate=end_date,
+            metrics="views,averageViewDuration,averageViewPercentage,likes,shares",
+            dimensions="video",
+            filters="video==" + ",".join(video_ids[:200]),
+        )
+        .execute()
+    )
+    columns = [c["name"] for c in response.get("columnHeaders", [])]
+    result = {}
+    for row in response.get("rows", []):
+        record = dict(zip(columns, row))
+        result[str(record.get("video"))] = {
+            "average_view_percentage": record.get("averageViewPercentage"),
+            "average_view_duration": record.get("averageViewDuration"),
+            "shares": record.get("shares"),
+        }
+    return result
 
 
 def get_channel_info(youtube: Any) -> dict[str, str]:
