@@ -1,7 +1,7 @@
 # Playbook (auto-evolving)
-- Hook: Shocking threat question <= 6 words starting with the hero's full name.
-- Pacing: 25-32 shots total, targeting 110-130 seconds duration (~145-155 WPM).
-- Rhythm: 3-10 words per shot beat; maintain continuous forward momentum.
+- Hook: Shocking threat statement <= 8 words starting with the hero's full name facing immediate peril.
+- Pacing: 28-32 shots total, targeting 115-130 seconds duration (~145-155 WPM).
+- Rhythm: 4-8 words per shot beat; maintain continuous forward narrative momentum.
 - Emphasis: Red for danger, green for reveals, cyan for turns; max 1 in 4 shots.
 - Title: Curiosity-driven, 45-65 characters, featuring the hero name and a specific antagonist.
 - Ending: Stop cold on the final visual consequence with zero outro or CTA.

@@ -45,12 +45,12 @@
       "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
     },
     "stats": {
-      "views": 5,
+      "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 18.5,
-      "views_per_hour": 0.27,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 21.6,
+      "views_per_hour": 0.28,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -63,6 +63,11 @@
       {
         "h": 18.5,
         "views": 5,
+        "likes": 0
+      },
+      {
+        "h": 21.6,
+        "views": 6,
         "likes": 0
       }
     ]
@@ -113,12 +118,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 127,
+      "views": 149,
       "likes": 2,
       "comments": 0,
-      "hours_live": 15.8,
-      "views_per_hour": 8.03,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 18.9,
+      "views_per_hour": 7.87,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -131,6 +136,11 @@
       {
         "h": 15.8,
         "views": 127,
+        "likes": 2
+      },
+      {
+        "h": 18.9,
+        "views": 149,
         "likes": 2
       }
     ]
@@ -181,12 +191,12 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 7,
+      "views": 14,
       "likes": 1,
       "comments": 0,
-      "hours_live": 14.9,
-      "views_per_hour": 0.47,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 18.0,
+      "views_per_hour": 0.78,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -199,6 +209,11 @@
       {
         "h": 14.9,
         "views": 7,
+        "likes": 1
+      },
+      {
+        "h": 18.0,
+        "views": 14,
         "likes": 1
       }
     ]
@@ -248,12 +263,12 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 12,
+      "views": 15,
       "likes": 1,
       "comments": 0,
-      "hours_live": 14.6,
-      "views_per_hour": 0.82,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 17.8,
+      "views_per_hour": 0.84,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -266,6 +281,11 @@
       {
         "h": 14.6,
         "views": 12,
+        "likes": 1
+      },
+      {
+        "h": 17.8,
+        "views": 15,
         "likes": 1
       }
     ]
@@ -315,12 +335,12 @@
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
     "stats": {
-      "views": 8,
+      "views": 9,
       "likes": 1,
       "comments": 0,
-      "hours_live": 14.2,
-      "views_per_hour": 0.56,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 17.3,
+      "views_per_hour": 0.52,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -333,6 +353,11 @@
       {
         "h": 14.2,
         "views": 8,
+        "likes": 1
+      },
+      {
+        "h": 17.3,
+        "views": 9,
         "likes": 1
       }
     ]
@@ -386,9 +411,9 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "hours_live": 1.0,
+      "hours_live": 3.7,
       "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -400,6 +425,11 @@
       },
       {
         "h": 1.0,
+        "views": 0,
+        "likes": 0
+      },
+      {
+        "h": 3.7,
         "views": 0,
         "likes": 0
       }
@@ -451,12 +481,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 1,
+      "views": 2,
       "likes": 0,
       "comments": 0,
-      "hours_live": 1.0,
-      "views_per_hour": 1.0,
-      "fetched_at": "2026-10-02T15:50:53+00:00",
+      "hours_live": 3.6,
+      "views_per_hour": 0.55,
+      "fetched_at": "2026-10-02T18:58:43+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -469,6 +499,11 @@
       {
         "h": 1.0,
         "views": 1,
+        "likes": 0
+      },
+      {
+        "h": 3.6,
+        "views": 2,
         "likes": 0
       }
     ]

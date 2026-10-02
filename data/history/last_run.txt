@@ -1,11 +1,188 @@
-run_id: 37029742265  attempt: 1  event: workflow_dispatch
-produce step outcome: success
+run_id: 37050960392  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261002T185842984881Z/run.json
+{
+  "schema": 2,
+  "version": "2026-10-01-archive-1",
+  "status": "failed",
+  "stage": "Olay, gerçek sayfalar ve senaryo",
+  "topic": "",
+  "settings": {
+    "target_seconds": 150,
+    "max_events": 3,
+    "max_pages": 16,
+    "max_shots": 40,
+    "max_api_calls": 250,
+    "max_minutes": 110,
+    "repair_attempts": 4,
+    "chunk_words": 42,
+    "alignment_threshold": 86,
+    "panel_threshold": 85,
+    "gemini_model": "gemini-3.7-flash",
+    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
+    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
+    "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural",
+    "tts_model": "gemini-3.1-flash-tts-preview",
+    "whisper_model": "whisper-large-v3",
+    "voice": "auto",
+    "music_file": "",
+    "music_gain_db": -25,
+    "caption_offset": 0,
+    "language": "en",
+    "languages": "en,tr",
+    "channel_theme": "superheroes",
+    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
+    "source": "studio",
+    "image_model": "",
+    "archive_query": "mediatype:texts AND collection:(comics)",
+    "archive_max_year": 1963,
+    "archive_scan_limit": 72
+  },
+  "run_id": "37050960392",
+  "error": "SourceUnavailable: Yedek görsel üretici de yanıt vermedi.",
+  "api_calls": 39
+}
+--- data/runs/20261002T185842984881Z/diagnostics/provider_events.json
+[
+  "Özgün evren: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Özgün evren: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Özgün evren: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Özgün evren: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Özgün evren: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Özgün evren: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini görsel modeli kullanılamadı (Panel çizimi (nano-banana-pro-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,); Pollinations ile çizildi.",
+  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizildi."
+]
+--- data/runs/20261002T185842984881Z/diagnostics/providers.json
+{
+  "gemini": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash"
+  ],
+  "groq": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ],
+  "errors": [],
+  "gemini_raw": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash-preview-tts",
+    "gemini-2.5-pro-preview-tts",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-31b-it",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash-image",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-pro-preview-customtools",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3-pro-image-preview",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-3.5-transcribe",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "lyria-3-clip-preview",
+    "lyria-3-pro-preview",
+    "lyria-3.5",
+    "gemini-3.1-flash-tts-preview",
+    "gemini-3.8-flash-tts",
+    "gemini-3.8-flash-lite-tts",
+    "gemini-robotics-er-2-preview",
+    "gemini-2.5-computer-use-preview-10-2025",
+    "antigravity-preview-05-2026",
+    "antigravity-preview-09-2026",
+    "antigravity-preview-latest",
+    "deep-research-max-preview-04-2026",
+    "deep-research-preview-04-2026",
+    "deep-research-pro-preview-12-2025",
+    "gemini-embedding-001",
+    "gemini-embedding-2-preview",
+    "gemini-embedding-2",
+    "aqa",
+    "veo-3.1-generate-preview",
+    "veo-3.1-fast-generate-preview",
+    "veo-3.1-lite-generate-preview",
+    "gemini-3.5-transcribe-live",
+    "gemini-2.5-flash-native-audio-latest",
+    "gemini-2.5-flash-native-audio-preview-09-2025",
+    "gemini-2.5-flash-native-audio-preview-12-2025",
+    "gemini-3.1-flash-live-preview",
+    "gemini-3.8-live",
+    "gemini-3.8-live-extended-thinking",
+    "gemini-robotics-er-2-streaming-preview",
+    "gemini-3.5-live-translate-preview",
+    "lyria-realtime-exp"
+  ],
+  "gemini_chain": [
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-2.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.1-pro-preview",
+    "gemini-3-flash-preview",
+    "gemini-2.5-pro",
+    "gemini-omni-1.1-flash",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview",
+    "gemini-pro-latest",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-flash-lite-latest"
+  ],
+  "groq_chain": [],
+  "groq_text_chain": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ]
+}
 --- studio.log (son 300 satır)
-İstatistik güncellendi: 7 video, 0 tanesinde retention var.
-- 00KCQwbym6Y: 5 izlenme, retention %None, The Mask Strikes and Major Mars Face Shadows on Ju
-- LqljDCXbWgQ: 127 izlenme, retention %None, The Bizarre Betrayal of Blue Beetle and the Red Kn
-- aheRwCmwIqw: 7 izlenme, retention %None, Captain Science: The Atomic Hero's Explosive Sacri
-- OBuBbtKTq8Y: 12 izlenme, retention %None, Captain Science and the Temple of Klameth
-- qkdTRwsIkn8: 8 izlenme, retention %None, The Tonic Crusader: How Captain Hadacol Became a 1
-- yHCh_16q1fQ: 0 izlenme, retention %None, The Mysterious Voice of Doom in Golden Age Terror
-- oajCpRGneL0: 1 izlenme, retention %None, Altın Çağ Korkusunun Gizemli Kıyamet Sesi: Ölümün 
+
+→ Sabit kurgu profili
+
+→ Öğrenme: oyun kitabı ve deney
+
+→ Olay, gerçek sayfalar ve senaryo
+Özgün evren: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Özgün evren: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Özgün evren: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Özgün evren: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Özgün evren: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Özgün evren: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Gemini görsel modeli kullanılamadı (Panel çizimi (nano-banana-pro-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,); Pollinations ile çizildi.
+Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizildi.
+HATA: Yedek görsel üretici de yanıt vermedi.

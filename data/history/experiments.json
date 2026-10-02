@@ -85,7 +85,13 @@
       "change": "Use blue text for hero dialogue and white text for narrator narration.",
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
-    "verdict": "kept"
+    "verdict": "kept",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 7.87,
+      "baseline_median": 0.28
+    },
+    "judged_by": "numbers"
   },
   {
     "run_id": "36944367985",
@@ -115,7 +121,13 @@
       "change": "Cap every single shot's narration at a maximum of 4 words to maximize hyper-fast YouTube Shorts pacing.",
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
-    "verdict": "dropped"
+    "verdict": "dropped",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 0.78,
+      "baseline_median": 7.87
+    },
+    "judged_by": "numbers"
   },
   {
     "run_id": "36948788400",
@@ -125,7 +137,13 @@
       "change": "Limit the hook question to a maximum of 6 words.",
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
-    "verdict": "kept"
+    "verdict": "neutral",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 0.84,
+      "baseline_median": 0.78
+    },
+    "judged_by": "numbers"
   },
   {
     "run_id": "36950541594",
@@ -135,7 +153,13 @@
       "change": "The second-to-last shot must be a narrator question in white text, followed by a silent 2-second final panel showing the visual answer.",
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
-    "verdict": "dropped"
+    "verdict": "dropped",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 0.52,
+      "baseline_median": 0.84
+    },
+    "judged_by": "numbers"
   },
   {
     "run_id": "37003698509",
@@ -154,6 +178,17 @@
       "name": "two_character_dialogue_shots",
       "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
+    },
+    "verdict": "dropped",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37050960392",
+    "chosen_at": "2026-10-02T18:58:54+00:00",
+    "experiment": {
+      "name": "midpoint_twist_reveal_beat",
+      "change": "Place a single green-emphasized plot reveal shot exactly at the midpoint (shots 14-16) of the narration arc.",
+      "rationale": "Anchoring a major narrative turning point at the exact midpoint prevents mid-video retention drop-offs in 120-second formats."
     }
   }
 ]
