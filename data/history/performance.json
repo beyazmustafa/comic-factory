@@ -48,10 +48,19 @@
       "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 17.4,
-      "views_per_hour": 0.29,
-      "fetched_at": "2026-10-02T14:47:48+00:00"
-    }
+      "hours_live": 18.4,
+      "views_per_hour": 0.27,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 18.4,
+        "views": 5,
+        "likes": 0
+      }
+    ]
   },
   {
     "video_id": "LqljDCXbWgQ",
@@ -99,13 +108,22 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 108,
-      "likes": 1,
+      "views": 127,
+      "likes": 2,
       "comments": 0,
-      "hours_live": 14.8,
-      "views_per_hour": 7.32,
-      "fetched_at": "2026-10-02T14:47:48+00:00"
-    }
+      "hours_live": 15.7,
+      "views_per_hour": 8.06,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 15.7,
+        "views": 127,
+        "likes": 2
+      }
+    ]
   },
   {
     "video_id": "aheRwCmwIqw",
@@ -153,13 +171,22 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 11,
+      "views": 7,
       "likes": 1,
       "comments": 0,
-      "hours_live": 13.8,
-      "views_per_hour": 0.79,
-      "fetched_at": "2026-10-02T14:47:48+00:00"
-    }
+      "hours_live": 14.8,
+      "views_per_hour": 0.47,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.8,
+        "views": 7,
+        "likes": 1
+      }
+    ]
   },
   {
     "video_id": "OBuBbtKTq8Y",
@@ -206,13 +233,22 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 13,
+      "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 13.6,
-      "views_per_hour": 0.96,
-      "fetched_at": "2026-10-02T14:47:48+00:00"
-    }
+      "hours_live": 14.6,
+      "views_per_hour": 0.82,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.6,
+        "views": 12,
+        "likes": 1
+      }
+    ]
   },
   {
     "video_id": "qkdTRwsIkn8",
@@ -259,13 +295,22 @@
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
     "stats": {
-      "views": 7,
+      "views": 8,
       "likes": 1,
       "comments": 0,
-      "hours_live": 13.2,
-      "views_per_hour": 0.53,
-      "fetched_at": "2026-10-02T14:47:48+00:00"
-    }
+      "hours_live": 14.2,
+      "views_per_hour": 0.57,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.2,
+        "views": 8,
+        "likes": 1
+      }
+    ]
   },
   {
     "video_id": "yHCh_16q1fQ",
@@ -312,7 +357,23 @@
       "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 1.0,
+      "views_per_hour": 0.0,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 1.0,
+        "views": 0,
+        "likes": 0
+      }
+    ]
   },
   {
     "video_id": "oajCpRGneL0",
@@ -359,6 +420,22 @@
       "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 1.0,
+      "views_per_hour": 0.0,
+      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 1.0,
+        "views": 0,
+        "likes": 0
+      }
+    ]
   }
 ]
