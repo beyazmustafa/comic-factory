@@ -48,15 +48,20 @@
       "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 18.4,
+      "hours_live": 18.5,
       "views_per_hour": 0.27,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
       {
         "h": 18.4,
+        "views": 5,
+        "likes": 0
+      },
+      {
+        "h": 18.5,
         "views": 5,
         "likes": 0
       }
@@ -111,15 +116,20 @@
       "views": 127,
       "likes": 2,
       "comments": 0,
-      "hours_live": 15.7,
-      "views_per_hour": 8.06,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "hours_live": 15.8,
+      "views_per_hour": 8.03,
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
       {
         "h": 15.7,
+        "views": 127,
+        "likes": 2
+      },
+      {
+        "h": 15.8,
         "views": 127,
         "likes": 2
       }
@@ -174,15 +184,20 @@
       "views": 7,
       "likes": 1,
       "comments": 0,
-      "hours_live": 14.8,
+      "hours_live": 14.9,
       "views_per_hour": 0.47,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
       {
         "h": 14.8,
+        "views": 7,
+        "likes": 1
+      },
+      {
+        "h": 14.9,
         "views": 7,
         "likes": 1
       }
@@ -238,11 +253,16 @@
       "comments": 0,
       "hours_live": 14.6,
       "views_per_hour": 0.82,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
+      {
+        "h": 14.6,
+        "views": 12,
+        "likes": 1
+      },
       {
         "h": 14.6,
         "views": 12,
@@ -299,12 +319,17 @@
       "likes": 1,
       "comments": 0,
       "hours_live": 14.2,
-      "views_per_hour": 0.57,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_per_hour": 0.56,
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
+      {
+        "h": 14.2,
+        "views": 8,
+        "likes": 1
+      },
       {
         "h": 14.2,
         "views": 8,
@@ -363,11 +388,16 @@
       "comments": 0,
       "hours_live": 1.0,
       "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
+      {
+        "h": 1.0,
+        "views": 0,
+        "likes": 0
+      },
       {
         "h": 1.0,
         "views": 0,
@@ -421,12 +451,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 0,
+      "views": 1,
       "likes": 0,
       "comments": 0,
       "hours_live": 1.0,
-      "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T15:47:08+00:00",
+      "views_per_hour": 1.0,
+      "fetched_at": "2026-10-02T15:50:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -434,6 +464,11 @@
       {
         "h": 1.0,
         "views": 0,
+        "likes": 0
+      },
+      {
+        "h": 1.0,
+        "views": 1,
         "likes": 0
       }
     ]
