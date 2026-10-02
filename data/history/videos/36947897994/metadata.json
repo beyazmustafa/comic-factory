@@ -1,0 +1,384 @@
+{
+  "script": {
+    "title": "Captain Science: The Atomic Hero's Explosive Sacrifice",
+    "description": "Captain Science battles the Beast-Men of Rak in a high-stakes mission to save Earth from total conquest.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_044",
+        "narration": "Captain Science triggers a massive explosion, vaporizing the enemy fortress!",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_044",
+        "narration": "He carries the girl to safety as the base crumbles.",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_000",
+        "narration": "But how did this atomic hero start his war on evil?",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_001",
+        "narration": "It began when Gordon Dane spotted an unearthly flying saucer.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_002",
+        "narration": "A mysterious alien approaches, citing his work with Dr. Einstein.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_003",
+        "narration": "The alien gifts him a mechanical brain to fight the Beast-Men.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_006",
+        "narration": "Using his father's vast wealth, he builds a high-tech laboratory.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_011",
+        "narration": "The alien ship self-destructs with ultrasonic power, leaving no trace.",
+        "fact_ids": [
+          "fact_005",
+          "fact_006"
+        ],
+        "motion": "down",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_017",
+        "narration": "The Beast-Men of Rak plot to conquer Earth using evil thought waves.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_025",
+        "narration": "Captain Science infiltrates their fortress, using the password Galactic.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_028",
+        "narration": "He is quickly discovered by hooded guards in the dark tunnels.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_034",
+        "narration": "They strap him to the Hypno-Wheel to force a confession.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_035",
+        "narration": "The light intensifies, but he refuses to break under the pressure.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "panel_037",
+        "narration": "A mysterious woman named Luana visits his cell, seeking his help.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "panel_038",
+        "narration": "She reveals her own father is one of the enemy leaders.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "panel_040",
+        "narration": "They race to the power room, using an M-Box to melt the door.",
+        "fact_ids": [
+          "fact_017"
+        ],
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "panel_043",
+        "narration": "Guards swarm them as he reaches for the final switch.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "panel_044",
+        "narration": "WHOOOM! The explosion tears through the base, ending the threat.",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "panel_046",
+        "narration": "Luana's father is lost, but the fight against evil continues.",
+        "fact_ids": [
+          "fact_019",
+          "fact_020"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Captain Science triggers a massive explosion, vaporizing the enemy fortress! He carries the girl to safety as the base crumbles. But how did this atomic hero start his war on evil? It began when Gordon Dane spotted an unearthly flying saucer. A mysterious alien approaches, citing his work with Dr. Einstein. The alien gifts him a mechanical brain to fight the Beast-Men. Using his father's vast wealth, he builds a high-tech laboratory. The alien ship self-destructs with ultrasonic power, leaving no trace. The Beast-Men of Rak plot to conquer Earth using evil thought waves. Captain Science infiltrates their fortress, using the password Galactic. He is quickly discovered by hooded guards in the dark tunnels. They strap him to the Hypno-Wheel to force a confession. The light intensifies, but he refuses to break under the pressure. A mysterious woman named Luana visits his cell, seeking his help. She reveals her own father is one of the enemy leaders. They race to the power room, using an M-Box to melt the door. Guards swarm them as he reaches for the final switch. WHOOOM! The explosion tears through the base, ending the threat. Luana's father is lost, but the fight against evil continues.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "identifier": "captain-science-1-images",
+      "title": "The Dawn of the Atomic Hero",
+      "year": 1950,
+      "publisher": "Youthful Magazines, Inc.",
+      "description": "Captain Science No. 1",
+      "subjects": [
+        "Science Fiction",
+        "Comic Books"
+      ],
+      "public_domain_evidence": "inferred: publisher 'youthful' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 209,
+      "imagecount": 0,
+      "url": "https://archive.org/details/captain-science-1-images",
+      "id": "ia_31817d8dbead493a",
+      "series": "Captain Science",
+      "issue": "1",
+      "summary": "Bilimsel bir kahramanın uzaydaki gizemli maceraları ve dünyayı kurtarma çabası bekleniyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/captain-science-1-images"
+      ],
+      "selection_score": 72.0,
+      "_source": "archive"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [
+        {
+          "shot_id": "shot_000",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows Captain Science pulling a switch, followed by a massive explosion labeled 'WHOOOOM!', supporting the narration."
+        },
+        {
+          "shot_id": "shot_001",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows Captain Science holding the girl in his arms during the explosion, which aligns with the narrative of him rescuing her."
+        },
+        {
+          "shot_id": "shot_002",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration serves as a transition to the origin story, and the panel shows the characters witnessing the event that triggers the plot."
+        },
+        {
+          "shot_id": "shot_003",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel explicitly shows the characters pointing at and identifying a flying saucer, directly supporting the narration."
+        },
+        {
+          "shot_id": "shot_004",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the alien character speaking directly to Gordon Dane, with the dialogue bubble explicitly mentioning his work with Dr. Einstein."
+        },
+        {
+          "shot_id": "shot_005",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows the alien discussing the mechanical brain with the protagonist, matching the narration and evidence."
+        },
+        {
+          "shot_id": "shot_006",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel depicts the protagonist and the alien in a setting that contextually aligns with the establishment of the laboratory, supported by the evidence."
+        },
+        {
+          "shot_id": "shot_007",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the aftermath of an explosion and the characters reacting to the destruction of the ship, matching the evidence provided."
+        },
+        {
+          "shot_id": "shot_008",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel explicitly mentions the Beast-Men of Rak and their evil thought waves in the speech bubble, directly supporting the narration."
+        },
+        {
+          "shot_id": "shot_009",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the protagonist using the password 'Galactic' to pass the robot guards, which is explicitly quoted in the evidence."
+        },
+        {
+          "shot_id": "shot_010",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes Captain Science being confronted by hooded guards, which is clearly depicted in the panel."
+        },
+        {
+          "shot_id": "shot_011",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly identifies the 'Hypno-Wheel' and the guards' intent to force a confession, supported by the dialogue in the panel."
+        },
+        {
+          "shot_id": "shot_012",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes the intensifying light and Captain Science's resistance, which is visually and textually supported by the panel's content."
+        },
+        {
+          "shot_id": "shot_013",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly identifies the visitor as Luana and her purpose, which matches the dialogue and visual context of the cell scene."
+        },
+        {
+          "shot_id": "shot_014",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately reflects Luana's revelation about her father being an enemy leader, as stated in the panel's dialogue."
+        },
+        {
+          "shot_id": "shot_015",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows the M-Box being used to melt the door, matching the narration and the provided evidence quote."
+        },
+        {
+          "shot_id": "shot_016",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows guards appearing as the protagonist reaches for the switch, which aligns with the context of being caught at the power room doors."
+        },
+        {
+          "shot_id": "shot_017",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel depicts the explosion and the subsequent transition to the New Mexico laboratory, directly supported by the text in the panel."
+        },
+        {
+          "shot_id": "shot_018",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the characters discussing the ongoing fight against evil and the necessity of future preparation, matching the evidence quotes."
+        }
+      ],
+      "failures": []
+    },
+    "full_description": "Captain Science battles the Beast-Men of Rak in a high-stakes mission to save Earth from total conquest.\n\nComic: Captain Science #1 (1950)\nPages: public-domain Golden Age issue scanned on the Internet Archive.\nSources:\nhttps://archive.org/details/captain-science-1-images",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "youthfulmagazines,inc."
+    ],
+    "instagram_caption": "Captain Science: The Atomic Hero's Explosive Sacrifice\n\nCaptain Science battles the Beast-Men of Rak in a high-stakes mission to save Earth from total conquest."
+  },
+  "sources": [
+    "https://archive.org/details/captain-science-1-images"
+  ],
+  "voice": {
+    "voice": "Christopher",
+    "selection": "edge_fallback",
+    "errors": {}
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}

@@ -6,7 +6,7 @@
 - Ending: Stop on the strongest image and consequence; no outro, no call to action.
 - Title: Curiosity-driven, 45-70 characters, names the hero or villain, never a lie.
 - Character ID: Introduce the hero's core power or alter-ego within the first three shots.
-- Sensory Onomatopoeia: Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text.
+- Sensory Onomatopoeia: Incorporate at least one onomatopoeia sound effect directly into the narration text.
 - Pacing: Total video duration strictly between 35 and 45 seconds.
-- Captions: Use color-coded captions (Hero dialogue in blue, narrator in white) to improve readability.
+- Captions: Use color-coded captions (Hero dialogue in blue, narrator in white).
 - Transitions: End the penultimate shot with a question answered by the final image.

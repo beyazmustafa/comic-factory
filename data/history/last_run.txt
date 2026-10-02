@@ -1,6 +1,6 @@
-run_id: 36946159098  attempt: 1  event: workflow_dispatch
+run_id: 36947897994  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261002T002926811463Z/run.json
+--- data/runs/20261002T005015236291Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -36,13 +36,14 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36946159098",
+  "run_id": "36947897994",
+  "resumed_from": "36946159098",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "216c52bee02c1691812aecc7532989ce905e270de6fc4d4c932813a8f1886cec",
-  "metadata_sha256": "41712e4ede1808c28fec200f78f1c889d445f63e00d3cc2cbccd3085c4b5e642",
-  "quality_sha256": "f0711d1a03cc79327628c588392c6e33057641f8d642f35cfe0af5038d91aaeb",
-  "api_calls": 65,
+  "video_sha256": "2a07e653f75f5634d7e80b189c0228346a6f0dbd6d08ee10a0cf77531c07ac78",
+  "metadata_sha256": "aa28095d0996d33b89008461321f50fb25b1e1c64f917bf1f0733a20d009431d",
+  "quality_sha256": "8316491c544eb04266ce43b84edd311cb61b2e36300dccf044ad5cb37c904936",
+  "api_calls": 46,
   "duration": 76.89,
   "voice": "Christopher",
   "event": {
@@ -71,7 +72,7 @@ produce step outcome: success
     "_source": "archive"
   }
 }
---- data/runs/20261002T002926811463Z/diagnostics/provider_events.json
+--- data/runs/20261002T005015236291Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -85,10 +86,10 @@ produce step outcome: success
   "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
+  "Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261002T002926811463Z/diagnostics/providers.json
+--- data/runs/20261002T005015236291Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -110,9 +111,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -141,9 +142,9 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261002T002926811463Z/voice_audition/failed_auditions.json
+--- data/runs/20261002T005015236291Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261002T002926811463Z/research/rejected_candidates.json
+--- data/runs/20261002T005015236291Z/research/rejected_candidates.json
 [
   {
     "event": {
@@ -197,9 +198,14 @@ produce step outcome: success
     "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
   }
 ]
---- data/runs/20261002T002926811463Z/diagnostics/panel_matches_1.json
+--- data/runs/20261002T005015236291Z/diagnostics/panel_matches_1.json
 {"passed": true, "failures": []}
 --- studio.log (son 300 satır)
+Kayıtlı aşama kullanılıyor: story
+Kayıtlı aşama kullanılıyor: voice
+Kayıtlı aşama kullanılıyor: audio
+Kayıtlı aşama kullanılıyor: render
+Kayıtlı aşama kullanılıyor: quality
 
 → Sabit kurgu profili
 
@@ -216,40 +222,32 @@ Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atla
 Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Eddie Brock's Carnage Trauma
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
-  warnings.warn(
-Olay araştırılıyor: The Symbiote Bond of Comeback
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Dawn of the Atomic Hero
+Önceki çalışmanın senaryosu kullanılıyor.
 
 → Türkçe ses seçimi
 Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 97.0/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Kayıtlı aşama kullanılıyor: audio
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T002926811463Z/review.html
+Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T005015236291Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Captain Science: The Atomic Hero's Explosive Sacrifice #Shorts
+Görünürlük: public
+
+Yükleme: %17
+Yükleme: %34
+Yükleme: %51
+Yükleme: %69
+Yükleme: %86

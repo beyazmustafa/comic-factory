@@ -48,9 +48,9 @@
       "views": 1,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.1,
-      "views_per_hour": 0.32,
-      "fetched_at": "2026-10-02T00:29:27+00:00"
+      "hours_live": 3.5,
+      "views_per_hour": 0.29,
+      "fetched_at": "2026-10-02T00:50:15+00:00"
     }
   },
   {
@@ -99,12 +99,59 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 12,
+      "views": 22,
       "likes": 0,
       "comments": 0,
       "hours_live": 1.0,
-      "views_per_hour": 12.0,
-      "fetched_at": "2026-10-02T00:29:27+00:00"
+      "views_per_hour": 22.0,
+      "fetched_at": "2026-10-02T00:50:15+00:00"
     }
+  },
+  {
+    "video_id": "aheRwCmwIqw",
+    "platform": "youtube",
+    "run_id": "36947897994",
+    "published_at": "2026-10-02T00:57:18+00:00",
+    "event": {
+      "title": "The Dawn of the Atomic Hero",
+      "series": "Captain Science",
+      "issue": "1",
+      "year": 1950,
+      "publisher": "Youthful Magazines, Inc."
+    },
+    "profile": {
+      "shots": 19,
+      "words": 200,
+      "duration": 76.9,
+      "words_per_minute": 156,
+      "hook": "Captain Science triggers a massive explosion, vaporizing the enemy fortress!",
+      "hook_words": 10,
+      "title": "Captain Science: The Atomic Hero's Explosive Sacrifice",
+      "title_length": 54,
+      "emphasis": {
+        "normal": 15,
+        "danger": 2,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Christopher",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 96.96969696969697,
+        "scene_match": 100,
+        "delivery": 96.96969696969697,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "The comic documentary is well-produced with clear narration, good pacing, and effective visual transitions that match the comic panels. The text is readable and the overall presentation is professional."
+    },
+    "experiment": {
+      "name": "ultra_short_beats",
+      "change": "Cap every single shot's narration at a maximum of 4 words to maximize hyper-fast YouTube Shorts pacing.",
+      "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
+    },
+    "stats": {}
   }
 ]

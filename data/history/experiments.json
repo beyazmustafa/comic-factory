@@ -104,6 +104,16 @@
       "name": "strict_emphasis_ratio",
       "change": "Limit visual emphasis (red, green, cyan) to exactly one in every four shots.",
       "rationale": "Standardizing visual cues prevents viewer fatigue and ensures high-impact moments remain distinct."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36947897994",
+    "chosen_at": "2026-10-02T00:53:01+00:00",
+    "experiment": {
+      "name": "ultra_short_beats",
+      "change": "Cap every single shot's narration at a maximum of 4 words to maximize hyper-fast YouTube Shorts pacing.",
+      "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     }
   }
 ]
