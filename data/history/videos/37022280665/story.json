@@ -1,0 +1,391 @@
+{
+  "title": "The Mysterious Voice of Doom in Golden Age Terror",
+  "description": "Dr. Carlton attempts a scientific trip beyond the grave in Fawcett horror.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "panel_049",
+      "narration": "Carlton screams in sheer terror at the horrifying new arrival!",
+      "fact_ids": [
+        "fact_017"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "panel_001",
+      "narration": "Doctor Carlton plans to stop his heart for fifteen minutes using a pump.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "panel_002",
+      "narration": "He performs this dangerous experiment purely for scientific glory and fame.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "panel_004",
+      "narration": "He commands: Remember, let me remain dead for fifteen minutes and bring me back!",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "panel_008",
+      "narration": "His spirit leaves the lifeless body to uncover forbidden afterworld secrets.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "up",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "panel_009",
+      "narration": "A strange supernatural wind drags his ghost away toward midnight.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "panel_011",
+      "narration": "He crosses black waters resembling the legendary River Styx.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "panel_013",
+      "narration": "The Grim Reaper warns that entering his domain leaves zero hope of escape.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "pull",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "panel_014",
+      "narration": "Defiant Carlton boasts: Death can't hold me here, I am only a temporary visitor!",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "panel_020",
+      "narration": "He insists his physical body will only be dead for fifteen minutes.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "panel_023",
+      "narration": "A hooded figure mocks him, stating the ferry returns in nine minutes without him.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "up",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "panel_028",
+      "narration": "A giant bony hand hurls his prison cell into gaping emptiness.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "down",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "panel_031",
+      "narration": "Carlton's soul-shaking ordeal plunges him into mounting suspense and horror.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "panel_035",
+      "narration": "Blocked by a mirror, he races against time with only six minutes left.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "pull",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "panel_037",
+      "narration": "His terrified screams drown beneath the relentless ticking of countless clocks.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "panel_039",
+      "narration": "Gravediggers prepare his waiting coffin because he lacked proper burial.",
+      "fact_ids": [
+        "fact_014"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "panel_041",
+      "narration": "Suddenly, as if obeying a silent command, the gravediggers release him.",
+      "fact_ids": [
+        "fact_015"
+      ],
+      "motion": "up",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "panel_046",
+      "narration": "Arriving at the dock in 1952, Carlton boasts that science outwitted Death.",
+      "fact_ids": [
+        "fact_016"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_018",
+      "panel_id": "panel_053",
+      "narration": "Dr. Clode reveals he died during those fifteen minutes with no one to start the pump.",
+      "fact_ids": [
+        "fact_018"
+      ],
+      "motion": "push",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_019",
+      "panel_id": "panel_055",
+      "narration": "Carlton learns the terrifying truth that there is no round trip back from death!",
+      "fact_ids": [
+        "fact_019"
+      ],
+      "motion": "hold",
+      "emphasis": "danger"
+    }
+  ],
+  "narration": "Carlton screams in sheer terror at the horrifying new arrival! Doctor Carlton plans to stop his heart for fifteen minutes using a pump. He performs this dangerous experiment purely for scientific glory and fame. He commands: Remember, let me remain dead for fifteen minutes and bring me back! His spirit leaves the lifeless body to uncover forbidden afterworld secrets. A strange supernatural wind drags his ghost away toward midnight. He crosses black waters resembling the legendary River Styx. The Grim Reaper warns that entering his domain leaves zero hope of escape. Defiant Carlton boasts: Death can't hold me here, I am only a temporary visitor! He insists his physical body will only be dead for fifteen minutes. A hooded figure mocks him, stating the ferry returns in nine minutes without him. A giant bony hand hurls his prison cell into gaping emptiness. Carlton's soul-shaking ordeal plunges him into mounting suspense and horror. Blocked by a mirror, he races against time with only six minutes left. His terrified screams drown beneath the relentless ticking of countless clocks. Gravediggers prepare his waiting coffin because he lacked proper burial. Suddenly, as if obeying a silent command, the gravediggers release him. Arriving at the dock in 1952, Carlton boasts that science outwitted Death. Dr. Clode reveals he died during those fifteen minutes with no one to start the pump. Carlton learns the terrifying truth that there is no round trip back from death!",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "event": {
+    "identifier": "fawcett-beware-terror-tales-003",
+    "title": "The Mysterious Voice of Doom in Golden Age Terror",
+    "year": 1952,
+    "publisher": "",
+    "description": "",
+    "subjects": [
+      "terror",
+      "tales",
+      "enesco",
+      "dean",
+      "beware",
+      "voice",
+      "belmont",
+      "andrews",
+      "favorite",
+      "newsstand",
+      "terror tales",
+      "tom andrews"
+    ],
+    "public_domain_evidence": "inferred: publisher 'fawcett' (closed before 1964, unrenewed Golden Age catalogue)",
+    "downloads": 3133,
+    "imagecount": 0,
+    "url": "https://archive.org/details/fawcett-beware-terror-tales-003",
+    "id": "ia_2a2d1a15fa45122b",
+    "series": "Beware Terror Tales",
+    "issue": "003",
+    "summary": "Altın Çağ korku çizgi romanında gizemli sesler ve beklenmedik ihanetler dehşet dolu bir hikayede bir araya geliyor.",
+    "universe": "Golden Age (public domain)",
+    "source_urls": [
+      "https://archive.org/details/fawcett-beware-terror-tales-003"
+    ],
+    "selection_score": 75.0,
+    "_source": "archive"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [
+      {
+        "shot_id": "shot_000",
+        "match_score": 100,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes Carlton screaming in terror at the new arrival, perfectly matching both the visual panel and the provided evidence quote."
+      },
+      {
+        "shot_000": "shot_001",
+        "shot_id": "shot_001",
+        "match_score": 100,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration correctly states Carlton's plan to stop his heart and use a pump for fifteen minutes, fully backed by the dialogue and evidence."
+      },
+      {
+        "shot_id": "shot_002",
+        "match_score": 100,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration captures Carlton's motivation of glory and fame for his experiment, directly matching the text and panel."
+      },
+      {
+        "shot_id": "shot_003",
+        "match_score": 100,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration reflects Carlton's commands to remain dead for fifteen minutes before being brought back, confirmed by the panel dialogue and quote."
+      },
+      {
+        "shot_id": "shot_004",
+        "match_score": 100,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes Carlton's spirit leaving his lifeless body to uncover secrets, perfectly matching the visual and text."
+      },
+      {
+        "shot_id": "shot_005",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes Carlton's ghost being drawn away by a supernatural wind past a clock approaching midnight, directly supported by the panel image and evidence quote."
+      },
+      {
+        "shot_id": "shot_006",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration correctly captures Carlton crossing black waters that he compares to the River Styx, perfectly matching the visual and dialogue in the cropped panel."
+      },
+      {
+        "shot_id": "shot_007",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The Grim Reaper is visibly warning the arriving souls that entering his domain leaves no hope of leaving, matching both the narration and text evidence."
+      },
+      {
+        "shot_id": "shot_008",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "Carlton is shown defiantly addressing the Reaper, claiming he is a temporary visitor and cannot be held, which is fully supported by the panel and quote."
+      },
+      {
+        "shot_id": "shot_009",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The character is shown speaking the line about his body being dead for fifteen minutes by scientific means, matching the evidence and narration completely."
+      },
+      {
+        "shot_id": "shot_010",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes the hooded figure mocking him about the ferry returning in nine minutes, directly matching the dialogue and panel."
+      },
+      {
+        "shot_id": "shot_011",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel clearly shows a giant bony/green hand hurling the cell into emptiness, matching the narration and evidence quote."
+      },
+      {
+        "shot_id": "shot_012",
+        "match_score": 90,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration captures Carlton's ordeal and the suspense/horror elements as mocking guards surround him, matching the caption box and panel."
+      },
+      {
+        "shot_id": "shot_013",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration matches the dialogue and caption where he is blocked by a mirror with six minutes left."
+      },
+      {
+        "shot_id": "shot_014",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel depicts Carlton with his hands on his head surrounded by many clocks and 'TIC TOC' text, perfectly matching the narration about clocks and screams."
+      },
+      {
+        "shot_id": "shot_015",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes the panel where the gravediggers tell Carlton his coffin is ready because he was not properly buried."
+      },
+      {
+        "shot_id": "shot_016",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Carlton being released/directed away as if at a silent command, matching the narration."
+      },
+      {
+        "shot_id": "shot_017",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The dialogue in the panel explicitly matches the narration of Carlton boasting at the dock that science has outwitted Death."
+      },
+      {
+        "shot_id": "shot_018",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "Dr. Clode's dialogue confirms he died during the fifteen minutes with no one to turn on the mechanical heart, perfectly matching the narration and evidence."
+      },
+      {
+        "shot_id": "shot_019",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration directly reflects the concluding caption and quote stating there is no round trip back from death."
+      }
+    ],
+    "failures": []
+  }
+}

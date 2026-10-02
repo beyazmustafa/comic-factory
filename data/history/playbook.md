@@ -1,10 +1,12 @@
 # Playbook (auto-evolving)
-- Hook: Direct question about threat, <= 6 words, starting immediately with hero/villain name.
-- Rhythm: 3-10 word beats, 18-35 shots, targeting ~120 seconds duration.
+- Hook: Shocking threat question <= 6 words starting with the hero's full name.
+- Pacing: 25-32 shots total, targeting 110-130 seconds duration (~145-155 WPM).
+- Rhythm: 3-10 words per shot beat; maintain continuous forward momentum.
 - Visuals: One complete panel per shot; blue captions for hero dialogue, white for narrator.
 - Emphasis: Red for danger, green for reveals, cyan for turns; max 1 in 4 shots.
-- Title: Curiosity-driven, 45-70 characters, names hero or villain.
-- Ending: Stop on strongest visual consequence with no call to action or outro.
+- Title: Curiosity-driven, 45-65 characters, featuring the hero name and a specific antagonist.
+- Dialogue: Include at least two direct hero dialogue lines shown in blue captions.
+- Ending: Stop cold on the final visual consequence with zero outro or CTA.
 
 ## Fixed rules
 - Superheroes only: pick the issue whose lead hero has the single most shocking moment; crime/horror issues are a last resort.

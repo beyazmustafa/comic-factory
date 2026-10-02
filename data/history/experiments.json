@@ -144,6 +144,16 @@
       "name": "hero_first_word_hook",
       "change": "Start the hook question with the superhero's full name as the first two words.",
       "rationale": "Leading immediately with a recognizable hero name increases instant viewer familiarity and retention."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "37022280665",
+    "chosen_at": "2026-10-02T14:50:34+00:00",
+    "experiment": {
+      "name": "two_character_dialogue_shots",
+      "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
+      "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     }
   }
 ]

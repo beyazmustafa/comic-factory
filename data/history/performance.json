@@ -45,12 +45,12 @@
       "rationale": "Adding sensory sound words to the narration increases engagement by mimicking the comic book reading experience."
     },
     "stats": {
-      "views": 3,
+      "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 14.6,
-      "views_per_hour": 0.21,
-      "fetched_at": "2026-10-02T11:56:17+00:00"
+      "hours_live": 17.4,
+      "views_per_hour": 0.29,
+      "fetched_at": "2026-10-02T14:47:48+00:00"
     }
   },
   {
@@ -99,12 +99,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 90,
-      "likes": 0,
+      "views": 108,
+      "likes": 1,
       "comments": 0,
-      "hours_live": 11.9,
-      "views_per_hour": 7.56,
-      "fetched_at": "2026-10-02T11:56:17+00:00"
+      "hours_live": 14.8,
+      "views_per_hour": 7.32,
+      "fetched_at": "2026-10-02T14:47:48+00:00"
     }
   },
   {
@@ -153,12 +153,12 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 5,
-      "likes": 0,
+      "views": 11,
+      "likes": 1,
       "comments": 0,
-      "hours_live": 11.0,
-      "views_per_hour": 0.46,
-      "fetched_at": "2026-10-02T11:56:17+00:00"
+      "hours_live": 13.8,
+      "views_per_hour": 0.79,
+      "fetched_at": "2026-10-02T14:47:48+00:00"
     }
   },
   {
@@ -206,12 +206,12 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 8,
-      "likes": 0,
+      "views": 13,
+      "likes": 1,
       "comments": 0,
-      "hours_live": 10.7,
-      "views_per_hour": 0.75,
-      "fetched_at": "2026-10-02T11:56:17+00:00"
+      "hours_live": 13.6,
+      "views_per_hour": 0.96,
+      "fetched_at": "2026-10-02T14:47:48+00:00"
     }
   },
   {
@@ -260,11 +260,105 @@
     },
     "stats": {
       "views": 7,
-      "likes": 0,
+      "likes": 1,
       "comments": 0,
-      "hours_live": 10.3,
-      "views_per_hour": 0.68,
-      "fetched_at": "2026-10-02T11:56:17+00:00"
+      "hours_live": 13.2,
+      "views_per_hour": 0.53,
+      "fetched_at": "2026-10-02T14:47:48+00:00"
     }
+  },
+  {
+    "video_id": "yHCh_16q1fQ",
+    "platform": "youtube",
+    "run_id": "37022280665",
+    "published_at": "2026-10-02T15:19:42+00:00",
+    "event": {
+      "title": "The Mysterious Voice of Doom in Golden Age Terror",
+      "series": "Beware Terror Tales",
+      "issue": "003",
+      "year": 1952,
+      "publisher": ""
+    },
+    "profile": {
+      "shots": 20,
+      "words": 239,
+      "duration": 107.4,
+      "words_per_minute": 134,
+      "hook": "Carlton screams in sheer terror at the horrifying new arrival!",
+      "hook_words": 10,
+      "title": "The Mysterious Voice of Doom in Golden Age Terror",
+      "title_length": 49,
+      "emphasis": {
+        "danger": 5,
+        "normal": 11,
+        "reveal": 3,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video",
+      "scores": {
+        "subtitle_sync": 95,
+        "scene_match": 95,
+        "delivery": 95,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "English"
+    },
+    "experiment": {
+      "name": "two_character_dialogue_shots",
+      "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
+      "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
+    },
+    "stats": {}
+  },
+  {
+    "video_id": "oajCpRGneL0",
+    "platform": "youtube",
+    "run_id": "37022280665",
+    "published_at": "2026-10-02T15:21:22+00:00",
+    "event": {
+      "title": null,
+      "series": null,
+      "issue": null,
+      "year": null,
+      "publisher": null
+    },
+    "profile": {
+      "shots": 20,
+      "words": 198,
+      "duration": 102.6,
+      "words_per_minute": 116,
+      "hook": "Carlton, korkunç yeni gelene dehşet içinde bağırıyor!",
+      "hook_words": 7,
+      "title": "Altın Çağ Korkusunun Gizemli Kıyamet Sesi: Ölümün Sırları",
+      "title_length": 57,
+      "emphasis": {
+        "danger": 5,
+        "normal": 11,
+        "reveal": 3,
+        "turn": 1
+      }
+    },
+    "voice": "Ahmet",
+    "review": {
+      "mode": "measured",
+      "scores": {
+        "subtitle_sync": 88.40093240093239,
+        "scene_match": 95,
+        "delivery": 88.40093240093239,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Localized edition (tr); panels and audit shared with the primary edition."
+    },
+    "experiment": {
+      "name": "two_character_dialogue_shots",
+      "change": "Include at least two shots containing hero dialogue transcribed verbatim from speech balloons and rendered with blue captions.",
+      "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
+    },
+    "stats": {}
   }
 ]

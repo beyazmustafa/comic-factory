@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95,
+  "scene_match": 95,
+  "delivery": 95,
+  "visual_readability": 95,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Candidate starts with clear panel framing and synchronized single-word yellow captions."
+    },
+    {
+      "second": 20,
+      "detail": "Narration maintains strong energy and pacing matches visual narrative."
+    },
+    {
+      "second": 40,
+      "detail": "Transition effects and zoom work well to highlight comic panels."
+    },
+    {
+      "second": 60,
+      "detail": "Audio is clear with consistent volume and accurate word-by-word highlighting."
+    },
+    {
+      "second": 80,
+      "detail": "Visual elements like clocks and gravediggers match the script details effectively."
+    },
+    {
+      "second": 100,
+      "detail": "Conclusion wraps up the story coherently with strong payoff and proper emphasis."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 95,
+    "visual_readability": 95
+  },
+  "measured_scores": {
+    "subtitle_sync": 94.11764705882352,
+    "scene_match": 90.0,
+    "delivery": 94.11764705882352
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}
