@@ -124,6 +124,16 @@
       "name": "concise_hook",
       "change": "Limit the hook question to a maximum of 6 words.",
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36950541594",
+    "chosen_at": "2026-10-02T01:24:01+00:00",
+    "experiment": {
+      "name": "cliffhanger_penultimate_shot",
+      "change": "The second-to-last shot must be a narrator question in white text, followed by a silent 2-second final panel showing the visual answer.",
+      "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     }
   }
 ]

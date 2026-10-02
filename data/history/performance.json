@@ -48,9 +48,9 @@
       "views": 1,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.7,
-      "views_per_hour": 0.27,
-      "fetched_at": "2026-10-02T01:01:41+00:00"
+      "hours_live": 4.0,
+      "views_per_hour": 0.25,
+      "fetched_at": "2026-10-02T01:22:22+00:00"
     }
   },
   {
@@ -99,12 +99,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 28,
+      "views": 29,
       "likes": 0,
       "comments": 0,
-      "hours_live": 1.0,
-      "views_per_hour": 28.0,
-      "fetched_at": "2026-10-02T01:01:41+00:00"
+      "hours_live": 1.3,
+      "views_per_hour": 21.72,
+      "fetched_at": "2026-10-02T01:22:22+00:00"
     }
   },
   {
@@ -158,7 +158,7 @@
       "comments": 0,
       "hours_live": 1.0,
       "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T01:01:41+00:00"
+      "fetched_at": "2026-10-02T01:22:22+00:00"
     }
   },
   {
@@ -204,6 +204,59 @@
       "name": "concise_hook",
       "change": "Limit the hook question to a maximum of 6 words.",
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
+    },
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 1.0,
+      "views_per_hour": 0.0,
+      "fetched_at": "2026-10-02T01:22:22+00:00"
+    }
+  },
+  {
+    "video_id": "qkdTRwsIkn8",
+    "platform": "youtube",
+    "run_id": "36950541594",
+    "published_at": "2026-10-02T01:37:47+00:00",
+    "event": {
+      "title": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero",
+      "series": "Captain Hadacol",
+      "issue": "?",
+      "year": 1951,
+      "publisher": "Creative Credit: Dudley \"Coozan Dud\" Joseph LeBlanc, Sr. (Youngsville, Louisiana, 16 August 1894 - 22 October 1971, Abbeville General Hospital, Abbeville, Louisiana)"
+    },
+    "profile": {
+      "shots": 21,
+      "words": 180,
+      "duration": 64.8,
+      "words_per_minute": 167,
+      "hook": "Captain Hadacol is buried alive in a collapsing mine!",
+      "hook_words": 9,
+      "title": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero",
+      "title_length": 64,
+      "emphasis": {
+        "danger": 3,
+        "normal": 16,
+        "reveal": 2
+      }
+    },
+    "voice": "Christopher",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 95.1219512195122,
+        "scene_match": 100,
+        "delivery": 95.1219512195122,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "The video is a well-produced comic documentary that effectively uses the provided script and visual assets. The pacing is good, the narration is clear and energetic, and the visual transitions between panels are smooth. No critical errors were observed."
+    },
+    "experiment": {
+      "name": "cliffhanger_penultimate_shot",
+      "change": "The second-to-last shot must be a narrator question in white text, followed by a silent 2-second final panel showing the visual answer.",
+      "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
     "stats": {}
   }

@@ -1,0 +1,429 @@
+{
+  "script": {
+    "title": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero",
+    "description": "A 1951 promotional comic documentary following the heroic Captain Hadacol as he battles thieves and uncovers hidden treasure in Louisiana.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_040",
+        "narration": "Captain Hadacol is buried alive in a collapsing mine!",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_002",
+        "narration": "It all starts with a mysterious treasure map.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_005",
+        "narration": "John and his friends struggle to find the starting point.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_008",
+        "narration": "They hide the map in a desk drawer for safety.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_009",
+        "narration": "But thieves are watching from the shadows.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_011",
+        "narration": "A noise wakes John as the map is stolen.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_014",
+        "narration": "He reaches for his bottle of Hadacol.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_016",
+        "narration": "One sip transforms him into the mighty Captain Hadacol.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_018",
+        "narration": "He quickly dispatches the thief with his super strength.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_021",
+        "narration": "But the crooks escape with the map overnight.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_025",
+        "narration": "Red and his sister spot a broken horseshoe on the trail.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_026",
+        "narration": "They secretly follow the gang into the desert.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_031",
+        "narration": "A loose rock betrays their position to the gang.",
+        "fact_ids": [
+          "fact_009",
+          "fact_010"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "panel_034",
+        "narration": "The crooks force the kids into an old mine.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "panel_035",
+        "narration": "They leave them trapped to hunt for the treasure.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "panel_037",
+        "narration": "Suddenly, Captain Hadacol appears to save the day.",
+        "fact_ids": [
+          "fact_011",
+          "fact_012"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "panel_039",
+        "narration": "The mine entrance begins to cave in.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "panel_040",
+        "narration": "Rotten timbers seal everyone inside a living tomb.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "panel_044",
+        "narration": "The gang is finally turned over to the sheriff.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "panel_045",
+        "narration": "A big reward awaits for the captured crew.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "panel_046",
+        "narration": "The group realizes the treasure is still missing.",
+        "fact_ids": [
+          "fact_013",
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Captain Hadacol is buried alive in a collapsing mine! It all starts with a mysterious treasure map. John and his friends struggle to find the starting point. They hide the map in a desk drawer for safety. But thieves are watching from the shadows. A noise wakes John as the map is stolen. He reaches for his bottle of Hadacol. One sip transforms him into the mighty Captain Hadacol. He quickly dispatches the thief with his super strength. But the crooks escape with the map overnight. Red and his sister spot a broken horseshoe on the trail. They secretly follow the gang into the desert. A loose rock betrays their position to the gang. The crooks force the kids into an old mine. They leave them trapped to hunt for the treasure. Suddenly, Captain Hadacol appears to save the day. The mine entrance begins to cave in. Rotten timbers seal everyone inside a living tomb. The gang is finally turned over to the sheriff. A big reward awaits for the captured crew. The group realizes the treasure is still missing.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "identifier": "Captain_Hadacol_2_circa_1951",
+      "title": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero",
+      "year": 1951,
+      "publisher": "Creative Credit: Dudley \"Coozan Dud\" Joseph LeBlanc, Sr. (Youngsville, Louisiana, 16 August 1894 - 22 October 1971, Abbeville General Hospital, Abbeville, Louisiana)",
+      "description": "Captain Hadacol, Comic Book Number 2 (Lafayette, Louisiana: LeBlanc Corporation, circa 1951). This comic book was issued as a promotional item for Hadacol, the tonic that Dudley \"Coozan Dud\" Joseph LeBlanc, Sr. (Youngsville, Louisiana, 16 August 1894 - 22 October 1971, Abbeville General Hospital, Abbeville, Louisiana) invented, manufactured, and sold as a kind of panacea for the aches and pains of adults and children. Although this booklet was issued as \"Comic Book Number 2,\" it is not yet perfectly obvious, as of 2016, that a \"Comic Book Number 1\" of \"Captain Hadacol\" had ever been issued.",
+      "subjects": [
+        "Hadacol",
+        "Louisiana",
+        "LeBlanc",
+        "Patent Medicine"
+      ],
+      "public_domain_evidence": "declared licenseurl: http://creativecommons.org/publicdomain/mark/1.0/",
+      "downloads": 449,
+      "imagecount": 0,
+      "url": "https://archive.org/details/Captain_Hadacol_2_circa_1951",
+      "id": "ia_882845b38257ade6",
+      "series": "Captain Hadacol",
+      "issue": "?",
+      "summary": "Bu 1951 tarihli tanıtım kitabı, Hadacol tonikini savunan kostümlü bir kahramanın maceralarını sunuyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/Captain_Hadacol_2_circa_1951"
+      ],
+      "selection_score": 62.0,
+      "_source": "archive"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [
+        {
+          "shot_id": "shot_000",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The image clearly shows characters trapped under collapsed mine timbers, matching the narration and the provided evidence quote."
+        },
+        {
+          "shot_id": "shot_001",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The characters are sitting by a campfire discussing the treasure map, which directly matches the provided evidence quote."
+        },
+        {
+          "shot_id": "shot_002",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The characters are examining a map on a table, and the speech bubble explicitly mentions the 3-prong cactus and twin rocks, matching the evidence."
+        },
+        {
+          "shot_id": "shot_003",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The character is placing a document into a desk drawer while a shadowy figure watches from the window, supporting the narrative of hiding the map."
+        },
+        {
+          "shot_id": "shot_004",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The thieves are shown outside the house, and the speech bubble confirms their intent to steal the map once the lights are out, matching the narrative."
+        },
+        {
+          "shot_id": "shot_005",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the panel where John is awakened by a noise while a thief is present."
+        },
+        {
+          "shot_id": "shot_007",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration matches the visual action of John reaching for the Hadacol bottle, supported by the panel text."
+        },
+        {
+          "shot_id": "shot_008",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes John taking a sip of Hadacol, which is clearly depicted in the panel."
+        },
+        {
+          "shot_id": "shot_009",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes the character (now in costume) punching the thief, which is clearly visible in the panel."
+        },
+        {
+          "shot_id": "shot_010",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately reflects the dialogue in the panel, which explicitly states the crooks have escaped with the map."
+        },
+        {
+          "shot_id": "shot_011",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes the characters taking the trail, which is supported by the panel's caption and visual context of them riding horses."
+        },
+        {
+          "shot_id": "shot_012",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration aligns with the dialogue where Red identifies a broken horseshoe, providing the means to trail the crooks."
+        },
+        {
+          "shot_id": "shot_013",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration directly matches the text in the panel stating that a loose rock betrayed the characters."
+        },
+        {
+          "shot_id": "shot_014",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the action shown in the panel, where the crooks are forcing the kids into an old mine."
+        },
+        {
+          "shot_id": "shot_015",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the action of the gang leaving the kids trapped, though it interprets the 'cactus' as 'treasure'."
+        },
+        {
+          "shot_id": "shot_016",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly identifies the arrival of Captain Hadacol, supported by the speech bubble in the panel."
+        },
+        {
+          "shot_id": "shot_018",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration directly reflects the text box content describing the mine collapse."
+        },
+        {
+          "shot_id": "shot_019",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the visual of the characters trapped by the collapsed timbers."
+        },
+        {
+          "shot_id": "shot_022",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows the gang being turned over to the sheriff, matching the narration and the provided evidence."
+        },
+        {
+          "shot_id": "shot_023",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows a group discussing the reward, and the dialogue explicitly states 'There's a big reward on this crew's heads!', supporting the narration."
+        },
+        {
+          "shot_id": "shot_024",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows a group discussing that they 'still didn't find the treasure', which directly supports the narration."
+        }
+      ],
+      "failures": [],
+      "dropped_shots": [
+        "shot_006",
+        "shot_017",
+        "shot_020",
+        "shot_021",
+        "shot_025",
+        "shot_026"
+      ]
+    },
+    "full_description": "A 1951 promotional comic documentary following the heroic Captain Hadacol as he battles thieves and uncovers hidden treasure in Louisiana.\n\nComic: Captain Hadacol #? (1951)\nPages: public-domain Golden Age issue scanned on the Internet Archive.\nSources:\nhttps://archive.org/details/Captain_Hadacol_2_circa_1951",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "creativecredit:dudley\"coozandud\"josephleblanc,sr.(youngsville,louisiana,16august1894-22october1971,abbevillegeneralhospital,abbeville,louisiana)"
+    ],
+    "instagram_caption": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero\n\nA 1951 promotional comic documentary following the heroic Captain Hadacol as he battles thieves and uncovers hidden treasure in Louisiana."
+  },
+  "sources": [
+    "https://archive.org/details/Captain_Hadacol_2_circa_1951"
+  ],
+  "voice": {
+    "voice": "Christopher",
+    "selection": "edge_fallback",
+    "errors": {}
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}

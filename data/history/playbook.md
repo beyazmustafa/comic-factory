@@ -1,5 +1,5 @@
 # Playbook (auto-evolving)
-- Hook: <= 12 words, start with a direct question about the threat.
+- Hook: <= 6 words, start with a direct question about the threat.
 - Rhythm: 3-10 word beats, one idea per shot, average shot 3-5s.
 - Panels: Lead with the most dramatic panel; faces and speech balloons must stay inside the crop.
 - Emphasis: Red for danger, green for reveals, cyan for turns; exactly 1 in 4 shots.
