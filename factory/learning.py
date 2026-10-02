@@ -165,6 +165,8 @@ def refresh_stats(note=print) -> list[dict]:
                         row["stats"]["views_72h"] = views_at(history, 72)
         try:
             analytics = youtube.create_analytics_client()
+            if analytics is None:
+                note("YouTube token'ında Analytics yetkisi yok; retention çekilmedi (tools/youtube_authorize.py ile yenilenmeli).")
             if analytics is not None:
                 from datetime import timedelta
 
