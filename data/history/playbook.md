@@ -10,3 +10,12 @@
 - Pacing: Total video duration strictly between 35 and 45 seconds.
 - Captions: Use color-coded captions (Hero dialogue in blue, narrator in white).
 - Transitions: End the penultimate shot with a question answered by the final image.
+
+## Fixed rules
+- Superheroes only: pick the issue whose lead hero has the single most shocking moment; crime/horror issues are a last resort.
+- First sentence = the shocking moment itself, present tense, hero or villain named, no scene-setting ("Meanwhile", "In 1940").
+- One panel per shot, faces and speech balloons complete; never a page chunk.
+- 18-35 shots, 70-150 seconds; every shot 3-14 words; the last shot is the consequence, no outro.
+- Emphasis colours only on real beats: red = mortal danger, green = reveal, cyan = reversal; at most one in four shots.
+- Captions are single words in sync with speech; narration must match what the panel shows.
+

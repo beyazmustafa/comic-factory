@@ -196,14 +196,18 @@ PUBLISHED VIDEOS (best first by views per hour; stats may be empty for new video
 {json.dumps(history, ensure_ascii=False)}
 LAST VIDEO'S QUALITY REVIEW: {json.dumps(previous_issues, ensure_ascii=False)}
 LAST EXPERIMENT: {json.dumps(last_experiment, ensure_ascii=False)}
-Rules: keep what the numbers support, drop what they contradict, fix what the review flagged. Do not invent statistics. Choose exactly ONE new experiment for the next video — a concrete, checkable change in hook, pacing, emphasis, title style or structure that differs from the last experiment — so the following run can measure it. Never weaken accuracy: narration must still match the panels.
+Rules: keep what the numbers support, drop what they contradict, fix what the review flagged. The section starting with "## Fixed rules" is written by the showrunner and must be copied into the new playbook VERBATIM and unchanged; your own rules go above it. Do not invent statistics. Choose exactly ONE new experiment for the next video — a concrete, checkable change in hook, pacing, emphasis, title style or structure that differs from the last experiment — so the following run can measure it. Never weaken accuracy: narration must still match the panels.
 Return {{"playbook":"markdown, max 14 bullet lines, concrete and testable","experiment":{{"name":"short","change":"one sentence instruction to the writer","rationale":"one sentence"}},"verdict_on_last_experiment":"kept|dropped|unknown","notes":"one sentence"}}.""",
         )
         new_playbook = str(verdict.get("playbook") or "").strip()
         experiment = verdict.get("experiment") if isinstance(verdict.get("experiment"), dict) else None
         if new_playbook.count("\n") <= 30 and len(new_playbook) > 80:
             playbook_path().parent.mkdir(parents=True, exist_ok=True)
-            playbook_path().write_text("# Playbook (auto-evolving)\n" + new_playbook.replace("# Playbook (auto-evolving)", "").strip() + "\n", encoding="utf-8")
+            fixed = ""
+            if "## Fixed rules" in playbook:
+                fixed = "\n\n## Fixed rules" + playbook.split("## Fixed rules", 1)[1].rstrip() + "\n"
+            body = new_playbook.replace("# Playbook (auto-evolving)", "").split("## Fixed rules")[0].strip()
+            playbook_path().write_text("# Playbook (auto-evolving)\n" + body + fixed, encoding="utf-8")
             playbook = load_playbook()
         if last_experiment and verdict.get("verdict_on_last_experiment") in {"kept", "dropped"}:
             last_experiment["verdict"] = verdict["verdict_on_last_experiment"]
