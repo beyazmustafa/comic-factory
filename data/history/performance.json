@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 21.6,
+      "hours_live": 21.8,
       "views_per_hour": 0.28,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -67,6 +67,11 @@
       },
       {
         "h": 21.6,
+        "views": 6,
+        "likes": 0
+      },
+      {
+        "h": 21.8,
         "views": 6,
         "likes": 0
       }
@@ -118,12 +123,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 149,
+      "views": 138,
       "likes": 2,
       "comments": 0,
-      "hours_live": 18.9,
-      "views_per_hour": 7.87,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "hours_live": 19.1,
+      "views_per_hour": 7.21,
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -141,6 +146,11 @@
       {
         "h": 18.9,
         "views": 149,
+        "likes": 2
+      },
+      {
+        "h": 19.1,
+        "views": 138,
         "likes": 2
       }
     ]
@@ -194,9 +204,9 @@
       "views": 14,
       "likes": 1,
       "comments": 0,
-      "hours_live": 18.0,
-      "views_per_hour": 0.78,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "hours_live": 18.2,
+      "views_per_hour": 0.77,
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -213,6 +223,11 @@
       },
       {
         "h": 18.0,
+        "views": 14,
+        "likes": 1
+      },
+      {
+        "h": 18.2,
         "views": 14,
         "likes": 1
       }
@@ -266,9 +281,9 @@
       "views": 15,
       "likes": 1,
       "comments": 0,
-      "hours_live": 17.8,
-      "views_per_hour": 0.84,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "hours_live": 18.0,
+      "views_per_hour": 0.83,
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -285,6 +300,11 @@
       },
       {
         "h": 17.8,
+        "views": 15,
+        "likes": 1
+      },
+      {
+        "h": 18.0,
         "views": 15,
         "likes": 1
       }
@@ -338,9 +358,9 @@
       "views": 9,
       "likes": 1,
       "comments": 0,
-      "hours_live": 17.3,
-      "views_per_hour": 0.52,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "hours_live": 17.5,
+      "views_per_hour": 0.51,
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -357,6 +377,11 @@
       },
       {
         "h": 17.3,
+        "views": 9,
+        "likes": 1
+      },
+      {
+        "h": 17.5,
         "views": 9,
         "likes": 1
       }
@@ -411,9 +436,9 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.7,
+      "hours_live": 3.8,
       "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -430,6 +455,11 @@
       },
       {
         "h": 3.7,
+        "views": 0,
+        "likes": 0
+      },
+      {
+        "h": 3.8,
         "views": 0,
         "likes": 0
       }
@@ -484,9 +514,9 @@
       "views": 2,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.6,
-      "views_per_hour": 0.55,
-      "fetched_at": "2026-10-02T18:58:43+00:00",
+      "hours_live": 3.8,
+      "views_per_hour": 0.52,
+      "fetched_at": "2026-10-02T19:10:23+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -503,6 +533,11 @@
       },
       {
         "h": 3.6,
+        "views": 2,
+        "likes": 0
+      },
+      {
+        "h": 3.8,
         "views": 2,
         "likes": 0
       }

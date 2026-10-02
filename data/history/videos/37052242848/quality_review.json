@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95.1219512195122,
+  "scene_match": 95,
+  "delivery": 95.1219512195122,
+  "visual_readability": 95,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Video starts cleanly with 'Kaelen' displayed in the center with clear font style."
+    },
+    {
+      "second": 15,
+      "detail": "Action scene matches narration well as the explosion occurs at the central power hub."
+    },
+    {
+      "second": 33,
+      "detail": "Malice-Core laughing scene synchronizes with the audio grind and subtitle pop."
+    },
+    {
+      "second": 50,
+      "detail": "Kaelen thrown into the industrial undercity; visual tone matches the narration."
+    },
+    {
+      "second": 75,
+      "detail": "Malice-Core pinning hero to the wall highlights the danger emphasis color nicely."
+    },
+    {
+      "second": 100,
+      "detail": "Final scenes of Kaelen walking into the darkness conclude the comic documentary effectively."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 90,
+    "visual_readability": 95
+  },
+  "measured_scores": {
+    "subtitle_sync": 95.1219512195122,
+    "scene_match": 0,
+    "delivery": 95.1219512195122
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

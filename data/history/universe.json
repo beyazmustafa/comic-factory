@@ -1,0 +1,90 @@
+{
+  "name": "Aether-Grid Prime",
+  "tagline": "When humanity's inner light turns volatile, the grid demands an absolute reckoning.",
+  "style": "A high-contrast digital comic aesthetic featuring heavy ink shadows combined with vibrant, neon-lit particle effects. Characters are rendered with sharp, cinematic proportions and detailed textures that mimic screen-printed grain under dynamic street-level lighting.",
+  "setting": "Oakhaven Metropolis: A sprawling, coastal megacity where glittering spire-like architecture sits directly above crumbling industrial undercities, bound together by volatile ambient-energy networks and neon-drenched skyways.",
+  "themes": [
+    "The heavy cost of vigilante responsibility",
+    "Systemic corruption versus individual heroism",
+    "The volatile human emotion behind extraordinary power"
+  ],
+  "heroes": [
+    {
+      "name": "Prism-Guard",
+      "alias": "Kaelen Voss",
+      "powers": "Refracts ambient light into solid geometry shield-barriers and focused laser grids",
+      "personality": "Stoic, analytical, and deeply protective of civilians",
+      "visual": "A 32-year-old East Asian man with sharp cheekbones and short, neatly cropped black hair. He has an athletic build and olive skin. Costume features an angular, matte-navy armored jumpsuit with bright turquoise hexagonal plates across the chest. Displays a stylized three-tiered pyramid emblem glowing soft white. No cape. Wears silver-rimmed visor goggles.",
+      "weakness": "Total light deprivation renders his constructs fragile and unstable.",
+      "sheet": "data/history/universe/prism-guard.jpg",
+      "sheet_provider": "pollinations"
+    },
+    {
+      "name": "Fracture-Shock",
+      "alias": "Zora Sterling",
+      "powers": "Manipulates localized kinetic vibration to shatter matter or propel herself",
+      "personality": "Brash, impulsive, and fiercely passionate about social justice",
+      "visual": "A 24-year-old Afro-Latina woman with a muscular frame, warm bronze skin, and tight amber-dyed undercut braids. Wears a asymmetrical dark-magenta leather jacket over a high-neck charcoal body-glove. Her emblem is a broken lightning bolt inside a yellow circle. Features thick brass gauntlets on both forearms. No cape. Wears dark combat boots.",
+      "weakness": "Excessive kinetic buildup causes internal muscular hemorrhaging.",
+      "sheet": "data/history/universe/fracture-shock.jpg",
+      "sheet_provider": "pollinations"
+    },
+    {
+      "name": "Aura-Splicer",
+      "alias": "Dr. Aris Thorne",
+      "powers": "Temporarily weaves and cuts the emotional energy fields of living targets",
+      "personality": "Empathetic, soft-spoken, but plagued by intense existential dread",
+      "visual": "A 45-year-old Caucasian man with pale skin, a slim tall frame, silver-streaked brown hair tied in a low ponytail, and a trimmed beard. Attired in a flowing, midnight-violet tailored longcoat that functions as a cape. Coat displays a glowing mint-green caduceus-loop emblem. Wears white lace-up hand wraps and dark trousers.",
+      "weakness": "Absorbing too much hostile emotion triggers temporary sensory paralysis.",
+      "sheet": "data/history/universe/aura-splicer.jpg",
+      "sheet_provider": "pollinations"
+    },
+    {
+      "name": "Tide-Vault",
+      "alias": "Nadia Osei",
+      "powers": "Compresses dense atmospheric moisture into heavy hydraulic projectiles",
+      "personality": "Methodical, cool-headed, and intensely focused under extreme pressure",
+      "visual": "A 28-year-old West African woman with deep dark skin, tall imposing stature, and long dreadlocks swept to one side. Wears a streamlined white and coral-orange aquatic armor with reinforced shoulder pauldrons. Chest features a wave-shaped teal crest emblem. Attached short translucent-blue shoulder cape. Equips heavy silver ankle braces.",
+      "weakness": "Arid climates severely restrict her offensive output.",
+      "sheet": "data/history/universe/tide-vault.jpg",
+      "sheet_provider": "pollinations"
+    }
+  ],
+  "villains": [
+    {
+      "name": "Malice-Core",
+      "powers": "Generates bio-corrosive radiation that melts solid structures and drains electricity",
+      "visual": "A hulking cybernetic figure wrapped in rusted iron plating with exposed glowing lime-green tubes. Features a jagged faceless metal helmet and massive spiked shoulders.",
+      "motive": "To collapse the city power grid and force humanity back into a chaotic dark age."
+    },
+    {
+      "name": "Null-Stitch",
+      "powers": "Weaves shadow threads that bind heroic abilities and erase physical memories",
+      "visual": "A tall slender silhouette draped in a tattered obsidian cloak with porcelain mask. Long, needle-like silver metallic fingers twitch constantly.",
+      "motive": "To erase the public memory of superheroism and instill absolute cynicism."
+    },
+    {
+      "name": "Cinder-Grip",
+      "powers": "Converts ambient oxygen into dense, superheated thermal plasma trails",
+      "visual": "A broad-shouldered man in a scorched soot-gray exosuit with flaming red exhausts on his back and a glowing orange skull respirator faceplate.",
+      "motive": "To burn away modern civilization to clear space for his mercenary faction."
+    },
+    {
+      "name": "Silt-Spire",
+      "powers": "Transmutes concrete and steel into razor-sharp, shifting quicksand spikes",
+      "visual": "A gaunt figure wearing dusty terracotta-colored robes fused with jagged stone armor pieces. Eyes glow bright yellow beneath a heavy cloth hood.",
+      "motive": "Reclaiming the metropolitan landscape for pristine, uninhabited earth."
+    }
+  ],
+  "episodes": [
+    {
+      "number": 1,
+      "hero": "Prism-Guard",
+      "villain": "Malice-Core",
+      "title": "Prism-Guard Faces a Corrosive End Against the Brutal Malice-Core",
+      "run_id": "37052242848",
+      "published_at": "2026-10-02T20:03:51+00:00"
+    }
+  ],
+  "created_at": "2026-10-02T19:12:20+00:00"
+}

@@ -140,8 +140,8 @@
     "verdict": "neutral",
     "measured": {
       "metric": "views_per_hour",
-      "video": 0.84,
-      "baseline_median": 0.78
+      "video": 0.83,
+      "baseline_median": 0.77
     },
     "judged_by": "numbers"
   },
@@ -189,6 +189,17 @@
       "name": "midpoint_twist_reveal_beat",
       "change": "Place a single green-emphasized plot reveal shot exactly at the midpoint (shots 14-16) of the narration arc.",
       "rationale": "Anchoring a major narrative turning point at the exact midpoint prevents mid-video retention drop-offs in 120-second formats."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37052242848",
+    "chosen_at": "2026-10-02T19:12:11+00:00",
+    "experiment": {
+      "name": "red_danger_hook_emphasis",
+      "change": "Ensure the first shot (hook) always uses red danger emphasis on the primary threat words.",
+      "rationale": "High-performing videos leverage early danger signals to immediately draw viewers in during the first 2 seconds."
     }
   }
 ]

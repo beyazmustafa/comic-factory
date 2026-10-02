@@ -1,0 +1,302 @@
+{
+  "script": {
+    "title": "Prism-Guard Faces a Corrosive End Against the Brutal Malice-Core",
+    "description": "Kaelen Voss must choose between his city's power grid and his own life when a bio-corrosive monster strikes.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_000",
+        "narration": "Kaelen Voss screams as Malice-Core melts his armor with acid.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_001",
+        "narration": "Ten minutes earlier, Oakhaven Metropolis glows under a neon sky.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_002",
+        "narration": "Prism-Guard patrols the skyways, his visor scanning for energy spikes.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_003",
+        "narration": "Suddenly, a massive explosion rocks the central power hub.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_004",
+        "narration": "Malice-Core emerges from the wreckage, draining the city's electricity.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_005",
+        "narration": "Kaelen dives into action, refracting light into a solid shield.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_006",
+        "narration": "He lands between the monster and a group of terrified civilians.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_007",
+        "narration": "Malice-Core laughs, a metallic grinding sound, and lunges forward.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_008",
+        "narration": "Kaelen fires a focused laser grid to halt the beast.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_009",
+        "narration": "The radiation absorbs the light, making the villain even stronger.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_010",
+        "narration": "A bio-corrosive blast shatters Kaelen’s geometric defenses instantly.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_011",
+        "narration": "Kaelen is thrown back into the dark industrial undercity.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_012",
+        "narration": "In the shadows, his light-based powers begin to flicker.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "panel_013",
+        "narration": "Malice-Core reveals he isn't just stealing power; he's corrupting it.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "panel_014",
+        "narration": "The entire grid is now a ticking chemical bomb.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "panel_015",
+        "narration": "Kaelen realizes he must act as a lightning rod.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "panel_016",
+        "narration": "He grabs the main power coupling, drawing the corruption inward.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "motion": "hold",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "panel_017",
+        "narration": "Malice-Core strikes, pinning the hero to the wall.",
+        "fact_ids": [
+          "fact_017"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "panel_018",
+        "narration": "Kaelen uses his last strength to overload the villain's core.",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "panel_019",
+        "narration": "A blinding white flash consumes the entire alleyway.",
+        "fact_ids": [
+          "fact_019"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "panel_020",
+        "narration": "The explosion clears, leaving only a hollowed-out metal shell.",
+        "fact_ids": [
+          "fact_020"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "panel_021",
+        "narration": "But Kaelen’s light has been permanently extinguished.",
+        "fact_ids": [
+          "fact_021"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_022",
+        "panel_id": "panel_022",
+        "narration": "He saved the city, but he is now powerless.",
+        "fact_ids": [
+          "fact_022"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_023",
+        "panel_id": "panel_023",
+        "narration": "The grid returns to blue, fueled by his sacrifice.",
+        "fact_ids": [
+          "fact_023"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_024",
+        "panel_id": "panel_024",
+        "narration": "Kaelen Voss walks into the darkness, a hero no more.",
+        "fact_ids": [
+          "fact_024"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Kaelen Voss screams as Malice-Core melts his armor with acid. Ten minutes earlier, Oakhaven Metropolis glows under a neon sky. Prism-Guard patrols the skyways, his visor scanning for energy spikes. Suddenly, a massive explosion rocks the central power hub. Malice-Core emerges from the wreckage, draining the city's electricity. Kaelen dives into action, refracting light into a solid shield. He lands between the monster and a group of terrified civilians. Malice-Core laughs, a metallic grinding sound, and lunges forward. Kaelen fires a focused laser grid to halt the beast. The radiation absorbs the light, making the villain even stronger. A bio-corrosive blast shatters Kaelen’s geometric defenses instantly. Kaelen is thrown back into the dark industrial undercity. In the shadows, his light-based powers begin to flicker. Malice-Core reveals he isn't just stealing power; he's corrupting it. The entire grid is now a ticking chemical bomb. Kaelen realizes he must act as a lightning rod. He grabs the main power coupling, drawing the corruption inward. Malice-Core strikes, pinning the hero to the wall. Kaelen uses his last strength to overload the villain's core. A blinding white flash consumes the entire alleyway. The explosion clears, leaving only a hollowed-out metal shell. But Kaelen’s light has been permanently extinguished. He saved the city, but he is now powerless. The grid returns to blue, fueled by his sacrifice. Kaelen Voss walks into the darkness, a hero no more.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "studio_0001_prism-guard",
+      "title": "Prism-Guard Faces a Corrosive End Against the Brutal Malice-Core",
+      "series": "Aether-Grid Prime",
+      "issue": "1",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "Aether-Grid Prime",
+      "hero": "Prism-Guard",
+      "villain": "Malice-Core",
+      "url": "https://github.com/beyazmustafa/comic-factory",
+      "source_urls": [],
+      "_source": "studio"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Kaelen Voss must choose between his city's power grid and his own life when a bio-corrosive monster strikes.\n\nComic: Aether-Grid Prime #1 (2026)\nOriginal characters and artwork created for this channel.\nSources:\nhttps://github.com/beyazmustafa/comic-factory",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "original"
+    ],
+    "instagram_caption": "Prism-Guard Faces a Corrosive End Against the Brutal Malice-Core\n\nKaelen Voss must choose between his city's power grid and his own life when a bio-corrosive monster strikes."
+  },
+  "sources": [
+    "https://github.com/beyazmustafa/comic-factory"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}
