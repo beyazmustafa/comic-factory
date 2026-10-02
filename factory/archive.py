@@ -515,11 +515,11 @@ def extract_pages(package: Path, output: Path, limit=80):
             continue
         if min(picture.size) < 500:
             continue
-        if picture.width > 2200:
-            scale = 2200 / picture.width
-            picture = picture.resize((2200, round(picture.height * scale)), Image.Resampling.LANCZOS)
+        if picture.width > 3200:
+            scale = 3200 / picture.width
+            picture = picture.resize((3200, round(picture.height * scale)), Image.Resampling.LANCZOS)
         path = output / f"scan_{index:03}.jpg"
-        picture.save(path, "JPEG", quality=94)
+        picture.save(path, "JPEG", quality=96, subsampling=0)
         pages.append(path)
     if len(pages) < 8:
         raise SourceUnavailable(f"Paketten yalnız {len(pages)} okunabilir sayfa çıktı.")

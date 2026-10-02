@@ -126,6 +126,15 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
     return path
 
 
+def polish(picture):
+    """Make an upscaled old scan read crisp without changing its content:
+    gentle levels, a touch of colour, and an unsharp mask tuned for line art."""
+    picture = ImageOps.autocontrast(picture, cutoff=0.4, preserve_tone=True)
+    picture = ImageEnhance.Color(picture).enhance(1.08)
+    picture = ImageEnhance.Contrast(picture).enhance(1.05)
+    return picture.filter(ImageFilter.UnsharpMask(radius=1.6, percent=85, threshold=2))
+
+
 def base_image(panel, style, directory, output):
     with Image.open(directory / panel["page_file"]) as source:
         page = source.convert("RGB")
@@ -167,7 +176,7 @@ def base_image(panel, style, directory, output):
                 ),
                 Image.Resampling.LANCZOS,
             )
-        picture = ImageEnhance.Sharpness(picture).enhance(1.08)
+        picture = polish(picture)
         top = max(
             0,
             min(
@@ -177,7 +186,7 @@ def base_image(panel, style, directory, output):
         )
         background.paste(picture, ((WIDTH - picture.width) // 2, top))
     background.resize((WIDTH * 2, HEIGHT * 2), Image.Resampling.LANCZOS).save(
-        output, "JPEG", quality=95
+        output, "PNG", compress_level=1
     )
 
 
@@ -251,16 +260,16 @@ def build(api, story, panels, style, audio_path, words, duration):
         "-c:v",
         "libx264",
         "-preset",
-        "veryfast",
+        "medium",
         "-crf",
-        "18",
+        "15",
         "-threads",
         "2",
     ]
     for i, (shot, (start, end)) in enumerate(zip(story["shots"], timeline)):
         api.check()
         panel = lookup[shot["panel_id"]]
-        picture, clip = work / f"shot_{i:03}.jpg", work / f"shot_{i:03}.mp4"
+        picture, clip = work / f"shot_{i:03}.png", work / f"shot_{i:03}.mp4"
         base_image(panel, style, directory, picture)
         frames = round((end - start) * FPS) + (pad if i + 1 < len(timeline) else 0)
         command(
@@ -386,7 +395,7 @@ def build(api, story, panels, style, audio_path, words, duration):
         "-preset",
         "medium",
         "-crf",
-        "18",
+        "15",
         "-pix_fmt",
         "yuv420p",
         "-color_range",
