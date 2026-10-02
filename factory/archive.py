@@ -267,6 +267,30 @@ def eligible(row, settings):
     }
 
 
+def series_key(title):
+    words = [w for w in re.findall(r"[a-z]+", str(title).casefold()) if w not in {"the", "a", "of", "and", "comics", "comic", "no", "vol", "issue"}]
+    return " ".join(words[:2])
+
+
+def recent_series(limit=6):
+    """Series keys of the most recently produced issues (repo-tracked history)."""
+    folder = ROOT / "data" / "history" / "issues"
+    try:
+        files = sorted(folder.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)[:limit]
+    except OSError:
+        return set()
+    keys = set()
+    for path in files:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            for field in ("series", "title"):
+                if data.get(field):
+                    keys.add(series_key(data[field]))
+        except (OSError, ValueError):
+            continue
+    return keys
+
+
 def issue_key(identifier):
     return "ia_" + hashlib.sha256(identifier.encode()).hexdigest()[:16]
 
@@ -314,6 +338,12 @@ def shortlist(api, topic, used, archive=None):
             continue  # Single stories/ads rarely carry a full narrative.
         items.append(item)
     items = list({i["identifier"]: i for i in items}.values())
+    # Variety: do not return to a series the channel covered recently.
+    recent = recent_series(6)
+    if recent:
+        fresh = [i for i in items if series_key(i["title"]) not in recent]
+        if len(fresh) >= 3:
+            items = fresh
     if api.settings.channel_theme == "superheroes":
         def heroic(item):
             text = " ".join([item["title"], item.get("description", ""), " ".join(item.get("subjects", []))]).casefold()

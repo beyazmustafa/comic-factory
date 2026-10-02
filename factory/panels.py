@@ -290,11 +290,21 @@ def segment_page(picture, limit=12):
         return []
     boxes = []
     _split(mask, content, 0, 0, boxes, width * 0.12, height * 0.08, ink=ink)
+    if len(boxes) < 3:
+        # Borderless layouts (no black panel frames): accept clean paper
+        # gutters without the border requirement, but demand cleaner gutters.
+        alternative = []
+        strict = _light_mask(gray, paper + 12)
+        _split(strict, content, 0, 0, alternative, width * 0.12, height * 0.08, ink=None)
+        if len(alternative) > len(boxes):
+            boxes = alternative
     cleaned = []
     for l, t, r, b in boxes:
         w, h = r - l, b - t
         if w < width * 0.12 or h < height * 0.08 or w * h < width * height * 0.02:
             continue
+        if w * h > width * height * 0.45:
+            continue  # A box this large is a page chunk, never a single panel.
         if w / h > 6 or h / w > 6:
             continue
         pad_x, pad_y = max(2, w // 60), max(2, h // 60)
@@ -324,11 +334,11 @@ def select_story_pages(pages, directory, maximum, minimum_run=4):
         with Image.open(directory / page["file"]) as picture:
             boxes = segment_page(picture)
         coverage = page_layout_score(boxes)
-        story = len(boxes) >= 2 and coverage >= 0.35
+        story = len(boxes) >= 3 and coverage >= 0.3
         annotated.append({**page, "panel_boxes": boxes, "coverage": coverage, "story_like": story})
     best, current = [], []
     for page in annotated[1:]:  # index 0 is almost always the cover
-        if page["story_like"] or (current and len(page["panel_boxes"]) == 1 and page["coverage"] >= 0.5):
+        if page["story_like"]:
             current.append(page)
         else:
             if len(current) > len(best):
