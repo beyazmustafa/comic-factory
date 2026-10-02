@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 from .api import FactoryError
 
-STYLE = {'profile_id': 'comic-history-tr-v1',
+STYLE = {'profile_id': 'comic-superhero-en-v2',
  'font_style': 'condensed_heavy',
  'uppercase': True,
  'font_size': 90,

@@ -142,7 +142,15 @@ def base_image(panel, style, directory, output):
             round(WIDTH * style["panel_max_width"]),
             round(HEIGHT * style["panel_max_height"]),
         )
-        if style["panel_framing"] == "fill":
+        framing = style["panel_framing"]
+        target_ratio = size[0] / size[1]
+        if framing == "fill" and picture.width / picture.height > target_ratio * 1.35:
+            # A wide panel forced into 9:16 loses faces and balloons at the
+            # sides; show it whole over the blurred page instead.
+            framing = "contain"
+            if style["background"] == "page_fill":
+                background = background.filter(ImageFilter.GaussianBlur(22))
+        if framing == "fill":
             picture = ImageOps.fit(picture, size, method=Image.Resampling.LANCZOS)
         else:
             scale = min(size[0] / picture.width, size[1] / picture.height, 2.5)
