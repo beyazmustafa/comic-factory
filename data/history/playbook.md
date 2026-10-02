@@ -2,7 +2,7 @@
 - Hook: <= 12 words, start with a direct question about the threat.
 - Rhythm: 3-10 word beats, one idea per shot, average shot 3-5s.
 - Panels: Lead with the most dramatic panel; faces and speech balloons must stay inside the crop.
-- Emphasis: Red for danger, green for reveals, cyan for turns; at most 1 in 4 shots.
+- Emphasis: Red for danger, green for reveals, cyan for turns; exactly 1 in 4 shots.
 - Ending: Stop on the strongest image and consequence; no outro, no call to action.
 - Title: Curiosity-driven, 45-70 characters, names the hero or villain, never a lie.
 - Character ID: Introduce the hero's core power or alter-ego within the first three shots.

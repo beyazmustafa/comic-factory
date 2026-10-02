@@ -94,6 +94,16 @@
       "name": "cliffhanger_transitions",
       "change": "End the penultimate shot with a question that is answered by the final image.",
       "rationale": "Cliffhangers encourage viewers to watch the final frame, increasing retention."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36946159098",
+    "chosen_at": "2026-10-02T00:32:21+00:00",
+    "experiment": {
+      "name": "strict_emphasis_ratio",
+      "change": "Limit visual emphasis (red, green, cyan) to exactly one in every four shots.",
+      "rationale": "Standardizing visual cues prevents viewer fatigue and ensures high-impact moments remain distinct."
     }
   }
 ]

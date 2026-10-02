@@ -1,6 +1,6 @@
-run_id: 36944367985  attempt: 1  event: workflow_dispatch
+run_id: 36946159098  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261002T000803253682Z/run.json
+--- data/runs/20261002T002926811463Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -36,52 +36,42 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36944367985",
+  "run_id": "36946159098",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "21878971a6abb01c1f9a5c62cb62a205aaaf934b9bcefa8bdfba90beb8f08971",
-  "metadata_sha256": "0fc1bb71a6fe8ede8491c9d4784cd802fbd960afe6e268540eec57c1e40e5c6c",
-  "quality_sha256": "9d3c1fae9556ff7ddfd98a5c6b4e0939b6ac12f3def0bb41650718370098c070",
-  "api_calls": 88,
-  "duration": 49.85,
+  "video_sha256": "216c52bee02c1691812aecc7532989ce905e270de6fc4d4c932813a8f1886cec",
+  "metadata_sha256": "41712e4ede1808c28fec200f78f1c889d445f63e00d3cc2cbccd3085c4b5e642",
+  "quality_sha256": "f0711d1a03cc79327628c588392c6e33057641f8d642f35cfe0af5038d91aaeb",
+  "api_calls": 65,
+  "duration": 76.89,
   "voice": "Christopher",
   "event": {
-    "identifier": "fawcett-beware-terror-tales-002",
-    "title": "The Ghost of the Fire Flame",
-    "year": 1952,
-    "publisher": "",
-    "description": "",
+    "identifier": "captain-science-1-images",
+    "title": "The Dawn of the Atomic Hero",
+    "year": 1950,
+    "publisher": "Youthful Magazines, Inc.",
+    "description": "Captain Science No. 1",
     "subjects": [
-      "maxon",
-      "terror",
-      "tales",
-      "hiss",
-      "fiery",
-      "beware",
-      "fire",
-      "flame",
-      "eyes",
-      "safe",
-      "terror tales",
-      "fire ghost"
+      "Science Fiction",
+      "Comic Books"
     ],
-    "public_domain_evidence": "inferred: publisher 'fawcett' (closed before 1964, unrenewed Golden Age catalogue)",
-    "downloads": 5836,
+    "public_domain_evidence": "inferred: publisher 'youthful' (closed before 1964, unrenewed Golden Age catalogue)",
+    "downloads": 209,
     "imagecount": 0,
-    "url": "https://archive.org/details/fawcett-beware-terror-tales-002",
-    "id": "ia_0c540d5df43e69e3",
-    "series": "Beware Terror Tales",
-    "issue": "2",
-    "summary": "A terrifying encounter with a spectral fire ghost that haunts the innocent in this chilling horror tale.",
+    "url": "https://archive.org/details/captain-science-1-images",
+    "id": "ia_31817d8dbead493a",
+    "series": "Captain Science",
+    "issue": "1",
+    "summary": "Bilimsel bir kahramanın uzaydaki gizemli maceraları ve dünyayı kurtarma çabası bekleniyor.",
     "universe": "Golden Age (public domain)",
     "source_urls": [
-      "https://archive.org/details/fawcett-beware-terror-tales-002"
+      "https://archive.org/details/captain-science-1-images"
     ],
-    "selection_score": 74.0,
+    "selection_score": 72.0,
     "_source": "archive"
   }
 }
---- data/runs/20261002T000803253682Z/diagnostics/provider_events.json
+--- data/runs/20261002T002926811463Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -96,10 +86,9 @@ produce step outcome: success
   "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.1-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261002T000803253682Z/diagnostics/providers.json
+--- data/runs/20261002T002926811463Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -121,8 +110,8 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b"
   ],
   "errors": [],
@@ -152,105 +141,63 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261002T000803253682Z/diagnostics/api_067.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.1-flash-lite",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=8125\n)] cached_content_token_count=8125 candidates_token_count=1236 candidates_tokens_details=None prompt_token_count=11954 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEX"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 3872,
-  "response_text": "[\n  {\n    \"title\": \"The Lunk's Final Chapter\",\n    \"description\": \"The tragic and terrifying end of writer John Wild and his creation, The Lunk.\",\n    \"shots\": [\n      {\n        \"panel_id\": \"panel_036\",\n        \"narration\": \"The Lunk murders his creator, then dies by his own hand!\",\n        \"fact_ids\": [\"fact_011\"],\n        \"motion\": \"up\",\n        \"emphasis\": \"danger\"\n      },\n      {\n        \"panel_id\": \"panel_000\",\n        \"narration\": \"Writer John Wild wakes up, haunted by his own monster.\",\n        \"fact_ids\": [\"fact_000\"],\n        \"motion\": \"pull\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_id\": \"panel_001\",\n        \"narration\": \"He hears the footsteps he wrote into his own nightmare.\",\n        \"fact_ids\": [\"fact_001\"],\n        \"motion\": \"left\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_id\": \"panel_004\",\n        \"narration\": \"Terrified, Wild flees in his car, desperate to escape.\",\n        \"fact_ids\": [\"fact_003\"],\n        \"motion\": \"right\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_id\": \"panel_007\",\n        \"narration\": \"He swerves to avoid a vision, crashing into a ditch.\",\n        \"fact_ids\": [\"fact_002\"],\n        \"motion\": \"down\",\n        \"emphasis\": \"danger\"\n      },\n      {\n        \"panel_id\": \"panel_008\",\n        \"narration\": \"KRASH! Both his arms are broken in the wreckage.\",\n        \"fact_ids\": [\"fact_002\"],\n        \"motion\": \"up\",\n        \"emphasis\": \"danger\"\n      },\n      {\n        \"panel_id\": \"panel_012\",\n        \"narration\": \"He runs to a hospital, begging for a stenographer's help.\",\n        \"fact_ids\": [\"fact_004\"],\n        \"motion\": \"pull\",\n        \"emphasis\": \"normal\"\n      },\n      {\n        \"panel_id\": \"panel_017\",\n        \"narra
---- data/runs/20261002T000803253682Z/voice_audition/failed_auditions.json
+--- data/runs/20261002T002926811463Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261002T000803253682Z/research/rejected_candidates.json
+--- data/runs/20261002T002926811463Z/research/rejected_candidates.json
 [
   {
     "event": {
-      "title": "The Serpent's Trial of Sigurd Jarlson",
+      "title": "Eddie Brock's Carnage Trauma",
       "publisher": "Marvel Comics",
-      "series": "Thor",
-      "issue": "800",
+      "series": "Venom",
+      "issue": "1",
       "year": 2026,
       "universe": "Marvel Universe",
       "characters": [
-        "Sigurd Jarlson",
-        "The Serpent"
+        "Eddie Brock",
+        "Venom"
       ],
-      "summary": "Sigurd Jarlson is trapped in a brutal, weaponless trial within Ryker's Penitentiary under a sky rendered a sickly green by mineral deposits, forced to prove his worth to enter the Realms of the Gods.",
+      "summary": "Eddie Brock reunites with the Venom symbiote after a harrowing period where he was forced to host the serial killer symbiote Carnage, leading to a tense and dangerous reconciliation.",
       "importance": 95,
-      "popularity": 90,
-      "niche": 85,
+      "popularity": 95,
+      "niche": 60,
       "source_urls": [
-        "https://bleedingcool.com/comics/thor-800-preview-sigurd-faces-hell-without-even-a-hammer/"
+        "https://www.marvel.com/articles/comics/venom-1-preview-rekindles-eddie-brock-reunites-with-venom-symbiote"
       ],
-      "id": "b0a18a147925b7d7769b",
-      "selection_score": 90.75,
+      "id": "a352aba8ac07f00fb9d5",
+      "selection_score": 84.5,
       "_source": "web"
     },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 5 panel, 3 kanıt."
   },
   {
     "event": {
-      "title": "The Return of the Utgard-Thor",
+      "title": "The Symbiote Bond of Comeback",
       "publisher": "Marvel Comics",
-      "series": "Immortal Thor",
-      "issue": "20",
-      "year": 2025,
-      "universe": "Marvel Universe",
-      "characters": [
-        "Thor",
-        "Toranos"
-      ],
-      "summary": "Thor faces a shocking confrontation with Toranos, the Elder God of storms, whose lightning strikes at the Odinson's heart as the gates of Utgard are opened.",
-      "importance": 92,
-      "popularity": 88,
-      "niche": 80,
-      "source_urls": [
-        "https://bleedingcool.com/comics/immortal-thor-20-preview-odinsons-shocking-showdown/"
-      ],
-      "id": "14b30d0541a613476bd5",
-      "selection_score": 87.4,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
-  },
-  {
-    "event": {
-      "title": "The Quest for Thor in Hel",
-      "publisher": "Marvel Comics",
-      "series": "Thor",
-      "issue": "801",
+      "series": "The Amazing Venom",
+      "issue": "1",
       "year": 2026,
       "universe": "Marvel Universe",
       "characters": [
-        "Sigurd Jarlson"
+        "Fred Myers",
+        "Passenger"
       ],
-      "summary": "Sigurd Jarlson, an ordinary man, begins a desperate quest in the depths of Hel to call Asgard's greatest hero back to life and rebuild the bridge between humanity and the gods.",
-      "importance": 90,
-      "popularity": 85,
-      "niche": 80,
+      "summary": "Former villain Boomerang, now known as Comeback, finds himself bonded to a new symbiote named Passenger, thrusting him into the middle of a cosmic war between Hela and Knull.",
+      "importance": 85,
+      "popularity": 90,
+      "niche": 70,
       "source_urls": [
-        "https://www.marvel.com/comics/issue/137800/thor_2026_801",
-        "https://monkeysfightingrobots.co/marvel-comics-exclusive-preview-thor-801/"
+        "https://comicbookclublive.com/2026/09/27/marvel-preview-the-amazing-venom-1/",
+        "https://www.flickeringmyth.com/comic-book-preview-the-amazing-venom-1/"
       ],
-      "id": "d97e2a3fd727c43ddf95",
-      "selection_score": 85.75,
+      "id": "ac7ab0062da1343fa00e",
+      "selection_score": 81.75,
       "_source": "web"
     },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 8 panel, 2 kanıt."
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
   }
 ]
---- data/runs/20261002T000803253682Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_003", "reason": "The image shows the car approaching a figure on the road, which sets up the imminent accident described in the narration."}, {"shot_id": "shot_011", "reason": "The narration claims the writer is dead in a straitjacket, but the provided evidence (fact_011) discusses The Lunk's own death, not the writer's state."}, {"shot_id": "shot_013", "reason": "The narration claims The Lunk dies, but the provided evidence only confirms Manning's shock at finding the chapter, not the death of the character."}]}
---- data/runs/20261002T000803253682Z/diagnostics/panel_matches_2.json
-{"passed": false, "failures": [{"shot_id": "shot_005", "reason": "The panel shows a conversation about broken arms and a deadline, but does not depict the act of begging for a stenographer."}]}
---- data/runs/20261002T000803253682Z/diagnostics/panel_matches_3.json
-{"passed": false, "failures": [{"shot_id": "shot_009", "reason": "The panel shows a woman in a room, not a dark, massive, looming shadow stalking a hospital hallway. The evidence provided does not support the visual content of this specific panel."}, {"shot_id": "shot_010", "reason": "The panel shows a woman in the distance, but the scream is not explicitly depicted as 'blood-curdling' or 'final' in the visual, though the context of the Lunk's presence supports the narrative."}, {"shot_id": "shot_020", "reason": "The panel shows a man questioning if 'John' was right, but the narration's specific claim about a 'monstrous, deadly creation' is not visually confirmed in the panel, nor is it supported by the provided evidence text."}]}
---- data/runs/20261002T000803253682Z/diagnostics/panel_matches_4.json
+--- data/runs/20261002T002926811463Z/diagnostics/panel_matches_1.json
 {"passed": true, "failures": []}
 --- studio.log (son 300 satır)
 
@@ -274,34 +221,35 @@ Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atla
 → Olay, gerçek sayfalar ve senaryo
 Bir arama kaynağı yanıt vermedi: DDGSException
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Serpent's Trial of Sigurd Jarlson
+Olay araştırılıyor: Eddie Brock's Carnage Trauma
 Bir arama kaynağı yanıt vermedi: DDGSException
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Return of the Utgard-Thor
+/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Olay araştırılıyor: The Symbiote Bond of Comeback
 Bir arama kaynağı yanıt vermedi: DDGSException
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Quest for Thor in Hel
-Bir arama kaynağı yanıt vermedi: DDGSException
-Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: The Ghost of the Fire Flame
-Panellere bağlı anlatım: gemini-3.1-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Olay araştırılıyor: The Dawn of the Atomic Hero
 
 → Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Gemini TTS yanıt vermiyor (Ses Gacrux: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 97.0/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T000803253682Z/review.html
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T002926811463Z/review.html

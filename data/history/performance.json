@@ -48,9 +48,9 @@
       "views": 1,
       "likes": 0,
       "comments": 0,
-      "hours_live": 2.8,
-      "views_per_hour": 0.36,
-      "fetched_at": "2026-10-02T00:08:03+00:00"
+      "hours_live": 3.1,
+      "views_per_hour": 0.32,
+      "fetched_at": "2026-10-02T00:29:27+00:00"
     }
   },
   {
@@ -99,12 +99,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 0,
+      "views": 12,
       "likes": 0,
       "comments": 0,
       "hours_live": 1.0,
-      "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T00:08:03+00:00"
+      "views_per_hour": 12.0,
+      "fetched_at": "2026-10-02T00:29:27+00:00"
     }
   }
 ]

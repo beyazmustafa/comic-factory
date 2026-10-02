@@ -1,0 +1,60 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 96.96969696969697,
+  "scene_match": 95,
+  "delivery": 96.96969696969697,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The narration accurately reflects the comic panels shown on screen."
+    },
+    {
+      "second": 10,
+      "detail": "Visual transitions between panels are smooth and maintain the comic book aesthetic."
+    },
+    {
+      "second": 25,
+      "detail": "The narrator's energy is consistent and engaging throughout the documentary."
+    },
+    {
+      "second": 45,
+      "detail": "Audio quality is clear with no noticeable glitches or background noise."
+    },
+    {
+      "second": 60,
+      "detail": "Captions are legible, though they display multiple words per frame instead of the requested single word."
+    },
+    {
+      "second": 75,
+      "detail": "The story concludes effectively with the final panel and narration."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {
+    "caption_words": "1"
+  },
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 90,
+    "visual_readability": 85
+  },
+  "measured_scores": {
+    "subtitle_sync": 96.96969696969697,
+    "scene_match": 85.0,
+    "delivery": 96.96969696969697
+  },
+  "ignored_editorial_issues": [
+    "The caption word count consistently exceeds the specified limit of 1 word per caption."
+  ],
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}
