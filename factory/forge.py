@@ -101,10 +101,12 @@ def gemini_image(api, prompt, references, aspect="3:4"):
             return api.client.models.generate_content(model=model, contents=contents, config=config)
 
         try:
-            response = api.request(f"Panel çizimi ({model})", call, attempts=3)
-        except (ProviderOverloaded, ModelUnavailable) as error:
+            # Quota errors on free tiers are permanent for the day; one quick
+            # attempt per model, then move on instead of sleeping for minutes.
+            response = api.request(f"Panel çizimi ({model})", call, attempts=1)
+        except Exception as error:  # noqa: BLE001 - any failure: next model
             api.dead.add(model)
-            errors.append(str(error)[:120])
+            errors.append(f"{model}: {str(error)[:160]}")
             continue
         for candidate in getattr(response, "candidates", None) or []:
             for part in getattr(getattr(candidate, "content", None), "parts", None) or []:
@@ -116,17 +118,30 @@ def gemini_image(api, prompt, references, aspect="3:4"):
     raise ProviderOverloaded("; ".join(errors) or "Gemini görsel modeli yok.")
 
 
-def pollinations_image(prompt, seed, width=1024, height=1408):
-    """Keyless fallback generator (Flux). Less consistent, always available."""
-    url = POLLINATIONS + quote(prompt[:900]) + f"?width={width}&height={height}&seed={seed}&nologo=true&enhance=false"
-    for attempt in range(3):
+def pollinations_image(prompt, seed, width=1024, height=1408, note=None):
+    """Keyless fallback generator (Flux). Less consistent, always available,
+    but rate limited for anonymous callers: wait and retry with growing gaps."""
+    base = POLLINATIONS + quote(prompt[:900])
+    last = ""
+    for attempt in range(6):
+        model = "flux" if attempt % 2 == 0 else "turbo"
+        url = f"{base}?width={width}&height={height}&seed={seed}&model={model}&nologo=true&enhance=false&safe=true"
         try:
-            response = requests.get(url, timeout=(10, 120))
+            response = requests.get(url, timeout=(15, 150), headers={"User-Agent": "comic-factory/1.0"})
+            if response.status_code == 429 or response.status_code >= 500:
+                raise RuntimeError(f"HTTP {response.status_code}")
             response.raise_for_status()
-            return Image.open(io.BytesIO(response.content)).convert("RGB")
-        except Exception:
-            time.sleep(5 * (attempt + 1))
-    raise SourceUnavailable("Yedek görsel üretici de yanıt vermedi.")
+            picture = Image.open(io.BytesIO(response.content)).convert("RGB")
+            if picture.width < 256:
+                raise RuntimeError("tiny image")
+            time.sleep(4)  # stay under the anonymous rate limit for the next panel
+            return picture
+        except Exception as error:  # noqa: BLE001
+            last = f"{type(error).__name__}: {str(error)[:120]}"
+            if note:
+                note(f"Pollinations deneme {attempt + 1}: {last}")
+            time.sleep(min(90, 12 * (attempt + 1)))
+    raise SourceUnavailable(f"Yedek görsel üretici de yanıt vermedi ({last}).")
 
 
 def draw(api, prompt, references, seed, note=None):
@@ -135,49 +150,62 @@ def draw(api, prompt, references, seed, note=None):
         return picture, "gemini:" + model
     except (ProviderOverloaded, FactoryError) as error:
         if note:
-            note(f"Gemini görsel modeli kullanılamadı ({str(error)[:100]}); Pollinations ile çizildi.")
-        return pollinations_image(prompt, seed), "pollinations"
+            note(f"Gemini görsel modeli kullanılamadı ({str(error)[:600]}); Pollinations ile çizilecek.")
+        return pollinations_image(prompt, seed, note=note), "pollinations"
 
 
 # --------------------------------------------------------------- universe
 def ensure_universe(api, note=print):
     """Create the universe once: cast, style, and one character sheet per hero."""
     universe = load_universe()
-    if universe:
-        return universe
-    data = api.json(
-        "Özgün evren",
-        f"""Invent an ORIGINAL superhero universe for a YouTube Shorts channel that retells one dramatic "issue" per video in {language_name(api)}. It must not resemble any existing Marvel/DC/Image character in name, costume or powers.
+    if not universe:
+        data = api.json(
+            "Özgün evren",
+            f"""Invent an ORIGINAL superhero universe for a YouTube Shorts channel that retells one dramatic "issue" per video in {language_name(api)}. It must not resemble any existing Marvel/DC/Image character in name, costume or powers.
 Return {{"name":"universe name","tagline":"one line","style":"two sentences describing the house art style (modern, cinematic, gritty but colorful)","heroes":[{{"name":"","alias":"civilian name","powers":"","personality":"","visual":"VERY specific and stable: face, hair, skin, age, body, costume colors and shapes, emblem, cape yes/no, accessories — 60 words","weakness":""}} x4],"villains":[{{"name":"","powers":"","visual":"specific 40 words","motive":""}} x4],"setting":"city/world in 40 words","themes":["3 recurring story themes"]}}.
 Names must be fresh (not a known hero/villain name). Keep visuals distinct from each other (different silhouettes and palettes).""",
-    )
-    heroes = [h for h in data.get("heroes", []) if isinstance(h, dict) and h.get("name") and h.get("visual") and not protected(h["name"])]
-    villains = [v for v in data.get("villains", []) if isinstance(v, dict) and v.get("name") and v.get("visual") and not protected(v["name"])]
-    if len(heroes) < 2 or len(villains) < 2:
-        raise SourceUnavailable("Evren üretilemedi (yeterli özgün karakter yok).")
-    universe = {
-        "name": str(data.get("name", "Untitled Universe")),
-        "tagline": str(data.get("tagline", "")),
-        "style": str(data.get("style", "")),
-        "setting": str(data.get("setting", "")),
-        "themes": [str(t) for t in data.get("themes", [])][:5],
-        "heroes": heroes[:4],
-        "villains": villains[:4],
-        "episodes": [],
-        "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-    }
+        )
+        heroes = [h for h in data.get("heroes", []) if isinstance(h, dict) and h.get("name") and h.get("visual") and not protected(h["name"])]
+        villains = [v for v in data.get("villains", []) if isinstance(v, dict) and v.get("name") and v.get("visual") and not protected(v["name"])]
+        if len(heroes) < 2 or len(villains) < 2:
+            raise SourceUnavailable("Evren üretilemedi (yeterli özgün karakter yok).")
+        universe = {
+            "name": str(data.get("name", "Untitled Universe")),
+            "tagline": str(data.get("tagline", "")),
+            "style": str(data.get("style", "")),
+            "setting": str(data.get("setting", "")),
+            "themes": [str(t) for t in data.get("themes", [])][:5],
+            "heroes": heroes[:4],
+            "villains": villains[:4],
+            "episodes": [],
+            "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        }
+        # Save before drawing: the cast must never be re-invented because one
+        # character sheet failed to render.
+        save_json(universe_path(), universe)
+        note(f"Evren kuruldu: {universe['name']} — {', '.join(h['name'] for h in universe['heroes'])}")
+    # Character sheets: draw the missing ones (resumable across runs).
     sheets_dir().mkdir(parents=True, exist_ok=True)
+    changed = False
     for index, hero in enumerate(universe["heroes"]):
+        sheet = ROOT / str(hero.get("sheet", "") or "")
+        if hero.get("sheet") and sheet.is_file():
+            continue
         api.check()
         prompt = (f"Character reference sheet of {hero['name']}: {hero['visual']}. Full body front view, three-quarter view and a close-up of the face, "
                   f"neutral grey background. {universe['style']} {STYLE_GUIDE}")
-        picture, provider = draw(api, prompt, [], seed=1000 + index, note=note)
+        try:
+            picture, provider = draw(api, prompt, [], seed=1000 + index, note=note)
+        except SourceUnavailable as error:
+            note(f"Karakter kartı çizilemedi ({hero['name']}): {error}")
+            continue
         path = sheets_dir() / (re.sub(r"[^a-z0-9]+", "-", hero["name"].casefold()).strip("-") + ".jpg")
         picture.save(path, "JPEG", quality=92)
         hero["sheet"] = str(path.relative_to(ROOT))
         hero["sheet_provider"] = provider
-    save_json(universe_path(), universe)
-    note(f"Evren kuruldu: {universe['name']} — {', '.join(h['name'] for h in universe['heroes'])}")
+        changed = True
+    if changed:
+        save_json(universe_path(), universe)
     return universe
 
 
