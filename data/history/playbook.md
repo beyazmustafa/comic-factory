@@ -1,6 +1,6 @@
 # Playbook (auto-evolving)
-- Hook: <= 12 words, no "in this issue", start with a direct question.
-- Rhythm: 3-10 word beats, one idea per shot, average shot 2.5-4s.
+- Hook: <= 12 words, start with a direct question about the threat.
+- Rhythm: 3-10 word beats, one idea per shot, average shot 3-5s.
 - Panels: Lead with the most dramatic panel; faces and speech balloons must stay inside the crop.
 - Emphasis: Red for danger, green for reveals, cyan for turns; at most 1 in 4 shots.
 - Ending: Stop on the strongest image and consequence; no outro, no call to action.
@@ -9,3 +9,4 @@
 - Sensory Onomatopoeia: Incorporate at least one onomatopoeia sound effect from the comic panel directly into the narration text.
 - Pacing: Total video duration strictly between 35 and 45 seconds.
 - Captions: Use color-coded captions (Hero dialogue in blue, narrator in white) to improve readability.
+- Transitions: End the penultimate shot with a question answered by the final image.

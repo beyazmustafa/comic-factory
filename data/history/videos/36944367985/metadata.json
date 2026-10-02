@@ -1,0 +1,290 @@
+{
+  "script": {
+    "title": "The Lunk: A Writer's Deadly Creation",
+    "description": "A horror tale from 1952 where a writer is hunted by his own fictional monster.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_031",
+        "narration": "The Lunk murders his own creator, then drops dead instantly!",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_000",
+        "narration": "Writer John Wild wakes up in a cold sweat.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_001",
+        "narration": "He believes his own character, The Lunk, is hunting him.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_004",
+        "narration": "Wild flees in his car, terrified of the unseen pursuer.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_008",
+        "narration": "KRASH! A violent crash leaves him broken and desperate.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "down",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_015",
+        "narration": "With broken arms, he begs for a stenographer to finish his book.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_020",
+        "narration": "But the Lunk strikes, using his favorite weapon: a knife.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_024",
+        "narration": "Hospital staff blame John for the bloody crime.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_026",
+        "narration": "They dismiss his warnings and lock him in a padded cell.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_030",
+        "narration": "The Lunk appears, claiming he is now invincible.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_035",
+        "narration": "Meanwhile, Manning finds the final chapter mysteriously on his desk.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_036",
+        "narration": "Did the Lunk really kill himself by killing his creator?",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_036",
+        "narration": "Yes, the note confirms: killing his creator was his own death.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "hold",
+        "emphasis": "reveal"
+      }
+    ],
+    "narration": "The Lunk murders his own creator, then drops dead instantly! Writer John Wild wakes up in a cold sweat. He believes his own character, The Lunk, is hunting him. Wild flees in his car, terrified of the unseen pursuer. KRASH! A violent crash leaves him broken and desperate. With broken arms, he begs for a stenographer to finish his book. But the Lunk strikes, using his favorite weapon: a knife. Hospital staff blame John for the bloody crime. They dismiss his warnings and lock him in a padded cell. The Lunk appears, claiming he is now invincible. Meanwhile, Manning finds the final chapter mysteriously on his desk. Did the Lunk really kill himself by killing his creator? Yes, the note confirms: killing his creator was his own death.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "identifier": "fawcett-beware-terror-tales-002",
+      "title": "The Ghost of the Fire Flame",
+      "year": 1952,
+      "publisher": "",
+      "description": "",
+      "subjects": [
+        "maxon",
+        "terror",
+        "tales",
+        "hiss",
+        "fiery",
+        "beware",
+        "fire",
+        "flame",
+        "eyes",
+        "safe",
+        "terror tales",
+        "fire ghost"
+      ],
+      "public_domain_evidence": "inferred: publisher 'fawcett' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 5836,
+      "imagecount": 0,
+      "url": "https://archive.org/details/fawcett-beware-terror-tales-002",
+      "id": "ia_0c540d5df43e69e3",
+      "series": "Beware Terror Tales",
+      "issue": "2",
+      "summary": "A terrifying encounter with a spectral fire ghost that haunts the innocent in this chilling horror tale.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/fawcett-beware-terror-tales-002"
+      ],
+      "selection_score": 74.0,
+      "_source": "archive"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [
+        {
+          "shot_id": "shot_000",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows The Lunk standing over a prone figure, with dialogue confirming he killed his creator and is now dead himself."
+        },
+        {
+          "shot_id": "shot_001",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows John Wild waking up in a state of alarm, with dialogue explicitly naming The Lunk."
+        },
+        {
+          "shot_id": "shot_002",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the character in a state of confusion after the encounter, though the narration about him 'believing' his character is hunting him is supported by the context of the previous panel."
+        },
+        {
+          "shot_id": "shot_003",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the character driving away, with dialogue confirming his intent to finish the book to destroy the monster."
+        },
+        {
+          "shot_id": "shot_004",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows a car crash with the sound effect 'KRASH!', supporting the narration of the accident."
+        },
+        {
+          "shot_id": "shot_005",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows John Wild discussing his broken arms and the need for a stenographer to finish his book, matching the narration."
+        },
+        {
+          "shot_id": "shot_006",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly depicts the Lunk and a victim with a knife, with dialogue explicitly identifying the knife as his favorite weapon."
+        },
+        {
+          "shot_id": "shot_007",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows hospital staff restraining John Wild, with dialogue explicitly accusing him of knifing a girl."
+        },
+        {
+          "shot_id": "shot_008",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows staff dragging John to a padded cell, with dialogue dismissing his claims as being about a character he writes."
+        },
+        {
+          "shot_id": "shot_009",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the Lunk confronting John, with dialogue where the Lunk claims to be invincible and declares he will write the last chapter."
+        },
+        {
+          "shot_id": "shot_010",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the character finding the 'last chapter' on his desk, which is clearly visible in the panel and supported by the dialogue quote."
+        },
+        {
+          "shot_id": "shot_011",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly summarizes the content of the note shown in the panel, where the Lunk explains that killing his creator resulted in his own death."
+        },
+        {
+          "shot_id": "shot_012",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration confirms the content of the note shown in the panel, which explicitly states that killing the creator was the Lunk's own death."
+        }
+      ],
+      "failures": []
+    },
+    "full_description": "A horror tale from 1952 where a writer is hunted by his own fictional monster.\n\nComic: Beware Terror Tales #2 (1952)\nPages: public-domain Golden Age issue scanned on the Internet Archive.\nSources:\nhttps://archive.org/details/fawcett-beware-terror-tales-002",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      ""
+    ],
+    "instagram_caption": "The Lunk: A Writer's Deadly Creation\n\nA horror tale from 1952 where a writer is hunted by his own fictional monster."
+  },
+  "sources": [
+    "https://archive.org/details/fawcett-beware-terror-tales-002"
+  ],
+  "voice": {
+    "voice": "Christopher",
+    "selection": "edge_fallback",
+    "errors": {}
+  },
+  "editing_profile": "comic-history-tr-v1"
+}

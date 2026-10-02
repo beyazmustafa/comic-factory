@@ -84,6 +84,16 @@
       "name": "color_coded_captions",
       "change": "Use blue text for hero dialogue and white text for narrator narration.",
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36944367985",
+    "chosen_at": "2026-10-02T00:10:59+00:00",
+    "experiment": {
+      "name": "cliffhanger_transitions",
+      "change": "End the penultimate shot with a question that is answered by the final image.",
+      "rationale": "Cliffhangers encourage viewers to watch the final frame, increasing retention."
     }
   }
 ]
