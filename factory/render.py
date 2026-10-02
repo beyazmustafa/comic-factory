@@ -46,8 +46,11 @@ def font(style, size):
     raise FactoryError("Türkçe altyazı fontu bulunamadı; DejaVu Sans gerekli.")
 
 
-def upper(text):
-    return text.translate(str.maketrans({"i": "İ", "ı": "I"})).upper()
+def upper(text, language="en"):
+    """Uppercase with Turkish dotted/dotless I only for Turkish captions."""
+    if language == "tr":
+        return text.translate(str.maketrans({"i": "İ", "ı": "I"})).upper()
+    return text.upper()
 
 
 def ass_color(value):
@@ -69,7 +72,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
-Style: Main,{family},{style["font_size"]},{normal},{normal},{stroke},&H80000000,-1,0,0,0,100,100,0,0,1,{style["stroke_width"]},1,5,100,140,260,1
+Style: Main,{family},{style["font_size"]},{normal},{normal},{stroke},&H60000000,-1,0,0,0,100,100,0,0,1,{style["stroke_width"]},{style.get("shadow_depth", 5)},5,100,140,260,1
 
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
@@ -88,8 +91,9 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         else:
             first = i // count * count
             last = min(len(words), first + count)
+        language = style.get("language", "en")
         texts = [
-            upper(str(w["word"])) if style["uppercase"] else str(w["word"])
+            upper(str(w["word"]), language) if style["uppercase"] else str(w["word"])
             for w in words[first:last]
         ]
         size = int(style["font_size"])
@@ -109,8 +113,10 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             end = next_start if 0 <= next_start - end < 0.18 else min(end, next_start)
         if end <= start or ass_time(end) == ass_time(start):
             raise FactoryError("Sıfır süreli altyazı kabul edilmiyor.")
+        pop = style.get("word_pop_ms", 70)
+        effect = f"\\fscx86\\fscy86\\t(0,{pop},\\fscx100\\fscy100)\\fad(25,0)" if pop else ""
         text = (
-            f"{{\\an5\\pos({center_x},{round(HEIGHT * style['caption_y'])})\\fs{size}}}"
+            f"{{\\an5\\pos({center_x},{round(HEIGHT * style['caption_y'])})\\fs{size}{effect}}}"
             + text
         )
         lines.append(
@@ -232,7 +238,8 @@ def build(api, story, panels, style, audio_path, words, duration):
     if cursor != len(words):
         raise FactoryError("Sahne ve altyazı kelime sayısı uyuşmuyor.")
     subtitle = captions(
-        caption_words, style, directory / "captions.ass", api.settings.caption_offset
+        caption_words, {**style, "language": getattr(api.settings, "language", "en")},
+        directory / "captions.ass", api.settings.caption_offset
     )
     timeline = scene_timeline(story["shots"], words, duration, FPS)
     lookup = {p["id"]: p for p in panels}

@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import archive, learning, research, panels, story, voice, render, quality
+from . import archive, learning, localize, research, panels, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -367,6 +367,18 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         )
         if event.get("_source") == "archive" or settings.source == "archive":
             archive.remember_issue(event, manifest["run_id"])
+        extra = [c.strip() for c in str(settings.languages).split(",") if c.strip() and c.strip() != settings.language]
+        localized = []
+        for code in extra:
+            stage(f"{code} sürümü")
+            try:
+                sub = localize.localize(api, directory, script, inventory, style, cache, code, metadata)
+                localized.append(sub.name)
+            except Exception as error:  # a missing edition never cancels the primary one
+                print(f"{code} sürümü üretilemedi: {type(error).__name__}: {str(error)[:200]}", flush=True)
+                save_json(directory / "diagnostics" / f"localize_{code}.json", {"error": str(error)[:1000]})
+        manifest.update(localized=localized, stage="Tamamlandı", status="ready")
+        save_json(directory / "run.json", manifest)
         return directory
     except Exception as error:
         manifest.update(
@@ -384,6 +396,25 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         write_review(directory)
         if api:
             api.close()
+
+
+def publish_all(directory, platforms):
+    """Primary edition to the chosen platforms, localized editions to YouTube."""
+    results = publish_run(directory, platforms)
+    manifest = json.loads((directory / "run.json").read_text(encoding="utf-8"))
+    for name in manifest.get("localized", []):
+        sub = directory / name
+        if not (sub / "run.json").is_file():
+            continue
+        previous = os.environ.get("FACTORY_LANGUAGE", "")
+        try:
+            os.environ["FACTORY_LANGUAGE"] = name.replace("lang_", "")
+            publish_run(sub, "youtube")
+        except Exception as error:
+            print(f"{name} yayınlanamadı: {type(error).__name__}: {str(error)[:200]}", flush=True)
+        finally:
+            os.environ["FACTORY_LANGUAGE"] = previous
+    return results
 
 
 def check_setup():
@@ -415,7 +446,7 @@ def main(argv=None):
             return 0
         if args.publish_run:
             emit_directory(args.publish_run)
-            publish_run(args.publish_run, args.platforms)
+            publish_all(args.publish_run, args.platforms)
             return 0
         directory = generate(
             Settings.load(target_seconds=args.duration, voice=args.voice),
@@ -425,7 +456,7 @@ def main(argv=None):
         )
         print(f"Çalışma hazır: {directory / 'review.html'}", flush=True)
         if args.publish and not args.voice_test:
-            publish_run(directory, args.platforms)
+            publish_all(directory, args.platforms)
         return 0
     except (RuntimeError, ValueError, OSError) as error:
         print(f"HATA: {error}", file=sys.stderr, flush=True)

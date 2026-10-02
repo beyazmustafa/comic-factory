@@ -10,9 +10,10 @@ WORKFLOW = ROOT / ".github" / "workflows" / "comic-factory.yml"
 class ScheduleTests(unittest.TestCase):
     def test_workflow_runs_twice_daily_with_safe_defaults(self):
         text = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("cron: '0 6,15 * * *'", text)  # 09:00 / 18:00 Türkiye
+        self.assertIn("cron: '23 5 * * *'", text)  # 08:23 Türkiye
+        self.assertIn("cron: '23 14 * * *'", text)  # 17:23 Türkiye
         self.assertIn("inputs.task || 'create_and_publish'", text)
-        self.assertIn("vars.SCHEDULED_PLATFORMS || 'youtube'", text)
+        self.assertIn("vars.SCHEDULED_PLATFORMS || 'both'", text)
         self.assertIn("vars.YOUTUBE_VISIBILITY || 'public'", text)
         self.assertIn("contents: write", text)
         self.assertIn("git add -A data/history", text)

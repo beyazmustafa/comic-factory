@@ -36,6 +36,8 @@ class Settings:
     # "web": the older publisher-preview search path.
     # Narration/caption language and the channel's editorial focus.
     language: str = "en"
+    # Extra editions published alongside the primary language (same panels).
+    languages: str = "en,tr"
     channel_theme: str = "superheroes"
     # Extra Internet Archive filter applied when channel_theme is superheroes.
     archive_theme_query: str = (
@@ -105,6 +107,7 @@ class Settings:
             "archive_query",
             "archive_theme_query",
             "language",
+            "languages",
             "channel_theme",
             "gemini_fallback_models",
             "groq_model",

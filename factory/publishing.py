@@ -193,7 +193,13 @@ def publish_run(directory: Path, platforms: str) -> dict:
         journal[platform] = results[platform]
         save_json(journal_path, journal)
     save_json(directory / "publication.json", results)
-    if any(item.get("status") != "success" for item in results.values()):
+    failed = {k: v for k, v in results.items() if v.get("status") != "success"}
+    if failed and results.get("youtube", {}).get("status") == "success" and set(failed) == {"instagram"}:
+        # The video is live on YouTube; an Instagram hiccup must not mark the
+        # whole run failed (that would also skip the learning record).
+        print("instagram: yükleme başarısız, YouTube yayını korunuyor: " + str(failed["instagram"].get("error", ""))[:300], flush=True)
+        return results
+    if failed:
         raise RuntimeError(
             "Yükleme tamamlanmadı: "
             + "; ".join(

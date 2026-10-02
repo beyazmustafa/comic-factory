@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from ddgs import DDGS
 from PIL import Image, ImageOps
 from .api import SourceUnavailable
-from .core import save_json
+from .core import save_json, language_name
 
 
 def clean(value):
@@ -53,16 +53,34 @@ def event_key(event):
     ).hexdigest()[:20]
 
 
+SEARCH_BACKENDS = ("bing", "brave", "yahoo", "duckduckgo", "google")
+
+
 def search(queries, images=False, each=8):
+    """Web search that survives one engine blocking the runner's IP."""
     output, seen = [], set()
     for query in queries:
+        rows = []
+        for backend in SEARCH_BACKENDS:
+            try:
+                client = DDGS(timeout=12)
+                rows = list(
+                    client.images(query, max_results=each, backend=backend)
+                    if images
+                    else client.text(query, max_results=each, backend=backend)
+                )
+            except TypeError:
+                try:
+                    client = DDGS(timeout=12)
+                    rows = list(client.images(query, max_results=each) if images else client.text(query, max_results=each))
+                except Exception:
+                    rows = []
+            except Exception as error:
+                print(f"Arama ({backend}) yanıt vermedi: {type(error).__name__}", flush=True)
+                rows = []
+            if rows:
+                break
         try:
-            client = DDGS(timeout=12)
-            rows = (
-                client.images(query, max_results=each)
-                if images
-                else client.text(query, max_results=each)
-            )
             for row in rows:
                 url = row.get("url") if images else row.get("href", row.get("url"))
                 if not url or url in seen:
@@ -77,9 +95,7 @@ def search(queries, images=False, each=8):
                     }
                 )
         except Exception as error:
-            print(
-                f"Bir arama kaynağı yanıt vermedi: {type(error).__name__}", flush=True
-            )
+            print(f"Arama sonucu işlenemedi: {type(error).__name__}", flush=True)
     return output
 
 
@@ -141,22 +157,41 @@ class Fetcher:
         }
 
 
+# Famous, genuinely sensational Marvel/DC moments: the search is aimed at these
+# instead of random hero names, so the previews found carry a real story.
+SENSATIONAL_MOMENTS = [
+    "The Night Gwen Stacy Died Amazing Spider-Man 121", "Death of Superman Superman 75 Doomsday",
+    "Knightfall Bane breaks Batman's back Batman 497", "A Death in the Family Joker kills Jason Todd",
+    "The Killing Joke Joker shoots Barbara Gordon", "Infinity Gauntlet Thanos snap kills half the universe",
+    "Dark Phoenix Saga Jean Grey destroys a star", "Days of Future Past Sentinels kill the X-Men",
+    "Civil War Spider-Man unmasks Peter Parker", "Crisis on Infinite Earths death of Supergirl",
+    "Crisis on Infinite Earths death of Barry Allen Flash", "Identity Crisis Sue Dibny murder",
+    "Secret Empire Captain America Hail Hydra", "Marvel Zombies Hulk eats Silver Surfer",
+    "Old Man Logan Wolverine kills the X-Men", "Punisher Kills the Marvel Universe",
+    "Superman Red Son Soviet Superman", "Flashpoint Thomas Wayne Batman", "Blackest Night Black Lanterns",
+    "Death of Captain America Steve Rogers shot", "Spider-Man Kraven's Last Hunt Kraven buries Spider-Man",
+    "Daredevil Born Again Kingpin destroys Matt Murdock", "Elektra killed by Bullseye Daredevil 181",
+    "Wolverine loses adamantium Magneto X-Men 25", "Age of Apocalypse", "House of M No More Mutants",
+    "Spider-Man Clone Saga Ben Reilly", "Venom Lethal Protector", "Carnage Maximum Carnage",
+    "Hulk World War Hulk Illuminati", "Planet Hulk gladiator", "Thor dies Ragnarok Marvel",
+    "Iron Man Demon in a Bottle alcoholism", "Batman Court of Owls Talon", "Batman RIP Doctor Hurt",
+    "Superman vs Doomsday first fight", "Green Lantern Emerald Twilight Hal Jordan Parallax",
+    "Wonder Woman kills Maxwell Lord", "Deadpool Kills the Marvel Universe", "Spider-Man Back in Black Aunt May shot",
+    "X-Men Mutant Massacre Morlocks", "Gwenpool", "Doctor Strange death Last Days of Magic",
+    "Avengers Disassembled Scarlet Witch", "Secret Wars Battleworld Doctor Doom God Emperor",
+    "Thanos Wins Cosmic Ghost Rider Thanos", "King in Black Knull", "Absolute Carnage",
+    "Batman Who Laughs origin", "Dark Nights Metal", "Injustice Superman kills Joker",
+]
+
+
 def discover_evidence(api, topic):
     """Read independent search results before asking the model for candidates."""
     import random
-    heroes = [
-        "Spider-Man", "Batman", "Superman", "Wolverine", "Hulk", "Thanos", "Joker", "Deadpool",
-        "Venom", "Thor", "Iron Man", "Captain America", "Doctor Doom", "Flash", "Wonder Woman",
-        "Green Lantern", "Daredevil", "Punisher", "Doctor Strange", "Magneto", "Darkseid",
-        "Ghost Rider", "Black Panther", "Silver Surfer", "Galactus", "Harley Quinn", "Moon Knight",
-    ]
     if topic:
         queries = [f'{topic} comic issue review panels', f'{topic} comic publisher preview']
     elif getattr(api.settings, "channel_theme", "") == "superheroes":
-        picks = random.sample(heroes, 3)
-        queries = [f'{picks[0]} comic shocking moment issue preview pages',
-                   f'{picks[1]} comic bizarre moment issue review panels',
-                   f'{picks[2]} comic preview interior pages site:marvel.com OR site:dc.com OR site:cbr.com OR site:bleedingcool.com OR site:aiptcomics.com']
+        picks = random.sample(SENSATIONAL_MOMENTS, 3)
+        queries = [f'{picks[0]} comic panels review', f'{picks[1]} comic preview pages', f'{picks[2]} comic issue panels']
     else:
         queries = random.sample([
                    'Marvel comics historic turning point issue review panels',
@@ -197,7 +232,7 @@ def shortlist(api, topic, used):
         "Konu adayları",
         f"""Choose up to {api.settings.max_events} specific SHOCKING superhero moments (a death, a betrayal, a bizarre transformation, a villain's cruelest act, an impossible feat) from ONLY the fetched articles below — the kind of moment a global YouTube Shorts audience stops scrolling for. No new facts or links. Exclude used IDs/titles {json.dumps(used, ensure_ascii=False)}. Require exact series, issue/chapter, year, publisher and universe supported by articles. Prefer public publisher previews and illustrated reviews with actual interior panels. Requested topic {topic or "automatic"}; if explicit, ALL candidates must be that exact event.
 {json.dumps(evidence, ensure_ascii=False)}
-Return {{"events":[{{"title":"Turkish","publisher":"","series":"exact original title","issue":"","year":2000,"universe":"","characters":[],"summary":"Turkish","importance":0,"popularity":0,"niche":0,"source_urls":[]}}]}}. Scores 0..100 are editorial judgments.""",
+Return {{"events":[{{"title":"{language_name(api)} hook title","publisher":"","series":"exact original title","issue":"","year":2000,"universe":"","characters":[],"summary":"{language_name(api)}","importance":0,"popularity":0,"niche":0,"source_urls":[]}}]}}. Scores 0..100 are editorial judgments.""",
         list_key="events",
     )
     candidates = []

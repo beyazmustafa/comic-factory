@@ -1,9 +1,10 @@
 name: Comic Factory Studio
 'on':
   schedule:
-    # Günde iki üretim + yükleme: 09:00 ve 18:00 Türkiye saati (UTC+3).
-    # GitHub zamanlanmış koşuları yoğunlukta 10-30 dk geciktirebilir.
-    - cron: '0 6,15 * * *'
+    # Günde iki üretim + yükleme: 08:23 ve 17:23 Türkiye saati (UTC+3).
+    # Tam saat başı cron'lar GitHub'da saatlerce gecikebiliyor; dakika kaydırıldı.
+    - cron: '23 5 * * *'
+    - cron: '23 14 * * *'
   workflow_dispatch:
     inputs:
       task:
@@ -60,7 +61,7 @@ concurrency:
 jobs:
   studio:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 160
     env:
       PYTHONUNBUFFERED: '1'
       # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
@@ -68,7 +69,7 @@ jobs:
       TOPIC: ${{ inputs.topic || '' }}
       DURATION: ${{ inputs.duration || '150' }}
       VOICE: ${{ inputs.voice || 'auto' }}
-      PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'youtube' }}
+      PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'both' }}
       RESUME: ${{ inputs.resume_run_id || '' }}
       PREVIEW: ${{ inputs.preview_run_id || '' }}
       YOUTUBE_VISIBILITY: ${{ vars.YOUTUBE_VISIBILITY || 'public' }}
