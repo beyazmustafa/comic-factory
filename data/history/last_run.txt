@@ -1,11 +1,11 @@
-run_id: 36941641160  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261001T233636490754Z/run.json
+run_id: 36943025675  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261001T235245601451Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,12 +36,42 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36941641160",
-  "resumed_from": "36940443992",
-  "error": "FactoryError: Bitmiş videoda düzeltilmesi gereken noktalar var: no_critical_errors, observation_times. Önizleme ve raporlar kaydedildi.",
-  "api_calls": 45
+  "run_id": "36943025675",
+  "resumed_from": "36941641160",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "cda047ca9acdfb470902d71c8e20fa5a61858d6a2a2061336fc8c27ff5ebe5a1",
+  "metadata_sha256": "42c8ac7d417be1d5ced73138dc08c6db47ac38fe1f1044dee05d5e060eb189ee",
+  "quality_sha256": "56d1df68622e50070b83ca466c9248eea44f8fd748adf7308038e1a18ce7e2d3",
+  "api_calls": 44,
+  "duration": 122.22,
+  "voice": "Christopher",
+  "event": {
+    "identifier": "blue-beetle-021-charlton-aug-1955-36p-c-2c",
+    "title": "The Beetle's Bizarre Battle in Golden Age Charlton!",
+    "year": 1955,
+    "publisher": "",
+    "description": "Blue Beetle (Charlton)",
+    "subjects": [
+      "Blue Beetle (Charlton)"
+    ],
+    "public_domain_evidence": "inferred: publisher 'charlton' (closed before 1964, unrenewed Golden Age catalogue)",
+    "downloads": 92,
+    "imagecount": 0,
+    "url": "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c",
+    "id": "ia_c982bee420242fe4",
+    "series": "Blue Beetle (Charlton)",
+    "issue": "21",
+    "summary": "Blue Beetle'in bu klasik Charlton sayısında, kahramanımızın suçla mücadelesindeki şaşırtıcı olaylar ve tehlikeli maceralar anlatılıyor.",
+    "universe": "Golden Age (public domain)",
+    "source_urls": [
+      "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c"
+    ],
+    "selection_score": 69.0,
+    "_source": "archive"
+  }
 }
---- data/runs/20261001T233636490754Z/diagnostics/provider_events.json
+--- data/runs/20261001T235245601451Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -55,10 +85,10 @@ produce step outcome: failure
   "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
-  "Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak."
+  "Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261001T233636490754Z/diagnostics/providers.json
+--- data/runs/20261001T235245601451Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -80,9 +110,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -111,19 +141,19 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261001T233636490754Z/audio/chunk_000/failures.json
+--- data/runs/20261001T235245601451Z/audio/chunk_000/failures.json
 [
   "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 25."
 ]
---- data/runs/20261001T233636490754Z/voice_audition/failed_auditions.json
+--- data/runs/20261001T235245601451Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261001T233636490754Z/diagnostics/panel_matches_1.json
+--- data/runs/20261001T235245601451Z/diagnostics/panel_matches_1.json
 {"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Coll claims victory, but the crop and dialogue show the White Queen capturing the Red Knight, contradicting the stated action."}, {"shot_id": "shot_003", "reason": "The narration claims Regina teases Dan about being her knight, but the provided evidence (fact_013) discusses Lew Coll hating Dan, making the narrative unsupported by the evidence."}, {"shot_id": "shot_015", "reason": "The evidence (fact_005) describes a defective wire rather than secondary stage ignition, although the panel visually depicts the ignition."}, {"shot_id": "shot_019", "reason": "Narration claims Coll prepares to brave the atmosphere, whereas the evidence and panel show him already losing consciousness from staying too long."}, {"shot_id": "shot_033", "reason": "The narration discusses publication details (Charlton, August 1955), whereas the provided evidence and panel text exclusively describe Lew Coll testing his heat shield."}, {"shot_id": "shot_038", "reason": "The Red Knight crashes through a wall/window near guards (though 'financial mart' might be inferred from page context rather than strictly visible interior detail, the action of crashing through a building is clear)."}]}
---- data/runs/20261001T233636490754Z/diagnostics/panel_matches_2.json
+--- data/runs/20261001T235245601451Z/diagnostics/panel_matches_2.json
 {"passed": false, "failures": [{"shot_id": "shot_003", "reason": "The narration claims a move puts the red pieces in check, but the dialogue and action in the panel explicitly show capturing the Red Knight with the White Queen."}, {"shot_id": "shot_020", "reason": "The evidence provided (fact_013) is Regina's dialogue remarking to Dan, whereas the shot depicts Dan and Lew conversing directly."}, {"shot_id": "shot_022", "reason": "The evidence provided (fact_013) does not match the visual and textual subject of alien fumes altering thinking shown in the panel."}, {"shot_id": "shot_024", "reason": "While the image shows a Red Knight chess piece, the provided quote in fact_016 ('IF I WERE YOU, RED KNIGHT...') does not match the actual dialogue present in the cropped panel ('THE RED KNIGHT... MY FAVORITE INSTRUMENT OF ATTACK!')."}]}
---- data/runs/20261001T233636490754Z/diagnostics/panel_matches_4.json
+--- data/runs/20261001T235245601451Z/diagnostics/panel_matches_4.json
 {"passed": false, "failures": [{"shot_id": "shot_002", "reason": "The narration claims Lew is moving his Red Knight piece, but the panel actually depicts a hand capturing the Red Knight with the White Queen."}, {"shot_id": "shot_017", "reason": "The text mentions electrical heat applied to the dust, though the evidence mapping uses fact_008 which describes the mountains."}, {"shot_id": "shot_022", "reason": "The narration claims Dan is inspecting silicate ore, but the evidence provided (Regina's dialogue about poisoning) does not support this specific action."}]}
---- data/runs/20261001T233636490754Z/diagnostics/story_3.json
+--- data/runs/20261001T235245601451Z/diagnostics/story_3.json
 {"error": "Anlatım düz metin olmalı."}
 --- studio.log (son 300 satır)
 Kayıtlı aşama kullanılıyor: story
@@ -146,6 +176,7 @@ Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atla
 Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
 Önceki çalışmanın senaryosu kullanılıyor.
@@ -160,5 +191,17 @@ Kayıtlı aşama kullanılıyor: audio
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-HATA: Bitmiş videoda düzeltilmesi gereken noktalar var: no_critical_errors, observation_times. Önizleme ve raporlar kaydedildi.
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261001T235245601451Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: The Bizarre Betrayal of Blue Beetle and the Red Knight #Shorts
+Görünürlük: public
+
+Yükleme: %16
+Yükleme: %33
+Yükleme: %50
+Yükleme: %66
+Yükleme: %83

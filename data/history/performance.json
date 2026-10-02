@@ -48,9 +48,56 @@
       "views": 1,
       "likes": 0,
       "comments": 0,
-      "hours_live": 2.2,
-      "views_per_hour": 0.45,
-      "fetched_at": "2026-10-01T23:36:37+00:00"
+      "hours_live": 2.5,
+      "views_per_hour": 0.4,
+      "fetched_at": "2026-10-01T23:52:46+00:00"
     }
+  },
+  {
+    "video_id": "LqljDCXbWgQ",
+    "platform": "youtube",
+    "run_id": "36943025675",
+    "published_at": "2026-10-02T00:02:15+00:00",
+    "event": {
+      "title": "The Beetle's Bizarre Battle in Golden Age Charlton!",
+      "series": "Blue Beetle (Charlton)",
+      "issue": "21",
+      "year": 1955,
+      "publisher": ""
+    },
+    "profile": {
+      "shots": 30,
+      "words": 301,
+      "duration": 122.2,
+      "words_per_minute": 148,
+      "hook": "Blue Beetle desperately punches the unstoppable Red Knight!",
+      "hook_words": 8,
+      "title": "The Bizarre Betrayal of Blue Beetle and the Red Knight",
+      "title_length": 54,
+      "emphasis": {
+        "danger": 4,
+        "normal": 21,
+        "turn": 1,
+        "reveal": 4
+      }
+    },
+    "voice": "Christopher",
+    "review": {
+      "mode": "video",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 95,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "The video is a well-paced, accurate, and visually engaging comic documentary that faithfully follows the provided script."
+    },
+    "experiment": {
+      "name": "color_coded_captions",
+      "change": "Use blue text for hero dialogue and white text for narrator narration.",
+      "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
+    },
+    "stats": {}
   }
 ]

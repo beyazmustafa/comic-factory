@@ -74,6 +74,16 @@
       "name": "question_hook",
       "change": "Start the hook with a direct question addressing the viewer to boost initial engagement.",
       "rationale": "Direct questions create a cognitive open loop that forces viewers to watch further to find the answer."
+    },
+    "verdict": "kept"
+  },
+  {
+    "run_id": "36943025675",
+    "chosen_at": "2026-10-01T23:55:49+00:00",
+    "experiment": {
+      "name": "color_coded_captions",
+      "change": "Use blue text for hero dialogue and white text for narrator narration.",
+      "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     }
   }
 ]

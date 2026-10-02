@@ -1,0 +1,576 @@
+{
+  "script": {
+    "title": "The Bizarre Betrayal of Blue Beetle and the Red Knight",
+    "description": "A Golden Age comic documentary exploring the shocking transformation of Lewis Coll into the Red Knight in Charlton's 1955 classic.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "panel_000",
+        "narration": "Blue Beetle desperately punches the unstoppable Red Knight!",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "panel_001",
+        "narration": "Doctor Dan Garrett plays chess with his friend Lewis Coll.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "panel_003",
+        "narration": "Regina teases Dan about being her knight in shining armor.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "panel_004",
+        "narration": "Down in a castle laboratory, Lew shows off a government moon rocket.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "panel_005",
+        "narration": "Dan and Regina examine the experimental heat shield with Lew.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "panel_006",
+        "narration": "Lew voices bitter disillusionment with his fellow men.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "panel_007",
+        "narration": "He reveals he is testing a shield doomed to fail.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "panel_008",
+        "narration": "Lew calculates that alien siliconium is the ultimate heat shield.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "panel_009",
+        "narration": "The massive rocket launches into the dark night sky.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "panel_010",
+        "narration": "Lew embraces Regina before his daring interplanetary departure.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "panel_011",
+        "narration": "Blue Beetle zooms away from Earth to track his friend's ship.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "panel_014",
+        "narration": "Using ancient scarab powers, Dan's vision pierces the steel hull!",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "panel_016",
+        "narration": "He spots a defective wire causing trouble in the circuit.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "panel_015",
+        "narration": "Blue Beetle transmits electrical energy to ignite the secondary stage.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "panel_017",
+        "narration": "The rocket surges onward toward distant Saturn and its colorful rings.",
+        "fact_ids": [
+          "fact_006",
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "panel_020",
+        "narration": "Lew lands on glass-like silicon mountains to harvest alien ore.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "panel_023",
+        "narration": "Toxic methane-ammonia fumes suddenly cause Lew to lose consciousness!",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "panel_024",
+        "narration": "Monitoring from Earth, Dan transforms instantly into Blue Beetle!",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "panel_025",
+        "narration": "An ungrateful Lew wakes up and angrily rejects his help.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "panel_026",
+        "narration": "Regina suspects Saturn's atmosphere poisoned her fiancé's mind.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "panel_028",
+        "narration": "Lew snaps at his old friend with bitter hostility.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "panel_029",
+        "narration": "He cruelly tells Regina to go pack or knit a raincoat.",
+        "fact_ids": [
+          "fact_012",
+          "fact_013"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_022",
+        "panel_id": "panel_030",
+        "narration": "Regina realizes Lew has completely changed and seems to hate them.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_023",
+        "panel_id": "panel_032",
+        "narration": "Inside his lab, Lew tests an impenetrable energy shield.",
+        "fact_ids": [
+          "fact_014",
+          "fact_015"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_024",
+        "panel_id": "panel_034",
+        "narration": "Staring at his chess pieces, Lew hatches a terrifying plan.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_025",
+        "panel_id": "panel_035",
+        "narration": "He fantasizes about becoming the Red Knight to punish humanity.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_026",
+        "panel_id": "panel_036",
+        "narration": "Lew forges an indestructible suit of armor and a black stallion!",
+        "fact_ids": [
+          "fact_017"
+        ],
+        "motion": "hold",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_027",
+        "panel_id": "panel_038",
+        "narration": "The Red Knight crashes violently through a financial district.",
+        "fact_ids": [
+          "fact_017"
+        ],
+        "motion": "hold",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_028",
+        "panel_id": "panel_040",
+        "narration": "Fighter jets scramble, firing weapons that bounce off with a loud RBRTTT!",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_029",
+        "panel_id": "panel_041",
+        "narration": "The medieval terror levels his spear, unleashing a final ZAP of destruction in Charlton's 1955 classic!",
+        "fact_ids": [
+          "fact_018"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      }
+    ],
+    "narration": "Blue Beetle desperately punches the unstoppable Red Knight! Doctor Dan Garrett plays chess with his friend Lewis Coll. Regina teases Dan about being her knight in shining armor. Down in a castle laboratory, Lew shows off a government moon rocket. Dan and Regina examine the experimental heat shield with Lew. Lew voices bitter disillusionment with his fellow men. He reveals he is testing a shield doomed to fail. Lew calculates that alien siliconium is the ultimate heat shield. The massive rocket launches into the dark night sky. Lew embraces Regina before his daring interplanetary departure. Blue Beetle zooms away from Earth to track his friend's ship. Using ancient scarab powers, Dan's vision pierces the steel hull! He spots a defective wire causing trouble in the circuit. Blue Beetle transmits electrical energy to ignite the secondary stage. The rocket surges onward toward distant Saturn and its colorful rings. Lew lands on glass-like silicon mountains to harvest alien ore. Toxic methane-ammonia fumes suddenly cause Lew to lose consciousness! Monitoring from Earth, Dan transforms instantly into Blue Beetle! An ungrateful Lew wakes up and angrily rejects his help. Regina suspects Saturn's atmosphere poisoned her fiancé's mind. Lew snaps at his old friend with bitter hostility. He cruelly tells Regina to go pack or knit a raincoat. Regina realizes Lew has completely changed and seems to hate them. Inside his lab, Lew tests an impenetrable energy shield. Staring at his chess pieces, Lew hatches a terrifying plan. He fantasizes about becoming the Red Knight to punish humanity. Lew forges an indestructible suit of armor and a black stallion! The Red Knight crashes violently through a financial district. Fighter jets scramble, firing weapons that bounce off with a loud RBRTTT! The medieval terror levels his spear, unleashing a final ZAP of destruction in Charlton's 1955 classic!",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "identifier": "blue-beetle-021-charlton-aug-1955-36p-c-2c",
+      "title": "The Beetle's Bizarre Battle in Golden Age Charlton!",
+      "year": 1955,
+      "publisher": "",
+      "description": "Blue Beetle (Charlton)",
+      "subjects": [
+        "Blue Beetle (Charlton)"
+      ],
+      "public_domain_evidence": "inferred: publisher 'charlton' (closed before 1964, unrenewed Golden Age catalogue)",
+      "downloads": 92,
+      "imagecount": 0,
+      "url": "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c",
+      "id": "ia_c982bee420242fe4",
+      "series": "Blue Beetle (Charlton)",
+      "issue": "21",
+      "summary": "Blue Beetle'in bu klasik Charlton sayısında, kahramanımızın suçla mücadelesindeki şaşırtıcı olaylar ve tehlikeli maceralar anlatılıyor.",
+      "universe": "Golden Age (public domain)",
+      "source_urls": [
+        "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c"
+      ],
+      "selection_score": 69.0,
+      "_source": "archive"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [
+        {
+          "shot_id": "shot_000",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly depicts Blue Beetle punching the Red Knight's shield while the White Queen looks on, directly matching the narration and evidence."
+        },
+        {
+          "shot_id": "shot_001",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows characters playing chess and the caption explicitly introduces Doctor Dan Garrett and physicist Lewis Coll."
+        },
+        {
+          "shot_id": "shot_003",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Regina is shown sitting with Dan and teasing him about capturing his heart, aligning well with the visual and contextual evidence."
+        },
+        {
+          "shot_id": "shot_004",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the government moon rocket adjacent to castle architecture, supported by the caption and evidence regarding Lew's laboratory."
+        },
+        {
+          "shot_id": "shot_005",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows Dan and Regina speaking with Lew about the heat shield, fully supported by evidence."
+        },
+        {
+          "shot_id": "shot_006",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Lew explicitly states his disenchantment with fellow men in the dialogue."
+        },
+        {
+          "shot_id": "shot_007",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Lew declares he is testing a shield he already knows will fail."
+        },
+        {
+          "shot_id": "shot_008",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "Lew discusses the metal siliconium and its suitability for heat dissipation."
+        },
+        {
+          "shot_id": "shot_009",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel vividly depicts the rocket launching into the night sky from the castle."
+        },
+        {
+          "shot_id": "shot_010",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes Lew embracing Regina before his departure, which is clearly visible in the cropped panel."
+        },
+        {
+          "shot_id": "shot_011",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly describes Blue Beetle zooming away from Earth to pursue his friend's rocket, matching the visual action."
+        },
+        {
+          "shot_id": "shot_012",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration matches the caption text box in the cropped panel detailing the use of ancient scarab powers to see through the rocket's hull."
+        },
+        {
+          "shot_id": "shot_013",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration aligns directly with the dialogue in the speech bubble where Blue Beetle spots the defective wire."
+        },
+        {
+          "shot_id": "shot_014",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes the ignition of the secondary stage resulting from Blue Beetle's energy transmission, supported by the panel caption and visuals."
+        },
+        {
+          "shot_id": "shot_015",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately describes the rocket surging toward Saturn and its colorful rings as depicted in the panel."
+        },
+        {
+          "shot_id": "shot_016",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration correctly states Lew lands on glass-like silicon mountains, matching the dialogue and visual."
+        },
+        {
+          "shot_id": "shot_018",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately reflects Lew losing consciousness due to methane-ammonia atmosphere impurities as shown in the panel."
+        },
+        {
+          "shot_id": "shot_019",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration matches the observation lab monitoring and Dan transforming into Blue Beetle."
+        },
+        {
+          "shot_id": "shot_020",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration describes Lew rejecting help, which is supported by the dialogue 'I didn't want or need your help, Blue Beetle!' in the panel."
+        },
+        {
+          "shot_id": "shot_021",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately reflects the dialogue where Regina suggests atmosphere poisoning from Saturn as the cause of Lew's behavior."
+        },
+        {
+          "shot_id": "shot_023",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration captures the hostile interaction between Dan and Lew, supported by Lew's dialogue: 'I didn't mean it to be friendly, Garrett!'"
+        },
+        {
+          "shot_id": "shot_024",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration directly quotes Lew's dismissive command to Regina, which is clearly visible in the panel's dialogue bubble."
+        },
+        {
+          "shot_id": "shot_025",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The narration accurately reflects the dialogue in the panel where Regina expresses her concern about Lew's changed behavior and hostility towards Dan."
+        },
+        {
+          "shot_id": "shot_026",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows Lew testing his shield against electrical charges, matching the narration and the provided evidence."
+        },
+        {
+          "shot_id": "shot_027",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows Lew contemplating the Red Knight chess piece, which directly supports the narration about him hatching a plan."
+        },
+        {
+          "shot_id": "shot_028",
+          "match_score": 100,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel captures Lew's internal monologue about becoming the Red Knight to eliminate enemies, perfectly matching the narration."
+        },
+        {
+          "shot_id": "shot_029",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel depicts the Red Knight on a black stallion in armor, which supports the narration about him forging these items."
+        },
+        {
+          "shot_id": "shot_030",
+          "match_score": 85,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The Red Knight is shown on horseback using a spear to emit energy, though the setting is an interior room rather than a 'financial district'."
+        },
+        {
+          "shot_id": "shot_031",
+          "match_score": 95,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel clearly shows a fighter jet firing at the Red Knight with the sound effect 'RRRTTT' and the dialogue confirming the pilot's guns cannot hurt the target."
+        },
+        {
+          "shot_id": "shot_032",
+          "match_score": 90,
+          "supported": true,
+          "crop_ok": true,
+          "reason": "The panel shows the Red Knight's spear emitting a 'ZAP' effect, destroying a target, consistent with the narrative description."
+        }
+      ],
+      "failures": [],
+      "dropped_shots": [
+        "shot_002",
+        "shot_017",
+        "shot_022"
+      ]
+    },
+    "full_description": "A Golden Age comic documentary exploring the shocking transformation of Lewis Coll into the Red Knight in Charlton's 1955 classic.\n\nComic: Blue Beetle (Charlton) #21 (1955)\nPages: public-domain Golden Age issue scanned on the Internet Archive.\nSources:\nhttps://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      ""
+    ],
+    "instagram_caption": "The Bizarre Betrayal of Blue Beetle and the Red Knight\n\nA Golden Age comic documentary exploring the shocking transformation of Lewis Coll into the Red Knight in Charlton's 1955 classic."
+  },
+  "sources": [
+    "https://archive.org/details/blue-beetle-021-charlton-aug-1955-36p-c-2c"
+  ],
+  "voice": {
+    "voice": "Christopher",
+    "selection": "edge_fallback",
+    "errors": {}
+  },
+  "editing_profile": "comic-history-tr-v1"
+}
