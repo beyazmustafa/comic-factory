@@ -223,11 +223,13 @@ class Api:
         """
         if self.discovered is not None:
             return self.discovered
-        found = {"gemini": [], "groq": [], "errors": []}
+        found = {"gemini": [], "groq": [], "errors": [], "gemini_raw": []}
         try:
             for model in self.client.models.list():
                 name = str(getattr(model, "name", "") or "").replace("models/", "")
                 actions = [str(a) for a in (getattr(model, "supported_actions", None) or [])]
+                if name:
+                    found["gemini_raw"].append(name)
                 if not name or (actions and "generateContent" not in actions):
                     continue
                 if any(word in name.casefold() for word in GEMINI_EXCLUDE):

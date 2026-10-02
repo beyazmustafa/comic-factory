@@ -17,6 +17,16 @@ name: Comic Factory Studio
         - publish_preview
         - voice_test
         - refresh_stats
+      source:
+        description: Kaynak — boşsa factory.json (mix)
+        type: choice
+        default: ''
+        options:
+        - ''
+        - studio
+        - auto
+        - archive
+        - web
       topic:
         description: Konu — boşsa çizgi roman tarihinden otomatik seçilir
         type: string
@@ -68,6 +78,7 @@ jobs:
       # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
       TASK: ${{ inputs.task || 'create_and_publish' }}
       TOPIC: ${{ inputs.topic || '' }}
+      SOURCE: ${{ inputs.source || '' }}
       DURATION: ${{ inputs.duration || '150' }}
       VOICE: ${{ inputs.voice || 'auto' }}
       PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'both' }}
@@ -167,6 +178,7 @@ jobs:
             args+=['--publish-run','data/incoming']
         else:
             args+=['--topic',os.environ['TOPIC'],'--duration',os.environ['DURATION'],'--voice',os.environ['VOICE']]
+            if os.environ.get('SOURCE','').strip(): args+=['--source',os.environ['SOURCE'].strip()]
             if os.environ['RESUME'].strip(): args+=['--resume-run','data/incoming']
             if task=='voice_test': args+=['--voice-test']
             if task=='create_and_publish': args+=['--publish']

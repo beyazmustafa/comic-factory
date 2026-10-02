@@ -48,7 +48,10 @@ class Settings:
     # "auto": Marvel/DC moments from official previews & illustrated reviews first,
     #         public-domain archive issues when previews cannot supply enough panels.
     # "archive": only complete public-domain issues. "web": only previews.
-    source: str = "auto"
+    # "studio": original universe drawn by image models. "mix": studio in the
+    # morning run, auto (previews/archive) in the evening run.
+    source: str = "mix"
+    image_model: str = ""
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
     archive_scan_limit: int = 72
@@ -111,13 +114,14 @@ class Settings:
             "channel_theme",
             "gemini_fallback_models",
             "groq_model",
+            "image_model",
             "edge_voices",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"auto", "archive", "web"}:
+        if result.source not in {"auto", "archive", "web", "studio", "mix"}:
             raise ValueError("source archive veya web olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")

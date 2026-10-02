@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import archive, learning, localize, research, panels, story, voice, render, quality
+from . import archive, forge, learning, localize, research, panels, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -121,14 +121,29 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         if bundle is None:
             used = load_used()
             candidates = []
-            if settings.source in {"auto", "web"}:
+            effective = settings.source
+            if effective == "mix":
+                effective = "studio" if datetime.now(timezone.utc).hour < 12 else "auto"
+                print(f"Kaynak (mix): {effective}", flush=True)
+            if effective == "studio":
+                universe = forge.ensure_universe(api, note=api.note)
+                event, draft, inventory, facts = forge.produce(api, universe, style, note=api.note)
+                script = story.validate_story(draft, inventory, facts, settings.max_shots)
+                script.update(event=event, panel_validation={"passed": True, "shots": [], "generated": True})
+                save_json(directory / "story.json", script)
+                bundle = {"event": event, "story": script, "panels": inventory, "facts": facts}
+                save_json(directory / "story_bundle.json", bundle)
+                checkpoints.save("story", story_key, bundle, [directory / "story.json", directory / "story_bundle.json"]
+                                 + [p for p in (directory / "events" / event["id"]).rglob("*") if p.is_file()])
+                candidates = None
+            if candidates is not None and effective in {"auto", "web"}:
                 try:
                     candidates += [{**e, "_source": "web"} for e in research.shortlist(api, topic, used)]
                 except SourceUnavailable as error:
                     print(f"Önizleme kaynağı: {error}", flush=True)
                     if settings.source == "web":
                         raise
-            if settings.source in {"auto", "archive"}:
+            if candidates is not None and effective in {"auto", "archive"}:
                 try:
                     candidates += [{**e, "_source": "archive"} for e in archive.shortlist(api, topic, used)]
                 except SourceUnavailable as error:
@@ -138,7 +153,7 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             fetcher = research.Fetcher()
             failures = []
             try:
-                for event in candidates:
+                for event in (candidates or []):
                     from_archive = event.get("_source") == "archive"
                     print("Olay araştırılıyor: " + event["title"], flush=True)
                     try:
@@ -316,11 +331,12 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         used_panels = {s["panel_id"] for s in script["shots"]}
         sources = sorted({p["source_url"] for p in inventory if p["id"] in used_panels})
         event = bundle["event"]
-        licence = (
-            "\nPages: public-domain Golden Age issue scanned on the Internet Archive."
-            if event.get("_source") == "archive" or settings.source == "archive"
-            else "\nPanels: official publisher previews and press coverage, used for commentary."
-        )
+        if event.get("_source") == "studio":
+            licence = "\nOriginal characters and artwork created for this channel."
+        elif event.get("_source") == "archive" or settings.source == "archive":
+            licence = "\nPages: public-domain Golden Age issue scanned on the Internet Archive."
+        else:
+            licence = "\nPanels: official publisher previews and press coverage, used for commentary."
         description = (
             script["description"]
             + f"\n\nComic: {event['series']} #{event['issue']} ({event['year']})"
@@ -367,6 +383,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         )
         if event.get("_source") == "archive" or settings.source == "archive":
             archive.remember_issue(event, manifest["run_id"])
+        if event.get("_source") == "studio":
+            forge.remember_episode(forge.load_universe() or {"heroes": [], "villains": []}, event, manifest["run_id"])
         extra = [c.strip() for c in str(settings.languages).split(",") if c.strip() and c.strip() != settings.language]
         localized = []
         for code in extra:
@@ -430,6 +448,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--refresh-stats", action="store_true")
+    parser.add_argument("--source", choices=["auto", "archive", "web", "studio", "mix"])
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])
@@ -458,7 +477,7 @@ def main(argv=None):
             publish_all(args.publish_run, args.platforms)
             return 0
         directory = generate(
-            Settings.load(target_seconds=args.duration, voice=args.voice),
+            Settings.load(target_seconds=args.duration, voice=args.voice, source=args.source),
             args.topic.strip(),
             args.resume_run,
             args.voice_test,
