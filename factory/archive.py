@@ -40,13 +40,16 @@ PAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".jp2", ".webp", ".gif", ".bmp", ".t
 PD_MARKERS = ("publicdomain", "public domain", "public-domain", "pdm", "cc0")
 # Words that mark a Golden Age superhero issue (public-domain heroes and generic hero titles).
 HERO_MARKERS = (
-    "superhero", "super hero", "super-hero", "hero", "heroes", "terror", "daredevil", "samson", "yank",
-    "flame", "beetle", "amazing man", "amazing-man", "wonder", "captain", "mask", "phantom", "atom",
-    "super", "exciting", "mystery men", "thrilling", "startling", "fantastic", "fighting", "stuntman",
-    "cat-man", "catman", "black owl", "green lama", "miss masque", "hangman", "silver streak",
-    "crimebuster", "lightning", "bulletman", "spy smasher", "ibis", "mr. scarlet", "minute-man",
-    "pyroman", "doll man", "blackhawk", "kid eternity", "airboy", "skyman", "boy commandos",
-    "liberty", "patriot", "invincible", "marvel", "magno", "blue bolt", "dynamic", "steel", "rocket",
+    "superhero", "super hero", "super-hero", "super-man", "superman", "hero", "heroes", "black terror",
+    "fighting yank", "daredevil", "samson", "the flame", "blue beetle", "amazing man", "amazing-man",
+    "wonder comics", "wonderman", "captain", "mystery men", "cat-man", "catman", "black owl", "green lama",
+    "miss masque", "hangman", "silver streak", "crimebuster", "bulletman", "spy smasher", "ibis",
+    "mr. scarlet", "minute-man", "pyroman", "doll man", "blackhawk", "kid eternity", "airboy", "skyman",
+    "liberty", "patriot", "invincible", "magno", "blue bolt", "dynamic man", "steel sterling",
+    "rocketman", "fantoman", "stuntman", "phantom lady", "lady luck", "the mask", "red mask",
+    "exciting comics", "startling comics", "thrilling comics", "fight comics", "big shot", "smash comics",
+    "crack comics", "hit comics", "prize comics", "pep comics", "zip comics", "top-notch", "blue ribbon",
+    "mystic comics", "speed comics", "champ comics", "green mask", "yellowjacket", "the owl", "boy heroes",
 )
 
 # Golden Age publishers that closed before 1964 and whose issues were, as a
