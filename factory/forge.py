@@ -27,6 +27,7 @@ from .api import FactoryError, ModelUnavailable, ProviderOverloaded, SourceUnava
 from .config import ROOT
 from .core import file_hash, language_name, save_json
 
+STYLE_PREFIX = "Comic book illustration, inked line art with bold black outlines, flat cel shading, halftone dots, printed comic page look."
 STYLE_GUIDE = (
     "modern mainstream superhero comic book art, bold confident ink lines, dynamic cinematic composition, "
     "dramatic lighting, rich saturated colors with subtle halftone texture, detailed backgrounds, "
@@ -134,6 +135,8 @@ def pollinations_image(prompt, seed, width=1024, height=1408, note=None):
             picture = Image.open(io.BytesIO(response.content)).convert("RGB")
             if picture.width < 256:
                 raise RuntimeError("tiny image")
+            # Anonymous renders carry a small logo strip at the bottom: crop it.
+            picture = picture.crop((0, 0, picture.width, int(picture.height * 0.93)))
             time.sleep(4)  # stay under the anonymous rate limit for the next panel
             return picture
         except Exception as error:  # noqa: BLE001
@@ -192,7 +195,7 @@ Names must be fresh (not a known hero/villain name). Keep visuals distinct from 
         if hero.get("sheet") and sheet.is_file():
             continue
         api.check()
-        prompt = (f"Character reference sheet of {hero['name']}: {hero['visual']}. Full body front view, three-quarter view and a close-up of the face, "
+        prompt = (f"{STYLE_PREFIX} Character reference sheet of {hero['name']}: {hero['visual']}. Full body front view, three-quarter view and a close-up of the face, "
                   f"neutral grey background. {universe['style']} {STYLE_GUIDE}")
         try:
             picture, provider = draw(api, prompt, [], seed=1000 + index, note=note)
@@ -281,7 +284,7 @@ def produce(api, universe, style, note=print):
         if not refs and hero.get("_image"):
             refs = [hero["_image"]]
         descriptions = "; ".join(f"{n}: {cast_lookup[n.casefold()]['visual']}" for n in names if n.casefold() in cast_lookup)
-        prompt = (f"Comic book panel. {shot['image']} Characters must match the reference images exactly. "
+        prompt = (f"{STYLE_PREFIX} {shot['image']} Characters must match the reference images exactly. "
                   f"Character designs: {descriptions}. {universe['style']} {STYLE_GUIDE}")
         picture, provider = draw(api, prompt, refs[:2], seed=number * 100 + index, note=note)
         identifier = f"panel_{index:03}"
