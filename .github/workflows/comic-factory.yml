@@ -16,6 +16,7 @@ name: Comic Factory Studio
         - create_and_publish
         - publish_preview
         - voice_test
+        - refresh_stats
       topic:
         description: Konu — boşsa çizgi roman tarihinden otomatik seçilir
         type: string
@@ -160,7 +161,9 @@ jobs:
         from pathlib import Path
         task=os.environ['TASK']
         args=[sys.executable,'-u','comic_factory.py']
-        if task=='publish_preview':
+        if task=='refresh_stats':
+            args+=['--refresh-stats']
+        elif task=='publish_preview':
             args+=['--publish-run','data/incoming']
         else:
             args+=['--topic',os.environ['TOPIC'],'--duration',os.environ['DURATION'],'--voice',os.environ['VOICE']]

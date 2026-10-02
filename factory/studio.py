@@ -429,6 +429,7 @@ def main(argv=None):
     load_dotenv(ROOT / ".env", override=False)
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--refresh-stats", action="store_true")
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])
@@ -443,6 +444,14 @@ def main(argv=None):
     try:
         if args.check:
             check_setup()
+            return 0
+        if args.refresh_stats:
+            rows = learning.refresh_stats()
+            with_retention = sum(1 for r in rows if (r.get("stats") or {}).get("average_view_percentage") is not None)
+            print(f"İstatistik güncellendi: {len(rows)} video, {with_retention} tanesinde retention var.")
+            for r in rows:
+                s = r.get("stats") or {}
+                print(f"- {r.get('video_id')}: {s.get('views')} izlenme, retention %{s.get('average_view_percentage')}, {r['profile'].get('title','')[:50]}")
             return 0
         if args.publish_run:
             emit_directory(args.publish_run)
