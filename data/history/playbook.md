@@ -2,10 +2,8 @@
 - Hook: Shocking threat question <= 6 words starting with the hero's full name.
 - Pacing: 25-32 shots total, targeting 110-130 seconds duration (~145-155 WPM).
 - Rhythm: 3-10 words per shot beat; maintain continuous forward momentum.
-- Visuals: One complete panel per shot; blue captions for hero dialogue, white for narrator.
 - Emphasis: Red for danger, green for reveals, cyan for turns; max 1 in 4 shots.
 - Title: Curiosity-driven, 45-65 characters, featuring the hero name and a specific antagonist.
-- Dialogue: Include at least two direct hero dialogue lines shown in blue captions.
 - Ending: Stop cold on the final visual consequence with zero outro or CTA.
 
 ## Fixed rules

@@ -304,3 +304,23 @@ class LearningTests(unittest.TestCase):
                 extras = learning.evolve(api, {})
                 self.assertIn("Hook", extras["playbook"])
                 self.assertIsNone(extras["experiment"])
+
+
+class LearningNumbersTests(unittest.TestCase):
+    def test_views_at_fixed_age_and_numeric_verdicts(self):
+        from factory import learning
+        history = [{"h": 6, "views": 10}, {"h": 30, "views": 100}]
+        self.assertEqual(learning.views_at(history, 24), 78)
+        self.assertIsNone(learning.views_at(history, 72))
+        rows = [
+            {"run_id": "1", "platform": "youtube", "profile": {}, "stats": {"views_per_hour": 1.0, "hours_live": 40}},
+            {"run_id": "2", "platform": "youtube", "profile": {}, "stats": {"views_per_hour": 1.2, "hours_live": 30}},
+            {"run_id": "3", "platform": "youtube", "profile": {}, "stats": {"views_per_hour": 0.9, "hours_live": 20}},
+            {"run_id": "4", "platform": "youtube", "profile": {}, "stats": {"views_per_hour": 5.0, "hours_live": 14}},
+            {"run_id": "5", "platform": "youtube", "profile": {}, "stats": {"views_per_hour": 0.2, "hours_live": 2}},
+        ]
+        experiments = [{"run_id": "4", "experiment": {"name": "x"}}, {"run_id": "5", "experiment": {"name": "y"}}]
+        self.assertTrue(learning.judge_experiments(rows, experiments))
+        self.assertEqual(experiments[0]["verdict"], "kept")
+        self.assertEqual(experiments[0]["judged_by"], "numbers")
+        self.assertNotIn("verdict", experiments[1])  # too young to judge
