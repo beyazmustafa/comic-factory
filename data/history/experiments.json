@@ -114,6 +114,16 @@
       "name": "ultra_short_beats",
       "change": "Cap every single shot's narration at a maximum of 4 words to maximize hyper-fast YouTube Shorts pacing.",
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
+    },
+    "verdict": "dropped"
+  },
+  {
+    "run_id": "36948788400",
+    "chosen_at": "2026-10-02T01:04:30+00:00",
+    "experiment": {
+      "name": "concise_hook",
+      "change": "Limit the hook question to a maximum of 6 words.",
+      "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     }
   }
 ]

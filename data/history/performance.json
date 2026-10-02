@@ -48,9 +48,9 @@
       "views": 1,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.5,
-      "views_per_hour": 0.29,
-      "fetched_at": "2026-10-02T00:50:15+00:00"
+      "hours_live": 3.7,
+      "views_per_hour": 0.27,
+      "fetched_at": "2026-10-02T01:01:41+00:00"
     }
   },
   {
@@ -99,12 +99,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 22,
+      "views": 28,
       "likes": 0,
       "comments": 0,
       "hours_live": 1.0,
-      "views_per_hour": 22.0,
-      "fetched_at": "2026-10-02T00:50:15+00:00"
+      "views_per_hour": 28.0,
+      "fetched_at": "2026-10-02T01:01:41+00:00"
     }
   },
   {
@@ -151,6 +151,59 @@
       "name": "ultra_short_beats",
       "change": "Cap every single shot's narration at a maximum of 4 words to maximize hyper-fast YouTube Shorts pacing.",
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
+    },
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 1.0,
+      "views_per_hour": 0.0,
+      "fetched_at": "2026-10-02T01:01:41+00:00"
+    }
+  },
+  {
+    "video_id": "OBuBbtKTq8Y",
+    "platform": "youtube",
+    "run_id": "36948788400",
+    "published_at": "2026-10-02T01:12:23+00:00",
+    "event": {
+      "title": "The Cosmic Crusader: Captain Science's 1951 Battle Against the Unknown",
+      "series": "Captain Science",
+      "issue": "4",
+      "year": 1951,
+      "publisher": "Youthful Magazines, Inc."
+    },
+    "profile": {
+      "shots": 17,
+      "words": 123,
+      "duration": 51.8,
+      "words_per_minute": 142,
+      "hook": "Captain Science faces death by sacrifice!",
+      "hook_words": 6,
+      "title": "Captain Science and the Temple of Klameth",
+      "title_length": 41,
+      "emphasis": {
+        "danger": 1,
+        "normal": 15,
+        "reveal": 1
+      }
+    },
+    "voice": "Christopher",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 95,
+        "scene_match": 98,
+        "delivery": 92.10526315789474,
+        "visual_readability": 90
+      },
+      "issues": [],
+      "summary": "The comic documentary is well-produced, with excellent synchronization between the script, visual panels, and narration. The pacing is steady, and the visual storytelling effectively conveys the narrative arc of Captain Science."
+    },
+    "experiment": {
+      "name": "concise_hook",
+      "change": "Limit the hook question to a maximum of 6 words.",
+      "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {}
   }

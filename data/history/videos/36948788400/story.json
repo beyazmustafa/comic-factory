@@ -1,0 +1,335 @@
+{
+  "title": "Captain Science and the Temple of Klameth",
+  "description": "Captain Science travels back to 10,000 B.C. to stop the evil Doctor Khartoum from unleashing a forgotten power.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "panel_012",
+      "narration": "Captain Science faces death by sacrifice!",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "panel_006",
+      "narration": "The villain Doctor Khartoum threatens our modern world.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "panel_006",
+      "narration": "He seeks a power more evil than death.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "panel_007",
+      "narration": "Captain Science tracks the monster on his viewscreen.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "panel_007",
+      "narration": "Khartoum performs a ritual in an ancient temple.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "panel_007",
+      "narration": "He prepares a victim for the god Klameth.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "panel_008",
+      "narration": "The robot brain demands a time-travel mission.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "panel_008",
+      "narration": "Captain Science and Rip prepare for the journey.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "panel_009",
+      "narration": "They arrive in the Gobi Desert, 10,000 B.C.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "push",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "panel_009",
+      "narration": "The temple of Klameth looms before them.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "panel_009",
+      "narration": "They learn of the impending sacrificial ceremony.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "panel_010",
+      "narration": "They must infiltrate the priesthood to survive.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "panel_011",
+      "narration": "Captain Science spots two unsuspecting priests.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "panel_011",
+      "narration": "He and Rip launch a daring ambush.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "panel_011",
+      "narration": "They quickly tie up their victims.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "panel_012",
+      "narration": "They join the procession into the temple.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "panel_012",
+      "narration": "Gongs and trumpets signal the ritual's start.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Captain Science faces death by sacrifice! The villain Doctor Khartoum threatens our modern world. He seeks a power more evil than death. Captain Science tracks the monster on his viewscreen. Khartoum performs a ritual in an ancient temple. He prepares a victim for the god Klameth. The robot brain demands a time-travel mission. Captain Science and Rip prepare for the journey. They arrive in the Gobi Desert, 10,000 B.C. The temple of Klameth looms before them. They learn of the impending sacrificial ceremony. They must infiltrate the priesthood to survive. Captain Science spots two unsuspecting priests. He and Rip launch a daring ambush. They quickly tie up their victims. They join the procession into the temple. Gongs and trumpets signal the ritual's start.",
+  "repaired_evidence": 0,
+  "skipped_shots": [
+    16,
+    19,
+    20,
+    21,
+    22
+  ],
+  "event": {
+    "identifier": "captain-science-4-images",
+    "title": "The Cosmic Crusader: Captain Science's 1951 Battle Against the Unknown",
+    "year": 1951,
+    "publisher": "Youthful Magazines, Inc.",
+    "description": "Captain Science No. 4",
+    "subjects": [
+      "Science Fiction",
+      "Comic Books"
+    ],
+    "public_domain_evidence": "inferred: publisher 'youthful' (closed before 1964, unrenewed Golden Age catalogue)",
+    "downloads": 121,
+    "imagecount": 0,
+    "url": "https://archive.org/details/captain-science-4-images",
+    "id": "ia_b62d6e7aabc71767",
+    "series": "Captain Science",
+    "issue": "4",
+    "summary": "A 1951 science fiction hero faces off against mysterious cosmic threats in this classic Golden Age comic.",
+    "universe": "Golden Age (public domain)",
+    "source_urls": [
+      "https://archive.org/details/captain-science-4-images"
+    ],
+    "selection_score": 72.0,
+    "_source": "archive"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [
+      {
+        "shot_id": "shot_000",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel clearly shows Captain Science and Rip being threatened with sacrifice to Klameth, matching the narration and evidence."
+      },
+      {
+        "shot_id": "shot_001",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel introduces Doctor Khartoum and his goal to take over the world, which is explicitly stated in the text."
+      },
+      {
+        "shot_id": "shot_002",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel text explicitly mentions Doctor Khartoum's goal to unleash a power more evil than death, supporting the narration."
+      },
+      {
+        "shot_id": "shot_003",
+        "match_score": 90,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Captain Science and his team viewing the temple of Klameth on a screen, supporting the narration about tracking the monster."
+      },
+      {
+        "shot_id": "shot_004",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Doctor Khartoum performing a ritual in the temple of Klameth, matching the narration and evidence."
+      },
+      {
+        "shot_id": "shot_005",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Doctor Khartoum in the temple of Klameth, and the text explicitly mentions he has set up headquarters there to prepare sacrifices."
+      },
+      {
+        "shot_id": "shot_006",
+        "match_score": 90,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Captain Science and Rip preparing for their mission based on the brain's instructions to travel back in time."
+      },
+      {
+        "shot_id": "shot_007",
+        "match_score": 90,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows Captain Science and Rip in their period-appropriate attire, ready to depart for the time-travel mission."
+      },
+      {
+        "shot_id": "shot_008",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel clearly depicts their arrival in 10,000 B.C. at the temple of Klameth, supported by the dialogue in the panel."
+      },
+      {
+        "shot_id": "shot_009",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The panel shows the exterior of the ancient temple of Klameth, which is the destination of their time-travel journey."
+      },
+      {
+        "shot_id": "shot_010",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately reflects the characters' discovery of the sacrificial ceremony at the Temple of Klameth, supported by the dialogue in the panel."
+      },
+      {
+        "shot_id": "shot_011",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration correctly identifies the characters' plan to infiltrate the priesthood, which is explicitly stated in the dialogue bubble."
+      },
+      {
+        "shot_id": "shot_012",
+        "match_score": 85,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration describes the characters spotting priests to target, which aligns with the action shown in the panel where they select their victims."
+      },
+      {
+        "shot_id": "shot_013",
+        "match_score": 90,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration describes the ambush, which is clearly depicted in the panel through the action sequences of the characters attacking the priests."
+      },
+      {
+        "shot_id": "shot_014",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes the aftermath of the ambush where they tie up the victims, supported by the caption text in the panel."
+      },
+      {
+        "shot_id": "shot_015",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration accurately describes the scene in the top panel where a procession is entering the temple, which is clearly visible in the provided image."
+      },
+      {
+        "shot_id": "shot_016",
+        "match_score": 95,
+        "supported": true,
+        "crop_ok": true,
+        "reason": "The narration directly references the 'brazen clangor of monstrous gongs and blaring trumpets' described in the text of the top panel, which sets the scene for the ritual."
+      }
+    ],
+    "failures": []
+  }
+}

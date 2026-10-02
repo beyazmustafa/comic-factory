@@ -1,6 +1,6 @@
-run_id: 36947897994  attempt: 1  event: workflow_dispatch
+run_id: 36948788400  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261002T005015236291Z/run.json
+--- data/runs/20261002T010140940976Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -36,43 +36,42 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36947897994",
-  "resumed_from": "36946159098",
+  "run_id": "36948788400",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "2a07e653f75f5634d7e80b189c0228346a6f0dbd6d08ee10a0cf77531c07ac78",
-  "metadata_sha256": "aa28095d0996d33b89008461321f50fb25b1e1c64f917bf1f0733a20d009431d",
-  "quality_sha256": "8316491c544eb04266ce43b84edd311cb61b2e36300dccf044ad5cb37c904936",
-  "api_calls": 46,
-  "duration": 76.89,
+  "video_sha256": "5612e18d2be79e9e12b17201c6f44372892184abbf7690eccc07f8e84cccf086",
+  "metadata_sha256": "9caec6287ed0056bf3b687c5b025a88e4349acb288764f0378d739a6630cafec",
+  "quality_sha256": "7a80c942d98923c2aafebfc3ad6090b464d01c4f9be8f3d9772ac7eb8ef687ba",
+  "api_calls": 73,
+  "duration": 51.81,
   "voice": "Christopher",
   "event": {
-    "identifier": "captain-science-1-images",
-    "title": "The Dawn of the Atomic Hero",
-    "year": 1950,
+    "identifier": "captain-science-4-images",
+    "title": "The Cosmic Crusader: Captain Science's 1951 Battle Against the Unknown",
+    "year": 1951,
     "publisher": "Youthful Magazines, Inc.",
-    "description": "Captain Science No. 1",
+    "description": "Captain Science No. 4",
     "subjects": [
       "Science Fiction",
       "Comic Books"
     ],
     "public_domain_evidence": "inferred: publisher 'youthful' (closed before 1964, unrenewed Golden Age catalogue)",
-    "downloads": 209,
+    "downloads": 121,
     "imagecount": 0,
-    "url": "https://archive.org/details/captain-science-1-images",
-    "id": "ia_31817d8dbead493a",
+    "url": "https://archive.org/details/captain-science-4-images",
+    "id": "ia_b62d6e7aabc71767",
     "series": "Captain Science",
-    "issue": "1",
-    "summary": "Bilimsel bir kahramanın uzaydaki gizemli maceraları ve dünyayı kurtarma çabası bekleniyor.",
+    "issue": "4",
+    "summary": "A 1951 science fiction hero faces off against mysterious cosmic threats in this classic Golden Age comic.",
     "universe": "Golden Age (public domain)",
     "source_urls": [
-      "https://archive.org/details/captain-science-1-images"
+      "https://archive.org/details/captain-science-4-images"
     ],
     "selection_score": 72.0,
     "_source": "archive"
   }
 }
---- data/runs/20261002T005015236291Z/diagnostics/provider_events.json
+--- data/runs/20261002T010140940976Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -86,10 +85,10 @@ produce step outcome: success
   "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
-  "Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak."
+  "Konu adayları: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261002T005015236291Z/diagnostics/providers.json
+--- data/runs/20261002T010140940976Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -111,9 +110,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_chain": [
@@ -142,70 +141,94 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261002T005015236291Z/voice_audition/failed_auditions.json
+--- data/runs/20261002T010140940976Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261002T005015236291Z/research/rejected_candidates.json
+--- data/runs/20261002T010140940976Z/research/rejected_candidates.json
 [
   {
     "event": {
-      "title": "Eddie Brock's Carnage Trauma",
+      "title": "Aunt May's Medical Crisis",
       "publisher": "Marvel Comics",
-      "series": "Venom",
-      "issue": "1",
+      "series": "Amazing Spider-Man",
+      "issue": "1000",
       "year": 2026,
       "universe": "Marvel Universe",
       "characters": [
-        "Eddie Brock",
-        "Venom"
+        "Spider-Man (Peter Parker)",
+        "Aunt May",
+        "Cormac Crane"
       ],
-      "summary": "Eddie Brock reunites with the Venom symbiote after a harrowing period where he was forced to host the serial killer symbiote Carnage, leading to a tense and dangerous reconciliation.",
+      "summary": "Spider-Man faces his greatest fear when Aunt May suffers a stroke, leading to a desperate medical situation involving a newly discovered cousin, Cormac Crane, and a neurovascular expert.",
       "importance": 95,
-      "popularity": 95,
-      "niche": 60,
+      "popularity": 90,
+      "niche": 80,
       "source_urls": [
-        "https://www.marvel.com/articles/comics/venom-1-preview-rekindles-eddie-brock-reunites-with-venom-symbiote"
+        "https://www.marvel.com/articles/comics/amazing-spider-man-1000-presents-the-biggest-issue-in-spider-history",
+        "https://bleedingcool.com/comics/amazing-spider-man-1000-preview-aunt-may-issues-loading/"
       ],
-      "id": "a352aba8ac07f00fb9d5",
-      "selection_score": 84.5,
+      "id": "95e498fed8576d934363",
+      "selection_score": 89.25,
       "_source": "web"
     },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 5 panel, 3 kanıt."
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
   },
   {
     "event": {
-      "title": "The Symbiote Bond of Comeback",
+      "title": "The Arrival of Ravage",
       "publisher": "Marvel Comics",
-      "series": "The Amazing Venom",
-      "issue": "1",
+      "series": "Amazing Spider-Man",
+      "issue": "1000",
       "year": 2026,
       "universe": "Marvel Universe",
       "characters": [
-        "Fred Myers",
-        "Passenger"
+        "Spider-Man (Peter Parker)",
+        "Ravage"
       ],
-      "summary": "Former villain Boomerang, now known as Comeback, finds himself bonded to a new symbiote named Passenger, thrusting him into the middle of a cosmic war between Hela and Knull.",
-      "importance": 85,
-      "popularity": 90,
+      "summary": "The debut of a mysterious and complex new villain named Ravage, whose history-shattering power forces Peter Parker to question his very legacy.",
+      "importance": 90,
+      "popularity": 85,
       "niche": 70,
       "source_urls": [
-        "https://comicbookclublive.com/2026/09/27/marvel-preview-the-amazing-venom-1/",
-        "https://www.flickeringmyth.com/comic-book-preview-the-amazing-venom-1/"
+        "https://www.marvel.com/articles/comics/amazing-spider-man-1000-presents-the-biggest-issue-in-spider-history"
       ],
-      "id": "ac7ab0062da1343fa00e",
-      "selection_score": 81.75,
+      "id": "95e498fed8576d934363",
+      "selection_score": 82.75,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
+  },
+  {
+    "event": {
+      "title": "Electro's Cleanup Sabotage",
+      "publisher": "Marvel Comics",
+      "series": "Amazing Spider-Man",
+      "issue": "34",
+      "year": 2026,
+      "universe": "Marvel Universe",
+      "characters": [
+        "Spider-Man (Peter Parker)",
+        "Electro",
+        "Damage Control"
+      ],
+      "summary": "During a routine Manhattan cleanup operation with the new Damage Control organization, Electro intervenes to short-circuit Spider-Man's plans, causing a major disruption.",
+      "importance": 85,
+      "popularity": 80,
+      "niche": 75,
+      "source_urls": [
+        "https://bleedingcool.com/comics/amazing-spider-man-34-preview-spideys-shocking-cleanup-crew/"
+      ],
+      "id": "802d8fd4f1a7be6b8245",
+      "selection_score": 80.75,
       "_source": "web"
     },
     "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
   }
 ]
---- data/runs/20261002T005015236291Z/diagnostics/panel_matches_1.json
+--- data/runs/20261002T010140940976Z/diagnostics/panel_matches_1.json
+{"passed": false, "failures": [{"shot_id": "shot_004", "reason": "The narration claims Captain Science is watching the horror on screen, but the provided crop is the splash page (page 1) which does not show the viewing screen scene; that scene is on page 2."}, {"shot_id": "shot_016", "reason": "The narration claims the characters blend into the procession, but the provided evidence and panel content show them being discovered as imposters."}]}
+--- data/runs/20261002T010140940976Z/diagnostics/panel_matches_2.json
 {"passed": true, "failures": []}
 --- studio.log (son 300 satır)
-Kayıtlı aşama kullanılıyor: story
-Kayıtlı aşama kullanılıyor: voice
-Kayıtlı aşama kullanılıyor: audio
-Kayıtlı aşama kullanılıyor: render
-Kayıtlı aşama kullanılıyor: quality
 
 → Sabit kurgu profili
 
@@ -224,30 +247,47 @@ Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda 
 Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Önceki çalışmanın senaryosu kullanılıyor.
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Konu adayları: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: Aunt May's Medical Crisis
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: The Arrival of Ravage
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: Electro's Cleanup Sabotage
+Bir arama kaynağı yanıt vermedi: DDGSException
+Bir arama kaynağı yanıt vermedi: DDGSException
+Olay araştırılıyor: The Cosmic Crusader: Captain Science's 1951 Battle Against the Unknown
 
 → Türkçe ses seçimi
 Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
-Kayıtlı aşama kullanılıyor: audio
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 92.1/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T005015236291Z/review.html
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T010140940976Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Captain Science: The Atomic Hero's Explosive Sacrifice #Shorts
+Başlık: Captain Science and the Temple of Klameth #Shorts
 Görünürlük: public
 
-Yükleme: %17
-Yükleme: %34
-Yükleme: %51
-Yükleme: %69
-Yükleme: %86
+Yükleme: %22
+Yükleme: %45
+Yükleme: %68
+Yükleme: %91
