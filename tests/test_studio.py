@@ -328,7 +328,7 @@ class AudioTests(TemporaryTest):
 
     def test_current_next_and_turkish_uppercase(self):
         path = render.captions(
-            timestamps("Thor şimdi geri döndü"), style(), self.root / "captions.ass"
+            timestamps("Thor şimdi geri döndü"), {**style(), "language": "tr"}, self.root / "captions.ass"
         )
         rows = [r for r in path.read_text().splitlines() if r.startswith("Dialogue")]
         self.assertEqual(len(rows), 4)

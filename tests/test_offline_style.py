@@ -45,7 +45,7 @@ class OfflineStyleTests(TemporaryTest):
     def test_colored_turkish_words_keep_audio_times(self):
         words = timestamps('Şimdi tehlike büyüdü')
         words[1]['emphasis'] = 'danger'
-        path = render.captions(words, load_style(), self.root / 'captions.ass')
+        path = render.captions(words, {**load_style(), 'language': 'tr'}, self.root / 'captions.ass')
         rows = [line for line in path.read_text(encoding='utf-8').splitlines() if line.startswith('Dialogue')]
         self.assertIn('ŞİMDİ', rows[0])
         self.assertNotIn('TEHLİKE', rows[0])
