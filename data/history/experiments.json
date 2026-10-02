@@ -134,6 +134,16 @@
       "name": "cliffhanger_penultimate_shot",
       "change": "The second-to-last shot must be a narrator question in white text, followed by a silent 2-second final panel showing the visual answer.",
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
+    },
+    "verdict": "dropped"
+  },
+  {
+    "run_id": "37003698509",
+    "chosen_at": "2026-10-02T11:57:11+00:00",
+    "experiment": {
+      "name": "hero_first_word_hook",
+      "change": "Start the hook question with the superhero's full name as the first two words.",
+      "rationale": "Leading immediately with a recognizable hero name increases instant viewer familiarity and retention."
     }
   }
 ]

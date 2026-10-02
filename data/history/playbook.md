@@ -1,12 +1,10 @@
 # Playbook (auto-evolving)
-- Hook: <= 6 words, start with a direct question about the threat.
-- Rhythm: 3-10 word beats, one idea per shot, average shot 3-5s.
-- Panels: Lead with the most dramatic panel; faces and speech balloons must stay inside the crop.
-- Emphasis: Red for danger, green for reveals, cyan for turns; exactly 1 in 4 shots.
-- Ending: Stop on the strongest image and consequence; no outro, no call to action.
-- Title: Curiosity-driven, 45-70 characters, names the hero or villain, never a lie.
-- Captions: Use color-coded captions (Hero dialogue in blue, narrator in white).
-- Transitions: End the penultimate shot with a question answered by the final image.
+- Hook: Direct question about threat, <= 6 words, starting immediately with hero/villain name.
+- Rhythm: 3-10 word beats, 18-35 shots, targeting ~120 seconds duration.
+- Visuals: One complete panel per shot; blue captions for hero dialogue, white for narrator.
+- Emphasis: Red for danger, green for reveals, cyan for turns; max 1 in 4 shots.
+- Title: Curiosity-driven, 45-70 characters, names hero or villain.
+- Ending: Stop on strongest visual consequence with no call to action or outro.
 
 ## Fixed rules
 - Superheroes only: pick the issue whose lead hero has the single most shocking moment; crime/horror issues are a last resort.

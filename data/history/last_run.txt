@@ -1,11 +1,11 @@
-run_id: 36950541594  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261002T012222469337Z/run.json
+run_id: 37003698509  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261002T115617207298Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Konuşma ve kelime zamanları",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -36,62 +36,28 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "36950541594",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "6dc7e3fd32216682fff13d7536f9353cdb457edb982f2ad21fdc85f11ec48e15",
-  "metadata_sha256": "b65b0085b8ec4715597350eaabed8dbff8baaf5447ca9f2ee40afde82d837752",
-  "quality_sha256": "b03f3fc609eff666adf73fafe5ce303839f1c1180d9c94c18fecc4f087845c26",
-  "api_calls": 89,
-  "duration": 64.82,
-  "voice": "Christopher",
-  "event": {
-    "identifier": "Captain_Hadacol_2_circa_1951",
-    "title": "The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero",
-    "year": 1951,
-    "publisher": "Creative Credit: Dudley \"Coozan Dud\" Joseph LeBlanc, Sr. (Youngsville, Louisiana, 16 August 1894 - 22 October 1971, Abbeville General Hospital, Abbeville, Louisiana)",
-    "description": "Captain Hadacol, Comic Book Number 2 (Lafayette, Louisiana: LeBlanc Corporation, circa 1951). This comic book was issued as a promotional item for Hadacol, the tonic that Dudley \"Coozan Dud\" Joseph LeBlanc, Sr. (Youngsville, Louisiana, 16 August 1894 - 22 October 1971, Abbeville General Hospital, Abbeville, Louisiana) invented, manufactured, and sold as a kind of panacea for the aches and pains of adults and children. Although this booklet was issued as \"Comic Book Number 2,\" it is not yet perfectly obvious, as of 2016, that a \"Comic Book Number 1\" of \"Captain Hadacol\" had ever been issued.",
-    "subjects": [
-      "Hadacol",
-      "Louisiana",
-      "LeBlanc",
-      "Patent Medicine"
-    ],
-    "public_domain_evidence": "declared licenseurl: http://creativecommons.org/publicdomain/mark/1.0/",
-    "downloads": 449,
-    "imagecount": 0,
-    "url": "https://archive.org/details/Captain_Hadacol_2_circa_1951",
-    "id": "ia_882845b38257ade6",
-    "series": "Captain Hadacol",
-    "issue": "?",
-    "summary": "Bu 1951 tarihli tanıtım kitabı, Hadacol tonikini savunan kostümlü bir kahramanın maceralarını sunuyor.",
-    "universe": "Golden Age (public domain)",
-    "source_urls": [
-      "https://archive.org/details/Captain_Hadacol_2_circa_1951"
-    ],
-    "selection_score": 62.0,
-    "_source": "archive"
-  }
+  "run_id": "37003698509",
+  "error": "FactoryError: API deneme sınırına ulaşıldı; başarılı aşamalar saklandı.",
+  "api_calls": 120
 }
---- data/runs/20261002T012222469337Z/diagnostics/provider_events.json
+--- data/runs/20261002T115617207298Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Konu adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu adayları: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
+  "Gerçek sayfa ve paneller: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Ses karşılaştırması yapılamadı (API deneme sınırına ulaşıldı; başarılı aşamalar saklandı.); eşleşme puanına göre seçildi."
 ]
---- data/runs/20261002T012222469337Z/diagnostics/providers.json
+--- data/runs/20261002T115617207298Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -113,8 +79,8 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b"
   ],
   "errors": [],
@@ -144,89 +110,95 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261002T012222469337Z/voice_audition/failed_auditions.json
+--- data/runs/20261002T115617207298Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261002T012222469337Z/research/rejected_candidates.json
+--- data/runs/20261002T115617207298Z/research/rejected_candidates.json
 [
   {
     "event": {
-      "title": "The Brainwashing of Frank Castle",
-      "publisher": "Marvel Comics",
-      "series": "Marvel Knights: Punisher",
-      "issue": "2",
-      "year": 2025,
-      "universe": "Marvel Knights: The World to Come",
+      "title": "İsa'nın Ghost Rider'ı Şeytan'dan Kurtarması",
+      "publisher": "Marvel",
+      "series": "Ghost Rider",
+      "issue": "9",
+      "year": 1974,
+      "universe": "Marvel Universe",
       "characters": [
-        "Frank Castle",
-        "Armando Molerro",
-        "El Zombie"
+        "Johnny Blaze",
+        "Ghost Rider",
+        "Roxanne Simpson",
+        "Satan"
       ],
-      "summary": "Frank Castle is captured and brainwashed by crimelord Armando Molerro to become a mindless enforcer known as 'El Zombie,' losing his autonomy to serve his enemy.",
-      "importance": 95,
-      "popularity": 90,
-      "niche": 85,
-      "source_urls": [
-        "https://www.cbr.com/punisher-marvel-knights-exclusive-preview/"
-      ],
-      "id": "80bf040d8fb6b9e2ee33",
-      "selection_score": 90.75,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 1 kanıt."
-  },
-  {
-    "event": {
-      "title": "Superboy-Prime's Continuity Crisis",
-      "publisher": "DC Comics",
-      "series": "Superman",
-      "issue": "39",
-      "year": 2026,
-      "universe": "DC Universe",
-      "characters": [
-        "Superboy-Prime"
-      ],
-      "summary": "Superboy-Prime is banished by a classic Superman villain into a meta-textual nightmare, forced to navigate through past events, lost reboots, and restarts in a desperate attempt to return to Metropolis.",
-      "importance": 92,
-      "popularity": 88,
-      "niche": 80,
-      "source_urls": [
-        "https://bleedingcool.com/comics/superman-39-preview-superboy-primes-continuity-crisis/"
-      ],
-      "id": "6dfc632de19c6790c2a3",
-      "selection_score": 87.4,
-      "_source": "web"
-    },
-    "error": "Yeterli doğrulanmış panel/kanıt yok: 1 panel, 1 kanıt."
-  },
-  {
-    "event": {
-      "title": "Superboy's Makeshift Armor Battle",
-      "publisher": "DC Comics",
-      "series": "Action Comics",
-      "issue": "1100",
-      "year": 2026,
-      "universe": "DC Universe",
-      "characters": [
-        "Superboy",
-        "Epoch"
-      ],
-      "summary": "Young Superboy, struggling with drained super-energy, constructs makeshift armor from the invulnerable ship that brought him to Earth to battle the time-traveling villain Epoch in Solar City.",
+      "summary": "Satan, Roxanne Simpson'ı kandırarak Johnny Blaze üzerindeki korumasından vazgeçmesini sağlar ve Johnny'nin ruhunu cehenneme sürüklemek üzeredir. Ancak hikayenin kırılma noktasında 'Dost' olarak adlandırılan İsa ortaya çıkar ve Şeytan'ın Ghost Rider üzerindeki tüm gücünü ve hakkını yok ederek onu mucizevi bir şekilde kurtarır.",
       "importance": 85,
-      "popularity": 85,
-      "niche": 75,
+      "popularity": 75,
+      "niche": 90,
       "source_urls": [
-        "https://bleedingcool.com/comics/action-comics-1100-preview-supermans-landmark-1100th-issue/"
+        "https://50yearoldcomics.com/2026/05/09/ghost-rider-19-august-1976/"
       ],
-      "id": "df888ea03fe6d5012b5c",
-      "selection_score": 82.0,
+      "id": "cf11e8519b2f575898c8",
+      "selection_score": 84.0,
+      "_source": "web"
+    },
+    "error": "Anlatım ile gerçek paneller yeterli kesinlikte eşleşmedi; raporlar kaydedildi."
+  },
+  {
+    "event": {
+      "title": "The Hood'un Yeni Ghost Rider Olarak Chicago'yu Ele Geçirmesi",
+      "publisher": "Marvel",
+      "series": "Ghost Rider: Final Vengeance",
+      "issue": "1",
+      "year": 2024,
+      "universe": "Marvel Universe",
+      "characters": [
+        "Johnny Blaze",
+        "The Hood",
+        "Ghost Rider"
+      ],
+      "summary": "İntikam Ruhu'nun kahramanlık yapmak için tasarlanmadığını anlayan iblis, Johnny Blaze'i terk eder. İntikam Ruhu, suç patronu The Hood ile birleşerek onu korkunç yeni bir Ghost Rider'a dönüştürür ve Chicago alt dünyasında kanlı bir krallık kurmasına yol açar.",
+      "importance": 80,
+      "popularity": 85,
+      "niche": 55,
+      "source_urls": [
+        "https://www.marvel.com/comics/issue/112132/ghost_rider_final_vengeance_2024_1",
+        "https://comicpreviews.com/series/ghost-rider-final-vengeance-2024"
+      ],
+      "id": "ccc335ed040722fced2c",
+      "selection_score": 73.75,
       "_source": "web"
     },
     "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 0 kanıt."
   },
   {
     "event": {
+      "title": "Punisher'ın Zihni Yıkanarak 'El Zombie'ye Dönüştürülmesi",
+      "publisher": "Marvel",
+      "series": "Marvel Knights: Punisher",
+      "issue": "2",
+      "year": 2025,
+      "universe": "Marvel Universe",
+      "characters": [
+        "Frank Castle",
+        "Punisher",
+        "Armando Molerro",
+        "El Zombie"
+      ],
+      "summary": "Suç lideri Armando Molerro ve tetikçisi El Zombie ile savaştıktan sonra esir düşen Frank Castle, ağır zihin yıkama işkencelerine maruz kalır. Punisher kendi kimliğini tamamen kaybederek düşmanının emrinde acımasız ve zombileştirilmiş yeni bir tetikçiye dönüştürülür.",
+      "importance": 70,
+      "popularity": 80,
+      "niche": 65,
+      "source_urls": [
+        "https://www.cbr.com/punisher-marvel-knights-exclusive-preview/"
+      ],
+      "id": "0ebabf17fe0c67ebbb79",
+      "selection_score": 71.0,
+      "_source": "web"
+    },
+    "error": "Yeterli doğrulanmış panel/kanıt yok: 0 panel, 3 kanıt."
+  },
+  {
+    "event": {
       "identifier": "GeneralElectricCompanyAdventuresInsideTheAtom1948",
-      "title": "Atomic Energy Awakens: The 1948 Comic That Showcases a Radiant Hero",
+      "title": "The Shocking 1948 Comic That Taught Atomic Power to Children",
       "year": 1948,
       "publisher": "General Electric Company",
       "description": "1948 comic book about atomic energy. ARC Identifier 281568",
@@ -242,27 +214,15 @@ produce step outcome: success
       "imagecount": 16,
       "url": "https://archive.org/details/GeneralElectricCompanyAdventuresInsideTheAtom1948",
       "id": "ia_1f6391ae82f5f875",
-      "series": "Adventures Inside The Atom",
-      "issue": "?",
-      "summary": "Bu 1948 tarihli komik, atom enerjisinin gücünü keşfeden bir süper kahramanın macerasını anlatıyor.",
-      "universe": "Golden Age (public domain)",
-      "source_urls": [
-        "https://archive.org/details/GeneralElectricCompanyAdventuresInsideTheAtom1948"
-      ],
-      "selection_score": 80.0,
-      "_source": "archive"
-    },
-    "error": "Sayıda art arda yeterli panelli hikâye sayfası bulunamadı (0)."
-  }
-]
---- data/runs/20261002T012222469337Z/diagnostics/panel_matches_1.json
-{"passed": false, "failures": [{"shot_id": "shot_003", "reason": "While the image shows a man putting papers in a desk, the provided evidence discusses Red's suspicions about a gang, which does not support the claim that the map is being hidden for safekeeping."}, {"shot_id": "shot_009", "reason": "While the characters are on the trail, the specific action of spotting a broken horseshoe is not visible in this panel; it is mentioned in a different panel on the same page."}, {"shot_id": "shot_015", "reason": "The narration describes the entrance caving in, but the panel displays the aftermath text about the timbers sealing everyone in."}, {"shot_id": "shot_017", "reason": "The narration matches the visual action of the hero emerging into daylight, but the provided evidence is irrelevant to this specific panel."}, {"shot_id": "shot_019", "reason": "The narration discusses a reward for the gang, but the panel shows a family and an old man discussing treasure, which is a different scene."}]}
---- data/runs/20261002T012222469337Z/diagnostics/panel_matches_2.json
-{"passed": false, "failures": [{"shot_id": "shot_016", "reason": "The narration describes a fight, but the visual is a caption box describing a structural collapse."}, {"shot_id": "shot_020", "reason": "The panel shows Captain Hadacol emerging from a hole, not drinking or finding a way out of a situation involving the gang's capture."}, {"shot_id": "shot_022", "reason": "The panel shows characters discussing the missing treasure, not the reward for the gang."}]}
---- data/runs/20261002T012222469337Z/diagnostics/panel_matches_3.json
-{"passed": false, "failures": [{"shot_id": "shot_010", "reason": "The narration claims Red and his sister decide to track them down, but the provided crop shows them identifying a broken horseshoe, which is a different narrative beat than the decision to track."}, {"shot_id": "shot_019", "reason": "The narration claims a fight breaks out, but the panel is a caption box describing the collapse of the mine, not a depiction of a fight."}, {"shot_id": "shot_025", "reason": "The narration claims the sheriff is collecting a reward, but the visual shows characters discussing the fact that they have not yet found the treasure."}, {"shot_id": "shot_026", "reason": "The visual correctly identifies the location (3-prong cactus and twin rocks) mentioned in the evidence, but the narration does not accurately describe the action occurring in the panel."}, {"shot_id": "shot_027", "reason": "The narration asks where the gold is hidden, but the visual clearly shows the characters having already found the gold in a bag."}]}
---- data/runs/20261002T012222469337Z/diagnostics/panel_matches_4.json
-{"passed": false, "failures": [{"shot_id": "shot_006", "reason": "The evidence provided (about a gang being turned over to the sheriff) is irrelevant to the action of John being attacked in the panel."}, {"shot_id": "shot_017", "reason": "The narration claims a fight breaks out, but the provided evidence is a text box describing a collapse; no fight is visible in this panel."}, {"shot_id": "shot_020", "reason": "The narration claims Captain Hadacol needs tonic to survive, but the panel shows him drinking it and saying 'This calls for more Hadacol--quick!', which is a call to action rather than a survival necessity."}, {"shot_id": "shot_021", "reason": "The narration claims he bursts through a cave wall, but the panel shows him emerging into daylight, and the evidence provided does not support this specific action."}, {"shot_id": "shot_025", "reason": "The narration describes the act of spotting the landmarks, but the image shows the characters already in possession of the gold, making the narration inconsistent with the visual action."}, {"shot_id": "shot_026", "reason": "The narration poses a question about the location of the gold, while the image shows the characters having already found it, failing to describe the visual content."}]}
+      "series": "Adventures Inside The Ato
+--- data/runs/20261002T115617207298Z/diagnostics/panel_matches_1.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The narration describes Tex Ritter tied to a log near a saw, but the image is a masthead/indicia showing publication credits and a list of other comic titles. The visual evidence does not match the narration at all."}, {"shot_id": "shot_006", "reason": "The image clearly depicts the mountain lion lunging and tackling the character to the ground as described."}, {"shot_id": "shot_008", "reason": "The narration matches the visual of the character firing a shot to finish the animal, though the 'second weapon' detail is inferred from the previous jam."}, {"shot_id": "shot_010", "reason": "The narration accurately reflects the dialogue about blood loss and being led by the boy, though the family name is not in this specific panel."}, {"shot_id": "shot_011", "reason": "The panel explicitly mentions the Martinez family and the 'about a week' recovery timeline."}, {"shot_id": "shot_013", "reason": "The text confirms the claim office has no record of the deed, though the office itself is not shown empty."}, {"shot_id": "shot_014", "reason": "The panel shows Farrel threatening the protagonist to stop being curious and leave."}, {"shot_id": "shot_020", "reason": "The image shows Tex tied to a sawmill platform with a buzz saw nearby, matching the narration's setting."}, {"shot_id": "shot_021", "reason": "The dialogue bubble explicitly mentions throwing the Martinez family out, supporting the narration's claim."}, {"shot_id": "shot_022", "reason": "The close-up shows the saw blade near Tex's bound hands, visually supporting the proximity described."}, {"shot_id": "shot_023", "reason": "Tex's dialogue confirms his intent to use the blade to cut the ropes, aligning with the narration."}, {"shot_id": "shot_024", "reason": "The image depicts Tex leaping away from the saw with cut ropes visible, matching the escape described."}]}
+--- data/runs/20261002T115617207298Z/diagnostics/panel_matches_2.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The narration describes Tex Ritter tied to a log moving toward a saw blade, but the provided image is just a masthead/indicia for 'Western Hero' magazine. The visual evidence does not support the narration."}, {"shot_id": "shot_006", "reason": "The image depicts the lion on top of Tex in a struggle, supporting the narration of a tackle and mauling."}, {"shot_id": "shot_008", "reason": "The panel shows Tex firing a gun with a 'BANG' and dialogue about finishing the beast, though the 'second weapon' aspect is inferred."}, {"shot_id": "shot_010", "reason": "Tex slumps weakly on White Flash while mentioning blood loss in the balloon, fully matching the description."}, {"shot_id": "shot_011", "reason": "The doctor notes Tex will recover in a week while being tended to by the Martinez family."}, {"shot_id": "shot_012", "reason": "Dialogue explicitly states Blackie Farrel claims and is attempting to take their generational property."}, {"shot_id": "shot_013", "reason": "The speech bubble describes the deed issue and lack of records at the claim office."}, {"shot_id": "shot_014", "reason": "Blackie Farrel confronts Tex and warns him against snooping around the area."}]}
+--- data/runs/20261002T115617207298Z/diagnostics/panel_matches_3.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The image provided for shot_000 is a masthead/credits page, not a panel showing Tex Ritter strapped to a buzz saw."}, {"shot_id": "shot_015", "reason": "The narration describes a gunfight and disarming a thug, but the provided evidence only discusses Tex's plan to search an office."}, {"shot_id": "shot_019", "reason": "The narration describes an ambush and knockout, but the provided evidence only discusses Farrel's intent to search the house, failing to support the specific action shown."}]}
+--- data/runs/20261002T115617207298Z/diagnostics/panel_matches_4.json
+{"passed": false, "failures": [{"shot_id": "shot_000", "reason": "The image shows a list of Fawcett publications, not Tex Ritter or a buzz saw. The evidence provided does not match the visual content."}, {"shot_id": "shot_014", "reason": "While the panel shows the protagonist being carried away, there is no visual evidence of an 'ice house' or a 'mechanical saw' as claimed in the narration."}, {"shot_id": "shot_019", "reason": "The image clearly shows the shootout and disarming of outlaws, but the provided evidence text is unrelated to this specific action."}, {"shot_id": "shot_021", "reason": "The narration describes the outcome of the scene; while the panel shows the discovery of the deed, the dialogue implies the resolution of the family's home ownership."}]}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -271,56 +231,34 @@ produce step outcome: success
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Konu adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Konu adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Konu adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Konu adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Konu adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Konu adayları: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-Arşiv sayı adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Olay araştırılıyor: The Brainwashing of Frank Castle
-Olay araştırılıyor: Superboy-Prime's Continuity Crisis
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Superboy's Makeshift Armor Battle
+Olay araştırılıyor: İsa'nın Ghost Rider'ı Şeytan'dan Kurtarması
+Gerçek sayfa ve paneller: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: The Hood'un Yeni Ghost Rider Olarak Chicago'yu Ele Geçirmesi
+Olay araştırılıyor: Punisher'ın Zihni Yıkanarak 'El Zombie'ye Dönüştürülmesi
 Bir arama kaynağı yanıt vermedi: DDGSException
-Olay araştırılıyor: Atomic Energy Awakens: The 1948 Comic That Showcases a Radiant Hero
-Olay araştırılıyor: The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero
-Denetimi geçemeyen 6 sahne çıkarıldı; 21 sahne kaldı.
+Olay araştırılıyor: The Shocking 1948 Comic That Taught Atomic Power to Children
+Olay araştırılıyor: Uncovering the Uncensored Horrors of Beware Terror Tales #7
+Olay araştırılıyor: Golden Age Vigilante Justice in Western Hero #105
+Cümle-panel eşleşmesi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Cümle-panel eşleşmesi: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Denetimi geçemeyen 4 sahne çıkarıldı; 19 sahne kaldı.
 
 → Türkçe ses seçimi
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses karşılaştırması yapılamadı (API deneme sınırına ulaşıldı; başarılı aşamalar saklandı.); eşleşme puanına göre seçildi.
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.3/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.1/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T012222469337Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: The Tonic Crusader: How Captain Hadacol Became a 1950s Superhero #Shorts
-Görünürlük: public
-
-Yükleme: %31
-Yükleme: %63
-Yükleme: %94
+HATA: API deneme sınırına ulaşıldı; başarılı aşamalar saklandı.
