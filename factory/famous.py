@@ -310,6 +310,7 @@ def collect_images(api, event, fetcher, maximum):
         except Exception:
             continue
     save_json(root / "pages.json", pages)
+    print(f"Görsel arama: {len(rows)} sonuç, {len(pages)} indirildi.", flush=True)
     if len(pages) < 4:
         raise SourceUnavailable("Bu olay için yeterli görsel bulunamadı.")
     return pages
@@ -318,6 +319,7 @@ def collect_images(api, event, fetcher, maximum):
 def judge_images(api, event, pages):
     """Keep drawn comic art that depicts this storyline's characters."""
     kept = []
+    tally = {"pages": len(pages), "no_row": 0, "not_comic": 0, "text_heavy": 0, "low_relevance": 0, "kept": 0}
     for offset in range(0, len(pages), 6):
         batch = pages[offset:offset + 6]
         api.check()
@@ -343,16 +345,31 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
         for page in batch:
             row = by_id.get(page["id"])
             if not row:
+                tally["no_row"] += 1
                 continue
             try:
                 relevance = float(row.get("relevance", 0))
             except (TypeError, ValueError):
                 relevance = 0
-            if row.get("is_comic_art") is True and not row.get("text_heavy") and relevance >= 55:
+            comic = row.get("is_comic_art")
+            comic = comic is True or str(comic).casefold() == "true"
+            heavy = row.get("text_heavy")
+            heavy = heavy is True or str(heavy).casefold() == "true"
+            if not comic:
+                tally["not_comic"] += 1
+            elif heavy:
+                tally["text_heavy"] += 1
+            elif relevance < 55:
+                tally["low_relevance"] += 1
+            else:
+                tally["kept"] += 1
                 kind = str(row.get("kind", "interior")).casefold()
                 kept.append({**page, "relevance": relevance, "description": clean(row.get("description")),
                              "kind": kind if kind in {"interior", "cover", "promo"} else "interior",
                              "characters": [str(c) for c in row.get("characters", []) if isinstance(c, str)]})
+    print(f"Görsel eleme: {json.dumps(tally)}", flush=True)
+    save_json(api.directory / "events" / event["id"] / "image_judgement.json", {"tally": tally, "kept": [p["id"] for p in kept]})
+    judge_images.last_tally = tally
     # Story pages first; a cover makes a fine opening or closing image but a
     # video made of six covers looks like an advert.
     kept.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
@@ -448,7 +465,7 @@ def collect(api, event, fetcher):
     pages = collect_images(api, event, fetcher, max(30, api.settings.max_pages + 14))
     judged = judge_images(api, event, pages)
     if len(judged) < 5:
-        raise SourceUnavailable(f"Olayla ilgili yeterli çizgi roman görseli bulunamadı ({len(judged)}).")
+        raise SourceUnavailable(f"Olayla ilgili yeterli çizgi roman görseli bulunamadı ({len(judged)}); eleme {json.dumps(getattr(judge_images, 'last_tally', {}))}.")
     inventory = describe_panels(api, cut_panels(api, event, judged[:22]))
     if len(inventory) < 6:
         raise SourceUnavailable("Yeterli panel kesilemedi.")
