@@ -327,8 +327,8 @@ def judge_images(api, event, pages):
             data = api.json(
                 "Görsel uygunluğu",
                 f"""These images were found by searching for the comic storyline {json.dumps({k: event[k] for k in ('title', 'series', 'issue', 'year', 'publisher', 'characters', 'artist', 'famous_line')}, ensure_ascii=False)}.
-For each image decide: is_comic_art (true only for hand-drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, 3D renders, AI-generated looking paintings, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), relevance 0..100: 90+ = the famous scene itself; 75..89 = clearly from this storyline or its era/artist style (costumes, art style, supporting cast of that story); 55..74 = the same characters but modern or unrelated art; below 55 = other. text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
-Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
+For each image decide: is_comic_art (true only for hand-drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, 3D renders, AI-generated looking paintings, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), finished (true only for final inked AND coloured art as printed; false for pencil sketches, rough layouts, uncoloured line art, concept art, sketch covers), relevance 0..100: 90+ = the famous scene itself; 75..89 = clearly from this storyline or its era/artist style (costumes, art style, supporting cast of that story); 55..74 = the same characters but modern or unrelated art; below 55 = other. text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
+Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","finished":true,"relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="images",
             )
@@ -358,8 +358,12 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
                                         "rel": row.get("relevance"), "desc": clean(row.get("description"))[:70]})
             heavy = row.get("text_heavy")
             heavy = heavy is True or str(heavy).casefold() == "true"
+            finished = row.get("finished", True)
+            finished = finished is True or str(finished).casefold() == "true"
             if not comic:
                 tally["not_comic"] += 1
+            elif not finished:
+                tally["sketch"] = tally.get("sketch", 0) + 1
             elif heavy:
                 tally["text_heavy"] += 1
             elif relevance < 55:
@@ -398,10 +402,15 @@ def cut_panels(api, event, pages):
         with Image.open(api.directory / page["file"]) as source:
             picture = source.convert("RGB")
         boxes = segment_page(picture)
+        ratio = picture.width / picture.height
         if len(boxes) >= 3:
             crops = boxes[:6]
         elif page.get("kind") == "cover":
             crops = [[0, 0.16, 1, 0.97]]  # drop the logo strip and the barcode edge
+        elif page.get("kind") == "interior" and ratio < 0.75:
+            # A full story page whose gutters could not be detected: three
+            # tiers are far more watchable than a whole page shrunk to a stamp.
+            crops = [[0, 0.02, 1, 0.36], [0, 0.33, 1, 0.68], [0, 0.65, 1, 0.98]]
         else:
             crops = [[0, 0, 1, 1]]
         for order, box in enumerate(crops):
