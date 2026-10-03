@@ -1,0 +1,301 @@
+{
+  "script": {
+    "title": "How Daredevil Lost Everything to the Kingpin",
+    "description": "The dramatic downfall and redemption of Matt Murdock in Born Again.",
+    "hook_card": "DAREDEVIL DUMPED IN RIVER",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_034_p02",
+        "narration": "DAREDEVIL GETS BRUTALLY BEATEN AND THROWN INTO THE RIVER BY THE KINGPIN.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_004_p00",
+        "narration": "Karen Page trades his secret identity for a quick heroin fix.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_052_p01",
+        "narration": "Wilson Fisk uses his vast criminal influence to freeze bank accounts.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_006_p00",
+        "narration": "Matt Murdock loses his apartment to sudden, brutal foreclosure notices.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_027_p03",
+        "narration": "Foggy Nelson saves him from prison, but leaves him permanently disbarred.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_043_p00",
+        "narration": "THEN THE KINGPIN ORDERS A MASSIVE FIREBOMBING ON MATT'S HOME.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_049_p00",
+        "narration": "Driven by pure rage, Murdock confronts the crime lord directly.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_005_p00",
+        "narration": "The beaten hero wakes up in a dingy boxing gym.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_013_p00",
+        "narration": "Sister Maggie secretly nurses her long-lost son back to health.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_027_p00",
+        "narration": "Police lieutenant Manolis confesses the entire frame-up to reporters.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_027_p01",
+        "narration": "TRAGICALLY, KINGPIN ENFORCERS SILENCE HIM BEFORE HE CAN ESCAPE.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "left",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_027_p02",
+        "narration": "Meanwhile, a desperate Karen returns to New York seeking help.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_034_p01",
+        "narration": "The Kingpin unleashes a deranged fake Daredevil to hunt Foggy.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_028_p00",
+        "narration": "Matt swiftly defeats the impostor and rescues a weeping Karen.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_052_p00",
+        "narration": "She breaks down, finally confessing to leaking his secret.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_053_p00",
+        "narration": "Instead of anger, Matt offers complete and unconditional forgiveness.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_048_p00",
+        "narration": "They move into a derelict apartment to start over.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_048_p01",
+        "narration": "Matt works as a diner chef while she fights withdrawal.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_034_p03",
+        "narration": "Furious at his failure, the Kingpin sends out super-soldier Nuke.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_034_p04",
+        "narration": "NUKE LAUNCHES A DEVASTATING MILITARY ASSAULT ON HELL'S KITCHEN.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "page_012_p00",
+        "narration": "The brutal siege leaves the neighborhood in utter ruins.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "page_016_p00",
+        "narration": "The Man Without Fear rises from the ashes once more.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "DAREDEVIL GETS BRUTALLY BEATEN AND THROWN INTO THE RIVER BY THE KINGPIN. Karen Page trades his secret identity for a quick heroin fix. Wilson Fisk uses his vast criminal influence to freeze bank accounts. Matt Murdock loses his apartment to sudden, brutal foreclosure notices. Foggy Nelson saves him from prison, but leaves him permanently disbarred. THEN THE KINGPIN ORDERS A MASSIVE FIREBOMBING ON MATT'S HOME. Driven by pure rage, Murdock confronts the crime lord directly. The beaten hero wakes up in a dingy boxing gym. Sister Maggie secretly nurses her long-lost son back to health. Police lieutenant Manolis confesses the entire frame-up to reporters. TRAGICALLY, KINGPIN ENFORCERS SILENCE HIM BEFORE HE CAN ESCAPE. Meanwhile, a desperate Karen returns to New York seeking help. The Kingpin unleashes a deranged fake Daredevil to hunt Foggy. Matt swiftly defeats the impostor and rescues a weeping Karen. She breaks down, finally confessing to leaking his secret. Instead of anger, Matt offers complete and unconditional forgiveness. They move into a derelict apartment to start over. Matt works as a diner chef while she fights withdrawal. Furious at his failure, the Kingpin sends out super-soldier Nuke. NUKE LAUNCHES A DEVASTATING MILITARY ASSAULT ON HELL'S KITCHEN. The brutal siege leaves the neighborhood in utter ruins. The Man Without Fear rises from the ashes once more.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_born-again",
+      "title": "Daredevil: Born Again",
+      "publisher": "Marvel",
+      "series": "Daredevil",
+      "issue": "227-233",
+      "year": 1986,
+      "universe": "Marvel",
+      "characters": [
+        "Daredevil",
+        "Kingpin",
+        "Karen Page"
+      ],
+      "summary": "Kingpin learns Daredevil's identity and destroys his whole life",
+      "famous_line": "Kingpin learns Daredevil's identity and destroys his whole life",
+      "artist": "David Mazzucchelli",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Born_Again_(comics)",
+        "https://iliketodabble.com/daredevil-born-again-ending-explained/",
+        "https://fictionhorizon.com/daredevil-born-again-reading-order-the-complete-comics-guide/",
+        "https://www.thepopverse.com/comics-marvel-daredevil-born-again-reading-guide-frank-miller",
+        "https://screenrant.com/best-marvel-comics-all-time-hulk-daredevil/",
+        "https://screenrant.com/spider-man-kingpin-comic-book-facts-trivia/",
+        "https://thegreatcomicbookheroes.blogspot.com/2014/09/happy-54th-birthday-david-mazzucchelli.html",
+        "https://1986comics.com/frank-millers-brilliant-year-part-2-enter-the-assassin/",
+        "https://www.reddit.com/r/comicbooks/comments/e761yv/just_reread_my_favourite_story_of_all_time_again/",
+        "https://www.secondstorybooks.com/pages/books/1356207/frank-miller-david-mazzucchelli/daredevil-no-227-233-born-again-storyline?soldItem=true",
+        "https://www.gamesradar.com/comics/marvel-comics/giant-size-daredevil-kingpin-spoilers/",
+        "https://fity.club/lists/suggestions/Daredevil-Kingpin/"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Born_Again_(comics)",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance"
+    },
+    "full_description": "The dramatic downfall and redemption of Matt Murdock in Born Again.\n\nComic: Daredevil #227-233 (1986)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://1986comics.com/frank-millers-brilliant-year-part-2-enter-the-assassin/\nhttps://fictionhorizon.com/daredevil-born-again-reading-order-the-complete-comics-guide/\nhttps://fity.club/lists/suggestions/Daredevil-Kingpin/\nhttps://screenrant.com/best-marvel-comics-all-time-hulk-daredevil/\nhttps://screenrant.com/spider-man-kingpin-comic-book-facts-trivia/\nhttps://thegreatcomicbookheroes.blogspot.com/2014/09/happy-54th-birthday-david-mazzucchelli.html\nhttps://www.gamesradar.com/comics/marvel-comics/giant-size-daredevil-kingpin-spoilers/\nhttps://www.reddit.com/r/comicbooks/comments/e761yv/just_reread_my_favourite_story_of_all_time_again/\nhttps://www.secondstorybooks.com/pages/books/1356207/frank-miller-david-mazzucchelli/daredevil-no-227-233-born-again-storyline?soldItem=true\nhttps://www.thepopverse.com/comics-marvel-daredevil-born-again-reading-guide-frank-miller",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "marvel"
+    ],
+    "instagram_caption": "How Daredevil Lost Everything to the Kingpin\n\nThe dramatic downfall and redemption of Matt Murdock in Born Again."
+  },
+  "sources": [
+    "https://1986comics.com/frank-millers-brilliant-year-part-2-enter-the-assassin/",
+    "https://fictionhorizon.com/daredevil-born-again-reading-order-the-complete-comics-guide/",
+    "https://fity.club/lists/suggestions/Daredevil-Kingpin/",
+    "https://screenrant.com/best-marvel-comics-all-time-hulk-daredevil/",
+    "https://screenrant.com/spider-man-kingpin-comic-book-facts-trivia/",
+    "https://thegreatcomicbookheroes.blogspot.com/2014/09/happy-54th-birthday-david-mazzucchelli.html",
+    "https://www.gamesradar.com/comics/marvel-comics/giant-size-daredevil-kingpin-spoilers/",
+    "https://www.reddit.com/r/comicbooks/comments/e761yv/just_reread_my_favourite_story_of_all_time_again/",
+    "https://www.secondstorybooks.com/pages/books/1356207/frank-miller-david-mazzucchelli/daredevil-no-227-233-born-again-storyline?soldItem=true",
+    "https://www.thepopverse.com/comics-marvel-daredevil-born-again-reading-guide-frank-miller"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}

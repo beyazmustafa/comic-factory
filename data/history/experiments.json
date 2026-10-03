@@ -285,6 +285,17 @@
       "name": "famous_hero_focus",
       "change": "Focus narration exclusively on a globally famous hero name in the title and hook instead of obscure Golden Age titles.",
       "rationale": "High-performing videos leverage widely recognized names to dramatically improve click-through rates and early retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37119438367",
+    "chosen_at": "2026-10-03T11:24:32+00:00",
+    "experiment": {
+      "name": "all_caps_danger_beats",
+      "change": "Render all red 'danger' emphasis captions in ALL-CAPS to distinguish them from normal narration.",
+      "rationale": "Visual differentiation of high-stakes moments can increase viewer arousal and retention during peak action sequences."
     }
   }
 ]

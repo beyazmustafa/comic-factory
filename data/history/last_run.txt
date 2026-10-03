@@ -1,6 +1,6 @@
-run_id: 37118282901  attempt: 1  event: workflow_dispatch
+run_id: 37119438367  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261003T110200054230Z/run.json
+--- data/runs/20261003T112310786349Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,71 +38,70 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37118282901",
+  "run_id": "37119438367",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "5a3fb77ac22c919f4081fe9078de0df8edccf37c3ac6eca2e09d3550be56953f",
-  "metadata_sha256": "37cd16d846b7fa536b7f973fd38200a52d79f4039d23eb2f79556ba7286965de",
-  "quality_sha256": "b3907586bc6d4da599c4109118cbd0be1ec282f3ee5adca84d393b9c88082649",
-  "api_calls": 54,
-  "duration": 77.8,
+  "video_sha256": "262de86c5920fad42b4e8329f1b049f2cb38893c6b784f76c1b5d2a08ad75c91",
+  "metadata_sha256": "1547ed70b99380c3f0827e91e3d5c997f2f12e3cfca3fd2dccb04dad6662ba45",
+  "quality_sha256": "5b4058c248e402b99672336429a804ca1751ca04109005cfc85b2cbbd62a7cc1",
+  "api_calls": 60,
+  "duration": 93.78,
   "voice": "Orus",
   "event": {
-    "id": "famous_injustice",
-    "title": "Injustice: Superman Kills the Joker",
-    "publisher": "DC",
-    "series": "Injustice: Gods Among Us",
-    "issue": "1",
-    "year": 2013,
-    "universe": "DC",
+    "id": "famous_born-again",
+    "title": "Daredevil: Born Again",
+    "publisher": "Marvel",
+    "series": "Daredevil",
+    "issue": "227-233",
+    "year": 1986,
+    "universe": "Marvel",
     "characters": [
-      "Superman",
-      "Joker",
-      "Lois Lane",
-      "Batman"
+      "Daredevil",
+      "Kingpin",
+      "Karen Page"
     ],
-    "summary": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
-    "famous_line": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
-    "artist": "Jheremy Raapack",
+    "summary": "Kingpin learns Daredevil's identity and destroys his whole life",
+    "famous_line": "Kingpin learns Daredevil's identity and destroys his whole life",
+    "artist": "David Mazzucchelli",
     "source_urls": [
-      "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
-      "https://cupnerd.com/superman-killed-joker-injustice-tragedy/",
-      "https://screenrant.com/injustice-every-villain-superman-kills/",
-      "https://www.cbr.com/injustice-year-zero-superman-right-kill-joker/",
-      "https://comicnewbies.com/2017/05/19/superman-kills-the-joker-injustice-ground-zero/",
-      "https://www.dcuniverse.com/news/dc-comics-5-most-brutal-beatdowns/",
-      "https://www.cbr.com/superman-joker-injustice-dc-universe-version/",
-      "https://www.cbr.com/batman-villains-defeat-superman-without-kryptonite/",
-      "https://screenrant.com/joker-top-10-worst-crimes-dc-universe/",
-      "https://www.cbr.com/strongest-superman-punches-dc-comics-heroes/",
-      "https://fity.club/lists/suggestions/Superman-Joker/",
-      "https://movieweb.com/the-boys-messed-up-comics-to-check-out/"
+      "https://en.wikipedia.org/wiki/Born_Again_(comics)",
+      "https://iliketodabble.com/daredevil-born-again-ending-explained/",
+      "https://fictionhorizon.com/daredevil-born-again-reading-order-the-complete-comics-guide/",
+      "https://www.thepopverse.com/comics-marvel-daredevil-born-again-reading-guide-frank-miller",
+      "https://screenrant.com/best-marvel-comics-all-time-hulk-daredevil/",
+      "https://screenrant.com/spider-man-kingpin-comic-book-facts-trivia/",
+      "https://thegreatcomicbookheroes.blogspot.com/2014/09/happy-54th-birthday-david-mazzucchelli.html",
+      "https://1986comics.com/frank-millers-brilliant-year-part-2-enter-the-assassin/",
+      "https://www.reddit.com/r/comicbooks/comments/e761yv/just_reread_my_favourite_story_of_all_time_again/",
+      "https://www.secondstorybooks.com/pages/books/1356207/frank-miller-david-mazzucchelli/daredevil-no-227-233-born-again-storyline?soldItem=true",
+      "https://www.gamesradar.com/comics/marvel-comics/giant-size-daredevil-kingpin-spoilers/",
+      "https://fity.club/lists/suggestions/Daredevil-Kingpin/"
     ],
-    "url": "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
+    "url": "https://en.wikipedia.org/wiki/Born_Again_(comics)",
     "_source": "famous"
   },
   "localized": [
     "lang_tr"
   ]
 }
---- data/runs/20261003T110200054230Z/diagnostics/provider_events.json
+--- data/runs/20261003T112310786349Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
   "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261003T110200054230Z/diagnostics/providers.json
+--- data/runs/20261003T112310786349Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -124,9 +123,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -218,7 +217,7 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T110200054230Z/voice_audition/failed_auditions.json
+--- data/runs/20261003T112310786349Z/voice_audition/failed_auditions.json
 {}
 --- studio.log (son 300 satır)
 
@@ -228,47 +227,39 @@ produce step outcome: success
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: Injustice: Superman Kills the Joker
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Makale görselleri: 109 aday, 13 indirildi.
-Görsel arama (tur 1): 73 sonuç, 30 indirildi.
-Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Görsel eleme: {"pages": 43, "no_row": 0, "not_comic": 5, "text_heavy": 0, "low_relevance": 1, "kept": 37, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 70, "desc": "A composite graphic featuring an inset panel of Superman punching the "}, {"id": "page_001", "comic": true, "kind": "interior", "rel": 80, "desc": "Members of the Joker Underground chant defiantly before Superman glare"}, {"id": "page_002", "comic": true, "kind": "interior", "rel": 80, "desc": "Batwoman and Harley Quinn ride a motorcycle as Superman unleashes heat"}, {"id": "page_003", "comic": true, "kind": "interior", "rel": 78, "desc": "Broken glasses sit amid flames reflecting two figures as onlookers wat"}, {"id": "page_004", "comic": true, "kind": "interior", "rel": 80, "desc": "Superman and Cyborg discuss the massacre of two hundred and fifty civi"}, {"id": "page_005", "comic": true, "kind": "interior", "rel": 80, "desc": "Superman aggressively confronts Cyborg over his explanation before Cyb"}]}
+Olay araştırılıyor: Daredevil: Born Again
+Olay gerçekleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Olay gerçekleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Makale görselleri: 111 aday, 24 indirildi.
+Görsel arama (tur 1): 74 sonuç, 30 indirildi.
+Görsel eleme: {"pages": 54, "no_row": 0, "not_comic": 12, "text_heavy": 2, "low_relevance": 0, "kept": 37, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 50, "desc": "Artist David Mazzucchelli signs a large collection of Daredevil Born A"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 0, "desc": "A smiling woman with bright teal hair and pink eye makeup poses for a "}, {"id": "page_002", "comic": true, "kind": "cover", "rel": 80, "desc": "Daredevil dodges a sword attack from the Gladiator on the cover of Dar"}, {"id": "page_003", "comic": true, "kind": "cover", "rel": 95, "desc": "Daredevil leaps across a New York City skyline viewed through sniper c"}, {"id": "page_004", "comic": true, "kind": "cover", "rel": 95, "desc": "A close-up of Matt Murdock's face behind cracked green-tinted glasses "}, {"id": "page_005", "comic": true, "kind": "cover", "rel": 95, "desc": "Matt Murdock stands in the snow holding a knife while facing a white-g"}], "sketch": 3}
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
@@ -278,11 +269,14 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 → tr sürümü
 Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.4/100 | whisper-large-v3
+Ses eşleştirme: 93.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 88.6/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 94.9/100 | whisper-large-v3
+Ses eşleştirme: 91.7/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T110200054230Z/review.html
+Ses eşleştirme: 97.5/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 50.0/100 | whisper-large-v3
+Ses eşleştirme: 91.8/100 | whisper-large-v3-turbo
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T112310786349Z/review.html
