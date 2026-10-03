@@ -1,11 +1,14 @@
 # Playbook (auto-evolving)
-- Hook: Shocking threat statement <= 8 words starting with the hero's full name facing immediate peril.
-- Pacing: Target 28-32 shots total for 115-130 seconds duration at ~145-155 WPM.
-- Rhythm: 4-8 words per shot beat; maintain continuous forward narrative momentum.
-- Emphasis: Red for danger, green for reveals, cyan for turns; limit emphasis to <= 30% of total shots.
-- Title: Curiosity-driven, 45-65 characters, featuring the hero name and a specific antagonist.
-- Midpoint: Place a green-emphasized plot reveal shot at the narrative midpoint (shot 14-16).
-- Ending: Stop cold on the final visual consequence with zero outro or CTA.
+- Hook: Present-tense threat statement <= 7 words starting with hero full name facing immediate mortal peril.
+- Duration & shots: Target 24-30 shots across 90-120 seconds duration.
+- Speech delivery: Target an energetic pace of 145-155 words per minute.
+- Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.
+- Title format: Curiosity-driven question or shock, 42-50 characters, naming hero and antagonist.
+- Emphasis share: Limit colored emphasis to <= 25% of total shots (red=danger, green=reveal, cyan=turn).
+- Opening emphasis: Start shot 1 with normal text to keep visual focus clean on panel action.
+- Midpoint twist: Place a single green reveal shot at shot 13-15.
+- Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
+- Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.
 
 ## Fixed rules
 - Famous characters only: the moment must be one a global audience half-remembers (Spider-Man, Batman, Superman, Joker, Thanos, X-Men...). Obscure heroes do not get clicks.

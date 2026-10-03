@@ -1,11 +1,11 @@
-run_id: 37052242848  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261002T191023138283Z/run.json
+run_id: 37110659867  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261003T084453547569Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -32,154 +32,24 @@ produce step outcome: success
     "languages": "en,tr",
     "channel_theme": "superheroes",
     "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
-    "source": "studio",
+    "source": "famous",
     "image_model": "",
     "archive_query": "mediatype:texts AND collection:(comics)",
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37052242848",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "bc46c16b34f707c2c9dd89580202562bb79b274fa9c90b2ff5bb8250bb18e30a",
-  "metadata_sha256": "61a13f5cbbf05c6fa8ac7fc1ccad2213e1a88cbe59b2460d1df15e53b635ed1f",
-  "quality_sha256": "1ed567e407e5b1edfaf17e71aaef6e01f995f001bd25850e6241207a32c6a58c",
-  "api_calls": 53,
-  "duration": 100.88,
-  "voice": "Orus",
-  "event": {
-    "id": "studio_0001_prism-guard",
-    "title": "Prism-Guard Faces a Corrosive End Against the Brutal Malice-Core",
-    "series": "Aether-Grid Prime",
-    "issue": "1",
-    "year": 2026,
-    "publisher": "Original",
-    "universe": "Aether-Grid Prime",
-    "hero": "Prism-Guard",
-    "villain": "Malice-Core",
-    "url": "https://github.com/beyazmustafa/comic-factory",
-    "source_urls": [],
-    "_source": "studio"
-  },
-  "localized": [
-    "lang_tr"
-  ]
+  "run_id": "37110659867",
+  "error": "FactoryError: Bitmiş videoda düzeltilmesi gereken noktalar var: scene_match. Önizleme ve raporlar kaydedildi.",
+  "api_calls": 25
 }
---- data/runs/20261002T191023138283Z/diagnostics/provider_events.json
+--- data/runs/20261003T084453547569Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Evren kuruldu: Aether-Grid Prime — Prism-Guard, Fracture-Shock, Aura-Splicer, Tide-Vault",
-  "Gemini görsel modeli kullanılamadı (nano-banana-pro-preview: Panel çizimi (nano-banana-pro-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check y; gemini-3.1-flash-lite-image: Panel çizimi (gemini-3.1-flash-lite-image): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please che; gemini-3.1-flash-image-preview: Panel çizimi (gemini-3.1-flash-image-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please ; gemini-3.1-flash-image: Pane); Pollinations ile çizilecek.",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Au",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Au",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti",
-  "Pollinations deneme 3: RuntimeError: HTTP 500",
-  "Pollinations deneme 4: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti",
-  "Özgün sayı senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Özgün sayı senaryosu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Özgün sayı senaryosu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: RuntimeError: HTTP 524",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20distant%20i",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20distant%20i",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Close-up%20on%2",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Close-up%20on%2",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%20f",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%20f",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 4: RuntimeError: HTTP 500",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20wide%20shot",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20wide%20shot",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20g",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20g",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li",
-  "Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li",
-  "Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.",
-  "Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20final%20sho",
-  "Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20final%20sho",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
-  "Üretilen video kontrolü: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261002T191023138283Z/diagnostics/providers.json
+--- data/runs/20261003T084453547569Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -201,9 +71,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -295,7 +165,7 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261002T191023138283Z/voice_audition/failed_auditions.json
+--- data/runs/20261003T084453547569Z/voice_audition/failed_auditions.json
 {}
 --- studio.log (son 300 satır)
 
@@ -303,151 +173,24 @@ produce step outcome: success
 
 → Öğrenme: oyun kitabı ve deney
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Evren kuruldu: Aether-Grid Prime — Prism-Guard, Fracture-Shock, Aura-Splicer, Tide-Vault
-Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
-Gemini görsel modeli kullanılamadı (nano-banana-pro-preview: Panel çizimi (nano-banana-pro-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check y; gemini-3.1-flash-lite-image: Panel çizimi (gemini-3.1-flash-lite-image): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please che; gemini-3.1-flash-image-preview: Panel çizimi (gemini-3.1-flash-image-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please ; gemini-3.1-flash-image: Pane); Pollinations ile çizilecek.
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Fr
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Au
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Au
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti
-Pollinations deneme 3: RuntimeError: HTTP 500
-Pollinations deneme 4: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Character%20reference%20sheet%20of%20Ti
-Özgün sayı senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Özgün sayı senaryosu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Özgün sayı senaryosu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: RuntimeError: HTTP 524
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20distant%20i
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20distant%20i
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20hulking%2
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Close-up%20on%2
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Close-up%20on%2
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%20f
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%20f
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20t
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 4: RuntimeError: HTTP 500
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20wide%20shot
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20wide%20shot
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20l
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20reache
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20villain%2
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20g
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20g
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20total%20whi
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Malice-Core%E2%
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Prism-Guard%20s
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20Kaelen%20tries%
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li
-Pollinations deneme 3: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20The%20city%20li
-Gemini görsel modeli kullanılamadı (Gemini görsel modeli yok.); Pollinations ile çizilecek.
-Pollinations deneme 1: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20final%20sho
-Pollinations deneme 2: HTTPError: 402 Client Error: Payment Required for url: https://image.pollinations.ai/prompt/Comic%20book%20panel.%20A%20final%20sho
+Olay araştırılıyor: House of M: No More Mutants
+Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.1/100 | whisper-large-v3
+Ses eşleştirme: 97.2/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
-Ses eşleştirme: 99.6/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 7, deneme 1
-Ses eşleştirme: 99.1/100 | whisper-large-v3
+Ses eşleştirme: 92.5/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-
-→ tr sürümü
-Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 88.4/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 91.9/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 95.3/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 92.1/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.6/100 | whisper-large-v3
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261002T191023138283Z/review.html
+HATA: Bitmiş videoda düzeltilmesi gereken noktalar var: scene_match. Önizleme ve raporlar kaydedildi.

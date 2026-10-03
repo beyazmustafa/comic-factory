@@ -1,0 +1,225 @@
+{
+  "title": "Why Did Scarlet Witch Erase Almost All Mutants?",
+  "description": "Discover how Scarlet Witch's reality-warping breakdown led to the devastating 'No More Mutants' decimation of Marvel's mutant population.",
+  "hook_card": "NO MORE MUTANTS",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_014_p00",
+      "narration": "Scarlet Witch erases almost all mutants.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_013_p00",
+      "narration": "The Avengers meet to decide her fate.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_015_p00",
+      "narration": "Quicksilver fears they will kill his sister.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "left",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_008_p00",
+      "narration": "He convinces Wanda to rewrite reality itself.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_012_p00",
+      "narration": "She creates a world ruled by mutants.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_016_p00",
+      "narration": "Magneto reigns supreme over all humanity.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_014_p00",
+      "narration": "Wolverine wakes up remembering the truth.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_015_p00",
+      "narration": "He joins a human resistance movement.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_013_p00",
+      "narration": "Layla Miller awakens the heroes' memories.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_008_p00",
+      "narration": "Strange discovers Quicksilver manipulated Wanda.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_015_p00",
+      "narration": "Hawkeye attacks Wanda but is killed.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "up",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_012_p00",
+      "narration": "Emma Frost reveals the truth to Magneto.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_016_p00",
+      "narration": "An enraged Magneto slays his own son.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "push",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_008_p00",
+      "narration": "Wanda resurrects Quicksilver in pure grief.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_014_p00",
+      "narration": "She blames Magneto for their endless pain.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_013_p00",
+      "narration": "With three words, she snaps reality back.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "right",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_012_p00",
+      "narration": "Almost every mutant loses their powers instantly.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_016_p00",
+      "narration": "Only one hundred ninety-eight mutants remain.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Scarlet Witch erases almost all mutants. The Avengers meet to decide her fate. Quicksilver fears they will kill his sister. He convinces Wanda to rewrite reality itself. She creates a world ruled by mutants. Magneto reigns supreme over all humanity. Wolverine wakes up remembering the truth. He joins a human resistance movement. Layla Miller awakens the heroes' memories. Strange discovers Quicksilver manipulated Wanda. Hawkeye attacks Wanda but is killed. Emma Frost reveals the truth to Magneto. An enraged Magneto slays his own son. Wanda resurrects Quicksilver in pure grief. She blames Magneto for their endless pain. With three words, she snaps reality back. Almost every mutant loses their powers instantly. Only one hundred ninety-eight mutants remain.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "event": {
+    "id": "famous_house-of-m",
+    "title": "House of M: No More Mutants",
+    "publisher": "Marvel",
+    "series": "House of M",
+    "issue": "7-8",
+    "year": 2005,
+    "universe": "Marvel",
+    "characters": [
+      "Scarlet Witch",
+      "Magneto",
+      "Wolverine"
+    ],
+    "summary": "Scarlet Witch whispers three words and erases almost every mutant",
+    "famous_line": "Scarlet Witch whispers three words and erases almost every mutant",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/House_of_M",
+      "https://en.wikipedia.org/wiki/Decimation_(comics)",
+      "https://www.marvel.com/articles/comics/today-in-marvel-history-no-more-mutants",
+      "https://www.comicbasics.com/house-of-m/",
+      "https://www.marvel.com/articles/comics/scarlet-witch-and-magneto-history-in-the-comics",
+      "https://comicvine.gamespot.com/house-of-m-omnibus/4050-147774/",
+      "https://www.marvel.com/comics/collection/103293/house_of_m_trade_paperback",
+      "https://vistapointe.net/house-of-m.html",
+      "https://conskipper.com/new-house-of-m-omnibus-marvel-comics/",
+      "https://www.cbr.com/house-of-m-2-2/"
+    ],
+    "url": "https://en.wikipedia.org/wiki/House_of_M",
+    "_source": "famous"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance"
+  }
+}

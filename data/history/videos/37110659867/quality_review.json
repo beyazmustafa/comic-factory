@@ -1,0 +1,58 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 92.5,
+  "scene_match": 75,
+  "delivery": 92.5,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "The video starts with high-energy narration and clear, single-word captions."
+    },
+    {
+      "second": 10,
+      "detail": "The transition between panels is smooth, matching the whip style specified."
+    },
+    {
+      "second": 20,
+      "detail": "Wolverine's scene is framed well, with the caption positioned correctly at y=0.62."
+    },
+    {
+      "second": 32,
+      "detail": "The red emphasis color for 'danger' is applied correctly on the word 'killed'."
+    },
+    {
+      "second": 45,
+      "detail": "The narration remains expressive and dramatic, fitting the superhero comic style."
+    },
+    {
+      "second": 56,
+      "detail": "The final shot displays the correct number of mutants remaining with accurate subtitle timing."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The comic documentary is well-produced with strong narrator energy, accurate caption timing, and appropriate visual transitions that match the production settings.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 80,
+    "scene_match": 75,
+    "delivery": 78,
+    "visual_readability": 82
+  },
+  "measured_scores": {
+    "subtitle_sync": 92.5,
+    "scene_match": 0,
+    "delivery": 92.5
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": false,
+  "failed_checks": [
+    "scene_match"
+  ],
+  "subjective_assessment": true
+}

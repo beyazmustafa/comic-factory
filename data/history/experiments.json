@@ -137,11 +137,11 @@
       "change": "Limit the hook question to a maximum of 6 words.",
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
-    "verdict": "neutral",
+    "verdict": "kept",
     "measured": {
-      "metric": "views_per_hour",
-      "video": 0.83,
-      "baseline_median": 0.77
+      "metric": "views_24h",
+      "video": 21.0,
+      "baseline_median": 16.0
     },
     "judged_by": "numbers"
   },
@@ -180,7 +180,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "verdict": "dropped",
-    "judged_by": "model"
+    "judged_by": "numbers",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 0.11,
+      "baseline_median": 9.0
+    }
   },
   {
     "run_id": "37050960392",
@@ -200,6 +205,17 @@
       "name": "red_danger_hook_emphasis",
       "change": "Ensure the first shot (hook) always uses red danger emphasis on the primary threat words.",
       "rationale": "High-performing videos leverage early danger signals to immediately draw viewers in during the first 2 seconds."
+    },
+    "verdict": "dropped",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37110659867",
+    "chosen_at": "2026-10-03T08:45:36+00:00",
+    "experiment": {
+      "name": "strict_seven_word_hook",
+      "change": "Enforce a strict maximum limit of 7 words for the opening hook narration sentence.",
+      "rationale": "Data reveals top-performing videos average 7.0 hook words compared to 8.5 in bottom performers, ensuring immediate retention."
     }
   }
 ]

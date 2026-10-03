@@ -48,10 +48,10 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 21.8,
-      "views_per_hour": 0.28,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
-      "views_24h": null,
+      "hours_live": 35.4,
+      "views_per_hour": 0.17,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
+      "views_24h": 6,
       "views_72h": null
     },
     "stats_history": [
@@ -72,6 +72,11 @@
       },
       {
         "h": 21.8,
+        "views": 6,
+        "likes": 0
+      },
+      {
+        "h": 35.4,
         "views": 6,
         "likes": 0
       }
@@ -123,13 +128,13 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 138,
-      "likes": 2,
+      "views": 251,
+      "likes": 5,
       "comments": 0,
-      "hours_live": 19.1,
-      "views_per_hour": 7.21,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
-      "views_24h": null,
+      "hours_live": 32.7,
+      "views_per_hour": 7.67,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
+      "views_24h": 179,
       "views_72h": null
     },
     "stats_history": [
@@ -152,6 +157,11 @@
         "h": 19.1,
         "views": 138,
         "likes": 2
+      },
+      {
+        "h": 32.7,
+        "views": 251,
+        "likes": 5
       }
     ]
   },
@@ -201,13 +211,13 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 14,
+      "views": 19,
       "likes": 1,
       "comments": 0,
-      "hours_live": 18.2,
-      "views_per_hour": 0.77,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
-      "views_24h": null,
+      "hours_live": 31.8,
+      "views_per_hour": 0.6,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
+      "views_24h": 16,
       "views_72h": null
     },
     "stats_history": [
@@ -229,6 +239,11 @@
       {
         "h": 18.2,
         "views": 14,
+        "likes": 1
+      },
+      {
+        "h": 31.8,
+        "views": 19,
         "likes": 1
       }
     ]
@@ -278,13 +293,13 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 15,
+      "views": 28,
       "likes": 1,
       "comments": 0,
-      "hours_live": 18.0,
-      "views_per_hour": 0.83,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
-      "views_24h": null,
+      "hours_live": 31.5,
+      "views_per_hour": 0.89,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
+      "views_24h": 21,
       "views_72h": null
     },
     "stats_history": [
@@ -306,6 +321,11 @@
       {
         "h": 18.0,
         "views": 15,
+        "likes": 1
+      },
+      {
+        "h": 31.5,
+        "views": 28,
         "likes": 1
       }
     ]
@@ -355,13 +375,13 @@
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
     "stats": {
-      "views": 9,
+      "views": 10,
       "likes": 1,
       "comments": 0,
-      "hours_live": 17.5,
-      "views_per_hour": 0.51,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
-      "views_24h": null,
+      "hours_live": 31.1,
+      "views_per_hour": 0.32,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
+      "views_24h": 9,
       "views_72h": null
     },
     "stats_history": [
@@ -383,6 +403,11 @@
       {
         "h": 17.5,
         "views": 9,
+        "likes": 1
+      },
+      {
+        "h": 31.1,
+        "views": 10,
         "likes": 1
       }
     ]
@@ -436,9 +461,9 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.8,
+      "hours_live": 17.4,
       "views_per_hour": 0.0,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
+      "fetched_at": "2026-10-03T08:44:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -460,6 +485,11 @@
       },
       {
         "h": 3.8,
+        "views": 0,
+        "likes": 0
+      },
+      {
+        "h": 17.4,
         "views": 0,
         "likes": 0
       }
@@ -514,9 +544,9 @@
       "views": 2,
       "likes": 0,
       "comments": 0,
-      "hours_live": 3.8,
-      "views_per_hour": 0.52,
-      "fetched_at": "2026-10-02T19:10:23+00:00",
+      "hours_live": 17.4,
+      "views_per_hour": 0.11,
+      "fetched_at": "2026-10-03T08:44:53+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -538,6 +568,11 @@
       },
       {
         "h": 3.8,
+        "views": 2,
+        "likes": 0
+      },
+      {
+        "h": 17.4,
         "views": 2,
         "likes": 0
       }
