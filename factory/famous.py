@@ -319,7 +319,7 @@ def collect_images(api, event, fetcher, maximum):
 def judge_images(api, event, pages):
     """Keep drawn comic art that depicts this storyline's characters."""
     kept = []
-    tally = {"pages": len(pages), "no_row": 0, "not_comic": 0, "text_heavy": 0, "low_relevance": 0, "kept": 0}
+    tally = {"pages": len(pages), "no_row": 0, "not_comic": 0, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": []}
     for offset in range(0, len(pages), 6):
         batch = pages[offset:offset + 6]
         api.check()
@@ -353,6 +353,9 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
                 relevance = 0
             comic = row.get("is_comic_art")
             comic = comic is True or str(comic).casefold() == "true"
+            if len(tally["sample"]) < 6:
+                tally["sample"].append({"id": page["id"], "comic": row.get("is_comic_art"), "kind": row.get("kind"),
+                                        "rel": row.get("relevance"), "desc": clean(row.get("description"))[:70]})
             heavy = row.get("text_heavy")
             heavy = heavy is True or str(heavy).casefold() == "true"
             if not comic:
