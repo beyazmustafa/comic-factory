@@ -254,17 +254,15 @@
       "name": "action_verb_hook_card",
       "change": "Ensure the 3-6 word ALL-CAPS hook card contains at least one active physical combat verb (such as PUNCHES, STRIKES, TRAPS, DESTROYS).",
       "rationale": "High-performing videos lead with immediate kinetic combat, and a physical combat verb in the hook card sharpens viewer urgency."
-    },
-    "verdict": "kept",
-    "judged_by": "model"
+    }
   },
   {
-    "run_id": "37115928122",
-    "chosen_at": "2026-10-03T10:19:47+00:00",
+    "run_id": "37116490398",
+    "chosen_at": "2026-10-03T10:38:32+00:00",
     "experiment": {
-      "name": "interrogative_title_hook",
-      "change": "The title must be a direct question starting with 'Why' or 'How' that references the hero's failure.",
-      "rationale": "The top-performing video used a curiosity-driven title; framing the title as a specific question about failure may increase the click-through rate."
+      "name": "action_verb_hook_card",
+      "change": "Ensure the 3-6 word ALL-CAPS hook card contains at least one active physical combat verb (such as PUNCHES, STRIKES, TRAPS, DESTROYS).",
+      "rationale": "High-performing videos lead with immediate kinetic combat, and a physical combat verb in the hook card sharpens viewer urgency."
     }
   }
 ]

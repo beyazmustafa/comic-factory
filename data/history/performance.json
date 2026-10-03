@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 36.9,
+      "hours_live": 37.3,
       "views_per_hour": 0.16,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": 6,
       "views_72h": null
     },
@@ -101,7 +101,7 @@
         "likes": 0
       },
       {
-        "h": 36.9,
+        "h": 37.3,
         "views": 6,
         "likes": 0
       }
@@ -156,9 +156,9 @@
       "views": 260,
       "likes": 5,
       "comments": 0,
-      "hours_live": 34.3,
-      "views_per_hour": 7.59,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "hours_live": 34.6,
+      "views_per_hour": 7.52,
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": 179,
       "views_72h": null
     },
@@ -209,7 +209,7 @@
         "likes": 5
       },
       {
-        "h": 34.3,
+        "h": 34.6,
         "views": 260,
         "likes": 5
       }
@@ -264,9 +264,9 @@
       "views": 20,
       "likes": 1,
       "comments": 0,
-      "hours_live": 33.4,
-      "views_per_hour": 0.6,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "hours_live": 33.7,
+      "views_per_hour": 0.59,
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": 16,
       "views_72h": null
     },
@@ -317,7 +317,7 @@
         "likes": 1
       },
       {
-        "h": 33.4,
+        "h": 33.7,
         "views": 20,
         "likes": 1
       }
@@ -371,9 +371,9 @@
       "views": 35,
       "likes": 1,
       "comments": 0,
-      "hours_live": 33.1,
-      "views_per_hour": 1.06,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "hours_live": 33.4,
+      "views_per_hour": 1.05,
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": 21,
       "views_72h": null
     },
@@ -424,7 +424,7 @@
         "likes": 1
       },
       {
-        "h": 33.1,
+        "h": 33.4,
         "views": 35,
         "likes": 1
       }
@@ -478,9 +478,9 @@
       "views": 10,
       "likes": 1,
       "comments": 0,
-      "hours_live": 32.7,
-      "views_per_hour": 0.31,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "hours_live": 33.0,
+      "views_per_hour": 0.3,
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": 9,
       "views_72h": null
     },
@@ -531,7 +531,7 @@
         "likes": 1
       },
       {
-        "h": 32.7,
+        "h": 33.0,
         "views": 10,
         "likes": 1
       }
@@ -586,9 +586,9 @@
       "views": 2,
       "likes": 0,
       "comments": 0,
-      "hours_live": 19.0,
-      "views_per_hour": 0.11,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "hours_live": 19.3,
+      "views_per_hour": 0.1,
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -639,7 +639,7 @@
         "likes": 0
       },
       {
-        "h": 19.0,
+        "h": 19.3,
         "views": 2,
         "likes": 0
       }
@@ -694,9 +694,9 @@
       "views": 3,
       "likes": 0,
       "comments": 0,
-      "hours_live": 18.9,
+      "hours_live": 19.3,
       "views_per_hour": 0.16,
-      "fetched_at": "2026-10-03T10:18:19+00:00",
+      "fetched_at": "2026-10-03T10:37:29+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -747,7 +747,7 @@
         "likes": 0
       },
       {
-        "h": 18.9,
+        "h": 19.3,
         "views": 3,
         "likes": 0
       }
