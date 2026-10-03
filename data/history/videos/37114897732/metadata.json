@@ -1,0 +1,314 @@
+{
+  "script": {
+    "title": "Did Spider-Man Actually Kill Gwen Stacy?",
+    "description": "The tragic night Spider-Man's web snapped Gwen Stacy's neck during a battle with the Green Goblin.",
+    "hook_card": "SPIDER-MAN SNAPS HER NECK",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_000_p00",
+        "narration": "Spider-Man shoots a web that snaps Gwen Stacy's neck.",
+        "fact_ids": [
+          "fact_006",
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_013_p00",
+        "narration": "Before this tragedy, Peter Parker's life is already falling apart.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_009_p00",
+        "narration": "His best friend Harry Osborn is struggling with a severe drug addiction.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_016_p03",
+        "narration": "Harry's father, Norman Osborn, is a man on the edge.",
+        "fact_ids": [
+          "fact_000",
+          "fact_002"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_016_p04",
+        "narration": "Amnesia once made Norman forget he was the Green Goblin.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_012_p00",
+        "narration": "But financial pressure and parental grief trigger a total mental breakdown.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_011_p00",
+        "narration": "The Goblin returns, remembering that Peter Parker is Spider-Man.",
+        "fact_ids": [
+          "fact_000",
+          "fact_002"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_013_p00",
+        "narration": "He targets Peter’s heart by abducting his girlfriend, Gwen Stacy.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_016_p03",
+        "narration": "The villain lures the wall-crawler to a massive bridge tower.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_006_p00",
+        "narration": "High above the water, the two enemies clash in a desperate struggle.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_002_p00",
+        "narration": "In a moment of pure malice, the Goblin hurls Gwen off the bridge.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "down",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_006_p01",
+        "narration": "Spider-Man reacts instantly, firing a web strand to save her.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_002_p03",
+        "narration": "The web catches her leg, but a sickening 'SNAP' echoes through the air.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "hold",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_006_p02",
+        "narration": "Peter pulls her up, initially believing he has performed a miracle.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_001_p00",
+        "narration": "But Gwen is limp; the whiplash from the sudden stop was fatal.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_010_p05",
+        "narration": "The Goblin taunts him as Spider-Man weeps over her lifeless body.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_016_p00",
+        "narration": "Consumed by grief, Peter Parker vows to get his revenge.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_016_p01",
+        "narration": "He tracks the Green Goblin to a dark, industrial warehouse.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_016_p02",
+        "narration": "Spider-Man pummels the villain but refuses to become a murderer.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_011_p00",
+        "narration": "The Goblin uses the pause to remotely summon his deadly glider.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "page_012_p00",
+        "narration": "His spider-sense screams, allowing Peter to dodge the incoming blade.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "page_010_p05",
+        "narration": "The glider impales Norman Osborn instead, seemingly ending his reign of terror.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_022",
+        "panel_id": "page_016_p00",
+        "narration": "Peter returns home, forever haunted by the web that failed to save her.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Spider-Man shoots a web that snaps Gwen Stacy's neck. Before this tragedy, Peter Parker's life is already falling apart. His best friend Harry Osborn is struggling with a severe drug addiction. Harry's father, Norman Osborn, is a man on the edge. Amnesia once made Norman forget he was the Green Goblin. But financial pressure and parental grief trigger a total mental breakdown. The Goblin returns, remembering that Peter Parker is Spider-Man. He targets Peter’s heart by abducting his girlfriend, Gwen Stacy. The villain lures the wall-crawler to a massive bridge tower. High above the water, the two enemies clash in a desperate struggle. In a moment of pure malice, the Goblin hurls Gwen off the bridge. Spider-Man reacts instantly, firing a web strand to save her. The web catches her leg, but a sickening 'SNAP' echoes through the air. Peter pulls her up, initially believing he has performed a miracle. But Gwen is limp; the whiplash from the sudden stop was fatal. The Goblin taunts him as Spider-Man weeps over her lifeless body. Consumed by grief, Peter Parker vows to get his revenge. He tracks the Green Goblin to a dark, industrial warehouse. Spider-Man pummels the villain but refuses to become a murderer. The Goblin uses the pause to remotely summon his deadly glider. His spider-sense screams, allowing Peter to dodge the incoming blade. The glider impales Norman Osborn instead, seemingly ending his reign of terror. Peter returns home, forever haunted by the web that failed to save her.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_gwen-stacy",
+      "title": "The Night Gwen Stacy Died",
+      "publisher": "Marvel",
+      "series": "The Amazing Spider-Man",
+      "issue": "121-122",
+      "year": 1973,
+      "universe": "Marvel",
+      "characters": [
+        "Spider-Man",
+        "Gwen Stacy",
+        "Green Goblin"
+      ],
+      "summary": "Spider-Man's own web snaps Gwen Stacy's neck",
+      "famous_line": "Spider-Man's own web snaps Gwen Stacy's neck",
+      "artist": "Gil Kane",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/The_Night_Gwen_Stacy_Died",
+        "https://screenplayhowto.com/comics/gwen-stacy-death-analysis/",
+        "https://everything.explained.today/The_Night_Gwen_Stacy_Died/",
+        "https://grokipedia.com/page/The_Night_Gwen_Stacy_Died",
+        "https://thegreatcomicbookheroes.blogspot.com/2015/04/happy-88th-birthday-gil-kane.html",
+        "https://screenrant.com/spider-man-15-things-you-didnt-know-about-gwen-stacy/",
+        "https://screenrant.com/most-important-comic-book-deaths-list/",
+        "https://www.cbr.com/10-iconic-spider-man-panels/",
+        "https://www.cbr.com/spider-man-peter-parker-lost/",
+        "https://spidermanuniverse.com/amazing-spider-man-121-el-dia-que-ella-murio/",
+        "https://www.herogohome.com/2013/07/21/out-of-the-vault-the-amazing-spider-man-122/",
+        "https://aeindex.org/reviews/gil-kanes-the-amazing-spider-man-artists-edition/"
+      ],
+      "url": "https://en.wikipedia.org/wiki/The_Night_Gwen_Stacy_Died",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance"
+    },
+    "full_description": "The tragic night Spider-Man's web snapped Gwen Stacy's neck during a battle with the Green Goblin.\n\nComic: The Amazing Spider-Man #121-122 (1973)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://screenrant.com/most-important-comic-book-deaths-list/\nhttps://screenrant.com/spider-man-15-things-you-didnt-know-about-gwen-stacy/\nhttps://spidermanuniverse.com/amazing-spider-man-121-el-dia-que-ella-murio/\nhttps://thegreatcomicbookheroes.blogspot.com/2015/04/happy-88th-birthday-gil-kane.html\nhttps://www.amazon.com/AMAZING-SPIDER-MAN-122-FACSIMILE-Kane/dp/B0C9PW93SS\nhttps://www.cbr.com/10-iconic-spider-man-panels/\nhttps://www.cbr.com/spider-man-peter-parker-lost/\nhttps://www.comicsbeat.com/classic-comic-compendium-amazing-spider-man-121-122/\nhttps://www.herogohome.com/2013/07/21/out-of-the-vault-the-amazing-spider-man-122/\nhttps://www.mycomicshop.com/search?ItemID=64069768",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "marvel"
+    ],
+    "instagram_caption": "Did Spider-Man Actually Kill Gwen Stacy?\n\nThe tragic night Spider-Man's web snapped Gwen Stacy's neck during a battle with the Green Goblin."
+  },
+  "sources": [
+    "https://screenrant.com/most-important-comic-book-deaths-list/",
+    "https://screenrant.com/spider-man-15-things-you-didnt-know-about-gwen-stacy/",
+    "https://spidermanuniverse.com/amazing-spider-man-121-el-dia-que-ella-murio/",
+    "https://thegreatcomicbookheroes.blogspot.com/2015/04/happy-88th-birthday-gil-kane.html",
+    "https://www.amazon.com/AMAZING-SPIDER-MAN-122-FACSIMILE-Kane/dp/B0C9PW93SS",
+    "https://www.cbr.com/10-iconic-spider-man-panels/",
+    "https://www.cbr.com/spider-man-peter-parker-lost/",
+    "https://www.comicsbeat.com/classic-comic-compendium-amazing-spider-man-121-122/",
+    "https://www.herogohome.com/2013/07/21/out-of-the-vault-the-amazing-spider-man-122/",
+    "https://www.mycomicshop.com/search?ItemID=64069768"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}

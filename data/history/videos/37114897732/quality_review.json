@@ -1,0 +1,61 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 97.5609756097561,
+  "scene_match": 95,
+  "delivery": 97.5609756097561,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video opens with a dramatic panel of Gwen Stacy's fall, setting a somber tone."
+    },
+    {
+      "second": 15,
+      "detail": "A sketch of a bridge tower is used to illustrate the setting of the upcoming tragedy."
+    },
+    {
+      "second": 35,
+      "detail": "The transition to the Green Goblin's return is marked by a shift in visual intensity."
+    },
+    {
+      "second": 55,
+      "detail": "The 'SNAP' sound effect in the comic is emphasized by the narrator's delivery."
+    },
+    {
+      "second": 75,
+      "detail": "The narrator's energy remains consistent as the story moves toward Peter's revenge."
+    },
+    {
+      "second": 95,
+      "detail": "The final scene effectively captures Peter's grief and the weight of his failure."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {
+    "caption_y": 0.7,
+    "font_size": 80,
+    "zoom_amount": 0.08,
+    "transition_frames": 8
+  },
+  "summary": "The documentary effectively captures the tragic essence of Gwen Stacy's death. The narration is clear and well-paced, and the visual choices, including the use of sketches and comic panels, enhance the storytelling. The captions are readable, though slight adjustments to their position and size could improve the overall visual balance.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 70,
+    "delivery": 80,
+    "visual_readability": 75
+  },
+  "measured_scores": {
+    "subtitle_sync": 97.5609756097561,
+    "scene_match": 95,
+    "delivery": 97.5609756097561
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

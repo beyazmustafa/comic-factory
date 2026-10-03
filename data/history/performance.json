@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 36.5,
+      "hours_live": 36.6,
       "views_per_hour": 0.16,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": 6,
       "views_72h": null
     },
@@ -92,6 +92,11 @@
       },
       {
         "h": 36.5,
+        "views": 6,
+        "likes": 0
+      },
+      {
+        "h": 36.6,
         "views": 6,
         "likes": 0
       }
@@ -143,12 +148,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 260,
+      "views": 251,
       "likes": 5,
       "comments": 0,
-      "hours_live": 33.8,
-      "views_per_hour": 7.69,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "hours_live": 34.0,
+      "views_per_hour": 7.39,
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": 179,
       "views_72h": null
     },
@@ -191,6 +196,11 @@
       {
         "h": 33.8,
         "views": 260,
+        "likes": 5
+      },
+      {
+        "h": 34.0,
+        "views": 251,
         "likes": 5
       }
     ]
@@ -241,12 +251,12 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 20,
+      "views": 19,
       "likes": 1,
       "comments": 0,
-      "hours_live": 32.9,
-      "views_per_hour": 0.61,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "hours_live": 33.1,
+      "views_per_hour": 0.57,
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": 16,
       "views_72h": null
     },
@@ -289,6 +299,11 @@
       {
         "h": 32.9,
         "views": 20,
+        "likes": 1
+      },
+      {
+        "h": 33.1,
+        "views": 19,
         "likes": 1
       }
     ]
@@ -338,12 +353,12 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 35,
+      "views": 28,
       "likes": 1,
       "comments": 0,
-      "hours_live": 32.6,
-      "views_per_hour": 1.07,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "hours_live": 32.8,
+      "views_per_hour": 0.85,
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": 21,
       "views_72h": null
     },
@@ -386,6 +401,11 @@
       {
         "h": 32.6,
         "views": 35,
+        "likes": 1
+      },
+      {
+        "h": 32.8,
+        "views": 28,
         "likes": 1
       }
     ]
@@ -438,9 +458,9 @@
       "views": 10,
       "likes": 1,
       "comments": 0,
-      "hours_live": 32.2,
+      "hours_live": 32.4,
       "views_per_hour": 0.31,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": 9,
       "views_72h": null
     },
@@ -482,6 +502,11 @@
       },
       {
         "h": 32.2,
+        "views": 10,
+        "likes": 1
+      },
+      {
+        "h": 32.4,
         "views": 10,
         "likes": 1
       }
@@ -533,12 +558,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 2,
+      "views": 0,
       "likes": 0,
       "comments": 0,
-      "hours_live": 18.5,
-      "views_per_hour": 0.11,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "hours_live": 18.7,
+      "views_per_hour": 0.0,
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -581,6 +606,11 @@
       {
         "h": 18.5,
         "views": 2,
+        "likes": 0
+      },
+      {
+        "h": 18.7,
+        "views": 0,
         "likes": 0
       }
     ]
@@ -631,12 +661,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 3,
+      "views": 2,
       "likes": 0,
       "comments": 0,
-      "hours_live": 18.5,
-      "views_per_hour": 0.16,
-      "fetched_at": "2026-10-03T09:51:05+00:00",
+      "hours_live": 18.7,
+      "views_per_hour": 0.11,
+      "fetched_at": "2026-10-03T10:00:29+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -679,6 +709,11 @@
       {
         "h": 18.5,
         "views": 3,
+        "likes": 0
+      },
+      {
+        "h": 18.7,
+        "views": 2,
         "likes": 0
       }
     ]
