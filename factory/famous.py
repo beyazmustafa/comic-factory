@@ -137,6 +137,29 @@ MOMENTS = [
 ]
 
 
+# Interior artist of each storyline: searching with the artist finds the
+# real pages instead of generic modern art of the same character.
+ARTISTS = {
+    "gwen-stacy": "Gil Kane", "death-of-superman": "Dan Jurgens", "knightfall": "Jim Aparo",
+    "death-in-the-family": "Jim Aparo", "killing-joke": "Brian Bolland", "infinity-gauntlet": "George Perez",
+    "dark-phoenix": "John Byrne", "civil-war-unmask": "Steve McNiven", "secret-empire": "Jesus Saiz",
+    "old-man-logan": "Steve McNiven", "crisis-supergirl": "George Perez", "crisis-flash": "George Perez",
+    "marvel-zombies": "Sean Phillips", "kravens-last-hunt": "Mike Zeck", "born-again": "David Mazzucchelli",
+    "elektra-dies": "Frank Miller", "wolverine-adamantium": "Andy Kubert", "house-of-m": "Olivier Coipel",
+    "emerald-twilight": "Darryl Banks", "identity-crisis": "Rags Morales", "flashpoint": "Andy Kubert",
+    "red-son": "Dave Johnson", "death-of-captain-america": "Steve Epting", "world-war-hulk": "John Romita Jr",
+    "planet-hulk": "Carlo Pagulayan", "court-of-owls": "Greg Capullo", "injustice": "Jheremy Raapack",
+    "thanos-wins": "Geoff Shaw", "maximum-carnage": "Mark Bagley", "deadpool-kills": "Dalibor Talajic",
+    "days-of-future-past": "John Byrne", "mutant-massacre": "John Romita Jr", "back-in-black": "Ron Garney",
+    "wonder-woman-maxwell-lord": "Rags Morales", "blackest-night": "Ivan Reis", "avengers-disassembled": "David Finch",
+    "ragnarok-thor": "Andrea Di Vito", "batman-rip": "Tony Daniel", "age-of-apocalypse": "Joe Madureira",
+    "clone-saga": "Mark Bagley", "demon-in-a-bottle": "John Romita Jr", "doomsday-first-fight": "Jon Bogdanove",
+    "secret-wars-2015": "Esad Ribic", "king-in-black": "Ryan Stegman", "batman-who-laughs": "Greg Capullo",
+    "spider-man-no-more": "John Romita Sr", "superior-spider-man": "Humberto Ramos", "the-long-halloween": "Tim Sale",
+    "hush": "Jim Lee", "spider-verse": "Olivier Coipel",
+}
+
+
 def moment_id(key):
     return f"famous_{key}"
 
@@ -174,6 +197,7 @@ def shortlist(api, topic, used):
             "characters": characters,
             "summary": line,
             "famous_line": line,
+            "artist": ARTISTS.get(key, ""),
             "source_urls": [],
             "url": "",
             "_source": "famous",
@@ -246,13 +270,14 @@ def collect_images(api, event, fetcher, maximum):
     """Download candidate art for the storyline from image search results."""
     characters = " ".join(event["characters"][:2])
     lead = event["characters"][0] if event["characters"] else ""
+    artist = event.get("artist", "")
     queries = [
         f"{event['famous_line']} comic panel",
-        f"{event['series']} {event['issue']} interior page panel",
-        f"{event['title']} comic page scene {lead}",
-        f"{event['title']} comic panel",
-        f"{event['series']} {event['issue']} preview pages",
-        f"{event['title']} comic art {event['publisher']} {characters}",
+        f"{event['series']} {event['issue']} {artist} panel".strip(),
+        f"{event['title']} {artist} comic page".strip(),
+        f"{event['series']} {event['issue']} {event['year']} interior page",
+        f"{event['title']} comic panel {lead}",
+        f"{event['title']} {event['year']} comic scene {characters}",
     ]
     rows = search(queries, images=True, each=16)
     rows = [r for r in rows if r.get("image_url") and not any(h in r["image_url"] for h in BAD_HOSTS)]
@@ -299,8 +324,8 @@ def judge_images(api, event, pages):
         try:
             data = api.json(
                 "Görsel uygunluğu",
-                f"""These images were found by searching for the comic storyline {json.dumps({k: event[k] for k in ('title', 'series', 'issue', 'publisher', 'characters')}, ensure_ascii=False)}.
-For each image decide: is_comic_art (true only for drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, fan 3D renders, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), relevance 0..100 to this storyline and its characters (same characters in costume = 60+, the famous scene itself = 90+), text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
+                f"""These images were found by searching for the comic storyline {json.dumps({k: event[k] for k in ('title', 'series', 'issue', 'year', 'publisher', 'characters', 'artist', 'famous_line')}, ensure_ascii=False)}.
+For each image decide: is_comic_art (true only for hand-drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, 3D renders, AI-generated looking paintings, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), relevance 0..100: 90+ = the famous scene itself; 75..89 = clearly from this storyline or its era/artist style (costumes, art style, supporting cast of that story); 55..74 = the same characters but modern or unrelated art; below 55 = other. text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
 Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="images",
@@ -334,7 +359,14 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
     covers = [p for p in kept if p["kind"] == "cover"]
     others = [p for p in kept if p["kind"] != "cover"]
     allowed = max(2, len(others) // 3)
-    return others + covers[:allowed]
+    ordered = others + covers[:allowed]
+    # Generic same-character art is filler only: when the storyline itself is
+    # well represented, keep at most a third of generic images.
+    strong = [p for p in ordered if p["relevance"] >= 75]
+    generic = [p for p in ordered if p["relevance"] < 75]
+    if len(strong) >= 6:
+        ordered = strong + generic[: max(2, len(strong) // 3)]
+    return ordered
 
 
 def cut_panels(api, event, pages):
