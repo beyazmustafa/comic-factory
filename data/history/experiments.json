@@ -228,5 +228,14 @@
       "change": "Ensure the ALL-CAPS hook card contains at least one active physical combat verb.",
       "rationale": "High-impact action words on the thumbnail card increase initial click-through and viewer curiosity."
     }
+  },
+  {
+    "run_id": "37113726365",
+    "chosen_at": "2026-10-03T09:39:31+00:00",
+    "experiment": {
+      "name": "action_verb_hook_card",
+      "change": "Ensure the 3-6 word ALL-CAPS hook card contains at least one active physical combat verb (e.g., PUNCHES, STRIKES, TRAPS, DESTROYS).",
+      "rationale": "Empirical top performers lead with high physical conflict in early seconds, and action verbs heighten initial visual click-through."
+    }
   }
 ]

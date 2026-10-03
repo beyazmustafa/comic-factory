@@ -1,12 +1,12 @@
-run_id: 37111875864  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261003T090628766635Z/run.json
+run_id: 37113726365  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261003T093922403599Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "",
+  "status": "failed",
+  "stage": "Olay, gerçek sayfalar ve senaryo",
+  "topic": "Gwen Stacy",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -38,60 +38,18 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37111875864",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "e3a9e20bd07d9d1d26b659992a0e5c4131b666cc8076140a1d6ad3c9ecb82737",
-  "metadata_sha256": "50b9830157f041155d516b6b95c4295bf9c4e4a9b7fd5d7e2108be2bf50c4402",
-  "quality_sha256": "0b646cf317cd86872bbf5af20ab2266515af28a8db33a1da37b64090fc6636a9",
-  "api_calls": 36,
-  "duration": 83.64,
-  "voice": "Orus",
-  "event": {
-    "id": "famous_death-in-the-family",
-    "title": "A Death in the Family",
-    "publisher": "DC",
-    "series": "Batman",
-    "issue": "426-429",
-    "year": 1988,
-    "universe": "DC",
-    "characters": [
-      "Batman",
-      "Jason Todd",
-      "Joker"
-    ],
-    "summary": "The Joker beats Robin with a crowbar and readers voted to let him die",
-    "famous_line": "The Joker beats Robin with a crowbar and readers voted to let him die",
-    "source_urls": [
-      "https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)",
-      "https://everything.explained.today/A_Death_in_the_Family_(comics)/",
-      "https://www.comicbasics.com/a-death-in-the-family/",
-      "https://aiptcomics.com/2023/04/07/dc-details-batman-135-legacy-900-milestone-issue/",
-      "https://screenrant.com/batman-future-break-canon-dc-comics-op-ed/",
-      "https://telescopictube.com/what-does-the-batman-logo-look-like/",
-      "https://www.polysec.com.tr/gall.aspx?cid=75&g=23",
-      "https://www.cbr.com/batman-bruce-wayne-every-robin-why-they-joined/",
-      "https://screenrant.com/batman-anti-aging-tool-cure-ras-al-ghul-scarlett-scott/",
-      "https://ar.inspiredpencil.com/pictures-2023/batman-comic-book-art",
-      "https://screenrant.com/how-batman-killed-darkseid-dc-comics/",
-      "https://www.dc.com/blog/2023/04/07/batman-135-the-iconic-series-reaches-its-900th-issue-with-an-incredible-conclusion-to-the-bat-man-of-gotham"
-    ],
-    "url": "https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)",
-    "_source": "famous"
-  },
-  "localized": [
-    "lang_tr"
-  ]
+  "run_id": "37113726365",
+  "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
+  "api_calls": 17
 }
---- data/runs/20261003T090628766635Z/diagnostics/provider_events.json
+--- data/runs/20261003T093922403599Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261003T090628766635Z/diagnostics/providers.json
+--- data/runs/20261003T093922403599Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -113,9 +71,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -207,63 +165,44 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T090628766635Z/diagnostics/api_004.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.8-flash",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=646 candidates_tokens_details=None prompt_token_count=3176 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=3176\n)] thoughts_token_count=None tool_use_prompt_token_count="
-  },
-  "error": "Expecting ',' delimiter: line 1 column 2571 (char 2570)",
-  "response_length": 2570,
-  "response_text": "{\"playbook\": \"# Playbook (auto-evolving)\\n- Hook: Present-tense threat statement <= 7 words starting with hero full name facing immediate mortal peril.\\n- Duration & shots: Target 24-30 shots across 90-120 seconds duration.\\n- Speech delivery: Target an energetic pace of 145-155 words per minute.\\n- Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.\\n- Title format: Curiosity-driven question or shock, 42-50 characters, naming hero and antagonist.\\n- Emphasis share: Limit colored emphasis to <= 25% of total shots (red=danger, green=reveal, cyan=turn).\\n- Opening emphasis: Start shot 1 with normal text to keep visual focus clean on panel action.\\n- Midpoint twist: Place a single green reveal shot at shot 13-15.\\n- Penultimate beat: Second-to-last shot must be an unresolved danger question leading to the final consequence.\\n- Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.\\n- Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.\\n\\n## Fixed rules\\n- Famous characters only: the moment must be one a global audience half-remembers (Spider-Man, Batman, Superman, Joker, Thanos, X-Men...). Obscure heroes do not get clicks.\\n- First sentence = the shocking moment itself, present tense, hero or villain named, no scene-setting (\\\"Meanwhile\\\", \\\"In 1940\\\").\\n- Hook card = 3-6 ALL-CAPS words over the first frame (\\\"SPIDER-MAN KILLED HER?\\\"); it is also the thumbnail. True, specific, no spoiler past sentence one.\\n- Title 40-70 characters: character name + curiosity gap or shock as a question; never ALL CAPS, never a lie.\\n- One panel per shot, faces and speech balloons complete; never a page chunk.\\n- 18-35 shots, 70-150 seconds; every shot 3-14 words; the last shot is the consequence, no outro.\\n- Emphasis colours only on real beats: red =
---- data/runs/20261003T090628766635Z/voice_audition/failed_auditions.json
-{}
+--- data/runs/20261003T093922403599Z/research/rejected_candidates.json
+[
+  {
+    "event": {
+      "id": "famous_gwen-stacy",
+      "title": "The Night Gwen Stacy Died",
+      "publisher": "Marvel",
+      "series": "The Amazing Spider-Man",
+      "issue": "121-122",
+      "year": 1973,
+      "universe": "Marvel",
+      "characters": [
+        "Spider-Man",
+        "Gwen Stacy",
+        "Green Goblin"
+      ],
+      "summary": "Spider-Man's own web snaps Gwen Stacy's neck",
+      "famous_line": "Spider-Man's own web snaps Gwen Stacy's neck",
+      "artist": "Gil Kane",
+      "source_urls": [],
+      "url": "",
+      "_source": "famous"
+    },
+    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (0)."
+  }
+]
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: A Death in the Family
+Olay araştırılıyor: The Night Gwen Stacy Died
+Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-
-→ Türkçe ses seçimi
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-
-→ tr sürümü
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 97.4/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 94.1/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T090628766635Z/review.html
+Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
