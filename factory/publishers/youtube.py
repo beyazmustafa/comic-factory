@@ -286,6 +286,26 @@ def save_upload_history(video_hash: str, video_id: str, title: str) -> None:
     save_json(UPLOAD_HISTORY_FILE, history)
 
 
+def set_thumbnail(youtube: Any, video_id: str, path: Path) -> bool:
+    """Custom thumbnail (hook card). Needs a phone-verified channel; a refusal
+    is logged, never fatal — the upload itself already succeeded."""
+    if not path.is_file():
+        return False
+    try:
+        youtube.thumbnails().set(
+            videoId=video_id,
+            media_body=MediaFileUpload(str(path), mimetype="image/jpeg"),
+        ).execute()
+        print("Kapak görseli yüklendi.")
+        return True
+    except Exception as error:  # noqa: BLE001
+        text = str(error)
+        hint = (" (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)"
+                if "403" in text or "forbidden" in text.casefold() else "")
+        print(f"Kapak görseli yüklenemedi: {type(error).__name__}: {text[:200]}{hint}")
+        return False
+
+
 def upload_video(youtube: Any, title: str, description: str, tags: list[str]) -> str:
     """Videoyu YouTube'a YOUTUBE_VISIBILITY görünürlüğüyle yükler."""
     if not VIDEO_FILE.exists():

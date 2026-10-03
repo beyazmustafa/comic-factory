@@ -150,6 +150,7 @@ def publish_run(directory: Path, platforms: str) -> dict:
                     identifier = youtube.upload_video(client, title, description, tags)
                     journal[platform] = {"status": "success", "id": identifier}
                     save_json(journal_path, journal)
+                    youtube.set_thumbnail(client, identifier, directory / "thumbnail.jpg")
                     youtube.save_upload_history(
                         manifest["video_sha256"], identifier, title
                     )

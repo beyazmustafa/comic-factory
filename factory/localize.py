@@ -32,8 +32,9 @@ def translate_script(api, script, language):
         f"""Translate this YouTube Shorts comic narration into natural, energetic {target} for a native audience (not word-for-word; keep proper names; keep each beat punchy, 3..30 words). Keep EXACTLY the same number of shots and the same ids; do not merge or split beats.
 TITLE: {script["title"]}
 DESCRIPTION: {script["description"]}
+HOOK CARD (3..6 word shock line shown over the first frame): {script.get("hook_card", "")}
 SHOTS: {json.dumps(shots, ensure_ascii=False)}
-Return {{"title":"{target} title, 45-70 characters, curiosity-driven, no lie","description":"{target} one sentence","shots":[{{"id":"","narration":"{target}"}}]}}.""",
+Return {{"title":"{target} title, 45-70 characters, curiosity-driven, no lie","description":"{target} one sentence","hook_card":"{target} 2..6 words, same punch","shots":[{{"id":"","narration":"{target}"}}]}}.""",
         list_key="shots",
     )
     rows = {r.get("id"): str(r.get("narration", "")).strip() for r in data.get("shots", []) if isinstance(r, dict)}
@@ -45,10 +46,14 @@ Return {{"title":"{target} title, 45-70 characters, curiosity-driven, no lie","d
         translated.append({**shot, "narration": text})
     title = str(data.get("title") or script["title"]).strip()[:100]
     description = str(data.get("description") or script["description"]).strip()
+    hook = " ".join(str(data.get("hook_card") or "").split())
+    if not 2 <= len(hook.split()) <= 7:
+        hook = script.get("hook_card", "")
     return {
         **script,
         "title": title,
         "description": description,
+        "hook_card": hook[:48],
         "shots": translated,
         "narration": " ".join(s["narration"] for s in translated),
         "language": language,

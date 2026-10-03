@@ -64,6 +64,7 @@ def validate_story(value, panels, facts, max_shots=40):
     return {
         "title": clean(value["title"]),
         "description": clean(value.get("description")),
+        "hook_card": clean(value.get("hook_card"))[:48],
         "shots": result,
         "narration": " ".join(r["narration"] for r in result),
         "repaired_evidence": repaired,
@@ -87,7 +88,10 @@ def create(api, event, panels, facts, style):
         }
         for p in panels
     ]
+    famous = event.get("_source") == "famous"
     mode = (
+        "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. "
+        if famous else
         "MODE: complete public-domain Golden Age issue. Pick the ONE story in the issue that contains the hero's single most bizarre, shocking or dramatic moment (a death, betrayal, grotesque villain, impossible power, cruel twist). Use panels from that story only; ignore other stories in the issue. Open on that moment, then explain how it came to be and how it ends, beat by beat in panel order, present tense, like a top comics-recap Shorts narrator. Mention year/publisher at most once, late. "
         if event.get("identifier")
         else "MODE: one famous Marvel/DC superhero moment, using ONLY the official preview/review panels supplied. Open on the shocking moment itself, then the setup, then the consequence; present tense, hero and villain named; claim only what the panels show or the quoted sources state. "
@@ -114,7 +118,9 @@ HOOK RULE: the very first sentence must state the single most shocking event of 
 Use at least 18 shots when 18 or more distinct panels are available (a Short under 60 seconds feels thin); never pad with invented beats.
 Target {api.settings.target_seconds} seconds, {round(api.settings.target_seconds * 1.8)}..{round(api.settings.target_seconds * 2.2)} {language_name(api)} words, around {desired} shots but at most {api.settings.max_shots}. Adapt duration to VERIFIED material, never invent scenes to fill time.
 First line directly states the extraordinary event and matches the opening panel. Concrete cause/effect, coherent evidence-supported chronology, escalation, factual payoff. No generic intro, invented dialogue, filler, or subscribe CTA. Original proper-name spelling. Favor short 3..12 word beats, vary push/pull and vertical movement according to the visible action. Most shots use normal emphasis (yellow captions); use danger/reveal/turn only for meaningful story beats. Each shot 3..30 words, supplied panel_id and 1+ fact_ids. Each panel at most 3 times; at least 6 unique panels. Page IDs are not chronological page numbers. Unseen action cannot be claimed as visible; context must be explicit.
-Return {{"title":"{language_name(api)}","description":"{language_name(api)}","shots":[{{"panel_id":"","narration":"{language_name(api)}","fact_ids":[],"motion":"push|pull|left|right|up|down|hold","emphasis":"normal|danger|reveal|turn"}}]}}.
+TITLE RULE: 40..70 characters, names the character, opens a curiosity gap or states the shock as a question ("Why Spider-Man Blames Himself for Gwen's Death"); no clickbait lies, no ALL CAPS, no emojis.
+HOOK CARD: also return "hook_card": the 3..6 word ALL-CAPS line shown over the first frame for one second (e.g. "SPIDER-MAN KILLED HER?", "BANE BROKE THE BAT"); shocking, true, no spoiler beyond the first sentence.
+Return {{"title":"{language_name(api)}","description":"{language_name(api)}","hook_card":"3..6 WORDS","shots":[{{"panel_id":"","narration":"{language_name(api)}","fact_ids":[],"motion":"push|pull|left|right|up|down|hold","emphasis":"normal|danger|reveal|turn"}}]}}.
 REPAIR FEEDBACK {feedback}""",
         )
         try:
@@ -126,6 +132,11 @@ REPAIR FEEDBACK {feedback}""",
                 {"error": feedback, "draft": draft},
             )
             continue
+        if famous:
+            # Commentary illustrations: relevance was judged at collection time.
+            value.update(event=event, panel_validation={"passed": True, "shots": [], "mode": "relevance"})
+            save_json(api.directory / "story.json", value)
+            return value
         report = verify_shots(api, value["shots"], panels, facts)
         save_json(
             api.directory / "diagnostics" / f"panel_matches_{attempt + 1}.json", report

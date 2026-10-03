@@ -48,9 +48,10 @@ class Settings:
     # "auto": Marvel/DC moments from official previews & illustrated reviews first,
     #         public-domain archive issues when previews cannot supply enough panels.
     # "archive": only complete public-domain issues. "web": only previews.
-    # "studio": original universe drawn by image models. "mix": studio in the
-    # morning run, auto (previews/archive) in the evening run.
-    source: str = "mix"
+    # "studio": original universe drawn by image models. "famous": world-famous
+    # Marvel/DC moments told as commentary over official art (default; "mix"
+    # now means the same).
+    source: str = "famous"
     image_model: str = ""
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
@@ -121,8 +122,8 @@ class Settings:
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"auto", "archive", "web", "studio", "mix"}:
-            raise ValueError("source archive veya web olmalı.")
+        if result.source not in {"famous", "auto", "archive", "web", "studio", "mix"}:
+            raise ValueError("source famous, auto, archive, web, studio veya mix olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")
         return result

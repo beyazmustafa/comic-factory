@@ -8,8 +8,10 @@
 - Ending: Stop cold on the final visual consequence with zero outro or CTA.
 
 ## Fixed rules
-- Superheroes only: pick the issue whose lead hero has the single most shocking moment; crime/horror issues are a last resort.
+- Famous characters only: the moment must be one a global audience half-remembers (Spider-Man, Batman, Superman, Joker, Thanos, X-Men...). Obscure heroes do not get clicks.
 - First sentence = the shocking moment itself, present tense, hero or villain named, no scene-setting ("Meanwhile", "In 1940").
+- Hook card = 3-6 ALL-CAPS words over the first frame ("SPIDER-MAN KILLED HER?"); it is also the thumbnail. True, specific, no spoiler past sentence one.
+- Title 40-70 characters: character name + curiosity gap or shock as a question; never ALL CAPS, never a lie.
 - One panel per shot, faces and speech balloons complete; never a page chunk.
 - 18-35 shots, 70-150 seconds; every shot 3-14 words; the last shot is the consequence, no outro.
 - Emphasis colours only on real beats: red = mortal danger, green = reveal, cyan = reversal; at most one in four shots.

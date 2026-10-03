@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import archive, forge, learning, localize, research, panels, story, voice, render, quality
+from . import archive, famous, forge, learning, localize, research, panels, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -123,8 +123,12 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             candidates = []
             effective = settings.source
             if effective == "mix":
-                effective = "studio" if datetime.now(timezone.utc).hour < 12 else "auto"
+                # Famous moments are what the audience clicks; the other
+                # sources stay available for manual runs.
+                effective = "famous"
                 print(f"Kaynak (mix): {effective}", flush=True)
+            if effective == "famous":
+                candidates += famous.shortlist(api, topic, used)
             if effective == "studio":
                 universe = forge.ensure_universe(api, note=api.note)
                 event, draft, inventory, facts = forge.produce(api, universe, style, note=api.note)
@@ -157,7 +161,9 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
                     from_archive = event.get("_source") == "archive"
                     print("Olay araştırılıyor: " + event["title"], flush=True)
                     try:
-                        if from_archive:
+                        if event.get("_source") == "famous":
+                            inventory, facts = famous.collect(api, event, fetcher)
+                        elif from_archive:
                             pages, articles = archive.collect_pages(api, event)
                             inventory, facts = panels.catalog_archive(
                                 api, event, pages, articles
@@ -333,6 +339,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         event = bundle["event"]
         if event.get("_source") == "studio":
             licence = "\nOriginal characters and artwork created for this channel."
+        elif event.get("_source") == "famous":
+            licence = "\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers."
         elif event.get("_source") == "archive" or settings.source == "archive":
             licence = "\nPages: public-domain Golden Age issue scanned on the Internet Archive."
         else:
@@ -448,7 +456,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--refresh-stats", action="store_true")
-    parser.add_argument("--source", choices=["auto", "archive", "web", "studio", "mix"])
+    parser.add_argument("--source", choices=["famous", "auto", "archive", "web", "studio", "mix"])
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])

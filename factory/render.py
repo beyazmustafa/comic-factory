@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 import numpy as np
-from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageFont
+from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageFont, ImageDraw
 from .api import FactoryError
 from .core import (
     ass_time,
@@ -58,7 +58,7 @@ def ass_color(value):
     return "&H00" + value[4:6] + value[2:4] + value[:2] + "&"
 
 
-def captions(words, style, path, offset=0):
+def captions(words, style, path, offset=0, hook=""):
     _, family = font(style, int(style["font_size"]))
     normal, active, stroke = (
         ass_color(style[key]) for key in ("text_color", "active_color", "stroke_color")
@@ -73,11 +73,14 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
 Style: Main,{family},{style["font_size"]},{normal},{normal},{stroke},&H60000000,-1,0,0,0,100,100,0,0,1,{style["stroke_width"]},{style.get("shadow_depth", 5)},5,100,140,260,1
+Style: Hook,{family},100,&H000AD6FF&,&H000AD6FF&,&H00000000&,&H80000000&,-1,0,0,0,100,100,1,0,1,7,6,5,40,40,40,1
 
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 """
     lines = [header]
+    if hook:
+        lines.extend(hook_events(hook, style, style.get("language", "en")))
     center_x = round(WIDTH * style["caption_x"])
     available = min(820, 2 * (center_x - 80), 2 * (WIDTH - 110 - center_x))
     for i, word in enumerate(words):
@@ -124,6 +127,78 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         )
     path.write_text("\n".join(lines), encoding="utf-8")
     return path
+
+
+HOOK_SECONDS = 1.15
+HOOK_Y = 0.30  # vertical centre of the title card band (fraction of height)
+
+
+def hook_lines(text, style, max_width=940):
+    """Split a hook line into at most two balanced lines that fit the width."""
+    words = str(text).split()
+    if not words:
+        return [], 0
+    size = 118 if len(" ".join(words)) <= 18 else 104
+    while size >= 56:
+        measure = font(style, size)[0]
+        if measure.getlength(" ".join(words)) <= max_width:
+            return [" ".join(words)], size
+        if size > 92:
+            size -= 6  # prefer one big line while it can still be big
+            continue
+        best, best_gap = None, None
+        for split in range(1, len(words)):
+            first, second = " ".join(words[:split]), " ".join(words[split:])
+            if max(measure.getlength(first), measure.getlength(second)) <= max_width:
+                gap = abs(measure.getlength(first) - measure.getlength(second))
+                if best_gap is None or gap < best_gap:
+                    best, best_gap = [first, second], gap
+        if best:
+            return best, size
+        size -= 6
+    return [" ".join(words)], 56
+
+
+def hook_events(text, style, language):
+    """ASS events for the opening title card: dark band + big outlined words."""
+    lines, size = hook_lines(upper(text, language), style)
+    if not lines:
+        return []
+    band_h = round(size * 1.35 * len(lines) + 90)
+    top = round(HEIGHT * HOOK_Y - band_h / 2)
+    end = ass_time(HOOK_SECONDS)
+    band = (f"Dialogue: 1,0:00:00.00,{end},Hook,,0,0,0,,{{\\an7\\pos(0,0)\\1c&H000000&\\1a&H48&\\bord0\\shad0\\fad(0,180)\\p1}}"
+            f"m 0 {top} l {WIDTH} {top} l {WIDTH} {top + band_h} l 0 {top + band_h}{{\\p0}}")
+    colour = ass_color(style.get("hook_color", "#FFD60A"))
+    body = "\\N".join(escape_ass(line) for line in lines)
+    words = (f"Dialogue: 2,0:00:00.00,{end},Hook,,0,0,0,,{{\\an5\\pos({WIDTH // 2},{round(HEIGHT * HOOK_Y)})\\fs{size}\\1c{colour}"
+             f"\\bord7\\shad6\\fscx108\\fscy108\\t(0,120,\\fscx100\\fscy100)\\fad(0,180)}}{body}")
+    return [band, words]
+
+
+def thumbnail(base_png, text, style, language, output):
+    """Same card as the first frame, saved as the upload thumbnail."""
+    with Image.open(base_png) as source:
+        picture = source.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+    lines, size = hook_lines(upper(text, language), style)
+    if lines:
+        size = round(size * 1.08)
+        measure = font(style, size)[0]
+        band_h = round(size * 1.35 * len(lines) + 90)
+        top = round(HEIGHT * HOOK_Y - band_h / 2)
+        overlay = Image.new("RGBA", picture.size, (0, 0, 0, 0))
+        ImageDraw.Draw(overlay).rectangle([0, top, WIDTH, top + band_h], fill=(0, 0, 0, 180))
+        picture = Image.alpha_composite(picture.convert("RGBA"), overlay).convert("RGB")
+        draw = ImageDraw.Draw(picture)
+        y = top + 45
+        for line in lines:
+            width = measure.getlength(line)
+            x = (WIDTH - width) / 2
+            draw.text((x, y), line, font=measure, fill=style.get("hook_color", "#FFD60A"),
+                      stroke_width=max(4, size // 14), stroke_fill="#000000")
+            y += round(size * 1.35)
+    picture.save(output, "JPEG", quality=90, optimize=True)
+    return output
 
 
 def polish(picture):
@@ -246,9 +321,11 @@ def build(api, story, panels, style, audio_path, words, duration):
         cursor += count
     if cursor != len(words):
         raise FactoryError("Sahne ve altyazı kelime sayısı uyuşmuyor.")
+    language = getattr(api.settings, "language", "en")
+    hook = str(story.get("hook_card") or "").strip()
     subtitle = captions(
-        caption_words, {**style, "language": getattr(api.settings, "language", "en")},
-        directory / "captions.ass", api.settings.caption_offset
+        caption_words, {**style, "language": language},
+        directory / "captions.ass", api.settings.caption_offset, hook=hook
     )
     timeline = scene_timeline(story["shots"], words, duration, FPS)
     lookup = {p["id"]: p for p in panels}
@@ -288,6 +365,11 @@ def build(api, story, panels, style, audio_path, words, duration):
             f"render_shot_{i:03}",
         )
         clips.append(clip)
+        if i == 0:
+            try:
+                thumbnail(picture, hook, {**style, "language": language}, language, directory / "thumbnail.jpg")
+            except Exception as error:  # noqa: BLE001 - thumbnail is optional
+                print(f"Kapak üretilemedi: {str(error)[:120]}", flush=True)
         rows.append(
             {
                 **shot,

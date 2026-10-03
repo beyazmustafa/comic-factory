@@ -16,7 +16,7 @@
   "music_file": "",
   "music_gain_db": -25,
   "caption_offset": 0,
-  "source": "mix",
+  "source": "famous",
   "archive_max_year": 1963,
   "archive_scan_limit": 72,
   "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
