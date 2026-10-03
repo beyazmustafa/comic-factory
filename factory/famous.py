@@ -212,6 +212,7 @@ def gather_facts(api, event, fetcher):
     famous storyline, clearly labelled, so the narration never starves."""
     queries = [f"{event['title']} {event['series']} {event['issue']} comic explained",
                f"{event['title']} comic storyline summary"]
+    gather_facts.article_images = []
     rows = search(queries, each=6)
     articles = []
     for row in rows[:10]:
@@ -222,7 +223,8 @@ def gather_facts(api, event, fetcher):
             continue
         if len(article["text"]) < 300:
             continue
-        articles.append({"url": article["url"], "title": article["title"], "text": article["text"][:9000]})
+        articles.append({"url": article["url"], "title": article["title"], "text": article["text"][:9000],
+                         "images": list(article.get("images", []))[:30]})
         if len(articles) == 4:
             break
     facts = []
@@ -259,6 +261,7 @@ Return {{"facts":[{{"text":""}}]}}""",
                               "source_url": "", "source_id": "general_knowledge", "page_id": None})
     if len(facts) < 8:
         raise SourceUnavailable("Olay için yeterli gerçek toplanamadı.")
+    gather_facts.article_images = [(a["url"], a["title"], img) for a in articles for img in a.get("images", [])]
     return facts, [a["url"] for a in articles]
 
 
@@ -295,41 +298,74 @@ def image_queries(event, round_number=1):
 def collect_images(api, event, fetcher, maximum, round_number=1, seen=None):
     """Download candidate art for the storyline from image search results."""
     queries = image_queries(event, round_number)
+    seen = seen if seen is not None else set()
     rows = search(queries, images=True, each=18)
     rows = [r for r in rows if r.get("image_url") and not any(h in r["image_url"] for h in BAD_HOSTS)]
-    root = api.directory / "events" / event["id"]
-    (root / "pages").mkdir(parents=True, exist_ok=True)
-    pages, seen = [], seen if seen is not None else set()
-    offset = len(list((root / "pages").glob("page_*.jpg")))
-    for row in rows:
-        if len(pages) >= maximum:
-            break
+    pages = download_images(api, event, [(r["image_url"], r.get("url", ""), r.get("title", "")) for r in rows], maximum, seen)
+    save_json(api.directory / "events" / event["id"] / f"pages_{round_number}.json", pages)
+    print(f"Görsel arama (tur {round_number}): {len(rows)} sonuç, {len(pages)} indirildi.", flush=True)
+    return pages
+
+
+def article_images(api, event, fetcher, maximum, seen):
+    """Images embedded in articles ABOUT the storyline (recap sites quote the
+    exact famous panels), plus the images of the fact articles."""
+    candidates = list(getattr(gather_facts, "article_images", []))
+    queries = [f"{event['title']} {event['series']} {event['issue']} comic panels explained",
+               f"{event['famous_line']} comic moment", f"{event['title']} best moments comic"]
+    for row in search(queries, each=6)[:10]:
         api.check()
         try:
-            body, url = fetcher.get(row["image_url"], 12_000_000)
-            digest = hashlib.sha256(body).hexdigest()
-            if digest in seen:
-                continue
-            with Image.open(io.BytesIO(body)) as opened:
-                if min(opened.size) < 480 or opened.width * opened.height > 35_000_000:
-                    continue
-                picture = ImageOps.exif_transpose(opened).convert("RGB")
-            if not 0.3 <= picture.width / picture.height <= 2.6:
-                continue
-            identifier = f"page_{offset + len(pages):03}"
-            path = root / "pages" / (identifier + ".jpg")
-            picture.save(path, "JPEG", quality=95)
-            pages.append({"id": identifier, "file": str(path.relative_to(api.directory)),
-                          "source_url": row.get("url") or url, "image_url": url,
-                          "source_title": row.get("title", ""), "width": picture.width,
-                          "height": picture.height, "sha256": digest})
-            seen.add(digest)
-        except Exception:
+            article = fetcher.article(row["url"])
+        except (requests.RequestException, ValueError, OSError, KeyError):
             continue
-    save_json(root / f"pages_{round_number}.json", pages)
-    print(f"Görsel arama (tur {round_number}): {len(rows)} sonuç, {len(pages)} indirildi.", flush=True)
-    if len(pages) < 4 and round_number == 1:
-        raise SourceUnavailable("Bu olay için yeterli görsel bulunamadı.")
+        candidates += [(article["url"], article["title"], img) for img in article.get("images", [])[:30]]
+        if len(candidates) > 160:
+            break
+    rows = []
+    for url, title, img in candidates:
+        if img and not any(h in img for h in BAD_HOSTS) and not any(t in img.casefold() for t in ("logo", "avatar", "icon", "sprite", ".svg", ".gif", "badge")):
+            rows.append((img, url, title))
+    pages = download_images(api, event, rows, maximum, seen)
+    print(f"Makale görselleri: {len(rows)} aday, {len(pages)} indirildi.", flush=True)
+    return pages
+
+
+def download_images(api, event, rows, maximum, seen):
+    """Fetch (image_url, source_url, title) rows into events/<id>/pages/."""
+    fetcher = Fetcher()
+    root = api.directory / "events" / event["id"]
+    (root / "pages").mkdir(parents=True, exist_ok=True)
+    pages = []
+    offset = len(list((root / "pages").glob("page_*.jpg")))
+    try:
+        for image_url, source_url, title in rows:
+            if len(pages) >= maximum:
+                break
+            api.check()
+            try:
+                body, url = fetcher.get(image_url, 12_000_000)
+                digest = hashlib.sha256(body).hexdigest()
+                if digest in seen:
+                    continue
+                seen.add(digest)
+                with Image.open(io.BytesIO(body)) as opened:
+                    if min(opened.size) < 480 or opened.width * opened.height > 35_000_000:
+                        continue
+                    picture = ImageOps.exif_transpose(opened).convert("RGB")
+                if not 0.3 <= picture.width / picture.height <= 2.6:
+                    continue
+                identifier = f"page_{offset + len(pages):03}"
+                path = root / "pages" / (identifier + ".jpg")
+                picture.save(path, "JPEG", quality=95)
+                pages.append({"id": identifier, "file": str(path.relative_to(api.directory)),
+                              "source_url": source_url or url, "image_url": url,
+                              "source_title": title or "", "width": picture.width,
+                              "height": picture.height, "sha256": digest})
+            except Exception:
+                continue
+    finally:
+        fetcher.session.close()
     return pages
 
 
@@ -352,7 +388,7 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
         except Exception as error:  # noqa: BLE001 - vision judge is advisory
             print(f"Görsel değerlendirmesi atlandı: {str(error)[:120]}", flush=True)
             for page in batch:
-                kept.append({**page, "relevance": 50, "description": "", "characters": []})
+                kept.append({**page, "relevance": 50, "description": "", "characters": [], "kind": page.get("kind", "interior")})
             continue
         rows = [r for r in data.get("images", []) if isinstance(r, dict)]
         if rows and len(rows) == len(batch) and not all(r.get("page_id") for r in rows):
@@ -492,16 +528,19 @@ def collect(api, event, fetcher):
     """Everything the writer needs: (inventory, facts). Also fills event['source_urls']."""
     facts, article_urls = gather_facts(api, event, fetcher)
     seen = set()
-    pages = collect_images(api, event, fetcher, max(30, api.settings.max_pages + 14), 1, seen)
+    pages = article_images(api, event, fetcher, 24, seen)
+    pages += collect_images(api, event, fetcher, 30, 1, seen)
+    if len(pages) < 4:
+        raise SourceUnavailable("Bu olay için yeterli görsel bulunamadı.")
     judged = judge_images(api, event, pages)
     strong = [p for p in judged if p["relevance"] >= 75]
     if len(judged) < 8 or len(strong) < 5:
         # Second round with different phrasings before giving up on a famous
-        # story: the first engine often answers with movie stills.
+        # story: image engines love movie stills and iron ore.
         more = collect_images(api, event, fetcher, 24, 2, seen)
         if more:
             judged = judge_images(api, event, more) + judged
-            judged.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
+            judged.sort(key=lambda p: (p.get("kind") == "cover", -p["relevance"]))
     if len(judged) < 4:
         raise SourceUnavailable(f"Olayla ilgili yeterli çizgi roman görseli bulunamadı ({len(judged)}); eleme {json.dumps(getattr(judge_images, 'last_tally', {}))}.")
     inventory = describe_panels(api, cut_panels(api, event, judged[:22]))
