@@ -1,11 +1,11 @@
-run_id: 37117663457  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261003T105033054982Z/run.json
+run_id: 37118282901  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261003T110200054230Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Olay, gerçek sayfalar ve senaryo",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,30 +38,71 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37117663457",
-  "error": "KeyError: 'kind'",
-  "api_calls": 61
+  "run_id": "37118282901",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "5a3fb77ac22c919f4081fe9078de0df8edccf37c3ac6eca2e09d3550be56953f",
+  "metadata_sha256": "37cd16d846b7fa536b7f973fd38200a52d79f4039d23eb2f79556ba7286965de",
+  "quality_sha256": "b3907586bc6d4da599c4109118cbd0be1ec282f3ee5adca84d393b9c88082649",
+  "api_calls": 54,
+  "duration": 77.8,
+  "voice": "Orus",
+  "event": {
+    "id": "famous_injustice",
+    "title": "Injustice: Superman Kills the Joker",
+    "publisher": "DC",
+    "series": "Injustice: Gods Among Us",
+    "issue": "1",
+    "year": 2013,
+    "universe": "DC",
+    "characters": [
+      "Superman",
+      "Joker",
+      "Lois Lane",
+      "Batman"
+    ],
+    "summary": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
+    "famous_line": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
+    "artist": "Jheremy Raapack",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
+      "https://cupnerd.com/superman-killed-joker-injustice-tragedy/",
+      "https://screenrant.com/injustice-every-villain-superman-kills/",
+      "https://www.cbr.com/injustice-year-zero-superman-right-kill-joker/",
+      "https://comicnewbies.com/2017/05/19/superman-kills-the-joker-injustice-ground-zero/",
+      "https://www.dcuniverse.com/news/dc-comics-5-most-brutal-beatdowns/",
+      "https://www.cbr.com/superman-joker-injustice-dc-universe-version/",
+      "https://www.cbr.com/batman-villains-defeat-superman-without-kryptonite/",
+      "https://screenrant.com/joker-top-10-worst-crimes-dc-universe/",
+      "https://www.cbr.com/strongest-superman-punches-dc-comics-heroes/",
+      "https://fity.club/lists/suggestions/Superman-Joker/",
+      "https://movieweb.com/the-boys-messed-up-comics-to-check-out/"
+    ],
+    "url": "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
+    "_source": "famous"
+  },
+  "localized": [
+    "lang_tr"
+  ]
 }
---- data/runs/20261003T105033054982Z/diagnostics/provider_events.json
+--- data/runs/20261003T110200054230Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay bilgisi: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Olay bilgisi: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görsel uygunluğu: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görsel uygunluğu: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor."
+  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Olay gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
+  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261003T105033054982Z/diagnostics/providers.json
+--- data/runs/20261003T110200054230Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -83,8 +124,8 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b"
   ],
   "errors": [],
@@ -177,94 +218,8 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T105033054982Z/diagnostics/api_058.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.1-flash-lite",
-  "info": {
-    "finish_reason": "",
-    "prompt_feedback": "block_reason=<BlockedReason.PROHIBITED_CONTENT: 'PROHIBITED_CONTENT'> block_reason_message=None safety_ratings=None",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=None candidates_tokens_details=None prompt_token_count=483 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=483\n)] thoughts_token_count=None tool_use_prompt_token_count=N"
-  },
-  "error": "Expecting value: line 1 column 1 (char 0)",
-  "response_length": 0,
-  "response_text": ""
-}
---- data/runs/20261003T105033054982Z/diagnostics/api_059.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.5-flash-lite",
-  "info": {
-    "finish_reason": "",
-    "prompt_feedback": "block_reason=<BlockedReason.PROHIBITED_CONTENT: 'PROHIBITED_CONTENT'> block_reason_message=None safety_ratings=None",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=None candidates_tokens_details=None prompt_token_count=445 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=445\n)] thoughts_token_count=None tool_use_prompt_token_count=N"
-  },
-  "error": "Expecting value: line 1 column 1 (char 0)",
-  "response_length": 0,
-  "response_text": ""
-}
---- data/runs/20261003T105033054982Z/diagnostics/api_060.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.1-flash-lite",
-  "info": {
-    "finish_reason": "",
-    "prompt_feedback": "block_reason=<BlockedReason.PROHIBITED_CONTENT: 'PROHIBITED_CONTENT'> block_reason_message=None safety_ratings=None",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=None candidates_tokens_details=None prompt_token_count=483 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=483\n)] thoughts_token_count=None tool_use_prompt_token_count=N"
-  },
-  "error": "Expecting value: line 1 column 1 (char 0)",
-  "response_length": 0,
-  "response_text": ""
-}
---- data/runs/20261003T105033054982Z/research/rejected_candidates.json
-[
-  {
-    "event": {
-      "id": "famous_thanos-wins",
-      "title": "Thanos Wins",
-      "publisher": "Marvel",
-      "series": "Thanos",
-      "issue": "13-18",
-      "year": 2017,
-      "universe": "Marvel",
-      "characters": [
-        "Thanos",
-        "Cosmic Ghost Rider",
-        "Silver Surfer"
-      ],
-      "summary": "An ancient Thanos has killed everyone and a Frank Castle Ghost Rider serves him",
-      "famous_line": "An ancient Thanos has killed everyone and a Frank Castle Ghost Rider serves him",
-      "artist": "Geoff Shaw",
-      "source_urls": [],
-      "url": "",
-      "_source": "famous"
-    },
-    "error": "Yeterli panel kesilemedi."
-  },
-  {
-    "event": {
-      "id": "famous_demon-in-a-bottle",
-      "title": "Demon in a Bottle",
-      "publisher": "Marvel",
-      "series": "Iron Man",
-      "issue": "120-128",
-      "year": 1979,
-      "universe": "Marvel",
-      "characters": [
-        "Iron Man",
-        "Tony Stark",
-        "Justin Hammer"
-      ],
-      "summary": "Tony Stark's armour is hijacked and he drinks himself into ruin",
-      "famous_line": "Tony Stark's armour is hijacked and he drinks himself into ruin",
-      "artist": "John Romita Jr",
-      "source_urls": [],
-      "url": "",
-      "_source": "famous"
-    },
-    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (0); eleme {\"pages\": 8, \"no_row\": 0, \"not_comic\": 8, \"text_heavy\": 0, \"low_relevance\": 0, \"kept\": 0, \"sample\": [{\"id\": \"page_030\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"A photograph of metallic iron chunks on a surface.\"}, {\"id\": \"page_031\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"A photograph of a glowing hot metal slab in an industrial setting.\"}, {\"id\": \"page_032\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"A close-up photograph of interconnected metal chains.\"}, {\"id\": \"page_033\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"A detailed photograph of a tightly packed stack of metal chains.\"}, {\"id\": \"page_034\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"A graphic showing the periodic table entry for the element iron.\"}, {\"id\": \"page_035\", \"comic\": false, \"kind\": \"interior\", \"rel\": 10, \"desc\": \"An informational graphic featuring the periodic table entry for iron a\"}]}."
-  }
-]
+--- data/runs/20261003T110200054230Z/voice_audition/failed_auditions.json
+{}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -273,46 +228,14 @@ produce step outcome: failure
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: Thanos Wins
+Olay araştırılıyor: Injustice: Superman Kills the Joker
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Görsel arama (tur 1): 41 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 30, "no_row": 0, "not_comic": 27, "text_heavy": 0, "low_relevance": 0, "kept": 3, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 20, "desc": "Thanos poses with the Infinity Gauntlet in front of a planet in a cine"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 30, "desc": "A stylized, close-up portrait of Thanos with glowing red eyes against "}, {"id": "page_002", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos smiles menacingly while wearing the Infinity Gauntlet against a"}, {"id": "page_003", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos channels cosmic energy amidst floating debris in a dynamic vide"}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 20, "desc": "A cinematic movie still showing a close-up of Thanos's face."}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos stands proudly with the Infinity Gauntlet against a purple cosm"}]}
-Görsel arama (tur 2): 27 sonuç, 7 indirildi.
-Görsel eleme: {"pages": 7, "no_row": 0, "not_comic": 6, "text_heavy": 0, "low_relevance": 0, "kept": 1, "sample": [{"id": "page_030", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos is depicted in an MCU-style promo art for Avengers: Endgame wit"}, {"id": "page_031", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos stands powerfully wearing the Infinity Gauntlet against a cosmi"}, {"id": "page_032", "comic": false, "kind": "promo", "rel": 40, "desc": "A close-up portrait of Thanos rendered in a realistic cinematic style."}, {"id": "page_033", "comic": true, "kind": "interior", "rel": 95, "desc": "King Thanos gives a sinister smile while wearing his distinctive helme"}, {"id": "page_034", "comic": false, "kind": "promo", "rel": 50, "desc": "Thanos is shown as a king with a crown and glowing cosmic energy in a "}, {"id": "page_035", "comic": false, "kind": "promo", "rel": 40, "desc": "Thanos stands in his armor with the Infinity Gauntlet in a cinematic s"}]}
-Olay araştırılıyor: Demon in a Bottle
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Olay bilgisi: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
-  warnings.warn(
-Görsel arama (tur 1): 48 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 30, "no_row": 0, "not_comic": 30, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 0, "desc": "A photograph of an iron ore rock with periodic table information overl"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 0, "desc": "A graphic of the periodic table element tile for iron."}, {"id": "page_002", "comic": false, "kind": "promo", "rel": 0, "desc": "A close-up photograph of dark metallic mineral nuggets."}, {"id": "page_003", "comic": false, "kind": "promo", "rel": 0, "desc": "A photograph of a single dark chunk of iron ore."}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 0, "desc": "A photograph of a raw iron ore mineral specimen against a white backgr"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 0, "desc": "A graphic showing the periodic table with the element iron highlighted"}]}
-Görsel arama (tur 2): 40 sonuç, 8 indirildi.
-Görsel eleme: {"pages": 8, "no_row": 0, "not_comic": 8, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_030", "comic": false, "kind": "interior", "rel": 10, "desc": "A photograph of metallic iron chunks on a surface."}, {"id": "page_031", "comic": false, "kind": "interior", "rel": 10, "desc": "A photograph of a glowing hot metal slab in an industrial setting."}, {"id": "page_032", "comic": false, "kind": "interior", "rel": 10, "desc": "A close-up photograph of interconnected metal chains."}, {"id": "page_033", "comic": false, "kind": "interior", "rel": 10, "desc": "A detailed photograph of a tightly packed stack of metal chains."}, {"id": "page_034", "comic": false, "kind": "interior", "rel": 10, "desc": "A graphic showing the periodic table entry for the element iron."}, {"id": "page_035", "comic": false, "kind": "interior", "rel": 10, "desc": "An informational graphic featuring the periodic table entry for iron a"}]}
-Olay araştırılıyor: The Death of Superman
+Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
@@ -323,31 +246,43 @@ Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
 Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
-Olay bilgisi: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Görsel arama (tur 1): 34 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 30, "no_row": 0, "not_comic": 28, "text_heavy": 0, "low_relevance": 0, "kept": 2, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 55, "desc": "Superman floats in front of a cloudy sunset sky."}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 55, "desc": "Superman stands in a dimly lit setting with a bright light behind him."}, {"id": "page_002", "comic": false, "kind": "promo", "rel": 55, "desc": "Superman stands with arms crossed against a blue sky with clouds and t"}, {"id": "page_003", "comic": true, "kind": "promo", "rel": 65, "desc": "Superman smiles while holding up a massive object against a blue dotte"}, {"id": "page_004", "comic": true, "kind": "promo", "rel": 65, "desc": "Superman flies over a wintry landscape beneath a dramatic stormy sky."}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 55, "desc": "Superman flies through space with a determined expression and his fist"}]}
-Görsel arama (tur 2): 32 sonuç, 17 indirildi.
-Görsel uygunluğu: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görsel değerlendirmesi atlandı: Görsel uygunluğu: geçerli JSON alınamadı; yanıt tanı dosyasında.
-Görsel uygunluğu: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görsel değerlendirmesi atlandı: Görsel uygunluğu: geçerli JSON alınamadı; yanıt tanı dosyasında.
-Görsel eleme: {"pages": 17, "no_row": 0, "not_comic": 5, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_042", "comic": false, "kind": "interior", "rel": 10, "desc": "Two news hosts stand behind a desk in a television studio."}, {"id": "page_043", "comic": false, "kind": "interior", "rel": 10, "desc": "A woman poses next to a jar of hair care product and a graphic showing"}, {"id": "page_044", "comic": false, "kind": "interior", "rel": 10, "desc": "A video game interface shows an alchemy lab and study table menu."}, {"id": "page_045", "comic": false, "kind": "interior", "rel": 10, "desc": "Green foam bubbles out of a beaker during a science experiment."}, {"id": "page_046", "comic": false, "kind": "interior", "rel": 10, "desc": "Hands hold a scoop of protein powder over a large container."}]}
-Traceback (most recent call last):
-  File "/home/runner/work/comic-factory/comic-factory/comic_factory.py", line 4, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/comic-factory/comic-factory/factory/studio.py", line 487, in main
-    directory = generate(
-                ^^^^^^^^^
-  File "/home/runner/work/comic-factory/comic-factory/factory/studio.py", line 165, in generate
-    inventory, facts = famous.collect(api, event, fetcher)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/comic-factory/comic-factory/factory/famous.py", line 503, in collect
-    judged = judge_images(api, event, more) + judged
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/comic-factory/comic-factory/factory/famous.py", line 399, in judge_images
-    kept.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
-  File "/home/runner/work/comic-factory/comic-factory/factory/famous.py", line 399, in <lambda>
-    kept.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
-                             ~^^^^^^^^
-KeyError: 'kind'
+Makale görselleri: 109 aday, 13 indirildi.
+Görsel arama (tur 1): 73 sonuç, 30 indirildi.
+Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel eleme: {"pages": 43, "no_row": 0, "not_comic": 5, "text_heavy": 0, "low_relevance": 1, "kept": 37, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 70, "desc": "A composite graphic featuring an inset panel of Superman punching the "}, {"id": "page_001", "comic": true, "kind": "interior", "rel": 80, "desc": "Members of the Joker Underground chant defiantly before Superman glare"}, {"id": "page_002", "comic": true, "kind": "interior", "rel": 80, "desc": "Batwoman and Harley Quinn ride a motorcycle as Superman unleashes heat"}, {"id": "page_003", "comic": true, "kind": "interior", "rel": 78, "desc": "Broken glasses sit amid flames reflecting two figures as onlookers wat"}, {"id": "page_004", "comic": true, "kind": "interior", "rel": 80, "desc": "Superman and Cyborg discuss the massacre of two hundred and fifty civi"}, {"id": "page_005", "comic": true, "kind": "interior", "rel": 80, "desc": "Superman aggressively confronts Cyborg over his explanation before Cyb"}]}
+
+→ Türkçe ses seçimi
+
+→ Konuşma ve kelime zamanları
+Ses bölümü 1, deneme 1
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 97.6/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+
+→ Dikey video ve eşzamanlı altyazı
+
+→ Bitmiş videonun görüntü ve ses kontrolü
+
+→ tr sürümü
+Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 99.4/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 94.9/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T110200054230Z/review.html

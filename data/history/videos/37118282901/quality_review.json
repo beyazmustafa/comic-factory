@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 97.5609756097561,
+  "scene_match": 95,
+  "delivery": 97.5609756097561,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Video starts with Superman punching Joker through the chest, captions sync cleanly with narration."
+    },
+    {
+      "second": 12,
+      "detail": "Narration flows smoothly as Superman hallucinates Lois as Doomsday."
+    },
+    {
+      "second": 25,
+      "detail": "Metropolis destruction scene rendered clearly with appropriate visual framing."
+    },
+    {
+      "second": 38,
+      "detail": "Batman rushes into the interrogation room while Superman confronts Joker."
+    },
+    {
+      "second": 55,
+      "detail": "Superman demanding an end to hostilities, captions display word by word in yellow."
+    },
+    {
+      "second": 70,
+      "detail": "Final scenes showing the new world order and lethal force maintain high production quality."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 90,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 97.5609756097561,
+    "scene_match": 95,
+    "delivery": 97.5609756097561
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

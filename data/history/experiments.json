@@ -274,6 +274,17 @@
       "name": "target_shot_count",
       "change": "Strictly target 23 to 24 shots per video to align directly with top-performing metrics.",
       "rationale": "Top-performing videos average 23.5 shots, indicating this specific length optimizes viewer retention and pacing."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37118282901",
+    "chosen_at": "2026-10-03T11:02:40+00:00",
+    "experiment": {
+      "name": "famous_hero_focus",
+      "change": "Focus narration exclusively on a globally famous hero name in the title and hook instead of obscure Golden Age titles.",
+      "rationale": "High-performing videos leverage widely recognized names to dramatically improve click-through rates and early retention."
     }
   }
 ]

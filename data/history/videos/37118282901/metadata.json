@@ -1,0 +1,275 @@
+{
+  "script": {
+    "title": "Why Did Superman Cross the Line and Kill the Joker?",
+    "description": "An exploration of the tragic events in Injustice where Superman kills the Joker.",
+    "hook_card": "SUPERMAN KILLS THE JOKER",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_008_p00",
+        "narration": "Superman punches straight through the Joker's chest in ultimate rage.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_006_p00",
+        "narration": "It all starts when the Joker kidnaps a pregnant Lois Lane in Metropolis.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_036_p01",
+        "narration": "The villain laces Scarecrow's fear toxin with stolen kryptonite.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_034_p00",
+        "narration": "Superman hallucinates that Lois is the monstrous Doomsday.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_024_p00",
+        "narration": "Tragically, he fights and inadvertently kills his own wife and unborn child.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_003_p00",
+        "narration": "Her heart was synced to a hidden nuclear warhead.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_002_p00",
+        "narration": "The massive blast completely destroys the city of Metropolis.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_004_p00",
+        "narration": "Driven by unbearable grief and absolute vengeance, Superman confronts the villain.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_039_p00",
+        "narration": "He tracks down the Joker inside a secure interrogation room.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_032_p00",
+        "narration": "Batman rushes in to stop the execution, but his pleas are completely ignored.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "right",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_027_p00",
+        "narration": "Superman drives his bloody fist right through the Joker's back.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_042_p00",
+        "narration": "This brutal murder changes the Man of Steel forever.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_001_p00",
+        "narration": "He addresses the United Nations alongside Wonder Woman.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_036_p00",
+        "narration": "He demands an immediate end to all worldwide hostilities.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_036_p02",
+        "narration": "Superman establishes a strict totalitarian government known as the One Earth Regime.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_025_p00",
+        "narration": "The Justice League splits into two opposing factions.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_026_p00",
+        "narration": "Batman forms a dangerous underground insurgency against his former friend.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_007_p00",
+        "narration": "Superman begins using lethal force against anyone who dares oppose him.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_040_p00",
+        "narration": "No one is safe from the new world order.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      }
+    ],
+    "narration": "Superman punches straight through the Joker's chest in ultimate rage. It all starts when the Joker kidnaps a pregnant Lois Lane in Metropolis. The villain laces Scarecrow's fear toxin with stolen kryptonite. Superman hallucinates that Lois is the monstrous Doomsday. Tragically, he fights and inadvertently kills his own wife and unborn child. Her heart was synced to a hidden nuclear warhead. The massive blast completely destroys the city of Metropolis. Driven by unbearable grief and absolute vengeance, Superman confronts the villain. He tracks down the Joker inside a secure interrogation room. Batman rushes in to stop the execution, but his pleas are completely ignored. Superman drives his bloody fist right through the Joker's back. This brutal murder changes the Man of Steel forever. He addresses the United Nations alongside Wonder Woman. He demands an immediate end to all worldwide hostilities. Superman establishes a strict totalitarian government known as the One Earth Regime. The Justice League splits into two opposing factions. Batman forms a dangerous underground insurgency against his former friend. Superman begins using lethal force against anyone who dares oppose him. No one is safe from the new world order.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_injustice",
+      "title": "Injustice: Superman Kills the Joker",
+      "publisher": "DC",
+      "series": "Injustice: Gods Among Us",
+      "issue": "1",
+      "year": 2013,
+      "universe": "DC",
+      "characters": [
+        "Superman",
+        "Joker",
+        "Lois Lane",
+        "Batman"
+      ],
+      "summary": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
+      "famous_line": "Joker tricks Superman into killing Lois and Superman punches through Joker's chest",
+      "artist": "Jheremy Raapack",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
+        "https://cupnerd.com/superman-killed-joker-injustice-tragedy/",
+        "https://screenrant.com/injustice-every-villain-superman-kills/",
+        "https://www.cbr.com/injustice-year-zero-superman-right-kill-joker/",
+        "https://comicnewbies.com/2017/05/19/superman-kills-the-joker-injustice-ground-zero/",
+        "https://www.dcuniverse.com/news/dc-comics-5-most-brutal-beatdowns/",
+        "https://www.cbr.com/superman-joker-injustice-dc-universe-version/",
+        "https://www.cbr.com/batman-villains-defeat-superman-without-kryptonite/",
+        "https://screenrant.com/joker-top-10-worst-crimes-dc-universe/",
+        "https://www.cbr.com/strongest-superman-punches-dc-comics-heroes/",
+        "https://fity.club/lists/suggestions/Superman-Joker/",
+        "https://movieweb.com/the-boys-messed-up-comics-to-check-out/"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Injustice:_Gods_Among_Us_(comics)",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance"
+    },
+    "full_description": "An exploration of the tragic events in Injustice where Superman kills the Joker.\n\nComic: Injustice: Gods Among Us #1 (2013)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://comicnewbies.com/2017/05/19/superman-kills-the-joker-injustice-ground-zero/\nhttps://fity.club/lists/suggestions/superman-kills-joker-injustice-gods-among-us/\nhttps://gamerant.com/dc-characters-killed-by-superman-comics/\nhttps://movieweb.com/the-boys-messed-up-comics-to-check-out/\nhttps://screenrant.com/injustice-2-comic-book-best-craziest-moments/\nhttps://screenrant.com/injustice-every-villain-superman-kills/\nhttps://screenrant.com/joker-top-10-worst-crimes-dc-universe/\nhttps://screenrant.com/lois-lane-betray-superman-emperor-joker-injustice/\nhttps://www.cbr.com/batman-villains-defeat-superman-without-kryptonite/\nhttps://www.cbr.com/injustice-year-zero-superman-right-kill-joker/\nhttps://www.cbr.com/superman-versions-lost-lois-lane/\nhttps://www.comicbookrevolution.com/batman-superman-worlds-finest-25-review/\nhttps://www.dcuniverse.com/news/dc-comics-5-most-brutal-beatdowns/",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "dc"
+    ],
+    "instagram_caption": "Why Did Superman Cross the Line and Kill the Joker?\n\nAn exploration of the tragic events in Injustice where Superman kills the Joker."
+  },
+  "sources": [
+    "https://comicnewbies.com/2017/05/19/superman-kills-the-joker-injustice-ground-zero/",
+    "https://fity.club/lists/suggestions/superman-kills-joker-injustice-gods-among-us/",
+    "https://gamerant.com/dc-characters-killed-by-superman-comics/",
+    "https://movieweb.com/the-boys-messed-up-comics-to-check-out/",
+    "https://screenrant.com/injustice-2-comic-book-best-craziest-moments/",
+    "https://screenrant.com/injustice-every-villain-superman-kills/",
+    "https://screenrant.com/joker-top-10-worst-crimes-dc-universe/",
+    "https://screenrant.com/lois-lane-betray-superman-emperor-joker-injustice/",
+    "https://www.cbr.com/batman-villains-defeat-superman-without-kryptonite/",
+    "https://www.cbr.com/injustice-year-zero-superman-right-kill-joker/",
+    "https://www.cbr.com/superman-versions-lost-lois-lane/",
+    "https://www.comicbookrevolution.com/batman-superman-worlds-finest-25-review/",
+    "https://www.dcuniverse.com/news/dc-comics-5-most-brutal-beatdowns/"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}
