@@ -1,12 +1,12 @@
-run_id: 37114897732  attempt: 1  event: workflow_dispatch
+run_id: 37115928122  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261003T100028854058Z/run.json
+--- data/runs/20261003T101819411313Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "Gwen Stacy",
+  "topic": "",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -38,61 +38,69 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37114897732",
+  "run_id": "37115928122",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "eff84026b0bd59a488c05c2fce182121959f88277419c11bfc2be8961608ef3f",
-  "metadata_sha256": "6362082c7064cf460c29ed76b8b470ccb6d7ac9cfae9e95239e49f476fdb29e2",
-  "quality_sha256": "94fc9327d0ee6411de4ca732cd4bf4d67261617e8a3c3f6365e794e178da0739",
-  "api_calls": 41,
-  "duration": 99.61,
+  "video_sha256": "caf85d211d46fc0d33bac3ccab5de039e1c900350075adc7d84c50e0f108745b",
+  "metadata_sha256": "609c620a9a3da8a28c598412217ad41884caf12a60cb9cca25eba2a809577a37",
+  "quality_sha256": "1230107d0d77b1fc62d67ba145546eb1a81462889abc98ff2b6d4e06a0c48c0e",
+  "api_calls": 58,
+  "duration": 71.52,
   "voice": "Orus",
   "event": {
-    "id": "famous_gwen-stacy",
-    "title": "The Night Gwen Stacy Died",
+    "id": "famous_civil-war-unmask",
+    "title": "Civil War: Spider-Man Unmasks",
     "publisher": "Marvel",
-    "series": "The Amazing Spider-Man",
-    "issue": "121-122",
-    "year": 1973,
+    "series": "Civil War",
+    "issue": "2",
+    "year": 2006,
     "universe": "Marvel",
     "characters": [
       "Spider-Man",
-      "Gwen Stacy",
-      "Green Goblin"
+      "Iron Man",
+      "Captain America"
     ],
-    "summary": "Spider-Man's own web snaps Gwen Stacy's neck",
-    "famous_line": "Spider-Man's own web snaps Gwen Stacy's neck",
-    "artist": "Gil Kane",
+    "summary": "Spider-Man reveals he is Peter Parker on live television",
+    "famous_line": "Spider-Man reveals he is Peter Parker on live television",
+    "artist": "Steve McNiven",
     "source_urls": [
-      "https://en.wikipedia.org/wiki/The_Night_Gwen_Stacy_Died",
-      "https://screenplayhowto.com/comics/gwen-stacy-death-analysis/",
-      "https://everything.explained.today/The_Night_Gwen_Stacy_Died/",
-      "https://grokipedia.com/page/The_Night_Gwen_Stacy_Died",
-      "https://thegreatcomicbookheroes.blogspot.com/2015/04/happy-88th-birthday-gil-kane.html",
-      "https://screenrant.com/spider-man-15-things-you-didnt-know-about-gwen-stacy/",
-      "https://screenrant.com/most-important-comic-book-deaths-list/",
-      "https://www.cbr.com/10-iconic-spider-man-panels/",
-      "https://www.cbr.com/spider-man-peter-parker-lost/",
-      "https://spidermanuniverse.com/amazing-spider-man-121-el-dia-que-ella-murio/",
-      "https://www.herogohome.com/2013/07/21/out-of-the-vault-the-amazing-spider-man-122/",
-      "https://aeindex.org/reviews/gil-kanes-the-amazing-spider-man-artists-edition/"
+      "https://en.wikipedia.org/wiki/Civil_War_II",
+      "https://screenrant.com/spider-man-unmask-lore-change-civil-war/",
+      "https://www.spidermancrawlspace.com/2026/06/marco-speaks-spidey-civil-war-unmasked-2-review/",
+      "https://www.toy-people.com/en/?p=113400",
+      "https://onepenandpaper.blogspot.com/2012/08/resena-civil-war-marvel-deluxe-de-mark.html",
+      "https://www.cbr.com/steve-mcnivens-back-pages/",
+      "https://www.marvel.com/articles/comics/how-civil-war-happened-in-the-comics-20th-anniversary",
+      "https://comic-watch.com/news/comic-book-news/civil-war-unmasked-2",
+      "https://spidercomix.com/comics/civil-war-unmasked-2026/civil-war-unmasked-1/",
+      "https://www.mycomicshop.com/search?TID=64429974",
+      "https://picclick.it/Marvel-Giant-Size-Edition-CIVIL-WAR-Mark-Millar-Steve-256574437181.html"
     ],
-    "url": "https://en.wikipedia.org/wiki/The_Night_Gwen_Stacy_Died",
+    "url": "https://en.wikipedia.org/wiki/Civil_War_II",
     "_source": "famous"
   },
-  "localized": []
+  "localized": [
+    "lang_tr"
+  ]
 }
---- data/runs/20261003T100028854058Z/diagnostics/provider_events.json
+--- data/runs/20261003T101819411313Z/diagnostics/provider_events.json
 [
-  "Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
+  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panel açıklamaları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
+  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261003T100028854058Z/diagnostics/providers.json
+--- data/runs/20261003T101819411313Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -114,9 +122,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -208,24 +216,35 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T100028854058Z/voice_audition/failed_auditions.json
+--- data/runs/20261003T101819411313Z/voice_audition/failed_auditions.json
 {}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: The Night Gwen Stacy Died
-Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel arama: 74 sonuç, 30 indirildi.
-Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel eleme: {"pages": 30, "no_row": 0, "not_comic": 13, "text_heavy": 1, "low_relevance": 0, "kept": 16, "sample": [{"id": "page_000", "comic": true, "kind": "interior", "rel": 95, "desc": "A close-up of two panels showing Gwen Stacy falling and then her neck "}, {"id": "page_001", "comic": true, "kind": "interior", "rel": 95, "desc": "Two panels from the original comic showing Gwen Stacy falling and the "}, {"id": "page_002", "comic": true, "kind": "interior", "rel": 92, "desc": "A composite of comic panels showing Spider-Man attempting to save Gwen"}, {"id": "page_003", "comic": true, "kind": "interior", "rel": 65, "desc": "Modern comic panels featuring Gwen Stacy (Spider-Gwen) reflecting on r"}, {"id": "page_004", "comic": true, "kind": "interior", "rel": 70, "desc": "A modern recreation or alternate version of Gwen Stacy's fall with Spi"}, {"id": "page_005", "comic": true, "kind": "interior", "rel": 92, "desc": "A Spanish-language version of the iconic panel where Spider-Man holds "}]}
+Olay araştırılıyor: Civil War: Spider-Man Unmasks
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Görsel arama: 77 sonuç, 30 indirildi.
+Görsel eleme: {"pages": 30, "no_row": 0, "not_comic": 16, "text_heavy": 2, "low_relevance": 1, "kept": 10, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 5, "desc": "A macro photograph of a wolf spider's face showing its multiple eyes a"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 5, "desc": "A macro photograph of a jumping spider with large front eyes on a gree"}, {"id": "page_002", "comic": false, "kind": "promo", "rel": 5, "desc": "A macro photograph of a colorful peacock spider with vibrant red and b"}, {"id": "page_003", "comic": false, "kind": "promo", "rel": 5, "desc": "A photograph of an orb-weaver spider resting in the center of its web."}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 5, "desc": "A detailed close-up of a red and black spider on a web, likely a 3D re"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 5, "desc": "A high-detail image of a black and yellow spider on a web with water d"}], "sketch": 1}
+Panel açıklamaları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panel açıklamaları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Panel açıklamaları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Panel açıklamaları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Panel açıklamaları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panel açıklamaları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 
 → Türkçe ses seçimi
 
@@ -235,15 +254,11 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
-Ses bölümü 7, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
@@ -251,17 +266,13 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 → Bitmiş videonun görüntü ve ses kontrolü
 
 → tr sürümü
+Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-tr sürümü üretilemedi: SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T100028854058Z/review.html
+Ses eşleştirme: 94.6/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 95.3/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 99.5/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 96.3/100 | whisper-large-v3
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T101819411313Z/review.html

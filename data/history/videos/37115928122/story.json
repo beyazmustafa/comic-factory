@@ -1,0 +1,227 @@
+{
+  "title": "Why Spider-Man Ruined His Life By Unmasking",
+  "description": "Spider-Man reveals his identity on live television during Civil War, triggering catastrophic consequences.",
+  "hook_card": "SPIDER-MAN UNMASKS LIVE ON TV",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_028_p00",
+      "narration": "Spider-Man publicly reveals his secret identity on live television!",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_016_p00",
+      "narration": "The Superhuman Registration Act splits the hero community apart.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_022_p00",
+      "narration": "Peter initially sides with Tony Stark as a trusted mentor.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_022_p01",
+      "narration": "Tony pressures Peter to become the movement's public symbol.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_022_p02",
+      "narration": "He consults Aunt May and Mary Jane before deciding.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_015_p00",
+      "narration": "Aunt May reminds him hiding from fear isn't safety.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_026_p00",
+      "narration": "Mary Jane urges him to show why being Spider-Man matters.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_028_p00",
+      "narration": "Stepping onto the stage, Peter flips his world upside down.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_026_p01",
+      "narration": "Immediate chaos hits with bounties and attacks on the Bugle.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_026_p02",
+      "narration": "Opportunistic villains like Ringer instantly target Peter.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_025_p00",
+      "narration": "Peter uses the high-tech Iron Spider suit to fight back.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_025_p01",
+      "narration": "Disillusioned by Iron Man, Peter defects to Captain America.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_018_p00",
+      "narration": "He becomes a government-hunted illegal hero mid-war.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_022_p01",
+      "narration": "Kingpin uses public records to send a hitman.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_015_p00",
+      "narration": "A sniper's bullet intended for Peter strikes Aunt May.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "down",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_028_p00",
+      "narration": "Peter makes a desperate deal with Mephisto to save her.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "motion": "pull",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_022_p02",
+      "narration": "Reality rewrites, restoring his secret identity at a devastating cost.",
+      "fact_ids": [
+        "fact_014"
+      ],
+      "motion": "hold",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_026_p00",
+      "narration": "His unmasked crusade ends in an alternate reality.",
+      "fact_ids": [
+        "fact_014"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Spider-Man publicly reveals his secret identity on live television! The Superhuman Registration Act splits the hero community apart. Peter initially sides with Tony Stark as a trusted mentor. Tony pressures Peter to become the movement's public symbol. He consults Aunt May and Mary Jane before deciding. Aunt May reminds him hiding from fear isn't safety. Mary Jane urges him to show why being Spider-Man matters. Stepping onto the stage, Peter flips his world upside down. Immediate chaos hits with bounties and attacks on the Bugle. Opportunistic villains like Ringer instantly target Peter. Peter uses the high-tech Iron Spider suit to fight back. Disillusioned by Iron Man, Peter defects to Captain America. He becomes a government-hunted illegal hero mid-war. Kingpin uses public records to send a hitman. A sniper's bullet intended for Peter strikes Aunt May. Peter makes a desperate deal with Mephisto to save her. Reality rewrites, restoring his secret identity at a devastating cost. His unmasked crusade ends in an alternate reality.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "event": {
+    "id": "famous_civil-war-unmask",
+    "title": "Civil War: Spider-Man Unmasks",
+    "publisher": "Marvel",
+    "series": "Civil War",
+    "issue": "2",
+    "year": 2006,
+    "universe": "Marvel",
+    "characters": [
+      "Spider-Man",
+      "Iron Man",
+      "Captain America"
+    ],
+    "summary": "Spider-Man reveals he is Peter Parker on live television",
+    "famous_line": "Spider-Man reveals he is Peter Parker on live television",
+    "artist": "Steve McNiven",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Civil_War_II",
+      "https://screenrant.com/spider-man-unmask-lore-change-civil-war/",
+      "https://www.spidermancrawlspace.com/2026/06/marco-speaks-spidey-civil-war-unmasked-2-review/",
+      "https://www.toy-people.com/en/?p=113400",
+      "https://onepenandpaper.blogspot.com/2012/08/resena-civil-war-marvel-deluxe-de-mark.html",
+      "https://www.cbr.com/steve-mcnivens-back-pages/",
+      "https://www.marvel.com/articles/comics/how-civil-war-happened-in-the-comics-20th-anniversary",
+      "https://comic-watch.com/news/comic-book-news/civil-war-unmasked-2",
+      "https://spidercomix.com/comics/civil-war-unmasked-2026/civil-war-unmasked-1/",
+      "https://www.mycomicshop.com/search?TID=64429974",
+      "https://picclick.it/Marvel-Giant-Size-Edition-CIVIL-WAR-Mark-Millar-Steve-256574437181.html"
+    ],
+    "url": "https://en.wikipedia.org/wiki/Civil_War_II",
+    "_source": "famous"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance"
+  }
+}

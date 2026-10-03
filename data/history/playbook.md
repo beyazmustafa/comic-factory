@@ -9,6 +9,7 @@
 - Midpoint twist: Place a single green reveal shot at shot 13-15.
 - Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
 - Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.
+- Hook Card: Ensure the 3-6 word ALL-CAPS hook card contains at least one active physical combat verb.
 
 ## Fixed rules
 - Famous characters only: the moment must be one a global audience half-remembers (Spider-Man, Batman, Superman, Joker, Thanos, X-Men...). Obscure heroes do not get clicks.

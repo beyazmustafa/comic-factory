@@ -1,0 +1,57 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 100.0,
+  "scene_match": 95,
+  "delivery": 100.0,
+  "visual_readability": 95,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Spider-Man unmasking panel opens the video cleanly with word-by-word captions."
+    },
+    {
+      "second": 10,
+      "detail": "Transition to Tony Stark panel matches script narration smoothly."
+    },
+    {
+      "second": 22,
+      "detail": "Aunt May panel displayed with clear text and zoom motion."
+    },
+    {
+      "second": 34,
+      "detail": "Ringer fight scene displays dynamic action framing and clear captioning."
+    },
+    {
+      "second": 50,
+      "detail": "Civil War cover art showcases the hero split effectively."
+    },
+    {
+      "second": 109,
+      "detail": "Final alternate reality panel provides a coherent narrative payoff."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 95,
+    "visual_readability": 95
+  },
+  "measured_scores": {
+    "subtitle_sync": 100.0,
+    "scene_match": 95,
+    "delivery": 100.0
+  },
+  "turkish_narration": true,
+  "warnings": [
+    "observation_coverage"
+  ],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}
