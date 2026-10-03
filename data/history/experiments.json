@@ -263,6 +263,17 @@
       "name": "action_verb_hook_card",
       "change": "Ensure the 3-6 word ALL-CAPS hook card contains at least one active physical combat verb (such as PUNCHES, STRIKES, TRAPS, DESTROYS).",
       "rationale": "High-performing videos lead with immediate kinetic combat, and a physical combat verb in the hook card sharpens viewer urgency."
+    },
+    "verdict": "dropped",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37117663457",
+    "chosen_at": "2026-10-03T10:53:20+00:00",
+    "experiment": {
+      "name": "target_shot_count",
+      "change": "Strictly target 23 to 24 shots per video to align directly with top-performing metrics.",
+      "rationale": "Top-performing videos average 23.5 shots, indicating this specific length optimizes viewer retention and pacing."
     }
   }
 ]

@@ -1,12 +1,12 @@
 # Playbook (auto-evolving)
 - Hook: Present-tense threat statement <= 7 words starting with hero full name facing immediate mortal peril.
-- Duration & shots: Target 24-30 shots across 80-120 seconds duration.
-- Speech delivery: Target an energetic pace of 145-155 words per minute.
+- Duration & shots: Target 23-24 shots across 80-90 seconds duration to match top-performing video averages.
+- Speech delivery: Target an energetic pace of 140-150 words per minute.
 - Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.
 - Title format: Curiosity-driven question or shock, 44-50 characters, naming hero and antagonist.
 - Emphasis share: Keep colored emphasis strictly <= 25% of total shots (red=danger, green=reveal, cyan=turn).
 - Opening emphasis: Start shot 1 with normal text to keep visual focus clean on panel action.
-- Midpoint twist: Place a single green reveal shot at shot 13-15.
+- Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
 - Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.
 
