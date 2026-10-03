@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 100.0,
+  "scene_match": 95,
+  "delivery": 100.0,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "The video starts with an intense narration about the Joker beating Robin, with single-word captions appearing in sync."
+    },
+    {
+      "second": 15,
+      "detail": "The transition to Jason Todd searching for his mother is smooth, using a whip transition."
+    },
+    {
+      "second": 30,
+      "detail": "The scene with Lady Shiva knocking Jason unconscious is highlighted with red text for emphasis."
+    },
+    {
+      "second": 48,
+      "detail": "The betrayal by Sheila is emphasized with green text, matching the 'reveal' setting."
+    },
+    {
+      "second": 65,
+      "detail": "The tragic scene of Batman finding Jason's body is narrated with appropriate somber energy."
+    },
+    {
+      "second": 80,
+      "detail": "The video concludes with Batman and Superman needing to stop the Joker, maintaining high narrator energy."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The comic documentary is well-produced with high-energy narration and accurate subtitle synchronization. The visual transitions and emphasis colors align perfectly with the production settings.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 80,
+    "delivery": 82,
+    "visual_readability": 85
+  },
+  "measured_scores": {
+    "subtitle_sync": 100.0,
+    "scene_match": 95,
+    "delivery": 100.0
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

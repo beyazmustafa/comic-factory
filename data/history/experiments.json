@@ -216,6 +216,17 @@
       "name": "strict_seven_word_hook",
       "change": "Enforce a strict maximum limit of 7 words for the opening hook narration sentence.",
       "rationale": "Data reveals top-performing videos average 7.0 hook words compared to 8.5 in bottom performers, ensuring immediate retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37111875864",
+    "chosen_at": "2026-10-03T09:07:46+00:00",
+    "experiment": {
+      "name": "action_verb_hook_card",
+      "change": "Ensure the ALL-CAPS hook card contains at least one active physical combat verb.",
+      "rationale": "High-impact action words on the thumbnail card increase initial click-through and viewer curiosity."
     }
   }
 ]

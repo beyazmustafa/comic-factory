@@ -1,0 +1,259 @@
+{
+  "script": {
+    "title": "Why Did Batman Fail to Save Jason Todd from Joker?",
+    "description": "The tragic story of how Batman lost his second Robin, Jason Todd, to the Joker's brutal schemes and a shocking betrayal.",
+    "hook_card": "JOKER SMASHES ROBIN TO DEATH",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_022_p00",
+        "narration": "The Joker brutally beats Robin to death with a crowbar.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_016_p00",
+        "narration": "Before this tragedy, Batman relieves an unstable Jason Todd of his duties.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_023_p00",
+        "narration": "Determined to find his past, Jason uses the Batcomputer to track his biological mother.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_025_p00",
+        "narration": "The search leads him directly to the Middle East.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_019_p00",
+        "narration": "Meanwhile, Batman pursues the Joker to Lebanon to stop a missile sale.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_026_p00",
+        "narration": "The estranged duo reunites in Beirut to confront the villain.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_020_p00",
+        "narration": "But danger strikes when Lady Shiva knocks Jason unconscious.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_020_p00",
+        "narration": "Jason quickly recovers to help Batman defeat the deadly assassin.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_027_p00",
+        "narration": "Using truth serum, Batman confirms Shiva is not Jason's mother.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_023_p00",
+        "narration": "Jason travels to Ethiopia and finally locates his real mother, Sheila.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_019_p00",
+        "narration": "In a shocking twist, Sheila betrays her own son to the Joker.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_022_p00",
+        "narration": "The Joker violently tortures Jason with a crowbar.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_017_p00",
+        "narration": "He leaves them trapped inside a warehouse rigged with explosives.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_017_p00",
+        "narration": "Batman arrives only to discover Jason's lifeless body in the ruins.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_016_p00",
+        "narration": "Before dying, Sheila reveals Jason heroically shielded her from the blast.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_025_p00",
+        "narration": "Later, Superman warns Batman that the Joker now has diplomatic immunity.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "left",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_020_p00",
+        "narration": "Blinded by pure rage, Batman punches Superman in the jaw.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_027_p00",
+        "narration": "Together, they must still stop the Joker from slaughtering the United Nations.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Joker brutally beats Robin to death with a crowbar. Before this tragedy, Batman relieves an unstable Jason Todd of his duties. Determined to find his past, Jason uses the Batcomputer to track his biological mother. The search leads him directly to the Middle East. Meanwhile, Batman pursues the Joker to Lebanon to stop a missile sale. The estranged duo reunites in Beirut to confront the villain. But danger strikes when Lady Shiva knocks Jason unconscious. Jason quickly recovers to help Batman defeat the deadly assassin. Using truth serum, Batman confirms Shiva is not Jason's mother. Jason travels to Ethiopia and finally locates his real mother, Sheila. In a shocking twist, Sheila betrays her own son to the Joker. The Joker violently tortures Jason with a crowbar. He leaves them trapped inside a warehouse rigged with explosives. Batman arrives only to discover Jason's lifeless body in the ruins. Before dying, Sheila reveals Jason heroically shielded her from the blast. Later, Superman warns Batman that the Joker now has diplomatic immunity. Blinded by pure rage, Batman punches Superman in the jaw. Together, they must still stop the Joker from slaughtering the United Nations.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_death-in-the-family",
+      "title": "A Death in the Family",
+      "publisher": "DC",
+      "series": "Batman",
+      "issue": "426-429",
+      "year": 1988,
+      "universe": "DC",
+      "characters": [
+        "Batman",
+        "Jason Todd",
+        "Joker"
+      ],
+      "summary": "The Joker beats Robin with a crowbar and readers voted to let him die",
+      "famous_line": "The Joker beats Robin with a crowbar and readers voted to let him die",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)",
+        "https://everything.explained.today/A_Death_in_the_Family_(comics)/",
+        "https://www.comicbasics.com/a-death-in-the-family/",
+        "https://aiptcomics.com/2023/04/07/dc-details-batman-135-legacy-900-milestone-issue/",
+        "https://screenrant.com/batman-future-break-canon-dc-comics-op-ed/",
+        "https://telescopictube.com/what-does-the-batman-logo-look-like/",
+        "https://www.polysec.com.tr/gall.aspx?cid=75&g=23",
+        "https://www.cbr.com/batman-bruce-wayne-every-robin-why-they-joined/",
+        "https://screenrant.com/batman-anti-aging-tool-cure-ras-al-ghul-scarlett-scott/",
+        "https://ar.inspiredpencil.com/pictures-2023/batman-comic-book-art",
+        "https://screenrant.com/how-batman-killed-darkseid-dc-comics/",
+        "https://www.dc.com/blog/2023/04/07/batman-135-the-iconic-series-reaches-its-900th-issue-with-an-incredible-conclusion-to-the-bat-man-of-gotham"
+      ],
+      "url": "https://en.wikipedia.org/wiki/A_Death_in_the_Family_(comics)",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance"
+    },
+    "full_description": "The tragic story of how Batman lost his second Robin, Jason Todd, to the Joker's brutal schemes and a shocking betrayal.\n\nComic: Batman #426-429 (1988)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://aiptcomics.com/2023/04/07/dc-details-batman-135-legacy-900-milestone-issue/\nhttps://ar.inspiredpencil.com/pictures-2023/batman-comic-book-art\nhttps://screenrant.com/batman-anti-aging-tool-cure-ras-al-ghul-scarlett-scott/\nhttps://screenrant.com/batman-future-break-canon-dc-comics-op-ed/\nhttps://screenrant.com/how-batman-killed-darkseid-dc-comics/\nhttps://telescopictube.com/what-does-the-batman-logo-look-like/\nhttps://www.cbr.com/batman-bruce-wayne-every-robin-why-they-joined/\nhttps://www.dc.com/blog/2023/04/07/batman-135-the-iconic-series-reaches-its-900th-issue-with-an-incredible-conclusion-to-the-bat-man-of-gotham\nhttps://www.polysec.com.tr/gall.aspx?cid=75&g=23",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "dc"
+    ],
+    "instagram_caption": "Why Did Batman Fail to Save Jason Todd from Joker?\n\nThe tragic story of how Batman lost his second Robin, Jason Todd, to the Joker's brutal schemes and a shocking betrayal."
+  },
+  "sources": [
+    "https://aiptcomics.com/2023/04/07/dc-details-batman-135-legacy-900-milestone-issue/",
+    "https://ar.inspiredpencil.com/pictures-2023/batman-comic-book-art",
+    "https://screenrant.com/batman-anti-aging-tool-cure-ras-al-ghul-scarlett-scott/",
+    "https://screenrant.com/batman-future-break-canon-dc-comics-op-ed/",
+    "https://screenrant.com/how-batman-killed-darkseid-dc-comics/",
+    "https://telescopictube.com/what-does-the-batman-logo-look-like/",
+    "https://www.cbr.com/batman-bruce-wayne-every-robin-why-they-joined/",
+    "https://www.dc.com/blog/2023/04/07/batman-135-the-iconic-series-reaches-its-900th-issue-with-an-incredible-conclusion-to-the-bat-man-of-gotham",
+    "https://www.polysec.com.tr/gall.aspx?cid=75&g=23"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}
