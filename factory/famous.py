@@ -245,13 +245,16 @@ BAD_HOSTS = ("pinterest.", "pinimg.com", "tiktok.", "facebook.", "instagram.")
 def collect_images(api, event, fetcher, maximum):
     """Download candidate art for the storyline from image search results."""
     characters = " ".join(event["characters"][:2])
+    lead = event["characters"][0] if event["characters"] else ""
     queries = [
+        f"{event['famous_line']} comic panel",
+        f"{event['series']} {event['issue']} interior page panel",
+        f"{event['title']} comic page scene {lead}",
         f"{event['title']} comic panel",
-        f"{event['series']} {event['issue']} comic page {characters}",
-        f"{event['title']} comic art {event['publisher']}",
-        f"{event['series']} {event['issue']} preview",
+        f"{event['series']} {event['issue']} preview pages",
+        f"{event['title']} comic art {event['publisher']} {characters}",
     ]
-    rows = search(queries, images=True, each=14)
+    rows = search(queries, images=True, each=16)
     rows = [r for r in rows if r.get("image_url") and not any(h in r["image_url"] for h in BAD_HOSTS)]
     root = api.directory / "events" / event["id"]
     (root / "pages").mkdir(parents=True, exist_ok=True)
@@ -297,8 +300,8 @@ def judge_images(api, event, pages):
             data = api.json(
                 "Görsel uygunluğu",
                 f"""These images were found by searching for the comic storyline {json.dumps({k: event[k] for k in ('title', 'series', 'issue', 'publisher', 'characters')}, ensure_ascii=False)}.
-For each image decide: is_comic_art (true only for drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, fan 3D renders, memes), relevance 0..100 to this storyline and its characters (same characters in costume = 60+, the famous scene itself = 90+), text_heavy (true if large watermarks, memes captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
-Return {{"images":[{{"page_id":"","is_comic_art":true,"relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
+For each image decide: is_comic_art (true only for drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, fan 3D renders, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), relevance 0..100 to this storyline and its characters (same characters in costume = 60+, the famous scene itself = 90+), text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
+Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="images",
             )
@@ -321,10 +324,17 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"relevance":0,"text_heavy"
             except (TypeError, ValueError):
                 relevance = 0
             if row.get("is_comic_art") is True and not row.get("text_heavy") and relevance >= 55:
+                kind = str(row.get("kind", "interior")).casefold()
                 kept.append({**page, "relevance": relevance, "description": clean(row.get("description")),
+                             "kind": kind if kind in {"interior", "cover", "promo"} else "interior",
                              "characters": [str(c) for c in row.get("characters", []) if isinstance(c, str)]})
-    kept.sort(key=lambda p: p["relevance"], reverse=True)
-    return kept
+    # Story pages first; a cover makes a fine opening or closing image but a
+    # video made of six covers looks like an advert.
+    kept.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
+    covers = [p for p in kept if p["kind"] == "cover"]
+    others = [p for p in kept if p["kind"] != "cover"]
+    allowed = max(2, len(others) // 3)
+    return others + covers[:allowed]
 
 
 def cut_panels(api, event, pages):
@@ -336,7 +346,12 @@ def cut_panels(api, event, pages):
         with Image.open(api.directory / page["file"]) as source:
             picture = source.convert("RGB")
         boxes = segment_page(picture)
-        crops = boxes[:6] if len(boxes) >= 3 else [[0, 0, 1, 1]]
+        if len(boxes) >= 3:
+            crops = boxes[:6]
+        elif page.get("kind") == "cover":
+            crops = [[0, 0.16, 1, 0.97]]  # drop the logo strip and the barcode edge
+        else:
+            crops = [[0, 0, 1, 1]]
         for order, box in enumerate(crops):
             left, top, right, bottom = box
             crop = picture.crop((round(left * picture.width), round(top * picture.height),
@@ -398,11 +413,11 @@ Return {{"panels":[{{"id":"","description":"","characters":[],"shot_type":"close
 def collect(api, event, fetcher):
     """Everything the writer needs: (inventory, facts). Also fills event['source_urls']."""
     facts, article_urls = gather_facts(api, event, fetcher)
-    pages = collect_images(api, event, fetcher, max(16, api.settings.max_pages + 8))
+    pages = collect_images(api, event, fetcher, max(30, api.settings.max_pages + 14))
     judged = judge_images(api, event, pages)
-    if len(judged) < 4:
+    if len(judged) < 5:
         raise SourceUnavailable(f"Olayla ilgili yeterli çizgi roman görseli bulunamadı ({len(judged)}).")
-    inventory = describe_panels(api, cut_panels(api, event, judged[:18]))
+    inventory = describe_panels(api, cut_panels(api, event, judged[:22]))
     if len(inventory) < 6:
         raise SourceUnavailable("Yeterli panel kesilemedi.")
     event["source_urls"] = list(dict.fromkeys(article_urls + [p["source_url"] for p in judged]))[:12]
