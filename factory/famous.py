@@ -266,24 +266,41 @@ Return {{"facts":[{{"text":""}}]}}""",
 BAD_HOSTS = ("pinterest.", "pinimg.com", "tiktok.", "facebook.", "instagram.")
 
 
-def collect_images(api, event, fetcher, maximum):
-    """Download candidate art for the storyline from image search results."""
+def image_queries(event, round_number=1):
+    """Search phrasings anchored on the exact comic (series, issue, year,
+    artist, publisher) so the engines return printed pages, not movie stills."""
     characters = " ".join(event["characters"][:2])
     lead = event["characters"][0] if event["characters"] else ""
     artist = event.get("artist", "")
-    queries = [
-        f"{event['famous_line']} comic panel",
-        f"{event['series']} {event['issue']} {artist} panel".strip(),
-        f"{event['title']} {artist} comic page".strip(),
-        f"{event['series']} {event['issue']} {event['year']} interior page",
-        f"{event['title']} comic panel {lead}",
-        f"{event['title']} {event['year']} comic scene {characters}",
+    anchor = f"\"{event['series']}\" {event['issue']}"
+    if round_number == 1:
+        return [
+            f"{anchor} {artist} comic panel".strip(),
+            f"{anchor} {event['year']} comic book interior page",
+            f"{event['title']} {event['publisher']} comics {artist} panel".strip(),
+            f"{event['famous_line']} {event['publisher']} comic book panel",
+            f"{event['title']} {event['year']} comic scan {lead}",
+            f"{anchor} {characters} comic page",
+        ]
+    return [
+        f"{anchor} page scan",
+        f"{anchor} comic book page {event['year']}",
+        f"{event['title']} comic book pages {artist}".strip(),
+        f"{event['title']} original comic {event['year']} panels",
+        f"{lead} {event['title']} {event['publisher']} comic issue page",
+        f"{anchor} preview panel {event['publisher']}",
     ]
-    rows = search(queries, images=True, each=16)
+
+
+def collect_images(api, event, fetcher, maximum, round_number=1, seen=None):
+    """Download candidate art for the storyline from image search results."""
+    queries = image_queries(event, round_number)
+    rows = search(queries, images=True, each=18)
     rows = [r for r in rows if r.get("image_url") and not any(h in r["image_url"] for h in BAD_HOSTS)]
     root = api.directory / "events" / event["id"]
     (root / "pages").mkdir(parents=True, exist_ok=True)
-    pages, seen = [], set()
+    pages, seen = [], seen if seen is not None else set()
+    offset = len(list((root / "pages").glob("page_*.jpg")))
     for row in rows:
         if len(pages) >= maximum:
             break
@@ -299,7 +316,7 @@ def collect_images(api, event, fetcher, maximum):
                 picture = ImageOps.exif_transpose(opened).convert("RGB")
             if not 0.3 <= picture.width / picture.height <= 2.6:
                 continue
-            identifier = f"page_{len(pages):03}"
+            identifier = f"page_{offset + len(pages):03}"
             path = root / "pages" / (identifier + ".jpg")
             picture.save(path, "JPEG", quality=95)
             pages.append({"id": identifier, "file": str(path.relative_to(api.directory)),
@@ -309,9 +326,9 @@ def collect_images(api, event, fetcher, maximum):
             seen.add(digest)
         except Exception:
             continue
-    save_json(root / "pages.json", pages)
-    print(f"Görsel arama: {len(rows)} sonuç, {len(pages)} indirildi.", flush=True)
-    if len(pages) < 4:
+    save_json(root / f"pages_{round_number}.json", pages)
+    print(f"Görsel arama (tur {round_number}): {len(rows)} sonuç, {len(pages)} indirildi.", flush=True)
+    if len(pages) < 4 and round_number == 1:
         raise SourceUnavailable("Bu olay için yeterli görsel bulunamadı.")
     return pages
 
@@ -474,9 +491,18 @@ Return {{"panels":[{{"id":"","description":"","characters":[],"shot_type":"close
 def collect(api, event, fetcher):
     """Everything the writer needs: (inventory, facts). Also fills event['source_urls']."""
     facts, article_urls = gather_facts(api, event, fetcher)
-    pages = collect_images(api, event, fetcher, max(30, api.settings.max_pages + 14))
+    seen = set()
+    pages = collect_images(api, event, fetcher, max(30, api.settings.max_pages + 14), 1, seen)
     judged = judge_images(api, event, pages)
-    if len(judged) < 5:
+    strong = [p for p in judged if p["relevance"] >= 75]
+    if len(judged) < 8 or len(strong) < 5:
+        # Second round with different phrasings before giving up on a famous
+        # story: the first engine often answers with movie stills.
+        more = collect_images(api, event, fetcher, 24, 2, seen)
+        if more:
+            judged = judge_images(api, event, more) + judged
+            judged.sort(key=lambda p: (p["kind"] == "cover", -p["relevance"]))
+    if len(judged) < 4:
         raise SourceUnavailable(f"Olayla ilgili yeterli çizgi roman görseli bulunamadı ({len(judged)}); eleme {json.dumps(getattr(judge_images, 'last_tally', {}))}.")
     inventory = describe_panels(api, cut_panels(api, event, judged[:22]))
     if len(inventory) < 6:
