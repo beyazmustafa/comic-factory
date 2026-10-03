@@ -1,6 +1,6 @@
-run_id: 37113726365  attempt: 1  event: workflow_dispatch
+run_id: 37114363679  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261003T093922403599Z/run.json
+--- data/runs/20261003T095104951299Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,18 +38,20 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37113726365",
+  "run_id": "37114363679",
   "error": "SourceUnavailable: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.",
-  "api_calls": 17
+  "api_calls": 23
 }
---- data/runs/20261003T093922403599Z/diagnostics/provider_events.json
+--- data/runs/20261003T095104951299Z/diagnostics/provider_events.json
 [
-  "Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Görsel uygunluğu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261003T093922403599Z/diagnostics/providers.json
+--- data/runs/20261003T095104951299Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -71,8 +73,8 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b"
   ],
   "errors": [],
@@ -165,7 +167,7 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T093922403599Z/research/rejected_candidates.json
+--- data/runs/20261003T095104951299Z/research/rejected_candidates.json
 [
   {
     "event": {
@@ -188,7 +190,7 @@ produce step outcome: failure
       "url": "",
       "_source": "famous"
     },
-    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (0)."
+    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (0); eleme {\"pages\": 27, \"no_row\": 0, \"not_comic\": 27, \"text_heavy\": 0, \"low_relevance\": 0, \"kept\": 0}."
   }
 ]
 --- studio.log (son 300 satır)
@@ -199,10 +201,17 @@ produce step outcome: failure
 
 → Olay, gerçek sayfalar ve senaryo
 Olay araştırılıyor: The Night Gwen Stacy Died
-Olay gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Olay gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
-  warnings.warn(
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Görsel arama: 29 sonuç, 27 indirildi.
+Görsel uygunluğu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel eleme: {"pages": 27, "no_row": 0, "not_comic": 27, "text_heavy": 0, "low_relevance": 0, "kept": 0}
 HATA: Aday olaylarda yeterli doğrulanmış panel/anlatım eşleşmesi bulunamadı; kaynak raporları saklandı.
