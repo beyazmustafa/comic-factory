@@ -236,7 +236,16 @@ def base_image(panel, style, directory, output):
         target_ratio = size[0] / size[1]
         if framing == "fill" and picture.width / picture.height > target_ratio * 1.35:
             # A wide panel forced into 9:16 loses faces and balloons at the
-            # sides; show it whole over the blurred page instead.
+            # sides. Crop it to a square around its focus point (when the
+            # panel describer gave one) so it fills the width large, and show
+            # that over the blurred page instead of a thin strip.
+            ratio = picture.width / picture.height
+            focus = panel.get("focus")
+            if ratio >= 1.45:
+                width = round(picture.height * (1.0 if ratio >= 1.8 else 1.2))
+                fx = float(focus[0]) if isinstance(focus, (list, tuple)) and len(focus) == 2 else 0.5
+                left = max(0, min(picture.width - width, round(fx * picture.width - width / 2)))
+                picture = picture.crop((left, 0, left + width, picture.height))
             framing = "contain"
             if style["background"] == "page_fill":
                 background = background.filter(ImageFilter.GaussianBlur(22))

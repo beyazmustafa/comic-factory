@@ -496,7 +496,8 @@ def describe_panels(api, inventory):
             data = api.json(
                 "Panel açıklamaları",
                 f"""Describe each cropped comic panel in one vivid {language_name(api)} sentence: who is visible (use the character names if recognisable), the action, the mood (shock, grief, rage, triumph), and whether it is a close-up, medium or wide shot.
-Return {{"panels":[{{"id":"","description":"","characters":[],"shot_type":"close|medium|wide","intensity":0}}]}} with intensity 0..100 (how dramatic the image is).""",
+Also give focus: the [x,y] position (fractions 0..1 of width and height) of the most important face or action, so a wide panel can be cropped around it for a vertical screen.
+Return {{"panels":[{{"id":"","description":"","characters":[],"shot_type":"close|medium|wide","intensity":0,"focus":[0.5,0.5]}}]}} with intensity 0..100 (how dramatic the image is).""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="panels",
             )
@@ -517,6 +518,12 @@ Return {{"panels":[{{"id":"","description":"","characters":[],"shot_type":"close
             if isinstance(row.get("characters"), list):
                 panel["characters"] = [str(c) for c in row["characters"] if isinstance(c, str)] or panel["characters"]
             panel["shot_type"] = row.get("shot_type", "medium")
+            focus = row.get("focus")
+            if isinstance(focus, list) and len(focus) == 2:
+                try:
+                    panel["focus"] = [min(1.0, max(0.0, float(focus[0]))), min(1.0, max(0.0, float(focus[1])))]
+                except (TypeError, ValueError):
+                    pass
             try:
                 panel["intensity"] = max(0, min(100, int(float(row.get("intensity", 50)))))
             except (TypeError, ValueError):
