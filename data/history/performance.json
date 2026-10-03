@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 38.0,
-      "views_per_hour": 0.16,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
+      "hours_live": 44.7,
+      "views_per_hour": 0.13,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
       "views_24h": 6,
       "views_72h": null
     },
@@ -119,6 +119,11 @@
         "h": 38.0,
         "views": 6,
         "likes": 0
+      },
+      {
+        "h": 44.7,
+        "views": 6,
+        "likes": 0
       }
     ]
   },
@@ -168,12 +173,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 259,
+      "views": 282,
       "likes": 5,
       "comments": 0,
-      "hours_live": 35.3,
-      "views_per_hour": 7.33,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
+      "hours_live": 42.0,
+      "views_per_hour": 6.71,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
       "views_24h": 179,
       "views_72h": null
     },
@@ -242,6 +247,11 @@
         "h": 35.3,
         "views": 259,
         "likes": 5
+      },
+      {
+        "h": 42.0,
+        "views": 282,
+        "likes": 5
       }
     ]
   },
@@ -291,12 +301,12 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 23,
+      "views": 24,
       "likes": 1,
       "comments": 0,
-      "hours_live": 34.4,
-      "views_per_hour": 0.67,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
+      "hours_live": 41.1,
+      "views_per_hour": 0.58,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
       "views_24h": 16,
       "views_72h": null
     },
@@ -365,6 +375,11 @@
         "h": 34.4,
         "views": 23,
         "likes": 1
+      },
+      {
+        "h": 41.1,
+        "views": 24,
+        "likes": 1
       }
     ]
   },
@@ -413,12 +428,12 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 37,
+      "views": 45,
       "likes": 1,
       "comments": 0,
-      "hours_live": 34.2,
-      "views_per_hour": 1.08,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
+      "hours_live": 40.8,
+      "views_per_hour": 1.1,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
       "views_24h": 21,
       "views_72h": null
     },
@@ -487,6 +502,11 @@
         "h": 34.2,
         "views": 37,
         "likes": 1
+      },
+      {
+        "h": 40.8,
+        "views": 45,
+        "likes": 1
       }
     ]
   },
@@ -535,12 +555,12 @@
       "rationale": "Creating a brief moment of silence for the visual payoff can increase the impact of the consequence and improve loop-back retention."
     },
     "stats": {
-      "views": 11,
+      "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 33.8,
-      "views_per_hour": 0.33,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
+      "hours_live": 40.4,
+      "views_per_hour": 0.3,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
       "views_24h": 9,
       "views_72h": null
     },
@@ -609,6 +629,11 @@
         "h": 33.8,
         "views": 11,
         "likes": 1
+      },
+      {
+        "h": 40.4,
+        "views": 12,
+        "likes": 1
       }
     ]
   },
@@ -658,13 +683,13 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 2,
+      "views": 3,
       "likes": 0,
       "comments": 0,
-      "hours_live": 20.1,
-      "views_per_hour": 0.1,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
-      "views_24h": null,
+      "hours_live": 26.7,
+      "views_per_hour": 0.11,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "views_24h": 3,
       "views_72h": null
     },
     "stats_history": [
@@ -732,6 +757,11 @@
         "h": 20.1,
         "views": 2,
         "likes": 0
+      },
+      {
+        "h": 26.7,
+        "views": 3,
+        "likes": 0
       }
     ]
   },
@@ -784,10 +814,10 @@
       "views": 4,
       "likes": 0,
       "comments": 0,
-      "hours_live": 20.0,
-      "views_per_hour": 0.2,
-      "fetched_at": "2026-10-03T11:23:11+00:00",
-      "views_24h": null,
+      "hours_live": 26.7,
+      "views_per_hour": 0.15,
+      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "views_24h": 4,
       "views_72h": null
     },
     "stats_history": [
@@ -855,7 +885,106 @@
         "h": 20.0,
         "views": 4,
         "likes": 0
+      },
+      {
+        "h": 26.7,
+        "views": 4,
+        "likes": 0
       }
     ]
+  },
+  {
+    "video_id": "ro3EfastGx4",
+    "platform": "youtube",
+    "run_id": "37142679423",
+    "published_at": "2026-10-03T18:27:42+00:00",
+    "event": {
+      "title": "World War Hulk",
+      "series": "World War Hulk",
+      "issue": "1-5",
+      "year": 2007,
+      "publisher": "Marvel"
+    },
+    "profile": {
+      "shots": 20,
+      "words": 166,
+      "duration": 75.5,
+      "words_per_minute": 132,
+      "hook": "Hulk returns from space to make the Illuminati pay!",
+      "hook_words": 9,
+      "title": "Why Does Hulk Declare War on Earth and the Illuminati?",
+      "title_length": 54,
+      "emphasis": {
+        "danger": 1,
+        "normal": 17,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 99.82926829268293,
+        "scene_match": 95,
+        "delivery": 99.82926829268293,
+        "visual_readability": 90
+      },
+      "issues": [],
+      "summary": "English comic documentary video evaluated successfully with high quality pacing, strong sync, and clean presentation."
+    },
+    "experiment": {
+      "name": "red_emphasis_first_shot",
+      "change": "Apply a red 'danger' emphasis color to the very first shot narration beat instead of normal text.",
+      "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
+    },
+    "stats": {}
+  },
+  {
+    "video_id": "KG5fOgR1tD4",
+    "platform": "youtube",
+    "run_id": "37142679423",
+    "published_at": "2026-10-03T18:28:50+00:00",
+    "event": {
+      "title": null,
+      "series": null,
+      "issue": null,
+      "year": null,
+      "publisher": null
+    },
+    "profile": {
+      "shots": 20,
+      "words": 142,
+      "duration": 80.0,
+      "words_per_minute": 107,
+      "hook": "Hulk uzaydan döndü, Illuminati'ye hesabı ödetmek için!",
+      "hook_words": 7,
+      "title": "Hulk'un Dünya ve Illuminati'ye Savaşı: Neden ve Nasıl?",
+      "title_length": 54,
+      "emphasis": {
+        "danger": 1,
+        "normal": 17,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Ahmet",
+    "review": {
+      "mode": "measured",
+      "scores": {
+        "subtitle_sync": 87.17948717948718,
+        "scene_match": 95,
+        "delivery": 87.17948717948718,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Localized edition (tr); panels and audit shared with the primary edition."
+    },
+    "experiment": {
+      "name": "red_emphasis_first_shot",
+      "change": "Apply a red 'danger' emphasis color to the very first shot narration beat instead of normal text.",
+      "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
+    },
+    "stats": {}
   }
 ]

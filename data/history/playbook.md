@@ -3,9 +3,8 @@
 - Duration & shots: Target 23-24 shots across 80-90 seconds duration to match top-performing video averages.
 - Speech delivery: Target an energetic pace of 140-150 words per minute.
 - Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.
-- Title format: Curiosity-driven question or shock, 44-50 characters, naming hero and antagonist.
+- Title format: Curiosity-driven question or shock, 40-50 characters, naming famous hero and antagonist.
 - Emphasis share: Keep colored emphasis strictly <= 25% of total shots (red=danger, green=reveal, cyan=turn).
-- Opening emphasis: Start shot 1 with normal text to keep visual focus clean on panel action.
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
 - Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.

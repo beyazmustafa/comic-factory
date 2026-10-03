@@ -297,5 +297,14 @@
       "change": "Render all red 'danger' emphasis captions in ALL-CAPS to distinguish them from normal narration.",
       "rationale": "Visual differentiation of high-stakes moments can increase viewer arousal and retention during peak action sequences."
     }
+  },
+  {
+    "run_id": "37142679423",
+    "chosen_at": "2026-10-03T18:03:23+00:00",
+    "experiment": {
+      "name": "red_emphasis_first_shot",
+      "change": "Apply a red 'danger' emphasis color to the very first shot narration beat instead of normal text.",
+      "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
+    }
   }
 ]

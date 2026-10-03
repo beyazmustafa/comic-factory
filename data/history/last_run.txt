@@ -1,6 +1,6 @@
-run_id: 37119438367  attempt: 1  event: workflow_dispatch
+run_id: 37142679423  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261003T112310786349Z/run.json
+--- data/runs/20261003T180230873752Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,70 +38,70 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37119438367",
+  "run_id": "37142679423",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "262de86c5920fad42b4e8329f1b049f2cb38893c6b784f76c1b5d2a08ad75c91",
-  "metadata_sha256": "1547ed70b99380c3f0827e91e3d5c997f2f12e3cfca3fd2dccb04dad6662ba45",
-  "quality_sha256": "5b4058c248e402b99672336429a804ca1751ca04109005cfc85b2cbbd62a7cc1",
-  "api_calls": 60,
-  "duration": 93.78,
+  "video_sha256": "266378b3e8be64cf71d2b192eb7a39ca2fa07a299da83c63a01ea6d80d95023e",
+  "metadata_sha256": "d22b1592df78ce66b55c8645e25cb73cbe4fd169791f09c1f3ca05315c92a730",
+  "quality_sha256": "189a4e7ed83c29a503d6dea253d70d8893eccc71c1b2c52a2e7c713b16bfa79a",
+  "api_calls": 64,
+  "duration": 75.47,
   "voice": "Orus",
   "event": {
-    "id": "famous_born-again",
-    "title": "Daredevil: Born Again",
+    "id": "famous_world-war-hulk",
+    "title": "World War Hulk",
     "publisher": "Marvel",
-    "series": "Daredevil",
-    "issue": "227-233",
-    "year": 1986,
+    "series": "World War Hulk",
+    "issue": "1-5",
+    "year": 2007,
     "universe": "Marvel",
     "characters": [
-      "Daredevil",
-      "Kingpin",
-      "Karen Page"
+      "Hulk",
+      "Iron Man",
+      "Doctor Strange",
+      "Sentry"
     ],
-    "summary": "Kingpin learns Daredevil's identity and destroys his whole life",
-    "famous_line": "Kingpin learns Daredevil's identity and destroys his whole life",
-    "artist": "David Mazzucchelli",
+    "summary": "Hulk returns from space to make the Illuminati pay",
+    "famous_line": "Hulk returns from space to make the Illuminati pay",
+    "artist": "John Romita Jr",
     "source_urls": [
-      "https://en.wikipedia.org/wiki/Born_Again_(comics)",
-      "https://iliketodabble.com/daredevil-born-again-ending-explained/",
-      "https://fictionhorizon.com/daredevil-born-again-reading-order-the-complete-comics-guide/",
-      "https://www.thepopverse.com/comics-marvel-daredevil-born-again-reading-guide-frank-miller",
-      "https://screenrant.com/best-marvel-comics-all-time-hulk-daredevil/",
-      "https://screenrant.com/spider-man-kingpin-comic-book-facts-trivia/",
-      "https://thegreatcomicbookheroes.blogspot.com/2014/09/happy-54th-birthday-david-mazzucchelli.html",
-      "https://1986comics.com/frank-millers-brilliant-year-part-2-enter-the-assassin/",
-      "https://www.reddit.com/r/comicbooks/comments/e761yv/just_reread_my_favourite_story_of_all_time_again/",
-      "https://www.secondstorybooks.com/pages/books/1356207/frank-miller-david-mazzucchelli/daredevil-no-227-233-born-again-storyline?soldItem=true",
-      "https://www.gamesradar.com/comics/marvel-comics/giant-size-daredevil-kingpin-spoilers/",
-      "https://fity.club/lists/suggestions/Daredevil-Kingpin/"
+      "https://en.wikipedia.org/wiki/World_War_Hulk",
+      "https://en.wikipedia.org/wiki/World_War_Hulks",
+      "https://www.cbr.com/world-war-hulk-comic-reading-guide/",
+      "https://omniversecomics.guide/2024/12/16/world-war-hulk/",
+      "https://screenrant.com/world-war-hulk-why-hulk-exiled-space-explained/",
+      "https://gobookmart.com/top-10-green-comic-book-superheroes/",
+      "https://comicbook.com/comics/news/superhero-costume-redesigns-marvel-dc-comics-list/",
+      "https://gamerant.com/marvel-surprising-characters-beaten-hulk/",
+      "https://goldenapplecomics.com/products/world-war-hulk-3-b-marvel-2007-1-20-john-romita-jr-variant",
+      "https://www.chaoticcomics.ca/products/world-war-hulk-3-marvel-2007-john-romita-jr-1-25-variant",
+      "https://picclick.it/World-War-Hulk-1-quasi-nuovo-John-Romita-315227218758.html"
     ],
-    "url": "https://en.wikipedia.org/wiki/Born_Again_(comics)",
+    "url": "https://en.wikipedia.org/wiki/World_War_Hulk",
     "_source": "famous"
   },
   "localized": [
     "lang_tr"
   ]
 }
---- data/runs/20261003T112310786349Z/diagnostics/provider_events.json
+--- data/runs/20261003T180230873752Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Olay gerçekleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
   "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261003T112310786349Z/diagnostics/providers.json
+--- data/runs/20261003T180230873752Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -123,8 +123,8 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b"
   ],
   "errors": [],
@@ -217,7 +217,7 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261003T112310786349Z/voice_audition/failed_auditions.json
+--- data/runs/20261003T180230873752Z/voice_audition/failed_auditions.json
 {}
 --- studio.log (son 300 satır)
 
@@ -227,23 +227,21 @@ produce step outcome: success
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: Daredevil: Born Again
-Olay gerçekleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Olay gerçekleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Olay gerçekleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
-  warnings.warn(
-Makale görselleri: 111 aday, 24 indirildi.
-Görsel arama (tur 1): 74 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 54, "no_row": 0, "not_comic": 12, "text_heavy": 2, "low_relevance": 0, "kept": 37, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 50, "desc": "Artist David Mazzucchelli signs a large collection of Daredevil Born A"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 0, "desc": "A smiling woman with bright teal hair and pink eye makeup poses for a "}, {"id": "page_002", "comic": true, "kind": "cover", "rel": 80, "desc": "Daredevil dodges a sword attack from the Gladiator on the cover of Dar"}, {"id": "page_003", "comic": true, "kind": "cover", "rel": 95, "desc": "Daredevil leaps across a New York City skyline viewed through sniper c"}, {"id": "page_004", "comic": true, "kind": "cover", "rel": 95, "desc": "A close-up of Matt Murdock's face behind cracked green-tinted glasses "}, {"id": "page_005", "comic": true, "kind": "cover", "rel": 95, "desc": "Matt Murdock stands in the snow holding a knife while facing a white-g"}], "sketch": 3}
+Olay araştırılıyor: World War Hulk
+Makale görselleri: 126 aday, 20 indirildi.
+Görsel arama (tur 1): 38 sonuç, 29 indirildi.
+Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel uygunluğu: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel eleme: {"pages": 49, "no_row": 6, "not_comic": 20, "text_heavy": 2, "low_relevance": 0, "kept": 21, "sample": [{"id": "page_000", "comic": true, "kind": "promo", "rel": 85, "desc": "A collage showing Hulk fighting Sentry on the right, and various Marve"}, {"id": "page_001", "comic": true, "kind": "interior", "rel": 88, "desc": "The Warbound stand together in a dramatic splash page as they arrive o"}, {"id": "page_002", "comic": true, "kind": "cover", "rel": 95, "desc": "Hulk leaps forward to punch the Earth, with a Marvel Studios logo at t"}, {"id": "page_003", "comic": true, "kind": "promo", "rel": 90, "desc": "A close-up of Hulk's face from the cover of World War Hulk #1 with rea"}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 80, "desc": "A cover gallery page showing four comic book covers related to the Wor"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 80, "desc": "A cover gallery page showing four tie-in comic book covers for World W"}]}
 
 → Türkçe ses seçimi
 
@@ -251,15 +249,13 @@ Görsel eleme: {"pages": 54, "no_row": 0, "not_comic": 12, "text_heavy": 2, "low
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
@@ -269,14 +265,79 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 → tr sürümü
 Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 93.9/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 88.6/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 91.7/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
 Ses eşleştirme: 97.5/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 91.8/100 | whisper-large-v3-turbo
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T112310786349Z/review.html
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 84.6/100 | whisper-large-v3
+Ses eşleştirme: 87.2/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 99.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 96.2/100 | whisper-large-v3
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T180230873752Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Why Does Hulk Declare War on Earth and the Illuminati? #Shorts
+Görünürlük: public
+
+Yükleme: %10
+Yükleme: %20
+Yükleme: %30
+Yükleme: %41
+Yükleme: %51
+Yükleme: %61
+Yükleme: %72
+Yükleme: %82
+Yükleme: %92
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=ro3EfastGx4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261003T180230873752Z/video.mp4
+Boyut: 77.5 MB
+Açıklama uzunluğu: 148 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17966587710187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 18625345942023589
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Hulk'un Dünya ve Illuminati'ye Savaşı: Neden ve Nasıl? #Shorts
+Görünürlük: public
+
+Yükleme: %9
+Yükleme: %19
+Yükleme: %29
+Yükleme: %39
+Yükleme: %49
+Yükleme: %58
+Yükleme: %68
+Yükleme: %78
+Yükleme: %88
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=KG5fOgR1tD4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

@@ -1,0 +1,280 @@
+{
+  "script": {
+    "title": "Why Does Hulk Declare War on Earth and the Illuminati?",
+    "description": "The tragic and explosive story of World War Hulk retold.",
+    "hook_card": "HULK RETURNS FOR REVENGE",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_002_p00",
+        "narration": "Hulk returns from space to make the Illuminati pay!",
+        "fact_ids": [
+          "fact_000",
+          "fact_001"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_007_p00",
+        "narration": "Stopping at the Moon, he swiftly defeats Black Bolt.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_001_p00",
+        "narration": "Then he lands in Manhattan demanding their surrender.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_041_p00",
+        "narration": "Even multiple teams of X-Men fall before his wrath.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_008_p00",
+        "narration": "He crushes Iron Man and destroys Stark Tower.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_008_p00",
+        "narration": "Iron Man is left cradling deep grief amidst ruin.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_001_p00",
+        "narration": "The Avengers and Fantastic Four stand no chance either.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_035_p00",
+        "narration": "Obedience disks are locked onto every captured hero.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_034_p00",
+        "narration": "Thunderbolt Ross and the U.S. Army are completely routed.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_036_p00",
+        "narration": "Doctor Strange harnesses the dark demonic entity Zom.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_048_p00",
+        "narration": "It does not matter; Hulk defeats Zom anyway.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_010_p00",
+        "narration": "Madison Square Garden becomes a brutal gladiatorial arena.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "up",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_018_p00",
+        "narration": "Captured leaders are forced to fight each other.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_000_p00",
+        "narration": "The Sentry arrives for a city-leveling final showdown.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_017_p00",
+        "narration": "Both fighters exhaust themselves back to human forms.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_036_p00",
+        "narration": "Then Miek reveals a shattering and terrible truth.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "left",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_011_p00",
+        "narration": "Red King loyalists caused the explosion, not the Illuminati.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_019_p00",
+        "narration": "Hulk's uncontainable rage begins threatening the entire planet.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_017_p01",
+        "narration": "Stark satellites fire, rendering Bruce Banner finally unconscious.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_018_p00",
+        "narration": "S.H.I.E.L.D. seals Banner away three miles underground.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Hulk returns from space to make the Illuminati pay! Stopping at the Moon, he swiftly defeats Black Bolt. Then he lands in Manhattan demanding their surrender. Even multiple teams of X-Men fall before his wrath. He crushes Iron Man and destroys Stark Tower. Iron Man is left cradling deep grief amidst ruin. The Avengers and Fantastic Four stand no chance either. Obedience disks are locked onto every captured hero. Thunderbolt Ross and the U.S. Army are completely routed. Doctor Strange harnesses the dark demonic entity Zom. It does not matter; Hulk defeats Zom anyway. Madison Square Garden becomes a brutal gladiatorial arena. Captured leaders are forced to fight each other. The Sentry arrives for a city-leveling final showdown. Both fighters exhaust themselves back to human forms. Then Miek reveals a shattering and terrible truth. Red King loyalists caused the explosion, not the Illuminati. Hulk's uncontainable rage begins threatening the entire planet. Stark satellites fire, rendering Bruce Banner finally unconscious. S.H.I.E.L.D. seals Banner away three miles underground.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_world-war-hulk",
+      "title": "World War Hulk",
+      "publisher": "Marvel",
+      "series": "World War Hulk",
+      "issue": "1-5",
+      "year": 2007,
+      "universe": "Marvel",
+      "characters": [
+        "Hulk",
+        "Iron Man",
+        "Doctor Strange",
+        "Sentry"
+      ],
+      "summary": "Hulk returns from space to make the Illuminati pay",
+      "famous_line": "Hulk returns from space to make the Illuminati pay",
+      "artist": "John Romita Jr",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/World_War_Hulk",
+        "https://en.wikipedia.org/wiki/World_War_Hulks",
+        "https://www.cbr.com/world-war-hulk-comic-reading-guide/",
+        "https://omniversecomics.guide/2024/12/16/world-war-hulk/",
+        "https://screenrant.com/world-war-hulk-why-hulk-exiled-space-explained/",
+        "https://gobookmart.com/top-10-green-comic-book-superheroes/",
+        "https://comicbook.com/comics/news/superhero-costume-redesigns-marvel-dc-comics-list/",
+        "https://gamerant.com/marvel-surprising-characters-beaten-hulk/",
+        "https://goldenapplecomics.com/products/world-war-hulk-3-b-marvel-2007-1-20-john-romita-jr-variant",
+        "https://www.chaoticcomics.ca/products/world-war-hulk-3-marvel-2007-john-romita-jr-1-25-variant",
+        "https://picclick.it/World-War-Hulk-1-quasi-nuovo-John-Romita-315227218758.html"
+      ],
+      "url": "https://en.wikipedia.org/wiki/World_War_Hulk",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance"
+    },
+    "full_description": "The tragic and explosive story of World War Hulk retold.\n\nComic: World War Hulk #1-5 (2007)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://gamerant.com/marvel-surprising-characters-beaten-hulk/\nhttps://gobookmart.com/top-10-green-comic-book-superheroes/\nhttps://goldenapplecomics.com/products/world-war-hulk-3-b-marvel-2007-1-20-john-romita-jr-variant\nhttps://omniversecomics.guide/2024/12/16/world-war-hulk/\nhttps://picclick.it/World-War-Hulk-1-quasi-nuovo-John-Romita-315227218758.html\nhttps://screenrant.com/world-war-hulk-why-hulk-exiled-space-explained/\nhttps://www.cbr.com/world-war-hulk-comic-reading-guide/\nhttps://www.chaoticcomics.ca/products/world-war-hulk-3-marvel-2007-john-romita-jr-1-25-variant",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "marvel"
+    ],
+    "instagram_caption": "Why Does Hulk Declare War on Earth and the Illuminati?\n\nThe tragic and explosive story of World War Hulk retold."
+  },
+  "sources": [
+    "https://gamerant.com/marvel-surprising-characters-beaten-hulk/",
+    "https://gobookmart.com/top-10-green-comic-book-superheroes/",
+    "https://goldenapplecomics.com/products/world-war-hulk-3-b-marvel-2007-1-20-john-romita-jr-variant",
+    "https://omniversecomics.guide/2024/12/16/world-war-hulk/",
+    "https://picclick.it/World-War-Hulk-1-quasi-nuovo-John-Romita-315227218758.html",
+    "https://screenrant.com/world-war-hulk-why-hulk-exiled-space-explained/",
+    "https://www.cbr.com/world-war-hulk-comic-reading-guide/",
+    "https://www.chaoticcomics.ca/products/world-war-hulk-3-marvel-2007-john-romita-jr-1-25-variant"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}

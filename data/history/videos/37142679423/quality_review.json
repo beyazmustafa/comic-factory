@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 99.82926829268293,
+  "scene_match": 95,
+  "delivery": 99.82926829268293,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Video opens with strong single-word caption style displaying 'RETURNS' in bold yellow with a black stroke."
+    },
+    {
+      "second": 15,
+      "detail": "Iron Man and Stark Tower panel matches the narration cleanly, dynamic zoom applied."
+    },
+    {
+      "second": 30,
+      "detail": "Thunderbolt Ross shot displays clear panel framing with single-word flashing text."
+    },
+    {
+      "second": 45,
+      "detail": "Madison Square Garden arena panels show good synchronization with the narrator's pacing."
+    },
+    {
+      "second": 60,
+      "detail": "Red King loyalists panel displayed correctly during exposition of the plot twist."
+    },
+    {
+      "second": 74,
+      "detail": "Final scene showing S.H.I.E.L.D. sealing Banner underground with solid visual pacing."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English comic documentary video evaluated successfully with high quality pacing, strong sync, and clean presentation.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 92,
+    "scene_match": 95,
+    "delivery": 90,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 99.82926829268293,
+    "scene_match": 95,
+    "delivery": 99.82926829268293
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}
