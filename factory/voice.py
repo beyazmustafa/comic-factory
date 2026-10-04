@@ -385,7 +385,20 @@ def valid_cached(candidate, path, text, key, threshold):
 
 
 def build_audio(api, story, voice, style, cache):
-    samples, aligned, reports = [], [], []
+    """One narrator for the whole video: if the Gemini voice drops out midway
+    (quota), every chunk is redone with the same edge-tts voice rather than
+    letting the narrator change between sentences."""
+    output, aligned, duration, engines = _build_audio(api, story, voice, style, cache)
+    if len(engines) > 1:
+        fallback = edge_voice_for(api, voice)
+        api.note(f"Anlatıcı sesi bölüm ortasında değişmişti ({', '.join(sorted(engines))}); tüm video {fallback} ile yeniden seslendirildi.")
+        api.tts_fallback = True
+        output, aligned, duration, engines = _build_audio(api, story, fallback, style, cache)
+    return output, aligned, duration
+
+
+def _build_audio(api, story, voice, style, cache):
+    samples, aligned, reports, engines = [], [], [], set()
     cursor = 0
     for i, group in enumerate(chunks(story["shots"], api.settings.chunk_words)):
         text = " ".join(s["narration"] for s in group)
@@ -439,7 +452,8 @@ def build_audio(api, story, voice, style, cache):
                 try:
                     path = synthesize(api, text, voice, style, work / "narration.wav")
                     accepted = align_clip(api, path, text, work)
-                    accepted.update(audio_sha256=file_hash(path), signature=key)
+                    engine = "edge" if (voice in EDGE_VOICE_IDS or getattr(api, "tts_fallback", False)) else "gemini"
+                    accepted.update(audio_sha256=file_hash(path), signature=key, engine=engine)
                     shutil.copy2(path, directory / "narration.wav")
                     save_json(directory / "accepted.json", accepted)
                     cached.mkdir(parents=True, exist_ok=True)
@@ -453,6 +467,7 @@ def build_audio(api, story, voice, style, cache):
             raise SpeechFailure(
                 f"{i + 1}. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
             )
+        engines.add(accepted.get("engine", "edge" if voice in EDGE_VOICE_IDS else "gemini"))
         data = read_wave(directory / "narration.wav")
         offset = cursor / RATE
         aligned.extend(
@@ -483,4 +498,4 @@ def build_audio(api, story, voice, style, cache):
         raise SpeechFailure(
             f"Anlatım {duration:.1f} saniye; daha kısa hedef süre seç. Başarılı sesler saklandı."
         )
-    return output, aligned, duration
+    return output, aligned, duration, engines
