@@ -64,7 +64,7 @@ TOPICS = [
     ("apollo-13", "The 90 Seconds That Nearly Killed Apollo 13", ["Apollo 13", "Apollo 13 service module", "Apollo mission control"], "an oxygen tank explodes 320,000 km from home"),
     ("challenger", "What Really Went Wrong on Challenger", ["Challenger launch", "Challenger crew", "Space Shuttle launch"], "an O-ring, a cold morning, 73 seconds"),
     ("columbia", "Columbia Was Doomed Before It Reached Orbit", ["Columbia shuttle", "STS-107", "shuttle reentry"], "a piece of foam, 16 days in orbit"),
-    ("dark-forest", "Why the Universe Is So Quiet", ["radio telescope", "Arecibo", "Very Large Array", "exoplanet"], "Fermi paradox, dark forest"),
+    ("dark-forest", "Why Haven't We Heard From Aliens Yet?", ["radio telescope", "Arecibo", "Very Large Array", "exoplanet"], "Fermi paradox, dark forest"),
     ("kessler", "The Day Space Debris Traps Us on Earth", ["space debris", "satellite orbit", "ISS damage"], "Kessler syndrome, 36,000 pieces tracked"),
     ("ocean-worlds", "Enceladus Is Spraying Its Ocean Into Space", ["Enceladus plumes", "Enceladus Cassini", "Saturn moon"], "geysers, salt, organic molecules"),
     ("red-dwarf", "Why Living Next to a Red Dwarf Would Be Hell", ["red dwarf flare", "Proxima Centauri", "TRAPPIST-1"], "flares strip atmospheres, tidal locking"),
@@ -220,7 +220,19 @@ def commons_search(query, count=10):
     return rows
 
 
+def dhash(picture, size=8):
+    """Perceptual hash: near-identical photos collapse to the same bits."""
+    gray = picture.convert("L").resize((size + 1, size), Image.Resampling.LANCZOS)
+    pixels = list(gray.getdata())
+    bits = 0
+    for row in range(size):
+        for col in range(size):
+            bits = (bits << 1) | (1 if pixels[row * (size + 1) + col] > pixels[row * (size + 1) + col + 1] else 0)
+    return bits
+
+
 def download(api, event, rows, maximum, seen):
+    download.signatures = []
     fetcher = Fetcher()
     root = api.directory / "events" / event["id"]
     (root / "pages").mkdir(parents=True, exist_ok=True)
@@ -250,6 +262,10 @@ def download(api, event, rows, maximum, seen):
                     continue
                 if picture.width > 4000 or picture.height > 4000:
                     picture.thumbnail((4000, 4000), Image.Resampling.LANCZOS)
+                signature = dhash(picture)
+                if any(bin(signature ^ other).count("1") <= 6 for other in download.signatures):
+                    break  # near-duplicate of an image already kept (same dish, other angle)
+                download.signatures.append(signature)
                 seen.add(digest)
                 identifier = f"page_{offset + len(pages):03}"
                 path = root / "pages" / (identifier + ".jpg")

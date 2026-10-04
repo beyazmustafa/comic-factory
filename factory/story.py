@@ -72,6 +72,29 @@ def validate_story(value, panels, facts, max_shots=40):
     }
 
 
+def polish_headline(api, value, event):
+    """Second pass on the two things that decide the click: title and hook card."""
+    try:
+        data = api.json(
+            "Başlık ve kanca",
+            f"""You write titles for a top {language_name(api)} Shorts channel. Here is a finished narration:
+{value["narration"][:1800]}
+Current title: {value["title"]}
+Current hook card: {value.get("hook_card", "")}
+Write 5 candidate titles (40..70 characters, natural {language_name(api)}, name the subject, open a curiosity gap or state the shock, no clickbait lies, no ALL CAPS, no emojis, no colon-heavy SEO style) and 5 candidate hook cards (3..6 words, ALL CAPS, a complete punchy phrase a viewer reads in half a second, e.g. "YOU HAVE 15 SECONDS", "BANE BROKE THE BAT"; must be true to the first sentence). Then pick the best of each.
+Return {{"titles":[],"hook_cards":[],"best_title":"","best_hook_card":""}}""",
+        )
+        title = clean(data.get("best_title"))
+        hook = clean(data.get("best_hook_card"))
+        if 30 <= len(title) <= 80 and not title.isupper():
+            value["title"] = title[:100]
+        if 2 <= len(hook.split()) <= 7 and len(hook) <= 48:
+            value["hook_card"] = hook.upper() if hook.isascii() else hook
+        value["headline_candidates"] = {"titles": data.get("titles", []), "hook_cards": data.get("hook_cards", [])}
+    except Exception as error:  # noqa: BLE001 - polish is optional
+        print(f"Başlık cilası atlandı: {str(error)[:120]}", flush=True)
+
+
 def variety_problems(shots, panels):
     """Famous mode: the writer must spread beats over many distinct images."""
     kind = {p["id"]: p.get("kind", "interior") for p in panels}
@@ -134,7 +157,7 @@ def create(api, event, panels, facts, style):
     famous = event.get("_source") in {"famous", "space"}
     space = event.get("_source") == "space"
     mode = (
-        "MODE: a space/science story for a global Shorts audience, told like a thriller: what would ACTUALLY happen, step by step, with numbers the viewer can feel (seconds, degrees, kilometres per second), second person where it fits ('your blood', 'you have 15 seconds'). FACTS are the science; PANELS are real NASA/ESA/telescope photographs with a description each: for every beat pick the image whose visible content fits the sentence best (the Sun's surface for heat, a spacewalk for the body, a nebula for scale); never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. No character names needed; name the object (the Sun, Jupiter, Betelgeuse) in the first sentence. "
+        "MODE: a space/science story for a global Shorts audience, told like a thriller: what would ACTUALLY happen, step by step, with numbers the viewer can feel (seconds, degrees, kilometres per second), second person where it fits ('your blood', 'you have 15 seconds'). FACTS are the science; PANELS are real NASA/ESA/telescope photographs with a description each: for every beat pick the image whose visible content fits the sentence best (the Sun's surface for heat, a spacewalk for the body, a nebula for scale); never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. Never put two visually similar images back to back (two telescope dishes, two similar nebulae): alternate subjects so every cut feels new. No character names needed; name the object (the Sun, Jupiter, Betelgeuse) in the first sentence. "
         if space else
         "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. Each panel carries confidence = how clearly it belongs to this exact storyline; use 75+ panels for the shocking beats and the opening, lower ones only as fillers. VARIETY IS MANDATORY: never the same panel in two consecutive shots, each panel at most twice, at least 75% of shots on distinct panels, covers (kind=cover) in at most a quarter of shots and never as the opening shot. "
         if famous else
@@ -191,6 +214,7 @@ REPAIR FEEDBACK {feedback}""",
             if problems:
                 value["shots"] = dedupe_consecutive(value["shots"])
                 value["narration"] = " ".join(s["narration"] for s in value["shots"])
+            polish_headline(api, value, event)
             value.update(event=event, panel_validation={"passed": True, "shots": [], "mode": "relevance",
                                                         "variety_warnings": problems})
             save_json(api.directory / "story.json", value)
