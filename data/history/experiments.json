@@ -308,19 +308,19 @@
     },
     "measured": {
       "metric": "views_per_hour",
-      "video": 9.81,
+      "video": 9.53,
       "baseline_median": 3.0
     },
     "verdict": "kept",
     "judged_by": "numbers"
   },
   {
-    "run_id": "37189867302",
-    "chosen_at": "2026-10-04T08:45:20+00:00",
+    "run_id": "37191150918",
+    "chosen_at": "2026-10-04T09:11:27+00:00",
     "experiment": {
-      "name": "strict_six_word_hook",
-      "change": "Limit the opening hook sentence to exactly 5 or 6 words.",
-      "rationale": "Measured data shows top performers average 7.0 hook words versus 8.7 for worst performers, making even tighter hook brevity a prime lever for viewer retention."
+      "name": "cyan_reversal_penultimate_shot",
+      "change": "Set the penultimate shot (shot N-1) to cyan reversal emphasis directly before the final consequence beat.",
+      "rationale": "Marking a distinct narrative turning point right before the final impact maximizes tension and sharpens the abrupt cold consequence ending."
     }
   }
 ]

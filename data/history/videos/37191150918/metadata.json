@@ -1,0 +1,298 @@
+{
+  "script": {
+    "title": "Why Is the Milky Way Silence Hiding Alien Civilizations?",
+    "description": "Explaining the chilling silence of space, the Fermi Paradox, and why alien worlds may never communicate.",
+    "hook_card": "WHERE IS EVERYBODY ALIVE",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_015_p00",
+        "narration": "The Milky Way contains over 6,000 confirmed exoplanet worlds.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_021_p00",
+        "narration": "Yet our radio telescopes scan a deadly, absolute silence.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_013_p00",
+        "narration": "In 1950, physicist Enrico Fermi asked his iconic question.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_004_p00",
+        "narration": "Where is everybody across this vast cosmic expanse?",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_008_p00",
+        "narration": "Earth packs 25 quintillion air molecules into every cubic centimeter.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_010_p00",
+        "narration": "On Earth, sound waves blast forward at 343 meters per second.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_009_p00",
+        "narration": "The Moon holds one-sixth Earth's gravity with zero voice.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_017_p00",
+        "narration": "Interstellar space starves sound with only one atom per cubic centimeter.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_022_p00",
+        "narration": "Sunlight crosses 150 million kilometers without needing an atmosphere.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_001_p00",
+        "narration": "Yet cosmic light signals across deep void remain utterly empty.",
+        "fact_ids": [
+          "fact_002",
+          "fact_005"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_005_p00",
+        "narration": "In 1961, Frank Drake calculated thousands of potential alien empires.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_018_p00",
+        "narration": "Early universe plasma carried acoustic pressure waves for 380,000 years.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_006_p00",
+        "narration": "Now, the nearest star system sits over four light-years away.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_012_p00",
+        "narration": "Sea-level air holds ten to the twenty-fifth power molecules per cubic meter.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_016_p00",
+        "narration": "Astronomical time gaps keep stellar neighbors forever isolated.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_020_p00",
+        "narration": "One civilization flourishes 200 million years ago and vanishes.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_014_p00",
+        "narration": "The next civilization appears tomorrow, never knowing their ancient neighbors.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_005_p00",
+        "narration": "The universe remains silent because cosmic empires keep dying in the dark.",
+        "fact_ids": [
+          "fact_006",
+          "fact_011"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Milky Way contains over 6,000 confirmed exoplanet worlds. Yet our radio telescopes scan a deadly, absolute silence. In 1950, physicist Enrico Fermi asked his iconic question. Where is everybody across this vast cosmic expanse? Earth packs 25 quintillion air molecules into every cubic centimeter. On Earth, sound waves blast forward at 343 meters per second. The Moon holds one-sixth Earth's gravity with zero voice. Interstellar space starves sound with only one atom per cubic centimeter. Sunlight crosses 150 million kilometers without needing an atmosphere. Yet cosmic light signals across deep void remain utterly empty. In 1961, Frank Drake calculated thousands of potential alien empires. Early universe plasma carried acoustic pressure waves for 380,000 years. Now, the nearest star system sits over four light-years away. Sea-level air holds ten to the twenty-fifth power molecules per cubic meter. Astronomical time gaps keep stellar neighbors forever isolated. One civilization flourishes 200 million years ago and vanishes. The next civilization appears tomorrow, never knowing their ancient neighbors. The universe remains silent because cosmic empires keep dying in the dark.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "space_dark-forest",
+      "title": "Why the Universe Is So Quiet",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "dark-forest",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "Fermi paradox, dark forest",
+      "famous_line": "Fermi paradox, dark forest",
+      "image_terms": [
+        "radio telescope",
+        "Arecibo",
+        "Very Large Array",
+        "exoplanet"
+      ],
+      "source_urls": [
+        "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
+        "https://www.splashtravels.com/guides/scientists-are-still-trying-explain-why-universe-seems-so-quiet",
+        "https://3dastronomer.com/news/2026/06/13/the-great-silence-why-the-universe-seems-empty-despite-the-possibility-of-life-everywhere/",
+        "https://www.sciencenewstoday.org/15-reasons-why-space-is-the-quietest-place-in-existence",
+        "https://images.nasa.gov/details/PIA18461",
+        "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e000053",
+        "https://images.nasa.gov/details/PIA10373",
+        "https://images.nasa.gov/details/PIA17248",
+        "https://images.nasa.gov/details/PIA10204",
+        "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_21.jpg",
+        "https://images.nasa.gov/details/PIA15480",
+        "https://commons.wikimedia.org/wiki/File:Mount_Pleasant_Radio_Telescope.jpg",
+        "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_01.jpg"
+      ],
+      "url": "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": []
+    },
+    "full_description": "Explaining the chilling silence of space, the Fermi Paradox, and why alien worlds may never communicate.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: CSIRO/Shaun Amy (public domain (NASA)); Daniel Rutter (public domain (NASA)); GSFC (public domain (NASA)); NASA/CXC/JPL-Caltech/STScI/NSF/NRAO/VLA (public domain (NASA)); NASA/JPL-Caltech (public domain (NASA)); NASA/JPL-Caltech/UCLA (public domain (NASA)); NASA/JPL-Caltech/VLA/MPIA (public domain (NASA)); NASA/JPL-Caltech; X-ray: CXC/Univ. of Maryland/A.S. Wilson <i>et al</i>.; Optical: Pal.Obs. DSS; IR: VLA: NRAO/AUI/NSF (public domain (NASA)); NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington (public domain (NASA)); Noodle snacks (cc by-sa 3.0); Photograph by Mike Peel (www.mikepeel.net). (cc by-sa 4.0); division, CSIRO (cc by 3.0)\nSources:\nhttps://commons.wikimedia.org/wiki/File:At_Sardinia_2025_010_-_Sardinia_Radio_Telescope.jpg\nhttps://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_01.jpg\nhttps://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_16.jpg\nhttps://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_21.jpg\nhttps://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg\nhttps://commons.wikimedia.org/wiki/File:Mount_Pleasant_Radio_Telescope.jpg\nhttps://images.nasa.gov/details/ACD20-0044-003\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e000053\nhttps://images.nasa.gov/details/PIA08042\nhttps://images.nasa.gov/details/PIA10204\nhttps://images.nasa.gov/details/PIA10373\nhttps://images.nasa.gov/details/PIA13638\nhttps://images.nasa.gov/details/PIA15480\nhttps://images.nasa.gov/details/PIA17248\nhttps://images.nasa.gov/details/PIA18461\nhttps://images.nasa.gov/details/PIA19411\nhttps://images.nasa.gov/details/ctb1cgpsvla",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "Why Is the Milky Way Silence Hiding Alien Civilizations?\n\nExplaining the chilling silence of space, the Fermi Paradox, and why alien worlds may never communicate."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:At_Sardinia_2025_010_-_Sardinia_Radio_Telescope.jpg",
+    "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_01.jpg",
+    "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_16.jpg",
+    "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_21.jpg",
+    "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+    "https://commons.wikimedia.org/wiki/File:Mount_Pleasant_Radio_Telescope.jpg",
+    "https://images.nasa.gov/details/ACD20-0044-003",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e000053",
+    "https://images.nasa.gov/details/PIA08042",
+    "https://images.nasa.gov/details/PIA10204",
+    "https://images.nasa.gov/details/PIA10373",
+    "https://images.nasa.gov/details/PIA13638",
+    "https://images.nasa.gov/details/PIA15480",
+    "https://images.nasa.gov/details/PIA17248",
+    "https://images.nasa.gov/details/PIA18461",
+    "https://images.nasa.gov/details/PIA19411",
+    "https://images.nasa.gov/details/ctb1cgpsvla"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

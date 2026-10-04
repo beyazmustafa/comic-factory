@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 94.87179487179486,
+  "scene_match": 95,
+  "delivery": 94.87179487179486,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "Narration introduces exoplanet counts while cosmic imagery displays accurately."
+    },
+    {
+      "second": 18,
+      "detail": "Radio telescope dish visual transitions smoothly with whip effect."
+    },
+    {
+      "second": 35,
+      "detail": "Moon surface visual aligns with narration regarding low gravity and lack of air."
+    },
+    {
+      "second": 52,
+      "detail": "Diagram visual displays during discussion of light signals through space."
+    },
+    {
+      "second": 75,
+      "detail": "Galaxy visuals render clearly behind bold single-word single-line captions."
+    },
+    {
+      "second": 98,
+      "detail": "Final sequence concludes cleanly with voice delivery matching the closing statement."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary video features strong voice delivery, synchronized single-word captions, and appropriate cosmic imagery with clean whip transitions.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 68,
+    "scene_match": 70,
+    "delivery": 65,
+    "visual_readability": 68
+  },
+  "measured_scores": {
+    "subtitle_sync": 94.87179487179486,
+    "scene_match": 95,
+    "delivery": 94.87179487179486
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

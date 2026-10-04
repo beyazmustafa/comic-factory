@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 59.4,
+      "hours_live": 59.8,
       "views_per_hour": 0.1,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 6,
       "views_72h": null,
       "average_view_percentage": 99.07,
@@ -129,7 +129,7 @@
         "likes": 0
       },
       {
-        "h": 59.4,
+        "h": 59.8,
         "views": 6,
         "likes": 0
       }
@@ -184,9 +184,9 @@
       "views": 297,
       "likes": 5,
       "comments": 0,
-      "hours_live": 56.7,
-      "views_per_hour": 5.24,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "hours_live": 57.1,
+      "views_per_hour": 5.2,
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 179,
       "views_72h": null,
       "average_view_percentage": 38.28,
@@ -265,7 +265,7 @@
         "likes": 5
       },
       {
-        "h": 56.7,
+        "h": 57.1,
         "views": 297,
         "likes": 5
       }
@@ -320,9 +320,9 @@
       "views": 32,
       "likes": 2,
       "comments": 0,
-      "hours_live": 55.8,
+      "hours_live": 56.2,
       "views_per_hour": 0.57,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 16,
       "views_72h": null,
       "average_view_percentage": 10.4,
@@ -401,7 +401,7 @@
         "likes": 1
       },
       {
-        "h": 55.8,
+        "h": 56.2,
         "views": 32,
         "likes": 2
       }
@@ -455,9 +455,9 @@
       "views": 57,
       "likes": 1,
       "comments": 0,
-      "hours_live": 55.5,
-      "views_per_hour": 1.03,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "hours_live": 56.0,
+      "views_per_hour": 1.02,
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 21,
       "views_72h": null,
       "average_view_percentage": 20.94,
@@ -536,7 +536,7 @@
         "likes": 1
       },
       {
-        "h": 55.5,
+        "h": 56.0,
         "views": 57,
         "likes": 1
       }
@@ -590,9 +590,9 @@
       "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 55.1,
+      "hours_live": 55.5,
       "views_per_hour": 0.22,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 9,
       "views_72h": null,
       "average_view_percentage": 24.69,
@@ -671,7 +671,7 @@
         "likes": 1
       },
       {
-        "h": 55.1,
+        "h": 55.5,
         "views": 12,
         "likes": 1
       }
@@ -726,9 +726,9 @@
       "views": 4,
       "likes": 0,
       "comments": 0,
-      "hours_live": 41.4,
+      "hours_live": 41.9,
       "views_per_hour": 0.1,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 3,
       "views_72h": null
     },
@@ -804,7 +804,7 @@
         "likes": 0
       },
       {
-        "h": 41.4,
+        "h": 41.9,
         "views": 4,
         "likes": 0
       }
@@ -859,9 +859,9 @@
       "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 41.4,
+      "hours_live": 41.8,
       "views_per_hour": 0.12,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": 4,
       "views_72h": null
     },
@@ -937,7 +937,7 @@
         "likes": 0
       },
       {
-        "h": 41.4,
+        "h": 41.8,
         "views": 5,
         "likes": 0
       }
@@ -992,15 +992,15 @@
       "views": 7,
       "likes": 0,
       "comments": 0,
-      "hours_live": 14.3,
-      "views_per_hour": 0.49,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "hours_live": 14.7,
+      "views_per_hour": 0.48,
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
       {
-        "h": 14.3,
+        "h": 14.7,
         "views": 7,
         "likes": 0
       }
@@ -1055,15 +1055,15 @@
       "views": 140,
       "likes": 0,
       "comments": 0,
-      "hours_live": 14.3,
-      "views_per_hour": 9.81,
-      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "hours_live": 14.7,
+      "views_per_hour": 9.53,
+      "fetched_at": "2026-10-04T09:10:42+00:00",
       "views_24h": null,
       "views_72h": null
     },
     "stats_history": [
       {
-        "h": 14.3,
+        "h": 14.7,
         "views": 140,
         "likes": 0
       }

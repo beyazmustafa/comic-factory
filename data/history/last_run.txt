@@ -1,6 +1,6 @@
-run_id: 37189867302  attempt: 1  event: workflow_dispatch
+run_id: 37191150918  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261004T084441862812Z/run.json
+--- data/runs/20261004T091041975524Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -30,70 +30,71 @@ produce step outcome: success
     "caption_offset": 0,
     "language": "en",
     "languages": "en,tr",
-    "channel_theme": "superheroes",
+    "channel_theme": "space",
     "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
-    "source": "famous",
+    "source": "space",
     "image_model": "",
     "archive_query": "mediatype:texts AND collection:(comics)",
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37189867302",
+  "run_id": "37191150918",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "3c875368d5a6f127bd19743b8737d3ec18948349a58f78130059ef7c51b34d56",
-  "metadata_sha256": "2bae07f021b1c54e5ed9c6d6d24b037a5a2717a966f8591ddb6100ea1d8d332e",
-  "quality_sha256": "18622a2e45c9da5368e0e5def45d56b2002e5b43fd57b860045d4c5d8310605b",
-  "api_calls": 88,
-  "duration": 63.99,
+  "video_sha256": "7ad2cd33188a312fe73f375f0c21666cf0d74f28072bd23f116c9c26dfc8b31c",
+  "metadata_sha256": "e2d2cd078711bfd96914681e71fc17cc0ee4e0e60fdcbe6b00e4720abefc2cf8",
+  "quality_sha256": "0be5f310a8be04955b7d885f29f0c24b48dcb7f06af97bc3cb18e27a84c07967",
+  "api_calls": 37,
+  "duration": 101.04,
   "voice": "Orus",
   "event": {
-    "id": "famous_spider-man-no-more",
-    "title": "Spider-Man No More",
-    "publisher": "Marvel",
-    "series": "The Amazing Spider-Man",
-    "issue": "50",
-    "year": 1967,
-    "universe": "Marvel",
-    "characters": [
-      "Spider-Man",
-      "Peter Parker",
-      "Kingpin"
+    "id": "space_dark-forest",
+    "title": "Why the Universe Is So Quiet",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "dark-forest",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "Fermi paradox, dark forest",
+    "famous_line": "Fermi paradox, dark forest",
+    "image_terms": [
+      "radio telescope",
+      "Arecibo",
+      "Very Large Array",
+      "exoplanet"
     ],
-    "summary": "Peter Parker throws his costume in the trash and quits",
-    "famous_line": "Peter Parker throws his costume in the trash and quits",
-    "artist": "John Romita Sr",
     "source_urls": [
-      "https://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50",
-      "https://curiocomp.com/comic-books/amazing-spider-man-50-1967-spider-man-no-more",
-      "https://en.wikipedia.org/wiki/List_of_Spider-Man_storylines",
-      "https://alchetron.com/Spider-Man-No-More!",
-      "https://www.marvel.com/articles/comics/spider-man-s-greatest-moments"
+      "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
+      "https://www.splashtravels.com/guides/scientists-are-still-trying-explain-why-universe-seems-so-quiet",
+      "https://3dastronomer.com/news/2026/06/13/the-great-silence-why-the-universe-seems-empty-despite-the-possibility-of-life-everywhere/",
+      "https://www.sciencenewstoday.org/15-reasons-why-space-is-the-quietest-place-in-existence",
+      "https://images.nasa.gov/details/PIA18461",
+      "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+      "https://images.nasa.gov/details/GSFC_20171208_Archive_e000053",
+      "https://images.nasa.gov/details/PIA10373",
+      "https://images.nasa.gov/details/PIA17248",
+      "https://images.nasa.gov/details/PIA10204",
+      "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_21.jpg",
+      "https://images.nasa.gov/details/PIA15480",
+      "https://commons.wikimedia.org/wiki/File:Mount_Pleasant_Radio_Telescope.jpg",
+      "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_01.jpg"
     ],
-    "url": "https://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50",
-    "_source": "famous"
+    "url": "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
+    "_source": "space"
   },
   "localized": [
     "lang_tr"
   ]
 }
---- data/runs/20261004T084441862812Z/diagnostics/provider_events.json
+--- data/runs/20261004T091041975524Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Turkish çeviri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261004T084441862812Z/diagnostics/providers.json
+--- data/runs/20261004T091041975524Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -115,9 +116,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,56 +210,32 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T084441862812Z/voice_audition/failed_auditions.json
+--- data/runs/20261004T091041975524Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261004T084441862812Z/research/rejected_candidates.json
+--- data/runs/20261004T091041975524Z/research/rejected_candidates.json
 [
   {
     "event": {
-      "id": "famous_identity-crisis",
-      "title": "Identity Crisis",
-      "publisher": "DC",
-      "series": "Identity Crisis",
-      "issue": "1-7",
-      "year": 2004,
-      "universe": "DC",
-      "characters": [
-        "Elongated Man",
-        "Sue Dibny",
-        "Doctor Light",
-        "Zatanna"
+      "id": "space_moon-dark-side",
+      "title": "There Is No Dark Side of the Moon",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "moon-dark-side",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "tidal locking, the far side is just hidden",
+      "famous_line": "tidal locking, the far side is just hidden",
+      "image_terms": [
+        "far side of the Moon",
+        "Moon LRO",
+        "Chang'e 4"
       ],
-      "summary": "The Justice League wiped a villain's mind and hid it for years",
-      "famous_line": "The Justice League wiped a villain's mind and hid it for years",
-      "artist": "Rags Morales",
       "source_urls": [],
       "url": "",
-      "_source": "famous"
+      "_source": "space"
     },
-    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (1); eleme {\"pages\": 22, \"no_row\": 0, \"not_comic\": 22, \"text_heavy\": 0, \"low_relevance\": 0, \"kept\": 0, \"sample\": [{\"id\": \"page_033\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"An illustrated map of the Mitchell College campus showing various buil\"}, {\"id\": \"page_034\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"A campus master plan map of Mitchell College showing proposed and exis\"}, {\"id\": \"page_035\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"A drive-through campus tour map of Mitchell College with lettered mark\"}, {\"id\": \"page_036\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"A detailed floor plan of the Mitchell Hamline School of Law showing cl\"}, {\"id\": \"page_037\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"An isometric campus map of Mitchell Technical College highlighting var\"}, {\"id\": \"page_038\", \"comic\": false, \"kind\": \"promo\", \"rel\": 0, \"desc\": \"A 3D digital rendering of the Mitchell College campus master plan show\"}]}."
-  },
-  {
-    "event": {
-      "id": "famous_back-in-black",
-      "title": "Back in Black: Aunt May Shot",
-      "publisher": "Marvel",
-      "series": "The Amazing Spider-Man",
-      "issue": "539-543",
-      "year": 2007,
-      "universe": "Marvel",
-      "characters": [
-        "Spider-Man",
-        "Aunt May",
-        "Kingpin"
-      ],
-      "summary": "A sniper hired by Kingpin shoots Aunt May and Spider-Man goes dark",
-      "famous_line": "A sniper hired by Kingpin shoots Aunt May and Spider-Man goes dark",
-      "artist": "Ron Garney",
-      "source_urls": [],
-      "url": "",
-      "_source": "famous"
-    },
-    "error": "Olayla ilgili yeterli çizgi roman görseli bulunamadı (0); eleme {\"pages\": 24, \"no_row\": 6, \"not_comic\": 18, \"text_heavy\": 0, \"low_relevance\": 0, \"kept\": 0, \"sample\": [{\"id\": \"page_036\", \"comic\": false, \"kind\": \"promo\", \"rel\": 10, \"desc\": \"An anatomical illustration showing the muscular structure of a human b\"}, {\"id\": \"page_037\", \"comic\": false, \"kind\": \"promo\", \"rel\": 5, \"desc\": \"A photograph of a man's back in a tank top with labels identifying mus\"}, {\"id\": \"page_038\", \"comic\": false, \"kind\": \"promo\", \"rel\": 5, \"desc\": \"A stock photograph of a shirtless man's back and torso from behind.\"}, {\"id\": \"page_039\", \"comic\": false, \"kind\": \"promo\", \"rel\": 15, \"desc\": \"An extreme macro photograph of a wolf spider's face and eyes.\"}, {\"id\": \"page_040\", \"comic\": false, \"kind\": \"promo\", \"rel\": 15, \"desc\": \"A photograph of an orb-weaver spider hanging in its web.\"}, {\"id\": \"page_041\", \"comic\": false, \"kind\": \"promo\", \"rel\": 15, \"desc\": \"A high-detail macro image of a black and yellow spider on a web with w\"}]}."
+    "error": "Konu için yeterli kullanılabilir görsel yok (5/11)."
   }
 ]
 --- studio.log (son 300 satır)
@@ -269,73 +246,46 @@ produce step outcome: success
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: Identity Crisis
+Olay araştırılıyor: There Is No Dark Side of the Moon
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Makale görselleri: 26 aday, 3 indirildi.
-Görsel arama (tur 1): 61 sonuç, 30 indirildi.
-Görsel uygunluğu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görsel eleme: {"pages": 33, "no_row": 0, "not_comic": 31, "text_heavy": 1, "low_relevance": 0, "kept": 1, "sample": [{"id": "page_000", "comic": true, "kind": "promo", "rel": 85, "desc": "The Justice League members involved in the mind-wiping conspiracy stan"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 0, "desc": "A photograph showing three large wooden shelving units filled with bag"}, {"id": "page_002", "comic": true, "kind": "cover", "rel": 78, "desc": "Cover of JLA: Crisis of Conscience featuring Justice League members co"}, {"id": "page_003", "comic": false, "kind": "promo", "rel": 0, "desc": "A 3D simulation screenshot showing a space shuttle attached to booster"}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 0, "desc": "A futuristic autonomous electric logging truck parked on an asphalt ro"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 0, "desc": "A heavy-duty logging truck hauling giant cut tree trunks through thick"}]}
-Görsel arama (tur 2): 45 sonuç, 22 indirildi.
-Görsel uygunluğu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel uygunluğu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel eleme: {"pages": 22, "no_row": 0, "not_comic": 22, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_033", "comic": false, "kind": "promo", "rel": 0, "desc": "An illustrated map of the Mitchell College campus showing various buil"}, {"id": "page_034", "comic": false, "kind": "promo", "rel": 0, "desc": "A campus master plan map of Mitchell College showing proposed and exis"}, {"id": "page_035", "comic": false, "kind": "promo", "rel": 0, "desc": "A drive-through campus tour map of Mitchell College with lettered mark"}, {"id": "page_036", "comic": false, "kind": "promo", "rel": 0, "desc": "A detailed floor plan of the Mitchell Hamline School of Law showing cl"}, {"id": "page_037", "comic": false, "kind": "promo", "rel": 0, "desc": "An isometric campus map of Mitchell Technical College highlighting var"}, {"id": "page_038", "comic": false, "kind": "promo", "rel": 0, "desc": "A 3D digital rendering of the Mitchell College campus master plan show"}]}
-Olay araştırılıyor: Back in Black: Aunt May Shot
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Makale görselleri: 14 aday, 0 indirildi.
-Görsel arama (tur 1): 48 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 30, "no_row": 18, "not_comic": 12, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_000", "comic": false, "kind": "promo", "rel": 0, "desc": "An educational infographic explaining the use of the word 'the' in Eng"}, {"id": "page_001", "comic": false, "kind": "promo", "rel": 0, "desc": "A grammar guide about the definite article 'the' featuring a cartoon g"}, {"id": "page_002", "comic": false, "kind": "promo", "rel": 0, "desc": "A slide explaining the usage of the article 'the' with images of the e"}, {"id": "page_003", "comic": false, "kind": "promo", "rel": 0, "desc": "A simple text-based slide defining the definite article 'the' with exa"}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 0, "desc": "A two-panel educational poster about the use and omission of the artic"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 0, "desc": "A presentation slide title page for the usage of the definite article "}]}
-Görsel arama (tur 2): 50 sonuç, 24 indirildi.
-Görsel eleme: {"pages": 24, "no_row": 6, "not_comic": 18, "text_heavy": 0, "low_relevance": 0, "kept": 0, "sample": [{"id": "page_036", "comic": false, "kind": "promo", "rel": 10, "desc": "An anatomical illustration showing the muscular structure of a human b"}, {"id": "page_037", "comic": false, "kind": "promo", "rel": 5, "desc": "A photograph of a man's back in a tank top with labels identifying mus"}, {"id": "page_038", "comic": false, "kind": "promo", "rel": 5, "desc": "A stock photograph of a shirtless man's back and torso from behind."}, {"id": "page_039", "comic": false, "kind": "promo", "rel": 15, "desc": "An extreme macro photograph of a wolf spider's face and eyes."}, {"id": "page_040", "comic": false, "kind": "promo", "rel": 15, "desc": "A photograph of an orb-weaver spider hanging in its web."}, {"id": "page_041", "comic": false, "kind": "promo", "rel": 15, "desc": "A high-detail macro image of a black and yellow spider on a web with w"}]}
-Olay araştırılıyor: Spider-Man No More
-Makale görselleri: 86 aday, 20 indirildi.
-Görsel arama (tur 1): 58 sonuç, 30 indirildi.
-Görsel eleme: {"pages": 50, "no_row": 0, "not_comic": 32, "text_heavy": 0, "low_relevance": 1, "kept": 16, "sample": [{"id": "page_000", "comic": true, "kind": "cover", "rel": 100, "desc": "The iconic cover of The Amazing Spider-Man #50 shows Peter Parker walk"}, {"id": "page_001", "comic": true, "kind": "promo", "rel": 85, "desc": "A modern homage illustration shows Peter Parker walking away from a tr"}, {"id": "page_002", "comic": true, "kind": "cover", "rel": 80, "desc": "The cover of Ultimate Comics Spider-Man #23 pays homage to the origina"}, {"id": "page_003", "comic": true, "kind": "cover", "rel": 70, "desc": "A variant cover for Hulk #13 homages the Spider-Man No More scene with"}, {"id": "page_004", "comic": false, "kind": "promo", "rel": 10, "desc": "A promotional photograph for the Marvel Studios Thunderbolts movie fea"}, {"id": "page_005", "comic": false, "kind": "promo", "rel": 5, "desc": "An AI-generated looking image of a robot holding a tablet displaying c"}], "collage_or_photo": 1}
-Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Uzay görselleri: 26 aday, 11 indirildi.
+Olay araştırılıyor: Why the Universe Is So Quiet
+Uzay görselleri: 40 aday, 23 indirildi.
 
 → Türkçe ses seçimi
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 92.5/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
+Ses eşleştirme: 94.9/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Üretilen video kontrolü: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 
 → tr sürümü
-Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Turkish çeviri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.0/100 | whisper-large-v3
+Ses eşleştirme: 97.4/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T084441862812Z/review.html
+Ses eşleştirme: 97.5/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T091041975524Z/review.html
