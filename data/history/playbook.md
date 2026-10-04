@@ -1,11 +1,11 @@
 # Playbook (auto-evolving)
 - First shot emphasis: Always apply red 'danger' emphasis to the very first shot narration beat.
 - Concrete metrics early: Include at least one concrete numerical measurement within the first three shots.
-- Hook: Present-tense threat statement <= 6 words starting with hero full name facing mortal peril.
+- Hook: Present-tense threat statement <= 6 words naming the subject (the Sun, a black hole, your body) facing immediate danger.
 - Duration & shots: Target 22-24 shots across 80-85 seconds duration to match top-performing video averages.
 - Speech delivery: Target an energetic pace of 145-150 words per minute.
 - Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.
-- Title format: Curiosity-driven question or shock, 45-50 characters, naming famous hero and antagonist.
+- Title format: Curiosity-driven question or shock, 45-50 characters, naming the object and the threat.
 - Emphasis share: Keep colored emphasis strictly <= 23% of total shots (red=danger, green=reveal, cyan=turn).
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Penultimate turning point: Place a single cyan turn emphasis at shot N-1 directly preceding the consequence.
