@@ -377,5 +377,14 @@
       "change": "Enforce a strict maximum of 5 words on every single shot beat throughout the script.",
       "rationale": "Narrowing beat length further accelerates narration delivery speed toward top-performing short-form pacing standards."
     }
+  },
+  {
+    "run_id": "37223574786",
+    "chosen_at": "2026-10-04T18:14:19+00:00",
+    "experiment": {
+      "name": "opening_countdown_metric",
+      "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",
+      "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
+    }
   }
 ]

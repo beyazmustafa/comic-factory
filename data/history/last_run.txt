@@ -1,6 +1,6 @@
-run_id: 37197760116  attempt: 1  event: schedule
+run_id: 37223574786  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261004T111014835448Z/run.json
+--- data/runs/20261004T181415571554Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,29 +38,28 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37197760116",
+  "run_id": "37223574786",
   "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 55
+  "api_calls": 44
 }
---- data/runs/20261004T111014835448Z/diagnostics/provider_events.json
+--- data/runs/20261004T181415571554Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim bilgisi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim bilgisi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim bilgisi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Bilim bilgisi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261004T111014835448Z/diagnostics/providers.json
+--- data/runs/20261004T181415571554Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -82,9 +81,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -176,44 +175,23 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T111014835448Z/diagnostics/api_047.json
-{
-  "provider": "gemini",
-  "model": "gemini-3.5-flash-lite",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=1832 candidates_tokens_details=None prompt_token_count=5332 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=5332\n)] thoughts_token_count=4365 tool_use_prompt_token_count"
-  },
-  "error": "Expecting property name enclosed in double quotes: line 3 column 3 (char 65)",
-  "response_length": 5392,
-  "response_text": "{\n  \"title\": \"Are The Pillars Of Creation Already Destroyed?\",\n  s\"description\": \"A thrilling look at the cosmic time delay behind the destruction of the Pillars of Creation.\",\n  \"hook_card\": \"PILLARS ALREADY GONE\",\n  \"shots\": [\n    {\n      \"panel_id\": \"page_009_p00\",\n      \"narration\": \"The Pillars of Creation are already destroyed.\",\n      \"fact_ids\": [\"fact_002\"],\n      \"motion\": \"push\",\n      \"emphasis\": \"danger\"\n    },\n    {\n      \"panel_id\": \"page_015_p00\",\n      \"narration\": \"Six thousand light years away from our eyes.\",\n      \"fact_ids\": [\"fact_000\"],\n      \"motion\": \"pull\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_000_p00\",\n      \"narration\": \"Light races at three hundred thousand kilometers per second.\",\n      \"fact_ids\": [\"fact_005\"],\n      \"motion\": \"left\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_010_p00\",\n      \"narration\": \"They sit six thousand five hundred light years deep.\",\n      \"fact_ids\": [\"fact_000\"],\n      \"motion\": \"right\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_005_p00\",\n      \"narration\": \"The leftmost pillar spans four light years across.\",\n      \"fact_ids\": [\"fact_001\"],\n      \"motion\": \"up\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_006_p00\",\n      \"narration\": \"Five thousand solar systems fit inside just one.\",\n      \"fact_ids\": [\"fact_006\"],\n      \"motion\": \"down\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_018_p00\",\n      \"narration\": \"Your solar system spans tiny fractions by comparison.\",\n      \"fact_ids\": [\"fact_007\"],\n      \"motion\": \"push\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_0
---- data/runs/20261004T111014835448Z/audio/chunk_000/failures.json
+--- data/runs/20261004T181415571554Z/audio/chunk_000/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100; whisper-large-v3-turbo: 77.5/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 31.; whisper-large-v3-turbo: 85.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100"
 ]
---- data/runs/20261004T111014835448Z/voice_audition/failed_auditions.json
+--- data/runs/20261004T181415571554Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261004T111014835448Z/diagnostics/story_1.json
-{"error": "Narration too short: 108 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261004T111014835448Z/diagnostics/story_2.json
-{"error": "Panels used more than twice: ['page_009_p00', 'page_015_p00']; each panel at most twice.; Only 17 distinct panels for 36 shots; use at least 27 distinct panels."}
---- data/runs/20261004T111014835448Z/diagnostics/story_3.json
-{"error": "Narration too short: 120 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 17 distinct panels for 24 shots; use at least 18 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: The Pillars of Creation May Already Be Gone
+Olay araştırılıyor: What Happens If You Fall Into the Sun
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
@@ -221,33 +199,42 @@ Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
-Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Uzay görselleri: 30 aday, 22 indirildi.
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Bilim bilgisi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim bilgisi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim bilgisi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Bilim bilgisi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Uzay görselleri: 50 aday, 24 indirildi.
 Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 77.5/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 2
 Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
-Ses eşleştirme: 80.0/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 85.0/100 | whisper-large-v3
+Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 3
-Ses eşleştirme: 80.0/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 85.0/100 | whisper-large-v3
+Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 4
-Ses eşleştirme: 80.0/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 85.0/100 | whisper-large-v3
+Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
 HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.

@@ -4,7 +4,7 @@
 - Concrete early metrics: Put a specific measurement in the first three shots.
 - Hook constraint: Present-tense threat statement of 6 words or fewer.
 - Target length & shots: 22-24 shots across 80-85 seconds total duration.
-- Speech pace: Deliver audio at 145-150 words per minute.
+- Speech pace: Deliver audio at 140-150 words per minute.
 - Beat bounds: Keep every shot beat strictly between 4 and 6 words.
 - Title formatting: Curiosity-driven question or shock, 45-50 characters, naming object and threat.
 - Emphasis share: Keep colored emphasis <= 23% total (red=danger, green=reveal, cyan=turn).
