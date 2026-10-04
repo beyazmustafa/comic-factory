@@ -111,8 +111,41 @@ def validate_run(directory: Path) -> tuple[dict, Path, Path]:
     return manifest, video, metadata
 
 
+def recent_duplicate(title: str, language: str, days: int = 10) -> str:
+    """Video id of an upload with the same title in the last days, else ''.
+    A resumed run re-renders and gets a new hash; the title is the identity."""
+    path = ROOT / "data" / "history" / "performance.json"
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return ""
+    from datetime import datetime, timedelta, timezone
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    wanted = " ".join(str(title).split()).casefold()
+    for row in reversed(rows if isinstance(rows, list) else []):
+        if not isinstance(row, dict) or row.get("platform", "youtube") != "youtube":
+            continue
+        if " ".join(str(row.get("profile", {}).get("title", "")).split()).casefold() != wanted:
+            continue
+        if str(row.get("language") or "en") != language:
+            continue
+        try:
+            when = datetime.fromisoformat(str(row.get("published_at")))
+        except ValueError:
+            continue
+        if when >= cutoff and row.get("video_id"):
+            return str(row["video_id"])
+    return ""
+
+
 def publish_run(directory: Path, platforms: str) -> dict:
     manifest, video, metadata = validate_run(directory)
+    script_meta = json.loads(metadata.read_text(encoding="utf-8")).get("script", {})
+    duplicate = recent_duplicate(script_meta.get("title", ""), os.getenv("FACTORY_LANGUAGE", "en"))
+    if duplicate:
+        print(f"Aynı başlıklı video son günlerde yayınlanmış ({duplicate}); tekrar yüklenmedi.")
+        return {p: {"status": "duplicate", "id": duplicate} for p in (["youtube", "instagram"] if platforms == "both" else [platforms])}
     selected = ["youtube", "instagram"] if platforms == "both" else [platforms]
     if any(item not in {"youtube", "instagram"} for item in selected):
         raise ValueError("Platform youtube, instagram veya both olmalı.")
