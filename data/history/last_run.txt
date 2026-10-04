@@ -1,6 +1,6 @@
-run_id: 37194021219  attempt: 1  event: workflow_dispatch
+run_id: 37194714882  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261004T100226508362Z/run.json
+--- data/runs/20261004T101523327016Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,14 +38,14 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37194021219",
-  "resumed_from": "37192874100",
+  "run_id": "37194714882",
+  "resumed_from": "37194021219",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "5a473bbef11973ed81ed07ec3c93edfbe3fd8a9556c92cd60e025d76f88eb522",
+  "video_sha256": "66e0b2b4093d48cbcfb7d92954c30c2c39d3001c1cc81c12a1cd70578f8ca46a",
   "metadata_sha256": "11316f9815f31210d00e567875fb609f70e416fea13cc588c31821e387830a8c",
-  "quality_sha256": "d733be5ea1cd5463f0bf687375db37e90e30408d3af2648ed04272ead682e813",
-  "api_calls": 8,
+  "quality_sha256": "3a2e473a85413cda80fd8edd56f837713e8bab4b8f16c25bfec52c2e90e2a43d",
+  "api_calls": 6,
   "duration": 53.88,
   "voice": "Orus",
   "event": {
@@ -85,13 +85,13 @@ produce step outcome: success
   },
   "localized": []
 }
---- data/runs/20261004T100226508362Z/diagnostics/provider_events.json
+--- data/runs/20261004T101523327016Z/diagnostics/provider_events.json
 [
   "Üretilen video kontrolü: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Turkish çeviri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Turkish çeviri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261004T100226508362Z/diagnostics/providers.json
+--- data/runs/20261004T101523327016Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -113,9 +113,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -207,24 +207,25 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T100226508362Z/audio/chunk_001/failures.json
+--- data/runs/20261004T101523327016Z/audio/chunk_001/failures.json
 [
   "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100",
   "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100"
 ]
---- data/runs/20261004T100226508362Z/voice_audition/failed_auditions.json
+--- data/runs/20261004T101523327016Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261004T100226508362Z/diagnostics/story_1.json
+--- data/runs/20261004T101523327016Z/diagnostics/story_1.json
 {"error": "Panels used more than twice: ['page_002_p00', 'page_012_p00']; each panel at most twice.; Only 12 distinct panels for 21 shots; use at least 16 distinct panels."}
---- data/runs/20261004T100226508362Z/diagnostics/story_2.json
+--- data/runs/20261004T101523327016Z/diagnostics/story_2.json
 {"error": "Only 14 distinct panels for 24 shots; use at least 18 distinct panels."}
---- data/runs/20261004T100226508362Z/diagnostics/story_3.json
+--- data/runs/20261004T101523327016Z/diagnostics/story_3.json
 {"error": "Panels used more than twice: ['page_002_p00', 'page_015_p00']; each panel at most twice.; Only 14 distinct panels for 21 shots; use at least 16 distinct panels."}
 --- studio.log (son 300 satır)
 Kayıtlı aşama kullanılıyor: story
 Kayıtlı aşama kullanılıyor: voice
 Kayıtlı aşama kullanılıyor: audio
 Kayıtlı aşama kullanılıyor: render
+Kayıtlı aşama kullanılıyor: quality
 
 → Sabit kurgu profili
 
@@ -241,25 +242,26 @@ Kayıtlı aşama kullanılıyor: audio
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → tr sürümü
-Turkish çeviri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Turkish çeviri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 50.0/100 | whisper-large-v3
-Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
-tr sürümü üretilemedi: SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T100226508362Z/review.html
+Ses eşleştirme: 97.4/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 87.6/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 85.3/100 | whisper-large-v3
+Ses eşleştirme: 85.4/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 2
+Ses eşleştirme: 85.3/100 | whisper-large-v3
+Ses eşleştirme: 85.4/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 3
+Ses eşleştirme: 85.4/100 | whisper-large-v3
+Ses eşleştirme: 85.4/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 4
+Ses eşleştirme: 85.3/100 | whisper-large-v3
+Ses eşleştirme: 85.4/100 | whisper-large-v3-turbo
+tr sürümü üretilemedi: SpeechFailure: 3. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T101523327016Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
@@ -273,11 +275,11 @@ Yükleme: %38
 Yükleme: %57
 Yükleme: %76
 Yükleme: %95
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=tRAzUbPi9SA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=7ANE-YhGaOk&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T100226508362Z/video.mp4
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T101523327016Z/video.mp4
 Boyut: 42.0 MB
 Açıklama uzunluğu: 215 karakter
 Cloudinary: video geçici olarak yükleniyor...
@@ -285,12 +287,8 @@ Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17966678712187944).
+Instagram: container oluşturuldu (17966679732187944).
 Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -298,7 +296,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 17985221274078184
+Instagram Reel başarıyla yayınlandı: 17960421497996814
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================

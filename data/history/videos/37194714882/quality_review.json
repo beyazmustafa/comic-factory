@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "delivery": 89.1891891891892,
+  "issues": [],
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "observations": [
+    {
+      "detail": "Narration begins with 'Mars slowly destroys your physical body' and single-word pop captions centered on screen.",
+      "second": 0
+    },
+    {
+      "detail": "Shot transitions smoothly to Mars lander imagery matching the 6-month journey context.",
+      "second": 5
+    },
+    {
+      "detail": "Subsurface habitat panel displays with underground greenhouse concept during shielding discussion.",
+      "second": 26
+    },
+    {
+      "detail": "Split planetary comparison visual matches discussion of 38 percent gravity effects.",
+      "second": 37
+    },
+    {
+      "detail": "Plant growth chamber imagery appears cleanly timed with perchlorate contamination line.",
+      "second": 43
+    },
+    {
+      "detail": "Final line 'Help is too far away' concludes clearly with matching lander visual and accurate captions.",
+      "second": 52
+    }
+  ],
+  "scene_match": 95,
+  "style_adjustments": {},
+  "subtitle_sync": 89.1891891891892,
+  "summary": "The generated documentary delivers clean audio pacing, precise word-level subtitle synchronization, and strong visual alignment with script panels throughout.",
+  "visual_readability": 85,
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 76,
+    "scene_match": 75,
+    "delivery": 74,
+    "visual_readability": 74
+  },
+  "measured_scores": {
+    "subtitle_sync": 89.1891891891892,
+    "scene_match": 95,
+    "delivery": 89.1891891891892
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

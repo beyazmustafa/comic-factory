@@ -343,6 +343,17 @@
       "name": "concrete_number_in_first_three_shots",
       "change": "Include at least one concrete numerical stat (seconds, km/s, or degrees) within the first three shots.",
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37194714882",
+    "chosen_at": "2026-10-04T10:15:48+00:00",
+    "experiment": {
+      "name": "strict_numerical_pacing_50_percent",
+      "change": "Include at least one concrete numerical stat (seconds, degrees, km/s, or times Earth) in exactly 50% or more of all shot beats.",
+      "rationale": "High density of visceral numbers grounds speculative scenarios and sustains audience curiosity throughout the entire duration."
     }
   }
 ]
