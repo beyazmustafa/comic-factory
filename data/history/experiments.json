@@ -365,6 +365,17 @@
       "name": "extreme_punchy_beats_max_six_words",
       "change": "Cap every single shot beat at a maximum of 6 words across the entire video script.",
       "rationale": "Tighter word bounds increase pacing kineticism and improve subtitle-speech alignment for fast short-form audience retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37197760116",
+    "chosen_at": "2026-10-04T11:10:54+00:00",
+    "experiment": {
+      "name": "strict_five_word_beats",
+      "change": "Enforce a strict maximum of 5 words on every single shot beat throughout the script.",
+      "rationale": "Narrowing beat length further accelerates narration delivery speed toward top-performing short-form pacing standards."
     }
   }
 ]

@@ -1,11 +1,11 @@
-run_id: 37196099024  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261004T104105335100Z/run.json
+run_id: 37197760116  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261004T111014835448Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Konuşma ve kelime zamanları",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,61 +38,29 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37196099024",
-  "resumed_from": "37194714882",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "9ed19965771335576a0c2b313dc54e2ce4e334f0e1ba6b2530602add30894895",
-  "metadata_sha256": "11316f9815f31210d00e567875fb609f70e416fea13cc588c31821e387830a8c",
-  "quality_sha256": "9facdfb6eef37eb4e9276db5eac3149827c9452d37505115f968610b81b6935e",
-  "api_calls": 19,
-  "duration": 53.88,
-  "voice": "Orus",
-  "event": {
-    "id": "space_mars-colony",
-    "title": "What Living on Mars Would Do to Your Body",
-    "publisher": "NASA/ESA",
-    "series": "Space",
-    "issue": "mars-colony",
-    "year": 2026,
-    "universe": "science",
-    "characters": [],
-    "summary": "bone loss, radiation, 38% gravity",
-    "famous_line": "bone loss, radiation, 38% gravity",
-    "image_terms": [
-      "Mars habitat",
-      "Mars surface",
-      "astronaut Mars artist"
-    ],
-    "source_urls": [
-      "https://www.sciencefocus.com/space/the-thought-experiment-what-would-living-on-mars-do-to-my-body",
-      "https://www.nexthorizon.space/2025/04/how-human-body-will-change-mars-bones-dna.html",
-      "https://www.northcountrypublicradio.org/news/npr/1246202705/this-is-what-living-on-mars-could-do-to-the-human-body",
-      "https://sentinelmission.org/blog/what-happens-if-humans-live-on-mars/",
-      "https://images.nasa.gov/details/PIA23302",
-      "https://commons.wikimedia.org/wiki/File:MarsGroundHabitat.jpg",
-      "https://commons.wikimedia.org/wiki/File:TerraformedMarsGlobeRealistic.jpg",
-      "https://commons.wikimedia.org/wiki/File:Concept_Mars_colony.jpg",
-      "https://commons.wikimedia.org/wiki/File:Mars_Ice_Home_concept.jpg",
-      "https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg",
-      "https://commons.wikimedia.org/wiki/File:Mars_Ice_Home_concept_(cropped).jpg",
-      "https://images.nasa.gov/details/0701718",
-      "https://images.nasa.gov/details/PIA22228",
-      "https://images.nasa.gov/details/PIA23922"
-    ],
-    "url": "https://www.sciencefocus.com/space/the-thought-experiment-what-would-living-on-mars-do-to-my-body",
-    "_source": "space"
-  },
-  "localized": []
+  "run_id": "37197760116",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 55
 }
---- data/runs/20261004T104105335100Z/diagnostics/provider_events.json
+--- data/runs/20261004T111014835448Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Üretilen video kontrolü: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261004T104105335100Z/diagnostics/providers.json
+--- data/runs/20261004T111014835448Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -208,25 +176,34 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T104105335100Z/audio/chunk_001/failures.json
+--- data/runs/20261004T111014835448Z/diagnostics/api_047.json
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=1832 candidates_tokens_details=None prompt_token_count=5332 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=5332\n)] thoughts_token_count=4365 tool_use_prompt_token_count"
+  },
+  "error": "Expecting property name enclosed in double quotes: line 3 column 3 (char 65)",
+  "response_length": 5392,
+  "response_text": "{\n  \"title\": \"Are The Pillars Of Creation Already Destroyed?\",\n  s\"description\": \"A thrilling look at the cosmic time delay behind the destruction of the Pillars of Creation.\",\n  \"hook_card\": \"PILLARS ALREADY GONE\",\n  \"shots\": [\n    {\n      \"panel_id\": \"page_009_p00\",\n      \"narration\": \"The Pillars of Creation are already destroyed.\",\n      \"fact_ids\": [\"fact_002\"],\n      \"motion\": \"push\",\n      \"emphasis\": \"danger\"\n    },\n    {\n      \"panel_id\": \"page_015_p00\",\n      \"narration\": \"Six thousand light years away from our eyes.\",\n      \"fact_ids\": [\"fact_000\"],\n      \"motion\": \"pull\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_000_p00\",\n      \"narration\": \"Light races at three hundred thousand kilometers per second.\",\n      \"fact_ids\": [\"fact_005\"],\n      \"motion\": \"left\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_010_p00\",\n      \"narration\": \"They sit six thousand five hundred light years deep.\",\n      \"fact_ids\": [\"fact_000\"],\n      \"motion\": \"right\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_005_p00\",\n      \"narration\": \"The leftmost pillar spans four light years across.\",\n      \"fact_ids\": [\"fact_001\"],\n      \"motion\": \"up\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_006_p00\",\n      \"narration\": \"Five thousand solar systems fit inside just one.\",\n      \"fact_ids\": [\"fact_006\"],\n      \"motion\": \"down\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_018_p00\",\n      \"narration\": \"Your solar system spans tiny fractions by comparison.\",\n      \"fact_ids\": [\"fact_007\"],\n      \"motion\": \"push\",\n      \"emphasis\": \"normal\"\n    },\n    {\n      \"panel_id\": \"page_0
+--- data/runs/20261004T111014835448Z/audio/chunk_000/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100; whisper-large-v3-turbo: 77.5/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 77.5/100"
 ]
---- data/runs/20261004T104105335100Z/voice_audition/failed_auditions.json
+--- data/runs/20261004T111014835448Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261004T104105335100Z/diagnostics/story_1.json
-{"error": "Panels used more than twice: ['page_002_p00', 'page_012_p00']; each panel at most twice.; Only 12 distinct panels for 21 shots; use at least 16 distinct panels."}
---- data/runs/20261004T104105335100Z/diagnostics/story_2.json
-{"error": "Only 14 distinct panels for 24 shots; use at least 18 distinct panels."}
---- data/runs/20261004T104105335100Z/diagnostics/story_3.json
-{"error": "Panels used more than twice: ['page_002_p00', 'page_015_p00']; each panel at most twice.; Only 14 distinct panels for 21 shots; use at least 16 distinct panels."}
+--- data/runs/20261004T111014835448Z/diagnostics/story_1.json
+{"error": "Narration too short: 108 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261004T111014835448Z/diagnostics/story_2.json
+{"error": "Panels used more than twice: ['page_009_p00', 'page_015_p00']; each panel at most twice.; Only 17 distinct panels for 36 shots; use at least 27 distinct panels."}
+--- data/runs/20261004T111014835448Z/diagnostics/story_3.json
+{"error": "Narration too short: 120 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 17 distinct panels for 24 shots; use at least 18 distinct panels."}
 --- studio.log (son 300 satır)
-Kayıtlı aşama kullanılıyor: story
-Kayıtlı aşama kullanılıyor: voice
-Kayıtlı aşama kullanılıyor: audio
-Kayıtlı aşama kullanılıyor: render
-Kayıtlı aşama kullanılıyor: quality
 
 → Sabit kurgu profili
 
@@ -236,33 +213,41 @@ Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak
 Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Kayıtlı aşama kullanılıyor: story
+Olay araştırılıyor: The Pillars of Creation May Already Be Gone
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Uzay görselleri: 30 aday, 22 indirildi.
+Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3.5-flash-lite bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
-Kayıtlı aşama kullanılıyor: audio
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Üretilen video kontrolü: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-
-→ tr sürümü
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 92.7/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 82.6/100 | whisper-large-v3
-Ses eşleştirme: 82.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 2
-Ses eşleştirme: 82.6/100 | whisper-large-v3
-Ses eşleştirme: 82.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 3
-Ses eşleştirme: 82.6/100 | whisper-large-v3
-Ses eşleştirme: 82.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 4
-Ses eşleştirme: 82.6/100 | whisper-large-v3
-Ses eşleştirme: 82.6/100 | whisper-large-v3-turbo
-tr sürümü üretilemedi: SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T104105335100Z/review.html
-Aynı başlıklı video son günlerde yayınlanmış (7ANE-YhGaOk); tekrar yüklenmedi.
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 2
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
+Ses eşleştirme: 80.0/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 3
+Ses eşleştirme: 80.0/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 4
+Ses eşleştirme: 80.0/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.

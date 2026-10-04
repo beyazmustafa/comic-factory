@@ -1,16 +1,17 @@
 # Playbook (auto-evolving)
-- First shot emphasis: Always apply red 'danger' emphasis to the very first shot narration beat.
-- Concrete metrics early: Include at least one concrete numerical measurement within the first three shots.
-- Hook: Present-tense threat statement <= 6 words naming the subject facing immediate danger.
-- Duration & shots: Target 22-24 shots across 80-85 seconds duration to match top-performing video averages.
-- Speech delivery: Target an energetic pace of 145-150 words per minute.
-- Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.
-- Title format: Curiosity-driven question or shock, 45-50 characters, naming the object and the threat.
-- Emphasis share: Keep colored emphasis strictly <= 23% of total shots (red=danger, green=reveal, cyan=turn).
+- First shot emphasis: Apply red 'danger' emphasis to the very first shot narration beat.
+- Numerical density: Include concrete numbers in at least 50% of total shot beats.
+- Concrete early metrics: Put a specific measurement in the first three shots.
+- Hook constraint: Present-tense threat statement of 6 words or fewer.
+- Target length & shots: 22-24 shots across 80-85 seconds total duration.
+- Speech pace: Deliver audio at 145-150 words per minute.
+- Beat bounds: Keep every shot beat strictly between 4 and 6 words.
+- Title formatting: Curiosity-driven question or shock, 45-50 characters, naming object and threat.
+- Emphasis share: Keep colored emphasis <= 23% total (red=danger, green=reveal, cyan=turn).
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
-- Penultimate turning point: Place a single cyan turn emphasis at shot N-1 directly preceding the consequence.
-- Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
-- Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.
+- Penultimate turning point: Place a single cyan turn shot at beat N-1.
+- Visual selection: Prefer close-ups and action panels over wide establishing frames.
+- Stopping point: End on the final consequence frame with zero trailing commentary.
 
 ## Fixed rules
 - Channel: "what would actually happen" space & science stories over real NASA/ESA/JWST imagery. Famous objects and questions people cannot scroll past (the Sun, black holes, Jupiter, Betelgeuse, Venus).
