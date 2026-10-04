@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 89.1891891891892,
+  "scene_match": 95,
+  "delivery": 89.1891891891892,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "The video starts with an energetic narrator and clear yellow captions with red emphasis on 'Mars'."
+    },
+    {
+      "second": 12,
+      "detail": "The transition to the rover panel is smooth, and the caption '437' is clearly readable."
+    },
+    {
+      "second": 22,
+      "detail": "The narrator changes to a different voice, but the delivery remains clear and well-paced."
+    },
+    {
+      "second": 32,
+      "detail": "The rocket panel is framed correctly, and the caption 'ten percent' is synchronized with the audio."
+    },
+    {
+      "second": 42,
+      "detail": "The panel showing green plants is framed well, and the caption 'perchlorates' is legible."
+    },
+    {
+      "second": 52,
+      "detail": "The final scene with the lander is synchronized with the narration 'Help is too far away'."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The video is well-produced with clear narration, good pacing, and readable captions. The transitions are smooth, and the panel framing is appropriate.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 78,
+    "scene_match": 75,
+    "delivery": 72,
+    "visual_readability": 76
+  },
+  "measured_scores": {
+    "subtitle_sync": 89.1891891891892,
+    "scene_match": 95,
+    "delivery": 89.1891891891892
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

@@ -1,0 +1,249 @@
+{
+  "title": "The terrifying way Mars destroys your physical body",
+  "description": "Step onto the red planet and watch your body break down under extreme radiation, toxic soil, and weak gravity.",
+  "hook_card": "MARS WILL DESTROY YOU",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_002_p00",
+      "narration": "Mars slowly destroys your physical body.",
+      "fact_ids": [
+        "fact_004",
+        "fact_005",
+        "fact_006"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_015_p00",
+      "narration": "A six-month journey gets you there.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_011_p00",
+      "narration": "But space travel has strict limits.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_004_p00",
+      "narration": "No human has surpassed 437 days.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_010_p00",
+      "narration": "The thin atmosphere offers no protection.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_016_p00",
+      "narration": "It is only one percent thick.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_006_p00",
+      "narration": "Radiation hits you like daily X-rays.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_012_p00",
+      "narration": "You absorb 0.67 millisieverts every day.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_020_p00",
+      "narration": "Five meters of soil must cover you.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_005_p00",
+      "narration": "This shields you from cosmic rays.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_008_p00",
+      "narration": "Cancer risks rise by ten percent.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_001_p00",
+      "narration": "Mars gravity is only 38 percent.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "pull",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_014_p00",
+      "narration": "This low gravity weakens your heart.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_002_p00",
+      "narration": "Your bones lose one percent monthly.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_017_p00",
+      "narration": "Toxic perchlorates contaminate the drinking water.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_006_p00",
+      "narration": "Thyroid function drops from tiny amounts.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_020_p00",
+      "narration": "Radio signals take twenty-four minutes.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "pull",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_015_p00",
+      "narration": "Help is too far away.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Mars slowly destroys your physical body. A six-month journey gets you there. But space travel has strict limits. No human has surpassed 437 days. The thin atmosphere offers no protection. It is only one percent thick. Radiation hits you like daily X-rays. You absorb 0.67 millisieverts every day. Five meters of soil must cover you. This shields you from cosmic rays. Cancer risks rise by ten percent. Mars gravity is only 38 percent. This low gravity weakens your heart. Your bones lose one percent monthly. Toxic perchlorates contaminate the drinking water. Thyroid function drops from tiny amounts. Radio signals take twenty-four minutes. Help is too far away.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "headline_candidates": {
+    "titles": [
+      "The terrifying way Mars destroys your physical body",
+      "Why the human body cannot survive on Mars for long",
+      "What a trip to Mars actually does to your heart and bones",
+      "The hidden physical cost of traveling to Mars",
+      "How Mars slowly destroys the human body"
+    ],
+    "hook_cards": [
+      "MARS WILL DESTROY YOU",
+      "MARS SLOWLY KILLS YOU",
+      "YOU CANNOT SURVIVE MARS",
+      "MARS RUINS YOUR BODY",
+      "SPACE IS KILLING YOU"
+    ]
+  },
+  "event": {
+    "id": "space_mars-colony",
+    "title": "What Living on Mars Would Do to Your Body",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "mars-colony",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "bone loss, radiation, 38% gravity",
+    "famous_line": "bone loss, radiation, 38% gravity",
+    "image_terms": [
+      "Mars habitat",
+      "Mars surface",
+      "astronaut Mars artist"
+    ],
+    "source_urls": [
+      "https://www.sciencefocus.com/space/the-thought-experiment-what-would-living-on-mars-do-to-my-body",
+      "https://www.nexthorizon.space/2025/04/how-human-body-will-change-mars-bones-dna.html",
+      "https://www.northcountrypublicradio.org/news/npr/1246202705/this-is-what-living-on-mars-could-do-to-the-human-body",
+      "https://sentinelmission.org/blog/what-happens-if-humans-live-on-mars/",
+      "https://images.nasa.gov/details/PIA23302",
+      "https://commons.wikimedia.org/wiki/File:MarsGroundHabitat.jpg",
+      "https://commons.wikimedia.org/wiki/File:TerraformedMarsGlobeRealistic.jpg",
+      "https://commons.wikimedia.org/wiki/File:Concept_Mars_colony.jpg",
+      "https://commons.wikimedia.org/wiki/File:Mars_Ice_Home_concept.jpg",
+      "https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg",
+      "https://commons.wikimedia.org/wiki/File:Mars_Ice_Home_concept_(cropped).jpg",
+      "https://images.nasa.gov/details/0701718",
+      "https://images.nasa.gov/details/PIA22228",
+      "https://images.nasa.gov/details/PIA23922"
+    ],
+    "url": "https://www.sciencefocus.com/space/the-thought-experiment-what-would-living-on-mars-do-to-my-body",
+    "_source": "space"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance",
+    "variety_warnings": []
+  }
+}

@@ -1,7 +1,7 @@
 # Playbook (auto-evolving)
 - First shot emphasis: Always apply red 'danger' emphasis to the very first shot narration beat.
 - Concrete metrics early: Include at least one concrete numerical measurement within the first three shots.
-- Hook: Present-tense threat statement <= 6 words naming the subject (the Sun, a black hole, your body) facing immediate danger.
+- Hook: Present-tense threat statement <= 6 words naming the subject facing immediate danger.
 - Duration & shots: Target 22-24 shots across 80-85 seconds duration to match top-performing video averages.
 - Speech delivery: Target an energetic pace of 145-150 words per minute.
 - Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.

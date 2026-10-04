@@ -354,6 +354,17 @@
       "name": "strict_numerical_pacing_50_percent",
       "change": "Include at least one concrete numerical stat (seconds, degrees, km/s, or times Earth) in exactly 50% or more of all shot beats.",
       "rationale": "High density of visceral numbers grounds speculative scenarios and sustains audience curiosity throughout the entire duration."
+    },
+    "verdict": "dropped",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37196099024",
+    "chosen_at": "2026-10-04T10:41:54+00:00",
+    "experiment": {
+      "name": "extreme_punchy_beats_max_six_words",
+      "change": "Cap every single shot beat at a maximum of 6 words across the entire video script.",
+      "rationale": "Tighter word bounds increase pacing kineticism and improve subtitle-speech alignment for fast short-form audience retention."
     }
   }
 ]
