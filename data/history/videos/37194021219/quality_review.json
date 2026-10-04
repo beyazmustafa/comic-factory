@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "delivery": 89.1891891891892,
+  "issues": [],
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "observations": [
+    {
+      "detail": "Narration begins with 'Mars slowly destroys' and single-word yellow captions center-aligned.",
+      "second": 1
+    },
+    {
+      "detail": "Shot displays rover on Mars with synced text for limits and duration.",
+      "second": 11
+    },
+    {
+      "detail": "Narration shifts to radiation dose statistics with dome habitat graphic.",
+      "second": 22
+    },
+    {
+      "detail": "Diagram of underground soil habitats shown with matching spoken pacing.",
+      "second": 28
+    },
+    {
+      "detail": "Globe view illustrating Mars gravity comparisons with text pop animations.",
+      "second": 36
+    },
+    {
+      "detail": "Lander visual on Mars surface concluding with 24-minute delay line.",
+      "second": 51
+    }
+  ],
+  "scene_match": 95,
+  "style_adjustments": {},
+  "subtitle_sync": 89.1891891891892,
+  "summary": "Video successfully follows script pacing, panels, and narration specifications with well-synchronized single-word captions.",
+  "visual_readability": 85,
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 73,
+    "scene_match": 72,
+    "delivery": 68,
+    "visual_readability": 74
+  },
+  "measured_scores": {
+    "subtitle_sync": 89.1891891891892,
+    "scene_match": 95,
+    "delivery": 89.1891891891892
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

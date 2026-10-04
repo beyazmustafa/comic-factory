@@ -1,6 +1,6 @@
 # Playbook (auto-evolving)
 - First shot emphasis: Always apply red 'danger' emphasis to the very first shot narration beat.
-- Hook: Present-tense threat statement <= 7 words starting with hero full name facing immediate mortal peril.
+- Hook: Present-tense threat statement <= 6 words starting with hero full name facing mortal peril.
 - Duration & shots: Target 22-24 shots across 80-85 seconds duration to match top-performing video averages.
 - Speech delivery: Target an energetic pace of 145-150 words per minute.
 - Rhythm: Keep narration punchy at 4-7 words per shot beat with forward momentum.

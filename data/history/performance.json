@@ -48,9 +48,9 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 60.3,
+      "hours_live": 60.7,
       "views_per_hour": 0.1,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 6,
       "views_72h": null,
       "average_view_percentage": 99.07,
@@ -137,6 +137,11 @@
         "h": 60.3,
         "views": 6,
         "likes": 0
+      },
+      {
+        "h": 60.7,
+        "views": 6,
+        "likes": 0
       }
     ]
   },
@@ -189,9 +194,9 @@
       "views": 297,
       "likes": 5,
       "comments": 0,
-      "hours_live": 57.6,
-      "views_per_hour": 5.15,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "hours_live": 58.0,
+      "views_per_hour": 5.12,
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 179,
       "views_72h": null,
       "average_view_percentage": 38.28,
@@ -278,6 +283,11 @@
         "h": 57.6,
         "views": 297,
         "likes": 5
+      },
+      {
+        "h": 58.0,
+        "views": 297,
+        "likes": 5
       }
     ]
   },
@@ -330,9 +340,9 @@
       "views": 32,
       "likes": 2,
       "comments": 0,
-      "hours_live": 56.7,
+      "hours_live": 57.1,
       "views_per_hour": 0.56,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 16,
       "views_72h": null,
       "average_view_percentage": 10.4,
@@ -419,6 +429,11 @@
         "h": 56.7,
         "views": 32,
         "likes": 2
+      },
+      {
+        "h": 57.1,
+        "views": 32,
+        "likes": 2
       }
     ]
   },
@@ -470,9 +485,9 @@
       "views": 57,
       "likes": 1,
       "comments": 0,
-      "hours_live": 56.5,
-      "views_per_hour": 1.01,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "hours_live": 56.8,
+      "views_per_hour": 1.0,
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 21,
       "views_72h": null,
       "average_view_percentage": 20.94,
@@ -559,6 +574,11 @@
         "h": 56.5,
         "views": 57,
         "likes": 1
+      },
+      {
+        "h": 56.8,
+        "views": 57,
+        "likes": 1
       }
     ]
   },
@@ -610,9 +630,9 @@
       "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 56.0,
+      "hours_live": 56.4,
       "views_per_hour": 0.21,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 9,
       "views_72h": null,
       "average_view_percentage": 24.69,
@@ -699,6 +719,11 @@
         "h": 56.0,
         "views": 12,
         "likes": 1
+      },
+      {
+        "h": 56.4,
+        "views": 12,
+        "likes": 1
       }
     ]
   },
@@ -751,9 +776,9 @@
       "views": 4,
       "likes": 0,
       "comments": 0,
-      "hours_live": 42.4,
+      "hours_live": 42.7,
       "views_per_hour": 0.09,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 3,
       "views_72h": null
     },
@@ -837,6 +862,11 @@
         "h": 42.4,
         "views": 4,
         "likes": 0
+      },
+      {
+        "h": 42.7,
+        "views": 4,
+        "likes": 0
       }
     ]
   },
@@ -889,9 +919,9 @@
       "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 42.3,
+      "hours_live": 42.7,
       "views_per_hour": 0.12,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": 4,
       "views_72h": null
     },
@@ -975,6 +1005,11 @@
         "h": 42.3,
         "views": 5,
         "likes": 0
+      },
+      {
+        "h": 42.7,
+        "views": 5,
+        "likes": 0
       }
     ]
   },
@@ -1027,9 +1062,9 @@
       "views": 7,
       "likes": 0,
       "comments": 0,
-      "hours_live": 15.2,
-      "views_per_hour": 0.46,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "hours_live": 15.6,
+      "views_per_hour": 0.45,
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -1041,6 +1076,11 @@
       },
       {
         "h": 15.2,
+        "views": 7,
+        "likes": 0
+      },
+      {
+        "h": 15.6,
         "views": 7,
         "likes": 0
       }
@@ -1095,9 +1135,9 @@
       "views": 140,
       "likes": 0,
       "comments": 0,
-      "hours_live": 15.2,
-      "views_per_hour": 9.21,
-      "fetched_at": "2026-10-04T09:40:47+00:00",
+      "hours_live": 15.6,
+      "views_per_hour": 9.0,
+      "fetched_at": "2026-10-04T10:02:26+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -1111,7 +1151,59 @@
         "h": 15.2,
         "views": 140,
         "likes": 0
+      },
+      {
+        "h": 15.6,
+        "views": 140,
+        "likes": 0
       }
     ]
+  },
+  {
+    "video_id": "tRAzUbPi9SA",
+    "platform": "youtube",
+    "run_id": "37194021219",
+    "published_at": "2026-10-04T10:09:53+00:00",
+    "event": {
+      "title": "What Living on Mars Would Do to Your Body",
+      "series": "Space",
+      "issue": "mars-colony",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 18,
+      "words": 107,
+      "duration": 53.9,
+      "words_per_minute": 119,
+      "hook": "Mars slowly destroys your physical body.",
+      "hook_words": 6,
+      "title": "The terrifying way Mars destroys your physical body",
+      "title_length": 51,
+      "emphasis": {
+        "danger": 1,
+        "normal": 15,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 89.1891891891892,
+        "scene_match": 95,
+        "delivery": 89.1891891891892,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Video successfully follows script pacing, panels, and narration specifications with well-synchronized single-word captions."
+    },
+    "experiment": {
+      "name": "concrete_number_in_first_three_shots",
+      "change": "Include at least one concrete numerical stat (seconds, km/s, or degrees) within the first three shots.",
+      "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
+    },
+    "stats": {}
   }
 ]

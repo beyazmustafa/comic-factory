@@ -332,6 +332,17 @@
       "name": "strict_six_word_hook",
       "change": "Enforce a strict maximum limit of exactly 6 words for the opening sentence hook.",
       "rationale": "Data shows top-performing videos favor shorter hooks (mean 8.0 vs 8.7), and tightening to 6 words accelerates viewer hook retention in the critical first 2 seconds."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37194021219",
+    "chosen_at": "2026-10-04T10:02:30+00:00",
+    "experiment": {
+      "name": "concrete_number_in_first_three_shots",
+      "change": "Include at least one concrete numerical stat (seconds, km/s, or degrees) within the first three shots.",
+      "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     }
   }
 ]
