@@ -72,6 +72,44 @@ def validate_story(value, panels, facts, max_shots=40):
     }
 
 
+def variety_problems(shots, panels):
+    """Famous mode: the writer must spread beats over many distinct images."""
+    kind = {p["id"]: p.get("kind", "interior") for p in panels}
+    problems = []
+    repeats = [shots[i]["panel_id"] for i in range(1, len(shots)) if shots[i]["panel_id"] == shots[i - 1]["panel_id"]]
+    if repeats:
+        problems.append(f"Same panel used in consecutive shots: {sorted(set(repeats))}; change one of each pair.")
+    usage = Counter(s["panel_id"] for s in shots)
+    over = [p for p, n in usage.items() if n > 2]
+    if over:
+        problems.append(f"Panels used more than twice: {over}; each panel at most twice.")
+    unique = len(usage)
+    if unique < min(len(shots), max(8, round(len(shots) * 0.75))):
+        problems.append(f"Only {unique} distinct panels for {len(shots)} shots; use at least {max(8, round(len(shots) * 0.75))} distinct panels.")
+    covers = [s["panel_id"] for s in shots if kind.get(s["panel_id"]) == "cover"]
+    if len(covers) > max(3, len(shots) // 4):
+        problems.append(f"{len(covers)} shots use covers; at most {max(3, len(shots) // 4)} cover shots, prefer interior panels.")
+    if shots and kind.get(shots[0]["panel_id"]) == "cover":
+        problems.append("The opening shot must be an interior panel or promo art, not a cover.")
+    return problems
+
+
+def dedupe_consecutive(shots):
+    """Last-attempt fallback: drop a shot that repeats the previous panel when
+    the story can spare it (keeps at least 12 shots)."""
+    kept = []
+    for shot in shots:
+        if kept and shot["panel_id"] == kept[-1]["panel_id"] and len(shots) >= 13 and len((kept[-1]["narration"] + " " + shot["narration"]).split()) <= 36:
+            # merge the narration into the previous beat instead of showing the same image twice
+            kept[-1] = {**kept[-1], "narration": kept[-1]["narration"] + " " + shot["narration"],
+                        "fact_ids": list(dict.fromkeys(kept[-1]["fact_ids"] + shot["fact_ids"]))}
+            continue
+        kept.append(shot)
+    for index, row in enumerate(kept):
+        row["id"] = f"shot_{index:03}"
+    return kept
+
+
 def create(api, event, panels, facts, style):
     inventory = [
         {
@@ -87,6 +125,7 @@ def create(api, event, panels, facts, style):
                 "confidence",
                 "shot_type",
                 "intensity",
+                "kind",
             )
             if k in p
         }
@@ -94,7 +133,7 @@ def create(api, event, panels, facts, style):
     ]
     famous = event.get("_source") == "famous"
     mode = (
-        "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. Each panel carries confidence = how clearly it belongs to this exact storyline; use 75+ panels for the shocking beats and the opening, lower ones only as fillers. "
+        "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. Each panel carries confidence = how clearly it belongs to this exact storyline; use 75+ panels for the shocking beats and the opening, lower ones only as fillers. VARIETY IS MANDATORY: never the same panel in two consecutive shots, each panel at most twice, at least 75% of shots on distinct panels, covers (kind=cover) in at most a quarter of shots and never as the opening shot. "
         if famous else
         "MODE: complete public-domain Golden Age issue. Pick the ONE story in the issue that contains the hero's single most bizarre, shocking or dramatic moment (a death, betrayal, grotesque villain, impossible power, cruel twist). Use panels from that story only; ignore other stories in the issue. Open on that moment, then explain how it came to be and how it ends, beat by beat in panel order, present tense, like a top comics-recap Shorts narrator. Mention year/publisher at most once, late. "
         if event.get("identifier")
@@ -138,7 +177,19 @@ REPAIR FEEDBACK {feedback}""",
             continue
         if famous:
             # Commentary illustrations: relevance was judged at collection time.
-            value.update(event=event, panel_validation={"passed": True, "shots": [], "mode": "relevance"})
+            # What is checked instead is variety: no panel twice in a row, no
+            # panel more than twice, covers and promo art as a minority.
+            problems = variety_problems(value["shots"], panels)
+            if problems and attempt < api.settings.repair_attempts - 1:
+                feedback = "; ".join(problems)
+                save_json(api.directory / "diagnostics" / f"story_{attempt + 1}.json",
+                          {"error": feedback, "draft": draft})
+                continue
+            if problems:
+                value["shots"] = dedupe_consecutive(value["shots"])
+                value["narration"] = " ".join(s["narration"] for s in value["shots"])
+            value.update(event=event, panel_validation={"passed": True, "shots": [], "mode": "relevance",
+                                                        "variety_warnings": problems})
             save_json(api.directory / "story.json", value)
             return value
         report = verify_shots(api, value["shots"], panels, facts)

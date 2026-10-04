@@ -380,8 +380,8 @@ def judge_images(api, event, pages):
             data = api.json(
                 "Görsel uygunluğu",
                 f"""These images were found by searching for the comic storyline {json.dumps({k: event[k] for k in ('title', 'series', 'issue', 'year', 'publisher', 'characters', 'artist', 'famous_line')}, ensure_ascii=False)}.
-For each image decide: is_comic_art (true only for hand-drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, 3D renders, AI-generated looking paintings, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), finished (true only for final inked AND coloured art as printed; false for pencil sketches, rough layouts, uncoloured line art, concept art, sketch covers), relevance 0..100: 90+ = the famous scene itself; 75..89 = clearly from this storyline or its era/artist style (costumes, art style, supporting cast of that story); 55..74 = the same characters but modern or unrelated art; below 55 = other. text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
-Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","finished":true,"relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
+For each image decide: is_comic_art (true only for hand-drawn comic book art: interior panels, pages, covers or official illustrations; false for photos, movie/TV stills, cosplay, toys, video games, 3D renders, AI-generated looking paintings, memes), kind ("interior" = story page or panel with sequential art/balloons, "cover" = cover or variant cover with logo, "promo" = pin-up or promotional illustration), finished (true only for final inked AND coloured art as printed; false for pencil sketches, rough layouts, uncoloured line art, concept art, sketch covers), relevance 0..100: 90+ = the famous scene itself; 75..89 = clearly from this storyline or its era/artist style (costumes, art style, supporting cast of that story); 55..74 = the same characters but modern or unrelated art; below 55 = other. collage (true if the image is a grid/gallery of several covers or several unrelated images, a cover gallery, a checklist page or a mosaic), photo_of_print (true if it is a photograph of a physical comic: visible paper edges, barcode, shelf, hand, glare), text_heavy (true if large watermarks, meme captions or a text-dominated page), characters visible, and a one-sentence description of the visible action in {language_name(api)}.
+Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|promo","finished":true,"collage":false,"photo_of_print":false,"relevance":0,"text_heavy":false,"characters":[],"description":""}}]}}""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="images",
             )
@@ -413,8 +413,11 @@ Return {{"images":[{{"page_id":"","is_comic_art":true,"kind":"interior|cover|pro
             heavy = heavy is True or str(heavy).casefold() == "true"
             finished = row.get("finished", True)
             finished = finished is True or str(finished).casefold() == "true"
+            junk = any(row.get(k) is True or str(row.get(k)).casefold() == "true" for k in ("collage", "photo_of_print"))
             if not comic:
                 tally["not_comic"] += 1
+            elif junk:
+                tally["collage_or_photo"] = tally.get("collage_or_photo", 0) + 1
             elif not finished:
                 tally["sketch"] = tally.get("sketch", 0) + 1
             elif heavy:
@@ -470,7 +473,7 @@ def cut_panels(api, event, pages):
             left, top, right, bottom = box
             crop = picture.crop((round(left * picture.width), round(top * picture.height),
                                  round(right * picture.width), round(bottom * picture.height)))
-            if min(crop.size) < 220:
+            if min(crop.size) < 220 or not has_detail(crop):
                 continue
             identifier = f"{page['id']}_p{order:02}"
             path = root / "panels" / (identifier + ".jpg")
@@ -483,8 +486,21 @@ def cut_panels(api, event, pages):
                 "file": str(path.relative_to(api.directory)),
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
                 "source_url": page["source_url"], "source_title": page.get("source_title", ""),
+                "kind": page.get("kind", "interior"),
             })
     return inventory
+
+
+def has_detail(crop):
+    """Reject near-blank crops (a tier that hit a white gutter, a flat blast)."""
+    import numpy as np
+
+    small = crop.convert("L").resize((96, 96))
+    values = np.asarray(small, dtype=np.float32)
+    if values.std() < 22:
+        return False
+    edges = np.abs(np.diff(values, axis=1)).mean() + np.abs(np.diff(values, axis=0)).mean()
+    return edges > 6
 
 
 def describe_panels(api, inventory):
