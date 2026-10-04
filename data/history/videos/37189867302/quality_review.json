@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95,
+  "scene_match": 95,
+  "delivery": 92.5,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Video opens with Peter Parker abandoning his costume, captions sync well with single-word pop style."
+    },
+    {
+      "second": 10,
+      "detail": "Narration flows smoothly as Peter struggles with university grades and personal stress."
+    },
+    {
+      "second": 20,
+      "detail": "Daily Bugle editorials and Jameson framing panels are shown clearly with good pacing."
+    },
+    {
+      "second": 32,
+      "detail": "Suit discarded in trash can scene matches the narration accurately."
+    },
+    {
+      "second": 45,
+      "detail": "Underworld crime syndicates erupting without Spider-Man shown effectively in the panels."
+    },
+    {
+      "second": 60,
+      "detail": "Final retrieval of the mask to reclaim the city wraps up the narrative cohesively."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 90,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 92.5,
+    "scene_match": 95,
+    "delivery": 92.5
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

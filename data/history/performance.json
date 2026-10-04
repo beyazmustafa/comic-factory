@@ -48,11 +48,14 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 44.7,
-      "views_per_hour": 0.13,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 59.4,
+      "views_per_hour": 0.1,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 6,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 99.07,
+      "average_view_duration": 57,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -124,6 +127,11 @@
         "h": 44.7,
         "views": 6,
         "likes": 0
+      },
+      {
+        "h": 59.4,
+        "views": 6,
+        "likes": 0
       }
     ]
   },
@@ -173,14 +181,17 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 282,
+      "views": 297,
       "likes": 5,
       "comments": 0,
-      "hours_live": 42.0,
-      "views_per_hour": 6.71,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 56.7,
+      "views_per_hour": 5.24,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 179,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 38.28,
+      "average_view_duration": 47,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -252,6 +263,11 @@
         "h": 42.0,
         "views": 282,
         "likes": 5
+      },
+      {
+        "h": 56.7,
+        "views": 297,
+        "likes": 5
       }
     ]
   },
@@ -301,14 +317,17 @@
       "rationale": "Shorter beats increase retention and align better with rapid-fire word-by-word caption styles."
     },
     "stats": {
-      "views": 24,
-      "likes": 1,
+      "views": 32,
+      "likes": 2,
       "comments": 0,
-      "hours_live": 41.1,
-      "views_per_hour": 0.58,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 55.8,
+      "views_per_hour": 0.57,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 16,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 10.4,
+      "average_view_duration": 8,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -380,6 +399,11 @@
         "h": 41.1,
         "views": 24,
         "likes": 1
+      },
+      {
+        "h": 55.8,
+        "views": 32,
+        "likes": 2
       }
     ]
   },
@@ -428,14 +452,17 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 45,
+      "views": 57,
       "likes": 1,
       "comments": 0,
-      "hours_live": 40.8,
-      "views_per_hour": 1.1,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 55.5,
+      "views_per_hour": 1.03,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 21,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 20.94,
+      "average_view_duration": 10,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -507,6 +534,11 @@
         "h": 40.8,
         "views": 45,
         "likes": 1
+      },
+      {
+        "h": 55.5,
+        "views": 57,
+        "likes": 1
       }
     ]
   },
@@ -558,11 +590,14 @@
       "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 40.4,
-      "views_per_hour": 0.3,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 55.1,
+      "views_per_hour": 0.22,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 9,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 24.69,
+      "average_view_duration": 16,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -634,6 +669,11 @@
         "h": 40.4,
         "views": 12,
         "likes": 1
+      },
+      {
+        "h": 55.1,
+        "views": 12,
+        "likes": 1
       }
     ]
   },
@@ -683,12 +723,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 3,
+      "views": 4,
       "likes": 0,
       "comments": 0,
-      "hours_live": 26.7,
-      "views_per_hour": 0.11,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 41.4,
+      "views_per_hour": 0.1,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 3,
       "views_72h": null
     },
@@ -762,6 +802,11 @@
         "h": 26.7,
         "views": 3,
         "likes": 0
+      },
+      {
+        "h": 41.4,
+        "views": 4,
+        "likes": 0
       }
     ]
   },
@@ -811,12 +856,12 @@
       "rationale": "Direct character speech breaks up third-person narration and leverages the highest-performing video's color-coded caption mechanic to boost retention."
     },
     "stats": {
-      "views": 4,
+      "views": 5,
       "likes": 0,
       "comments": 0,
-      "hours_live": 26.7,
-      "views_per_hour": 0.15,
-      "fetched_at": "2026-10-03T18:02:31+00:00",
+      "hours_live": 41.4,
+      "views_per_hour": 0.12,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
       "views_24h": 4,
       "views_72h": null
     },
@@ -890,6 +935,11 @@
         "h": 26.7,
         "views": 4,
         "likes": 0
+      },
+      {
+        "h": 41.4,
+        "views": 5,
+        "likes": 0
       }
     ]
   },
@@ -938,7 +988,23 @@
       "change": "Apply a red 'danger' emphasis color to the very first shot narration beat instead of normal text.",
       "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 7,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 14.3,
+      "views_per_hour": 0.49,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.3,
+        "views": 7,
+        "likes": 0
+      }
+    ]
   },
   {
     "video_id": "KG5fOgR1tD4",
@@ -985,6 +1051,22 @@
       "change": "Apply a red 'danger' emphasis color to the very first shot narration beat instead of normal text.",
       "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 140,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 14.3,
+      "views_per_hour": 9.81,
+      "fetched_at": "2026-10-04T08:44:42+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.3,
+        "views": 140,
+        "likes": 0
+      }
+    ]
   }
 ]

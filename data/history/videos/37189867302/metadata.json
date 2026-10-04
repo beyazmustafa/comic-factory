@@ -1,0 +1,255 @@
+{
+  "script": {
+    "title": "Why Did Spider-Man Surrender New York to Kingpin?",
+    "description": "Exhausted by personal tragedies and relentless slander, Peter Parker abandons his costume in an alley, leaving New York City vulnerable to the Kingpin.",
+    "hook_card": "PETER PARKER QUITS SPIDER-MAN",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_001_p00",
+        "narration": "Peter Parker abandons his iconic costume.",
+        "fact_ids": [
+          "fact_002",
+          "fact_003"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_006_p01",
+        "narration": "He hands New York to Wilson Fisk.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_006_p02",
+        "narration": "A relentless double life breaks him completely.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_007_p05",
+        "narration": "Peter struggles with failing university grades.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_007_p04",
+        "narration": "Aunt May's failing health torments his conscience.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_006_p03",
+        "narration": "Public hostility pushes him toward despair.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_007_p00",
+        "narration": "Daily Bugle editorials fuel continuous mistrust.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_007_p02",
+        "narration": "J. Jonah Jameson brands him a public menace.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_007_p01",
+        "narration": "Crushed beneath endless duty, he decides to walk.",
+        "fact_ids": [
+          "fact_000",
+          "fact_002"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_001_p00",
+        "narration": "The red-and-blue suit gets discarded in a trash can.",
+        "fact_ids": [
+          "fact_002",
+          "fact_003"
+        ],
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_000_p00",
+        "narration": "In the shadows, Kingpin seizes complete control.",
+        "fact_ids": [
+          "fact_004",
+          "fact_005"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_006_p05",
+        "narration": "Without Spider-Man, underworld crime syndicates erupt.",
+        "fact_ids": [
+          "fact_005",
+          "fact_006"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_007_p03",
+        "narration": "Lawlessness spreads across every city block.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_015_p00",
+        "narration": "Innocent citizens face imminent mortal terror.",
+        "fact_ids": [
+          "fact_006",
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_006_p00",
+        "narration": "Peter sees that he cannot ignore his calling.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_012_p02",
+        "narration": "Great power demands unbreakable responsibility.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "up",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_015_p01",
+        "narration": "Stan Lee and John Romita crafted this milestone.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_000_p00",
+        "narration": "He retrieves his mask to reclaim the city.",
+        "fact_ids": [
+          "fact_007",
+          "fact_008"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Peter Parker abandons his iconic costume. He hands New York to Wilson Fisk. A relentless double life breaks him completely. Peter struggles with failing university grades. Aunt May's failing health torments his conscience. Public hostility pushes him toward despair. Daily Bugle editorials fuel continuous mistrust. J. Jonah Jameson brands him a public menace. Crushed beneath endless duty, he decides to walk. The red-and-blue suit gets discarded in a trash can. In the shadows, Kingpin seizes complete control. Without Spider-Man, underworld crime syndicates erupt. Lawlessness spreads across every city block. Innocent citizens face imminent mortal terror. Peter sees that he cannot ignore his calling. Great power demands unbreakable responsibility. Stan Lee and John Romita crafted this milestone. He retrieves his mask to reclaim the city.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "event": {
+      "id": "famous_spider-man-no-more",
+      "title": "Spider-Man No More",
+      "publisher": "Marvel",
+      "series": "The Amazing Spider-Man",
+      "issue": "50",
+      "year": 1967,
+      "universe": "Marvel",
+      "characters": [
+        "Spider-Man",
+        "Peter Parker",
+        "Kingpin"
+      ],
+      "summary": "Peter Parker throws his costume in the trash and quits",
+      "famous_line": "Peter Parker throws his costume in the trash and quits",
+      "artist": "John Romita Sr",
+      "source_urls": [
+        "https://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50",
+        "https://curiocomp.com/comic-books/amazing-spider-man-50-1967-spider-man-no-more",
+        "https://en.wikipedia.org/wiki/List_of_Spider-Man_storylines",
+        "https://alchetron.com/Spider-Man-No-More!",
+        "https://www.marvel.com/articles/comics/spider-man-s-greatest-moments"
+      ],
+      "url": "https://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50",
+      "_source": "famous"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": []
+    },
+    "full_description": "Exhausted by personal tragedies and relentless slander, Peter Parker abandons his costume in an alley, leaving New York City vulnerable to the Kingpin.\n\nComic: The Amazing Spider-Man #50 (1967)\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers.\nSources:\nhttps://alchetron.com/Spider-Man-No-More!\nhttps://www.marvel.com/articles/comics/spider-man-s-greatest-moments\nhttps://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50",
+    "hashtags": [
+      "comics",
+      "shorts",
+      "superhero",
+      "marvel"
+    ],
+    "instagram_caption": "Why Did Spider-Man Surrender New York to Kingpin?\n\nExhausted by personal tragedies and relentless slander, Peter Parker abandons his costume in an alley, leaving New York City vulnerable to the Kingpin."
+  },
+  "sources": [
+    "https://alchetron.com/Spider-Man-No-More!",
+    "https://www.marvel.com/articles/comics/spider-man-s-greatest-moments",
+    "https://www.marvel.com/comics/issue/6869/the_amazing_spider-man_1963_50"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "selection": "alignment_only",
+    "alignment_scores": {
+      "Orus": 100.0,
+      "Gacrux": 100.0,
+      "Fenrir": 100.0
+    },
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "comic-superhero-en-v2"
+}
