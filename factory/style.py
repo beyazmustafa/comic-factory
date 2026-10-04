@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 from .api import FactoryError
 
-STYLE = {'profile_id': 'comic-superhero-en-v2',
+STYLE = {'profile_id': 'space-science-en-v1',
  'font_style': 'condensed_heavy',
  'uppercase': True,
  'font_size': 90,
@@ -29,7 +29,7 @@ STYLE = {'profile_id': 'comic-superhero-en-v2',
  'panel_max_height': 1.0,
  'panel_center_y': 0.5,
  'music_present': False,
- 'narrator_delivery': 'Energetic, curiosity-driven storytelling like a top comics-recap Shorts '
+ 'narrator_delivery': 'Energetic, curiosity-driven storytelling like a top documentary Shorts '
                       'narrator: open on the shocking moment, stress key words, build tension '
                       'with short dramatic pauses, land every sentence ending. Natural, not shouted.',
  'story_structure': 'Shocking hook (first 2 seconds) → who/why → escalating danger → verified '

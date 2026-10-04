@@ -98,8 +98,8 @@ def localize(api, directory: Path, script, inventory, style, cache, language, me
         if not review["passed"]:
             raise FactoryError(f"{language} sürümü senkron eşiğini geçemedi ({sync:.0f}).")
         hashtags = list(metadata["script"].get("hashtags", []))
-        if language == "tr" and "çizgiroman" not in hashtags:
-            hashtags.append("çizgiroman")
+        if language == "tr":
+            hashtags.append("uzay" if getattr(base_settings, "channel_theme", "") == "space" else "çizgiroman")
         sources = metadata.get("sources", [])
         full = translated["description"] + "\n\n" + ("Kaynaklar:" if language == "tr" else "Sources:") + "\n" + "\n".join(sources)
         local_metadata = {

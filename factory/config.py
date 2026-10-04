@@ -38,7 +38,7 @@ class Settings:
     language: str = "en"
     # Extra editions published alongside the primary language (same panels).
     languages: str = "en,tr"
-    channel_theme: str = "superheroes"
+    channel_theme: str = "space"
     # Extra Internet Archive filter applied when channel_theme is superheroes.
     archive_theme_query: str = (
         'subject:(superhero OR superheroes OR "super hero" OR "super heroes" OR heroes) OR '
@@ -51,7 +51,7 @@ class Settings:
     # "studio": original universe drawn by image models. "famous": world-famous
     # Marvel/DC moments told as commentary over official art (default; "mix"
     # now means the same).
-    source: str = "famous"
+    source: str = "space"
     image_model: str = ""
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
@@ -122,7 +122,7 @@ class Settings:
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"famous", "auto", "archive", "web", "studio", "mix"}:
+        if result.source not in {"space", "famous", "auto", "archive", "web", "studio", "mix"}:
             raise ValueError("source famous, auto, archive, web, studio veya mix olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")

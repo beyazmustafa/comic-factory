@@ -1,0 +1,359 @@
+"""Space & science source: "what would actually happen" stories over real
+NASA / ESA / JWST imagery.
+
+Why this source exists: it is the one format where a zero-budget channel can
+have professional visuals. NASA's image library is public domain and served
+through a free, keyless API; the European agencies publish under CC BY. The
+pipeline picks a topic from a curated pool of questions people cannot scroll
+past, gathers facts from the open web plus the model's own knowledge, writes
+the script with a hook card, then fetches one real image per beat.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import io
+import json
+import random
+import re
+from urllib.parse import quote
+
+import requests
+from PIL import Image, ImageOps
+
+from .api import SourceUnavailable
+from .core import language_name, save_json
+from .research import Fetcher, clean, search
+
+NASA_API = "https://images-api.nasa.gov/search"
+COMMONS_API = "https://commons.wikimedia.org/w/api.php"
+
+# (key, title question, image search terms, angle)
+TOPICS = [
+    ("fall-into-sun", "What Happens to Your Body If You Fall Into the Sun", ["sun surface SDO", "solar flare", "solar prominence", "corona"], "stage by stage death: heat, radiation, plasma; the 8 minutes nobody survives"),
+    ("black-hole-spaghetti", "What Falling Into a Black Hole Does to You", ["black hole", "accretion disk", "M87 black hole", "Sagittarius A*"], "spaghettification, time dilation, the last photon"),
+    ("venus-death", "How Long You Would Survive on Venus", ["Venus surface Magellan", "Venus clouds", "Venera"], "crushed, cooked and dissolved in seconds"),
+    ("betelgeuse", "What Happens When Betelgeuse Explodes", ["Betelgeuse", "supernova remnant", "Crab Nebula", "Cassiopeia A"], "brighter than the full Moon, visible in daytime"),
+    ("jupiter-fall", "What Happens If You Fall Into Jupiter", ["Jupiter Juno", "Jupiter Great Red Spot", "Jupiter clouds"], "no surface, just pressure until you are metallic hydrogen"),
+    ("earth-stops", "What If Earth Stopped Spinning for One Second", ["Earth from space", "Earth rotation", "ISS Earth night"], "everything moves at 1,600 km/h"),
+    ("moon-gone", "What If the Moon Disappeared Tonight", ["Moon full", "Moon surface LRO", "Earth and Moon"], "tides, seasons, days get shorter"),
+    ("sun-dies", "The Day the Sun Dies", ["red giant", "planetary nebula", "Helix Nebula", "white dwarf"], "Mercury and Venus eaten, Earth boiled"),
+    ("space-no-suit", "What Happens If You Are Exposed to Space Without a Suit", ["astronaut spacewalk", "EVA ISS", "astronaut"], "15 seconds of consciousness, boiling saliva, not instant freezing"),
+    ("gamma-ray-burst", "The Gamma-Ray Burst That Could End Life on Earth", ["gamma ray burst", "hypernova", "neutron star merger"], "ozone gone in seconds"),
+    ("neutron-star", "What a Teaspoon of a Neutron Star Would Do", ["neutron star", "pulsar", "magnetar"], "a billion tonnes; it falls through the Earth"),
+    ("andromeda-collision", "Andromeda Is Coming for the Milky Way", ["Andromeda galaxy", "galaxy collision", "Antennae galaxies"], "4 billion years, no star collides"),
+    ("mars-survival", "How Long You Would Last on Mars Without a Suit", ["Mars surface Perseverance", "Mars Curiosity", "Mars dust storm"], "blood boils at body temperature in 1% pressure"),
+    ("asteroid-city", "What a City-Killer Asteroid Would Actually Do", ["asteroid Bennu", "Chelyabinsk meteor", "impact crater", "DART"], "airburst, shockwave, ejecta"),
+    ("voyager", "Voyager 1 Is Still Talking to Us From the Dark", ["Voyager spacecraft", "Voyager golden record", "pale blue dot"], "47 years, 24 billion km, 22 hours per message"),
+    ("rogue-planet", "A Rogue Planet Could Pass Through the Solar System", ["rogue planet", "exoplanet artist", "Kuiper belt"], "orbits thrown into chaos"),
+    ("europa-ocean", "There Is an Ocean Under Europa's Ice", ["Europa Juno", "Europa surface", "Europa Clipper"], "twice Earth's water, hydrothermal vents"),
+    ("magnetar", "The Magnetar: The Most Dangerous Object in the Universe", ["magnetar", "neutron star artist", "SGR 1806-20"], "at 1,000 km it erases your credit cards; at Moon distance it kills you"),
+    ("titan", "Titan Is the Only Other World With Rain and Seas", ["Titan Cassini", "Titan lakes", "Huygens Titan surface"], "methane rain, -180°C, you could fly by flapping"),
+    ("olympus-mons", "Olympus Mons: A Volcano Three Times Taller Than Everest", ["Olympus Mons", "Mars volcano", "Valles Marineris"], "so wide you could not see it is a mountain"),
+    ("io-volcanoes", "Io: The Moon That Is Turning Itself Inside Out", ["Io Juno", "Io volcano", "Io Galileo"], "400 volcanoes, lava fountains 400 km high"),
+    ("great-attractor", "Something Is Pulling Our Galaxy at 600 km/s", ["Laniakea", "galaxy cluster", "Norma cluster"], "the Great Attractor, hidden behind the Milky Way"),
+    ("pillars-of-creation", "The Pillars of Creation May Already Be Gone", ["Pillars of Creation JWST", "Eagle Nebula", "Pillars of Creation Hubble"], "6,500 light-years; we see the past"),
+    ("white-hole", "What a White Hole Would Look Like", ["black hole artist", "quasar", "jet black hole"], "a black hole running backwards"),
+    ("saturn-float", "Saturn Would Float in a Bathtub", ["Saturn Cassini", "Saturn rings", "Saturn hexagon"], "density lower than water; hexagon storm bigger than Earth"),
+    ("solar-storm", "The Solar Storm That Would Send Us Back to 1850", ["coronal mass ejection", "Carrington event", "aurora from ISS", "solar flare SDO"], "Carrington event, transformers melting"),
+    ("time-dilation", "Why Astronauts Age Slower Than You", ["ISS orbit", "astronaut ISS", "GPS satellite"], "0.01 seconds per year; GPS would fail in a day"),
+    ("mercury", "Mercury: 430°C by Day, -180°C by Night", ["Mercury MESSENGER", "Mercury surface", "Mercury craters"], "no air to hold the heat"),
+    ("oumuamua", "The Interstellar Object That Sped Up on Its Own", ["Oumuamua artist", "interstellar object", "comet Borisov"], "cigar shaped, no tail, accelerated"),
+    ("universe-end", "The Three Ways the Universe Will End", ["deep field JWST", "Hubble ultra deep field", "galaxy cluster"], "heat death, big rip, big crunch"),
+    ("pluto-heart", "Pluto Has a Beating Heart of Nitrogen Ice", ["Pluto New Horizons", "Pluto Sputnik Planitia", "Pluto mountains"], "glaciers of nitrogen, mountains of water ice"),
+    ("apollo-13", "The 90 Seconds That Nearly Killed Apollo 13", ["Apollo 13", "Apollo 13 service module", "Apollo mission control"], "an oxygen tank explodes 320,000 km from home"),
+    ("challenger", "What Really Went Wrong on Challenger", ["Challenger launch", "Challenger crew", "Space Shuttle launch"], "an O-ring, a cold morning, 73 seconds"),
+    ("columbia", "Columbia Was Doomed Before It Reached Orbit", ["Columbia shuttle", "STS-107", "shuttle reentry"], "a piece of foam, 16 days in orbit"),
+    ("dark-forest", "Why the Universe Is So Quiet", ["radio telescope", "Arecibo", "Very Large Array", "exoplanet"], "Fermi paradox, dark forest"),
+    ("kessler", "The Day Space Debris Traps Us on Earth", ["space debris", "satellite orbit", "ISS damage"], "Kessler syndrome, 36,000 pieces tracked"),
+    ("ocean-worlds", "Enceladus Is Spraying Its Ocean Into Space", ["Enceladus plumes", "Enceladus Cassini", "Saturn moon"], "geysers, salt, organic molecules"),
+    ("red-dwarf", "Why Living Next to a Red Dwarf Would Be Hell", ["red dwarf flare", "Proxima Centauri", "TRAPPIST-1"], "flares strip atmospheres, tidal locking"),
+    ("moon-dark-side", "There Is No Dark Side of the Moon", ["far side of the Moon", "Moon LRO", "Chang'e 4"], "tidal locking, the far side is just hidden"),
+    ("sun-size", "How Big the Sun Really Is", ["Sun SDO", "Sun Earth comparison", "solar eclipse"], "1.3 million Earths; 8 minutes of light"),
+    ("iss-fall", "How the ISS Will Die", ["ISS", "ISS reentry", "Point Nemo"], "2030, Point Nemo, 400 tonnes of fire"),
+    ("vy-canis", "The Largest Star Would Swallow Saturn", ["VY Canis Majoris", "UY Scuti", "red supergiant"], "a plane would take 1,100 years to circle it"),
+    ("deep-field", "This Photo Contains 10,000 Galaxies", ["Hubble ultra deep field", "JWST deep field", "SMACS 0723"], "a grain of sand of sky"),
+    ("hurricane-space", "Hurricanes From Orbit", ["hurricane from ISS", "hurricane satellite", "Earth storm"], "a 1,000 km engine of heat"),
+    ("mars-colony", "What Living on Mars Would Do to Your Body", ["Mars habitat", "Mars surface", "astronaut Mars artist"], "bone loss, radiation, 38% gravity"),
+    ("lightning-sprites", "The Red Lightning That Shoots Upward", ["sprite lightning ISS", "red sprite", "upper atmosphere"], "sprites, blue jets, 90 km up"),
+    ("antarctica-space", "Why Antarctica Is the Best Place to Find Meteorites", ["Antarctica meteorite", "Antarctica from space", "meteorite"], "black rocks on white ice"),
+    ("supervolcano", "The Supervolcano Under Yellowstone", ["Yellowstone from space", "volcano eruption satellite", "caldera"], "600,000 year cycle, continent-wide ash"),
+    ("tardigrades", "The Animal That Survives Space", ["tardigrade", "microgravity experiment", "space station lab"], "10 days in vacuum, frozen, boiled, irradiated"),
+    ("earth-core", "The Earth's Core Is as Hot as the Sun's Surface", ["Earth cutaway", "Earth magnetic field", "aurora"], "5,400°C, the magnetic shield"),
+]
+
+BAD_WORDS = ("logo", "chart", "diagram", "graph", "infographic", "poster", "portrait", "group photo", "briefing", "conference", "ceremony", "signing", "map")
+
+
+def topic_id(key):
+    return f"space_{key}"
+
+
+def shortlist(api, topic, used):
+    used = {str(u).casefold() for u in used}
+    pool = [row for row in TOPICS if topic_id(row[0]) not in used and row[1].casefold() not in used]
+    if topic:
+        pool = [r for r in pool if all(w in (r[1] + " " + " ".join(r[2])).casefold() for w in topic.casefold().split())] or pool
+    if not pool:
+        raise SourceUnavailable("Uzay konu havuzundaki her şey kullanılmış.")
+    events = []
+    for key, title, terms, angle in random.sample(pool, min(3, len(pool))):
+        events.append({
+            "id": topic_id(key), "title": title, "publisher": "NASA/ESA", "series": "Space", "issue": key,
+            "year": 2026, "universe": "science", "characters": [], "summary": angle, "famous_line": angle,
+            "image_terms": terms, "source_urls": [], "url": "", "_source": "space",
+        })
+    save_json(api.directory / "research" / "candidates.json", {"requested_topic": topic, "events": events})
+    return events
+
+
+# ------------------------------------------------------------------ facts
+def gather_facts(api, event, fetcher):
+    queries = [f"{event['title']} explained", f"{event['title']} NASA facts", f"{event['summary']} science"]
+    rows = search(queries, each=6)
+    articles = []
+    for row in rows[:12]:
+        api.check()
+        try:
+            article = fetcher.article(row["url"])
+        except (requests.RequestException, ValueError, OSError, KeyError):
+            continue
+        if len(article["text"]) < 400:
+            continue
+        articles.append({"url": article["url"], "title": article["title"], "text": article["text"][:9000]})
+        if len(articles) == 4:
+            break
+    facts = []
+    if articles:
+        data = api.json(
+            "Bilim gerçekleri",
+            f"""From ONLY these fetched articles, list 12..20 concrete, numeric, vivid facts in {language_name(api)} for a video titled "{event['title']}" (angle: {event['summary']}). Prefer numbers (temperatures, speeds, distances, seconds to death), sequences (first this happens, then that) and comparisons a viewer can feel. Each fact needs an exact article substring (>= 20 characters) supporting it.
+ARTICLES {json.dumps(articles, ensure_ascii=False)}
+Return {{"facts":[{{"text":"","quote":"exact substring","url":"article url"}}]}}""",
+            list_key="facts",
+        )
+        by_url = {a["url"]: a for a in articles}
+        from .panels import quote_present
+
+        for item in data.get("facts", []):
+            if not isinstance(item, dict) or not clean(item.get("text")):
+                continue
+            article = by_url.get(item.get("url")) or next((a for a in articles if quote_present(item.get("quote", ""), a["text"])), None)
+            if article and quote_present(item.get("quote", ""), article["text"]):
+                facts.append({"id": f"fact_{len(facts):03}", "text": clean(item["text"]), "quote": clean(item.get("quote")),
+                              "source_url": article["url"], "source_id": "article", "page_id": None})
+    if len(facts) < 10:
+        data = api.json(
+            "Bilim bilgisi",
+            f"""You are an astrophysicist writing for a YouTube Shorts channel. Topic: "{event['title']}" (angle: {event['summary']}).
+List 14..20 accurate, widely established facts in {language_name(api)}, in the order a story would use them: the setup, what happens step by step (with numbers: temperatures, pressures, speeds, time), the comparisons that make it visceral, and the final consequence. Only mainstream, well-documented science; mark uncertainty inside the sentence when real scientists disagree.
+Return {{"facts":[{{"text":""}}]}}""",
+            list_key="facts",
+        )
+        for item in data.get("facts", []):
+            text = clean(item.get("text")) if isinstance(item, dict) else clean(item)
+            if text and 4 <= len(text.split()) <= 60:
+                facts.append({"id": f"fact_{len(facts):03}", "text": text, "quote": "", "source_url": "",
+                              "source_id": "general_knowledge", "page_id": None})
+    if len(facts) < 8:
+        raise SourceUnavailable("Konu için yeterli gerçek toplanamadı.")
+    return facts, [a["url"] for a in articles]
+
+
+# ----------------------------------------------------------------- images
+def nasa_search(query, count=12):
+    """NASA image library: public domain, keyless."""
+    try:
+        response = requests.get(NASA_API, params={"q": query, "media_type": "image", "page_size": count},
+                                timeout=(10, 30), headers={"User-Agent": "comic-factory/1.0"})
+        response.raise_for_status()
+        items = response.json().get("collection", {}).get("items", [])
+    except Exception as error:  # noqa: BLE001
+        print(f"NASA araması ({query}): {type(error).__name__}", flush=True)
+        return []
+    rows = []
+    for item in items:
+        data = (item.get("data") or [{}])[0]
+        links = item.get("links") or []
+        href = next((l.get("href") for l in links if l.get("rel") == "preview"), None) or (links[0].get("href") if links else None)
+        if not href:
+            continue
+        title = clean(data.get("title"))
+        if any(b in title.casefold() for b in BAD_WORDS):
+            continue
+        nasa_id = data.get("nasa_id", "")
+        # ~orig.jpg / ~large.jpg exist for most assets; the preview is ~thumb.
+        large = re.sub(r"~(thumb|small|medium)\.(jpg|png)$", r"~large.\2", href)
+        rows.append({"image_url": large, "fallback_url": href, "title": title,
+                     "source_url": f"https://images.nasa.gov/details/{nasa_id}" if nasa_id else href,
+                     "credit": clean(data.get("secondary_creator") or data.get("center") or "NASA"),
+                     "description": clean(data.get("description"))[:300]})
+    return rows
+
+
+def commons_search(query, count=10):
+    """Wikimedia Commons, kept to public-domain / CC BY files (attribution added)."""
+    try:
+        params = {"action": "query", "generator": "search", "gsrsearch": f"{query} filetype:bitmap", "gsrnamespace": 6,
+                  "gsrlimit": count, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1600, "format": "json"}
+        response = requests.get(COMMONS_API, params=params, timeout=(10, 30), headers={"User-Agent": "comic-factory/1.0 (youtube shorts)"})
+        response.raise_for_status()
+        pages = response.json().get("query", {}).get("pages", {})
+    except Exception as error:  # noqa: BLE001
+        print(f"Commons araması ({query}): {type(error).__name__}", flush=True)
+        return []
+    rows = []
+    for page in pages.values():
+        info = (page.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata", {})
+        licence = clean(meta.get("LicenseShortName", {}).get("value", "")).casefold()
+        if not (licence.startswith("pd") or licence.startswith("public domain") or licence in {"cc0", "cc by 4.0", "cc by 3.0", "cc by 2.0", "cc by-sa 4.0", "cc by-sa 3.0"}):
+            continue
+        if info.get("width", 0) < 1200:
+            continue
+        title = clean(page.get("title", "")).replace("File:", "")
+        if any(b in title.casefold() for b in BAD_WORDS):
+            continue
+        rows.append({"image_url": info.get("thumburl") or info.get("url"), "fallback_url": info.get("url"), "title": title,
+                     "source_url": info.get("descriptionurl", ""), "credit": clean(re.sub("<[^>]+>", "", meta.get("Artist", {}).get("value", "")))[:80] or "Wikimedia Commons",
+                     "licence": licence, "description": clean(re.sub("<[^>]+>", "", meta.get("ImageDescription", {}).get("value", "")))[:300]})
+    return rows
+
+
+def download(api, event, rows, maximum, seen):
+    fetcher = Fetcher()
+    root = api.directory / "events" / event["id"]
+    (root / "pages").mkdir(parents=True, exist_ok=True)
+    pages = []
+    offset = len(list((root / "pages").glob("page_*.jpg")))
+    try:
+        for row in rows:
+            if len(pages) >= maximum:
+                break
+            api.check()
+            for url in (row.get("image_url"), row.get("fallback_url")):
+                if not url:
+                    continue
+                try:
+                    body, final = fetcher.get(url, 40_000_000)
+                except Exception:  # noqa: BLE001
+                    continue
+                digest = hashlib.sha256(body).hexdigest()
+                if digest in seen:
+                    break
+                try:
+                    with Image.open(io.BytesIO(body)) as opened:
+                        if min(opened.size) < 700:
+                            continue
+                        picture = ImageOps.exif_transpose(opened).convert("RGB")
+                except Exception:  # noqa: BLE001
+                    continue
+                if picture.width > 4000 or picture.height > 4000:
+                    picture.thumbnail((4000, 4000), Image.Resampling.LANCZOS)
+                seen.add(digest)
+                identifier = f"page_{offset + len(pages):03}"
+                path = root / "pages" / (identifier + ".jpg")
+                picture.save(path, "JPEG", quality=94)
+                pages.append({"id": identifier, "file": str(path.relative_to(api.directory)), "source_url": row.get("source_url") or final,
+                              "image_url": final, "source_title": row.get("title", ""), "credit": row.get("credit", ""),
+                              "licence": row.get("licence", "public domain (NASA)"), "caption": row.get("description", ""),
+                              "query": row.get("query", ""), "width": picture.width, "height": picture.height, "sha256": digest})
+                break
+    finally:
+        fetcher.session.close()
+    return pages
+
+
+def judge_images(api, event, pages):
+    """Keep striking, relevant photographs; drop diagrams, portraits, text."""
+    kept = []
+    for offset in range(0, len(pages), 6):
+        batch = pages[offset:offset + 6]
+        api.check()
+        try:
+            data = api.json(
+                "Görsel seçimi",
+                f"""These images were fetched for a science video titled "{event['title']}" (angle: {event['summary']}).
+For each image decide: usable (true only for a real photograph, telescope image, spacecraft image or high-quality scientific visualization that would look stunning full-screen on a phone; false for diagrams, charts, infographics, text slides, logos, group photos of people at desks, press conferences, low-quality or blurry images), relevance 0..100 to the topic, drama 0..100 (how awe-inspiring it is), focus [x,y] fractions of the most interesting point, and a one-sentence {language_name(api)} description of what is visible.
+Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":[0.5,0.5],"description":""}}]}}""",
+                images=[(p["id"], api.directory / p["file"]) for p in batch],
+                list_key="images",
+            )
+        except Exception as error:  # noqa: BLE001
+            print(f"Görsel seçimi atlandı: {str(error)[:120]}", flush=True)
+            kept.extend({**p, "relevance": 60, "drama": 60, "focus": [0.5, 0.5], "description": p.get("caption", "")} for p in batch)
+            continue
+        rows = [r for r in data.get("images", []) if isinstance(r, dict)]
+        if rows and len(rows) == len(batch) and not all(r.get("page_id") for r in rows):
+            for row, page in zip(rows, batch):
+                row.setdefault("page_id", page["id"])
+        by_id = {r.get("page_id"): r for r in rows}
+        for page in batch:
+            row = by_id.get(page["id"])
+            if not row:
+                continue
+            usable = row.get("usable") is True or str(row.get("usable")).casefold() == "true"
+            try:
+                relevance, drama = float(row.get("relevance", 0)), float(row.get("drama", 0))
+            except (TypeError, ValueError):
+                relevance, drama = 0, 0
+            if not usable or relevance < 50:
+                continue
+            focus = row.get("focus")
+            if not (isinstance(focus, list) and len(focus) == 2):
+                focus = [0.5, 0.5]
+            try:
+                focus = [min(1.0, max(0.0, float(focus[0]))), min(1.0, max(0.0, float(focus[1])))]
+            except (TypeError, ValueError):
+                focus = [0.5, 0.5]
+            kept.append({**page, "relevance": relevance, "drama": drama, "focus": focus,
+                         "description": clean(row.get("description")) or page.get("caption", "")})
+    kept.sort(key=lambda p: -(p["relevance"] * 0.6 + p["drama"] * 0.4))
+    return kept
+
+
+def collect(api, event, fetcher):
+    facts, article_urls = gather_facts(api, event, fetcher)
+    seen, rows = set(), []
+    for term in event.get("image_terms", [])[:4]:
+        api.check()
+        for row in nasa_search(term, 10):
+            rows.append({**row, "query": term})
+    for term in event.get("image_terms", [])[:2]:
+        for row in commons_search(term, 6):
+            rows.append({**row, "query": term})
+    random.shuffle(rows)
+    # Round-robin over search terms so one term cannot fill the whole budget.
+    by_term = {}
+    for row in rows:
+        by_term.setdefault(row["query"], []).append(row)
+    ordered = []
+    while any(by_term.values()):
+        for term in list(by_term):
+            if by_term[term]:
+                ordered.append(by_term[term].pop(0))
+    pages = download(api, event, ordered, 36, seen)
+    print(f"Uzay görselleri: {len(ordered)} aday, {len(pages)} indirildi.", flush=True)
+    if len(pages) < 6:
+        raise SourceUnavailable("Konu için yeterli görsel bulunamadı.")
+    judged = judge_images(api, event, pages)
+    if len(judged) < 6:
+        raise SourceUnavailable(f"Konu için yeterli kullanılabilir görsel yok ({len(judged)}/{len(pages)}).")
+    root = api.directory / "events" / event["id"]
+    (root / "panels").mkdir(parents=True, exist_ok=True)
+    inventory = []
+    for page in judged[:28]:
+        src = api.directory / page["file"]
+        inventory.append({
+            "id": page["id"] + "_p00", "page_id": page["id"], "reading_order": 1, "characters": [],
+            "action": page["description"], "ocr": "", "narrative_fact": "", "confidence": round(page["relevance"]),
+            "intensity": round(page["drama"]), "focus": page["focus"], "framing": "fill",
+            "bbox": [0, 0, 1, 1], "page_file": page["file"], "file": page["file"],
+            "sha256": hashlib.sha256(src.read_bytes()).hexdigest(),
+            "source_url": page["source_url"], "source_title": page.get("source_title", ""),
+            "credit": page.get("credit", ""), "licence": page.get("licence", ""), "kind": "photo",
+        })
+    event["source_urls"] = list(dict.fromkeys(article_urls + [p["source_url"] for p in judged]))[:14]
+    event["url"] = event["source_urls"][0] if event["source_urls"] else ""
+    save_json(root / "catalog.json", {"event": event, "panels": inventory, "facts": facts})
+    return inventory, facts

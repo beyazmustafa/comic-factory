@@ -18,11 +18,12 @@ name: Comic Factory Studio
         - voice_test
         - refresh_stats
       source:
-        description: Kaynak — boşsa factory.json (famous = ünlü Marvel/DC anları)
+        description: Kaynak — boşsa factory.json (space = uzay/bilim)
         type: choice
         default: ''
         options:
         - ''
+        - space
         - famous
         - studio
         - auto

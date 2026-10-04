@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .config import ROOT
-from .core import language_name, save_json
+from .core import channel_blurb, language_name, save_json
 
 
 
@@ -302,7 +302,7 @@ def evolve(api, style: dict) -> dict:
     try:
         verdict = api.json(
             "Oyun kitabı güncelleme",
-            f"""You are the showrunner of a YouTube Shorts channel that retells public-domain Golden Age {api.settings.channel_theme} comics in {language_name(api)}, panel by panel with an energetic narrator and word-by-word captions. Improve the next video using evidence only.
+            f"""You are the showrunner of {channel_blurb(api)}, in {language_name(api)}. Improve the next video using evidence only.
 CURRENT PLAYBOOK:
 {playbook}
 PUBLISHED VIDEOS (best first by views per hour; stats may be empty for new videos):

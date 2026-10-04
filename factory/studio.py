@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
-from . import archive, famous, forge, learning, localize, research, panels, story, voice, render, quality
+from . import archive, famous, forge, learning, localize, research, panels, space, story, voice, render, quality
 from .style import load_style
 from .api import Api, FactoryError, SourceUnavailable
 from .config import ROOT, VERSION, Settings
@@ -129,6 +129,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
                 print(f"Kaynak (mix): {effective}", flush=True)
             if effective == "famous":
                 candidates += famous.shortlist(api, topic, used)
+            if effective == "space":
+                candidates += space.shortlist(api, topic, used)
             if effective == "studio":
                 universe = forge.ensure_universe(api, note=api.note)
                 event, draft, inventory, facts = forge.produce(api, universe, style, note=api.note)
@@ -163,6 +165,8 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
                     try:
                         if event.get("_source") == "famous":
                             inventory, facts = famous.collect(api, event, fetcher)
+                        elif event.get("_source") == "space":
+                            inventory, facts = space.collect(api, event, fetcher)
                         elif from_archive:
                             pages, articles = archive.collect_pages(api, event)
                             inventory, facts = panels.catalog_archive(
@@ -337,7 +341,10 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
         used_panels = {s["panel_id"] for s in script["shots"]}
         sources = sorted({p["source_url"] for p in inventory if p["id"] in used_panels})
         event = bundle["event"]
-        if event.get("_source") == "studio":
+        credits = sorted({f"{p.get('credit')} ({p.get('licence')})" for p in inventory if p["id"] in used_panels and p.get("credit")})
+        if event.get("_source") == "space":
+            licence = "\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: " + "; ".join(credits)[:900]
+        elif event.get("_source") == "studio":
             licence = "\nOriginal characters and artwork created for this channel."
         elif event.get("_source") == "famous":
             licence = "\nArtwork: official previews, covers and press images, shown for commentary and review. Characters and art © their publishers."
@@ -347,17 +354,20 @@ def generate(settings, topic="", resume_run=None, voice_only=False, api_factory=
             licence = "\nPanels: official publisher previews and press coverage, used for commentary."
         description = (
             script["description"]
-            + f"\n\nComic: {event['series']} #{event['issue']} ({event['year']})"
+            + ("" if event.get("_source") == "space" else f"\n\nComic: {event['series']} #{event['issue']} ({event['year']})")
             + licence
             + "\nSources:\n"
             + "\n".join(sources)
         )
-        hashtags = [
-            "comics",
-            "shorts",
-            "superhero" if settings.channel_theme == "superheroes" else "comicbooks",
-            str(event.get("publisher", "comics")).lower().replace(" ", ""),
-        ]
+        if settings.channel_theme == "space":
+            hashtags = ["space", "shorts", "nasa", "science", "astronomy", "universe"]
+        else:
+            hashtags = [
+                "comics",
+                "shorts",
+                "superhero" if settings.channel_theme == "superheroes" else "comicbooks",
+                str(event.get("publisher", "comics")).lower().replace(" ", ""),
+            ]
         os.environ["FACTORY_LANGUAGE"] = settings.language
         metadata = {
             "script": {
@@ -456,7 +466,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--refresh-stats", action="store_true")
-    parser.add_argument("--source", choices=["famous", "auto", "archive", "web", "studio", "mix"])
+    parser.add_argument("--source", choices=["space", "famous", "auto", "archive", "web", "studio", "mix"])
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])

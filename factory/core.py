@@ -329,3 +329,14 @@ def language_name(api) -> str:
     settings = getattr(api, "settings", None)
     code = getattr(settings, "language", "en")
     return LANGUAGE_NAMES.get(code if isinstance(code, str) else "en", "English")
+
+
+def channel_blurb(api_or_settings):
+    """One-line description of what the channel makes, for prompts."""
+    settings = getattr(api_or_settings, "settings", api_or_settings)
+    theme = str(getattr(settings, "channel_theme", "") or "")
+    if theme == "space":
+        return ("a YouTube Shorts channel that tells \"what would actually happen\" space and science stories "
+                "over real NASA/ESA/JWST imagery, with a deep energetic narrator and word-by-word captions")
+    return (f"a YouTube Shorts channel that retells {theme or 'comic'} stories panel by panel "
+            "with an energetic narrator and word-by-word captions")

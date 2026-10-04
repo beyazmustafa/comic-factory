@@ -127,7 +127,7 @@ def synthesize(api, text, voice, style, path):
 def gemini_synthesize(api, text, voice, style, path):
     prompt = f"""Read ONLY the exact {language_name(api)} text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
-Fluent natural {language_name(api)}, confident comic-story energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.
+Fluent natural {language_name(api)}, confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.
 <transcript>{text}</transcript>"""
     response = api.request(
         "Ses " + voice,

@@ -211,6 +211,20 @@ def polish(picture):
 
 
 def base_image(panel, style, directory, output):
+    if panel.get("framing") == "fill":
+        # Photographs (space source): full-bleed 9:16 crop around the focus
+        # point; no blurred page behind, nothing but the image.
+        with Image.open(directory / panel["file"]) as source:
+            picture = source.convert("RGB")
+        focus = panel.get("focus") or [0.5, 0.5]
+        try:
+            centering = (min(1.0, max(0.0, float(focus[0]))), min(1.0, max(0.0, float(focus[1]))))
+        except (TypeError, ValueError, IndexError):
+            centering = (0.5, 0.5)
+        framed = ImageOps.fit(picture, (WIDTH * 2, HEIGHT * 2), method=Image.Resampling.LANCZOS, centering=centering)
+        framed = ImageEnhance.Contrast(framed).enhance(1.06)
+        framed.save(output, "PNG", compress_level=1)
+        return
     with Image.open(directory / panel["page_file"]) as source:
         page = source.convert("RGB")
     with Image.open(directory / panel["file"]) as source:
