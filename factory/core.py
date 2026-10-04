@@ -176,6 +176,19 @@ def align_words(
             reliable_timing.discard(index)
         item["timing_source"] = "asr" if index in reliable_timing else "estimated"
         previous_end = item["end"]
+    # Words squeezed past the end of the recording (ASR timestamps beyond the
+    # audio, or estimated slots that overflowed) get a minimum width by
+    # borrowing from their predecessors, walking backwards. A zero-width word
+    # used to sink the whole chunk; now it is just marked estimated.
+    minimum_width = 0.04
+    for index in range(len(aligned) - 1, -1, -1):
+        item = aligned[index]
+        ceiling = aligned[index + 1]["start"] if index + 1 < len(aligned) else total_end
+        item["end"] = min(item["end"], ceiling)
+        if item["end"] - item["start"] < minimum_width:
+            item["start"] = max(0.0, item["end"] - minimum_width)
+            reliable_timing.discard(index)
+            item["timing_source"] = "estimated"
     coverage = sum(value >= 0.72 for value in scores) / n * 100
     similarity = sum(scores) / n * 100
     timing_coverage = len(reliable_timing) / n * 100

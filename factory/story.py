@@ -95,10 +95,13 @@ Return {{"titles":[],"hook_cards":[],"best_title":"","best_hook_card":""}}""",
         print(f"Başlık cilası atlandı: {str(error)[:120]}", flush=True)
 
 
-def variety_problems(shots, panels):
+def variety_problems(shots, panels, min_words=0):
     """Famous mode: the writer must spread beats over many distinct images."""
     kind = {p["id"]: p.get("kind", "interior") for p in panels}
     problems = []
+    words = sum(len(s["narration"].split()) for s in shots)
+    if min_words and words < min_words:
+        problems.append(f"Narration too short: {words} words; write at least {min_words} words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.")
     repeats = [shots[i]["panel_id"] for i in range(1, len(shots)) if shots[i]["panel_id"] == shots[i - 1]["panel_id"]]
     if repeats:
         problems.append(f"Same panel used in consecutive shots: {sorted(set(repeats))}; change one of each pair.")
@@ -205,7 +208,7 @@ REPAIR FEEDBACK {feedback}""",
             # Commentary illustrations: relevance was judged at collection time.
             # What is checked instead is variety: no panel twice in a row, no
             # panel more than twice, covers and promo art as a minority.
-            problems = variety_problems(value["shots"], panels)
+            problems = variety_problems(value["shots"], panels, min_words=round(api.settings.target_seconds * 1.2))
             if problems and attempt < api.settings.repair_attempts - 1:
                 feedback = "; ".join(problems)
                 save_json(api.directory / "diagnostics" / f"story_{attempt + 1}.json",
