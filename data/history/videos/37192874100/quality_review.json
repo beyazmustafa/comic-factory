@@ -1,0 +1,58 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 89.1891891891892,
+  "scene_match": 95,
+  "delivery": 89.1891891891892,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "The narrator's voice changes significantly after the first few shots, transitioning from an energetic tone to a more monotone delivery."
+    },
+    {
+      "second": 11,
+      "detail": "The word-by-word captioning style is highly readable and matches the timing of the spoken words."
+    },
+    {
+      "second": 22,
+      "detail": "The caption '0.67' is rendered clearly over the dome illustration."
+    },
+    {
+      "second": 35,
+      "detail": "The transition between the Earth view and the Mars map is a quick whip pan as specified."
+    },
+    {
+      "second": 43,
+      "detail": "The visual panel shows green plants while discussing toxic perchlorates in drinking water."
+    },
+    {
+      "second": 51,
+      "detail": "The final shot transitions smoothly back to the lander illustration with clear captioning."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The video successfully follows the production settings with accurate word-by-word captions and whip transitions. The narration style shifts from high energy to a calmer tone early on, but remains clear and synchronized throughout.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 80,
+    "scene_match": 75,
+    "delivery": 68,
+    "visual_readability": 72
+  },
+  "measured_scores": {
+    "subtitle_sync": 89.1891891891892,
+    "scene_match": 95,
+    "delivery": 89.1891891891892
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": false,
+  "failed_checks": [
+    "subtitle_sync"
+  ],
+  "subjective_assessment": true
+}

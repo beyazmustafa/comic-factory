@@ -321,6 +321,17 @@
       "name": "cyan_reversal_penultimate_shot",
       "change": "Set the penultimate shot (shot N-1) to cyan reversal emphasis directly before the final consequence beat.",
       "rationale": "Marking a distinct narrative turning point right before the final impact maximizes tension and sharpens the abrupt cold consequence ending."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37192874100",
+    "chosen_at": "2026-10-04T09:41:11+00:00",
+    "experiment": {
+      "name": "strict_six_word_hook",
+      "change": "Enforce a strict maximum limit of exactly 6 words for the opening sentence hook.",
+      "rationale": "Data shows top-performing videos favor shorter hooks (mean 8.0 vs 8.7), and tightening to 6 words accelerates viewer hook retention in the critical first 2 seconds."
     }
   }
 ]

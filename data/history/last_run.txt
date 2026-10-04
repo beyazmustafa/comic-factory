@@ -1,11 +1,11 @@
-run_id: 37191150918  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261004T091041975524Z/run.json
+run_id: 37192874100  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261004T094047629868Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Bitmiş videonun görüntü ve ses kontrolü",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,63 +38,19 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37191150918",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "7ad2cd33188a312fe73f375f0c21666cf0d74f28072bd23f116c9c26dfc8b31c",
-  "metadata_sha256": "e2d2cd078711bfd96914681e71fc17cc0ee4e0e60fdcbe6b00e4720abefc2cf8",
-  "quality_sha256": "0be5f310a8be04955b7d885f29f0c24b48dcb7f06af97bc3cb18e27a84c07967",
-  "api_calls": 37,
-  "duration": 101.04,
-  "voice": "Orus",
-  "event": {
-    "id": "space_dark-forest",
-    "title": "Why the Universe Is So Quiet",
-    "publisher": "NASA/ESA",
-    "series": "Space",
-    "issue": "dark-forest",
-    "year": 2026,
-    "universe": "science",
-    "characters": [],
-    "summary": "Fermi paradox, dark forest",
-    "famous_line": "Fermi paradox, dark forest",
-    "image_terms": [
-      "radio telescope",
-      "Arecibo",
-      "Very Large Array",
-      "exoplanet"
-    ],
-    "source_urls": [
-      "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
-      "https://www.splashtravels.com/guides/scientists-are-still-trying-explain-why-universe-seems-so-quiet",
-      "https://3dastronomer.com/news/2026/06/13/the-great-silence-why-the-universe-seems-empty-despite-the-possibility-of-life-everywhere/",
-      "https://www.sciencenewstoday.org/15-reasons-why-space-is-the-quietest-place-in-existence",
-      "https://images.nasa.gov/details/PIA18461",
-      "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
-      "https://images.nasa.gov/details/GSFC_20171208_Archive_e000053",
-      "https://images.nasa.gov/details/PIA10373",
-      "https://images.nasa.gov/details/PIA17248",
-      "https://images.nasa.gov/details/PIA10204",
-      "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_21.jpg",
-      "https://images.nasa.gov/details/PIA15480",
-      "https://commons.wikimedia.org/wiki/File:Mount_Pleasant_Radio_Telescope.jpg",
-      "https://commons.wikimedia.org/wiki/File:At_Sardinia_Radio_Telescope_2024_01.jpg"
-    ],
-    "url": "https://www.sciencenewstoday.org/is-space-mostly-silent-due-to-gravity-the-real-reason-explained",
-    "_source": "space"
-  },
-  "localized": [
-    "lang_tr"
-  ]
+  "run_id": "37192874100",
+  "error": "FactoryError: Bitmiş videoda düzeltilmesi gereken noktalar var: subtitle_sync. Önizleme ve raporlar kaydedildi.",
+  "api_calls": 37
 }
---- data/runs/20261004T091041975524Z/diagnostics/provider_events.json
+--- data/runs/20261004T094047629868Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Turkish çeviri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
 ]
---- data/runs/20261004T091041975524Z/diagnostics/providers.json
+--- data/runs/20261004T094047629868Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -117,8 +73,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -210,82 +166,61 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T091041975524Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261004T091041975524Z/research/rejected_candidates.json
+--- data/runs/20261004T094047629868Z/audio/chunk_001/failures.json
 [
-  {
-    "event": {
-      "id": "space_moon-dark-side",
-      "title": "There Is No Dark Side of the Moon",
-      "publisher": "NASA/ESA",
-      "series": "Space",
-      "issue": "moon-dark-side",
-      "year": 2026,
-      "universe": "science",
-      "characters": [],
-      "summary": "tidal locking, the far side is just hidden",
-      "famous_line": "tidal locking, the far side is just hidden",
-      "image_terms": [
-        "far side of the Moon",
-        "Moon LRO",
-        "Chang'e 4"
-      ],
-      "source_urls": [],
-      "url": "",
-      "_source": "space"
-    },
-    "error": "Konu için yeterli kullanılabilir görsel yok (5/11)."
-  }
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 50.0/100; whisper-large-v3-turbo: 50.0/100"
 ]
+--- data/runs/20261004T094047629868Z/voice_audition/failed_auditions.json
+{}
+--- data/runs/20261004T094047629868Z/diagnostics/story_1.json
+{"error": "Panels used more than twice: ['page_002_p00', 'page_012_p00']; each panel at most twice.; Only 12 distinct panels for 21 shots; use at least 16 distinct panels."}
+--- data/runs/20261004T094047629868Z/diagnostics/story_2.json
+{"error": "Only 14 distinct panels for 24 shots; use at least 18 distinct panels."}
+--- data/runs/20261004T094047629868Z/diagnostics/story_3.json
+{"error": "Panels used more than twice: ['page_002_p00', 'page_015_p00']; each panel at most twice.; Only 14 distinct panels for 21 shots; use at least 16 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: There Is No Dark Side of the Moon
+Olay araştırılıyor: What Living on Mars Would Do to Your Body
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Uzay görselleri: 26 aday, 11 indirildi.
-Olay araştırılıyor: Why the Universe Is So Quiet
-Uzay görselleri: 40 aday, 23 indirildi.
+Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Uzay görselleri: 35 aday, 22 indirildi.
 
 → Türkçe ses seçimi
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 95.2/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 50.0/100 | whisper-large-v3
+Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 50.0/100 | whisper-large-v3
+Ses eşleştirme: 50.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 3
+Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
+Ses eşleştirme: 89.2/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 94.9/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 89.3/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
 
 → Bitmiş videonun görüntü ve ses kontrolü
-
-→ tr sürümü
-Turkish çeviri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 97.4/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 97.5/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261004T091041975524Z/review.html
+HATA: Bitmiş videoda düzeltilmesi gereken noktalar var: subtitle_sync. Önizleme ve raporlar kaydedildi.

@@ -7,6 +7,7 @@
 - Title format: Curiosity-driven question or shock, 45-50 characters, naming famous hero and antagonist.
 - Emphasis share: Keep colored emphasis strictly <= 23% of total shots (red=danger, green=reveal, cyan=turn).
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
+- Penultimate turning point: Place a single cyan turn emphasis at shot N-1 directly preceding the consequence.
 - Visual preference: Prioritize close-ups and high-kinetic action impact panels over wide establishing frames.
 - Ending: Stop cold on the final consequence shot with zero outro or trailing narrator wrap-up.
 
