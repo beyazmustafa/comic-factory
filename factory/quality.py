@@ -28,7 +28,7 @@ ADJUSTABLE = {
 }
 
 
-def validate_review(report, duration=None):
+def validate_review(report, duration=None, sync_minimum=90):
     failures = []
     if "narration_language_ok" in report and "turkish_narration" not in report:
         report["turkish_narration"] = report.get("narration_language_ok")
@@ -40,9 +40,9 @@ def validate_review(report, duration=None):
         if report.get(key) is not True:
             failures.append(key)
     for key, minimum in (
-        ("subtitle_sync", 90),
+        ("subtitle_sync", sync_minimum),
         ("scene_match", 90),
-        ("delivery", 85),
+        ("delivery", min(85, sync_minimum)),
         ("visual_readability", 85),
     ):
         value = report.get(key)
@@ -122,7 +122,9 @@ narration_language_ok is true when the narration is spoken in {language_name(api
     except FactoryError as error:
         api.note(f"Video kontrolü Gemini'de yapılamadı ({str(error)[:120]}); kare incelemesine geçildi.")
         report = frame_review(api, video, story, style, duration)
-    validate_review(report, duration)
+    # The same bar the voice stage already enforced per chunk: a video whose
+    # every chunk passed alignment must not fail here on a stricter copy of it.
+    validate_review(report, duration, sync_minimum=getattr(getattr(api, "settings", None), "alignment_threshold", 90))
     save_json(api.directory / "quality_review.json", report)
     return report
 
