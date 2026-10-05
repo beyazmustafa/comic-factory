@@ -1,11 +1,11 @@
-run_id: 37223574786  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261004T181415571554Z/run.json
+run_id: 37309004080  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261005T122242562696Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Konuşma ve kelime zamanları",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,28 +38,72 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37223574786",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 44
+  "run_id": "37309004080",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "c6cca270802e221a4b850f4239804448b53b7c120cca287f8ced90490e381b13",
+  "metadata_sha256": "11dc2846d402ac7c1925ed22bd47add73e4879174aa0a05153bb9ededeb04e9f",
+  "quality_sha256": "8307999b37800097eca8cebd5685f32cecc258ae42a1e7db4a1eb3fa66d0de9f",
+  "api_calls": 56,
+  "duration": 114.3,
+  "voice": "Orus",
+  "event": {
+    "id": "space_neutron-teaspoon",
+    "title": "A Teaspoon of Neutron Star Would Fall Through Earth",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "neutron-teaspoon",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "a billion tonnes; it drills to the core",
+    "famous_line": "a billion tonnes; it drills to the core",
+    "image_terms": [
+      "neutron star",
+      "pulsar",
+      "magnetar"
+    ],
+    "source_urls": [
+      "https://www.astronomy.com/science/what-would-happen-if-tablespoonful-neutron-star-was-brought-to-earth/",
+      "https://spacedaily.com/j-a-single-teaspoon-of-neutron-star-material-would-weigh-about-four-billion-tonnes-on-earth-roughly-the-mass-of-a-mountain-because-the-star-has-crushed-the-equivalent-of-the-sun-into-a-sphere-the-widt/",
+      "https://askdruniverse.wsu.edu/2025/06/18/happen-put-piece-neutron-star-earth/",
+      "https://artandscienceblog.com/if-a-spoonful-of-neutron-star-appeared-on-earth/",
+      "https://commons.wikimedia.org/wiki/File:Noirlab2218a_Neutron_Star_Merger_in_the_Early_Universe.jpg",
+      "https://commons.wikimedia.org/wiki/File:Neutron_Star_X-ray_beaming_with_accretion_disk.jpg",
+      "https://images.nasa.gov/details/GSFC_20171208_Archive_e001102",
+      "https://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png",
+      "https://images.nasa.gov/details/PIA21085",
+      "https://images.nasa.gov/details/PIA08042",
+      "https://images.nasa.gov/details/PIA26274",
+      "https://commons.wikimedia.org/wiki/File:PSR_J0002%2B6216_(Cannonball_Pulsar).jpg",
+      "https://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_Neutron_Star_(2009-cassio-more-2_-_neutron).tiff",
+      "https://images.nasa.gov/details/GSFC_20171208_Archive_e000042"
+    ],
+    "url": "https://www.astronomy.com/science/what-would-happen-if-tablespoonful-neutron-star-was-brought-to-earth/",
+    "_source": "space"
+  },
+  "localized": [
+    "lang_tr"
+  ]
 }
---- data/runs/20261004T181415571554Z/diagnostics/provider_events.json
+--- data/runs/20261005T122242562696Z/diagnostics/provider_events.json
 [
-  "Bilim bilgisi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim bilgisi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim bilgisi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Bilim bilgisi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi."
+  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261004T181415571554Z/diagnostics/providers.json
+--- data/runs/20261005T122242562696Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -81,9 +125,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -175,66 +219,137 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261004T181415571554Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 31.; whisper-large-v3-turbo: 85.0/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 85.0/100; whisper-large-v3-turbo: 85.0/100"
-]
---- data/runs/20261004T181415571554Z/voice_audition/failed_auditions.json
+--- data/runs/20261005T122242562696Z/voice_audition/failed_auditions.json
 {}
+--- data/runs/20261005T122242562696Z/diagnostics/story_1.json
+{"error": "Narration too short: 117 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_017_p00', 'page_006_p00', 'page_020_p00', 'page_001_p00', 'page_016_p00', 'page_004_p00']; each panel at most twice.; Only 9 distinct panels for 23 shots; use at least 17 distinct panels."}
+--- data/runs/20261005T122242562696Z/diagnostics/story_2.json
+{"error": "Only 10 distinct panels for 20 shots; use at least 15 distinct panels."}
+--- data/runs/20261005T122242562696Z/diagnostics/story_3.json
+{"error": "Narration too short: 121 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 10 distinct panels for 20 shots; use at least 15 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: What Happens If You Fall Into the Sun
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Bilim bilgisi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim bilgisi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim bilgisi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Bilim bilgisi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Uzay görselleri: 50 aday, 24 indirildi.
-Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: A Teaspoon of Neutron Star Would Fall Through Earth
+Uzay görselleri: 34 aday, 23 indirildi.
+Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
-Ses eşleştirme: 85.0/100 | whisper-large-v3
-Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 85.0/100 | whisper-large-v3
-Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 85.0/100 | whisper-large-v3
-Ses eşleştirme: 85.0/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 91.9/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 7, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+
+→ Dikey video ve eşzamanlı altyazı
+
+→ Bitmiş videonun görüntü ve ses kontrolü
+
+→ tr sürümü
+Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 96.9/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 94.9/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261005T122242562696Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: What Happens When a Neutron Star Teaspoon Pierces Earth? #Shorts
+Görünürlük: public
+
+Yükleme: %10
+Yükleme: %20
+Yükleme: %31
+Yükleme: %41
+Yükleme: %52
+Yükleme: %62
+Yükleme: %73
+Yükleme: %83
+Yükleme: %94
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=MiMaQk-J-L0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261005T122242562696Z/video.mp4
+Boyut: 76.3 MB
+Açıklama uzunluğu: 231 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17966834541187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 18129540323497259
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Bir Nötron Yıldızı Çay Kaşığı Dünya'yı Nasıl Yok Eder? #Shorts
+Görünürlük: public
+
+Yükleme: %12
+Yükleme: %24
+Yükleme: %36
+Yükleme: %49
+Yükleme: %61
+Yükleme: %73
+Yükleme: %85
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=BXXp_bjy4Jk&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

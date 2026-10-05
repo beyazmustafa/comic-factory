@@ -1,0 +1,326 @@
+{
+  "script": {
+    "title": "What Happens When a Neutron Star Teaspoon Pierces Earth?",
+    "description": "An energetic documentary short detailing the terrifying physics of bringing a teaspoon of neutron star material to Earth.",
+    "hook_card": "15 SECONDS TO IMPACT",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_017_p00",
+        "narration": "In 15 seconds, a neutron star teaspoon drills straight down into Earth!",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_014_p00",
+        "narration": "A standard teaspoon holds about 5 millilitres of extreme cosmic matter.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_020_p00",
+        "narration": "This material weighs over 1 billion tons, matching the mass of Mount Everest.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_006_p00",
+        "narration": "Four billion tonnes equals about 1,000 Great Pyramids of Giza compressed together tightly.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_001_p00",
+        "narration": "Such extreme density packs the Sun into a sphere just 20 kilometres wide.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_016_p00",
+        "narration": "Earth's crust cannot withstand this incredible weight and localized pressure.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_008_p00",
+        "narration": "The dense object immediately begins a free-fall straight through the planet.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_011_p00",
+        "narration": "As it plunges deeper, it gains immense speed racing toward the core.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_004_p00",
+        "narration": "It overshoots the centre completely and surges upward to the opposite side.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_018_p00",
+        "narration": "Earth's powerful gravity then tugs it right back toward the deep centre.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_017_p00",
+        "narration": "Oscillating like a playground swing, it picks up underground rock fragments.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_014_p00",
+        "narration": "It grows significantly larger as it sweeps through successive planetary layers.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_020_p00",
+        "narration": "Eventually, the massive falling chunk slows down and settles permanently.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_006_p00",
+        "narration": "Thrown with escape velocity, it would zoom right off into empty space.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_001_p00",
+        "narration": "Or it might circle back around like a terrifying super-dense cosmic boomerang.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_016_p00",
+        "narration": "Without crushing stellar gravity, internal degeneracy pressure takes over in microseconds.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_008_p00",
+        "narration": "It would explode outward with roughly the terrifying energy of a nuclear weapon.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_004_p00",
+        "narration": "Scorching surface temperatures reaching millions of degrees Celsius trigger instant worldwide firestorms.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_011_p00",
+        "narration": "Lethal high-energy particles and gamma rays would completely strip our fragile ozone layer.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_018_p00",
+        "narration": "This single teaspoon completely vaporizes a substantial portion of our entire planet.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "pull",
+        "emphasis": "danger"
+      }
+    ],
+    "narration": "In 15 seconds, a neutron star teaspoon drills straight down into Earth! A standard teaspoon holds about 5 millilitres of extreme cosmic matter. This material weighs over 1 billion tons, matching the mass of Mount Everest. Four billion tonnes equals about 1,000 Great Pyramids of Giza compressed together tightly. Such extreme density packs the Sun into a sphere just 20 kilometres wide. Earth's crust cannot withstand this incredible weight and localized pressure. The dense object immediately begins a free-fall straight through the planet. As it plunges deeper, it gains immense speed racing toward the core. It overshoots the centre completely and surges upward to the opposite side. Earth's powerful gravity then tugs it right back toward the deep centre. Oscillating like a playground swing, it picks up underground rock fragments. It grows significantly larger as it sweeps through successive planetary layers. Eventually, the massive falling chunk slows down and settles permanently. Thrown with escape velocity, it would zoom right off into empty space. Or it might circle back around like a terrifying super-dense cosmic boomerang. Without crushing stellar gravity, internal degeneracy pressure takes over in microseconds. It would explode outward with roughly the terrifying energy of a nuclear weapon. Scorching surface temperatures reaching millions of degrees Celsius trigger instant worldwide firestorms. Lethal high-energy particles and gamma rays would completely strip our fragile ozone layer. This single teaspoon completely vaporizes a substantial portion of our entire planet.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "headline_candidates": {
+      "titles": [
+        "What Happens When a Neutron Star Teaspoon Pierces Earth?",
+        "A Teaspoon of Neutron Star Matter Falling Through Our Planet",
+        "How a Billion‑Ton Teaspoon of Cosmic Matter Would Rip Earth Apart",
+        "The Shock of a Neutron Star Teaspoon Bursting Through Earth’s Core",
+        "If a Teaspoon of Neutron Star Matter Hits Earth, What Happens Next?"
+      ],
+      "hook_cards": [
+        "15 SECONDS TO IMPACT",
+        "NEUTRON STAR TEASPOON FALLS",
+        "EARTH IMPACT IN 15 SECONDS",
+        "15 SECONDS UNTIL DISASTER",
+        "TEASPOON DRILLS THROUGH EARTH"
+      ]
+    },
+    "event": {
+      "id": "space_neutron-teaspoon",
+      "title": "A Teaspoon of Neutron Star Would Fall Through Earth",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "neutron-teaspoon",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "a billion tonnes; it drills to the core",
+      "famous_line": "a billion tonnes; it drills to the core",
+      "image_terms": [
+        "neutron star",
+        "pulsar",
+        "magnetar"
+      ],
+      "source_urls": [
+        "https://www.astronomy.com/science/what-would-happen-if-tablespoonful-neutron-star-was-brought-to-earth/",
+        "https://spacedaily.com/j-a-single-teaspoon-of-neutron-star-material-would-weigh-about-four-billion-tonnes-on-earth-roughly-the-mass-of-a-mountain-because-the-star-has-crushed-the-equivalent-of-the-sun-into-a-sphere-the-widt/",
+        "https://askdruniverse.wsu.edu/2025/06/18/happen-put-piece-neutron-star-earth/",
+        "https://artandscienceblog.com/if-a-spoonful-of-neutron-star-appeared-on-earth/",
+        "https://commons.wikimedia.org/wiki/File:Noirlab2218a_Neutron_Star_Merger_in_the_Early_Universe.jpg",
+        "https://commons.wikimedia.org/wiki/File:Neutron_Star_X-ray_beaming_with_accretion_disk.jpg",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e001102",
+        "https://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png",
+        "https://images.nasa.gov/details/PIA21085",
+        "https://images.nasa.gov/details/PIA08042",
+        "https://images.nasa.gov/details/PIA26274",
+        "https://commons.wikimedia.org/wiki/File:PSR_J0002%2B6216_(Cannonball_Pulsar).jpg",
+        "https://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_Neutron_Star_(2009-cassio-more-2_-_neutron).tiff",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e000042"
+      ],
+      "url": "https://www.astronomy.com/science/what-would-happen-if-tablespoonful-neutron-star-was-brought-to-earth/",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": [
+        "Only 10 distinct panels for 20 shots; use at least 15 distinct panels."
+      ]
+    },
+    "full_description": "An energetic documentary short detailing the terrifying physics of bringing a teaspoon of neutron star material to Earth.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: Credit: Composite by Jayanne English, University of Manitoba; F. Schinzel et al. (cc by 3.0); Credit: X-ray: NASA/CXC/Southampton/W. Ho et al.; Illustration: NASA/CXC/M.Weiss (public domain); GSFC (public domain (NASA)); NASA (public domain); NASA/JPL-Caltech (public domain (NASA)); NOIRLab/NSF/AURA/J. da Silva/Spaceengine (cc by 4.0); Raphael.concorde (cc by-sa 4.0)\nSources:\nhttps://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_Neutron_Star_(2009-cassio-more-2_-_neutron).tiff\nhttps://commons.wikimedia.org/wiki/File:Neutron_Star_X-ray_beaming_with_accretion_disk.jpg\nhttps://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png\nhttps://commons.wikimedia.org/wiki/File:Noirlab2218a_Neutron_Star_Merger_in_the_Early_Universe.jpg\nhttps://commons.wikimedia.org/wiki/File:PSR_J0002%2B6216_(Cannonball_Pulsar).jpg\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e000042\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e001102\nhttps://images.nasa.gov/details/PIA08042\nhttps://images.nasa.gov/details/PIA21085\nhttps://images.nasa.gov/details/PIA26274",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "What Happens When a Neutron Star Teaspoon Pierces Earth?\n\nAn energetic documentary short detailing the terrifying physics of bringing a teaspoon of neutron star material to Earth."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_Neutron_Star_(2009-cassio-more-2_-_neutron).tiff",
+    "https://commons.wikimedia.org/wiki/File:Neutron_Star_X-ray_beaming_with_accretion_disk.jpg",
+    "https://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png",
+    "https://commons.wikimedia.org/wiki/File:Noirlab2218a_Neutron_Star_Merger_in_the_Early_Universe.jpg",
+    "https://commons.wikimedia.org/wiki/File:PSR_J0002%2B6216_(Cannonball_Pulsar).jpg",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e000042",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e001102",
+    "https://images.nasa.gov/details/PIA08042",
+    "https://images.nasa.gov/details/PIA21085",
+    "https://images.nasa.gov/details/PIA26274"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

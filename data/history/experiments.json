@@ -345,7 +345,12 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "verdict": "kept",
-    "judged_by": "model"
+    "judged_by": "numbers",
+    "measured": {
+      "metric": "views_24h",
+      "video": 558.0,
+      "baseline_median": 2.0
+    }
   },
   {
     "run_id": "37194714882",
@@ -381,6 +386,15 @@
   {
     "run_id": "37223574786",
     "chosen_at": "2026-10-04T18:14:19+00:00",
+    "experiment": {
+      "name": "opening_countdown_metric",
+      "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",
+      "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
+    }
+  },
+  {
+    "run_id": "37309004080",
+    "chosen_at": "2026-10-05T12:23:11+00:00",
     "experiment": {
       "name": "opening_countdown_metric",
       "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",

@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95,
+  "scene_match": 95,
+  "delivery": 95,
+  "visual_readability": 95,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Video starts with a pulsing pulsar graphic and clear single-word bold captions."
+    },
+    {
+      "second": 15,
+      "detail": "Smooth transitions and whip pans match the cosmic science theme."
+    },
+    {
+      "second": 30,
+      "detail": "Captions clearly display each word in synchronization with the spoken narration."
+    },
+    {
+      "second": 60,
+      "detail": "Maintains high energy voiceover matching the dramatic script."
+    },
+    {
+      "second": 90,
+      "detail": "Consistent text styling, high contrast yellow text with black stroke is highly readable."
+    },
+    {
+      "second": 110,
+      "detail": "Strong coherent payoff at the end of the short documentary."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English short documentary video with excellent subtitle synchronization, clear visuals, and high-energy narration.",
+  "review_mode": "video",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 95,
+    "delivery": 95,
+    "visual_readability": 95
+  },
+  "measured_scores": {
+    "subtitle_sync": 91.8918918918919,
+    "scene_match": 95,
+    "delivery": 91.8918918918919
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

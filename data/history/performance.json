@@ -48,11 +48,11 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 68.9,
-      "views_per_hour": 0.09,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 87.0,
+      "views_per_hour": 0.07,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 6,
-      "views_72h": null,
+      "views_72h": 6,
       "average_view_percentage": 99.07,
       "average_view_duration": 57,
       "shares": 0
@@ -162,6 +162,11 @@
         "h": 68.9,
         "views": 6,
         "likes": 0
+      },
+      {
+        "h": 87.0,
+        "views": 6,
+        "likes": 0
       }
     ]
   },
@@ -214,13 +219,13 @@
       "views": 297,
       "likes": 5,
       "comments": 0,
-      "hours_live": 66.2,
-      "views_per_hour": 4.49,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 84.3,
+      "views_per_hour": 3.52,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 179,
-      "views_72h": null,
-      "average_view_percentage": 38.28,
-      "average_view_duration": 47,
+      "views_72h": 297,
+      "average_view_percentage": 36.92,
+      "average_view_duration": 45,
       "shares": 0
     },
     "stats_history": [
@@ -328,6 +333,11 @@
         "h": 66.2,
         "views": 297,
         "likes": 5
+      },
+      {
+        "h": 84.3,
+        "views": 297,
+        "likes": 5
       }
     ]
   },
@@ -380,13 +390,13 @@
       "views": 32,
       "likes": 2,
       "comments": 0,
-      "hours_live": 65.3,
-      "views_per_hour": 0.49,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 83.4,
+      "views_per_hour": 0.38,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 16,
-      "views_72h": null,
-      "average_view_percentage": 10.4,
-      "average_view_duration": 8,
+      "views_72h": 32,
+      "average_view_percentage": 18.75,
+      "average_view_duration": 14,
       "shares": 0
     },
     "stats_history": [
@@ -494,6 +504,11 @@
         "h": 65.3,
         "views": 32,
         "likes": 2
+      },
+      {
+        "h": 83.4,
+        "views": 32,
+        "likes": 2
       }
     ]
   },
@@ -542,16 +557,16 @@
       "rationale": "Shorter, punchier hook questions capture viewer attention faster in the first 2 seconds."
     },
     "stats": {
-      "views": 57,
+      "views": 56,
       "likes": 1,
       "comments": 0,
-      "hours_live": 65.0,
-      "views_per_hour": 0.88,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 83.2,
+      "views_per_hour": 0.67,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 21,
-      "views_72h": null,
-      "average_view_percentage": 20.94,
-      "average_view_duration": 10,
+      "views_72h": 57,
+      "average_view_percentage": 34.56,
+      "average_view_duration": 17,
       "shares": 0
     },
     "stats_history": [
@@ -659,6 +674,11 @@
         "h": 65.0,
         "views": 57,
         "likes": 1
+      },
+      {
+        "h": 83.2,
+        "views": 56,
+        "likes": 1
       }
     ]
   },
@@ -710,13 +730,13 @@
       "views": 12,
       "likes": 1,
       "comments": 0,
-      "hours_live": 64.6,
-      "views_per_hour": 0.19,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 82.7,
+      "views_per_hour": 0.15,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 9,
-      "views_72h": null,
-      "average_view_percentage": 24.69,
-      "average_view_duration": 16,
+      "views_72h": 12,
+      "average_view_percentage": 16.53,
+      "average_view_duration": 10,
       "shares": 0
     },
     "stats_history": [
@@ -824,6 +844,11 @@
         "h": 64.6,
         "views": 12,
         "likes": 1
+      },
+      {
+        "h": 82.7,
+        "views": 12,
+        "likes": 1
       }
     ]
   },
@@ -876,11 +901,14 @@
       "views": 4,
       "likes": 0,
       "comments": 0,
-      "hours_live": 50.9,
-      "views_per_hour": 0.08,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 69.0,
+      "views_per_hour": 0.06,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 3,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 0,
+      "average_view_duration": 0,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -987,6 +1015,11 @@
         "h": 50.9,
         "views": 4,
         "likes": 0
+      },
+      {
+        "h": 69.0,
+        "views": 4,
+        "likes": 0
       }
     ]
   },
@@ -1039,11 +1072,14 @@
       "views": 6,
       "likes": 0,
       "comments": 0,
-      "hours_live": 50.9,
-      "views_per_hour": 0.12,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
+      "hours_live": 69.0,
+      "views_per_hour": 0.09,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
       "views_24h": 4,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 0,
+      "average_view_duration": 0,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -1148,6 +1184,11 @@
       },
       {
         "h": 50.9,
+        "views": 6,
+        "likes": 0
+      },
+      {
+        "h": 69.0,
         "views": 6,
         "likes": 0
       }
@@ -1287,13 +1328,13 @@
       "rationale": "Immediate visual visual cues on frame one increase high-stakes viewer arousal and early retention."
     },
     "stats": {
-      "views": 508,
-      "likes": 2,
+      "views": 855,
+      "likes": 8,
       "comments": 0,
-      "hours_live": 23.8,
-      "views_per_hour": 21.38,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
-      "views_24h": null,
+      "hours_live": 41.9,
+      "views_per_hour": 20.41,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
+      "views_24h": 512,
       "views_72h": null
     },
     "stats_history": [
@@ -1331,6 +1372,11 @@
         "h": 23.8,
         "views": 508,
         "likes": 2
+      },
+      {
+        "h": 41.9,
+        "views": 855,
+        "likes": 8
       }
     ]
   },
@@ -1380,13 +1426,13 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 133,
-      "likes": 5,
-      "comments": 1,
-      "hours_live": 8.1,
-      "views_per_hour": 16.48,
-      "fetched_at": "2026-10-04T18:14:15+00:00",
-      "views_24h": null,
+      "views": 617,
+      "likes": 26,
+      "comments": 2,
+      "hours_live": 26.2,
+      "views_per_hour": 23.54,
+      "fetched_at": "2026-10-05T12:22:42+00:00",
+      "views_24h": 558,
       "views_72h": null
     },
     "stats_history": [
@@ -1409,6 +1455,11 @@
         "h": 8.1,
         "views": 133,
         "likes": 5
+      },
+      {
+        "h": 26.2,
+        "views": 617,
+        "likes": 26
       }
     ]
   },
@@ -1479,5 +1530,99 @@
         "likes": 0
       }
     ]
+  },
+  {
+    "video_id": "MiMaQk-J-L0",
+    "platform": "youtube",
+    "run_id": "37309004080",
+    "published_at": "2026-10-05T12:51:57+00:00",
+    "event": {
+      "title": "A Teaspoon of Neutron Star Would Fall Through Earth",
+      "series": "Space",
+      "issue": "neutron-teaspoon",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 20,
+      "words": 236,
+      "duration": 114.3,
+      "words_per_minute": 124,
+      "hook": "In 15 seconds, a neutron star teaspoon drills straight down into Earth!",
+      "hook_words": 12,
+      "title": "What Happens When a Neutron Star Teaspoon Pierces Earth?",
+      "title_length": 56,
+      "emphasis": {
+        "danger": 2,
+        "normal": 16,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video",
+      "scores": {
+        "subtitle_sync": 95,
+        "scene_match": 95,
+        "delivery": 95,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "English short documentary video with excellent subtitle synchronization, clear visuals, and high-energy narration."
+    },
+    "experiment": {
+      "name": "opening_countdown_metric",
+      "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",
+      "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
+    },
+    "stats": {}
+  },
+  {
+    "video_id": "BXXp_bjy4Jk",
+    "platform": "youtube",
+    "run_id": "37309004080",
+    "published_at": "2026-10-05T12:53:23+00:00",
+    "event": {
+      "title": null,
+      "series": null,
+      "issue": null,
+      "year": null,
+      "publisher": null
+    },
+    "profile": {
+      "shots": 20,
+      "words": 185,
+      "duration": 96.3,
+      "words_per_minute": 115,
+      "hook": "15 saniye içinde, bir nötron yıldızı çay kaşığı Dünya'ya doğrudan saplanıyor!",
+      "hook_words": 11,
+      "title": "Bir Nötron Yıldızı Çay Kaşığı Dünya'yı Nasıl Yok Eder?",
+      "title_length": 54,
+      "emphasis": {
+        "danger": 2,
+        "normal": 16,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Ahmet",
+    "review": {
+      "mode": "measured",
+      "scores": {
+        "subtitle_sync": 94.87179487179486,
+        "scene_match": 95,
+        "delivery": 94.87179487179486,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Localized edition (tr); panels and audit shared with the primary edition."
+    },
+    "experiment": {
+      "name": "opening_countdown_metric",
+      "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",
+      "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
+    },
+    "stats": {}
   }
 ]

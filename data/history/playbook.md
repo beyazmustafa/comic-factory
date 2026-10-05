@@ -1,13 +1,14 @@
 # Playbook (auto-evolving)
 - First shot emphasis: Apply red 'danger' emphasis to the very first shot narration beat.
+- Opening time countdown: State an exact countdown metric in seconds in shot 1 narration.
 - Numerical density: Include concrete numbers in at least 50% of total shot beats.
 - Concrete early metrics: Put a specific measurement in the first three shots.
 - Hook constraint: Present-tense threat statement of 6 words or fewer.
 - Target length & shots: 22-24 shots across 80-85 seconds total duration.
-- Speech pace: Deliver audio at 140-150 words per minute.
+- Speech pace: Deliver audio at 120-130 words per minute.
 - Beat bounds: Keep every shot beat strictly between 4 and 6 words.
 - Title formatting: Curiosity-driven question or shock, 45-50 characters, naming object and threat.
-- Emphasis share: Keep colored emphasis <= 23% total (red=danger, green=reveal, cyan=turn).
+- Emphasis share: Keep colored emphasis <= 22% total (red=danger, green=reveal, cyan=turn).
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Penultimate turning point: Place a single cyan turn shot at beat N-1.
 - Visual selection: Prefer close-ups and action panels over wide establishing frames.
