@@ -1,0 +1,290 @@
+{
+  "title": "Why Astronomers Fear the Silent Invasion of Rogue Planets",
+  "description": "What happens if a rogue planet passes through our solar system?",
+  "hook_card": "TRILLIONS OF PLANETS DRIFT",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_006_p00",
+      "narration": "Trillions of rogue planets wander blindly through our galaxy!",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_002_p00",
+      "narration": "They outnumber star-bound worlds by six to one.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_009_p00",
+      "narration": "Some scream through the void at 200 kilometers per second.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_004_p00",
+      "narration": "These dark nomads emit almost no detectable infrared heat.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_003_p00",
+      "narration": "You would have only hours of warning before impact.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_011_p00",
+      "narration": "The odds of invasion in a millennium are one in a billion.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_013_p00",
+      "narration": "Even a Mars-sized interloper shatters our gravitational balance.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_008_p00",
+      "narration": "Violent cosmic collisions originally flung them out of orbit.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_010_p00",
+      "narration": "Orphaned worlds drift forever unless they drag a moon along.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_016_p00",
+      "narration": "Sub-brown dwarfs are essentially massive failed stars.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_005_p00",
+      "narration": "Some wander just 7.27 light-years away from us.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_017_p00",
+      "narration": "In the Orion Nebula, Jupiter-sized pairs drift together.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "motion": "push",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_015_p00",
+      "narration": "There are two rogue giants for every single star.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_001_p00",
+      "narration": "OTS 44 carries a dust disk ten times Earth's mass.",
+      "fact_ids": [
+        "fact_014"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_004_p00",
+      "narration": "Gravity warps space-time like a giant magnifying glass.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_006_p00",
+      "narration": "Temperatures on these drifters drop to freezing depths.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_003_p00",
+      "narration": "Microlensing reveals their hidden presence in hours.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_011_p00",
+      "narration": "Their silent approach leaves no thermal signature behind.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_018",
+      "panel_id": "page_009_p00",
+      "narration": "A single pass throws entire planetary orbits into chaos.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_019",
+      "panel_id": "page_010_p00",
+      "narration": "Earth could be flung entirely into the dark.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "left",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_020",
+      "panel_id": "page_005_p00",
+      "narration": "Trillions more hide in the uncharted interstellar deep.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_021",
+      "panel_id": "page_004_p00",
+      "narration": "Frozen silence claims our world forever.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Trillions of rogue planets wander blindly through our galaxy! They outnumber star-bound worlds by six to one. Some scream through the void at 200 kilometers per second. These dark nomads emit almost no detectable infrared heat. You would have only hours of warning before impact. The odds of invasion in a millennium are one in a billion. Even a Mars-sized interloper shatters our gravitational balance. Violent cosmic collisions originally flung them out of orbit. Orphaned worlds drift forever unless they drag a moon along. Sub-brown dwarfs are essentially massive failed stars. Some wander just 7.27 light-years away from us. In the Orion Nebula, Jupiter-sized pairs drift together. There are two rogue giants for every single star. OTS 44 carries a dust disk ten times Earth's mass. Gravity warps space-time like a giant magnifying glass. Temperatures on these drifters drop to freezing depths. Microlensing reveals their hidden presence in hours. Their silent approach leaves no thermal signature behind. A single pass throws entire planetary orbits into chaos. Earth could be flung entirely into the dark. Trillions more hide in the uncharted interstellar deep. Frozen silence claims our world forever.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "headline_candidates": {
+    "titles": [
+      "The Hidden Threat of Trillions of Rogue Planets Roaming Space",
+      "How Rogue Planets Could Collide With Earth and Change Destiny",
+      "Exploring the Galaxy’s Millions of Wandering Worlds and Their Risks",
+      "Why Astronomers Fear the Silent Invasion of Rogue Planets",
+      "The Cosmic Mystery of Trillions of Dark Worlds Drifting Alone"
+    ],
+    "hook_cards": [
+      "TRILLIONS OF PLANETS DRIFT",
+      "ROGUE WORLDS WANDER GALAXY",
+      "BLINDLY DRIFTING TRILLIONS",
+      "GALAXY FULL OF ROGUE PLANETS",
+      "ENDLESS ROGUE PLANET FLOOD"
+    ]
+  },
+  "event": {
+    "id": "space_rogue-planet",
+    "title": "A Rogue Planet Could Pass Through the Solar System",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "rogue-planet",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "orbits thrown into chaos, Earth flung into the dark",
+    "famous_line": "orbits thrown into chaos, Earth flung into the dark",
+    "image_terms": [
+      "rogue planet",
+      "exoplanet artist",
+      "Kuiper belt"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Rogue_planet",
+      "https://science.nasa.gov/mission/roman-space-telescope/rogue-planets/",
+      "https://science.nasa.gov/exoplanets/",
+      "https://www.nasa.gov/missions/roman-space-telescope/unveiling-rogue-planets-with-nasas-roman-space-telescope/",
+      "https://commons.wikimedia.org/wiki/File:Icy_Earth-mass_Rogue_Planet_(SVS14380).jpg",
+      "https://commons.wikimedia.org/wiki/File:Alone_in_Space_-_Astronomers_Find_New_Kind_of_Planet.jpg",
+      "https://commons.wikimedia.org/wiki/File:Rocky_Exoplanet_TRAPPIST-1_c_(Artist_Concept).jpg",
+      "https://commons.wikimedia.org/wiki/File:Exoplanet_K2-18_b_(Illustration).jpg",
+      "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_a_rogue_planet_in_Rho_Ophiuchi.tif",
+      "https://commons.wikimedia.org/wiki/File:Fomalhaut_planet.jpg",
+      "https://images.nasa.gov/details/PIA23690",
+      "https://commons.wikimedia.org/wiki/File:Exoplanet_GJ_9827d_(artist%E2%80%99s_concept)_(heic2403a).tiff",
+      "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_an_ultra-short-period_planet.jpg",
+      "https://images.nasa.gov/details/PIA17801"
+    ],
+    "url": "https://en.wikipedia.org/wiki/Rogue_planet",
+    "_source": "space"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance",
+    "variety_warnings": [
+      "Panels used more than twice: ['page_004_p00']; each panel at most twice.",
+      "Only 14 distinct panels for 22 shots; use at least 16 distinct panels."
+    ]
+  }
+}

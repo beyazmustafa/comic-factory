@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 92.6829268292683,
+  "scene_match": 95,
+  "delivery": 92.6829268292683,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "Candidate video starts with crisp space visual and yellow word captions."
+    },
+    {
+      "second": 15,
+      "detail": "Smooth transitions and steady pacing of narration."
+    },
+    {
+      "second": 30,
+      "detail": "Visuals of planetary bodies align well with script facts."
+    },
+    {
+      "second": 45,
+      "detail": "Telescope and nebula shots add variety and visual interest."
+    },
+    {
+      "second": 60,
+      "detail": "Caption styling remains clear and readable against background."
+    },
+    {
+      "second": 75,
+      "detail": "Concluding scenes maintain high narrative energy and visual consistency."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "English",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 90,
+    "scene_match": 90,
+    "delivery": 90,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 92.6829268292683,
+    "scene_match": 95,
+    "delivery": 92.6829268292683
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

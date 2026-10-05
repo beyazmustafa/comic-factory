@@ -399,6 +399,17 @@
       "name": "opening_countdown_metric",
       "change": "Include an exact time countdown metric in seconds within the very first shot narration beat.",
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37376428661",
+    "chosen_at": "2026-10-05T21:34:08+00:00",
+    "experiment": {
+      "name": "tight_emphasis_cap",
+      "change": "Strictly cap total colored emphasis beats to at most 18% of total shots.",
+      "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
     }
   }
 ]
