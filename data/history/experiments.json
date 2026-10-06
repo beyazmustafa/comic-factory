@@ -421,6 +421,17 @@
       "name": "calibrated_title_length_window",
       "change": "Constrain the title strictly between 48 and 54 characters while maintaining the object and threat format.",
       "rationale": "Measured differences indicate top-performing videos average 53.8 characters compared to 56.0 characters for underperforming videos."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37520223631",
+    "chosen_at": "2026-10-06T20:04:00+00:00",
+    "experiment": {
+      "name": "target_word_rate_120_wpm",
+      "change": "Set narration word rate strictly to 120-125 words per minute across all shot beats.",
+      "rationale": "Top-performing videos average 124.5 WPM while lower-performing videos average 130 WPM, showing clearer pacing drives retention."
     }
   }
 ]
