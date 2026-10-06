@@ -1,6 +1,6 @@
-run_id: 37376428661  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261005T213246791816Z/run.json
+run_id: 37460776138  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261006T120606839825Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,74 +38,63 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37376428661",
+  "run_id": "37460776138",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "f00239497c2877294664f7ab69cda620e43171ab709bcba1700b40c4a886bc57",
-  "metadata_sha256": "60477c3ed534575670a77d601348be2e995cb00077b960eef5620c77f3782288",
-  "quality_sha256": "b882435347705ef16b11f447db0950fae71fd8e08266b80df7b57ff2cd652778",
-  "api_calls": 58,
-  "duration": 81.47,
+  "video_sha256": "8835133852e3bafe5dab7bb4eeec193877b6292bd126e3a0f04bfafbf8a20000",
+  "metadata_sha256": "ecf86d5646a1c5feaf9208bfc54e8a0682e69a1e9ecf5fe83830576b3d99b674",
+  "quality_sha256": "629ed2c1c53f0ff533608e3b9a8d8c9e1ae5d412eed899ec4fa1939cc1df10da",
+  "api_calls": 39,
+  "duration": 64.94,
   "voice": "Orus",
   "event": {
-    "id": "space_rogue-planet",
-    "title": "A Rogue Planet Could Pass Through the Solar System",
+    "id": "space_sun-dies",
+    "title": "The Day the Sun Eats the Earth",
     "publisher": "NASA/ESA",
     "series": "Space",
-    "issue": "rogue-planet",
+    "issue": "sun-dies",
     "year": 2026,
     "universe": "science",
     "characters": [],
-    "summary": "orbits thrown into chaos, Earth flung into the dark",
-    "famous_line": "orbits thrown into chaos, Earth flung into the dark",
+    "summary": "oceans boil in 1 billion years, Mercury and Venus swallowed",
+    "famous_line": "oceans boil in 1 billion years, Mercury and Venus swallowed",
     "image_terms": [
-      "rogue planet",
-      "exoplanet artist",
-      "Kuiper belt"
+      "red giant",
+      "Helix Nebula",
+      "planetary nebula",
+      "white dwarf"
     ],
     "source_urls": [
-      "https://en.wikipedia.org/wiki/Rogue_planet",
-      "https://science.nasa.gov/mission/roman-space-telescope/rogue-planets/",
-      "https://science.nasa.gov/exoplanets/",
-      "https://www.nasa.gov/missions/roman-space-telescope/unveiling-rogue-planets-with-nasas-roman-space-telescope/",
-      "https://commons.wikimedia.org/wiki/File:Icy_Earth-mass_Rogue_Planet_(SVS14380).jpg",
-      "https://commons.wikimedia.org/wiki/File:Alone_in_Space_-_Astronomers_Find_New_Kind_of_Planet.jpg",
-      "https://commons.wikimedia.org/wiki/File:Rocky_Exoplanet_TRAPPIST-1_c_(Artist_Concept).jpg",
-      "https://commons.wikimedia.org/wiki/File:Exoplanet_K2-18_b_(Illustration).jpg",
-      "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_a_rogue_planet_in_Rho_Ophiuchi.tif",
-      "https://commons.wikimedia.org/wiki/File:Fomalhaut_planet.jpg",
-      "https://images.nasa.gov/details/PIA23690",
-      "https://commons.wikimedia.org/wiki/File:Exoplanet_GJ_9827d_(artist%E2%80%99s_concept)_(heic2403a).tiff",
-      "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_an_ultra-short-period_planet.jpg",
-      "https://images.nasa.gov/details/PIA17801"
+      "https://images.nasa.gov/details/PIA15817",
+      "https://commons.wikimedia.org/wiki/File:NGC7293_(2004).jpg",
+      "https://images.nasa.gov/details/PIA18164",
+      "https://images.nasa.gov/details/PIA03294",
+      "https://images.nasa.gov/details/PIA09962",
+      "https://images.nasa.gov/details/PIA03678",
+      "https://images.nasa.gov/details/PIA03652",
+      "https://images.nasa.gov/details/PIA09178",
+      "https://images.nasa.gov/details/PIA11735",
+      "https://images.nasa.gov/details/PIA15658",
+      "https://images.nasa.gov/details/white_dwarf_disk_final",
+      "https://images.nasa.gov/details/PIA17564",
+      "https://images.nasa.gov/details/PIA11968",
+      "https://commons.wikimedia.org/wiki/File:The_Helix_Nebula,_NGC_7293_(noao-02179).tiff"
     ],
-    "url": "https://en.wikipedia.org/wiki/Rogue_planet",
+    "url": "https://images.nasa.gov/details/PIA15817",
     "_source": "space"
   },
   "localized": [
     "lang_tr"
   ]
 }
---- data/runs/20261005T213246791816Z/diagnostics/provider_events.json
+--- data/runs/20261006T120606839825Z/diagnostics/provider_events.json
 [
   "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.",
-  "Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video Christopher ile yeniden seslendirildi.",
-  "Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261005T213246791816Z/diagnostics/providers.json
+--- data/runs/20261006T120606839825Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -127,9 +116,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -221,64 +210,89 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261005T213246791816Z/voice_audition/failed_auditions.json
+--- data/runs/20261006T120606839825Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261005T213246791816Z/diagnostics/story_1.json
-{"error": "Narration too short: 105 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261005T213246791816Z/diagnostics/story_2.json
-{"error": "Only 14 distinct panels for 23 shots; use at least 17 distinct panels."}
---- data/runs/20261005T213246791816Z/diagnostics/story_3.json
-{"error": "Narration too short: 121 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 14 distinct panels for 23 shots; use at least 17 distinct panels."}
+--- data/runs/20261006T120606839825Z/research/rejected_candidates.json
+[
+  {
+    "event": {
+      "id": "space_mercury-extreme",
+      "title": "Mercury: Fried by Day, Frozen by Night",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "mercury-extreme",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "430°C to -180°C, ice in the shadows",
+      "famous_line": "430°C to -180°C, ice in the shadows",
+      "image_terms": [
+        "Mercury MESSENGER",
+        "Mercury surface craters",
+        "Mercury BepiColombo"
+      ],
+      "source_urls": [],
+      "url": "",
+      "_source": "space"
+    },
+    "error": "Konu için yeterli kullanılabilir görsel yok (5/6)."
+  }
+]
+--- data/runs/20261006T120606839825Z/diagnostics/story_1.json
+{"error": "Narration too short: 100 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_006_p00', 'page_014_p00', 'page_016_p00']; each panel at most twice.; Only 14 distinct panels for 20 shots; use at least 15 distinct panels."}
+--- data/runs/20261006T120606839825Z/diagnostics/story_2.json
+{"error": "Narration too short: 121 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 14 distinct panels for 24 shots; use at least 18 distinct panels."}
+--- data/runs/20261006T120606839825Z/diagnostics/story_3.json
+{"error": "Panels used more than twice: ['page_006_p00', 'page_014_p00', 'page_016_p00', 'page_007_p00']; each panel at most twice.; Only 14 distinct panels for 30 shots; use at least 22 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
 Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: A Rogue Planet Could Pass Through the Solar System
+Olay araştırılıyor: Mercury: Fried by Day, Frozen by Night
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
-Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
-Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Uzay görselleri: 29 aday, 18 indirildi.
-Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Uzay görselleri: 27 aday, 6 indirildi.
+Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: The Day the Sun Eats the Earth
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Uzay görselleri: 45 aday, 22 indirildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 87.5/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 87.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Gemini TTS yanıt vermiyor (Ses Orus: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, plea); edge-tts sesine geçildi.
-Ses eşleştirme: 92.7/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video Christopher ile yeniden seslendirildi.
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 92.7/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 
 → Dikey video ve eşzamanlı altyazı
@@ -286,66 +300,36 @@ Ses eşleştirme: 100.0/100 | whisper-large-v3
 → Bitmiş videonun görüntü ve ses kontrolü
 
 → tr sürümü
-Turkish çeviri: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.3/100 | whisper-large-v3
+Ses eşleştirme: 86.2/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 94.9/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 91.9/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 71.4/100 | whisper-large-v3
-Ses eşleştirme: 71.4/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 2
-Ses eşleştirme: 71.4/100 | whisper-large-v3
-Ses eşleştirme: 71.4/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 3
-Ses eşleştirme: 71.4/100 | whisper-large-v3
-Ses eşleştirme: 71.4/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 4
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261005T213246791816Z/review.html
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261006T120606839825Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Why Astronomers Fear the Silent Invasion of Rogue Planets #Shorts
+Başlık: How the Sun Will Vaporize Earth in Seconds #Shorts
 Görünürlük: public
 
-Yükleme: %13
-Yükleme: %27
-Yükleme: %41
-Yükleme: %55
-Yükleme: %69
-Yükleme: %83
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=CMzRgdndA10&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261005T213246791816Z/video.mp4
-Boyut: 57.7 MB
-Açıklama uzunluğu: 174 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261006T120606839825Z/video.mp4
+Boyut: 55.3 MB
+Açıklama uzunluğu: 212 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17966892930187944).
+Instagram: container oluşturuldu (17966969787187944).
 Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -357,25 +341,9 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 17992364352109160
+Instagram Reel başarıyla yayınlandı: 17910732078509571
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================
 Cloudinary: geçici video silindi (ok).
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: Serseri Gezegenlerin Sessiz İstilası: Güneş Sistemimizi Nasıl Sarsar? #Shorts
-Görünürlük: public
-
-Yükleme: %12
-Yükleme: %24
-Yükleme: %36
-Yükleme: %48
-Yükleme: %60
-Yükleme: %72
-Yükleme: %84
-Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=8hfmBA2rAeg&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+HATA: Yükleme tamamlanmadı: youtube: <HttpError 400 when requesting None returned "The request metadata specifies an invalid video description.". Details: "[{'message': 'The request metadata specifies an invalid video description.', 'domain': 'youtube.video', 'reason': 'invalidDescription', 'location': 'body.snippet.description', 'locationType': 'other'}]">

@@ -410,6 +410,17 @@
       "name": "tight_emphasis_cap",
       "change": "Strictly cap total colored emphasis beats to at most 18% of total shots.",
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37460776138",
+    "chosen_at": "2026-10-06T12:09:23+00:00",
+    "experiment": {
+      "name": "calibrated_title_length_window",
+      "change": "Constrain the title strictly between 48 and 54 characters while maintaining the object and threat format.",
+      "rationale": "Measured differences indicate top-performing videos average 53.8 characters compared to 56.0 characters for underperforming videos."
     }
   }
 ]

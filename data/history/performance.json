@@ -224,9 +224,9 @@
       "views": 300,
       "likes": 5,
       "comments": 0,
-      "hours_live": 93.5,
-      "views_per_hour": 3.21,
-      "fetched_at": "2026-10-05T21:32:47+00:00",
+      "hours_live": 108.1,
+      "views_per_hour": 2.78,
+      "fetched_at": "2026-10-06T12:06:07+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 37.68,
@@ -346,6 +346,11 @@
       },
       {
         "h": 93.5,
+        "views": 300,
+        "likes": 5
+      },
+      {
+        "h": 108.1,
         "views": 300,
         "likes": 5
       }
@@ -1436,12 +1441,12 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1178,
+      "views": 1203,
       "likes": 38,
       "comments": 3,
-      "hours_live": 35.4,
-      "views_per_hour": 33.29,
-      "fetched_at": "2026-10-05T21:32:47+00:00",
+      "hours_live": 49.9,
+      "views_per_hour": 24.09,
+      "fetched_at": "2026-10-06T12:06:07+00:00",
       "views_24h": 558,
       "views_72h": null
     },
@@ -1474,6 +1479,11 @@
       {
         "h": 35.4,
         "views": 1178,
+        "likes": 38
+      },
+      {
+        "h": 49.9,
+        "views": 1203,
         "likes": 38
       }
     ]
@@ -1592,12 +1602,12 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 363,
-      "likes": 10,
+      "views": 555,
+      "likes": 12,
       "comments": 0,
-      "hours_live": 8.7,
-      "views_per_hour": 41.82,
-      "fetched_at": "2026-10-05T21:32:47+00:00",
+      "hours_live": 23.2,
+      "views_per_hour": 23.89,
+      "fetched_at": "2026-10-06T12:06:07+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -1606,6 +1616,11 @@
         "h": 8.7,
         "views": 363,
         "likes": 10
+      },
+      {
+        "h": 23.2,
+        "views": 555,
+        "likes": 12
       }
     ]
   },
@@ -1701,7 +1716,23 @@
       "change": "Strictly cap total colored emphasis beats to at most 18% of total shots.",
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
     },
-    "stats": {}
+    "stats": {
+      "views": 117,
+      "likes": 3,
+      "comments": 0,
+      "hours_live": 14.0,
+      "views_per_hour": 8.34,
+      "fetched_at": "2026-10-06T12:06:07+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 14.0,
+        "views": 117,
+        "likes": 3
+      }
+    ]
   },
   {
     "video_id": "8hfmBA2rAeg",

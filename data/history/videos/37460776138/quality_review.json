@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 87.5,
+  "scene_match": 95,
+  "delivery": 87.5,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 1,
+      "detail": "The video starts with high-energy narration and clear, single-word captions in yellow."
+    },
+    {
+      "second": 12,
+      "detail": "The transition to the asteroid field scene is smooth, with captions aligned to the narration."
+    },
+    {
+      "second": 25,
+      "detail": "The narration maintains a dramatic tone, fitting the space-science profile."
+    },
+    {
+      "second": 35,
+      "detail": "The word 'vaporizes' is highlighted in green, matching the 'reveal' emphasis color."
+    },
+    {
+      "second": 48,
+      "detail": "The transition to the outer orbit scene is clean, with the whip transition working well."
+    },
+    {
+      "second": 60,
+      "detail": "The final scenes show the frozen rock and white dwarf with accurate caption timing."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The video is well-produced with high-energy narration, accurate caption synchronization, and appropriate visual transitions. The styling choices align with the production settings.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 80,
+    "scene_match": 85,
+    "delivery": 82,
+    "visual_readability": 85
+  },
+  "measured_scores": {
+    "subtitle_sync": 87.5,
+    "scene_match": 95,
+    "delivery": 87.5
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

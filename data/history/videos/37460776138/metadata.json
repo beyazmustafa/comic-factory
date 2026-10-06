@@ -1,0 +1,354 @@
+{
+  "script": {
+    "title": "How the Sun Will Vaporize Earth in Seconds",
+    "description": "A step-by-step scientific thriller detailing the final days of our solar system as the Sun expands into a red giant.",
+    "hook_card": "EARTH DESTROYED IN SECONDS",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_005_p00",
+        "narration": "The Sun destroys Earth in seconds.",
+        "fact_ids": [
+          "fact_000",
+          "fact_003"
+        ],
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_006_p00",
+        "narration": "Our star grows ten percent brighter.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_013_p00",
+        "narration": "One billion years triggers extreme heat.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_014_p00",
+        "narration": "Temperatures exceed one hundred degrees Celsius.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_015_p00",
+        "narration": "Oceans boil at hundred degrees.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_016_p00",
+        "narration": "Zero water remains on Earth.",
+        "fact_ids": [
+          "fact_003",
+          "fact_004"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_019_p00",
+        "narration": "Five billion years drains core hydrogen.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_006_p00",
+        "narration": "Gravity collapses the solar core.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_021_p00",
+        "narration": "Helium fusion ignites intense heat.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_014_p00",
+        "narration": "The Sun swells dramatically outward.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_000_p00",
+        "narration": "It expands one hundred times larger.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_016_p00",
+        "narration": "Mercury vaporizes in instant heat.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "down",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_010_p00",
+        "narration": "Venus is the second victim.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_007_p00",
+        "narration": "Powerful winds strip solar mass.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_018_p00",
+        "narration": "Thirty percent mass is lost.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_007_p00",
+        "narration": "Earth migrates to outer orbits.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_008_p00",
+        "narration": "Tidal drag pulls Earth inward.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_003_p00",
+        "narration": "Friction destroys the planet quickly.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_005_p00",
+        "narration": "Vaporization takes only several weeks.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_013_p00",
+        "narration": "Two possible fates await Earth.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "page_015_p00",
+        "narration": "Only a frozen rock remains.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "page_019_p00",
+        "narration": "One dead white dwarf rules.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Sun destroys Earth in seconds. Our star grows ten percent brighter. One billion years triggers extreme heat. Temperatures exceed one hundred degrees Celsius. Oceans boil at hundred degrees. Zero water remains on Earth. Five billion years drains core hydrogen. Gravity collapses the solar core. Helium fusion ignites intense heat. The Sun swells dramatically outward. It expands one hundred times larger. Mercury vaporizes in instant heat. Venus is the second victim. Powerful winds strip solar mass. Thirty percent mass is lost. Earth migrates to outer orbits. Tidal drag pulls Earth inward. Friction destroys the planet quickly. Vaporization takes only several weeks. Two possible fates await Earth. Only a frozen rock remains. One dead white dwarf rules.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "headline_candidates": {
+      "titles": [
+        "How the Sun Will Vaporize Earth in Seconds",
+        "The Terrifying Way the Sun Will Destroy Earth",
+        "What the Sun's Final Moments Will Do to Earth",
+        "How the Dying Sun Will Vaporize the Earth",
+        "What Happens When the Sun Destroys Earth"
+      ],
+      "hook_cards": [
+        "EARTH DESTROYED IN SECONDS",
+        "THE SUN DESTROYS EARTH",
+        "EARTH VAPORIZED IN SECONDS",
+        "THE SUN WILL KILL EARTH",
+        "OUR SUN DESTROYS EARTH"
+      ]
+    },
+    "event": {
+      "id": "space_sun-dies",
+      "title": "The Day the Sun Eats the Earth",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "sun-dies",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "oceans boil in 1 billion years, Mercury and Venus swallowed",
+      "famous_line": "oceans boil in 1 billion years, Mercury and Venus swallowed",
+      "image_terms": [
+        "red giant",
+        "Helix Nebula",
+        "planetary nebula",
+        "white dwarf"
+      ],
+      "source_urls": [
+        "https://images.nasa.gov/details/PIA15817",
+        "https://commons.wikimedia.org/wiki/File:NGC7293_(2004).jpg",
+        "https://images.nasa.gov/details/PIA18164",
+        "https://images.nasa.gov/details/PIA03294",
+        "https://images.nasa.gov/details/PIA09962",
+        "https://images.nasa.gov/details/PIA03678",
+        "https://images.nasa.gov/details/PIA03652",
+        "https://images.nasa.gov/details/PIA09178",
+        "https://images.nasa.gov/details/PIA11735",
+        "https://images.nasa.gov/details/PIA15658",
+        "https://images.nasa.gov/details/white_dwarf_disk_final",
+        "https://images.nasa.gov/details/PIA17564",
+        "https://images.nasa.gov/details/PIA11968",
+        "https://commons.wikimedia.org/wiki/File:The_Helix_Nebula,_NGC_7293_(noao-02179).tiff"
+      ],
+      "url": "https://images.nasa.gov/details/PIA15817",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": [
+        "Narration too short: 116 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.",
+        "Only 14 distinct panels for 22 shots; use at least 16 distinct panels."
+      ]
+    },
+    "full_description": "A step-by-step scientific thriller detailing the final days of our solar system as the Sun expands into a red giant.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: GSFC (public domain (NASA)); Main image: NASA/JPL-Caltech<br />Graph: NASA/JPL-Caltech/GSFC (public domain (NASA)); NASA / JPL-Caltech /Harvard-Smithsonian CfA (public domain (NASA)); NASA/JPL-Caltech (public domain (NASA)); NASA/JPL-Caltech/ESA (public domain (NASA)); NASA/JPL-Caltech/UCLA (public domain (NASA)); NASA/JPL-Caltech/Univ.of Ariz. (public domain (NASA)); NASA/STScI (public domain (NASA)); NOIRLab/NSF/AURA (cc by 4.0); The HST data are from proposal 9700. Processed images may be obtained from the H (public domain)\nSources:\nhttps://commons.wikimedia.org/wiki/File:NGC7293_(2004).jpg\nhttps://commons.wikimedia.org/wiki/File:The_Helix_Nebula,_NGC_7293_(noao-02179).tiff\nhttps://images.nasa.gov/details/PIA03294\nhttps://images.nasa.gov/details/PIA03652\nhttps://images.nasa.gov/details/PIA03678\nhttps://images.nasa.gov/details/PIA09178\nhttps://images.nasa.gov/details/PIA09962\nhttps://images.nasa.gov/details/PIA11735\nhttps://images.nasa.gov/details/PIA11968\nhttps://images.nasa.gov/details/PIA15658\nhttps://images.nasa.gov/details/PIA15817\nhttps://images.nasa.gov/details/PIA17564\nhttps://images.nasa.gov/details/PIA18164\nhttps://images.nasa.gov/details/white_dwarf_disk_final",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "How the Sun Will Vaporize Earth in Seconds\n\nA step-by-step scientific thriller detailing the final days of our solar system as the Sun expands into a red giant."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:NGC7293_(2004).jpg",
+    "https://commons.wikimedia.org/wiki/File:The_Helix_Nebula,_NGC_7293_(noao-02179).tiff",
+    "https://images.nasa.gov/details/PIA03294",
+    "https://images.nasa.gov/details/PIA03652",
+    "https://images.nasa.gov/details/PIA03678",
+    "https://images.nasa.gov/details/PIA09178",
+    "https://images.nasa.gov/details/PIA09962",
+    "https://images.nasa.gov/details/PIA11735",
+    "https://images.nasa.gov/details/PIA11968",
+    "https://images.nasa.gov/details/PIA15658",
+    "https://images.nasa.gov/details/PIA15817",
+    "https://images.nasa.gov/details/PIA17564",
+    "https://images.nasa.gov/details/PIA18164",
+    "https://images.nasa.gov/details/white_dwarf_disk_final"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

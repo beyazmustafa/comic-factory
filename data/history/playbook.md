@@ -4,11 +4,11 @@
 - Numerical density: Include concrete numbers in at least 50% of total shot beats.
 - Concrete early metrics: Put a specific measurement in the first three shots.
 - Hook constraint: Present-tense threat statement of 6 words or fewer.
-- Target length & shots: 22-24 shots across 80-85 seconds total duration.
+- Target length & shots: 22-24 shots across 80-95 seconds total duration.
 - Speech pace: Deliver audio at 120-130 words per minute.
 - Beat bounds: Keep every shot beat strictly between 4 and 6 words.
-- Title formatting: Curiosity-driven question or shock, 45-50 characters, naming object and threat.
-- Emphasis share: Keep colored emphasis <= 22% total (red=danger, green=reveal, cyan=turn).
+- Title formatting: Question or shock naming object and threat, strictly 48-54 characters.
+- Emphasis share: Keep total colored emphasis strictly under 18% of total shots.
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Penultimate turning point: Place a single cyan turn shot at beat N-1.
 - Visual selection: Prefer close-ups and action panels over wide establishing frames.
