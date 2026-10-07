@@ -432,6 +432,17 @@
       "name": "target_word_rate_120_wpm",
       "change": "Set narration word rate strictly to 120-125 words per minute across all shot beats.",
       "rationale": "Top-performing videos average 124.5 WPM while lower-performing videos average 130 WPM, showing clearer pacing drives retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37616839174",
+    "chosen_at": "2026-10-07T11:52:10+00:00",
+    "experiment": {
+      "name": "target_title_length_52_chars",
+      "change": "Target an exact title length between 50 and 54 characters centered on the top-performing 53.8 average.",
+      "rationale": "Top-performing videos cluster tightly around 53.8 characters compared to 56.0 characters for underperforming videos."
     }
   }
 ]
