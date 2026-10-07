@@ -443,6 +443,17 @@
       "name": "target_title_length_52_chars",
       "change": "Target an exact title length between 50 and 54 characters centered on the top-performing 53.8 average.",
       "rationale": "Top-performing videos cluster tightly around 53.8 characters compared to 56.0 characters for underperforming videos."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37678887187",
+    "chosen_at": "2026-10-07T20:04:38+00:00",
+    "experiment": {
+      "name": "cyan_penultimate_turn",
+      "change": "Place a single cyan turn shot at beat N-1 to signal the final consequence.",
+      "rationale": "Visual color shifts right before the climax prepare the viewer for the final consequence and boost loop retention."
     }
   }
 ]

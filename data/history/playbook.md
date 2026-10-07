@@ -11,8 +11,6 @@
 - Emphasis share: Keep total colored emphasis strictly under 18% of total shots.
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Penultimate turning point: Place a single cyan turn shot at beat N-1.
-- Visual selection: Prefer close-ups and action panels over wide establishing frames.
-- Stopping point: End on the final consequence frame with zero trailing commentary.
 
 ## Fixed rules
 - Channel: "what would actually happen" space & science stories over real NASA/ESA/JWST imagery. Famous objects and questions people cannot scroll past (the Sun, black holes, Jupiter, Betelgeuse, Venus).

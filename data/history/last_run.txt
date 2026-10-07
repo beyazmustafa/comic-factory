@@ -1,6 +1,6 @@
-run_id: 37616839174  attempt: 1  event: schedule
+run_id: 37678887187  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261007T115137758876Z/run.json
+--- data/runs/20261007T200216812204Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,27 +38,18 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37616839174",
-  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 50
+  "run_id": "37678887187",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 27
 }
---- data/runs/20261007T115137758876Z/diagnostics/provider_events.json
+--- data/runs/20261007T200216812204Z/diagnostics/provider_events.json
 [
-  "Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261007T115137758876Z/diagnostics/providers.json
+--- data/runs/20261007T200216812204Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -80,8 +71,8 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b"
   ],
   "errors": [],
@@ -175,55 +166,63 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261007T115137758876Z/audio/chunk_001/failures.json
+--- data/runs/20261007T200216812204Z/audio/chunk_000/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 82.1/100; whisper-large-v3-turbo: 82.1/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100; whisper-large-v3-turbo: 80.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 80.0/100; whisper-large-v3-turbo: 80.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100; whisper-large-v3-turbo: 80.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 75.0/100; whisper-large-v3-turbo: 80.0/100"
 ]
---- data/runs/20261007T115137758876Z/voice_audition/failed_auditions.json
+--- data/runs/20261007T200216812204Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261007T115137758876Z/diagnostics/story_1.json
-{"error": "Narration too short: 111 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261007T200216812204Z/diagnostics/story_1.json
+{"error": "Narration too short: 114 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261007T200216812204Z/diagnostics/story_2.json
+{"error": "Narration too short: 120 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261007T200216812204Z/diagnostics/story_3.json
+{"error": "Only 20 distinct panels for 30 shots; use at least 22 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: A Hurricane Seen From Orbit Is a 1,000 km Engine
-Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Uzay görselleri: 40 aday, 26 indirildi.
-Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Başlık ve kanca: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Olay araştırılıyor: The Sun Is Bigger Than You Think
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Uzay görselleri: 39 aday, 22 indirildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 96.8/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 2
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 3
-Ses eşleştirme: 82.1/100 | whisper-large-v3
-Ses eşleştirme: 82.1/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 4
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 80.0/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 2
+Ses eşleştirme: 80.0/100 | whisper-large-v3
+Ses eşleştirme: 80.0/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 3
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 80.0/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 4
+Ses eşleştirme: 75.0/100 | whisper-large-v3
+Ses eşleştirme: 80.0/100 | whisper-large-v3-turbo
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.

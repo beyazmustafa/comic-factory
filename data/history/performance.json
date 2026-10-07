@@ -221,15 +221,15 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 301,
+      "views": 303,
       "likes": 5,
       "comments": 0,
-      "hours_live": 131.8,
-      "views_per_hour": 2.28,
-      "fetched_at": "2026-10-07T11:51:38+00:00",
+      "hours_live": 140.0,
+      "views_per_hour": 2.16,
+      "fetched_at": "2026-10-07T20:02:17+00:00",
       "views_24h": 179,
       "views_72h": 297,
-      "average_view_percentage": 37.68,
+      "average_view_percentage": 38.17,
       "average_view_duration": 46,
       "shares": 0
     },
@@ -362,6 +362,11 @@
       {
         "h": 131.8,
         "views": 301,
+        "likes": 5
+      },
+      {
+        "h": 140.0,
+        "views": 303,
         "likes": 5
       }
     ]
@@ -1451,15 +1456,15 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1209,
+      "views": 1210,
       "likes": 38,
       "comments": 3,
-      "hours_live": 73.7,
-      "views_per_hour": 16.41,
-      "fetched_at": "2026-10-07T11:51:38+00:00",
+      "hours_live": 81.9,
+      "views_per_hour": 14.78,
+      "fetched_at": "2026-10-07T20:02:17+00:00",
       "views_24h": 558,
       "views_72h": 1209,
-      "average_view_percentage": 82.49,
+      "average_view_percentage": 82.39,
       "average_view_duration": 44,
       "shares": 1
     },
@@ -1507,6 +1512,11 @@
       {
         "h": 73.7,
         "views": 1209,
+        "likes": 38
+      },
+      {
+        "h": 81.9,
+        "views": 1210,
         "likes": 38
       }
     ]
@@ -1625,14 +1635,17 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 571,
+      "views": 576,
       "likes": 12,
       "comments": 0,
-      "hours_live": 47.0,
-      "views_per_hour": 12.15,
-      "fetched_at": "2026-10-07T11:51:38+00:00",
+      "hours_live": 55.2,
+      "views_per_hour": 10.44,
+      "fetched_at": "2026-10-07T20:02:17+00:00",
       "views_24h": 556,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 69.08,
+      "average_view_duration": 79,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -1653,6 +1666,11 @@
       {
         "h": 47.0,
         "views": 571,
+        "likes": 12
+      },
+      {
+        "h": 55.2,
+        "views": 576,
         "likes": 12
       }
     ]
@@ -1753,11 +1771,14 @@
       "views": 119,
       "likes": 3,
       "comments": 0,
-      "hours_live": 37.8,
-      "views_per_hour": 3.15,
-      "fetched_at": "2026-10-07T11:51:38+00:00",
+      "hours_live": 46.0,
+      "views_per_hour": 2.59,
+      "fetched_at": "2026-10-07T20:02:17+00:00",
       "views_24h": 118,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 60.23,
+      "average_view_duration": 49,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -1772,6 +1793,11 @@
       },
       {
         "h": 37.8,
+        "views": 119,
+        "likes": 3
+      },
+      {
+        "h": 46.0,
         "views": 119,
         "likes": 3
       }
