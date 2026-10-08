@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 97.43589743589743,
+  "scene_match": 95,
+  "delivery": 97.43589743589743,
+  "visual_readability": 88,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video opens with a high-contrast black hole image and clear yellow captions."
+    },
+    {
+      "second": 15,
+      "detail": "Warp transitions between shots are smooth and maintain the fast-paced documentary feel."
+    },
+    {
+      "second": 30,
+      "detail": "The narrator's energy increases appropriately during the 'danger' emphasis shots."
+    },
+    {
+      "second": 45,
+      "detail": "Captions are well-centered and the single-word mode keeps focus on the visuals."
+    },
+    {
+      "second": 60,
+      "detail": "The final shots maintain high visual quality with relevant space-themed imagery."
+    },
+    {
+      "second": 65,
+      "detail": "The video concludes with a thematic summary and consistent caption styling."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary narration is well-executed with strong pacing and clear, readable captions. The narrator's delivery matches the intense subject matter, and the visual transitions are effective. The use of emphasis colors for specific keywords adds a nice layer of visual interest without being distracting.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 80,
+    "delivery": 82,
+    "visual_readability": 88
+  },
+  "measured_scores": {
+    "subtitle_sync": 97.43589743589743,
+    "scene_match": 95,
+    "delivery": 97.43589743589743
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

@@ -454,6 +454,17 @@
       "name": "cyan_penultimate_turn",
       "change": "Place a single cyan turn shot at beat N-1 to signal the final consequence.",
       "rationale": "Visual color shifts right before the climax prepare the viewer for the final consequence and boost loop retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37774475165",
+    "chosen_at": "2026-10-08T12:07:23+00:00",
+    "experiment": {
+      "name": "consequence_final_transformation",
+      "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
+      "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     }
   }
 ]

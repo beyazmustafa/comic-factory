@@ -1,0 +1,285 @@
+{
+  "title": "What actually happens when a black hole shreds your body",
+  "description": "A step-by-step scientific thriller detailing the physical destruction and time-warping effects of falling into a black hole.",
+  "hook_card": "YOUR BODY BECOMES ATOMS",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_019_p00",
+      "narration": "A black hole stretches your body into atoms.",
+      "fact_ids": [
+        "fact_004",
+        "fact_007"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_012_p00",
+      "narration": "You have fifteen seconds of consciousness.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_009_p00",
+      "narration": "Gravity here is millions of times stronger.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_002_p00",
+      "narration": "Small black holes shred you instantly.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_013_p00",
+      "narration": "Light warps into glowing concentric rings.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_008_p00",
+      "narration": "Time dilation freezes your image forever.",
+      "fact_ids": [
+        "fact_001",
+        "fact_002"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_005_p00",
+      "narration": "Your signals shift to red wavelengths.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_003_p00",
+      "narration": "To observers you never cross over.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_004_p00",
+      "narration": "But your reality is far worse.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "hold",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_006_p00",
+      "narration": "Tidal forces pull at your feet.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_010_p00",
+      "narration": "Gravity scales with terrifying speed now.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_017_p00",
+      "narration": "You still see the entire galaxy.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "pull",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_000_p00",
+      "narration": "Outside light still reaches your eyes.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_018_p00",
+      "narration": "Cosmic events unfold in fast forward.",
+      "fact_ids": [
+        "fact_011"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_014_p00",
+      "narration": "But you can never turn back.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "right",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_019_p00",
+      "narration": "Every photon moves strictly inward now.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_002_p00",
+      "narration": "Your bones yield to tidal oscillations.",
+      "fact_ids": [
+        "fact_005",
+        "fact_012"
+      ],
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_009_p00",
+      "narration": "Matter heats into intense X-ray flares.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_018",
+      "panel_id": "page_013_p00",
+      "narration": "You are squeezed like cosmic dough.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_019",
+      "panel_id": "page_012_p00",
+      "narration": "Your timeline points to the singularity.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_020",
+      "panel_id": "page_005_p00",
+      "narration": "You become a stream of atoms.",
+      "fact_ids": [
+        "fact_004",
+        "fact_012"
+      ],
+      "motion": "down",
+      "emphasis": "danger"
+    }
+  ],
+  "narration": "A black hole stretches your body into atoms. You have fifteen seconds of consciousness. Gravity here is millions of times stronger. Small black holes shred you instantly. Light warps into glowing concentric rings. Time dilation freezes your image forever. Your signals shift to red wavelengths. To observers you never cross over. But your reality is far worse. Tidal forces pull at your feet. Gravity scales with terrifying speed now. You still see the entire galaxy. Outside light still reaches your eyes. Cosmic events unfold in fast forward. But you can never turn back. Every photon moves strictly inward now. Your bones yield to tidal oscillations. Matter heats into intense X-ray flares. You are squeezed like cosmic dough. Your timeline points to the singularity. You become a stream of atoms.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "headline_candidates": {
+    "titles": [
+      "The terrifying reality of falling into a black hole",
+      "What actually happens when a black hole shreds your body",
+      "Why you only survive fifteen seconds inside a black hole",
+      "How gravity turns your body into a stream of atoms",
+      "The brutal physics of entering a massive black hole"
+    ],
+    "hook_cards": [
+      "YOUR BODY BECOMES ATOMS",
+      "GRAVITY SHREDS YOUR BODY",
+      "YOU TURN INTO ATOMS",
+      "BLACK HOLES STRETCH YOU",
+      "STRETCHED INTO TINY ATOMS"
+    ]
+  },
+  "event": {
+    "id": "space_black-hole-body",
+    "title": "What Happens to Your Body Inside a Black Hole",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "black-hole-body",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "you are stretched into a strand of atoms while time stops for everyone watching",
+    "famous_line": "you are stretched into a strand of atoms while time stops for everyone watching",
+    "image_terms": [
+      "black hole",
+      "accretion disk",
+      "Sagittarius A*",
+      "M87 black hole"
+    ],
+    "source_urls": [
+      "https://www.ucdavis.edu/blog/what-happens-inside-black-hole-uc-davis-astrophysicist-weighs",
+      "https://discoverwildscience.com/what-would-really-happen-if-you-touched-a-black-hole-astrophysicists-explain-2-378090/",
+      "https://www.nasa.gov/podcasts/curious-universe/inside-a-black-hole/",
+      "https://commons.wikimedia.org/wiki/File:Black_Hole_Full.png",
+      "https://images.nasa.gov/details/PIA22355",
+      "https://commons.wikimedia.org/wiki/File:EHT_Saggitarius_A_black_hole.tif",
+      "https://images.nasa.gov/details/PIA22085",
+      "https://images.nasa.gov/details/behemoth-black-hole-found-in-an-unlikely-place_26209716511_o",
+      "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
+      "https://commons.wikimedia.org/wiki/File:Microquasar_GRO_J1655-40.jpg",
+      "https://commons.wikimedia.org/wiki/File:W33A_Accretion_Disk_(gemini1003a).tiff",
+      "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
+      "https://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png",
+      "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_the_black_hole_inside_NGC_300_X-1_(ESO_1004a).jpg"
+    ],
+    "url": "https://www.ucdavis.edu/blog/what-happens-inside-black-hole-uc-davis-astrophysicist-weighs",
+    "_source": "space"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance",
+    "variety_warnings": [
+      "Narration too short: 129 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.",
+      "Only 15 distinct panels for 21 shots; use at least 16 distinct panels."
+    ]
+  }
+}

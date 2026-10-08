@@ -221,12 +221,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 303,
+      "views": 305,
       "likes": 5,
       "comments": 0,
-      "hours_live": 140.0,
-      "views_per_hour": 2.16,
-      "fetched_at": "2026-10-07T20:02:17+00:00",
+      "hours_live": 156.1,
+      "views_per_hour": 1.95,
+      "fetched_at": "2026-10-08T12:06:39+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 38.17,
@@ -367,6 +367,11 @@
       {
         "h": 140.0,
         "views": 303,
+        "likes": 5
+      },
+      {
+        "h": 156.1,
+        "views": 305,
         "likes": 5
       }
     ]
@@ -1456,12 +1461,12 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1210,
+      "views": 1211,
       "likes": 38,
       "comments": 3,
-      "hours_live": 81.9,
-      "views_per_hour": 14.78,
-      "fetched_at": "2026-10-07T20:02:17+00:00",
+      "hours_live": 97.9,
+      "views_per_hour": 12.36,
+      "fetched_at": "2026-10-08T12:06:39+00:00",
       "views_24h": 558,
       "views_72h": 1209,
       "average_view_percentage": 82.39,
@@ -1517,6 +1522,11 @@
       {
         "h": 81.9,
         "views": 1210,
+        "likes": 38
+      },
+      {
+        "h": 97.9,
+        "views": 1211,
         "likes": 38
       }
     ]
@@ -1635,12 +1645,12 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 576,
-      "likes": 12,
+      "views": 586,
+      "likes": 13,
       "comments": 0,
-      "hours_live": 55.2,
-      "views_per_hour": 10.44,
-      "fetched_at": "2026-10-07T20:02:17+00:00",
+      "hours_live": 71.2,
+      "views_per_hour": 8.23,
+      "fetched_at": "2026-10-08T12:06:39+00:00",
       "views_24h": 556,
       "views_72h": null,
       "average_view_percentage": 69.08,
@@ -1672,6 +1682,11 @@
         "h": 55.2,
         "views": 576,
         "likes": 12
+      },
+      {
+        "h": 71.2,
+        "views": 586,
+        "likes": 13
       }
     ]
   },
@@ -1771,9 +1786,9 @@
       "views": 119,
       "likes": 3,
       "comments": 0,
-      "hours_live": 46.0,
-      "views_per_hour": 2.59,
-      "fetched_at": "2026-10-07T20:02:17+00:00",
+      "hours_live": 62.0,
+      "views_per_hour": 1.92,
+      "fetched_at": "2026-10-08T12:06:39+00:00",
       "views_24h": 118,
       "views_72h": null,
       "average_view_percentage": 60.23,
@@ -1798,6 +1813,11 @@
       },
       {
         "h": 46.0,
+        "views": 119,
+        "likes": 3
+      },
+      {
+        "h": 62.0,
         "views": 119,
         "likes": 3
       }
@@ -1847,6 +1867,100 @@
       "name": "tight_emphasis_cap",
       "change": "Strictly cap total colored emphasis beats to at most 18% of total shots.",
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
+    },
+    "stats": {}
+  },
+  {
+    "video_id": "5OAlJsspDpI",
+    "platform": "youtube",
+    "run_id": "37774475165",
+    "published_at": "2026-10-08T12:31:51+00:00",
+    "event": {
+      "title": "What Happens to Your Body Inside a Black Hole",
+      "series": "Space",
+      "issue": "black-hole-body",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 21,
+      "words": 129,
+      "duration": 65.8,
+      "words_per_minute": 118,
+      "hook": "A black hole stretches your body into atoms.",
+      "hook_words": 8,
+      "title": "What actually happens when a black hole shreds your body",
+      "title_length": 56,
+      "emphasis": {
+        "danger": 5,
+        "normal": 14,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 97.43589743589743,
+        "scene_match": 95,
+        "delivery": 97.43589743589743,
+        "visual_readability": 88
+      },
+      "issues": [],
+      "summary": "The documentary narration is well-executed with strong pacing and clear, readable captions. The narrator's delivery matches the intense subject matter, and the visual transitions are effective. The use of emphasis colors for specific keywords adds a nice layer of visual interest without being distracting."
+    },
+    "experiment": {
+      "name": "consequence_final_transformation",
+      "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
+      "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
+    },
+    "stats": {}
+  },
+  {
+    "video_id": "ZNXsXsNM7qE",
+    "platform": "youtube",
+    "run_id": "37774475165",
+    "published_at": "2026-10-08T12:32:56+00:00",
+    "event": {
+      "title": null,
+      "series": null,
+      "issue": null,
+      "year": null,
+      "publisher": null
+    },
+    "profile": {
+      "shots": 21,
+      "words": 126,
+      "duration": 78.1,
+      "words_per_minute": 97,
+      "hook": "Bir kara delik vücudunuzu atomlarına kadar esnetir.",
+      "hook_words": 7,
+      "title": "Bir Kara Delik Vücudunuzu Parçaladığında Neler Olur?",
+      "title_length": 52,
+      "emphasis": {
+        "danger": 5,
+        "normal": 14,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Ahmet",
+    "review": {
+      "mode": "measured",
+      "scores": {
+        "subtitle_sync": 95.02439024390243,
+        "scene_match": 95,
+        "delivery": 95.02439024390243,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "Localized edition (tr); panels and audit shared with the primary edition."
+    },
+    "experiment": {
+      "name": "consequence_final_transformation",
+      "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
+      "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
     "stats": {}
   }
