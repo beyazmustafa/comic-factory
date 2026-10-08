@@ -224,9 +224,9 @@
       "views": 305,
       "likes": 5,
       "comments": 0,
-      "hours_live": 156.1,
-      "views_per_hour": 1.95,
-      "fetched_at": "2026-10-08T12:06:39+00:00",
+      "hours_live": 164.0,
+      "views_per_hour": 1.86,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 38.17,
@@ -371,6 +371,11 @@
       },
       {
         "h": 156.1,
+        "views": 305,
+        "likes": 5
+      },
+      {
+        "h": 164.0,
         "views": 305,
         "likes": 5
       }
@@ -1461,15 +1466,15 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1211,
+      "views": 1207,
       "likes": 38,
       "comments": 3,
-      "hours_live": 97.9,
-      "views_per_hour": 12.36,
-      "fetched_at": "2026-10-08T12:06:39+00:00",
+      "hours_live": 105.8,
+      "views_per_hour": 11.4,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
       "views_24h": 558,
       "views_72h": 1209,
-      "average_view_percentage": 82.39,
+      "average_view_percentage": 82.28,
       "average_view_duration": 44,
       "shares": 1
     },
@@ -1527,6 +1532,11 @@
       {
         "h": 97.9,
         "views": 1211,
+        "likes": 38
+      },
+      {
+        "h": 105.8,
+        "views": 1207,
         "likes": 38
       }
     ]
@@ -1645,15 +1655,15 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 586,
+      "views": 592,
       "likes": 13,
       "comments": 0,
-      "hours_live": 71.2,
-      "views_per_hour": 8.23,
-      "fetched_at": "2026-10-08T12:06:39+00:00",
+      "hours_live": 79.1,
+      "views_per_hour": 7.48,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
       "views_24h": 556,
-      "views_72h": null,
-      "average_view_percentage": 69.08,
+      "views_72h": 587,
+      "average_view_percentage": 69.28,
       "average_view_duration": 79,
       "shares": 0
     },
@@ -1686,6 +1696,11 @@
       {
         "h": 71.2,
         "views": 586,
+        "likes": 13
+      },
+      {
+        "h": 79.1,
+        "views": 592,
         "likes": 13
       }
     ]
@@ -1786,13 +1801,13 @@
       "views": 119,
       "likes": 3,
       "comments": 0,
-      "hours_live": 62.0,
-      "views_per_hour": 1.92,
-      "fetched_at": "2026-10-08T12:06:39+00:00",
+      "hours_live": 69.9,
+      "views_per_hour": 1.7,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
       "views_24h": 118,
       "views_72h": null,
-      "average_view_percentage": 60.23,
-      "average_view_duration": 49,
+      "average_view_percentage": 57.440000000000005,
+      "average_view_duration": 47,
       "shares": 0
     },
     "stats_history": [
@@ -1818,6 +1833,11 @@
       },
       {
         "h": 62.0,
+        "views": 119,
+        "likes": 3
+      },
+      {
+        "h": 69.9,
         "views": 119,
         "likes": 3
       }
@@ -1915,7 +1935,23 @@
       "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 1105,
+      "likes": 29,
+      "comments": 1,
+      "hours_live": 7.5,
+      "views_per_hour": 147.73,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 7.5,
+        "views": 1105,
+        "likes": 29
+      }
+    ]
   },
   {
     "video_id": "ZNXsXsNM7qE",
@@ -1962,6 +1998,22 @@
       "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
-    "stats": {}
+    "stats": {
+      "views": 4,
+      "likes": 0,
+      "comments": 0,
+      "hours_live": 7.5,
+      "views_per_hour": 0.54,
+      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 7.5,
+        "views": 4,
+        "likes": 0
+      }
+    ]
   }
 ]

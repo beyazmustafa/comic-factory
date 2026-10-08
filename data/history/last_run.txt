@@ -1,11 +1,11 @@
-run_id: 37774475165  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261008T120639658544Z/run.json
+run_id: 37836103186  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261008T200037874693Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Konuşma ve kelime zamanları",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,65 +38,18 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37774475165",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "47893ff18075436d3511aa801deff05dd58e18f6150ff1eb18288b20d44a82b0",
-  "metadata_sha256": "4adc186324861d7e432bf9ef130231aedaf785becdfe6b6bd328996b0ba26b49",
-  "quality_sha256": "267c177d72ddd6f0b6d97a0c6080e3a8c120c5c8a208fdb6203724b252180faf",
-  "api_calls": 45,
-  "duration": 65.84,
-  "voice": "Orus",
-  "event": {
-    "id": "space_black-hole-body",
-    "title": "What Happens to Your Body Inside a Black Hole",
-    "publisher": "NASA/ESA",
-    "series": "Space",
-    "issue": "black-hole-body",
-    "year": 2026,
-    "universe": "science",
-    "characters": [],
-    "summary": "you are stretched into a strand of atoms while time stops for everyone watching",
-    "famous_line": "you are stretched into a strand of atoms while time stops for everyone watching",
-    "image_terms": [
-      "black hole",
-      "accretion disk",
-      "Sagittarius A*",
-      "M87 black hole"
-    ],
-    "source_urls": [
-      "https://www.ucdavis.edu/blog/what-happens-inside-black-hole-uc-davis-astrophysicist-weighs",
-      "https://discoverwildscience.com/what-would-really-happen-if-you-touched-a-black-hole-astrophysicists-explain-2-378090/",
-      "https://www.nasa.gov/podcasts/curious-universe/inside-a-black-hole/",
-      "https://commons.wikimedia.org/wiki/File:Black_Hole_Full.png",
-      "https://images.nasa.gov/details/PIA22355",
-      "https://commons.wikimedia.org/wiki/File:EHT_Saggitarius_A_black_hole.tif",
-      "https://images.nasa.gov/details/PIA22085",
-      "https://images.nasa.gov/details/behemoth-black-hole-found-in-an-unlikely-place_26209716511_o",
-      "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
-      "https://commons.wikimedia.org/wiki/File:Microquasar_GRO_J1655-40.jpg",
-      "https://commons.wikimedia.org/wiki/File:W33A_Accretion_Disk_(gemini1003a).tiff",
-      "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
-      "https://commons.wikimedia.org/wiki/File:Neutron_Star_simulation.png",
-      "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_the_black_hole_inside_NGC_300_X-1_(ESO_1004a).jpg"
-    ],
-    "url": "https://www.ucdavis.edu/blog/what-happens-inside-black-hole-uc-davis-astrophysicist-weighs",
-    "_source": "space"
-  },
-  "localized": [
-    "lang_tr"
-  ]
+  "run_id": "37836103186",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 25
 }
---- data/runs/20261008T120639658544Z/diagnostics/provider_events.json
+--- data/runs/20261008T200037874693Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261008T120639658544Z/diagnostics/providers.json
+--- data/runs/20261008T200037874693Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -118,9 +71,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -213,152 +166,58 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261008T120639658544Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261008T120639658544Z/research/rejected_candidates.json
+--- data/runs/20261008T200037874693Z/audio/chunk_000/failures.json
 [
-  {
-    "event": {
-      "id": "space_asteroid-city",
-      "title": "What a City-Killer Asteroid Does in 10 Seconds",
-      "publisher": "NASA/ESA",
-      "series": "Space",
-      "issue": "asteroid-city",
-      "year": 2026,
-      "universe": "science",
-      "characters": [],
-      "summary": "airburst, shockwave, 100 km of broken windows",
-      "famous_line": "airburst, shockwave, 100 km of broken windows",
-      "image_terms": [
-        "asteroid Bennu",
-        "Chelyabinsk meteor",
-        "impact crater",
-        "DART impact"
-      ],
-      "source_urls": [],
-      "url": "",
-      "_source": "space"
-    },
-    "error": "Konu için yeterli kullanılabilir görsel yok (5/21)."
-  }
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 68.3/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 70.7/100; whisper-large-v3-turbo: 68.3/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 68.3/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 70.7/100"
 ]
---- data/runs/20261008T120639658544Z/diagnostics/story_1.json
-{"error": "Narration too short: 111 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 15 distinct panels for 22 shots; use at least 16 distinct panels."}
---- data/runs/20261008T120639658544Z/diagnostics/story_2.json
-{"error": "Narration too short: 143 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_019_p00', 'page_002_p00', 'page_013_p00']; each panel at most twice.; Only 14 distinct panels for 24 shots; use at least 18 distinct panels."}
---- data/runs/20261008T120639658544Z/diagnostics/story_3.json
-{"error": "Only 15 distinct panels for 21 shots; use at least 16 distinct panels."}
+--- data/runs/20261008T200037874693Z/voice_audition/failed_auditions.json
+{}
+--- data/runs/20261008T200037874693Z/diagnostics/story_1.json
+{"error": "Narration too short: 131 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261008T200037874693Z/diagnostics/story_2.json
+{"error": "Narration too short: 115 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261008T200037874693Z/diagnostics/story_3.json
+{"error": "Narration too short: 113 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: What a City-Killer Asteroid Does in 10 Seconds
-Uzay görselleri: 34 aday, 21 indirildi.
-Olay araştırılıyor: What Happens to Your Body Inside a Black Hole
-Arama (bing) yanıt vermedi: DDGSException
+Olay araştırılıyor: What Happens If You Fall Into the Sun
+Arama (bing) yanıt vermedi: TimeoutException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
 Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: TimeoutException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
 Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
-Uzay görselleri: 30 aday, 20 indirildi.
-Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Uzay görselleri: 50 aday, 24 indirildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.4/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-
-→ tr sürümü
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 95.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 97.5/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 83.3/100 | whisper-large-v3
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261008T120639658544Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: What actually happens when a black hole shreds your body #Shorts
-Görünürlük: public
-
-Yükleme: %18
-Yükleme: %37
-Yükleme: %56
-Yükleme: %74
-Yükleme: %93
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5OAlJsspDpI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261008T120639658544Z/video.mp4
-Boyut: 42.8 MB
-Açıklama uzunluğu: 234 karakter
-Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17967252153187944).
-Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: FINISHED
-Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18102928499305882
-====================================================================
-INSTAGRAM REEL TAMAMLANDI
-====================================================================
-Cloudinary: geçici video silindi (ok).
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: Bir Kara Delik Vücudunuzu Parçaladığında Neler Olur? #Shorts
-Görünürlük: public
-
-Yükleme: %16
-Yükleme: %32
-Yükleme: %48
-Yükleme: %64
-Yükleme: %80
-Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=ZNXsXsNM7qE&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Ses eşleştirme: 68.3/100 | whisper-large-v3
+Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 2
+Ses eşleştirme: 70.7/100 | whisper-large-v3
+Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 3
+Ses eşleştirme: 68.3/100 | whisper-large-v3
+Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 4
+Ses eşleştirme: 68.3/100 | whisper-large-v3
+Ses eşleştirme: 70.7/100 | whisper-large-v3-turbo
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.

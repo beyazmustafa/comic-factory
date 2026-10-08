@@ -465,6 +465,17 @@
       "name": "consequence_final_transformation",
       "change": "End the final shot explicitly with an irreversible physical state transformation rather than a summary or question.",
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37836103186",
+    "chosen_at": "2026-10-08T20:00:50+00:00",
+    "experiment": {
+      "name": "target_exact_22_shots_duration",
+      "change": "Lock target shot count to exactly 22 shots across 88 to 95 seconds.",
+      "rationale": "Top-performing videos cluster tightly around an average of 22 shots and 92.6 seconds."
     }
   }
 ]
