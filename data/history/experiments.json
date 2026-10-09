@@ -496,6 +496,17 @@
       "name": "body_part_anchor_per_third_shot",
       "change": "Explicitly name a specific human body part (e.g., lungs, eardrums, retinas, skin) in at least one out of every three shots.",
       "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37978758240",
+    "chosen_at": "2026-10-09T19:14:47+00:00",
+    "experiment": {
+      "name": "loop_ending_first_line_echo",
+      "change": "Make the final shot's phrasing echo the vocabulary and imagery of the opening hook line to create a seamless playback loop.",
+      "rationale": "Directly echoing the hook in the final beat promotes continuous replaying and increases short-form loop completion rates."
     }
   }
 ]

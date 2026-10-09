@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 90.9090909090909,
+  "scene_match": 95,
+  "delivery": 90.9090909090909,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 2,
+      "detail": "Countdown widget and yellow bold captions display cleanly over the astronaut helmet visual."
+    },
+    {
+      "second": 15,
+      "detail": "Single word caption 'NORMAL' synchronizes well with narration over the airlock imagery."
+    },
+    {
+      "second": 33,
+      "detail": "Clear text pop on 'SECONDS' with strong contrast against dark background."
+    },
+    {
+      "second": 48,
+      "detail": "Color-coded emphasis 'PURPLE' in green contrast over spacewalk footage."
+    },
+    {
+      "second": 68,
+      "detail": "Caption 'WATTS' renders legibly over cosmonaut interior scene."
+    },
+    {
+      "second": 83,
+      "detail": "Seconds counter graphic overlaps slightly with text elements near the lower third."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "Narration delivers clearly with good timing and well-synced bold captions matching the scientific imagery throughout.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 68,
+    "scene_match": 70,
+    "delivery": 69,
+    "visual_readability": 67
+  },
+  "measured_scores": {
+    "subtitle_sync": 90.9090909090909,
+    "scene_match": 95,
+    "delivery": 90.9090909090909
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

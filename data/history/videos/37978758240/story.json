@@ -1,0 +1,342 @@
+{
+  "title": "What Space Really Does to Your Body in Seconds",
+  "description": "Step by step scientific breakdown of what actually happens to the human body exposed to the vacuum of space.",
+  "hook_card": "YOU HAVE FIFTEEN SECONDS",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_012_p00",
+      "narration": "In the vacuum of space, your body has only fifteen seconds.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": null,
+      "graphic": {
+        "type": "countdown",
+        "seconds": 15,
+        "label": "to blackout"
+      },
+      "impact_word": "FIFTEEN",
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_017_p00",
+      "narration": "If you instinctively hold your breath, expanding air rips your lungs apart.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "effect": "shake",
+      "graphic": null,
+      "impact_word": "RIPS",
+      "motion": "down",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_008_p00",
+      "narration": "The sudden pressure drop causes your fragile eardrums to pop immediately.",
+      "fact_ids": [
+        "fact_007"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_013_p00",
+      "narration": "Without atmospheric pressure, water boils at normal body temperature in seconds.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "BOILS",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_021_p00",
+      "narration": "The moisture covering your eyes and tongue begins bubbling away instantly.",
+      "fact_ids": [
+        "fact_002",
+        "fact_007"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_006_p00",
+      "narration": "In a nineteen sixty-six NASA test, one technician felt saliva boiling.",
+      "fact_ids": [
+        "fact_003",
+        "fact_004"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_016_p00",
+      "narration": "His chamber depressurized to near zero in just ten frantic seconds.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "ZERO",
+      "motion": "push",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_026_p00",
+      "narration": "He blacked out after fourteen seconds before breathing fresh pressurized air.",
+      "fact_ids": [
+        "fact_000",
+        "fact_004"
+      ],
+      "effect": "blackout",
+      "graphic": null,
+      "impact_word": "",
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_029_p00",
+      "narration": "Within seconds, your expanding internal gases swell your body double size.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "effect": "pressure",
+      "graphic": null,
+      "impact_word": "DOUBLE",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_003_p00",
+      "narration": "Yet your skin is remarkably elastic and will not burst open.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_023_p00",
+      "narration": "Deprived of circulating oxygen, your skin rapidly turns deep purple blue.",
+      "fact_ids": [
+        "fact_012"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "PURPLE",
+      "motion": "push",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_019_p00",
+      "narration": "Inside your lungs, oxygen exchange completely stops beneath critical vacuum pressure.",
+      "fact_ids": [
+        "fact_013"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_024_p00",
+      "narration": "Hollywood shows bodies freezing solid instantly, but that is totally false.",
+      "fact_ids": [
+        "fact_008",
+        "fact_009"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "FALSE",
+      "motion": "left",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_002_p00",
+      "narration": "Vacuum holds no air to carry your body heat away quickly.",
+      "fact_ids": [
+        "fact_008",
+        "fact_009"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_011_p00",
+      "narration": "You radiate heat at roughly one hundred watts, like a dim bulb.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "BULB",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_021_p00",
+      "narration": "Direct sunlight strikes your skin hotter than a boiling pizza oven.",
+      "fact_ids": [
+        "fact_010",
+        "fact_011"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_029_p00",
+      "narration": "Meanwhile, the shaded side of your body plunges toward deep freeze.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "right",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_008_p00",
+      "narration": "Deadly orbital debris streaks past at ten kilometers every single second.",
+      "fact_ids": [
+        "fact_015"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "DEBRIS",
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_018",
+      "panel_id": "page_017_p00",
+      "narration": "Rescue must happen within ninety seconds before permanent brain damage strikes.",
+      "fact_ids": [
+        "fact_014"
+      ],
+      "effect": null,
+      "graphic": {
+        "type": "counter",
+        "value": 90.0,
+        "unit": "s",
+        "label": "seconds left"
+      },
+      "impact_word": "NINETY",
+      "motion": "pull",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_019",
+      "panel_id": "page_012_p00",
+      "narration": "In the vacuum of space, your body gets only fifteen seconds.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": "blackout",
+      "graphic": null,
+      "impact_word": "SPACE",
+      "motion": "pull",
+      "emphasis": "danger"
+    }
+  ],
+  "narration": "In the vacuum of space, your body has only fifteen seconds. If you instinctively hold your breath, expanding air rips your lungs apart. The sudden pressure drop causes your fragile eardrums to pop immediately. Without atmospheric pressure, water boils at normal body temperature in seconds. The moisture covering your eyes and tongue begins bubbling away instantly. In a nineteen sixty-six NASA test, one technician felt saliva boiling. His chamber depressurized to near zero in just ten frantic seconds. He blacked out after fourteen seconds before breathing fresh pressurized air. Within seconds, your expanding internal gases swell your body double size. Yet your skin is remarkably elastic and will not burst open. Deprived of circulating oxygen, your skin rapidly turns deep purple blue. Inside your lungs, oxygen exchange completely stops beneath critical vacuum pressure. Hollywood shows bodies freezing solid instantly, but that is totally false. Vacuum holds no air to carry your body heat away quickly. You radiate heat at roughly one hundred watts, like a dim bulb. Direct sunlight strikes your skin hotter than a boiling pizza oven. Meanwhile, the shaded side of your body plunges toward deep freeze. Deadly orbital debris streaks past at ten kilometers every single second. Rescue must happen within ninety seconds before permanent brain damage strikes. In the vacuum of space, your body gets only fifteen seconds.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "headline_candidates": {
+    "titles": [
+      "How Long You Actually Survive in Outer Space",
+      "What Space Really Does to Your Body in Seconds",
+      "Why Holding Your Breath in Space Destroys Lungs",
+      "The Brutal Truth of Entering Space Unprotected",
+      "How Your Body Reacts to the Vacuum of Space"
+    ],
+    "hook_cards": [
+      "YOU HAVE FIFTEEN SECONDS",
+      "ONLY FIFTEEN SECONDS LEFT",
+      "FIFTEEN SECONDS TO SURVIVE",
+      "YOU GET FIFTEEN SECONDS",
+      "FIFTEEN SECONDS IN VACUUM"
+    ]
+  },
+  "event": {
+    "id": "space_space-no-suit",
+    "title": "You Have 15 Seconds in Space Without a Suit",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "space-no-suit",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "saliva boils, lungs rupture if you hold your breath, you do not freeze",
+    "famous_line": "saliva boils, lungs rupture if you hold your breath, you do not freeze",
+    "image_terms": [
+      "astronaut spacewalk",
+      "EVA ISS",
+      "astronaut helmet reflection"
+    ],
+    "source_urls": [
+      "https://www.space.com/how-long-could-you-survive-in-space-without-spacesuit",
+      "https://discoverwildscience.com/how-long-youd-survive-in-space-without-a-suit-and-what-would-happen-first-4-312446/",
+      "https://www.spacesafetymagazine.com/aerospace-engineering/space-suit-design/early-spacesuit-vacuum-test-wrong/",
+      "https://biologyinsights.com/do-you-freeze-in-space-what-actually-happens-to-your-body/",
+      "https://commons.wikimedia.org/wiki/File:Piers_Sellers_spacewalk.jpg",
+      "https://images.nasa.gov/details/iss072e575164",
+      "https://commons.wikimedia.org/wiki/File:ISS-32_American_EVA_b4_Aki_Hoshide.jpg",
+      "https://commons.wikimedia.org/wiki/File:ISS-32_American_EVA_b3_Aki_Hoshide.jpg",
+      "https://images.nasa.gov/details/iss054e022823",
+      "https://commons.wikimedia.org/wiki/File:Shenzhou-15_spacewalk.jpg",
+      "https://images.nasa.gov/details/iss006-344-011",
+      "https://commons.wikimedia.org/wiki/File:NASA_Apollo_17_Lunar_Roving_Vehicle.jpg",
+      "https://images.nasa.gov/details/iss072e518423",
+      "https://images.nasa.gov/details/STS102-325-023"
+    ],
+    "url": "https://www.space.com/how-long-could-you-survive-in-space-without-spacesuit",
+    "_source": "space"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance",
+    "variety_warnings": []
+  }
+}
