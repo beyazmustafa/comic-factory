@@ -238,6 +238,107 @@ def dhash(picture, size=8):
     return bits
 
 
+# ----------------------------------------------------------------- footage
+VIDEO_MAX_BYTES = 30_000_000
+
+
+def nasa_videos(query, count=8):
+    """NASA video assets: the API lists a collection manifest per asset with
+    several renditions; the medium one is plenty for a phone screen."""
+    try:
+        response = requests.get(NASA_API, params={"q": query, "media_type": "video", "page_size": count},
+                                timeout=(10, 30), headers={"User-Agent": "comic-factory/1.0"})
+        response.raise_for_status()
+        items = response.json().get("collection", {}).get("items", [])
+    except Exception as error:  # noqa: BLE001
+        print(f"NASA video araması ({query}): {type(error).__name__}", flush=True)
+        return []
+    rows = []
+    for item in items:
+        data = (item.get("data") or [{}])[0]
+        title = clean(data.get("title"))
+        if any(b in title.casefold() for b in BAD_WORDS + ("interview", "briefing", "press", "news conference", "b-roll", "broll", "episode", "this week")):
+            continue
+        manifest = item.get("href")
+        if not manifest:
+            continue
+        rows.append({"manifest": manifest, "title": title, "nasa_id": data.get("nasa_id", ""),
+                     "source_url": f"https://images.nasa.gov/details/{data.get('nasa_id', '')}",
+                     "credit": clean(data.get("secondary_creator") or data.get("center") or "NASA"),
+                     "description": clean(data.get("description"))[:300]})
+    return rows
+
+
+def download_videos(api, event, rows, maximum, seen):
+    """Fetch a rendition per asset, grab its middle frame for the judge and
+    remember where the most watchable 2-5 seconds start."""
+    import subprocess
+    from .fx import probe_duration
+
+    fetcher = Fetcher()
+    root = api.directory / "events" / event["id"]
+    (root / "pages").mkdir(parents=True, exist_ok=True)
+    (root / "clips").mkdir(parents=True, exist_ok=True)
+    pages = []
+    offset = len(list((root / "pages").glob("page_*.jpg")))
+    try:
+        for row in rows:
+            if len(pages) >= maximum:
+                break
+            api.check()
+            try:
+                body, _ = fetcher.get(row["manifest"], 2_000_000)
+                files = json.loads(body.decode("utf-8", "ignore"))
+            except Exception:  # noqa: BLE001
+                continue
+            if not isinstance(files, list):
+                continue
+            candidates = [f for f in files if isinstance(f, str) and f.casefold().endswith(".mp4")]
+            ordered = sorted(candidates, key=lambda f: ("~medium" not in f, "~small" not in f, "~orig" not in f, "~preview" not in f))
+            picked = None
+            for url in ordered[:3]:
+                try:
+                    body, final = fetcher.get(url, VIDEO_MAX_BYTES)
+                except Exception:  # noqa: BLE001
+                    continue
+                digest = hashlib.sha256(body).hexdigest()
+                if digest in seen:
+                    break
+                identifier = f"page_{offset + len(pages):03}"
+                clip = root / "clips" / (identifier + ".mp4")
+                clip.write_bytes(body)
+                length = probe_duration(clip)
+                if length < 2.5:
+                    clip.unlink(missing_ok=True)
+                    continue
+                still = root / "pages" / (identifier + ".jpg")
+                middle = max(0.0, min(length - 2.0, length * 0.45))
+                result = subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{middle:.2f}", "-i", str(clip),
+                                         "-frames:v", "1", "-q:v", "3", str(still)], capture_output=True, timeout=120)
+                if result.returncode != 0 or not still.is_file():
+                    clip.unlink(missing_ok=True)
+                    continue
+                with Image.open(still) as opened:
+                    width, height = opened.size
+                if min(width, height) < 480:
+                    clip.unlink(missing_ok=True)
+                    still.unlink(missing_ok=True)
+                    continue
+                seen.add(digest)
+                picked = {"id": identifier, "file": str(still.relative_to(api.directory)),
+                          "video": str(clip.relative_to(api.directory)), "clip_start": max(0.0, middle - 1.0),
+                          "video_seconds": length, "source_url": row["source_url"], "image_url": final,
+                          "source_title": row.get("title", ""), "credit": row.get("credit", ""),
+                          "licence": "public domain (NASA video)", "caption": row.get("description", ""),
+                          "query": row.get("query", ""), "width": width, "height": height, "sha256": digest}
+                break
+            if picked:
+                pages.append(picked)
+    finally:
+        fetcher.session.close()
+    return pages
+
+
 def download(api, event, rows, maximum, seen):
     download.signatures = []
     fetcher = Fetcher()
@@ -331,7 +432,7 @@ Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":
                 focus = [0.5, 0.5]
             kept.append({**page, "relevance": relevance, "drama": drama, "focus": focus,
                          "description": clean(row.get("description")) or page.get("caption", "")})
-    kept.sort(key=lambda p: -(p["relevance"] * 0.6 + p["drama"] * 0.4))
+    kept.sort(key=lambda p: -(p["relevance"] * 0.6 + p["drama"] * 0.4 + (12 if p.get("video") else 0)))
     return kept
 
 
@@ -355,8 +456,18 @@ def collect(api, event, fetcher):
         for term in list(by_term):
             if by_term[term]:
                 ordered.append(by_term[term].pop(0))
-    pages = download(api, event, ordered, 36, seen)
+    pages = download(api, event, ordered, 30, seen)
     print(f"Uzay görselleri: {len(ordered)} aday, {len(pages)} indirildi.", flush=True)
+    # Real footage first: a moving frame beats a still every time the judge
+    # finds it relevant. Budget: up to 10 clips, each a few MB.
+    video_rows = []
+    for term in event.get("image_terms", [])[:3]:
+        api.check()
+        video_rows += [{**row, "query": term} for row in nasa_videos(term, 6)]
+    random.shuffle(video_rows)
+    clips = download_videos(api, event, video_rows[:16], 10, seen)
+    print(f"Uzay videoları: {len(video_rows)} aday, {len(clips)} indirildi.", flush=True)
+    pages = clips + pages
     if len(pages) < 6:
         raise SourceUnavailable("Konu için yeterli görsel bulunamadı.")
     judged = judge_images(api, event, pages)
@@ -374,7 +485,9 @@ def collect(api, event, fetcher):
             "bbox": [0, 0, 1, 1], "page_file": page["file"], "file": page["file"],
             "sha256": hashlib.sha256(src.read_bytes()).hexdigest(),
             "source_url": page["source_url"], "source_title": page.get("source_title", ""),
-            "credit": page.get("credit", ""), "licence": page.get("licence", ""), "kind": "photo",
+            "credit": page.get("credit", ""), "licence": page.get("licence", ""),
+            "kind": "video" if page.get("video") else "photo",
+            "video": page.get("video"), "clip_start": page.get("clip_start", 0.0),
         })
     event["source_urls"] = list(dict.fromkeys(article_urls + [p["source_url"] for p in judged]))[:14]
     event["url"] = event["source_urls"][0] if event["source_urls"] else ""

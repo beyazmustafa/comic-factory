@@ -2,6 +2,7 @@ import subprocess
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageFont, ImageDraw
+from . import fx
 from .api import FactoryError
 from .core import (
     ass_time,
@@ -9,6 +10,7 @@ from .core import (
     ffmpeg_binary,
     scene_timeline,
     check_video,
+    normalize_word,
     save_json,
 )
 from .voice import RATE, write_wave
@@ -100,6 +102,8 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             for w in words[first:last]
         ]
         size = int(style["font_size"])
+        if word.get("impact"):
+            size = round(size * 1.4)
         while (
             size >= 24 and font(style, size)[0].getlength(" ".join(texts)) > available
         ):
@@ -118,6 +122,10 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             raise FactoryError("Sıfır süreli altyazı kabul edilmiyor.")
         pop = style.get("word_pop_ms", 70)
         effect = f"\\fscx86\\fscy86\\t(0,{pop},\\fscx100\\fscy100)\\fad(25,0)" if pop else ""
+        if word.get("impact"):
+            # Impact word: slams in bigger with a shiver, white with a red edge.
+            effect = (f"\\fscx150\\fscy150\\t(0,90,\\fscx100\\fscy100)\\frz-2\\t(90,170,\\frz2)\\t(170,250,\\frz0)"
+                      f"\\1c&H00FFFFFF&\\3c&H002020E0&\\bord9")
         text = (
             f"{{\\an5\\pos({center_x},{round(HEIGHT * style['caption_y'])})\\fs{size}{effect}}}"
             + text
@@ -396,8 +404,12 @@ def build(api, story, panels, style, audio_path, words, duration):
     caption_words, cursor = [], 0
     for shot in story["shots"]:
         count = len(shot["narration"].split())
-        caption_words.extend({**w, "emphasis": shot.get("emphasis", "normal")}
-                             for w in words[cursor:cursor + count])
+        impact = normalize_word(str(shot.get("impact_word") or ""))
+        marked = False
+        for w in words[cursor:cursor + count]:
+            hit = bool(impact) and not marked and normalize_word(str(w["word"])) == impact
+            marked = marked or hit
+            caption_words.append({**w, "emphasis": shot.get("emphasis", "normal"), "impact": hit})
         cursor += count
     if cursor != len(words):
         raise FactoryError("Sahne ve altyazı kelime sayısı uyuşmuyor.")
@@ -423,27 +435,36 @@ def build(api, story, panels, style, audio_path, words, duration):
         "-threads",
         "2",
     ]
+    graphics = {}
     for i, (shot, (start, end)) in enumerate(zip(story["shots"], timeline)):
         api.check()
         panel = lookup[shot["panel_id"]]
         picture, clip = work / f"shot_{i:03}.png", work / f"shot_{i:03}.mp4"
-        base_image(panel, style, directory, picture)
         frames = round((end - start) * FPS) + (pad if i + 1 < len(timeline) else 0)
-        command(
-            common
-            + [
-                "-i",
-                str(picture),
-                "-vf",
-                motion_filter(shot["motion"], frames, style["zoom_amount"]),
-                "-frames:v",
-                str(frames),
-            ]
-            + codec
-            + [str(clip)],
-            directory,
-            f"render_shot_{i:03}",
-        )
+        effect = shot.get("effect") if shot.get("effect") in fx.EFFECT_TYPES else None
+        chain = []
+        inputs = []
+        if panel.get("video") and (directory / panel["video"]).is_file():
+            # Real footage: loop it if the beat is longer than the clip.
+            inputs = ["-stream_loop", "-1", "-ss", f"{float(panel.get('clip_start', 0)):.2f}",
+                      "-t", f"{frames / FPS + 0.5:.3f}", "-i", str(directory / panel["video"])]
+            chain.append(fx.video_filter(frames, panel.get("focus"), min(0.12, style["zoom_amount"] * 0.6)))
+            base_image(panel, style, directory, picture)  # still frame for the thumbnail
+        else:
+            base_image(panel, style, directory, picture)
+            inputs = ["-i", str(picture)]
+            chain.append(motion_filter(shot["motion"], frames, style["zoom_amount"]))
+        chain.extend(fx.effect_filters(effect, frames))
+        graphic = fx.validate_graphic(shot.get("graphic"))
+        if graphic:
+            graphics[i] = graphic
+            cards = fx.graphic_frames(graphic, frames, work / f"cards_{i:03}")
+            inputs += ["-framerate", str(FPS), "-i", str(cards / "card_%04d.png")]
+            graph = "[0:v]" + ",".join(chain) + "[bg];[bg][1:v]overlay=0:0:shortest=1,format=yuv420p[v]"
+            args = common + inputs + ["-filter_complex_threads", "1", "-filter_complex", graph, "-map", "[v]"]
+        else:
+            args = common + inputs + ["-vf", ",".join(chain)]
+        command(args + ["-frames:v", str(frames)] + codec + [str(clip)], directory, f"render_shot_{i:03}")
         clips.append(clip)
         if i == 0:
             try:
@@ -531,10 +552,26 @@ def build(api, story, panels, style, audio_path, words, duration):
             space_drone(music, duration)
         else:
             original_music(music, duration)
+    sfx_path = None
+    if getattr(api.settings, "channel_theme", "") == "space":
+        try:
+            sfx_path = fx.sfx_track(work / "sfx.wav", story["shots"], timeline, duration, graphics)
+        except Exception as error:  # noqa: BLE001 - sound design is optional
+            print(f"Ses tasarımı atlandı: {str(error)[:120]}", flush=True)
+            sfx_path = None
     args = common + ["-i", str(silent), "-i", str(normalized)]
-    if music:
+    sfx_gain = getattr(api.settings, "sfx_gain_db", -14)
+    if music and sfx_path:
+        args += ["-stream_loop", "-1", "-i", str(music), "-i", str(sfx_path)]
+        af = (f"[1:a]asplit=2[speech][side];[2:a]volume={api.settings.music_gain_db}dB[music];"
+              f"[music][side]sidechaincompress=threshold=0.02:ratio=6:attack=15:release=200[ducked];"
+              f"[3:a]volume={sfx_gain}dB[sfx];[speech][ducked][sfx]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.95:latency=1[a]")
+    elif music:
         args += ["-stream_loop", "-1", "-i", str(music)]
         af = f"[1:a]asplit=2[speech][side];[2:a]volume={api.settings.music_gain_db}dB[music];[music][side]sidechaincompress=threshold=0.02:ratio=6:attack=15:release=200[ducked];[speech][ducked]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95:latency=1[a]"
+    elif sfx_path:
+        args += ["-i", str(sfx_path)]
+        af = f"[2:a]volume={sfx_gain}dB[sfx];[1:a][sfx]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95:latency=1[a]"
     else:
         af = "[1:a]anull[a]"
     escaped = (
