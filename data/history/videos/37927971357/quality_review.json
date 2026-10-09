@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 91.66666666666666,
+  "scene_match": 95,
+  "delivery": 91.66666666666666,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 3,
+      "detail": "The narrator delivers the opening lines with high energy, matching the dramatic lightning visuals."
+    },
+    {
+      "second": 15,
+      "detail": "The word-by-word captions are highly legible and well-positioned over the dark space background."
+    },
+    {
+      "second": 20,
+      "detail": "The red emphasis color for the danger-themed shot is applied correctly to the text."
+    },
+    {
+      "second": 38,
+      "detail": "The transition between shots is smooth, maintaining a consistent pace."
+    },
+    {
+      "second": 55,
+      "detail": "The narrator's tone remains engaging and clear throughout the middle section."
+    },
+    {
+      "second": 72,
+      "detail": "The final shots conclude with precise subtitle synchronization and strong vocal delivery."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary narration is highly engaging, featuring strong vocal delivery, excellent caption readability, and precise synchronization with the dramatic space-science visuals.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 82,
+    "delivery": 80,
+    "visual_readability": 85
+  },
+  "measured_scores": {
+    "subtitle_sync": 91.66666666666666,
+    "scene_match": 95,
+    "delivery": 91.66666666666666
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

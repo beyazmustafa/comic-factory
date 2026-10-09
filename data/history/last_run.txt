@@ -1,11 +1,11 @@
-run_id: 37926947250  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261009T115833087095Z/run.json
+run_id: 37927971357  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261009T120802390810Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Konuşma ve kelime zamanları",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -29,7 +29,7 @@ produce step outcome: failure
     "music_gain_db": -25,
     "caption_offset": 0,
     "language": "en",
-    "languages": "en,tr",
+    "languages": "en",
     "channel_theme": "space",
     "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
     "source": "space",
@@ -38,18 +38,57 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37926947250",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 32
+  "run_id": "37927971357",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "097775c592bf3ad93cb3cc005674849ccbe56dd023b61bd610b32b3082ebe86a",
+  "metadata_sha256": "e2fe6514273bc8f9e43b07ba8cf711f84cf2f6494df6932df6e0838fc6014fd1",
+  "quality_sha256": "fb426fb11a95ec68f4e0d556519931dcccde581d1cc09fb5dce0fed7a807440f",
+  "api_calls": 35,
+  "duration": 77.07,
+  "voice": "Orus",
+  "event": {
+    "id": "space_sprites",
+    "title": "The Red Lightning That Shoots Upward",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "sprites",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "sprites, blue jets, 90 km up",
+    "famous_line": "sprites, blue jets, 90 km up",
+    "image_terms": [
+      "sprite lightning ISS",
+      "red sprite",
+      "upper atmosphere"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Sprite_(lightning)",
+      "https://en.wikipedia.org/wiki/Upper-atmospheric_lightning",
+      "https://timsweather.au/red-sprites-lightning-upward-atmospheric-discharges",
+      "https://www.almanac.com/what-are-lightning-sprites",
+      "https://commons.wikimedia.org/wiki/File:Gigantic_jet_NOIRLab.jpg",
+      "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564).jpg",
+      "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564)_(cropped).jpg",
+      "https://images.nasa.gov/details/iss071e170351",
+      "https://commons.wikimedia.org/wiki/File:Red_sprite_lightning_seen_from_ISS_(ISS031-E-010712).jpg",
+      "https://commons.wikimedia.org/wiki/File:ISS-44_Red_Sprites,_northwest_Mexico.jpg",
+      "https://commons.wikimedia.org/wiki/File:Sprite_from_ISS.jpg"
+    ],
+    "url": "https://en.wikipedia.org/wiki/Sprite_(lightning)",
+    "_source": "space"
+  },
+  "localized": []
 }
---- data/runs/20261009T115833087095Z/diagnostics/provider_events.json
+--- data/runs/20261009T120802390810Z/diagnostics/provider_events.json
 [
-  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261009T115833087095Z/diagnostics/providers.json
+--- data/runs/20261009T120802390810Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -71,9 +110,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -166,54 +205,90 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261009T115833087095Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100; whisper-large-v3-turbo: 76.6/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.; whisper-large-v3-turbo: 76.6/100"
-]
---- data/runs/20261009T115833087095Z/voice_audition/failed_auditions.json
+--- data/runs/20261009T120802390810Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261009T115833087095Z/diagnostics/story_1.json
-{"error": "Narration too short: 110 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261009T115833087095Z/diagnostics/story_2.json
-{"error": "Narration too short: 110 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261009T115833087095Z/diagnostics/story_3.json
-{"error": "Narration too short: 116 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261009T120802390810Z/diagnostics/story_1.json
+{"error": "Panels used more than twice: ['page_009_p00', 'page_004_p00', 'page_003_p00', 'page_001_p00', 'page_011_p00']; each panel at most twice.; Only 7 distinct panels for 19 shots; use at least 14 distinct panels."}
+--- data/runs/20261009T120802390810Z/diagnostics/story_2.json
+{"error": "Narration too short: 154 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Only 7 distinct panels for 14 shots; use at least 10 distinct panels."}
+--- data/runs/20261009T120802390810Z/diagnostics/story_3.json
+{"error": "Panels used more than twice: ['page_009_p00', 'page_004_p00', 'page_003_p00', 'page_001_p00']; each panel at most twice.; Only 7 distinct panels for 18 shots; use at least 14 distinct panels."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
-Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: If Earth Stopped Spinning You Would Fly East at 1,600 km/h
+Olay araştırılıyor: The Red Lightning That Shoots Upward
 Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Uzay görselleri: 42 aday, 36 indirildi.
-Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Uzay görselleri: 19 aday, 14 indirildi.
+Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 94.6/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 91.7/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 91.7/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+
+→ Dikey video ve eşzamanlı altyazı
+
+→ Bitmiş videonun görüntü ve ses kontrolü
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261009T120802390810Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: The mysterious red lightning that shoots into space #Shorts
+Görünürlük: public
+
+Yükleme: %14
+Yükleme: %28
+Yükleme: %43
+Yükleme: %57
+Yükleme: %71
+Yükleme: %86
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=DqbAFJgFRHE&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261009T120802390810Z/video.mp4
+Boyut: 55.8 MB
+Açıklama uzunluğu: 218 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17967386190187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 17909337192480700
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).

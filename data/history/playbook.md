@@ -1,9 +1,11 @@
 # Playbook (auto-evolving)
-- Hook: shot 1 states the danger to the viewer's own body in plain words, with one number.
-- Rhythm: complete sentences of 6-14 words; one idea per shot; 22-28 shots; 85-110 seconds.
-- Plain language: common words, a comparison the viewer can feel in every third shot.
+- Hook: shot 1 states the danger to the viewer's own body in plain words, with one concrete number.
+- Rhythm: complete sentences of 6-14 words; one idea per shot; 22-26 shots; 85-110 seconds.
+- Sensory comparison: provide a physical comparison the viewer can feel in every third shot.
+- Number density: include a concrete metric (seconds, degrees, km/h, times Earth) in at least 50% of shots.
+- Emphasis cap: colored emphasis beats strictly capped between 18% and 22% of total shots.
 - Midpoint twist: one green reveal around shot 12-14.
-- Ending: the final shot is the irreversible consequence; no outro.
+- Ending: the final shot is an irreversible physical transformation; no outro or call to action.
 
 ## Fixed rules
 - Channel: "what would actually happen" space & science stories over real NASA/ESA/JWST imagery. Famous objects and questions people cannot scroll past (the Sun, black holes, Jupiter, Betelgeuse, Venus).
@@ -13,8 +15,6 @@
 - Numbers the viewer can feel in at least half the shots (seconds, degrees, km per hour, times Earth), spoken in plain words; second person where natural.
 - Plain spoken language: no scientific jargon without a one-phrase explanation; every beat a complete 6-14 word sentence.
 - One image per shot, full-bleed; no image twice in a row, each image at most twice; open on the most dramatic relevant image.
-- One scale comparison per video that fits in a kitchen or a street ("if the Sun were a basketball, Earth is a peppercorn").
-- Loop ending: the last sentence echoes the first and the last image is the first image, so the Short replays seamlessly.
 - 18-35 shots, 70-150 seconds; every shot 3-14 words; the last shot is the consequence, no outro, no call to action.
 - Emphasis colours only on real beats: red = danger/death, green = reveal, cyan = reversal; at most one in four shots.
 - Captions are single words in sync with speech; narration must never contradict what the image shows.

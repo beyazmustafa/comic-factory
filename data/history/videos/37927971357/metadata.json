@@ -1,0 +1,261 @@
+{
+  "script": {
+    "title": "The mysterious red lightning that shoots into space",
+    "description": "Discover the terrifying science of sprites and gigantic jets that blast from storm clouds into the edge of space.",
+    "hook_card": "LIGHTNING BLASTS INTO SPACE",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_009_p00",
+        "narration": "Gigantic jets of red lightning shoot upward into space from storm clouds.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_004_p00",
+        "narration": "These mysterious discharges ignite fifty kilometers above the ground in the cold mesosphere.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_003_p00",
+        "narration": "A single jellyfish sprite can stretch fifty kilometers wide across the sky.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_006_p00",
+        "narration": "The intense flash would instantly blind your unprotected retinas from close range.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_008_p00",
+        "narration": "They begin as fast ionization balls plunging at ten percent light speed.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_001_p00",
+        "narration": "This electrical avalanche triggers in less than ten milliseconds above the storm.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_011_p00",
+        "narration": "Your heart would stop if you felt this cold plasma energy field.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_009_p00",
+        "narration": "Unlike hot lightning, these space sprites are actually cold like fluorescent tubes.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "motion": "up",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_004_p00",
+        "narration": "Blue jets also blast upward from cloud tops at incredible speeds.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_003_p00",
+        "narration": "The freezing air would instantly crystallize the moisture on your bare skin.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_006_p00",
+        "narration": "Shorter blue starters only reach twenty kilometers high before fading away completely.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_008_p00",
+        "narration": "Gigantic jets accelerate to over two thousand kilometers per second into space.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_001_p00",
+        "narration": "The sudden shockwave would rupture your eardrums if you were up there.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "left",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_011_p00",
+        "narration": "One powerful upward blast once ripped a heavy NASA research payload apart.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Gigantic jets of red lightning shoot upward into space from storm clouds. These mysterious discharges ignite fifty kilometers above the ground in the cold mesosphere. A single jellyfish sprite can stretch fifty kilometers wide across the sky. The intense flash would instantly blind your unprotected retinas from close range. They begin as fast ionization balls plunging at ten percent light speed. This electrical avalanche triggers in less than ten milliseconds above the storm. Your heart would stop if you felt this cold plasma energy field. Unlike hot lightning, these space sprites are actually cold like fluorescent tubes. Blue jets also blast upward from cloud tops at incredible speeds. The freezing air would instantly crystallize the moisture on your bare skin. Shorter blue starters only reach twenty kilometers high before fading away completely. Gigantic jets accelerate to over two thousand kilometers per second into space. The sudden shockwave would rupture your eardrums if you were up there. One powerful upward blast once ripped a heavy NASA research payload apart.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "headline_candidates": {
+      "titles": [
+        "The terrifying red lightning that shoots into space",
+        "Why giant red lightning actually strikes upward",
+        "The mysterious red lightning that shoots into space",
+        "What happens when lightning strikes upward into space",
+        "The giant red lightning that blasts toward space"
+      ],
+      "hook_cards": [
+        "LIGHTNING STRIKES UPWARD",
+        "RED LIGHTNING SHOOTS UPWARD",
+        "LIGHTNING BLASTS INTO SPACE",
+        "IT STRIKES UPWARD INSTEAD",
+        "RED LIGHTNING BLASTS UPWARD"
+      ]
+    },
+    "event": {
+      "id": "space_sprites",
+      "title": "The Red Lightning That Shoots Upward",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "sprites",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "sprites, blue jets, 90 km up",
+      "famous_line": "sprites, blue jets, 90 km up",
+      "image_terms": [
+        "sprite lightning ISS",
+        "red sprite",
+        "upper atmosphere"
+      ],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Sprite_(lightning)",
+        "https://en.wikipedia.org/wiki/Upper-atmospheric_lightning",
+        "https://timsweather.au/red-sprites-lightning-upward-atmospheric-discharges",
+        "https://www.almanac.com/what-are-lightning-sprites",
+        "https://commons.wikimedia.org/wiki/File:Gigantic_jet_NOIRLab.jpg",
+        "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564).jpg",
+        "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564)_(cropped).jpg",
+        "https://images.nasa.gov/details/iss071e170351",
+        "https://commons.wikimedia.org/wiki/File:Red_sprite_lightning_seen_from_ISS_(ISS031-E-010712).jpg",
+        "https://commons.wikimedia.org/wiki/File:ISS-44_Red_Sprites,_northwest_Mexico.jpg",
+        "https://commons.wikimedia.org/wiki/File:Sprite_from_ISS.jpg"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Sprite_(lightning)",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": [
+        "Narration too short: 168 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.",
+        "Only 7 distinct panels for 14 shots; use at least 10 distinct panels."
+      ]
+    },
+    "full_description": "Discover the terrifying science of sprites and gigantic jets that blast from storm clouds into the edge of space.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: Image Science and Analysis Laboratory, NASA-Johnson Space Center. \"The Gateway t (public domain); International Gemini Observatory/NOIRLab/NSF/AURA/A. Smith (cc by 4.0); JSC (public domain (NASA)); NASA (public domain); NASA/Expedition 31 (public domain); NASA/JSC/ESRS/Matthew Dominick/Simeon Schmauß (public domain); semeion.photo (public domain)\nSources:\nhttps://commons.wikimedia.org/wiki/File:Gigantic_jet_NOIRLab.jpg\nhttps://commons.wikimedia.org/wiki/File:ISS-44_Red_Sprites,_northwest_Mexico.jpg\nhttps://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564).jpg\nhttps://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564)_(cropped).jpg\nhttps://commons.wikimedia.org/wiki/File:Red_sprite_lightning_seen_from_ISS_(ISS031-E-010712).jpg\nhttps://commons.wikimedia.org/wiki/File:Sprite_from_ISS.jpg\nhttps://images.nasa.gov/details/iss071e170351",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "The mysterious red lightning that shoots into space\n\nDiscover the terrifying science of sprites and gigantic jets that blast from storm clouds into the edge of space."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:Gigantic_jet_NOIRLab.jpg",
+    "https://commons.wikimedia.org/wiki/File:ISS-44_Red_Sprites,_northwest_Mexico.jpg",
+    "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564).jpg",
+    "https://commons.wikimedia.org/wiki/File:Red_Sprites_from_the_ISS_(53791152564)_(cropped).jpg",
+    "https://commons.wikimedia.org/wiki/File:Red_sprite_lightning_seen_from_ISS_(ISS031-E-010712).jpg",
+    "https://commons.wikimedia.org/wiki/File:Sprite_from_ISS.jpg",
+    "https://images.nasa.gov/details/iss071e170351"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

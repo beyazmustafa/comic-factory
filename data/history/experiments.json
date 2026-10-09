@@ -488,5 +488,14 @@
       "change": "Address the viewer directly using 'you' or 'your' in at least 40% of all shot beats.",
       "rationale": "Direct second-person narration creates immediate personal stakes and boosts viewer retention in science shorts."
     }
+  },
+  {
+    "run_id": "37927971357",
+    "chosen_at": "2026-10-09T12:08:14+00:00",
+    "experiment": {
+      "name": "body_part_anchor_per_third_shot",
+      "change": "Explicitly name a specific human body part (e.g., lungs, eardrums, retinas, skin) in at least one out of every three shots.",
+      "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
+    }
   }
 ]
