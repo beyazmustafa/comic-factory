@@ -228,7 +228,7 @@ class AudioTests(TemporaryTest):
         )
         return path
 
-    def align(self, api, path, text, directory):
+    def align(self, api, path, text, directory, soft=False):
         duration = len(voice.read_wave(path)) / voice.RATE
         words, metrics = core.align_words(text, timestamps(text), duration)
         return {
@@ -286,7 +286,7 @@ class AudioTests(TemporaryTest):
         script["shots"][1]["narration"] = "Kapı tekrar açıldı."
         script["narration"] = " ".join(s["narration"] for s in script["shots"])
 
-        def flaky(api, path, text, directory):
+        def flaky(api, path, text, directory, soft=False):
             if text.startswith("Kapı"):
                 raise SpeechFailure("fixture outage")
             return self.align(api, path, text, directory)

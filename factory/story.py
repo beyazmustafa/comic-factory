@@ -1,12 +1,36 @@
 from collections import Counter
 import json
+import re
 from .api import SourceUnavailable
 from .core import save_json, language_name
 from .panels import verify_shots
 from .research import clean
 
 
-def validate_story(value, panels, facts, max_shots=40):
+UNIT_WORDS = {
+    "en": [
+        (r"(?<=\d)\s*°\s*C\b", " degrees Celsius"), (r"(?<=\d)\s*°\s*F\b", " degrees Fahrenheit"), (r"(?<=\d)\s*°(?!\w)", " degrees"),
+        (r"(?<=\d)\s*km/h\b", " kilometers per hour"), (r"(?<=\d)\s*km/s\b", " kilometers per second"), (r"(?<=\d)\s*m/s\b", " meters per second"),
+        (r"(?<=\d)\s*mph\b", " miles per hour"), (r"(?<=\d)\s*km\b", " kilometers"), (r"(?<=\d)\s*kg\b", " kilograms"),
+        (r"(?<=\d)\s*%", " percent"), (r"(?<=\d)\s*mSv\b", " millisieverts"), (r"(?<=\d)\s*ly\b", " light-years"),
+        (r"(?<=\d)x(?=\s)", " times"), (r"\b(\d+)\s*-\s*(\d+)\b", r"\1 to \2"),
+    ],
+    "tr": [
+        (r"(?<=\d)\s*°\s*C\b", " derece"), (r"(?<=\d)\s*km/s(?:a|aat)?\b", " kilometre saat"), (r"(?<=\d)\s*km\b", " kilometre"),
+        (r"(?<=\d)\s*kg\b", " kilogram"), (r"(?<=\d)\s*%", " yüzde"), (r"%\s*(?=\d)", "yüzde "),
+    ],
+}
+
+
+def spoken_form(text, language="en"):
+    """Units written the way the narrator will say them, so the caption words
+    and the Whisper transcript agree ("1,600 km/h" → "1,600 kilometers per hour")."""
+    for pattern, replacement in UNIT_WORDS.get(language, UNIT_WORDS["en"]):
+        text = re.sub(pattern, replacement, text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def validate_story(value, panels, facts, max_shots=40, language="en"):
     pl, fl = {p["id"] for p in panels}, {f["id"] for f in facts}
     # Evidence repair: a small model often cites a fact id that does not exist.
     # Facts from the same page as the panel are the natural replacement.
@@ -26,7 +50,7 @@ def validate_story(value, panels, facts, max_shots=40):
     for i, row in enumerate(shots):
         if not isinstance(row, dict):
             raise ValueError("Geçersiz sahne.")
-        text, ids = clean(row.get("narration")), row.get("fact_ids")
+        text, ids = spoken_form(clean(row.get("narration")), language), row.get("fact_ids")
         if row.get("panel_id") not in pl or not 3 <= len(text.split()) <= 40:
             # One bad shot must not sink the draft: skip it, keep the rest.
             skipped.append(i + 1)
@@ -160,7 +184,7 @@ def create(api, event, panels, facts, style):
     famous = event.get("_source") in {"famous", "space"}
     space = event.get("_source") == "space"
     mode = (
-        "MODE: a space/science story for a global Shorts audience, told like a thriller: what would ACTUALLY happen, step by step, with numbers the viewer can feel (seconds, degrees, kilometres per second), second person where it fits ('your blood', 'you have 15 seconds'). FACTS are the science; PANELS are real NASA/ESA/telescope photographs with a description each: for every beat pick the image whose visible content fits the sentence best (the Sun's surface for heat, a spacewalk for the body, a nebula for scale); never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. Never put two visually similar images back to back (two telescope dishes, two similar nebulae): alternate subjects so every cut feels new. No character names needed; name the object (the Sun, Jupiter, Betelgeuse) in the first sentence. "
+        "MODE: a space/science story for a global Shorts audience, told like a thriller: what would ACTUALLY happen, step by step, with numbers the viewer can feel (seconds, degrees, kilometres per second), second person where it fits ('your blood', 'you have 15 seconds'). FACTS are the science; PANELS are real NASA/ESA/telescope photographs with a description each: for every beat pick the image whose visible content fits the sentence best (the Sun's surface for heat, a spacewalk for the body, a nebula for scale); never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. Never put two visually similar images back to back (two telescope dishes, two similar nebulae): alternate subjects so every cut feels new. No character names needed; name the object (the Sun, Jupiter, Betelgeuse) in the first sentence. LANGUAGE: simple, spoken English a 12-year-old gets on first hearing: short common words, one idea per sentence, no jargon (no 'millisieverts', 'perchlorates', 'tidal locking' without a plain explanation), numbers rounded and compared to things people know ('hotter than a pizza oven', 'faster than a bullet'). Every beat a complete sentence of 6..14 words, never a fragment. "
         if space else
         "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. Each panel carries confidence = how clearly it belongs to this exact storyline; use 75+ panels for the shocking beats and the opening, lower ones only as fillers. VARIETY IS MANDATORY: never the same panel in two consecutive shots, each panel at most twice, at least 75% of shots on distinct panels, covers (kind=cover) in at most a quarter of shots and never as the opening shot. "
         if famous else
@@ -196,7 +220,7 @@ Return {{"title":"{language_name(api)}","description":"{language_name(api)}","ho
 REPAIR FEEDBACK {feedback}""",
         )
         try:
-            value = validate_story(draft, panels, facts, api.settings.max_shots)
+            value = validate_story(draft, panels, facts, api.settings.max_shots, getattr(api.settings, "language", "en"))
         except (ValueError, TypeError, KeyError) as error:
             feedback = str(error)
             save_json(

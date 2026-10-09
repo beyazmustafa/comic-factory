@@ -201,8 +201,12 @@ def transcribe(path, model, diagnostics, language="en"):
     return raw.get("words", [])
 
 
-def align_clip(api, path, text, directory):
+def align_clip(api, path, text, directory, soft=False):
+    """soft=True (last attempt): a recording a few points under the bar is
+    kept with estimated timings rather than losing the whole video, as long
+    as every word was heard (coverage) and timing is mostly anchored."""
     duration = len(read_wave(path)) / RATE
+    best = None
     models = list(
         dict.fromkeys(
             [api.settings.whisper_model, "whisper-large-v3", "whisper-large-v3-turbo"]
@@ -219,17 +223,20 @@ def align_clip(api, path, text, directory):
                 {"words": words, "metrics": metrics},
             )
             print(f"Ses eşleştirme: {metrics['score']:.1f}/100 | {model}", flush=True)
+            result = {"words": words, "metrics": metrics, "duration": duration, "model": model}
             if metrics["score"] >= api.settings.alignment_threshold:
-                return {
-                    "words": words,
-                    "metrics": metrics,
-                    "duration": duration,
-                    "model": model,
-                }
+                return result
+            if best is None or metrics["score"] > best["metrics"]["score"]:
+                best = result
             errors.append(f"{model}: {metrics['score']:.1f}/100")
         except Exception as error:
             errors.append(f"{model}: {type(error).__name__}: {str(error)[:350]}")
         save_json(directory / "alignment_errors.json", errors)
+    floor = max(78, api.settings.alignment_threshold - 6)
+    if soft and best and best["metrics"]["score"] >= floor and best["metrics"].get("coverage", 0) >= 90:
+        api.note(f"Ses bölümü eşik altında kabul edildi ({best['metrics']['score']:.1f}/100, son deneme).")
+        best["metrics"]["soft_accept"] = True
+        return best
     raise SpeechFailure("Bu ses bölümü eşleşmedi: " + "; ".join(errors))
 
 
@@ -451,7 +458,8 @@ def _build_audio(api, story, voice, style, cache):
                 print(f"Ses bölümü {i + 1}, deneme {attempt + 1}", flush=True)
                 try:
                     path = synthesize(api, text, voice, style, work / "narration.wav")
-                    accepted = align_clip(api, path, text, work)
+                    last_try = attempt == api.settings.repair_attempts - 1
+                    accepted = align_clip(api, path, text, work, soft=last_try)
                     engine = "edge" if (voice in EDGE_VOICE_IDS or getattr(api, "tts_fallback", False)) else "gemini"
                     accepted.update(audio_sha256=file_hash(path), signature=key, engine=engine)
                     shutil.copy2(path, directory / "narration.wav")

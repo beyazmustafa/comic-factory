@@ -320,7 +320,7 @@ Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":
                 relevance, drama = float(row.get("relevance", 0)), float(row.get("drama", 0))
             except (TypeError, ValueError):
                 relevance, drama = 0, 0
-            if not usable or relevance < 50:
+            if not usable or relevance < 50 or drama < 40:
                 continue
             focus = row.get("focus")
             if not (isinstance(focus, list) and len(focus) == 2):

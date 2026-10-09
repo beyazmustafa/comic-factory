@@ -208,17 +208,21 @@ def load_video_metadata() -> tuple[str, str, list[str]]:
             tag = clean_text(hashtag).lstrip("#")
             if tag and tag not in tags:
                 tags.append(tag)
-    shorts_tags = ["shorts", "comics", "comic books", "superhero", "golden age comics", "comic recap"]
-    for tag in shorts_tags:
+    for tag in ["shorts"] + (["space", "science", "astronomy", "nasa", "universe"] if "space" in tags else []):
         if tag not in tags:
             tags.append(tag)
+    # YouTube rejects descriptions with angle brackets (invalidDescription)
+    # and titles with them too; strip anything that is not plain text.
+    description = re.sub(r"[<>]", "", description)
+    description = "".join(ch for ch in description if ch == "\n" or ch >= " ")
+    title = re.sub(r"[<>]", "", title)
     if not title:
         raise YouTubeUploaderError("Video başlığı bulunamadı.")
     # Shorts eligibility: vertical video + #Shorts in title/description.
     if "#shorts" not in title.lower():
         title = (title[:88].rstrip() + "..." if len(title) > 91 else title) + " #Shorts"
     if "#shorts" not in description.lower():
-        description = "#Shorts #comics #superhero\n\n" + description
+        description = "#Shorts " + " ".join("#" + t for t in tags[:3] if t != "shorts") + "\n\n" + description
     if len(description) > 5000:
         description = description[:5000]
     return (title, description, tags)

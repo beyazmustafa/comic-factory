@@ -201,6 +201,32 @@ def thumbnail(base_png, text, style, language, output):
     return output
 
 
+_GRADE_CACHE = {}
+
+
+def cinematic(picture):
+    """Photo grade for the space channel: a little more contrast and colour,
+    a soft vignette and a dark gradient behind the caption band so yellow
+    words read on bright nebulae. Cached masks: one per output size."""
+    picture = ImageEnhance.Contrast(picture).enhance(1.08)
+    picture = ImageEnhance.Color(picture).enhance(1.12)
+    picture = picture.filter(ImageFilter.UnsharpMask(radius=1.2, percent=60, threshold=3))
+    key = picture.size
+    if key not in _GRADE_CACHE:
+        w, h = key
+        yy, xx = np.mgrid[0:h, 0:w]
+        dx, dy = (xx - w / 2) / (w / 2), (yy - h / 2) / (h / 2)
+        radial = np.clip(np.sqrt(dx * dx + dy * dy) - 0.55, 0, 1) / 0.75
+        vignette = 1 - 0.38 * radial ** 1.6
+        band = np.clip((yy / h - 0.50) / 0.28, 0, 1)
+        gradient = 1 - 0.22 * np.sin(np.clip(band, 0, 1) * np.pi)
+        _GRADE_CACHE[key] = (vignette * gradient).astype(np.float32)
+    mask = _GRADE_CACHE[key]
+    array = np.asarray(picture, dtype=np.float32)
+    array *= mask[:, :, None]
+    return Image.fromarray(np.clip(array, 0, 255).astype(np.uint8))
+
+
 def polish(picture):
     """Make an upscaled old scan read crisp without changing its content:
     gentle levels, a touch of colour, and an unsharp mask tuned for line art."""
@@ -222,7 +248,7 @@ def base_image(panel, style, directory, output):
         except (TypeError, ValueError, IndexError):
             centering = (0.5, 0.5)
         framed = ImageOps.fit(picture, (WIDTH * 2, HEIGHT * 2), method=Image.Resampling.LANCZOS, centering=centering)
-        framed = ImageEnhance.Contrast(framed).enhance(1.06)
+        framed = cinematic(framed)
         framed.save(output, "PNG", compress_level=1)
         return
     with Image.open(directory / panel["page_file"]) as source:
