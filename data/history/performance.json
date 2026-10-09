@@ -224,9 +224,9 @@
       "views": 305,
       "likes": 5,
       "comments": 0,
-      "hours_live": 164.0,
-      "views_per_hour": 1.86,
-      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "hours_live": 179.9,
+      "views_per_hour": 1.7,
+      "fetched_at": "2026-10-09T11:58:33+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 38.17,
@@ -376,6 +376,11 @@
       },
       {
         "h": 164.0,
+        "views": 305,
+        "likes": 5
+      },
+      {
+        "h": 179.9,
         "views": 305,
         "likes": 5
       }
@@ -1466,15 +1471,15 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1207,
+      "views": 1208,
       "likes": 38,
       "comments": 3,
-      "hours_live": 105.8,
-      "views_per_hour": 11.4,
-      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "hours_live": 121.8,
+      "views_per_hour": 9.92,
+      "fetched_at": "2026-10-09T11:58:33+00:00",
       "views_24h": 558,
       "views_72h": 1209,
-      "average_view_percentage": 82.28,
+      "average_view_percentage": 82.47,
       "average_view_duration": 44,
       "shares": 1
     },
@@ -1537,6 +1542,11 @@
       {
         "h": 105.8,
         "views": 1207,
+        "likes": 38
+      },
+      {
+        "h": 121.8,
+        "views": 1208,
         "likes": 38
       }
     ]
@@ -1655,12 +1665,12 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 592,
+      "views": 608,
       "likes": 13,
       "comments": 0,
-      "hours_live": 79.1,
-      "views_per_hour": 7.48,
-      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "hours_live": 95.1,
+      "views_per_hour": 6.39,
+      "fetched_at": "2026-10-09T11:58:33+00:00",
       "views_24h": 556,
       "views_72h": 587,
       "average_view_percentage": 69.28,
@@ -1701,6 +1711,11 @@
       {
         "h": 79.1,
         "views": 592,
+        "likes": 13
+      },
+      {
+        "h": 95.1,
+        "views": 608,
         "likes": 13
       }
     ]
@@ -1798,14 +1813,14 @@
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
     },
     "stats": {
-      "views": 119,
+      "views": 120,
       "likes": 3,
       "comments": 0,
-      "hours_live": 69.9,
-      "views_per_hour": 1.7,
-      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "hours_live": 85.9,
+      "views_per_hour": 1.4,
+      "fetched_at": "2026-10-09T11:58:33+00:00",
       "views_24h": 118,
-      "views_72h": null,
+      "views_72h": 119,
       "average_view_percentage": 57.440000000000005,
       "average_view_duration": 47,
       "shares": 0
@@ -1839,6 +1854,11 @@
       {
         "h": 69.9,
         "views": 119,
+        "likes": 3
+      },
+      {
+        "h": 85.9,
+        "views": 120,
         "likes": 3
       }
     ]
@@ -1936,12 +1956,12 @@
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
     "stats": {
-      "views": 1105,
-      "likes": 29,
+      "views": 1177,
+      "likes": 30,
       "comments": 1,
-      "hours_live": 7.5,
-      "views_per_hour": 147.73,
-      "fetched_at": "2026-10-08T20:00:38+00:00",
+      "hours_live": 23.4,
+      "views_per_hour": 50.2,
+      "fetched_at": "2026-10-09T11:58:33+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -1950,6 +1970,11 @@
         "h": 7.5,
         "views": 1105,
         "likes": 29
+      },
+      {
+        "h": 23.4,
+        "views": 1177,
+        "likes": 30
       }
     ]
   },

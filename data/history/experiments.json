@@ -476,6 +476,17 @@
       "name": "target_exact_22_shots_duration",
       "change": "Lock target shot count to exactly 22 shots across 88 to 95 seconds.",
       "rationale": "Top-performing videos cluster tightly around an average of 22 shots and 92.6 seconds."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "37926947250",
+    "chosen_at": "2026-10-09T11:59:46+00:00",
+    "experiment": {
+      "name": "second_person_immersion_threshold",
+      "change": "Address the viewer directly using 'you' or 'your' in at least 40% of all shot beats.",
+      "rationale": "Direct second-person narration creates immediate personal stakes and boosts viewer retention in science shorts."
     }
   }
 ]

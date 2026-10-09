@@ -1,6 +1,6 @@
-run_id: 37836103186  attempt: 1  event: schedule
+run_id: 37926947250  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261008T200037874693Z/run.json
+--- data/runs/20261009T115833087095Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
@@ -38,18 +38,18 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "37836103186",
+  "run_id": "37926947250",
   "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 25
+  "api_calls": 32
 }
---- data/runs/20261008T200037874693Z/diagnostics/provider_events.json
+--- data/runs/20261009T115833087095Z/diagnostics/provider_events.json
 [
-  "Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261008T200037874693Z/diagnostics/providers.json
+--- data/runs/20261009T115833087095Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -71,9 +71,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -166,58 +166,54 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261008T200037874693Z/audio/chunk_000/failures.json
+--- data/runs/20261009T115833087095Z/audio/chunk_000/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 68.3/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 70.7/100; whisper-large-v3-turbo: 68.3/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 68.3/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.3/100; whisper-large-v3-turbo: 70.7/100"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100; whisper-large-v3-turbo: 76.6/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 41.; whisper-large-v3-turbo: 76.6/100"
 ]
---- data/runs/20261008T200037874693Z/voice_audition/failed_auditions.json
+--- data/runs/20261009T115833087095Z/voice_audition/failed_auditions.json
 {}
---- data/runs/20261008T200037874693Z/diagnostics/story_1.json
-{"error": "Narration too short: 131 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261008T200037874693Z/diagnostics/story_2.json
-{"error": "Narration too short: 115 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
---- data/runs/20261008T200037874693Z/diagnostics/story_3.json
-{"error": "Narration too short: 113 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261009T115833087095Z/diagnostics/story_1.json
+{"error": "Narration too short: 110 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261009T115833087095Z/diagnostics/story_2.json
+{"error": "Narration too short: 110 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
+--- data/runs/20261009T115833087095Z/diagnostics/story_3.json
+{"error": "Narration too short: 116 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments."}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Oyun kitabı güncelleme: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: What Happens If You Fall Into the Sun
-Arama (bing) yanıt vermedi: TimeoutException
+Olay araştırılıyor: If Earth Stopped Spinning You Would Fly East at 1,600 km/h
+Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
 Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: TimeoutException
+Arama (bing) yanıt vermedi: DDGSException
 Arama (brave) yanıt vermedi: DDGSException
 Arama (yahoo) yanıt vermedi: DDGSException
 Arama (duckduckgo) yanıt vermedi: DDGSException
 Arama (google) yanıt vermedi: DDGSException
-Bilim gerçekleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Bilim gerçekleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Uzay görselleri: 50 aday, 24 indirildi.
+Uzay görselleri: 42 aday, 36 indirildi.
+Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 68.3/100 | whisper-large-v3
-Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
+Ses eşleştirme: 76.6/100 | whisper-large-v3
 Ses bölümü 1, deneme 2
-Ses eşleştirme: 70.7/100 | whisper-large-v3
-Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
+Ses eşleştirme: 76.6/100 | whisper-large-v3
+Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 3
-Ses eşleştirme: 68.3/100 | whisper-large-v3
-Ses eşleştirme: 68.3/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 4
-Ses eşleştirme: 68.3/100 | whisper-large-v3
-Ses eşleştirme: 70.7/100 | whisper-large-v3-turbo
+Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
 HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.

@@ -12,6 +12,7 @@
 - Midpoint twist: Place a single green reveal shot at shot 12-14.
 - Penultimate turning point: Place a single cyan turn shot at beat N-1.
 - Consequence final beat: Conclude the final shot with an irreversible physical state transformation.
+- Second person immersion: Address the viewer directly as 'you' in at least 40% of all narration beats.
 
 ## Fixed rules
 - Channel: "what would actually happen" space & science stories over real NASA/ESA/JWST imagery. Famous objects and questions people cannot scroll past (the Sun, black holes, Jupiter, Betelgeuse, Venus).
