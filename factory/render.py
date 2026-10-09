@@ -334,7 +334,38 @@ def motion_filter(motion, frames, amount):
         y = f"(ih-ih/zoom)*{progress}"
     elif motion == "up":
         y = f"(ih-ih/zoom)*(1-{progress})"
+    if frames > round(3.0 * FPS) and motion != "hold":
+        # Retention research: a visual change every ~2 s. Long shots get a
+        # small punch-in at the midpoint so no frame sits still for 3+ s.
+        zoom = f"({zoom})+0.045*gte(on,{frames // 2})"
     return f"zoompan=z='{zoom}':x='{x}':y='{y}':d={frames}:s={WIDTH}x{HEIGHT}:fps={FPS},setsar=1,format=yuv420p"
+
+
+def space_drone(path, duration):
+    """Procedural cinematic bed for the space channel: detuned low pads that
+    swell slowly, a sub-bass breath every ~11 s, no beat, no melody — a floor
+    under the narration (ducked by the sidechain), never a song."""
+    rng = np.random.default_rng(7)
+    n = round(duration * RATE)
+    t = np.arange(n, dtype=np.float64) / RATE
+    output = np.zeros(n)
+    for base in (55.0, 82.41, 110.0):
+        for detune in (-0.6, 0.0, 0.7):
+            freq = base * (1 + detune / 100)
+            phase = rng.uniform(0, 2 * np.pi)
+            lfo = 0.5 + 0.5 * np.sin(2 * np.pi * t / rng.uniform(13, 23) + phase)
+            output += 0.035 * lfo * np.sin(2 * np.pi * freq * t + 0.4 * np.sin(2 * np.pi * 0.07 * t))
+    swell = np.clip(np.sin(2 * np.pi * t / 11.0), 0, 1) ** 3
+    output += 0.05 * swell * np.sin(2 * np.pi * 36.7 * t)
+    shimmer = 0.012 * np.sin(2 * np.pi * 440.0 * t) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 17.0))
+    output += shimmer * (0.5 + 0.5 * np.sin(2 * np.pi * 0.05 * t))
+    # One-pole low-pass to keep it soft, then fade in/out.
+    alpha = 0.08
+    for i in range(1, n):
+        output[i] = output[i - 1] + alpha * (output[i] - output[i - 1])
+    output *= np.minimum(1, t / 2.5) * np.minimum(1, np.maximum(0, duration - t) / 3)
+    peak = np.max(np.abs(output)) or 1
+    write_wave(path, np.clip(output / peak * 0.5 * 32767, -32768, 32767).astype("<i2"))
 
 
 def original_music(path, duration):
@@ -496,7 +527,10 @@ def build(api, story, panels, style, audio_path, words, duration):
             raise FactoryError("Seçilen müzik dosyası bulunamadı.")
     elif style["music_present"]:
         music = work / "original_underscore.wav"
-        original_music(music, duration)
+        if getattr(api.settings, "channel_theme", "") == "space":
+            space_drone(music, duration)
+        else:
+            original_music(music, duration)
     args = common + ["-i", str(silent), "-i", str(normalized)]
     if music:
         args += ["-stream_loop", "-1", "-i", str(music)]

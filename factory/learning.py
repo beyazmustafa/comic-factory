@@ -227,7 +227,9 @@ def judge_experiments(rows, experiments):
         if not row or (row.get("stats") or {}).get("hours_live", 0) < 12:
             continue
         index = ordered.index(row)
-        previous = ordered[max(0, index - 3) : index]
+        source = (row.get("event") or {}).get("_source")
+        same = [r for r in ordered[:index] if (r.get("event") or {}).get("_source") == source] or ordered[:index]
+        previous = same[-4:]
         if not previous:
             continue
         own, metric = score_of(row)
@@ -258,7 +260,13 @@ def insights(rows):
         colored = sum(sum(v for k2, v in r["profile"].get("emphasis", {}).items() if k2 != "normal") for r in group)
         return round(colored / totals, 2)
 
+    def retention(group):
+        values = [(r.get("stats") or {}).get("average_view_percentage") for r in group]
+        values = [v for v in values if isinstance(v, (int, float))]
+        return round(sum(values) / len(values), 1) if values else None
+
     return {
+        "top_retention_pct": retention(top), "bottom_retention_pct": retention(bottom),
         "top_titles": [r["profile"]["title"] for r in top],
         "bottom_titles": [r["profile"]["title"] for r in bottom],
         "top_means": {k: mean(top, k) for k in keys} | {"colored_emphasis_share": emphasis_share(top)},
@@ -270,7 +278,8 @@ def insights(rows):
 LEVERS = (
     "hook wording and length", "number of shots and target duration", "words per beat and words per minute",
     "which beats get red/green/cyan emphasis and how often", "title pattern", "story structure (what to open on, where the twist goes)",
-    "which panels to favour (close-ups, action, reactions)", "ending beat",
+    "which panels to favour (close-ups, action, reactions)", "ending beat and loop (last line echoing the first)",
+    "scale comparisons the viewer can feel", "plainness of language",
 )
 
 
@@ -311,7 +320,7 @@ LAST VIDEO'S QUALITY REVIEW: {json.dumps(previous_issues, ensure_ascii=False)}
 LAST EXPERIMENT (verdict computed from view counts by code when "judged_by" is "numbers"): {json.dumps(last_experiment, ensure_ascii=False)}
 MEASURED DIFFERENCES between the best and worst third of videos (empty until enough data): {json.dumps(numbers, ensure_ascii=False)}
 LEVERS YOU CONTROL (the only things a rule or experiment may change): {json.dumps(LEVERS)}. Rendering features that do not exist (caption colours per speaker, music, fonts, animations) must never appear in the playbook.
-Rules: keep what the numbers support, drop what they contradict, fix what the review flagged. The section starting with "## Fixed rules" is written by the showrunner and must be copied into the new playbook VERBATIM and unchanged; your own rules go above it. Do not invent statistics. Choose exactly ONE new experiment for the next video — a concrete, checkable change in hook, pacing, emphasis, title style or structure that differs from the last experiment — so the following run can measure it. Never weaken accuracy: narration must still match the panels.
+Rules: keep what the numbers support, drop what they contradict, fix what the review flagged. A rule may state a number only as a RANGE and only when at least 6 published videos of this channel support it; with fewer videos keep ranges wide (e.g. 18-30 shots, 75-120 seconds) and never write "exactly" or "strictly". Retention (average_view_percentage, average_view_duration) outranks raw views: a video that is watched to the end teaches more than one that was merely clicked. Prefer rules about hooks, plain language, comparisons the viewer can feel, loop endings and where the payoff sits. The section starting with "## Fixed rules" is written by the showrunner and must be copied into the new playbook VERBATIM and unchanged; your own rules go above it. Do not invent statistics. Choose exactly ONE new experiment for the next video — a concrete, checkable change in hook, pacing, emphasis, title style or structure that differs from the last experiment — so the following run can measure it. Never weaken accuracy: narration must still match the panels.
 Return {{"playbook":"markdown, max 14 bullet lines, concrete and testable","experiment":{{"name":"short","change":"one sentence instruction to the writer","rationale":"one sentence"}},"verdict_on_last_experiment":"kept|dropped|unknown","notes":"one sentence"}}.""",
         )
         new_playbook = str(verdict.get("playbook") or "").strip()

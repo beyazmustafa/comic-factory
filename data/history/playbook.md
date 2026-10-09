@@ -13,6 +13,8 @@
 - Numbers the viewer can feel in at least half the shots (seconds, degrees, km per hour, times Earth), spoken in plain words; second person where natural.
 - Plain spoken language: no scientific jargon without a one-phrase explanation; every beat a complete 6-14 word sentence.
 - One image per shot, full-bleed; no image twice in a row, each image at most twice; open on the most dramatic relevant image.
+- One scale comparison per video that fits in a kitchen or a street ("if the Sun were a basketball, Earth is a peppercorn").
+- Loop ending: the last sentence echoes the first and the last image is the first image, so the Short replays seamlessly.
 - 18-35 shots, 70-150 seconds; every shot 3-14 words; the last shot is the consequence, no outro, no call to action.
 - Emphasis colours only on real beats: red = danger/death, green = reveal, cyan = reversal; at most one in four shots.
 - Captions are single words in sync with speech; narration must never contradict what the image shows.

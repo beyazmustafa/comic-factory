@@ -28,7 +28,7 @@ STYLE = {'profile_id': 'space-science-en-v1',
  'panel_max_width': 1.0,
  'panel_max_height': 1.0,
  'panel_center_y': 0.5,
- 'music_present': False,
+ 'music_present': True,
  'narrator_delivery': 'Energetic, curiosity-driven storytelling like a top documentary Shorts '
                       'narrator: open on the shocking moment, stress key words, build tension '
                       'with short dramatic pauses, land every sentence ending. Natural, not shouted.',
