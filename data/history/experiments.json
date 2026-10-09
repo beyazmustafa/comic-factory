@@ -507,17 +507,15 @@
       "name": "loop_ending_first_line_echo",
       "change": "Make the final shot's phrasing echo the vocabulary and imagery of the opening hook line to create a seamless playback loop.",
       "rationale": "Directly echoing the hook in the final beat promotes continuous replaying and increases short-form loop completion rates."
-    },
-    "verdict": "kept",
-    "judged_by": "model"
+    }
   },
   {
-    "run_id": "37981160472",
-    "chosen_at": "2026-10-09T19:36:14+00:00",
+    "run_id": "37981203541",
+    "chosen_at": "2026-10-09T19:58:12+00:00",
     "experiment": {
-      "name": "opening_shot_danger_emphasis",
-      "change": "Mark the very first shot narration beat with red danger emphasis while maintaining a total colored emphasis budget under 25%.",
-      "rationale": "High-performing videos show higher immediate retention when lethal stakes are visually reinforced on frame one."
+      "name": "cyan_reversal_at_shot_six",
+      "change": "Place a single cyan emphasis reversal beat at shot 6 across all upcoming script structures.",
+      "rationale": "Introducing an early narrative reversal beat at shot 6 creates mid-hook friction to boost retention through the first 20 seconds."
     }
   }
 ]
