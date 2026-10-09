@@ -1,0 +1,453 @@
+{
+  "script": {
+    "title": "How a massive solar superstorm could end modern society",
+    "description": "A step-by-step scientific breakdown of what would actually happen if a Carrington-class solar superstorm struck our modern world today.",
+    "hook_card": "OUR WORLD WILL GO DARK",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_026_p00",
+        "narration": "A giant solar superstorm from the Sun threatens to destroy our modern world.",
+        "fact_ids": [
+          "fact_000",
+          "fact_001"
+        ],
+        "effect": "flash",
+        "graphic": null,
+        "impact_word": "SUPERSTORM",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_019_p00",
+        "narration": "Deep inside, twisted magnetic fields trap energy equal to billions of exploding hydrogen bombs.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_027_p00",
+        "narration": "If the Sun were a basketball, Earth is just a tiny plastic bead.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "scale",
+          "big": "Sun",
+          "small": "Earth",
+          "ratio": 109.0,
+          "label": "Size Comparison"
+        },
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_001_p00",
+        "narration": "In 1859, a massive white flare erupted and shot billions of tons of plasma.",
+        "fact_ids": [
+          "fact_001",
+          "fact_002"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_023_p00",
+        "narration": "This superheated cloud raced through space at two thousand kilometers per second.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "counter",
+          "value": 2000.0,
+          "unit": "km/s",
+          "label": "CME Speed"
+        },
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_012_p00",
+        "narration": "It crossed the huge cosmic gulf to reach Earth in just eighteen hours.",
+        "fact_ids": [
+          "fact_003"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_005_p00",
+        "narration": "The plasma slammed into our magnetic shield with terrifying kinetic force.",
+        "fact_ids": [
+          "fact_004",
+          "fact_005"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_006_p00",
+        "narration": "The impact squeezed our magnetic shield down by sixty thousand kilometers.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_002_p00",
+        "narration": "Brilliant green lights filled the night sky, waking people up at midnight.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_010_p00",
+        "narration": "The intense glow was bright enough to read a newspaper by.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_016_p00",
+        "narration": "Electric currents surged through telegraph wires, shocking the operators' hands.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "SHOCKING",
+        "motion": "right",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_028_p00",
+        "narration": "Sparks flew from the machines and set telegraph paper on fire.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_007_p00",
+        "narration": "Today, our global power grids carry hundreds of thousands of volts.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_017_p00",
+        "narration": "A similar storm would send massive currents surging deep into the ground.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_018_p00",
+        "narration": "Within minutes, giant power transformers would heat up past three hundred degrees.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "counter",
+          "value": 300.0,
+          "unit": "degrees C",
+          "label": "Transformer Temp"
+        },
+        "impact_word": "HEAT",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_020_p00",
+        "narration": "The heavy metal coils inside would melt like wax in an oven.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": "blackout",
+        "graphic": null,
+        "impact_word": "MELT",
+        "motion": "pull",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_016",
+        "panel_id": "page_008_p00",
+        "narration": "Replacing these custom machines takes up to two years of hard work.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_017",
+        "panel_id": "page_021_p00",
+        "narration": "Satellites in orbit would fall as the heated atmosphere drags them down.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_018",
+        "panel_id": "page_024_p00",
+        "narration": "Hundreds of millions of people would lose electricity for many months.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_019",
+        "panel_id": "page_018_p00",
+        "narration": "In 2012, a massive superstorm missed Earth by only nine days.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_020",
+        "panel_id": "page_003_p00",
+        "narration": "There is a twelve percent chance this disaster strikes this decade.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_021",
+        "panel_id": "page_012_p00",
+        "narration": "Without power, clean water would stop flowing to your thirsty throat.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_022",
+        "panel_id": "page_026_p00",
+        "narration": "A giant solar superstorm from the Sun threatens to destroy our modern world.",
+        "fact_ids": [
+          "fact_000",
+          "fact_001"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "A giant solar superstorm from the Sun threatens to destroy our modern world. Deep inside, twisted magnetic fields trap energy equal to billions of exploding hydrogen bombs. If the Sun were a basketball, Earth is just a tiny plastic bead. In 1859, a massive white flare erupted and shot billions of tons of plasma. This superheated cloud raced through space at two thousand kilometers per second. It crossed the huge cosmic gulf to reach Earth in just eighteen hours. The plasma slammed into our magnetic shield with terrifying kinetic force. The impact squeezed our magnetic shield down by sixty thousand kilometers. Brilliant green lights filled the night sky, waking people up at midnight. The intense glow was bright enough to read a newspaper by. Electric currents surged through telegraph wires, shocking the operators' hands. Sparks flew from the machines and set telegraph paper on fire. Today, our global power grids carry hundreds of thousands of volts. A similar storm would send massive currents surging deep into the ground. Within minutes, giant power transformers would heat up past three hundred degrees. The heavy metal coils inside would melt like wax in an oven. Replacing these custom machines takes up to two years of hard work. Satellites in orbit would fall as the heated atmosphere drags them down. Hundreds of millions of people would lose electricity for many months. In 2012, a massive superstorm missed Earth by only nine days. There is a twelve percent chance this disaster strikes this decade. Without power, clean water would stop flowing to your thirsty throat. A giant solar superstorm from the Sun threatens to destroy our modern world.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "headline_candidates": {
+      "titles": [
+        "How a massive solar superstorm could end modern society",
+        "The terrifying solar storm that almost destroyed our world",
+        "What happens when a giant solar storm hits our power grid",
+        "The cosmic disaster that could turn off our electricity forever",
+        "Why a giant solar storm is our biggest threat this decade"
+      ],
+      "hook_cards": [
+        "WE ARE NOT READY",
+        "OUR WORLD WILL GO DARK",
+        "THE DAY THE LIGHTS GO OUT",
+        "THE SUN IS WAITING",
+        "A STORM IS COMING"
+      ]
+    },
+    "event": {
+      "id": "space_solar-storm",
+      "title": "The Solar Storm That Would Send Us Back to 1859",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "solar-storm",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "Carrington event, transformers melt, months without power",
+      "famous_line": "Carrington event, transformers melt, months without power",
+      "image_terms": [
+        "coronal mass ejection",
+        "solar flare SDO",
+        "aurora from ISS"
+      ],
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare",
+        "https://images.nasa.gov/details/GSFC_20140709_SDO_m11605_Firework_Flare",
+        "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K",
+        "https://commons.wikimedia.org/wiki/File:Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg",
+        "https://images.nasa.gov/details/GSFC_20140130_SDO_m11463_Eclipse-Flare",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e000829",
+        "https://commons.wikimedia.org/wiki/File:February_16,_2024_X2_5_Solar_Flare_(SVS14531_-_SDO_131_02162024_065530).jpg",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e001245",
+        "https://images.nasa.gov/details/iss040e117941",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e001208",
+        "https://commons.wikimedia.org/wiki/File:August_2010_CME_SDO_Multi-Wavelength.jpg",
+        "https://commons.wikimedia.org/wiki/File:November_6,_2022_M5_2_Solar_Flare_(SVS14240).png",
+        "https://images.nasa.gov/details/iss029e012564"
+      ],
+      "url": "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": []
+    },
+    "full_description": "A step-by-step scientific breakdown of what would actually happen if a Carrington-class solar superstorm struck our modern world today.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: GSFC (public domain (NASA)); Genna Duberstein, Tom Bridgman (public domain (NASA video)); Genna Duberstein, Tom Bridgman, Karen Fox (public domain (NASA video)); Genna Duberstein, Tom Bridgman, Karen Fox, Scott Wiessinger (public domain (NASA video)); Genna Duberstein, Tom Bridgman, Sarah Frazier (public domain (NASA video)); JSC (public domain (NASA)); NASA Goddard Space Flight Center (cc by 2.0); NASA's Scientific Visualization Studio - A. J. Christensen, Scott Wiessinger (public domain); NASA's Scientific Visualization Studio - Scott Wiessinger (public domain); NASA/SDO (public domain); NASA/SDO/AIA (public domain)\nSources:\nhttps://commons.wikimedia.org/wiki/File:August_2010_CME_SDO_Multi-Wavelength.jpg\nhttps://commons.wikimedia.org/wiki/File:February_16,_2024_X2_5_Solar_Flare_(SVS14531_-_SDO_131_02162024_065530).jpg\nhttps://commons.wikimedia.org/wiki/File:Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg\nhttps://commons.wikimedia.org/wiki/File:NASA-SDO_-_solar_flare_October_29,_2013,_X2,3_class.jpg\nhttps://commons.wikimedia.org/wiki/File:November_6,_2022_M5_2_Solar_Flare_(SVS14240).png\nhttps://images.nasa.gov/details/GSFC_20140130_SDO_m11463_Eclipse-Flare\nhttps://images.nasa.gov/details/GSFC_20140709_SDO_m11605_Firework_Flare\nhttps://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption\nhttps://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare\nhttps://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e000829\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e000934\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e001058\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e001208\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e001209\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e001245\nhttps://images.nasa.gov/details/iss029e012564\nhttps://images.nasa.gov/details/iss040e117941\nhttps://images.nasa.gov/details/iss040e117958\nhttps://images.nasa.gov/details/iss064e044527",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "How a massive solar superstorm could end modern society\n\nA step-by-step scientific breakdown of what would actually happen if a Carrington-class solar superstorm struck our modern world today."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:August_2010_CME_SDO_Multi-Wavelength.jpg",
+    "https://commons.wikimedia.org/wiki/File:February_16,_2024_X2_5_Solar_Flare_(SVS14531_-_SDO_131_02162024_065530).jpg",
+    "https://commons.wikimedia.org/wiki/File:Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg",
+    "https://commons.wikimedia.org/wiki/File:NASA-SDO_-_solar_flare_October_29,_2013,_X2,3_class.jpg",
+    "https://commons.wikimedia.org/wiki/File:November_6,_2022_M5_2_Solar_Flare_(SVS14240).png",
+    "https://images.nasa.gov/details/GSFC_20140130_SDO_m11463_Eclipse-Flare",
+    "https://images.nasa.gov/details/GSFC_20140709_SDO_m11605_Firework_Flare",
+    "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+    "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare",
+    "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e000829",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e000934",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e001058",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e001208",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e001209",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e001245",
+    "https://images.nasa.gov/details/iss029e012564",
+    "https://images.nasa.gov/details/iss040e117941",
+    "https://images.nasa.gov/details/iss040e117958",
+    "https://images.nasa.gov/details/iss064e044527"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

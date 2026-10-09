@@ -221,12 +221,12 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 308,
+      "views": 309,
       "likes": 5,
       "comments": 0,
-      "hours_live": 187.2,
+      "hours_live": 187.6,
       "views_per_hour": 1.65,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 37.44,
@@ -392,6 +392,11 @@
       {
         "h": 187.2,
         "views": 308,
+        "likes": 5
+      },
+      {
+        "h": 187.6,
+        "views": 309,
         "likes": 5
       }
     ]
@@ -1481,12 +1486,12 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1212,
+      "views": 1213,
       "likes": 38,
       "comments": 3,
-      "hours_live": 129.1,
-      "views_per_hour": 9.39,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "hours_live": 129.4,
+      "views_per_hour": 9.37,
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": 558,
       "views_72h": 1209,
       "average_view_percentage": 82.37,
@@ -1567,6 +1572,11 @@
       {
         "h": 129.1,
         "views": 1212,
+        "likes": 38
+      },
+      {
+        "h": 129.4,
+        "views": 1213,
         "likes": 38
       }
     ]
@@ -1685,12 +1695,12 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 615,
+      "views": 616,
       "likes": 13,
       "comments": 0,
-      "hours_live": 102.4,
-      "views_per_hour": 6.01,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "hours_live": 102.7,
+      "views_per_hour": 6.0,
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": 556,
       "views_72h": 587,
       "average_view_percentage": 69.28,
@@ -1746,6 +1756,11 @@
       {
         "h": 102.4,
         "views": 615,
+        "likes": 13
+      },
+      {
+        "h": 102.7,
+        "views": 616,
         "likes": 13
       }
     ]
@@ -1846,9 +1861,9 @@
       "views": 120,
       "likes": 3,
       "comments": 0,
-      "hours_live": 93.2,
-      "views_per_hour": 1.29,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "hours_live": 93.5,
+      "views_per_hour": 1.28,
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": 118,
       "views_72h": 119,
       "average_view_percentage": 57.440000000000005,
@@ -1898,6 +1913,11 @@
       },
       {
         "h": 93.2,
+        "views": 120,
+        "likes": 3
+      },
+      {
+        "h": 93.5,
         "views": 120,
         "likes": 3
       }
@@ -1999,9 +2019,9 @@
       "views": 1184,
       "likes": 31,
       "comments": 1,
-      "hours_live": 30.7,
-      "views_per_hour": 38.55,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "hours_live": 31.1,
+      "views_per_hour": 38.12,
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": 1177,
       "views_72h": null
     },
@@ -2023,6 +2043,11 @@
       },
       {
         "h": 30.7,
+        "views": 1184,
+        "likes": 31
+      },
+      {
+        "h": 31.1,
         "views": 1184,
         "likes": 31
       }
@@ -2137,12 +2162,12 @@
       "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
     },
     "stats": {
-      "views": 593,
-      "likes": 45,
+      "views": 622,
+      "likes": 48,
       "comments": 0,
-      "hours_live": 6.9,
-      "views_per_hour": 86.43,
-      "fetched_at": "2026-10-09T19:14:31+00:00",
+      "hours_live": 7.2,
+      "views_per_hour": 86.27,
+      "fetched_at": "2026-10-09T19:35:29+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -2151,7 +2176,59 @@
         "h": 6.9,
         "views": 593,
         "likes": 45
+      },
+      {
+        "h": 7.2,
+        "views": 622,
+        "likes": 48
       }
     ]
+  },
+  {
+    "video_id": "TVrC97k1pyE",
+    "platform": "youtube",
+    "run_id": "37981160472",
+    "published_at": "2026-10-09T19:55:04+00:00",
+    "event": {
+      "title": "The Solar Storm That Would Send Us Back to 1859",
+      "series": "Space",
+      "issue": "solar-storm",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 23,
+      "words": 273,
+      "duration": 104.2,
+      "words_per_minute": 157,
+      "hook": "A giant solar superstorm from the Sun threatens to destroy our modern world.",
+      "hook_words": 13,
+      "title": "How a massive solar superstorm could end modern society",
+      "title_length": 55,
+      "emphasis": {
+        "danger": 1,
+        "normal": 20,
+        "reveal": 1,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 92.30769230769229,
+        "scene_match": 95,
+        "delivery": 92.30769230769229,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "The documentary narration is well-produced with accurate graphic overlays, synchronized single-word captions, and appropriate color-coded emphasis. The pacing is consistent throughout."
+    },
+    "experiment": {
+      "name": "opening_shot_danger_emphasis",
+      "change": "Mark the very first shot narration beat with red danger emphasis while maintaining a total colored emphasis budget under 25%.",
+      "rationale": "High-performing videos show higher immediate retention when lethal stakes are visually reinforced on frame one."
+    },
+    "stats": {}
   }
 ]

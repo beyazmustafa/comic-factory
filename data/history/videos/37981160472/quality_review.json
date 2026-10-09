@@ -1,0 +1,58 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 92.30769230769229,
+  "scene_match": 95,
+  "delivery": 92.30769230769229,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video opens with a dramatic shot of the Sun's surface, and the caption 'SUPERSTORM' is highlighted in red as specified."
+    },
+    {
+      "second": 11,
+      "detail": "The scale graphic correctly displays the size comparison between the Sun and Earth with a 109x ratio."
+    },
+    {
+      "second": 21,
+      "detail": "The CME speed counter graphic animates up to 2,000 km/s smoothly."
+    },
+    {
+      "second": 48,
+      "detail": "The word 'SHOCKING' is emphasized in green as the narrator describes electric currents in telegraph wires."
+    },
+    {
+      "second": 106,
+      "detail": "The transformer temperature counter graphic correctly counts up to 300 degrees C."
+    },
+    {
+      "second": 140,
+      "detail": "The final shot loops back to the initial solar superstorm visual, providing a cohesive ending."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary narration is well-produced with accurate graphic overlays, synchronized single-word captions, and appropriate color-coded emphasis. The pacing is consistent throughout.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 80,
+    "delivery": 78,
+    "visual_readability": 82
+  },
+  "measured_scores": {
+    "subtitle_sync": 92.30769230769229,
+    "scene_match": 95,
+    "delivery": 92.30769230769229
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [
+    "observation_coverage"
+  ],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}
