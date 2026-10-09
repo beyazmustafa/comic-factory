@@ -294,7 +294,7 @@ def download_videos(api, event, rows, maximum, seen):
             if not isinstance(files, list):
                 continue
             candidates = [f for f in files if isinstance(f, str) and f.casefold().endswith(".mp4")]
-            ordered = sorted(candidates, key=lambda f: ("~medium" not in f, "~small" not in f, "~orig" not in f, "~preview" not in f))
+            ordered = sorted(candidates, key=lambda f: ("~orig" not in f, "~medium" not in f, "~small" not in f, "~preview" not in f))
             picked = None
             for url in ordered[:3]:
                 try:
@@ -320,7 +320,8 @@ def download_videos(api, event, rows, maximum, seen):
                     continue
                 with Image.open(still) as opened:
                     width, height = opened.size
-                if min(width, height) < 480:
+                if min(width, height) < 700:
+                    # A soft rendition reads as a blurry still on a phone.
                     clip.unlink(missing_ok=True)
                     still.unlink(missing_ok=True)
                     continue
@@ -398,8 +399,8 @@ def judge_images(api, event, pages):
             data = api.json(
                 "Görsel seçimi",
                 f"""These images were fetched for a science video titled "{event['title']}" (angle: {event['summary']}).
-For each image decide: usable (true only for a real photograph, telescope image, spacecraft image or high-quality scientific visualization that would look stunning full-screen on a phone; false for diagrams, charts, infographics, text slides, logos, group photos of people at desks, press conferences, low-quality or blurry images), relevance 0..100 to the topic, drama 0..100 (how awe-inspiring it is), focus [x,y] fractions of the most interesting point, and a one-sentence {language_name(api)} description of what is visible.
-Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":[0.5,0.5],"description":""}}]}}""",
+For each image decide: usable (true only for a real photograph, telescope image, spacecraft image or high-quality scientific visualization that would look stunning full-screen on a phone; false for diagrams, charts, infographics, text slides, logos, group photos of people at desks, press conferences, low-quality or blurry images), relevance 0..100 to the topic, drama 0..100 (how awe-inspiring it is), focus [x,y] fractions of the most interesting point, subject (2-3 words naming what the image is of: "astronaut helmet", "spiral galaxy", "solar flare", "rover on Mars"), and a one-sentence {language_name(api)} description of what is visible.
+Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":[0.5,0.5],"subject":"","description":""}}]}}""",
                 images=[(p["id"], api.directory / p["file"]) for p in batch],
                 list_key="images",
             )
@@ -431,9 +432,17 @@ Return {{"images":[{{"page_id":"","usable":true,"relevance":0,"drama":0,"focus":
             except (TypeError, ValueError):
                 focus = [0.5, 0.5]
             kept.append({**page, "relevance": relevance, "drama": drama, "focus": focus,
+                         "subject": clean(row.get("subject")).casefold()[:40],
                          "description": clean(row.get("description")) or page.get("caption", "")})
     kept.sort(key=lambda p: -(p["relevance"] * 0.6 + p["drama"] * 0.4 + (12 if p.get("video") else 0)))
-    return kept
+    # Variety: no more than two images of the same subject ("astronaut helmet"
+    # four times is a slideshow of one thing), the rest go to the back.
+    counts, front, back = {}, [], []
+    for page in kept:
+        subject = page.get("subject") or ""
+        counts[subject] = counts.get(subject, 0) + 1
+        (front if counts[subject] <= 2 or not subject else back).append(page)
+    return front + back
 
 
 def collect(api, event, fetcher):
