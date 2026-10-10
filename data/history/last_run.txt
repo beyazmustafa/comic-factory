@@ -1,11 +1,11 @@
-run_id: 38047687906  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261010T111513555170Z/run.json
+run_id: 38076889068  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261010T184348546461Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "Konuşma ve kelime zamanları",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,59 +38,11 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38047687906",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "30f5b8ea463931126c6817cbe7aa28debf91aba98ce26b256afa43124c42252b",
-  "metadata_sha256": "c354736fbbb102d32ce342e23a33b527771029a914d0a443ab15ad2bca994790",
-  "quality_sha256": "a1cc884d9db9a25f1086563a65ac22601883cfe14c08524a7ebdb13b0f66c34e",
-  "api_calls": 44,
-  "duration": 65.75,
-  "voice": "Orus",
-  "event": {
-    "id": "space_asteroid-city",
-    "title": "What a City-Killer Asteroid Does in 10 Seconds",
-    "publisher": "NASA/ESA",
-    "series": "Space",
-    "issue": "asteroid-city",
-    "year": 2026,
-    "universe": "science",
-    "characters": [],
-    "summary": "airburst, shockwave, 100 km of broken windows",
-    "famous_line": "airburst, shockwave, 100 km of broken windows",
-    "image_terms": [
-      "asteroid Bennu",
-      "Chelyabinsk meteor",
-      "impact crater",
-      "DART impact"
-    ],
-    "source_urls": [
-      "https://nypost.com/2025/02/13/science/chilling-simulations-predict-devastation-of-city-killer-y4-asteroid/",
-      "https://www.sciencealert.com/our-survival-might-one-day-rely-on-nuking-a-city-killer-asteroid-scientists-just-tested-whether-itll-work",
-      "https://nypost.com/2026/02/17/science/nasa-scientist-warns-theres-no-way-to-stop-thousands-of-city-killing-asteroids-from-striking-earth-it-keeps-me-up-at-night/",
-      "https://en.wikipedia.org/wiki/2024_YR4",
-      "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx_(square).png",
-      "https://commons.wikimedia.org/wiki/File:Meteorit_Chelyabinsk_(01).jpg",
-      "https://images.nasa.gov/details/PIA25329",
-      "https://images.nasa.gov/details/PIA03674",
-      "https://images.nasa.gov/details/jsc2024e023025",
-      "https://images.nasa.gov/details/Bennu_Sample2"
-    ],
-    "url": "https://nypost.com/2025/02/13/science/chilling-simulations-predict-devastation-of-city-killer-y4-asteroid/",
-    "_source": "space"
-  },
-  "localized": []
+  "run_id": "38076889068",
+  "error": "SpeechFailure: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
+  "api_calls": 22
 }
---- data/runs/20261010T111513555170Z/diagnostics/provider_events.json
-[
-  "Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
-]
---- data/runs/20261010T111513555170Z/diagnostics/providers.json
+--- data/runs/20261010T184348546461Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -112,9 +64,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -207,40 +159,15 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261010T111513555170Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261010T111513555170Z/research/rejected_candidates.json
+--- data/runs/20261010T184348546461Z/audio/chunk_004/failures.json
 [
-  {
-    "event": {
-      "id": "space_olympus-mons",
-      "title": "A Volcano So Big You Cannot See It Is a Mountain",
-      "publisher": "NASA/ESA",
-      "series": "Space",
-      "issue": "olympus-mons",
-      "year": 2026,
-      "universe": "science",
-      "characters": [],
-      "summary": "3x Everest, wider than France",
-      "famous_line": "3x Everest, wider than France",
-      "image_terms": [
-        "Olympus Mons",
-        "Mars volcano",
-        "Valles Marineris"
-      ],
-      "source_urls": [],
-      "url": "",
-      "_source": "space"
-    },
-    "error": "Konu için yeterli kullanılabilir görsel yok (3/12)."
-  }
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 22.; whisper-large-v3-turbo: 78.8/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100"
 ]
---- data/runs/20261010T111513555170Z/diagnostics/story_1.json
-{"error": "Narration too short: 157 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_006_p00', 'page_000_p00', 'page_019_p00', 'page_009_p00']; each panel at most twice.; Only 6 distinct panels for 16 shots; use at least 12 distinct panels."}
---- data/runs/20261010T111513555170Z/diagnostics/story_2.json
-{"error": "Narration too short: 144 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_000_p00']; each panel at most twice.; Only 6 distinct panels for 13 shots; use at least 10 distinct panels."}
---- data/runs/20261010T111513555170Z/diagnostics/story_3.json
-{"error": "Narration too short: 135 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.; Panels used more than twice: ['page_006_p00']; each panel at most twice.; Only 6 distinct panels for 13 shots; use at least 10 distinct panels."}
+--- data/runs/20261010T184348546461Z/voice_audition/failed_auditions.json
+{}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
@@ -248,86 +175,30 @@ produce step outcome: success
 → Öğrenme: oyun kitabı ve deney
 
 → Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: A Volcano So Big You Cannot See It Is a Mountain
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Arama (yahoo) yanıt vermedi: DDGSException
-Arama (duckduckgo) yanıt vermedi: DDGSException
-Arama (google) yanıt vermedi: DDGSException
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Uzay görselleri: 39 aday, 12 indirildi.
-Uzay videoları: 4 aday, 0 indirildi.
-Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Olay araştırılıyor: What a City-Killer Asteroid Does in 10 Seconds
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Uzay görselleri: 34 aday, 22 indirildi.
-Uzay videoları: 12 aday, 1 indirildi.
-Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Olay araştırılıyor: What Happens If You Fall Into the Sun
+Uzay görselleri: 50 aday, 24 indirildi.
+Uzay videoları: 16 aday, 9 indirildi.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 87.1/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 94.3/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
 Ses eşleştirme: 95.2/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 90.9/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 93.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261010T111513555170Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: There are 15,000 city-killer asteroids we can't see #Shorts
-Görünürlük: public
-
-Yükleme: %13
-Yükleme: %27
-Yükleme: %41
-Yükleme: %55
-Yükleme: %69
-Yükleme: %83
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=budz9FFpSyU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261010T111513555170Z/video.mp4
-Boyut: 57.2 MB
-Açıklama uzunluğu: 214 karakter
-Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17967523503187944).
-Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: FINISHED
-Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 17905660455665290
-====================================================================
-INSTAGRAM REEL TAMAMLANDI
-====================================================================
-Cloudinary: geçici video silindi (ok).
+Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 78.8/100 | whisper-large-v3
+Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 2
+Ses eşleştirme: 78.8/100 | whisper-large-v3
+Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 3
+Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 4
+Ses eşleştirme: 78.8/100 | whisper-large-v3
+Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
+HATA: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
