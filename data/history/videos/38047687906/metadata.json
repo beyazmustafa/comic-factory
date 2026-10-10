@@ -1,0 +1,322 @@
+{
+  "script": {
+    "title": "There are 15,000 city-killer asteroids we can't see",
+    "description": "A step-by-step breakdown of the physics behind a city-killer asteroid impact and how NASA plans to stop them.",
+    "hook_card": "IMPACT IN UNDER TEN SECONDS",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_006_p00",
+        "narration": "A city-killer asteroid hits your atmosphere in under ten seconds.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "effect": "flash",
+        "graphic": {
+          "type": "countdown",
+          "seconds": 10,
+          "label": "TO IMPACT"
+        },
+        "impact_word": "TEN",
+        "motion": "down",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_000_p00",
+        "narration": "This massive rock travels at thirty thousand miles per hour.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "counter",
+          "value": 30000.0,
+          "unit": "MPH",
+          "label": "VELOCITY"
+        },
+        "impact_word": "THIRTY",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_019_p00",
+        "narration": "The impact releases the force of eight million tons of TNT.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "effect": "shake",
+        "graphic": null,
+        "impact_word": "EIGHT",
+        "motion": "pull",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_009_p00",
+        "narration": "If the Sun were a basketball, this rock is a grain of sand.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "scale",
+          "big": "Sun",
+          "small": "Asteroid",
+          "ratio": 1000000.0,
+          "label": "SCALE"
+        },
+        "impact_word": "SAND",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_014_p00",
+        "narration": "Yet it carries enough energy to flatten all of Washington DC.",
+        "fact_ids": [
+          "fact_001",
+          "fact_004"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "FLATTEN",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_020_p00",
+        "narration": "Surprisingly, we have only found forty percent of these hidden killers.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "FORTY",
+        "motion": "right",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_000_p00",
+        "narration": "Fifteen thousand undetected asteroids are currently orbiting near your home.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "FIFTEEN",
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_014_p00",
+        "narration": "NASA tested a plan to nuke them before they reach you.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "NUKE",
+        "motion": "up",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_009_p00",
+        "narration": "A nuclear blast sends blistering X-rays into the asteroid's skin.",
+        "fact_ids": [
+          "fact_006",
+          "fact_007"
+        ],
+        "effect": "flash",
+        "graphic": null,
+        "impact_word": "X-RAYS",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_020_p00",
+        "narration": "The rock vaporizes and turns into a cloud of expanding gas.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "VAPORIZES",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_019_p00",
+        "narration": "In sixty-eight milliseconds, the entire internal structure is shattered.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "effect": "shake",
+        "graphic": null,
+        "impact_word": "SHATTERED",
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_006_p00",
+        "narration": "The debris flies away faster than the rock's own gravity.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "GRAVITY",
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_000_p00",
+        "narration": "This turns a city-killer into a harmless cloud of dust.",
+        "fact_ids": [
+          "fact_009",
+          "fact_010"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "DUST",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_006_p00",
+        "narration": "But until we find them, a city-killer asteroid hits in ten seconds.",
+        "fact_ids": [
+          "fact_000",
+          "fact_011"
+        ],
+        "effect": "blackout",
+        "graphic": null,
+        "impact_word": "TEN",
+        "motion": "push",
+        "emphasis": "danger"
+      }
+    ],
+    "narration": "A city-killer asteroid hits your atmosphere in under ten seconds. This massive rock travels at thirty thousand miles per hour. The impact releases the force of eight million tons of TNT. If the Sun were a basketball, this rock is a grain of sand. Yet it carries enough energy to flatten all of Washington DC. Surprisingly, we have only found forty percent of these hidden killers. Fifteen thousand undetected asteroids are currently orbiting near your home. NASA tested a plan to nuke them before they reach you. A nuclear blast sends blistering X-rays into the asteroid's skin. The rock vaporizes and turns into a cloud of expanding gas. In sixty-eight milliseconds, the entire internal structure is shattered. The debris flies away faster than the rock's own gravity. This turns a city-killer into a harmless cloud of dust. But until we find them, a city-killer asteroid hits in ten seconds.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "headline_candidates": {
+      "titles": [
+        "How NASA plans to nuke a city-killer asteroid",
+        "Why NASA is nuking asteroids before they hit Earth",
+        "There are 15,000 city-killer asteroids we can't see",
+        "What happens when a city-killer asteroid hits Earth",
+        "NASA's nuclear plan to stop a city-killer asteroid"
+      ],
+      "hook_cards": [
+        "IMPACT IN UNDER TEN SECONDS",
+        "TEN SECONDS UNTIL IMPACT",
+        "THE CITY KILLER IS HERE",
+        "TEN SECONDS TO TOTAL DESTRUCTION",
+        "IMPACT IN JUST TEN SECONDS"
+      ]
+    },
+    "event": {
+      "id": "space_asteroid-city",
+      "title": "What a City-Killer Asteroid Does in 10 Seconds",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "asteroid-city",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "airburst, shockwave, 100 km of broken windows",
+      "famous_line": "airburst, shockwave, 100 km of broken windows",
+      "image_terms": [
+        "asteroid Bennu",
+        "Chelyabinsk meteor",
+        "impact crater",
+        "DART impact"
+      ],
+      "source_urls": [
+        "https://nypost.com/2025/02/13/science/chilling-simulations-predict-devastation-of-city-killer-y4-asteroid/",
+        "https://www.sciencealert.com/our-survival-might-one-day-rely-on-nuking-a-city-killer-asteroid-scientists-just-tested-whether-itll-work",
+        "https://nypost.com/2026/02/17/science/nasa-scientist-warns-theres-no-way-to-stop-thousands-of-city-killing-asteroids-from-striking-earth-it-keeps-me-up-at-night/",
+        "https://en.wikipedia.org/wiki/2024_YR4",
+        "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx_(square).png",
+        "https://commons.wikimedia.org/wiki/File:Meteorit_Chelyabinsk_(01).jpg",
+        "https://images.nasa.gov/details/PIA25329",
+        "https://images.nasa.gov/details/PIA03674",
+        "https://images.nasa.gov/details/jsc2024e023025",
+        "https://images.nasa.gov/details/Bennu_Sample2"
+      ],
+      "url": "https://nypost.com/2025/02/13/science/chilling-simulations-predict-devastation-of-city-killer-y4-asteroid/",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": [
+        "Narration too short: 149 words; write at least 180 words (70+ seconds): fuller sentences with cause, effect and a number, not bullet fragments.",
+        "Panels used more than twice: ['page_006_p00', 'page_000_p00']; each panel at most twice.",
+        "Only 6 distinct panels for 14 shots; use at least 10 distinct panels."
+      ]
+    },
+    "full_description": "A step-by-step breakdown of the physics behind a city-killer asteroid impact and how NASA plans to stop them.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: GSFC (public domain (NASA)); JSC (public domain (NASA)); NASA/Goddard/University of Arizona (public domain); NASA/JPL/Malin Space Science Systems (public domain (NASA)); NASA/Johns Hopkins APL/Steve Gribben (public domain (NASA)); Константин Кудинов (cc by-sa 3.0)\nSources:\nhttps://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx_(square).png\nhttps://commons.wikimedia.org/wiki/File:Meteorit_Chelyabinsk_(01).jpg\nhttps://images.nasa.gov/details/Bennu_Sample2\nhttps://images.nasa.gov/details/PIA03674\nhttps://images.nasa.gov/details/PIA25329\nhttps://images.nasa.gov/details/jsc2024e023025",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "There are 15,000 city-killer asteroids we can't see\n\nA step-by-step breakdown of the physics behind a city-killer asteroid impact and how NASA plans to stop them."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx_(square).png",
+    "https://commons.wikimedia.org/wiki/File:Meteorit_Chelyabinsk_(01).jpg",
+    "https://images.nasa.gov/details/Bennu_Sample2",
+    "https://images.nasa.gov/details/PIA03674",
+    "https://images.nasa.gov/details/PIA25329",
+    "https://images.nasa.gov/details/jsc2024e023025"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v1"
+}

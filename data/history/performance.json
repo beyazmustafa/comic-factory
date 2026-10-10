@@ -224,9 +224,9 @@
       "views": 309,
       "likes": 5,
       "comments": 0,
-      "hours_live": 187.9,
-      "views_per_hour": 1.64,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 203.2,
+      "views_per_hour": 1.52,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": 179,
       "views_72h": 297,
       "average_view_percentage": 37.44,
@@ -396,6 +396,11 @@
       },
       {
         "h": 187.9,
+        "views": 309,
+        "likes": 5
+      },
+      {
+        "h": 203.2,
         "views": 309,
         "likes": 5
       }
@@ -1486,12 +1491,12 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1213,
+      "views": 1214,
       "likes": 38,
       "comments": 3,
-      "hours_live": 129.8,
-      "views_per_hour": 9.35,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 145.1,
+      "views_per_hour": 8.37,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": 558,
       "views_72h": 1209,
       "average_view_percentage": 82.37,
@@ -1577,6 +1582,11 @@
       {
         "h": 129.8,
         "views": 1213,
+        "likes": 38
+      },
+      {
+        "h": 145.1,
+        "views": 1214,
         "likes": 38
       }
     ]
@@ -1695,12 +1705,12 @@
       "rationale": "Immediate countdown metrics create urgent stakes on frame one to boost initial short retention."
     },
     "stats": {
-      "views": 616,
+      "views": 620,
       "likes": 13,
       "comments": 0,
-      "hours_live": 103.1,
-      "views_per_hour": 5.98,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 118.4,
+      "views_per_hour": 5.24,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": 556,
       "views_72h": 587,
       "average_view_percentage": 69.28,
@@ -1761,6 +1771,11 @@
       {
         "h": 103.1,
         "views": 616,
+        "likes": 13
+      },
+      {
+        "h": 118.4,
+        "views": 620,
         "likes": 13
       }
     ]
@@ -1858,12 +1873,12 @@
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
     },
     "stats": {
-      "views": 120,
+      "views": 126,
       "likes": 3,
       "comments": 0,
-      "hours_live": 93.9,
-      "views_per_hour": 1.28,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 109.2,
+      "views_per_hour": 1.15,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": 118,
       "views_72h": 119,
       "average_view_percentage": 57.440000000000005,
@@ -1919,6 +1934,11 @@
       {
         "h": 93.9,
         "views": 120,
+        "likes": 3
+      },
+      {
+        "h": 109.2,
+        "views": 126,
         "likes": 3
       }
     ]
@@ -2016,12 +2036,12 @@
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
     "stats": {
-      "views": 1184,
+      "views": 1193,
       "likes": 31,
       "comments": 1,
-      "hours_live": 31.4,
-      "views_per_hour": 37.68,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 46.7,
+      "views_per_hour": 25.53,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": 1177,
       "views_72h": null
     },
@@ -2049,6 +2069,11 @@
       {
         "h": 31.4,
         "views": 1184,
+        "likes": 31
+      },
+      {
+        "h": 46.7,
+        "views": 1193,
         "likes": 31
       }
     ]
@@ -2162,12 +2187,12 @@
       "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
     },
     "stats": {
-      "views": 675,
-      "likes": 52,
+      "views": 1161,
+      "likes": 60,
       "comments": 0,
-      "hours_live": 7.6,
-      "views_per_hour": 89.13,
-      "fetched_at": "2026-10-09T19:57:16+00:00",
+      "hours_live": 22.9,
+      "views_per_hour": 50.76,
+      "fetched_at": "2026-10-10T11:15:13+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -2181,7 +2206,59 @@
         "h": 7.6,
         "views": 675,
         "likes": 52
+      },
+      {
+        "h": 22.9,
+        "views": 1161,
+        "likes": 60
       }
     ]
+  },
+  {
+    "video_id": "budz9FFpSyU",
+    "platform": "youtube",
+    "run_id": "38047687906",
+    "published_at": "2026-10-10T11:36:01+00:00",
+    "event": {
+      "title": "What a City-Killer Asteroid Does in 10 Seconds",
+      "series": "Space",
+      "issue": "asteroid-city",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 14,
+      "words": 149,
+      "duration": 65.8,
+      "words_per_minute": 136,
+      "hook": "A city-killer asteroid hits your atmosphere in under ten seconds.",
+      "hook_words": 10,
+      "title": "There are 15,000 city-killer asteroids we can't see",
+      "title_length": 51,
+      "emphasis": {
+        "danger": 3,
+        "normal": 9,
+        "turn": 1,
+        "reveal": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 87.09677419354838,
+        "scene_match": 95,
+        "delivery": 87.09677419354838,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "The documentary features a consistent narrator and effective use of emphasis colors for key terms. Pacing is steady, though some graphics overlap slightly with the captions."
+    },
+    "experiment": {
+      "name": "opening_countdown_in_hook",
+      "change": "Phrase the hook sentence as an immediate countdown metric under ten seconds before body trauma begins.",
+      "rationale": "Countdowns establish immediate stakes and capitalize on top-performing videos that ground visceral physical danger within seconds."
+    },
+    "stats": {}
   }
 ]

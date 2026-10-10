@@ -1,0 +1,60 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 87.09677419354838,
+  "scene_match": 95,
+  "delivery": 87.09677419354838,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video opens with a countdown graphic and asteroid trail imagery."
+    },
+    {
+      "second": 12,
+      "detail": "Transition to a crater image with red emphasis on the word 'EIGHT'."
+    },
+    {
+      "second": 25,
+      "detail": "A vial of dark material is shown with cyan 'FORTY' emphasis."
+    },
+    {
+      "second": 38,
+      "detail": "Close-up of rocky debris with yellow captions and a steady narrator."
+    },
+    {
+      "second": 52,
+      "detail": "The asteroid trail returns as the narrator discusses debris dispersal."
+    },
+    {
+      "second": 64,
+      "detail": "Final blackout effect occurs as the countdown theme concludes."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {
+    "caption_y": 0.65,
+    "font_size": 85,
+    "zoom_amount": 0.14
+  },
+  "summary": "The documentary features a consistent narrator and effective use of emphasis colors for key terms. Pacing is steady, though some graphics overlap slightly with the captions.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 78,
+    "scene_match": 75,
+    "delivery": 72,
+    "visual_readability": 74
+  },
+  "measured_scores": {
+    "subtitle_sync": 87.09677419354838,
+    "scene_match": 95,
+    "delivery": 87.09677419354838
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

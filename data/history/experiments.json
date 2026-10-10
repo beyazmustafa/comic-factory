@@ -497,8 +497,13 @@
       "change": "Explicitly name a specific human body part (e.g., lungs, eardrums, retinas, skin) in at least one out of every three shots.",
       "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
     },
-    "verdict": "kept",
-    "judged_by": "model"
+    "verdict": "dropped",
+    "judged_by": "numbers",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 50.76,
+      "baseline_median": 126.7792
+    }
   },
   {
     "run_id": "37978758240",
@@ -516,6 +521,17 @@
       "name": "cyan_reversal_at_shot_six",
       "change": "Place a single cyan emphasis reversal beat at shot 6 across all upcoming script structures.",
       "rationale": "Introducing an early narrative reversal beat at shot 6 creates mid-hook friction to boost retention through the first 20 seconds."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "38047687906",
+    "chosen_at": "2026-10-10T11:15:25+00:00",
+    "experiment": {
+      "name": "opening_countdown_in_hook",
+      "change": "Phrase the hook sentence as an immediate countdown metric under ten seconds before body trauma begins.",
+      "rationale": "Countdowns establish immediate stakes and capitalize on top-performing videos that ground visceral physical danger within seconds."
     }
   }
 ]

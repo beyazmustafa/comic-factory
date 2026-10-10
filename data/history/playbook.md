@@ -1,11 +1,12 @@
 # Playbook (auto-evolving)
 - Hook: shot 1 names the object and body danger in plain words, under 12 words, with one concrete number.
 - Rhythm: complete sentences of 6-14 words; one idea per shot; 18-25 shots; 70-110 seconds.
-- Pace: maintain an even delivery pacing between 115 and 130 words per minute.
+- Pace: maintain an even delivery pacing between 118 and 128 words per minute.
 - Body anchoring: anchor cosmic forces directly to a specific human body part in at least one out of every three shots.
 - Sensory comparison: provide a physical scale comparison the viewer can feel every three to four shots.
 - Number density: include a concrete metric (seconds, degrees, km/h, times Earth) in at least 50% of shots.
 - Emphasis range: keep colored emphasis beats restrained to roughly 18% to 25% of total shots.
+- Early reversal: place a single cyan turn beat at shot 6 to disrupt linear pacing and hook dropoff.
 - Midpoint twist: feature one green reveal beat around shots 11-14.
 - Ending: the final shot presents an irreversible physical transformation echoing the opening hook image with no call to action.
 
