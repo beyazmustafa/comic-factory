@@ -1,6 +1,7 @@
 from collections import Counter
 import json
 import re
+from . import craft
 from .api import SourceUnavailable
 from .core import save_json, language_name
 from .panels import verify_shots
@@ -191,8 +192,15 @@ def create(api, event, panels, facts, style):
     ]
     famous = event.get("_source") in {"famous", "space"}
     space = event.get("_source") == "space"
+    craft_plan, craft_rows, craft_text = None, [], ""
+    if space:
+        recent = craft.recent_scripts(6)
+        craft_plan = craft.choose_plan(recent)
+        craft_rows = craft.ledger(recent)
+        craft_text = craft.craft_brief(craft_plan, craft_rows)
     mode = (
-        "MODE: a space/science story for a global Shorts audience, told like a thriller: what would ACTUALLY happen, step by step, with numbers the viewer can feel (seconds, degrees, kilometres per second), second person where it fits ('your blood', 'you have 15 seconds'). FACTS are the science; PANELS are real NASA/ESA/telescope photographs with a description each: for every beat pick the image whose visible content fits the sentence best (the Sun's surface for heat, a spacewalk for the body, a nebula for scale); never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. Panels with kind=video are real moving footage: prefer them for action and transition beats (fire, flight, collapse), each at most twice. Never put two visually similar images back to back (two telescope dishes, two similar nebulae): alternate subjects so every cut feels new. No character names needed; name the object (the Sun, Jupiter, Betelgeuse) in the first sentence. LANGUAGE: simple, spoken English a 12-year-old gets on first hearing: short common words, one idea per sentence, no jargon (no 'millisieverts', 'perchlorates', 'tidal locking' without a plain explanation), numbers rounded and compared to things people know ('hotter than a pizza oven', 'faster than a bullet'). Every beat a complete sentence of 6..14 words, never a fragment. SCALE: at least one comparison that shrinks the cosmos to something in a kitchen or a street ('if the Sun were a basketball, Earth is a peppercorn'). LOOP ENDING: the final sentence must echo the first one so the video loops seamlessly (same image as the opening shot, a line that points back to the start, e.g. 'And it all begins again the moment you fall in'). "
+        "MODE: a space/science Short written like a premium documentary, not a listicle. What would ACTUALLY happen, in order, with cause and consequence; second person only where it is natural. FACTS are the science; PANELS are real NASA/ESA/telescope photographs and footage with a description each: for every beat pick the image whose visible content fits the sentence best; never state something the image contradicts. Each panel carries confidence = relevance and intensity = how awe-inspiring it is; open on the most dramatic relevant image. Panels with kind=video are real moving footage: prefer them for action and transition beats, each at most twice. Never put two visually similar images back to back. Name the object (the Sun, Jupiter, Betelgeuse) in the first two sentences. LANGUAGE: plain spoken English anyone gets on first hearing; no jargon without a one-phrase explanation; concrete images instead of adjectives. Every beat a complete sentence of 8..18 words. LOOP ENDING: the final sentence echoes the first so the video loops (same image as the opening shot). "
+        + craft_text
         if space else
         "MODE: one world-famous Marvel/DC moment retold for people who half-remember it. FACTS are the storyline; PANELS are official art, previews and press images related to this storyline, NOT in story order and not one-per-sentence. For each beat choose the panel whose visible content fits best (same characters, matching mood or action; close-ups for emotional lines, wide shots for scale). A panel need not literally show the sentence, but never say something the image contradicts. Name the hero and villain in the first two sentences. Each panel carries confidence = how clearly it belongs to this exact storyline; use 75+ panels for the shocking beats and the opening, lower ones only as fillers. VARIETY IS MANDATORY: never the same panel in two consecutive shots, each panel at most twice, at least 75% of shots on distinct panels, covers (kind=cover) in at most a quarter of shots and never as the opening shot. "
         if famous else
@@ -218,16 +226,16 @@ DELIVERY {style.get("narrator_delivery", "")}
 LEARNED PLAYBOOK (follow; it is updated from real audience data):
 {style.get("playbook", "")}
 THIS VIDEO'S EXPERIMENT (apply exactly once, it will be measured): {json.dumps(style.get("experiment"), ensure_ascii=False)}
-HOOK RULE: the very first sentence must state the single most shocking fact or event in <= 12 words, in present tense, naming the subject (hero, villain, or the object: the Sun, a black hole); never start with "Meanwhile", "In this issue", "Have you ever wondered" or scene-setting.
+HOOK RULE: the very first sentence must earn the next ten seconds on its own, in present tense, naming the subject (hero, villain, or the object: the Sun, a black hole), <= 14 words; never start with "Meanwhile", "In this issue", "Have you ever wondered" or scene-setting. When a HOOK TYPE is given above, obey it.
 Use at least 18 shots when 18 or more distinct panels are available (a Short under 60 seconds feels thin); never pad with invented beats.
 Target {api.settings.target_seconds} seconds, {round(api.settings.target_seconds * 1.8)}..{round(api.settings.target_seconds * 2.2)} {language_name(api)} words, around {desired} shots but at most {api.settings.max_shots}. Adapt duration to VERIFIED material, never invent scenes to fill time.
 First line directly states the extraordinary event and matches the opening panel. Concrete cause/effect, coherent evidence-supported chronology, escalation, factual payoff. No generic intro, invented dialogue, filler, or subscribe CTA. Original proper-name spelling. Favor short 3..12 word beats, vary push/pull and vertical movement according to the visible action. Most shots use normal emphasis (yellow captions); use danger/reveal/turn only for meaningful story beats. Each shot 3..30 words, supplied panel_id and 1+ fact_ids. Each panel at most 3 times; at least 6 unique panels. Page IDs are not chronological page numbers. Unseen action cannot be claimed as visible; context must be explicit.
 TITLE RULE: 40..70 characters, names the character, opens a curiosity gap or states the shock as a question ("Why Spider-Man Blames Himself for Gwen's Death"); no clickbait lies, no ALL CAPS, no emojis.
 HOOK CARD: also return "hook_card": the 3..6 word ALL-CAPS line shown over the first frame for one second (e.g. "SPIDER-MAN KILLED HER?", "BANE BROKE THE BAT"); shocking, true, no spoiler beyond the first sentence.
 DIRECTOR FIELDS per shot (the editor renders them automatically, use them where they land hardest, never on every shot):
-- "impact_word": ONE word from that shot's narration that slams on screen bigger (the number, the death word, the object): use in roughly one shot in three.
-- "effect": "shake" (impact, explosion, collision: picture shakes with a red flash), "blackout" (losing consciousness, dying, lights out: picture dims to black), "pressure" (being crushed, pulled in: hard push-in), "flash" (ignition, a star going off), or null. At most 4 effects per video, on the beats where the viewer's body is hit.
-- "graphic": one of {{"type":"counter","value":465,"unit":"degrees","label":"Venus surface"}} (a number counting up as it is spoken), {{"type":"scale","big":"Sun","small":"Earth","ratio":109,"label":""}} (true-scale discs, use for the scale comparison), {{"type":"countdown","seconds":15,"label":"to live"}} (a live countdown with heartbeat, for "you have N seconds"), or null. 2..4 graphics per video, on shots whose narration states that exact number.
+- "impact_word": ONE word from that shot's narration that slams on screen bigger (the number, the death word, the object): at most 4 shots per video, never shot 1.
+- "effect": "shake" (impact, explosion, collision: picture shakes with a red flash), "blackout" (losing consciousness, dying, lights out: picture dims to black), "pressure" (being crushed, pulled in: hard push-in), "flash" (ignition, a star going off), or null. At most 2 per video, never shot 1, only where the viewer's body is hit.
+- "graphic": one of {{"type":"counter","value":465,"unit":"degrees","label":"Venus surface"}} (a number counting up as it is spoken), {{"type":"scale","big":"Sun","small":"Earth","ratio":109,"label":""}} (true-scale discs), {{"type":"countdown","seconds":15,"label":"to live"}} (a live countdown with heartbeat), or null. At most 2 per video, never shot 1, never on a shot that has an effect, only on a shot whose narration states that exact number. Many videos need none.
 Return {{"title":"{language_name(api)}","description":"{language_name(api)}","hook_card":"3..6 WORDS","shots":[{{"panel_id":"","narration":"{language_name(api)}","fact_ids":[],"motion":"push|pull|left|right|up|down|hold","emphasis":"normal|danger|reveal|turn","impact_word":"","effect":null,"graphic":null}}]}}.
 REPAIR FEEDBACK {feedback}""",
         )
@@ -245,6 +253,8 @@ REPAIR FEEDBACK {feedback}""",
             # What is checked instead is variety: no panel twice in a row, no
             # panel more than twice, covers and promo art as a minority.
             problems = variety_problems(value["shots"], panels, min_words=round(api.settings.target_seconds * 1.2))
+            if space:
+                problems += craft.device_problems(value["shots"], craft_rows)
             if problems and attempt < api.settings.repair_attempts - 1:
                 feedback = "; ".join(problems)
                 save_json(api.directory / "diagnostics" / f"story_{attempt + 1}.json",
@@ -252,6 +262,13 @@ REPAIR FEEDBACK {feedback}""",
                 continue
             if problems:
                 value["shots"] = dedupe_consecutive(value["shots"])
+                value["narration"] = " ".join(s["narration"] for s in value["shots"])
+            if space:
+                value["craft"] = craft_plan
+                value = craft.editor_pass(api, value, event, craft_plan)
+                language = getattr(api.settings, "language", "en")
+                for shot in value["shots"]:
+                    shot["narration"] = spoken_form(shot["narration"], language)
                 value["narration"] = " ".join(s["narration"] for s in value["shots"])
             if space and len(value["shots"]) >= 8:
                 # Seamless loop: the last frame is the first frame.

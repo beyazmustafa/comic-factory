@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 from .api import FactoryError
 
-STYLE = {'profile_id': 'space-science-en-v1',
+STYLE = {'profile_id': 'space-science-en-v2',
  'font_style': 'condensed_heavy',
  'uppercase': True,
  'font_size': 90,
@@ -15,8 +15,8 @@ STYLE = {'profile_id': 'space-science-en-v1',
  'caption_y': 0.62,
  'caption_mode': 'single',
  'caption_words': 1,
- 'text_color': '#FFFF00',
- 'active_color': '#FFFF00',
+ 'text_color': '#FFFFFF',
+ 'active_color': '#FFFFFF',
  'stroke_color': '#000000',
  'background_color': '#000000',
  'background': 'page_fill',
