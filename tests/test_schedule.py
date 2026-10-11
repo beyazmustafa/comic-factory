@@ -12,9 +12,10 @@ class ScheduleTests(unittest.TestCase):
         text = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("cron: '23 5 * * *'", text)  # 08:23 Türkiye
         self.assertIn("cron: '23 14 * * *'", text)  # 17:23 Türkiye
-        self.assertIn("inputs.task || 'create_and_publish'", text)
+        # Scheduled runs are preview-only while the simulation format awaits approval.
+        self.assertIn("inputs.task || 'preview'", text)
         self.assertIn("vars.SCHEDULED_PLATFORMS || 'both'", text)
-        self.assertIn("vars.YOUTUBE_VISIBILITY || 'public'", text)
+        self.assertIn("inputs.visibility || vars.YOUTUBE_VISIBILITY || 'public'", text)
         self.assertIn("contents: write", text)
         self.assertIn("git add -A data/history", text)
         self.assertIn("poppler-utils", text)
