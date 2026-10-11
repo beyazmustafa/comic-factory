@@ -58,6 +58,14 @@ name: Comic Factory Studio
         - both
         - youtube
         - instagram
+      visibility:
+        description: YouTube görünürlüğü (boşsa public)
+        type: choice
+        default: ''
+        options:
+        - ''
+        - public
+        - unlisted
       resume_run_id:
         description: Yarım kalan bu sürümün sayısal run ID'si; yeni üretimde boş
         type: string
@@ -79,7 +87,8 @@ jobs:
     env:
       PYTHONUNBUFFERED: '1'
       # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
-      TASK: ${{ inputs.task || 'create_and_publish' }}
+      # Scheduled runs stay in preview until the new simulation format is approved.
+      TASK: ${{ inputs.task || 'preview' }}
       TOPIC: ${{ inputs.topic || '' }}
       SOURCE: ${{ inputs.source || '' }}
       DURATION: ${{ inputs.duration || '150' }}
@@ -87,7 +96,7 @@ jobs:
       PLATFORMS: ${{ inputs.platforms || vars.SCHEDULED_PLATFORMS || 'both' }}
       RESUME: ${{ inputs.resume_run_id || '' }}
       PREVIEW: ${{ inputs.preview_run_id || '' }}
-      YOUTUBE_VISIBILITY: ${{ vars.YOUTUBE_VISIBILITY || 'public' }}
+      YOUTUBE_VISIBILITY: ${{ inputs.visibility || vars.YOUTUBE_VISIBILITY || 'public' }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}

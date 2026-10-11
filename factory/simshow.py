@@ -104,7 +104,7 @@ def write_texts(api, key, handle):
             "Simülasyon metinleri",
             f"""You write the on-screen text of a silent physics-visualisation Short (style: '@ElsewhereLab' — a bold title, a thin one-line explanation that changes as the simulation progresses, nothing else). Scenario: {brief}
 Rules: title 2..4 words ending with a period ("The three-body problem."); three phase lines, each a complete plain sentence of 3..8 words ending with a period, in the order the viewer will see the physics happen; the last phase may also replace the title with a 2-line conclusion (two short sentences, e.g. "One escapes.\\nTwo remain bound."). No numbers on screen, no exclamation marks, no adjectives like amazing/terrifying; the tone is calm and exact.
-NARRATION: a calm, unhurried voice-over, one passage per phase (18..30 words each, 60..85 words total), explaining what the viewer is watching and why it happens, like a planetarium guide: precise, warm, no hype, no questions to the viewer, no "imagine", numbers allowed when they help (spelled as words). The three passages must read as one continuous explanation.
+NARRATION: a calm, unhurried voice-over, one passage per phase (18..30 words each, 60..85 words total), explaining what the viewer is watching and why it happens, like a planetarium guide: plain everyday words a curious teenager follows on first hearing (say "speeds up" not "gains kinetic energy", "pulls" not "exerts"), warm, precise, no hype, no questions to the viewer, no "imagine", numbers only when they help (spelled as words). The three passages must read as one continuous explanation.
 Also give a YouTube title (45..70 characters, curiosity-driven, no clickbait) and a one-sentence description.
 Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","narration":""}},{{"title":"optional two lines or empty","subtitle":"","narration":""}}],"caption":"4-5 word monospace caption naming the field shown below, e.g. Stars' gravitational fields","youtube_title":"","description":""}}""",
         )
@@ -134,7 +134,9 @@ Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","
         title = default["title"]
     for phase in phases:
         phase.setdefault("title", title)
-    caption = " ".join(str(data.get("caption") or default["caption"]).split())[:40]
+    caption = " ".join(str(data.get("caption") or default["caption"]).split())
+    if len(caption) > 32 or len(caption.split()) > 5:
+        caption = default["caption"]
     youtube_title = " ".join(str(data.get("youtube_title") or "").split())
     if not 30 <= len(youtube_title) <= 80:
         youtube_title = f"{title.rstrip('.')} — a physics simulation"
