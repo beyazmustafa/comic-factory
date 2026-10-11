@@ -128,6 +128,27 @@ Return {{"titles":[],"hook_cards":[],"best_title":"","best_hook_card":""}}""",
         print(f"Başlık cilası atlandı: {str(error)[:120]}", flush=True)
 
 
+def cap_emphasis(shots):
+    """Colour on at most one shot in four. The writer marks too many; keep
+    the ones that sit on real beats (effects, impact words) and spread the
+    rest out so two coloured shots never touch."""
+    limit = max(2, -(-len(shots) // 4))
+    coloured = [i for i, s in enumerate(shots) if s.get("emphasis", "normal") != "normal"]
+    if len(coloured) <= limit:
+        return
+    priority = sorted(coloured, key=lambda i: (not (shots[i].get("effect") or shots[i].get("impact_word")), i))
+    keep = []
+    for i in priority:
+        if len(keep) >= limit:
+            break
+        if any(abs(i - k) <= 1 for k in keep):
+            continue
+        keep.append(i)
+    for i in coloured:
+        if i not in keep:
+            shots[i]["emphasis"] = "normal"
+
+
 def variety_problems(shots, panels, min_words=0):
     """Famous mode: the writer must spread beats over many distinct images."""
     kind = {p["id"]: p.get("kind", "interior") for p in panels}
@@ -264,6 +285,7 @@ REPAIR FEEDBACK {feedback}""",
                 value["shots"] = dedupe_consecutive(value["shots"])
                 value["narration"] = " ".join(s["narration"] for s in value["shots"])
             if space:
+                cap_emphasis(value["shots"])
                 value["craft"] = craft_plan
                 value = craft.editor_pass(api, value, event, craft_plan)
                 language = getattr(api.settings, "language", "en")

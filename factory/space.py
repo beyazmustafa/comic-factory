@@ -280,6 +280,7 @@ def download_videos(api, event, rows, maximum, seen):
     (root / "pages").mkdir(parents=True, exist_ok=True)
     (root / "clips").mkdir(parents=True, exist_ok=True)
     pages = []
+    tally = {"manifest_fail": 0, "no_mp4": 0, "fetch_fail": 0, "short": 0, "frame_fail": 0, "small": 0, "ok": 0, "sample": []}
     offset = len(list((root / "pages").glob("page_*.jpg")))
     try:
         for row in rows:
@@ -289,17 +290,25 @@ def download_videos(api, event, rows, maximum, seen):
             try:
                 body, _ = fetcher.get(row["manifest"], 2_000_000)
                 files = json.loads(body.decode("utf-8", "ignore"))
-            except Exception:  # noqa: BLE001
+            except Exception as error:  # noqa: BLE001
+                tally["manifest_fail"] += 1
+                if len(tally["sample"]) < 3:
+                    tally["sample"].append(f"manifest {type(error).__name__}: {str(error)[:80]}")
                 continue
             if not isinstance(files, list):
                 continue
             candidates = [f for f in files if isinstance(f, str) and f.casefold().endswith(".mp4")]
+            if not candidates:
+                tally["no_mp4"] += 1
             ordered = sorted(candidates, key=lambda f: ("~orig" not in f, "~medium" not in f, "~small" not in f, "~preview" not in f))
             picked = None
             for url in ordered[:3]:
                 try:
                     body, final = fetcher.get(url, VIDEO_MAX_BYTES)
-                except Exception:  # noqa: BLE001
+                except Exception as error:  # noqa: BLE001
+                    tally["fetch_fail"] += 1
+                    if len(tally["sample"]) < 3:
+                        tally["sample"].append(f"fetch {type(error).__name__}: {str(error)[:80]} {url[-40:]}")
                     continue
                 digest = hashlib.sha256(body).hexdigest()
                 if digest in seen:
@@ -309,6 +318,7 @@ def download_videos(api, event, rows, maximum, seen):
                 clip.write_bytes(body)
                 length = probe_duration(clip)
                 if length < 2.5:
+                    tally["short"] += 1
                     clip.unlink(missing_ok=True)
                     continue
                 still = root / "pages" / (identifier + ".jpg")
@@ -316,15 +326,18 @@ def download_videos(api, event, rows, maximum, seen):
                 result = subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{middle:.2f}", "-i", str(clip),
                                          "-frames:v", "1", "-q:v", "3", str(still)], capture_output=True, timeout=120)
                 if result.returncode != 0 or not still.is_file():
+                    tally["frame_fail"] += 1
                     clip.unlink(missing_ok=True)
                     continue
                 with Image.open(still) as opened:
                     width, height = opened.size
                 if min(width, height) < 700:
                     # A soft rendition reads as a blurry still on a phone.
+                    tally["small"] += 1
                     clip.unlink(missing_ok=True)
                     still.unlink(missing_ok=True)
                     continue
+                tally["ok"] += 1
                 seen.add(digest)
                 picked = {"id": identifier, "file": str(still.relative_to(api.directory)),
                           "video": str(clip.relative_to(api.directory)), "clip_start": max(0.0, middle - 1.0),
@@ -337,6 +350,7 @@ def download_videos(api, event, rows, maximum, seen):
                 pages.append(picked)
     finally:
         fetcher.session.close()
+    print(f"Video indirme: {json.dumps(tally)}", flush=True)
     return pages
 
 
