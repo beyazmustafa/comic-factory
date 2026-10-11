@@ -1,0 +1,55 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 95,
+  "scene_match": 95,
+  "delivery": 94,
+  "visual_readability": 90,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video starts with a high-energy narration and a dynamic temperature counter graphic."
+    },
+    {
+      "second": 12,
+      "detail": "A scale comparison graphic effectively illustrates the Sun's mass relative to Earth."
+    },
+    {
+      "second": 21,
+      "detail": "The countdown graphic for the 65-day fall is clear and well-paced with the narration."
+    },
+    {
+      "second": 45,
+      "detail": "The transition to the corona scene is smooth, with captions remaining legible against the bright background."
+    },
+    {
+      "second": 60,
+      "detail": "The surface heat counter accurately reflects the 5,500-degree plasma mentioned in the script."
+    },
+    {
+      "second": 85,
+      "detail": "The final scenes maintain high energy, concluding with a thematic loop back to the initial sun imagery."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary narration is professionally delivered with excellent pacing and energy. The visual graphics, including counters and scale comparisons, are well-integrated and enhance the educational content. Captions are consistently readable and synchronized with the audio.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 95,
+    "scene_match": 92,
+    "delivery": 94,
+    "visual_readability": 90
+  },
+  "measured_scores": {
+    "subtitle_sync": 86.48648648648648,
+    "scene_match": 95,
+    "delivery": 86.48648648648648
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

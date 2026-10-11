@@ -1,0 +1,323 @@
+{
+  "title": "What Happens to Your Body If You Fall Into the Sun",
+  "description": "Step by step, this is how solar heat and gravity transform your body into raw plasma.",
+  "hook_card": "FALLING INTO THE SUN",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "page_022_p00",
+      "narration": "Falling into the Sun will incinerate your body in one million degree heat.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": "flash",
+      "graphic": {
+        "type": "counter",
+        "value": 1000000.0,
+        "unit": "degrees",
+        "label": "Corona heat"
+      },
+      "impact_word": "incinerate",
+      "motion": "push",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "page_025_p00",
+      "narration": "Earth normally zooms through space at thirty kilometers every single second.",
+      "fact_ids": [
+        "fact_005"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "page_017_p00",
+      "narration": "Our massive star is three hundred thousand times heavier than your entire planet.",
+      "fact_ids": [
+        "fact_006"
+      ],
+      "effect": null,
+      "graphic": {
+        "type": "scale",
+        "big": "Sun",
+        "small": "Earth",
+        "ratio": 300000.0,
+        "label": "mass comparison"
+      },
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "page_030_p00",
+      "narration": "If your speed stopped completely, you would plunge downward for sixty-five days.",
+      "fact_ids": [
+        "fact_007",
+        "fact_012"
+      ],
+      "effect": null,
+      "graphic": {
+        "type": "countdown",
+        "seconds": 65,
+        "label": "days to crash"
+      },
+      "impact_word": "sixty-five",
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "page_004_p00",
+      "narration": "After seven days of falling, your skin feels only a slight warming.",
+      "fact_ids": [
+        "fact_008"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "page_031_p00",
+      "narration": "By day twenty, an intense global heat wave roasts the landscape below.",
+      "fact_ids": [
+        "fact_009"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "roasts",
+      "motion": "right",
+      "emphasis": "turn"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "page_021_p00",
+      "narration": "Tidal forces then rip rock apart into glowing chunks of melted magma.",
+      "fact_ids": [
+        "fact_010"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "page_026_p00",
+      "narration": "Your spacecraft soon reaches the outer corona where ghost-like gas glows bright.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "down",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "page_011_p00",
+      "narration": "This fiery atmosphere is hotter than a furnace at one million degrees.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "page_028_p00",
+      "narration": "Extreme solar radiation instantly vaporizes your clothing and fries human tissues.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "effect": "pressure",
+      "graphic": null,
+      "impact_word": "fries",
+      "motion": "up",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_010",
+      "panel_id": "page_009_p00",
+      "narration": "At the surface layer, you hit five thousand five hundred degree plasma.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "effect": null,
+      "graphic": {
+        "type": "counter",
+        "value": 5500.0,
+        "unit": "degrees",
+        "label": "Surface heat"
+      },
+      "impact_word": "plasma",
+      "motion": "pull",
+      "emphasis": "reveal"
+    },
+    {
+      "id": "shot_011",
+      "panel_id": "page_027_p00",
+      "narration": "This boiling ocean has no solid ground for your feet to touch.",
+      "fact_ids": [
+        "fact_002"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "left",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_012",
+      "panel_id": "page_015_p00",
+      "narration": "Violent currents in the convective zone crush your remaining skeleton into dust.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "effect": "shake",
+      "graphic": null,
+      "impact_word": "crush",
+      "motion": "down",
+      "emphasis": "danger"
+    },
+    {
+      "id": "shot_013",
+      "panel_id": "page_012_p00",
+      "narration": "The immense pressure scatters your tiny fragments like crumbs across a kitchen.",
+      "fact_ids": [
+        "fact_003"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_014",
+      "panel_id": "page_002_p00",
+      "narration": "Wild heat strips electrons straight off every single atom in your body.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "push",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_015",
+      "panel_id": "page_005_p00",
+      "narration": "Deep inside the core, nuclear fusion burns at fifteen million degrees.",
+      "fact_ids": [
+        "fact_004"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "",
+      "motion": "up",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_016",
+      "panel_id": "page_001_p00",
+      "narration": "Your solid bones completely turn into a glowing cloud of charged particles.",
+      "fact_ids": [
+        "fact_001"
+      ],
+      "effect": "blackout",
+      "graphic": null,
+      "impact_word": "",
+      "motion": "pull",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_017",
+      "panel_id": "page_022_p00",
+      "narration": "And the horror restarts every time you fall into the Sun again.",
+      "fact_ids": [
+        "fact_000"
+      ],
+      "effect": null,
+      "graphic": null,
+      "impact_word": "fall",
+      "motion": "pull",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Falling into the Sun will incinerate your body in one million degree heat. Earth normally zooms through space at thirty kilometers every single second. Our massive star is three hundred thousand times heavier than your entire planet. If your speed stopped completely, you would plunge downward for sixty-five days. After seven days of falling, your skin feels only a slight warming. By day twenty, an intense global heat wave roasts the landscape below. Tidal forces then rip rock apart into glowing chunks of melted magma. Your spacecraft soon reaches the outer corona where ghost-like gas glows bright. This fiery atmosphere is hotter than a furnace at one million degrees. Extreme solar radiation instantly vaporizes your clothing and fries human tissues. At the surface layer, you hit five thousand five hundred degree plasma. This boiling ocean has no solid ground for your feet to touch. Violent currents in the convective zone crush your remaining skeleton into dust. The immense pressure scatters your tiny fragments like crumbs across a kitchen. Wild heat strips electrons straight off every single atom in your body. Deep inside the core, nuclear fusion burns at fifteen million degrees. Your solid bones completely turn into a glowing cloud of charged particles. And the horror restarts every time you fall into the Sun again.",
+  "repaired_evidence": 0,
+  "skipped_shots": [],
+  "headline_candidates": {
+    "titles": [
+      "What Happens to Your Body If You Fall Into the Sun",
+      "The Horrifying Science of Falling Into the Sun",
+      "How Long Would You Survive Falling Into the Sun",
+      "This Is What Falling Into the Sun Actually Does to You",
+      "What a Sixty Five Day Fall Into the Sun Looks Like"
+    ],
+    "hook_cards": [
+      "FALLING INTO THE SUN",
+      "ONE MILLION DEGREE HEAT",
+      "PLUNGING INTO THE SUN",
+      "DESCENT INTO THE SUN",
+      "FALLING INTO SOLAR HEAT"
+    ]
+  },
+  "event": {
+    "id": "space_fall-into-sun",
+    "title": "What Happens If You Fall Into the Sun",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "fall-into-sun",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "stage by stage: skin, bones, atoms; the 8 minutes nobody survives",
+    "famous_line": "stage by stage: skin, bones, atoms; the 8 minutes nobody survives",
+    "image_terms": [
+      "sun surface SDO",
+      "solar prominence",
+      "solar flare",
+      "corona"
+    ],
+    "source_urls": [
+      "https://www.facebook.com/factoven/videos/what-if-you-fell-into-the-sunthis-is-what-would-happen-if-you-fell-into-the-sun-/2624398407926722/",
+      "https://www.scienceabc.com/nature/universe/happen-earth-stopped-revolving-around-crashing-into-sun-consequences",
+      "https://images.nasa.gov/details/GSFC_20160624_SDO_m12292_Bursts",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "https://images.nasa.gov/details/GSFC_20170403_Trio_m12563_SolarFlares",
+      "https://images.nasa.gov/details/GSFC_20160624_SDO_m12292_TwistingSolarMaterial",
+      "https://images.nasa.gov/details/GSFC_20170622_SDO_m12406_Spicules",
+      "https://commons.wikimedia.org/wiki/File:Giant_prominence_on_the_sun_erupted.jpg",
+      "https://commons.wikimedia.org/wiki/File:Tormenta_solar.jpg",
+      "https://commons.wikimedia.org/wiki/File:H-alpha_DOT_image_of_a_solar_filament_colored.jpg",
+      "https://commons.wikimedia.org/wiki/File:Sun_-_August_1,_2010.jpg",
+      "https://images.nasa.gov/details/GSFC_20171208_Archive_e001209",
+      "https://commons.wikimedia.org/wiki/File:Sun_Releases_X3_3_Flare_on_February_9,_2024_(SVS14479_-_SDO_2-14-2024_1302UTC_171).png"
+    ],
+    "url": "https://www.facebook.com/factoven/videos/what-if-you-fell-into-the-sunthis-is-what-would-happen-if-you-fell-into-the-sun-/2624398407926722/",
+    "_source": "space"
+  },
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "mode": "relevance",
+    "variety_warnings": []
+  }
+}

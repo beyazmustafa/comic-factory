@@ -533,8 +533,13 @@
       "change": "Phrase the hook sentence as an immediate countdown metric under ten seconds before body trauma begins.",
       "rationale": "Countdowns establish immediate stakes and capitalize on top-performing videos that ground visceral physical danger within seconds."
     },
-    "verdict": "kept",
-    "judged_by": "model"
+    "verdict": "dropped",
+    "judged_by": "numbers",
+    "measured": {
+      "metric": "views_per_hour",
+      "video": 53.74,
+      "baseline_median": 1070.0107
+    }
   },
   {
     "run_id": "38076889068",
@@ -543,6 +548,17 @@
       "name": "opening_verb_loop_closure",
       "change": "Use the exact same visceral action verb in both the opening hook shot and the final transformation closing shot.",
       "rationale": "Direct lexical framing between the first and last beats reinforces seamless infinite looping and elevates completion retention."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "38135635369",
+    "chosen_at": "2026-10-11T11:34:27+00:00",
+    "experiment": {
+      "name": "red_danger_first_shot_emphasis",
+      "change": "Assign red danger emphasis to the primary trauma term in shot 1 rather than leaving the opening beat normal.",
+      "rationale": "High-contrast visual danger cues on the opening frame increase early engagement and reinforce the countdown hook."
     }
   }
 ]

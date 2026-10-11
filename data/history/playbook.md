@@ -1,5 +1,6 @@
 # Playbook (auto-evolving)
 - Hook: shot 1 names the celestial object and bodily danger with an immediate metric under 10 seconds in 8-11 plain words.
+- Hook lexical echo: use the exact same visceral action verb in both the opening hook shot and the final transformation closing shot.
 - Rhythm: complete sentences of 6-14 words; one idea per shot; 18-24 shots; 65-85 seconds.
 - Pace: maintain an even delivery pacing between 116 and 124 words per minute.
 - Body anchoring: anchor cosmic forces directly to a specific human body part in at least one out of every three shots.

@@ -1,11 +1,11 @@
-run_id: 38076889068  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261010T184348546461Z/run.json
+run_id: 38135635369  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261011T112828968290Z/run.json
 {
   "schema": 2,
   "version": "2026-10-01-archive-1",
-  "status": "failed",
-  "stage": "Konuşma ve kelime zamanları",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -38,11 +38,63 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38076889068",
-  "error": "SpeechFailure: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.",
-  "api_calls": 22
+  "run_id": "38135635369",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "1297fa08df4940c9320bf175d10365ea495a403413faf2d86fb97d6b2e28b023",
+  "metadata_sha256": "4e826311215a20eb4620c88d8a3d54955faebbd0ea8dc690143968e42cf5738f",
+  "quality_sha256": "a342c0ce3aa730a4057c5fa552cab8d36147496073afd863811353459d206df2",
+  "api_calls": 43,
+  "duration": 98.69,
+  "voice": "Orus",
+  "event": {
+    "id": "space_fall-into-sun",
+    "title": "What Happens If You Fall Into the Sun",
+    "publisher": "NASA/ESA",
+    "series": "Space",
+    "issue": "fall-into-sun",
+    "year": 2026,
+    "universe": "science",
+    "characters": [],
+    "summary": "stage by stage: skin, bones, atoms; the 8 minutes nobody survives",
+    "famous_line": "stage by stage: skin, bones, atoms; the 8 minutes nobody survives",
+    "image_terms": [
+      "sun surface SDO",
+      "solar prominence",
+      "solar flare",
+      "corona"
+    ],
+    "source_urls": [
+      "https://www.facebook.com/factoven/videos/what-if-you-fell-into-the-sunthis-is-what-would-happen-if-you-fell-into-the-sun-/2624398407926722/",
+      "https://www.scienceabc.com/nature/universe/happen-earth-stopped-revolving-around-crashing-into-sun-consequences",
+      "https://images.nasa.gov/details/GSFC_20160624_SDO_m12292_Bursts",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "https://images.nasa.gov/details/GSFC_20170403_Trio_m12563_SolarFlares",
+      "https://images.nasa.gov/details/GSFC_20160624_SDO_m12292_TwistingSolarMaterial",
+      "https://images.nasa.gov/details/GSFC_20170622_SDO_m12406_Spicules",
+      "https://commons.wikimedia.org/wiki/File:Giant_prominence_on_the_sun_erupted.jpg",
+      "https://commons.wikimedia.org/wiki/File:Tormenta_solar.jpg",
+      "https://commons.wikimedia.org/wiki/File:H-alpha_DOT_image_of_a_solar_filament_colored.jpg",
+      "https://commons.wikimedia.org/wiki/File:Sun_-_August_1,_2010.jpg",
+      "https://images.nasa.gov/details/GSFC_20171208_Archive_e001209",
+      "https://commons.wikimedia.org/wiki/File:Sun_Releases_X3_3_Flare_on_February_9,_2024_(SVS14479_-_SDO_2-14-2024_1302UTC_171).png"
+    ],
+    "url": "https://www.facebook.com/factoven/videos/what-if-you-fell-into-the-sunthis-is-what-would-happen-if-you-fell-into-the-sun-/2624398407926722/",
+    "_source": "space"
+  },
+  "localized": []
 }
---- data/runs/20261010T184348546461Z/diagnostics/providers.json
+--- data/runs/20261011T112828968290Z/diagnostics/provider_events.json
+[
+  "Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Üretilen video kontrolü: gemini-3.5-flash bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Üretilen video kontrolü: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+]
+--- data/runs/20261011T112828968290Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -64,9 +116,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -159,46 +211,122 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261010T184348546461Z/audio/chunk_004/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 22.; whisper-large-v3-turbo: 78.8/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.8/100; whisper-large-v3-turbo: 78.8/100"
-]
---- data/runs/20261010T184348546461Z/voice_audition/failed_auditions.json
+--- data/runs/20261011T112828968290Z/diagnostics/api_039.json
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=323 candidates_tokens_details=None prompt_token_count=11448 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=2446\n), ModalityTokenCount(\n  modality=<MediaModality.VIDEO: "
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 1147,
+  "response_text": "[\n  {\n    \"candidate_observed\": true,\n    \"narration_language_ok\": true,\n    \"no_critical_errors\": true,\n    \"subtitle_sync\": 72,\n    \"scene_match\": 70,\n    \"delivery\": 70,\n    \"visual_readability\": 68,\n    \"observations\": [\n      {\n        \"second\": 2,\n        \"detail\": \"Animated graphic counters visible along with single-word captions.\"\n      },\n      {\n        \"second\": 12,\n        \"detail\": \"Graphic overlay compares Sun and Earth mass effectively.\"\n      },\n      {\n        \"second\": 20,\n        \"detail\": \"Countdown graphic present in top right corner.\"\n      },\n      {\n        \"second\": 48,\n        \"detail\": \"Narration tone remains energetic and well-paced.\"\n      },\n      {\n        \"second\": 60,\n        \"detail\": \"Surface heat graphic increments in sync with narration.\"\n      },\n      {\n        \"second\": 90,\n        \"detail\": \"Captions remain legible over complex solar imagery.\"\n      }\n    ],\n    \"issues\": [],\n    \"style_adjustments\": {},\n    \"summary\": \"The documentary video features clear English narration, synchronized text pop-ins, and accurate graphic elements. Pacing and visual readability are solid throughout.\"\n  }\n]"
+}
+--- data/runs/20261011T112828968290Z/voice_audition/failed_auditions.json
 {}
 --- studio.log (son 300 satır)
 
 → Sabit kurgu profili
 
 → Öğrenme: oyun kitabı ve deney
+Oyun kitabı güncelleme: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Olay, gerçek sayfalar ve senaryo
 Olay araştırılıyor: What Happens If You Fall Into the Sun
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Arama (bing) yanıt vermedi: DDGSException
+Arama (brave) yanıt vermedi: DDGSException
+Arama (yahoo) yanıt vermedi: DDGSException
+Arama (duckduckgo) yanıt vermedi: DDGSException
+Arama (google) yanıt vermedi: DDGSException
+Bilim gerçekleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Bilim gerçekleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Uzay görselleri: 50 aday, 24 indirildi.
 Uzay videoları: 16 aday, 9 indirildi.
+Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 
 → Türkçe ses seçimi
 
 → Konuşma ve kelime zamanları
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 95.2/100 | whisper-large-v3
+Ses eşleştirme: 86.5/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses eşleştirme: 94.4/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 90.9/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses eşleştirme: 88.6/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 78.8/100 | whisper-large-v3
-Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 2
-Ses eşleştirme: 78.8/100 | whisper-large-v3
-Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 3
-Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 4
-Ses eşleştirme: 78.8/100 | whisper-large-v3
-Ses eşleştirme: 78.8/100 | whisper-large-v3-turbo
-HATA: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
+Ses eşleştirme: 97.1/100 | whisper-large-v3-turbo
+
+→ Dikey video ve eşzamanlı altyazı
+
+→ Bitmiş videonun görüntü ve ses kontrolü
+Üretilen video kontrolü: gemini-3.5-flash bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Üretilen video kontrolü: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T112828968290Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: What Happens to Your Body If You Fall Into the Sun #Shorts
+Görünürlük: public
+
+Yükleme: %9
+Yükleme: %18
+Yükleme: %27
+Yükleme: %36
+Yükleme: %45
+Yükleme: %54
+Yükleme: %63
+Yükleme: %72
+Yükleme: %81
+Yükleme: %90
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=bAh8DHLQEZY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T112828968290Z/video.mp4
+Boyut: 88.0 MB
+Açıklama uzunluğu: 189 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17967686403187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 18098304869434480
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).
