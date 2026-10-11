@@ -1,11 +1,11 @@
-run_id: 38177149354  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261011T213832579657Z/run.json
+run_id: 38177861367  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261011T214937927452Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,14 +40,37 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38177149354",
-  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "38177861367",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "ca29256f1700a883fff65ad104445637d77392c35fb25c85ac0a8874b2c6542c",
+  "metadata_sha256": "a190a2c898ca96ab0aba1d579900678a9bc657b76a840deac4198152f75dea19",
+  "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
+  "api_calls": 13,
+  "duration": 34.74,
+  "voice": "Charon",
+  "event": {
+    "id": "sim_binary-planet_20261011T214937927452Z",
+    "title": "A planet between two suns.",
+    "series": "Simulation",
+    "issue": "binary-planet",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "binary-planet",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "localized": []
 }
---- data/runs/20261011T213832579657Z/diagnostics/provider_events.json
+--- data/runs/20261011T214937927452Z/diagnostics/provider_events.json
 [
-  "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
+  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261011T213832579657Z/diagnostics/providers.json
+--- data/runs/20261011T214937927452Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -69,8 +92,8 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b"
   ],
   "errors": [],
@@ -164,21 +187,36 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261011T213832579657Z/audio/chunk_001/failures.json
-[
-  "edge-tts başarısız: usage: __main__.py [-h] [-t TEXT] [-f FILE] [-v VOICE] [-l] [--rate RATE]\n                   [--volume VOLUME] [--pitch PITCH]\n                   [--write-media WRITE_MEDIA]\n                   [--write-subtitles WRITE_SUBTITLES] [--proxy PROXY]\n                   [--version]\n__main__.py: error: argu",
-  "edge-tts başarısız: usage: __main__.py [-h] [-t TEXT] [-f FILE] [-v VOICE] [-l] [--rate RATE]\n                   [--volume VOLUME] [--pitch PITCH]\n                   [--write-media WRITE_MEDIA]\n                   [--write-subtitles WRITE_SUBTITLES] [--proxy PROXY]\n                   [--version]\n__main__.py: error: argu",
-  "edge-tts başarısız: usage: __main__.py [-h] [-t TEXT] [-f FILE] [-v VOICE] [-l] [--rate RATE]\n                   [--volume VOLUME] [--pitch PITCH]\n                   [--write-media WRITE_MEDIA]\n                   [--write-subtitles WRITE_SUBTITLES] [--proxy PROXY]\n                   [--version]\n__main__.py: error: argu",
-  "edge-tts başarısız: usage: __main__.py [-h] [-t TEXT] [-f FILE] [-v VOICE] [-l] [--rate RATE]\n                   [--volume VOLUME] [--pitch PITCH]\n                   [--write-media WRITE_MEDIA]\n                   [--write-subtitles WRITE_SUBTITLES] [--proxy PROXY]\n                   [--version]\n__main__.py: error: argu"
-]
 --- studio.log (son 300 satır)
 → Senaryo: binary-planet
+Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses bölümü 2, deneme 2
-Ses bölümü 2, deneme 3
-Ses bölümü 2, deneme 4
-HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Simülasyon render (34.7 sn)
+Simülasyon: binary-planet, 1000 kare, kare başına 6.00 adım
+Simülasyon karesi 0/1042
+Simülasyon karesi 150/1042
+Simülasyon karesi 300/1042
+Simülasyon karesi 450/1042
+Simülasyon karesi 600/1042
+Simülasyon karesi 750/1042
+Simülasyon karesi 900/1042
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T214937927452Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: What Happens When a Planet Orbits Two Suns? #Shorts
+Görünürlük: unlisted
+
+Yükleme: %23
+Yükleme: %47
+Yükleme: %71
+Yükleme: %95
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=oOjPkbD1OtU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

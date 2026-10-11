@@ -1,0 +1,89 @@
+{
+  "script": {
+    "title": "What Happens When a Planet Orbits Two Suns?",
+    "description": "Watch how a planet navigates the shifting gravitational pull of a binary star system before its orbit changes forever.",
+    "hook_card": "A planet between two suns.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "A distant planet orbits two suns at the same time, weaving a wide loop around their shared center of gravity.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "As the twin stars swing close together, their shifting gravity constantly tugs the planet onto a brand new path.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "One close pass transfers enough motion to hurl the planet away forever, leaving the two suns behind in peace.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "A distant planet orbits two suns at the same time, weaving a wide loop around their shared center of gravity. As the twin stars swing close together, their shifting gravity constantly tugs the planet onto a brand new path. One close pass transfers enough motion to hurl the planet away forever, leaving the two suns behind in peace.",
+    "event": {
+      "id": "sim_binary-planet_20261011T214937927452Z",
+      "title": "A planet between two suns.",
+      "series": "Simulation",
+      "issue": "binary-planet",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "binary-planet",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "binary-planet",
+    "phases": [
+      {
+        "at": 0.0,
+        "subtitle": "The world traces a wide looping loop.",
+        "narration": "A distant planet orbits two suns at the same time, weaving a wide loop around their shared center of gravity.",
+        "title": "A planet between two suns."
+      },
+      {
+        "at": 11.399999999999999,
+        "subtitle": "The binary pair tightens its inner dance.",
+        "narration": "As the twin stars swing close together, their shifting gravity constantly tugs the planet onto a brand new path.",
+        "title": "A planet between two suns."
+      },
+      {
+        "at": 20.24,
+        "subtitle": "The world slingshots into deep space.",
+        "narration": "One close pass transfers enough motion to hurl the planet away forever, leaving the two suns behind in peace.",
+        "title": "One path snaps.\nTwo stars stay bound."
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Watch how a planet navigates the shifting gravitational pull of a binary star system before its orbit changes forever.\n\nA physics simulation rendered by code. @Facctsaboutspace\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "What Happens When a Planet Orbits Two Suns?\n\nWatch how a planet navigates the shifting gravitational pull of a binary star system before its orbit changes forever."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}

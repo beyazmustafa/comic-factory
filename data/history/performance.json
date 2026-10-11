@@ -2595,5 +2595,45 @@
       "rationale": "Ending on human cellular or bodily consequence reinforces personal stakes and strengthens loop retention."
     },
     "stats": {}
+  },
+  {
+    "video_id": "oOjPkbD1OtU",
+    "platform": "youtube",
+    "run_id": "38177861367",
+    "published_at": "2026-10-11T21:58:14+00:00",
+    "event": {
+      "title": "A planet between two suns.",
+      "series": "Simulation",
+      "issue": "binary-planet",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 58,
+      "duration": 34.7,
+      "words_per_minute": 100,
+      "hook": "A distant planet orbits two suns at the same time, weaving a wide loop around their shared center of gravity.",
+      "hook_words": 20,
+      "title": "What Happens When a Planet Orbits Two Suns?",
+      "title_length": 43,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
