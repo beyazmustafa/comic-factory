@@ -111,6 +111,20 @@ def pick_scenario(topic=""):
     return pool[-1] if fresh else pool[0]
 
 
+def short_line(text, limit=48, max_words=8):
+    """A clean on-screen line from a longer fact: the first clause that fits."""
+    text = " ".join(str(text or "").split())
+    for sep in (". ", "; ", ": ", ", "):
+        if sep in text and len(text.split(sep)[0]) >= 12:
+            text = text.split(sep)[0]
+            break
+    words = text.split()
+    while words and (len(" ".join(words)) > limit or len(words) > max_words):
+        words.pop()
+    line = " ".join(words).rstrip(",;:")
+    return clean_line(line, limit) if line else ""
+
+
 def clean_line(text, limit):
     text = " ".join(str(text or "").split())
     text = re.sub(r"[<>]", "", text)
@@ -141,9 +155,8 @@ Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","
     rows = data.get("phases") if isinstance(data.get("phases"), list) else []
     for index, base in enumerate(default["phases"]):
         row = rows[index] if index < len(rows) and isinstance(rows[index], dict) else {}
-        subtitle = clean_line(row.get("subtitle"), 48) if row.get("subtitle") else base["subtitle"]
-        if not 3 <= len(subtitle.split()) <= 9:
-            subtitle = base["subtitle"]
+        proposed = " ".join(str(row.get("subtitle") or "").split()) if row else ""
+        subtitle = clean_line(proposed, 48) if proposed and len(proposed) <= 48 and 3 <= len(proposed.split()) <= 9 else base["subtitle"]
         narration = " ".join(str(row.get("narration") or "").split()) if row else ""
         if not 10 <= len(narration.split()) <= 40 or any(v in narration for v in ("<", ">", "http")):
             narration = base.get("narration", "")
@@ -180,14 +193,15 @@ def fetch_image(api, query, directory, focus):
     target.mkdir(exist_ok=True)
     fetcher = Fetcher()
     try:
-        for row in nasa_search(query, 8):
-            for url in (row.get("image_url"), row.get("fallback_url")):
-                if not url:
-                    continue
+        rows = nasa_search(query, 8)
+        print(f"NASA görsel: '{query}' için {len(rows)} sonuç", flush=True)
+        for row in rows:
+            candidates = [row.get("image_url"), (row.get("image_url") or "").replace("~large", "~orig"), row.get("fallback_url")]
+            for url in dict.fromkeys(u for u in candidates if u):
                 try:
                     body, _ = fetcher.get(url, 40_000_000)
                     with Image.open(io.BytesIO(body)) as opened:
-                        if min(opened.size) < 900:
+                        if min(opened.size) < 640:
                             continue
                         picture = opened.convert("RGB")
                     if picture.width > 3200 or picture.height > 3200:
@@ -195,10 +209,12 @@ def fetch_image(api, query, directory, focus):
                     path = target / (hashlib.sha256(url.encode()).hexdigest()[:12] + ".jpg")
                     picture.save(path, "JPEG", quality=94)
                     return path, row.get("credit", "NASA"), row.get("source_url", "")
-                except Exception:  # noqa: BLE001
+                except Exception as error:  # noqa: BLE001
+                    print(f"NASA görsel indirilemedi: {type(error).__name__}: {str(error)[:80]}", flush=True)
                     continue
     finally:
         fetcher.session.close()
+    print(f"NASA görsel bulunamadı ('{query}'); yıldız alanı kullanıldı.", flush=True)
     path = target / "starfield.jpg"
     scenes.starfield().save(path, "JPEG", quality=92)
     return path, "", ""
@@ -244,9 +260,8 @@ Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","
     phases = []
     for index, spec in enumerate(topic_spec["phases"]):
         row = rows[index] if index < len(rows) and isinstance(rows[index], dict) else {}
-        subtitle = clean_line(row.get("subtitle"), 48) if row.get("subtitle") else clean_line(spec["fact"], 48)
-        if not 3 <= len(subtitle.split()) <= 9:
-            subtitle = clean_line(" ".join(spec["fact"].split()[:8]), 48)
+        proposed = " ".join(str(row.get("subtitle") or "").split()) if row else ""
+        subtitle = clean_line(proposed, 48) if proposed and len(proposed) <= 48 and 3 <= len(proposed.split()) <= 9 else short_line(spec["fact"])
         narration = " ".join(str(row.get("narration") or "").split()) if row else ""
         if not 10 <= len(narration.split()) <= 40 or any(v in narration for v in ("<", ">", "http")):
             narration = spec["fact"]
