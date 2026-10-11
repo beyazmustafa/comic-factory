@@ -2635,5 +2635,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "P9lzIbRzYUw",
+    "platform": "youtube",
+    "run_id": "38180308929",
+    "published_at": "2026-10-11T22:30:42+00:00",
+    "event": {
+      "title": "When Betelgeuse dies.",
+      "series": "Simulation",
+      "issue": "betelgeuse",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 75,
+      "duration": 32.6,
+      "words_per_minute": 138,
+      "hook": "In the constellation of Orion sits a glowing red supergiant star. It is huge, spanning hundreds of times the diameter of our own Sun.",
+      "hook_words": 24,
+      "title": "What Happens When Betelgeuse Finally Explodes?",
+      "title_length": 46,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
