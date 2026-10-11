@@ -193,9 +193,12 @@ def fetch_image(api, query, directory, focus):
     target.mkdir(exist_ok=True)
     fetcher = Fetcher()
     try:
-        rows = nasa_search(query, 8)
+        rows = nasa_search(query, 10)
         print(f"NASA görsel: '{query}' için {len(rows)} sonuç", flush=True)
+        found = []
         for row in rows:
+            if len(found) >= 4:
+                break
             candidates = [row.get("image_url"), (row.get("image_url") or "").replace("~large", "~orig"), row.get("fallback_url")]
             for url in dict.fromkeys(u for u in candidates if u):
                 try:
@@ -208,10 +211,29 @@ def fetch_image(api, query, directory, focus):
                         picture.thumbnail((3200, 3200), Image.Resampling.LANCZOS)
                     path = target / (hashlib.sha256(url.encode()).hexdigest()[:12] + ".jpg")
                     picture.save(path, "JPEG", quality=94)
-                    return path, row.get("credit", "NASA"), row.get("source_url", "")
+                    found.append((path, " ".join(str(row.get("credit", "NASA")).split())[:60], row.get("source_url", ""), row.get("title", "")))
+                    break
                 except Exception as error:  # noqa: BLE001
                     print(f"NASA görsel indirilemedi: {type(error).__name__}: {str(error)[:80]}", flush=True)
                     continue
+        if found:
+            best = found[0]
+            if len(found) > 1:
+                # one look by the model: which photograph shows the subject best, full-screen on a phone
+                try:
+                    data = api.json(
+                        "Görsel seçimi",
+                        f"""Pick the ONE photograph that best shows "{query}" for a calm science Short: the subject clearly visible and beautiful, not a diagram, not a group photo, not text. Return {{"best":<index starting at 0>,"focus":[x,y] fractions of the most important point in that image}}.""",
+                        images=[(f"img{i}", p) for i, (p, _, _, _) in enumerate(found)],
+                    )
+                    index = int(data.get("best", 0))
+                    if 0 <= index < len(found):
+                        best = found[index]
+                    fx, fy = data.get("focus", [0.5, 0.5])
+                    focus[0], focus[1] = min(1.0, max(0.0, float(fx))), min(1.0, max(0.0, float(fy)))
+                except Exception as error:  # noqa: BLE001
+                    print(f"Görsel seçimi atlandı: {str(error)[:80]}", flush=True)
+            return best[0], best[1], best[2]
     finally:
         fetcher.session.close()
     print(f"NASA görsel bulunamadı ('{query}'); yıldız alanı kullanıldı.", flush=True)
@@ -223,9 +245,10 @@ def fetch_image(api, query, directory, focus):
 def build_scene(spec, api, directory, used_images):
     kind = spec.get("type")
     if kind == "image":
-        path, credit, source = fetch_image(api, spec["query"], directory, spec.get("focus", [0.5, 0.5]))
+        focus = list(spec.get("focus", [0.5, 0.5]))
+        path, credit, source = fetch_image(api, spec["query"], directory, focus)
         used_images.append({"query": spec["query"], "file": str(path), "credit": credit, "source": source})
-        return scenes.ImageScene(path, tuple(spec.get("focus", [0.5, 0.5])), credit=credit)
+        return scenes.ImageScene(path, tuple(focus), credit=credit)
     if kind == "scale":
         return scenes.ScaleScene(spec["items"], spec.get("unit", ""), spec.get("mode", "discs"))
     if kind == "timeline":
