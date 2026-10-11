@@ -92,7 +92,7 @@ def edge_synthesize(text, voice, path, rate="+4%"):
     media = path.with_suffix(".mp3")
     try:
         subprocess.run(
-            [sys.executable, "-m", "edge_tts", "--voice", identifier, "--rate", rate,
+            [sys.executable, "-m", "edge_tts", "--voice", identifier, f"--rate={rate}",
              "--text", text, "--write-media", str(media)],
             check=True, capture_output=True, text=True, timeout=240,
         )
