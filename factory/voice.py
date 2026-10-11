@@ -16,9 +16,10 @@ from .core import align_words, ffmpeg_binary, file_hash, save_json, language_nam
 RATE = 24000
 GEMINI_VOICES = ("Orus", "Gacrux", "Fenrir", "Puck")
 # Gemini voice → Microsoft edge-tts voice used when Gemini TTS is unavailable.
-EDGE_FALLBACK = {"Orus": "Ahmet", "Fenrir": "Ahmet", "Puck": "Ahmet", "Gacrux": "Emel"}
+EDGE_FALLBACK = {"Orus": "Ahmet", "Fenrir": "Ahmet", "Puck": "Ahmet", "Gacrux": "Emel", "Charon": "Andrew"}
 EDGE_VOICE_IDS = {"Ahmet": "tr-TR-AhmetNeural", "Emel": "tr-TR-EmelNeural",
-                  "Christopher": "en-US-ChristopherNeural", "Guy": "en-US-GuyNeural"}
+                  "Christopher": "en-US-ChristopherNeural", "Guy": "en-US-GuyNeural",
+                  "Andrew": "en-US-AndrewNeural", "Ryan": "en-GB-RyanNeural", "Brian": "en-US-BrianNeural"}
 EDGE_DEFAULT = {"tr": "Ahmet", "en": "Christopher"}
 AUDITION_TEXTS = {
     "tr": "Bir kahramanın en büyük gücü, bir anda en korkunç düşmanına dönüşebilir. Thor bunu öğrendiğinde artık çok geçti. Çünkü asıl tehlike dışarıda değil, kendi bedeninin içindeydi. Peki bu noktaya nasıl geldi?",
@@ -35,6 +36,8 @@ def edge_voice_for(api, voice):
     """The edge-tts stand-in for a Gemini voice, in the run's language."""
     if language_of(api) == "tr":
         return EDGE_FALLBACK.get(voice, "Ahmet")
+    if voice == "Charon":
+        return "Andrew"
     return EDGE_DEFAULT.get(language_of(api), "Christopher")
 
 
@@ -82,14 +85,14 @@ def trim_edges(samples):
     return samples[start:end]  # Preserve pauses within speech.
 
 
-def edge_synthesize(text, voice, path):
+def edge_synthesize(text, voice, path, rate="+4%"):
     """Free, keyless Microsoft neural TTS (edge-tts); output converted to 24 kHz PCM."""
     identifier = EDGE_VOICE_IDS.get(voice, voice)
     path.parent.mkdir(parents=True, exist_ok=True)
     media = path.with_suffix(".mp3")
     try:
         subprocess.run(
-            [sys.executable, "-m", "edge_tts", "--voice", identifier, "--rate", "+4%",
+            [sys.executable, "-m", "edge_tts", "--voice", identifier, "--rate", rate,
              "--text", text, "--write-media", str(media)],
             check=True, capture_output=True, text=True, timeout=240,
         )
@@ -112,22 +115,23 @@ def edge_synthesize(text, voice, path):
 
 def synthesize(api, text, voice, style, path):
     """Gemini TTS; on provider overload the matching edge-tts voice is used."""
+    rate = str(style.get("speech_rate", "+4%"))
     if voice in EDGE_VOICE_IDS:
-        return edge_synthesize(text, voice, path)
+        return edge_synthesize(text, voice, path, rate)
     if getattr(api, "tts_fallback", False):
-        return edge_synthesize(text, edge_voice_for(api, voice), path)
+        return edge_synthesize(text, edge_voice_for(api, voice), path, rate)
     try:
         return gemini_synthesize(api, text, voice, style, path)
     except ProviderOverloaded as error:
         api.tts_fallback = True
         api.note(f"Gemini TTS yanıt vermiyor ({str(error)[:120]}); edge-tts sesine geçildi.")
-        return edge_synthesize(text, edge_voice_for(api, voice), path)
+        return edge_synthesize(text, edge_voice_for(api, voice), path, rate)
 
 
 def gemini_synthesize(api, text, voice, style, path):
     prompt = f"""Read ONLY the exact {language_name(api)} text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
-Fluent natural {language_name(api)}, confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.
+{style.get("voice_character", "Fluent natural " + language_name(api) + ", confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.")}
 <transcript>{text}</transcript>"""
     response = api.request(
         "Ses " + voice,

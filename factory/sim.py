@@ -25,6 +25,35 @@ PALETTE = [(120, 220, 255), (255, 110, 170), (255, 220, 110), (170, 140, 255), (
 GRID_COLOR = (92, 104, 178)
 
 FONT_DIR = Path("/usr/share/fonts/truetype/dejavu")
+SS = 2  # supersampling: everything is drawn at 2x and downsampled, so lines are smooth
+
+
+class ScaledDraw:
+    """ImageDraw in virtual 1080x1920 coordinates on a canvas SS times larger."""
+
+    def __init__(self, image):
+        self.d = ImageDraw.Draw(image)
+
+    @staticmethod
+    def _pts(xy):
+        if isinstance(xy, (list, tuple)) and xy and isinstance(xy[0], (list, tuple, np.ndarray)):
+            return [(float(x) * SS, float(y) * SS) for x, y in xy]
+        return [float(v) * SS for v in xy]
+
+    def line(self, xy, fill=None, width=1):
+        self.d.line(self._pts(xy), fill=fill, width=max(1, round(width * SS)))
+
+    def ellipse(self, xy, fill=None, outline=None, width=1):
+        self.d.ellipse(self._pts(xy), fill=fill, outline=outline, width=max(1, round(width * SS)))
+
+    def rectangle(self, xy, fill=None):
+        self.d.rectangle(self._pts(xy), fill=fill)
+
+    def text(self, xy, text, font=None, fill=None, anchor="la"):
+        self.d.text((xy[0] * SS, xy[1] * SS), text, font=font, fill=fill, anchor=anchor)
+
+    def textlength(self, text, font=None):
+        return self.d.textlength(text, font=font) / SS
 
 
 def font(kind, size):
@@ -33,7 +62,7 @@ def font(kind, size):
     path = FONT_DIR / name
     if not path.is_file():
         path = FONT_DIR / "DejaVuSans.ttf"
-    return ImageFont.truetype(str(path), size)
+    return ImageFont.truetype(str(path), size * SS)
 
 
 # ------------------------------------------------------------------ physics
@@ -129,7 +158,7 @@ class Renderer:
         self.s = scenario
         self.center = np.array([540.0, scenario.get("sim_center_y", 860.0)])
         self.scale = scenario.get("scale", 120.0)           # pixels per world unit
-        self.trail = np.zeros((HEIGHT, WIDTH, 4), dtype=np.float32)
+        self.trail = np.zeros((HEIGHT * SS, WIDTH * SS, 4), dtype=np.float32)
         self.trail_fade = scenario.get("trail_fade", 0.992)
         self.glow_cache = {}
         self.horizon = 1185
@@ -138,10 +167,12 @@ class Renderer:
         self.grid_focal = 1500.0
         self.handle = scenario.get("handle", "")
         self.noise = self._noise()
+        self._band_mask = None
+        self._haze = None
 
     def _noise(self):
         rng = np.random.default_rng(1)
-        n = rng.normal(0, 2.2, (HEIGHT, WIDTH, 1)).astype(np.float32)
+        n = rng.normal(0, 2.0, (HEIGHT, WIDTH, 1)).astype(np.float32)
         return n
 
     def world_to_screen(self, p):
@@ -150,12 +181,13 @@ class Renderer:
     def glow(self, color, size):
         key = (color, size)
         if key not in self.glow_cache:
-            layer = Image.new("RGBA", (size * 2, size * 2), (0, 0, 0, 0))
+            px = size * SS
+            layer = Image.new("RGBA", (px * 2, px * 2), (0, 0, 0, 0))
             draw = ImageDraw.Draw(layer)
-            for k in range(size, 0, -2):
-                alpha = int(90 * (1 - k / size) ** 2.2)
-                draw.ellipse((size - k, size - k, size + k, size + k), fill=color + (alpha,))
-            self.glow_cache[key] = layer.filter(ImageFilter.GaussianBlur(size * 0.18))
+            for k in range(px, 0, -2):
+                alpha = int(90 * (1 - k / px) ** 2.2)
+                draw.ellipse((px - k, px - k, px + k, px + k), fill=color + (alpha,))
+            self.glow_cache[key] = layer.filter(ImageFilter.GaussianBlur(px * 0.18))
         return self.glow_cache[key]
 
     # --- grid with wells
@@ -197,12 +229,12 @@ class Renderer:
                 alpha = int(170 * (1 - k / 11) ** 1.3)
                 draw.line(list(zip(rx, ry)) + [(rx[0], ry[0])], fill=color + (alpha,), width=1)
             # a few meridians down the funnel wall
-            for ang in np.linspace(0, 2 * math.pi, 10, endpoint=False):
-                rr = np.linspace(0.03, 1.2, 14)
+            for ang in np.linspace(0, 2 * math.pi, 8, endpoint=False):
+                rr = np.linspace(0.03, 0.8, 12)
                 cx, cy = px + rr * np.cos(ang), py + rr * np.sin(ang)
                 cz = self.well_depth(cx, cy, masses)
                 rx, ry = self.grid_project(cx, cy, cz)
-                draw.line(list(zip(rx, ry)), fill=color + (70,), width=1)
+                draw.line(list(zip(rx, ry)), fill=color + (55,), width=1)
 
     def to_grid_plane(self, p):
         # world (x, y) → grid plane: x stays, y maps into depth 0.6..5.2
@@ -216,14 +248,15 @@ class Renderer:
             draw.text((540, 165), self.handle, font=font("mono", 22), fill=(150, 152, 175, 200), anchor="mm")
         title = phase.get("title", "")
         lines = title.split("\n")
-        size = 84 if len(lines) == 1 else 66
+        size = 84 if len(lines) == 1 else 62
         while size > 40 and max(draw.textlength(line, font=font("bold", size)) for line in lines) > 940:
             size -= 4
-        y = 380 if len(lines) == 1 else 350
-        for line in lines:
-            draw.text((540, y), line, font=font("bold", size), fill=white, anchor="mm")
-            y += size * 1.15
-        draw.text((540, 465 if len(lines) == 1 else y + 10), phase.get("subtitle", ""), font=font("light", 40), fill=grey, anchor="mm")
+        if len(lines) == 1:
+            draw.text((540, 380), lines[0], font=font("bold", size), fill=white, anchor="mm")
+        else:
+            draw.text((540, 318), lines[0], font=font("bold", size), fill=white, anchor="mm")
+            draw.text((540, 318 + size * 1.18), lines[1], font=font("bold", size), fill=white, anchor="mm")
+        draw.text((540, 465), phase.get("subtitle", ""), font=font("light", 40), fill=grey, anchor="mm")
         # stats
         label_font, value_font, unit_font = font("bold", 21), font("mono", 34), font("regular", 22)
         stats = self.s.get("stats", [])
@@ -254,42 +287,45 @@ class Renderer:
 
     # --- frame
     def render_frame(self, world, phase, phase_alpha, stats_values, fade=1.0):
-        frame = Image.new("RGBA", (WIDTH, HEIGHT), BG + (255,))
-        # grid first (behind everything else in its band)
-        band = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-        gdraw = ImageDraw.Draw(band)
+        W, H = WIDTH * SS, HEIGHT * SS
+        frame = Image.new("RGBA", (W, H), BG + (255,))
+        band = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        gdraw = ScaledDraw(band)
         masses = []
         for body in world.bodies:
             if body.alive:
                 gx, gy = self.to_grid_plane(body.pos)
                 masses.append((gx, gy, body.mass, body.color))
-        self.draw_grid(gdraw, masses)
-        # crop grid to its band with a soft top edge
-        mask = Image.new("L", (WIDTH, HEIGHT), 0)
-        ImageDraw.Draw(mask).rectangle((0, self.horizon - 10, WIDTH, HEIGHT), fill=255)
-        mask = mask.filter(ImageFilter.GaussianBlur(14))
-        band.putalpha(Image.fromarray((np.asarray(band.getchannel("A"), dtype=np.float32) * np.asarray(mask, dtype=np.float32) / 255).astype(np.uint8)))
-        # glow dots at the bottom of each funnel
-        bdraw = ImageDraw.Draw(band)
-        for (gx, gy, m, color) in masses:
-            z = self.well_depth(np.array([gx]), np.array([gy]), masses)[0]
-            sx, sy = self.grid_project(np.array([gx]), np.array([gy]), np.array([z]))
-            bdraw.ellipse((sx[0] - 4, sy[0] - 4, sx[0] + 4, sy[0] + 4), fill=color + (255,))
-        # a faint haze where the field meets the sky
-        haze = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-        hz = ImageDraw.Draw(haze)
-        for k in range(0, 260, 4):
-            a = int(38 * (1 - k / 260) ** 1.5)
-            hz.line([(0, self.horizon + k), (WIDTH, self.horizon + k)], fill=(70, 72, 140, a), width=4)
-        frame.alpha_composite(haze)
-        frame.alpha_composite(band)
+        if self.s.get("grid", True):
+            self.draw_grid(gdraw, masses)
+            # glow dots at the bottom of each funnel
+            bdraw = ScaledDraw(band)
+            for (gx, gy, m, color) in masses:
+                z = self.well_depth(np.array([gx]), np.array([gy]), masses)[0]
+                sx, sy = self.grid_project(np.array([gx]), np.array([gy]), np.array([z]))
+                bdraw.ellipse((sx[0] - 4, sy[0] - 4, sx[0] + 4, sy[0] + 4), fill=color + (255,))
+            # soft top edge (static mask, computed once) and a faint haze at the horizon
+            if self._band_mask is None:
+                mask = Image.new("L", (W, H), 0)
+                ImageDraw.Draw(mask).rectangle((0, (self.horizon - 10) * SS, W, H), fill=255)
+                self._band_mask = np.asarray(mask.filter(ImageFilter.GaussianBlur(14 * SS)), dtype=np.float32) / 255
+                haze = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+                hz = ScaledDraw(haze)
+                for k in range(0, 260, 4):
+                    a = int(38 * (1 - k / 260) ** 1.5)
+                    hz.line([(0, self.horizon + k), (WIDTH, self.horizon + k)], fill=(70, 72, 140, a), width=4)
+                self._haze = haze
+            alpha = (np.asarray(band.getchannel("A"), dtype=np.float32) * self._band_mask).astype(np.uint8)
+            band.putalpha(Image.fromarray(alpha))
+            frame.alpha_composite(self._haze)
+            frame.alpha_composite(band)
         # trails
         self.trail[:, :, 3] *= self.trail_fade
         trail_img = Image.fromarray(np.clip(self.trail, 0, 255).astype(np.uint8), "RGBA")
         frame.alpha_composite(trail_img)
         # particles
         if world.particles is not None and len(world.particles):
-            pdraw = ImageDraw.Draw(frame)
+            pdraw = ScaledDraw(frame)
             alive = world.particle_alive if world.particle_alive is not None else np.ones(len(world.particles), bool)
             for (x, y, _, _), ok in zip(world.particles, alive):
                 if not ok:
@@ -301,41 +337,47 @@ class Renderer:
         if self.s.get("horizon_radius"):
             hole = self.world_to_screen((0.0, 0.0))
             r = self.s["horizon_radius"] * self.scale
-            hd = ImageDraw.Draw(frame)
+            hd = ScaledDraw(frame)
             ring = self.glow((255, 200, 140), int(r * 1.6))
-            frame.alpha_composite(ring, (int(hole[0] - r * 1.6), int(hole[1] - r * 1.6)))
+            frame.alpha_composite(ring, (int((hole[0] - r * 1.6) * SS), int((hole[1] - r * 1.6) * SS)))
             hd.ellipse((hole[0] - r, hole[1] - r, hole[0] + r, hole[1] + r), fill=(4, 4, 10, 255), outline=(255, 215, 160, 150), width=2)
         # bodies with glow
         for body in world.bodies:
-            if body.name == "hole":
-                continue
-            if not body.alive:
+            if body.name == "hole" or not body.alive:
                 continue
             sx, sy = self.world_to_screen(body.pos)
             if not (-200 <= sx <= WIDTH + 200 and 560 <= sy <= 1110):
                 continue
             size = int(28 + body.radius * 4)
             g = self.glow(body.color, size)
-            frame.alpha_composite(g, (int(sx - size), int(sy - size)))
-            d = ImageDraw.Draw(frame)
+            frame.alpha_composite(g, (int((sx - size) * SS), int((sy - size) * SS)))
+            d = ScaledDraw(frame)
             r = body.radius
             d.ellipse((sx - r, sy - r, sx + r, sy + r), fill=tuple(min(255, c + 60) for c in body.color) + (255,))
         # texts
-        tdraw = ImageDraw.Draw(frame)
+        tdraw = ScaledDraw(frame)
         self.draw_text_block(tdraw, phase, phase_alpha, stats_values)
-        out = np.asarray(frame.convert("RGB"), dtype=np.float32)
+        small = frame.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+        out = np.asarray(small, dtype=np.float32)
         out = np.clip(out + self.noise, 0, 255)
         if fade < 1.0:
             out *= fade
         return Image.fromarray(out.astype(np.uint8))
 
     def add_trail(self, body, previous, current):
-        a, b = self.world_to_screen(previous), self.world_to_screen(current)
-        layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-        ImageDraw.Draw(layer).line([tuple(a), tuple(b)], fill=body.color + (170,), width=2)
+        a, b = self.world_to_screen(previous) * SS, self.world_to_screen(current) * SS
+        x0, y0 = int(min(a[0], b[0])) - 4, int(min(a[1], b[1])) - 4
+        x1, y1 = int(max(a[0], b[0])) + 4, int(max(a[1], b[1])) + 4
+        x0, y0 = max(0, x0), max(0, y0)
+        x1, y1 = min(WIDTH * SS, x1), min(HEIGHT * SS, y1)
+        if x1 <= x0 or y1 <= y0:
+            return
+        layer = Image.new("RGBA", (x1 - x0, y1 - y0), (0, 0, 0, 0))
+        ImageDraw.Draw(layer).line([(a[0] - x0, a[1] - y0), (b[0] - x0, b[1] - y0)], fill=body.color + (170,), width=2 * SS)
         arr = np.asarray(layer, dtype=np.float32)
+        region = self.trail[y0:y1, x0:x1]
         mask = arr[:, :, 3] > 0
-        self.trail[mask] = np.maximum(self.trail[mask], arr[mask])
+        region[mask] = np.maximum(region[mask], arr[mask])
 
 
 # ----------------------------------------------------------------- scenarios
@@ -432,17 +474,37 @@ SCENARIOS = {
 
 
 # ------------------------------------------------------------------- driver
-def _phase_for(t, phases, duration):
-    current = phases[0]
-    for phase in phases:
-        at = phase.get("at", 0.0)
-        if isinstance(at, (int, float)) and t >= at * duration:
-            current = phase
-    return current
+def _escaped(world):
+    for body in world.bodies:
+        others = [o for o in world.bodies if o is not body and o.alive]
+        if not others or not body.alive:
+            continue
+        d = min(np.hypot(*(body.pos - o.pos)) for o in others)
+        if d > 2.4 and np.hypot(*body.vel) > 0.5:
+            return True
+    return False
+
+
+def presimulate(scenario_key, texts, max_steps=60000):
+    """Run the scenario without drawing to find when its event happens
+    (in integration steps), so the phase text can land exactly there."""
+    make, _ = SCENARIOS[scenario_key]
+    world, cfg = make(texts)
+    if not cfg.get("escape_check"):
+        return None
+    for n in range(max_steps):
+        world.step(cfg["dt"])
+        if n > 600 and _escaped(world):
+            return n
+    return None
 
 
 def render(scenario_key, texts, output, duration=28.0, note=print):
-    """Render one simulation Short to output (mp4, silent, 30 fps)."""
+    """Render one simulation Short to output (mp4, silent, 30 fps).
+
+    texts["phases"]: [{"at": seconds | "event", "title", "subtitle"}, ...]
+    The "event" phase (three-body escape) is placed by pre-simulating and
+    scaling the simulation speed so the escape lands on that phase's time."""
     make, _ = SCENARIOS[scenario_key]
     world, cfg = make(texts)
     cfg["handle"] = texts.get("handle", "")
@@ -451,55 +513,56 @@ def render(scenario_key, texts, output, duration=28.0, note=print):
     frames_dir = output.parent / "sim_frames"
     frames_dir.mkdir(parents=True, exist_ok=True)
     total = int(duration * FPS)
-    loop_tail = int(1.6 * FPS)
+    loop_tail = int(1.4 * FPS)
     live = total - loop_tail
-    dt, steps = cfg["dt"], cfg["steps"]
-    first_frames = []
-    escaped_at = None
+    dt = cfg["dt"]
+    steps_per_frame = float(cfg["steps"])
+    event_phase = next((p for p in phases if p.get("at") == "event"), None)
+    event_frame = None
+    if event_phase is not None:
+        event_step = presimulate(scenario_key, texts)
+        target = float(event_phase.get("target", 0.62)) * duration
+        event_frame = int(target * FPS)
+        if event_step:
+            steps_per_frame = max(1.0, min(40.0, event_step / max(1, event_frame)))
+        else:
+            event_frame = int(0.62 * duration * FPS)
+    note(f"Simülasyon: {scenario_key}, {live} kare, kare başına {steps_per_frame:.2f} adım")
+    accumulator = 0.0
     for n in range(live):
         previous = [b.pos.copy() for b in world.bodies]
-        for _ in range(steps):
+        accumulator += steps_per_frame
+        while accumulator >= 1.0:
             world.step(dt)
+            accumulator -= 1.0
         for body, prev in zip(world.bodies, previous):
-            if body.alive and body.mass > 0.00005 or body.name in cfg.get("speed_bodies", []):
+            if body.alive and (body.mass > 0.00005 or body.name in cfg.get("speed_bodies", [])):
                 renderer.add_trail(body, prev, body.pos)
-        # escape detection for the three-body phase switch
-        if cfg.get("escape_check") and escaped_at is None:
-            for body in world.bodies:
-                others = [o for o in world.bodies if o is not body]
-                d = min(np.hypot(*(body.pos - o.pos)) for o in others)
-                v = np.hypot(*body.vel)
-                if d > 2.4 and v > 0.5 and n > live * 0.35:
-                    escaped_at = n
         t = n / FPS
-        # phases: fixed fractions, except an "event" phase that waits for the escape
-        active = None
+        active = phases[0]
         for phase in phases:
             at = phase.get("at", 0.0)
             if at == "event":
-                if escaped_at is not None and n >= escaped_at:
+                if event_frame is not None and n >= event_frame:
                     active = phase
-            elif t >= float(at) * duration:
+            elif t >= float(at):
                 active = phase
-        phase = active or phases[0]
         stats_values = _stats(world, cfg, t)
-        fade = 1.0
-        if n < int(0.5 * FPS):
-            fade = n / (0.5 * FPS)
-        frame = renderer.render_frame(world, phase, 1.0, stats_values, fade)
-        frame.save(frames_dir / f"f_{n:05d}.jpg", "JPEG", quality=93)
-        if n < loop_tail:
-            first_frames.append(frames_dir / f"f_{n:05d}.jpg")
-        if n % 120 == 0:
+        frame = renderer.render_frame(world, active, 1.0, stats_values, 1.0)
+        frame.save(frames_dir / f"f_{n:05d}.jpg", "JPEG", quality=94)
+        if n % 150 == 0:
             note(f"Simülasyon karesi {n}/{total}")
-    # loop tail: fade down, then the opening frames again so the Short replays seamlessly
+    # loop tail: a short fade down and back up on the opening frame so the Short replays seamlessly
+    first = Image.open(frames_dir / "f_00000.jpg")
+    last = Image.open(frames_dir / f"f_{live - 1:05d}.jpg")
+    half = loop_tail // 2
     for k in range(loop_tail):
-        src = Image.open(frames_dir / f"f_{live - 1:05d}.jpg") if k < loop_tail // 2 else Image.open(first_frames[min(len(first_frames) - 1, k - loop_tail // 2)])
-        f = 1 - k / (loop_tail // 2) if k < loop_tail // 2 else (k - loop_tail // 2) / (loop_tail // 2)
+        src = last if k < half else first
+        f = 1 - k / half if k < half else (k - half) / max(1, loop_tail - half)
         arr = (np.asarray(src, dtype=np.float32) * max(0.0, min(1.0, f))).astype(np.uint8)
-        Image.fromarray(arr).save(frames_dir / f"f_{live + k:05d}.jpg", "JPEG", quality=93)
+        Image.fromarray(arr).save(frames_dir / f"f_{live + k:05d}.jpg", "JPEG", quality=94)
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-framerate", str(FPS),
-                    "-i", str(frames_dir / "f_%05d.jpg"), "-c:v", "libx264", "-preset", "medium", "-crf", "17",
+                    "-i", str(frames_dir / "f_%05d.jpg"), "-c:v", "libx264", "-preset", "medium", "-crf", "16",
                     "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", str(output)], check=True, timeout=1800)
     for path in frames_dir.glob("f_*.jpg"):
         path.unlink()

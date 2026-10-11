@@ -117,7 +117,7 @@ class VoiceFallbackTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as temporary:
             api = SimpleNamespace(settings=Mock(tts_model="t", language="tr"), note=Mock(), directory=Path(temporary))
-            edge = patch.object(voice, "edge_synthesize", side_effect=lambda text, name, path: (name, path))
+            edge = patch.object(voice, "edge_synthesize", side_effect=lambda text, name, path, rate="+4%": (name, path))
             gemini = patch.object(voice, "gemini_synthesize", side_effect=ProviderOverloaded("503"))
             with edge as edge_mock, gemini:
                 result = voice.synthesize(api, "Merhaba", "Gacrux", {}, Path(temporary) / "a.wav")
