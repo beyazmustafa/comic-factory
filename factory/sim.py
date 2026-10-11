@@ -458,7 +458,7 @@ def binary_planet(texts):
     a, b = Body(np.array([-0.45, 0.0]), np.array([0.0, -0.62]), 1.2, PALETTE[2], 9.0, "A"), Body(np.array([0.55, 0.0]), np.array([0.0, 0.74]), 1.0, PALETTE[1], 8.0, "B")
     planet = Body(np.array([2.6, 0.0]), np.array([0.0, 0.93]), 0.0005, PALETTE[0], 5.0, "planet")
     world = World([a, b, planet], softening=0.05)
-    return world, {"dt": 0.004, "steps": 6, "scale": 140, "trail_fade": 0.993,
+    return world, {"dt": 0.004, "steps": 6, "scale": 105, "trail_fade": 0.993,
                    "stats": [{"id": "time", "label": "TIME ELAPSED · YEARS"}, {"id": "speeds", "label": "ORBITAL SPEEDS"}],
                    "speed_unit": "km/s", "speed_scale": 30.0, "time_scale": 4.0, "caption": texts.get("caption", "Stars' gravitational fields")}
 
