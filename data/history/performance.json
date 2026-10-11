@@ -2442,5 +2442,52 @@
         "likes": 6
       }
     ]
+  },
+  {
+    "video_id": "K7WWy-cj2-0",
+    "platform": "youtube",
+    "run_id": "38143192697",
+    "published_at": "2026-10-11T13:59:11+00:00",
+    "event": {
+      "title": "There Is No Floor on Jupiter: You Fall Forever",
+      "series": "Space",
+      "issue": "jupiter-fall",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 16,
+      "words": 206,
+      "duration": 96.4,
+      "words_per_minute": 128,
+      "hook": "You are falling into a world where the ground simply does not exist.",
+      "hook_words": 13,
+      "title": "Why you would never stop falling on Jupiter",
+      "title_length": 43,
+      "emphasis": {
+        "danger": 7,
+        "normal": 6,
+        "reveal": 2,
+        "turn": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 94.44444444444444,
+        "scene_match": 95,
+        "delivery": 94.44444444444444,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "The documentary features a compelling English narration with well-timed, readable captions. The visual transitions and emphasis colors effectively enhance the scientific narrative."
+    },
+    "experiment": {
+      "name": "tactile_sensory_hook_clause",
+      "change": "Begin the hook sentence with an immediate tactile physical sensation of impact before naming the cosmic object.",
+      "rationale": "Top-retaining shorts show that grounding immediate physical feeling hooks viewers before abstract astronomical context."
+    },
+    "stats": {}
   }
 ]

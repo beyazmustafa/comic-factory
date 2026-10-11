@@ -1,258 +1,48 @@
-run_id: 38143192697  attempt: 1  event: workflow_dispatch
+run_id: 38145268176  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261011T132731524853Z/run.json
-{
-  "schema": 2,
-  "version": "2026-10-01-archive-1",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "",
-  "settings": {
-    "target_seconds": 150,
-    "max_events": 3,
-    "max_pages": 16,
-    "max_shots": 40,
-    "max_api_calls": 250,
-    "max_minutes": 110,
-    "repair_attempts": 4,
-    "chunk_words": 42,
-    "alignment_threshold": 86,
-    "panel_threshold": 85,
-    "gemini_model": "gemini-3.7-flash",
-    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
-    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
-    "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural",
-    "tts_model": "gemini-3.1-flash-tts-preview",
-    "whisper_model": "whisper-large-v3",
-    "voice": "auto",
-    "music_file": "",
-    "music_gain_db": -25,
-    "caption_offset": 0,
-    "language": "en",
-    "languages": "en",
-    "channel_theme": "space",
-    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
-    "source": "space",
-    "image_model": "",
-    "archive_query": "mediatype:texts AND collection:(comics)",
-    "archive_max_year": 1963,
-    "archive_scan_limit": 72
-  },
-  "run_id": "38143192697",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "6c04851b23a4342f3f399d97599a70dc98b286384a1f56c43e73bd8b778d7979",
-  "metadata_sha256": "6542b31265519beb72e7544dc0846e65de954e48a369f023794a4f71ab1b05c0",
-  "quality_sha256": "5b49ca9e40c46789831037a0f17e817a6b0d7f6ff50257daa0d3b025a9a45f46",
-  "api_calls": 45,
-  "duration": 96.44,
-  "voice": "Orus",
-  "event": {
-    "id": "space_jupiter-fall",
-    "title": "There Is No Floor on Jupiter: You Fall Forever",
-    "publisher": "NASA/ESA",
-    "series": "Space",
-    "issue": "jupiter-fall",
-    "year": 2026,
-    "universe": "science",
-    "characters": [],
-    "summary": "pressure until you become metallic hydrogen",
-    "famous_line": "pressure until you become metallic hydrogen",
-    "image_terms": [
-      "Jupiter Juno",
-      "Jupiter Great Red Spot",
-      "Jupiter clouds Juno"
-    ],
-    "source_urls": [
-      "https://spacedaily.com/t-there-is-no-surface-anywhere-on-jupiter-to-land-on-or-crash-into-just-hydrogen-that-thickens-with-depth-until-it-stops-behaving-like-a-gas-and-starts-conducting-electricity-like-a-metal-so-a-desce/",
-      "https://scienceinsights.org/would-you-fall-through-jupiter-how-far-youd-get/",
-      "https://www.sciencealert.com/jupiter-has-no-surface-heres-how-thats-actually-possible&",
-      "https://spacedaily.com/d-jupiter-has-no-ground-to-stand-on-at-all-descend-far-enough-into-its-atmosphere-and-theres-no-solid-surface-waiting-only-thickening-gas-that-eventually-behaves-like-liquid-metal-a-world-w/",
-      "https://images.nasa.gov/details/PIA24972",
-      "https://commons.wikimedia.org/wiki/File:Jupiter_from_Voyager_1.jpg",
-      "https://commons.wikimedia.org/wiki/File:Jupiter_Showcases_Auroras,_Hazes_(NIRCam_Closeup).jpg",
-      "https://commons.wikimedia.org/wiki/File:Jupiter_-_Great_Red_Spot_-_PJ7-60_61_62_-_Balanced_(49803032983).png",
-      "https://images.nasa.gov/details/PIA26077",
-      "https://images.nasa.gov/details/PIA21771",
-      "https://images.nasa.gov/details/PIA25013",
-      "https://commons.wikimedia.org/wiki/File:JUNO_-_PIA13746.jpg",
-      "https://commons.wikimedia.org/wiki/File:Jupiter_Down_Under.tif"
-    ],
-    "url": "https://spacedaily.com/t-there-is-no-surface-anywhere-on-jupiter-to-land-on-or-crash-into-just-hydrogen-that-thickens-with-depth-until-it-stops-behaving-like-a-gas-and-starts-conducting-electricity-like-a-metal-so-a-desce/",
-    "_source": "space"
-  },
-  "localized": []
-}
---- data/runs/20261011T132731524853Z/diagnostics/provider_events.json
-[
-  "Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
-]
---- data/runs/20261011T132731524853Z/diagnostics/providers.json
-{
-  "gemini": [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-flash-latest",
-    "gemini-flash-lite-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-3-flash-preview",
-    "gemini-3.1-pro-preview",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-omni-flash-preview",
-    "gemini-omni-1.1-flash",
-    "gemini-3.6-flash",
-    "gemini-3.7-flash",
-    "gemini-3.8-flash"
-  ],
-  "groq": [
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
-  ],
-  "errors": [],
-  "gemini_raw": [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-2.5-flash-preview-tts",
-    "gemini-2.5-pro-preview-tts",
-    "gemma-4-26b-a4b-it",
-    "gemma-4-31b-it",
-    "gemini-flash-latest",
-    "gemini-flash-lite-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-2.5-flash-image",
-    "gemini-3-flash-preview",
-    "gemini-3.1-pro-preview",
-    "gemini-3.1-pro-preview-customtools",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-lite",
-    "gemini-3-pro-image-preview",
-    "gemini-3-pro-image",
-    "nano-banana-pro-preview",
-    "gemini-3.1-flash-image-preview",
-    "gemini-3.1-flash-image",
-    "gemini-3.1-flash-lite-image",
-    "gemini-nano-banana-2.1",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-omni-flash-preview",
-    "gemini-omni-1.1-flash",
-    "gemini-3.5-transcribe",
-    "gemini-3.6-flash",
-    "gemini-3.7-flash",
-    "gemini-3.8-flash",
-    "lyria-3-clip-preview",
-    "lyria-3-pro-preview",
-    "lyria-3.5",
-    "gemini-3.1-flash-tts-preview",
-    "gemini-3.8-flash-tts",
-    "gemini-3.8-flash-lite-tts",
-    "gemini-robotics-er-2-preview",
-    "gemini-2.5-computer-use-preview-10-2025",
-    "antigravity-preview-05-2026",
-    "antigravity-preview-09-2026",
-    "antigravity-preview-latest",
-    "deep-research-max-preview-04-2026",
-    "deep-research-preview-04-2026",
-    "deep-research-pro-preview-12-2025",
-    "gemini-embedding-001",
-    "gemini-embedding-2-preview",
-    "gemini-embedding-2",
-    "aqa",
-    "veo-3.1-generate-preview",
-    "veo-3.1-fast-generate-preview",
-    "veo-3.1-lite-generate-preview",
-    "gemini-3.5-transcribe-live",
-    "gemini-2.5-flash-native-audio-latest",
-    "gemini-2.5-flash-native-audio-preview-09-2025",
-    "gemini-2.5-flash-native-audio-preview-12-2025",
-    "gemini-3.1-flash-live-preview",
-    "gemini-3.8-live",
-    "gemini-3.8-live-extended-thinking",
-    "gemini-robotics-er-2-streaming-preview",
-    "gemini-3.5-live-translate-preview",
-    "lyria-realtime-exp"
-  ],
-  "gemini_chain": [
-    "gemini-3.7-flash",
-    "gemini-3.8-flash",
-    "gemini-2.5-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.1-pro-preview",
-    "gemini-3-flash-preview",
-    "gemini-2.5-pro",
-    "gemini-omni-1.1-flash",
-    "gemini-flash-latest",
-    "gemini-omni-flash-preview",
-    "gemini-pro-latest",
-    "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-2.5-flash-lite",
-    "gemini-flash-lite-latest"
-  ],
-  "groq_chain": [],
-  "groq_text_chain": [
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
-  ]
-}
---- data/runs/20261011T132731524853Z/voice_audition/failed_auditions.json
-{}
---- data/runs/20261011T132731524853Z/diagnostics/story_1.json
-{"error": "Only 9 distinct panels for 16 shots; use at least 12 distinct panels.; The first graphic is 'counter' again, same as the last video; use another type or none."}
---- data/runs/20261011T132731524853Z/diagnostics/story_2.json
-{"error": "Panels used more than twice: ['page_002_p00']; each panel at most twice.; Only 9 distinct panels for 16 shots; use at least 12 distinct panels."}
---- data/runs/20261011T132731524853Z/diagnostics/story_3.json
-{"error": "Only 9 distinct panels for 16 shots; use at least 12 distinct panels.; A shot may have a graphic or an effect, not both.; Numbers in 9 of 16 shots; at most one shot in three may contain a number.; The first graphic is 'counter' again, same as the last video; use another type or none."}
 --- studio.log (son 300 satır)
 
-→ Sabit kurgu profili
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
 
-→ Öğrenme: oyun kitabı ve deney
+Başlık: Why you would never stop falling on Jupiter #Shorts
+Görünürlük: public
 
-→ Olay, gerçek sayfalar ve senaryo
-Olay araştırılıyor: There Is No Floor on Jupiter: You Fall Forever
-Arama (bing) yanıt vermedi: DDGSException
-Arama (brave) yanıt vermedi: DDGSException
-Uzay görselleri: 36 aday, 11 indirildi.
-Uzay videoları: 10 aday, 0 indirildi.
-Görsel seçimi: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Panellere bağlı anlatım: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-
-→ Türkçe ses seçimi
-
-→ Konuşma ve kelime zamanları
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 94.4/100 | whisper-large-v3
-Ses bölümü 6, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-
-→ Dikey video ve eşzamanlı altyazı
-
-→ Bitmiş videonun görüntü ve ses kontrolü
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T132731524853Z/review.html
+Yükleme: %13
+Yükleme: %26
+Yükleme: %39
+Yükleme: %53
+Yükleme: %66
+Yükleme: %79
+Yükleme: %92
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=K7WWy-cj2-0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: data/incoming/video.mp4
+Boyut: 60.4 MB
+Açıklama uzunluğu: 214 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17967702870187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 17879230074554795
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).
