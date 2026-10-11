@@ -259,7 +259,7 @@ class Renderer:
         draw.text((540, 465), phase.get("subtitle", ""), font=font("light", 40), fill=grey, anchor="mm")
         # stats
         label_font, value_font, unit_font = font("bold", 21), font("mono", 34), font("regular", 22)
-        stats = self.s.get("stats", [])
+        stats = phase.get("stats_labels") or self.s.get("stats", [])
         for index, stat in enumerate(stats[:2]):
             x = 105 if index == 0 else 430
             draw.text((x if index == 0 else 605, 528), stat["label"], font=label_font, fill=(150, 152, 178, 255), anchor="lm")
@@ -286,17 +286,19 @@ class Renderer:
             draw.text((105, 1130), caption, font=font("mono", 26), fill=(165, 168, 195, 255), anchor="lm")
 
     # --- frame
-    def render_frame(self, world, phase, phase_alpha, stats_values, fade=1.0):
+    def render_frame(self, scene, phase, stats_values, t=0.0, phase_t=0.0, fade=1.0):
         W, H = WIDTH * SS, HEIGHT * SS
         frame = Image.new("RGBA", (W, H), BG + (255,))
         band = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         gdraw = ScaledDraw(band)
+        world = getattr(scene, "world", None)
         masses = []
-        for body in world.bodies:
-            if body.alive:
-                gx, gy = self.to_grid_plane(body.pos)
-                masses.append((gx, gy, body.mass, body.color))
-        if self.s.get("grid", True):
+        if world is not None:
+            for body in world.bodies:
+                if body.alive:
+                    gx, gy = self.to_grid_plane(body.pos)
+                    masses.append((gx, gy, body.mass, body.color))
+        if self.s.get("grid", True) and getattr(scene, "uses_grid", False):
             self.draw_grid(gdraw, masses)
             # glow dots at the bottom of each funnel
             bdraw = ScaledDraw(band)
@@ -319,6 +321,15 @@ class Renderer:
             band.putalpha(Image.fromarray(alpha))
             frame.alpha_composite(self._haze)
             frame.alpha_composite(band)
+        if world is None:
+            scene.draw(frame, self, t, phase_t)
+            tdraw = ScaledDraw(frame)
+            self.draw_text_block(tdraw, phase, 1.0, stats_values)
+            small = frame.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+            out = np.clip(np.asarray(small, dtype=np.float32) + self.noise, 0, 255)
+            if fade < 1.0:
+                out *= fade
+            return Image.fromarray(out.astype(np.uint8))
         # trails
         self.trail[:, :, 3] *= self.trail_fade
         trail_img = Image.fromarray(np.clip(self.trail, 0, 255).astype(np.uint8), "RGBA")
@@ -356,7 +367,7 @@ class Renderer:
             d.ellipse((sx - r, sy - r, sx + r, sy + r), fill=tuple(min(255, c + 60) for c in body.color) + (255,))
         # texts
         tdraw = ScaledDraw(frame)
-        self.draw_text_block(tdraw, phase, phase_alpha, stats_values)
+        self.draw_text_block(tdraw, phase, 1.0, stats_values)
         small = frame.convert("RGB").resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
         out = np.asarray(small, dtype=np.float32)
         out = np.clip(out + self.noise, 0, 255)
@@ -528,6 +539,9 @@ def render(scenario_key, texts, output, duration=28.0, note=print):
         else:
             event_frame = int(0.62 * duration * FPS)
     note(f"Simülasyon: {scenario_key}, {live} kare, kare başına {steps_per_frame:.2f} adım")
+    from .scenes import OrbitScene
+
+    orbit_scene = OrbitScene(world, cfg)
     accumulator = 0.0
     for n in range(live):
         previous = [b.pos.copy() for b in world.bodies]
@@ -548,7 +562,7 @@ def render(scenario_key, texts, output, duration=28.0, note=print):
             elif t >= float(at):
                 active = phase
         stats_values = _stats(world, cfg, t)
-        frame = renderer.render_frame(world, active, 1.0, stats_values, 1.0)
+        frame = renderer.render_frame(orbit_scene, active, stats_values, t, 0.0, 1.0)
         frame.save(frames_dir / f"f_{n:05d}.jpg", "JPEG", quality=94)
         if n % 150 == 0:
             note(f"Simülasyon karesi {n}/{total}")
@@ -587,3 +601,68 @@ def _stats(world, cfg, t):
         total = len(world.particle_alive) if world.particle_alive is not None else 1
         values["count"] = [(f"{alive}", (235, 236, 250), f"of {total}")]
     return values
+
+
+# -------------------------------------------------------------- plan driver
+def render_plan(plan, output, note=print):
+    """Render a composed video: phases carry their own scene, texts and stats.
+
+    plan = {"handle", "caption", "duration", "stats": [{"id","label"}, ...],
+            "phases": [{"at": seconds, "title", "subtitle", "scene": Scene,
+                        "stats": {"time": [(value, color, unit)], ...}}]}
+    Scenes are objects from factory.scenes; a new scene fades in over 0.5 s.
+    """
+    renderer = Renderer({"handle": plan.get("handle", ""), "caption": plan.get("caption", ""),
+                         "stats": plan.get("stats", []), "grid": plan.get("grid", True), "scale": 150})
+    frames_dir = output.parent / "sim_frames"
+    frames_dir.mkdir(parents=True, exist_ok=True)
+    duration = float(plan["duration"])
+    total = int(duration * FPS)
+    loop_tail = int(1.4 * FPS)
+    live = total - loop_tail
+    phases = plan["phases"]
+    previous_scene, switch_frame = None, 0
+    for n in range(live):
+        t = n / FPS
+        active, phase_start = phases[0], 0.0
+        for phase in phases:
+            if t >= float(phase.get("at", 0.0)):
+                active, phase_start = phase, float(phase.get("at", 0.0))
+        scene = active["scene"]
+        if scene is not previous_scene:
+            previous_scene, switch_frame = scene, n
+            cfg = getattr(scene, "cfg", None)
+            if cfg:
+                renderer.scale = cfg.get("scale", 150)
+                renderer.trail_fade = cfg.get("trail_fade", 0.992)
+                renderer.s["horizon_radius"] = cfg.get("horizon_radius")
+                scene.renderer = renderer
+            renderer.trail[:] = 0
+        scene.step(1.0 / FPS)
+        phase_t = t - phase_start
+        stats_values = {**scene.stats(t - switch_frame / FPS), **active.get("stats", {})}
+        frame = renderer.render_frame(scene, active, stats_values, t - switch_frame / FPS, phase_t, 1.0)
+        since = n - switch_frame
+        if 0 < switch_frame <= n < switch_frame + 12:
+            # crossfade from the last frame of the previous scene
+            prev = Image.open(frames_dir / f"f_{switch_frame - 1:05d}.jpg")
+            a = since / 12
+            blended = (np.asarray(prev, dtype=np.float32) * (1 - a) + np.asarray(frame, dtype=np.float32) * a).astype(np.uint8)
+            frame = Image.fromarray(blended)
+        frame.save(frames_dir / f"f_{n:05d}.jpg", "JPEG", quality=94)
+        if n % 150 == 0:
+            note(f"Sahne karesi {n}/{total}")
+    first = Image.open(frames_dir / "f_00000.jpg")
+    last = Image.open(frames_dir / f"f_{live - 1:05d}.jpg")
+    half = loop_tail // 2
+    for k in range(loop_tail):
+        src = last if k < half else first
+        f = 1 - k / half if k < half else (k - half) / max(1, loop_tail - half)
+        arr = (np.asarray(src, dtype=np.float32) * max(0.0, min(1.0, f))).astype(np.uint8)
+        Image.fromarray(arr).save(frames_dir / f"f_{live + k:05d}.jpg", "JPEG", quality=94)
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-framerate", str(FPS),
+                    "-i", str(frames_dir / "f_%05d.jpg"), "-c:v", "libx264", "-preset", "medium", "-crf", "16",
+                    "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", str(output)], check=True, timeout=1800)
+    for path in frames_dir.glob("f_*.jpg"):
+        path.unlink()
+    return output

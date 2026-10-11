@@ -10,6 +10,8 @@ asks for a backdrop (none of the current ones do).
 
 from __future__ import annotations
 
+import hashlib
+import io
 import json
 import os
 import re
@@ -17,7 +19,9 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import sim
+from PIL import Image
+
+from . import scenes, sim, topics_space
 from .api import FactoryError
 from .config import ROOT
 from .core import file_hash, save_json
@@ -70,6 +74,27 @@ def used_scenarios():
             if key:
                 used.append(key)
     return used
+
+
+def pick_any(topic=""):
+    """Rotate across orbit scenarios and composed topics; composed topics
+    twice as often, because they are where the variety is."""
+    composed = [t["key"] for t in topics_space.TOPICS]
+    orbit = list(sim.SCENARIOS)
+    if topic:
+        for key in composed + orbit:
+            if all(w in key.casefold() for w in topic.casefold().split()):
+                return key
+    recent = used_scenarios()
+    pool = [k for k in composed if k not in recent[:len(composed) - 1]] * 2 + [k for k in orbit if k not in recent[:len(orbit) - 1]]
+    if not pool:
+        pool = composed * 2 + orbit
+    pool.sort(key=lambda k: recent.index(k) if k in recent else -1, reverse=True)
+    # earliest-used (or never used) first, then random among the freshest third
+    import random
+
+    fresh = pool[-max(1, len(pool) // 3):]
+    return random.choice(fresh)
 
 
 def pick_scenario(topic=""):
@@ -146,6 +171,99 @@ Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","
             "youtube_title": youtube_title, "description": description}
 
 
+def fetch_image(api, query, directory, focus):
+    """A NASA photograph for an image scene; a starfield when nothing fits."""
+    from .research import Fetcher
+    from .space import nasa_search
+
+    target = directory / "images"
+    target.mkdir(exist_ok=True)
+    fetcher = Fetcher()
+    try:
+        for row in nasa_search(query, 8):
+            for url in (row.get("image_url"), row.get("fallback_url")):
+                if not url:
+                    continue
+                try:
+                    body, _ = fetcher.get(url, 40_000_000)
+                    with Image.open(io.BytesIO(body)) as opened:
+                        if min(opened.size) < 900:
+                            continue
+                        picture = opened.convert("RGB")
+                    if picture.width > 3200 or picture.height > 3200:
+                        picture.thumbnail((3200, 3200), Image.Resampling.LANCZOS)
+                    path = target / (hashlib.sha256(url.encode()).hexdigest()[:12] + ".jpg")
+                    picture.save(path, "JPEG", quality=94)
+                    return path, row.get("credit", "NASA"), row.get("source_url", "")
+                except Exception:  # noqa: BLE001
+                    continue
+    finally:
+        fetcher.session.close()
+    path = target / "starfield.jpg"
+    scenes.starfield().save(path, "JPEG", quality=92)
+    return path, "", ""
+
+
+def build_scene(spec, api, directory, used_images):
+    kind = spec.get("type")
+    if kind == "image":
+        path, credit, source = fetch_image(api, spec["query"], directory, spec.get("focus", [0.5, 0.5]))
+        used_images.append({"query": spec["query"], "file": str(path), "credit": credit, "source": source})
+        return scenes.ImageScene(path, tuple(spec.get("focus", [0.5, 0.5])), credit=credit)
+    if kind == "scale":
+        return scenes.ScaleScene(spec["items"], spec.get("unit", ""), spec.get("mode", "discs"))
+    if kind == "timeline":
+        return scenes.TimelineScene(spec["events"], spec.get("unit", ""), float(spec.get("span", 18)), spec.get("log", False))
+    if kind == "light":
+        return scenes.LightScene(tuple(spec["a"]), tuple(spec["b"]), float(spec["seconds"]), float(spec.get("span", 16)))
+    if kind == "cutaway":
+        return scenes.CutawayScene(spec["layers"])
+    if kind == "orbit":
+        make, _ = sim.SCENARIOS[spec["scenario"]]
+        world, cfg = make({})
+        return scenes.OrbitScene(world, cfg)
+    raise FactoryError(f"Bilinmeyen sahne tipi: {kind}")
+
+
+def write_topic_texts(api, topic_spec, handle):
+    facts = [p["fact"] for p in topic_spec["phases"]]
+    try:
+        data = api.json(
+            "Konu metinleri",
+            f"""You write the on-screen text and the calm narration of a space Short in the house style ('@ElsewhereLab': bold title, a thin one-line explanation that changes with each stage, nothing else). Topic: {topic_spec['brief']}
+WHAT THE THREE STAGES SHOW (fixed; describe exactly these, in this order, never a different claim): {json.dumps(facts)}
+Rules: title 2..5 words ending with a period (you may keep "{topic_spec['title']}"); three stage lines, each a complete plain sentence of 3..8 words ending with a period; no exclamation marks, no adjectives like amazing/terrifying; calm and exact.
+NARRATION: a calm, unhurried voice-over, one passage per stage (18..30 words each), plain everyday words a curious teenager follows on first hearing, warm, precise, no hype, no questions to the viewer, no "imagine", numbers spelled as words when they help. The three passages read as one continuous explanation and never contradict the stage facts.
+Also give a YouTube title (45..70 characters, curiosity-driven, no clickbait) and a one-sentence description.
+Return {{"title":"","phases":[{{"subtitle":"","narration":""}},{{"subtitle":"","narration":""}},{{"subtitle":"","narration":""}}],"youtube_title":"","description":""}}""",
+        )
+    except FactoryError as error:
+        print(f"Metin yazarı yanıt vermedi ({str(error)[:100]}); sabit metinler kullanıldı.", flush=True)
+        data = {}
+    rows = data.get("phases") if isinstance(data.get("phases"), list) else []
+    phases = []
+    for index, spec in enumerate(topic_spec["phases"]):
+        row = rows[index] if index < len(rows) and isinstance(rows[index], dict) else {}
+        subtitle = clean_line(row.get("subtitle"), 48) if row.get("subtitle") else clean_line(spec["fact"], 48)
+        if not 3 <= len(subtitle.split()) <= 9:
+            subtitle = clean_line(" ".join(spec["fact"].split()[:8]), 48)
+        narration = " ".join(str(row.get("narration") or "").split()) if row else ""
+        if not 10 <= len(narration.split()) <= 40 or any(v in narration for v in ("<", ">", "http")):
+            narration = spec["fact"]
+        phases.append({"subtitle": subtitle, "narration": narration, "scene": spec["scene"], "stats": spec.get("stats", {})})
+    title = clean_line(data.get("title"), 30) if data.get("title") else topic_spec["title"]
+    if not 2 <= len(title.split()) <= 6:
+        title = topic_spec["title"]
+    for phase in phases:
+        phase["title"] = title
+    youtube_title = " ".join(str(data.get("youtube_title") or "").split())
+    if not 30 <= len(youtube_title) <= 80:
+        youtube_title = f"{title.rstrip('.')} — explained in a minute"
+    description = clean_line(data.get("description"), 240) or topic_spec["brief"][:200]
+    return {"title": title, "phases": phases, "caption": topic_spec.get("caption", ""), "handle": handle,
+            "stats": topic_spec.get("stats", []), "youtube_title": youtube_title, "description": description}
+
+
 def generate(settings, topic="", api_factory=None):
     """Full run: scenario → texts → render → run directory ready to publish."""
     from .api import Api
@@ -158,10 +276,12 @@ def generate(settings, topic="", api_factory=None):
     save_json(directory / "run.json", manifest)
     try:
         api = (api_factory or Api)(settings, directory)
-        key = pick_scenario(topic)
+        key = pick_any(topic)
         handle = str(getattr(settings, "brand_handle", "") or "")
         print(f"→ Senaryo: {key}", flush=True)
-        texts = write_texts(api, key, handle)
+        topic_spec = next((t for t in topics_space.TOPICS if t["key"] == key), None)
+        composed = topic_spec is not None
+        texts = write_topic_texts(api, topic_spec, handle) if composed else write_texts(api, key, handle)
         save_json(directory / "sim_texts.json", {"scenario": key, **texts})
         print("→ Anlatım sesi", flush=True)
         from . import render, voice
@@ -183,17 +303,34 @@ def generate(settings, topic="", api_factory=None):
             cursor += count
         duration = max(float(getattr(settings, "sim_seconds", 28.0)), speech_seconds + head + 2.6)
         for index, phase in enumerate(texts["phases"]):
+            phase.setdefault("at", 0.0)
             if phase.get("at") == "event":
                 phase["target"] = max(0.4, min(0.8, starts[index] / duration))
             else:
                 phase["at"] = 0.0 if index == 0 else starts[index]
         save_json(directory / "sim_texts.json", {"scenario": key, **texts, "duration": duration})
         print(f"→ Simülasyon render ({duration:.1f} sn)", flush=True)
-        silent = sim.render(key, texts, directory / "sim_video.mp4", duration=duration)
+        used_images = []
+        if composed:
+            plan_phases = []
+            for phase in texts["phases"]:
+                scene = build_scene(phase["scene"], api, directory, used_images)
+                labels = list(texts["stats"])
+                kind = phase["scene"].get("type")
+                if kind == "timeline" and labels:
+                    labels[0] = {"id": "time", "label": f"TIME · {str(phase['scene'].get('unit', 'years')).upper()}"}
+                elif kind == "light" and labels:
+                    labels[0] = {"id": "time", "label": "LIGHT TRAVEL TIME"}
+                plan_phases.append({"at": phase["at"], "title": phase["title"], "subtitle": phase["subtitle"], "scene": scene,
+                                    "stats": phase.get("stats", {}), "stats_labels": labels})
+            plan = {"handle": handle, "caption": texts["caption"], "duration": duration, "stats": texts["stats"], "phases": plan_phases}
+            silent = sim.render_plan(plan, directory / "sim_video.mp4")
+        else:
+            silent = sim.render(key, texts, directory / "sim_video.mp4", duration=duration)
         # captions: small, quiet, phrase by phrase, below the simulation
         caption_words = [{**w, "emphasis": "normal"} for w in words]
         caption_style = {**calm_style, "font_style": "regular", "font_size": 34, "stroke_width": 2, "shadow_depth": 0, "word_pop_ms": 0,
-                         "caption_x": 0.5, "caption_y": 0.528, "caption_mode": "group", "caption_words": 5, "uppercase": False,
+                         "caption_x": 0.5, "caption_y": 0.66, "caption_mode": "group", "caption_words": 5, "uppercase": False,
                          "text_color": "#B8BBD0", "active_color": "#FFFFFF", "stroke_color": "#05050C", "emphasis_colors": {}, "language": settings.language}
         subtitle = render.captions(caption_words, caption_style, directory / "captions.ass", head)
         drone = directory / "drone.wav"
@@ -229,6 +366,9 @@ def generate(settings, topic="", api_factory=None):
         save_json(directory / "quality_review.json", review)
         hashtags = ["space", "shorts", "physics", "simulation", "science", "astronomy"]
         full = texts["description"] + "\n\nA physics simulation rendered by code. " + (handle + "\n" if handle else "")
+        credits = sorted({f"{u['credit']} ({u['source']})" for u in used_images if u.get("credit")})
+        if credits:
+            full += "Images: " + "; ".join(credits)[:800] + "\n"
         metadata = {"script": {**script, "full_description": full, "hashtags": hashtags,
                                "instagram_caption": texts["youtube_title"] + "\n\n" + texts["description"]},
                     "sources": [], "voice": {"voice": "none"}, "editing_profile": "simulation-v1", "language": settings.language}
