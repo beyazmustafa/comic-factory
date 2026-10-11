@@ -51,7 +51,9 @@ class Settings:
     # "studio": original universe drawn by image models. "famous": world-famous
     # Marvel/DC moments told as commentary over official art (default; "mix"
     # now means the same).
-    source: str = "space"
+    source: str = "sim"
+    brand_handle: str = ""
+    sim_seconds: float = 28.0
     image_model: str = ""
     archive_query: str = "mediatype:texts AND collection:(comics)"
     archive_max_year: int = 1963
@@ -117,12 +119,13 @@ class Settings:
             "groq_model",
             "image_model",
             "edge_voices",
+            "brand_handle",
         ):
             if not isinstance(getattr(result, key), str):
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"space", "famous", "auto", "archive", "web", "studio", "mix"}:
+        if result.source not in {"sim", "space", "famous", "auto", "archive", "web", "studio", "mix"}:
             raise ValueError("source famous, auto, archive, web, studio veya mix olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")

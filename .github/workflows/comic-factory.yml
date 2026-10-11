@@ -18,11 +18,12 @@ name: Comic Factory Studio
         - voice_test
         - refresh_stats
       source:
-        description: Kaynak — boşsa factory.json (space = uzay/bilim)
+        description: Kaynak — boşsa factory.json (sim = fizik simülasyonu)
         type: choice
         default: ''
         options:
         - ''
+        - sim
         - space
         - famous
         - studio

@@ -466,7 +466,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--refresh-stats", action="store_true")
-    parser.add_argument("--source", choices=["space", "famous", "auto", "archive", "web", "studio", "mix"])
+    parser.add_argument("--source", choices=["sim", "space", "famous", "auto", "archive", "web", "studio", "mix"])
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])
@@ -494,12 +494,20 @@ def main(argv=None):
             emit_directory(args.publish_run)
             publish_all(args.publish_run, args.platforms)
             return 0
-        directory = generate(
-            Settings.load(target_seconds=args.duration, voice=args.voice, source=args.source),
-            args.topic.strip(),
-            args.resume_run,
-            args.voice_test,
-        )
+        settings = Settings.load(target_seconds=args.duration, voice=args.voice, source=args.source)
+        if settings.source == "sim" and not args.voice_test:
+            from . import simshow
+
+            emit_directory(ROOT / "data" / "runs")
+            directory = simshow.generate(settings, args.topic.strip())
+            emit_directory(directory)
+        else:
+            directory = generate(
+                settings,
+                args.topic.strip(),
+                args.resume_run,
+                args.voice_test,
+            )
         print(f"Çalışma hazır: {directory / 'review.html'}", flush=True)
         if args.publish and not args.voice_test:
             publish_all(directory, args.platforms)
