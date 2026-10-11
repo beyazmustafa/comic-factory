@@ -1,9 +1,11 @@
 # Playbook (auto-evolving)
-- Hook: the first line earns the next ten seconds on its own; it is a claim, a question, a scene or a contradiction, not a statistic.
-- Structure: every video follows its assigned story shape; the payoff lands in the last third, the ending echoes the opening.
-- Restraint: a number only when it changes how the viewer feels; concrete images instead of adjectives.
-- Variety: no device, comparison or opening pattern repeats across consecutive videos.
-- Length: 18-28 shots, 70-110 seconds, until the numbers say otherwise.
+- Hook: the opening sentence establishes immediate physical danger or irreversible impact without statistical throat-clearing.
+- Structure: reveal the direct physical consequence early, hold the cosmic cause for the middle, and land the payoff in the final third.
+- Language: strip adjectives; anchor cosmic phenomena directly to concrete human sensations and plain physical matter.
+- Length: aim for 16-20 shots and 65-80 seconds where retention peaks.
+- Restraint: limit numbers to physical scales the viewer can feel, avoiding dense statistical intervals.
+- Emphasis: use colored emphasis sparingly on pivotal turning points and lethal consequences rather than frequent decorative beats.
+- Ending: close on an irreversible end state that cleanly echoes the first image and hook line.
 
 ## Fixed rules
 - Channel: "what would actually happen" space & science stories over real NASA/ESA/JWST imagery and footage. Famous objects and questions people cannot scroll past.

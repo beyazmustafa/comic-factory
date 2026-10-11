@@ -1,0 +1,341 @@
+{
+  "script": {
+    "title": "Why you would never stop falling on Jupiter",
+    "description": "Experience the terrifying descent into Jupiter, where gravity crushes you into a metallic liquid hotter than the Sun.",
+    "hook_card": "THE GROUND DOES NOT EXIST",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_002_p00",
+        "narration": "You are falling into a world where the ground simply does not exist.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_009_p00",
+        "narration": "Jupiter offers no solid surface to break your descent, only a bottomless plunge.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_000_p00",
+        "narration": "In 1995, the Galileo probe pierced these clouds faster than a speeding comet.",
+        "fact_ids": [
+          "fact_004"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_008_p00",
+        "narration": "It braved a white-hot friction twice as intense as the surface of the Sun.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "effect": "flash",
+        "graphic": null,
+        "impact_word": "",
+        "motion": "right",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_003_p00",
+        "narration": "Sideways winds whip your body, tossing you through the ammonia haze at hurricane speeds.",
+        "fact_ids": [
+          "fact_006"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_005_p00",
+        "narration": "The atmosphere soon thickens, pressing inward until it crushes everything you are.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "effect": "pressure",
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_006_p00",
+        "narration": "Deep below, the gas transforms, becoming a vast, shoreless ocean of liquid hydrogen.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "ocean",
+        "motion": "down",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_004_p00",
+        "narration": "Eventually, the fluid grows so dense it suspends you like a floating cork.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "hold",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_010_p00",
+        "narration": "Weight from above squeezes the hydrogen until it turns into an exotic, conductive metal.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_002_p00",
+        "narration": "This metallic sea simmers, radiating heat far fiercer than the Sun’s visible face.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "up",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_009_p00",
+        "narration": "The planet’s rapid spin churns this metal, generating a colossal, invisible magnetic field.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "magnetic",
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_000_p00",
+        "narration": "At the very center, the pressure equals millions of Earth atmospheres combined.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_008_p00",
+        "narration": "Jupiter’s core is no solid rock, but a fuzzy, dissolved soup of heavy elements.",
+        "fact_ids": [
+          "fact_016"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_003_p00",
+        "narration": "Everything here remains trapped in a lightless world that has no bottom.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_010_p00",
+        "narration": "You are left suspended forever in a boiling, metallic dark.",
+        "fact_ids": [
+          "fact_015"
+        ],
+        "effect": "blackout",
+        "graphic": null,
+        "impact_word": "",
+        "motion": "hold",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_002_p00",
+        "narration": "You have fallen into a world where the ground simply does not exist.",
+        "fact_ids": [
+          "fact_001"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "danger"
+      }
+    ],
+    "narration": "You are falling into a world where the ground simply does not exist. Jupiter offers no solid surface to break your descent, only a bottomless plunge. In 1995, the Galileo probe pierced these clouds faster than a speeding comet. It braved a white-hot friction twice as intense as the surface of the Sun. Sideways winds whip your body, tossing you through the ammonia haze at hurricane speeds. The atmosphere soon thickens, pressing inward until it crushes everything you are. Deep below, the gas transforms, becoming a vast, shoreless ocean of liquid hydrogen. Eventually, the fluid grows so dense it suspends you like a floating cork. Weight from above squeezes the hydrogen until it turns into an exotic, conductive metal. This metallic sea simmers, radiating heat far fiercer than the Sun’s visible face. The planet’s rapid spin churns this metal, generating a colossal, invisible magnetic field. At the very center, the pressure equals millions of Earth atmospheres combined. Jupiter’s core is no solid rock, but a fuzzy, dissolved soup of heavy elements. Everything here remains trapped in a lightless world that has no bottom. You are left suspended forever in a boiling, metallic dark. You have fallen into a world where the ground simply does not exist.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "craft": {
+      "shape": "witness",
+      "shape_brief": "Tell it through a real event and the people who saw it (a mission, a storm, a night in 1859), present tense, then what it means for us now.",
+      "hook_type": "contradiction",
+      "hook_brief": "two facts that cannot both be true, placed side by side"
+    },
+    "editor_notes": "Replaced list-like descriptions with sensory imagery and connected the physics of the core to the 'no floor' theme for a more resonant narrative arc.",
+    "headline_candidates": {
+      "titles": [
+        "The terrifying reality of falling into Jupiter",
+        "Why you would never stop falling on Jupiter",
+        "Falling through Jupiter's world with no ground",
+        "What happens inside the bottomless clouds of Jupiter",
+        "The endless descent into Jupiter's metallic heart"
+      ],
+      "hook_cards": [
+        "THE GROUND DOES NOT EXIST",
+        "YOU WILL NEVER STOP FALLING",
+        "THERE IS NO SOLID SURFACE",
+        "A WORLD WITH NO FLOOR",
+        "JUPITER HAS NO BOTTOM"
+      ]
+    },
+    "event": {
+      "id": "space_jupiter-fall",
+      "title": "There Is No Floor on Jupiter: You Fall Forever",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "jupiter-fall",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "pressure until you become metallic hydrogen",
+      "famous_line": "pressure until you become metallic hydrogen",
+      "image_terms": [
+        "Jupiter Juno",
+        "Jupiter Great Red Spot",
+        "Jupiter clouds Juno"
+      ],
+      "source_urls": [
+        "https://spacedaily.com/t-there-is-no-surface-anywhere-on-jupiter-to-land-on-or-crash-into-just-hydrogen-that-thickens-with-depth-until-it-stops-behaving-like-a-gas-and-starts-conducting-electricity-like-a-metal-so-a-desce/",
+        "https://scienceinsights.org/would-you-fall-through-jupiter-how-far-youd-get/",
+        "https://www.sciencealert.com/jupiter-has-no-surface-heres-how-thats-actually-possible&",
+        "https://spacedaily.com/d-jupiter-has-no-ground-to-stand-on-at-all-descend-far-enough-into-its-atmosphere-and-theres-no-solid-surface-waiting-only-thickening-gas-that-eventually-behaves-like-liquid-metal-a-world-w/",
+        "https://images.nasa.gov/details/PIA24972",
+        "https://commons.wikimedia.org/wiki/File:Jupiter_from_Voyager_1.jpg",
+        "https://commons.wikimedia.org/wiki/File:Jupiter_Showcases_Auroras,_Hazes_(NIRCam_Closeup).jpg",
+        "https://commons.wikimedia.org/wiki/File:Jupiter_-_Great_Red_Spot_-_PJ7-60_61_62_-_Balanced_(49803032983).png",
+        "https://images.nasa.gov/details/PIA26077",
+        "https://images.nasa.gov/details/PIA21771",
+        "https://images.nasa.gov/details/PIA25013",
+        "https://commons.wikimedia.org/wiki/File:JUNO_-_PIA13746.jpg",
+        "https://commons.wikimedia.org/wiki/File:Jupiter_Down_Under.tif"
+      ],
+      "url": "https://spacedaily.com/t-there-is-no-surface-anywhere-on-jupiter-to-land-on-or-crash-into-just-hydrogen-that-thickens-with-depth-until-it-stops-behaving-like-a-gas-and-starts-conducting-electricity-like-a-metal-so-a-desce/",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": [
+        "Panels used more than twice: ['page_002_p00']; each panel at most twice.",
+        "Only 9 distinct panels for 16 shots; use at least 12 distinct panels.",
+        "3 effects; at most 2."
+      ]
+    },
+    "full_description": "Experience the terrifying descent into Jupiter, where gravity crushes you into a metallic liquid hotter than the Sun.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing by Tanya Oleksuik CC BY NC SA 3.0 (public domain (NASA)); Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing: Brian Swift CC BY (public domain (NASA)); Kevin Gill from Los Angeles, CA, United States (cc by 2.0); NASA (public domain); NASA's James Webb Space Telescope. Image processing by Judy Schmidt. (public domain); NASA, Caltech/JPL (public domain); NASA/JPL (public domain); NASA/JPL-Caltech (public domain (NASA)); mage data: NASA/JPL-Caltech/SwRI/MSSS Image processing by Kevin M. Gill © CC BY (public domain (NASA))\nSources:\nhttps://commons.wikimedia.org/wiki/File:JUNO_-_PIA13746.jpg\nhttps://commons.wikimedia.org/wiki/File:Jupiter_-_Great_Red_Spot_-_PJ7-60_61_62_-_Balanced_(49803032983).png\nhttps://commons.wikimedia.org/wiki/File:Jupiter_Down_Under.tif\nhttps://commons.wikimedia.org/wiki/File:Jupiter_Showcases_Auroras,_Hazes_(NIRCam_Closeup).jpg\nhttps://commons.wikimedia.org/wiki/File:Jupiter_from_Voyager_1.jpg\nhttps://images.nasa.gov/details/PIA21771\nhttps://images.nasa.gov/details/PIA24972\nhttps://images.nasa.gov/details/PIA25013\nhttps://images.nasa.gov/details/PIA26077",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "Why you would never stop falling on Jupiter\n\nExperience the terrifying descent into Jupiter, where gravity crushes you into a metallic liquid hotter than the Sun."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:JUNO_-_PIA13746.jpg",
+    "https://commons.wikimedia.org/wiki/File:Jupiter_-_Great_Red_Spot_-_PJ7-60_61_62_-_Balanced_(49803032983).png",
+    "https://commons.wikimedia.org/wiki/File:Jupiter_Down_Under.tif",
+    "https://commons.wikimedia.org/wiki/File:Jupiter_Showcases_Auroras,_Hazes_(NIRCam_Closeup).jpg",
+    "https://commons.wikimedia.org/wiki/File:Jupiter_from_Voyager_1.jpg",
+    "https://images.nasa.gov/details/PIA21771",
+    "https://images.nasa.gov/details/PIA24972",
+    "https://images.nasa.gov/details/PIA25013",
+    "https://images.nasa.gov/details/PIA26077"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v2"
+}

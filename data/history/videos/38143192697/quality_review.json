@@ -1,0 +1,56 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 94.44444444444444,
+  "scene_match": 95,
+  "delivery": 94.44444444444444,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video opens with a high-energy English narration and bold, single-word captions."
+    },
+    {
+      "second": 15,
+      "detail": "The transition between shots is a quick whip effect, maintaining the fast pace."
+    },
+    {
+      "second": 35,
+      "detail": "The 'ocean' impact word is highlighted in green, matching the 'reveal' emphasis color."
+    },
+    {
+      "second": 55,
+      "detail": "The narration remains consistent in tone, conveying a sense of cosmic danger."
+    },
+    {
+      "second": 75,
+      "detail": "The 'magnetic' impact word is correctly synchronized with the narrator's speech."
+    },
+    {
+      "second": 95,
+      "detail": "The video concludes with a blackout effect as the narrator describes the 'metallic dark'."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {},
+  "summary": "The documentary features a compelling English narration with well-timed, readable captions. The visual transitions and emphasis colors effectively enhance the scientific narrative.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 80,
+    "delivery": 75,
+    "visual_readability": 82
+  },
+  "measured_scores": {
+    "subtitle_sync": 94.44444444444444,
+    "scene_match": 95,
+    "delivery": 94.44444444444444
+  },
+  "readability_note": "model gave no concrete issue; score floored",
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

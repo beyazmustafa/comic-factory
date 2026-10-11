@@ -559,6 +559,17 @@
       "name": "red_danger_first_shot_emphasis",
       "change": "Assign red danger emphasis to the primary trauma term in shot 1 rather than leaving the opening beat normal.",
       "rationale": "High-contrast visual danger cues on the opening frame increase early engagement and reinforce the countdown hook."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "38143192697",
+    "chosen_at": "2026-10-11T13:27:37+00:00",
+    "experiment": {
+      "name": "tactile_sensory_hook_clause",
+      "change": "Begin the hook sentence with an immediate tactile physical sensation of impact before naming the cosmic object.",
+      "rationale": "Top-retaining shorts show that grounding immediate physical feeling hooks viewers before abstract astronomical context."
     }
   }
 ]
