@@ -2675,5 +2675,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "Ummx-qFq6jE",
+    "platform": "youtube",
+    "run_id": "38181035845",
+    "published_at": "2026-10-11T22:46:04+00:00",
+    "event": {
+      "title": "Inside Jupiter.",
+      "series": "Simulation",
+      "issue": "jupiter-inside",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 86,
+      "duration": 35.3,
+      "words_per_minute": 146,
+      "hook": "The clouds seen by the Juno spacecraft are only the top layer of this world. There is no solid ground here, only a deep atmosphere that never ends.",
+      "hook_words": 28,
+      "title": "The Strange Reality of What Lies Inside Jupiter",
+      "title_length": 47,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

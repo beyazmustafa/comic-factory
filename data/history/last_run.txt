@@ -1,12 +1,12 @@
-run_id: 38180308929  attempt: 1  event: workflow_dispatch
+run_id: 38181035845  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261011T222534743391Z/run.json
+--- data/runs/20261011T223633854506Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "betelgeuse",
+  "topic": "jupiter-inside",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,38 +40,41 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38180308929",
+  "run_id": "38181035845",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "1ca7e4eaf259c59e4c82c927ff2f954b28445f2b27ddfb5f7ebe669db43b8e23",
-  "metadata_sha256": "d0b1475c0856b7b072038341e4aca012e0ab51a0b66ffc56c5f74e64fd2204e1",
+  "video_sha256": "d121478c33b8047b4e6f4a204c5bb3c7a76e27f945db5a1cb9183d58611d34bf",
+  "metadata_sha256": "f575d5c56d071f8adbc81a4d3cf1ffdbc5f082440c4c37d08327a0627e2432fd",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 12,
-  "duration": 32.65,
+  "api_calls": 21,
+  "duration": 35.260000000000005,
   "voice": "Charon",
   "event": {
-    "id": "sim_betelgeuse_20261011T222534743391Z",
-    "title": "When Betelgeuse dies.",
+    "id": "sim_jupiter-inside_20261011T223633854506Z",
+    "title": "Inside Jupiter.",
     "series": "Simulation",
-    "issue": "betelgeuse",
+    "issue": "jupiter-inside",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "betelgeuse",
+    "scenario": "jupiter-inside",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261011T222534743391Z/diagnostics/provider_events.json
+--- data/runs/20261011T223633854506Z/diagnostics/provider_events.json
 [
   "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261011T222534743391Z/diagnostics/providers.json
+--- data/runs/20261011T223633854506Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -93,9 +96,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -188,35 +191,45 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261011T223633854506Z/audio/chunk_001/failures.json
+[
+  "edge-tts başarısız: Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/__main__.py\", line 6, in <module>\n    main()\n  File \"/opt/hostedtoolcache/"
+]
 --- studio.log (son 300 satır)
-→ Senaryo: betelgeuse
+→ Senaryo: jupiter-inside
 Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 84.0/100 | whisper-large-v3
+Ses bölümü 2, deneme 2
 Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-→ Simülasyon render (32.6 sn)
-Sahne karesi 0/979
-Sahne karesi 150/979
-Sahne karesi 300/979
-Sahne karesi 450/979
-Sahne karesi 600/979
-Sahne karesi 750/979
-Sahne karesi 900/979
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T222534743391Z/review.html
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Simülasyon render (35.3 sn)
+NASA görsel: 'Jupiter Juno clouds' için 8 sonuç
+NASA görsel: 'Jupiter Great Red Spot Juno' için 8 sonuç
+Sahne karesi 0/1057
+Sahne karesi 150/1057
+Sahne karesi 300/1057
+Sahne karesi 450/1057
+Sahne karesi 600/1057
+Sahne karesi 750/1057
+Sahne karesi 900/1057
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T223633854506Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: What Happens When Betelgeuse Finally Explodes? #Shorts
+Başlık: The Strange Reality of What Lies Inside Jupiter #Shorts
 Görünürlük: unlisted
 
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=P9lzIbRzYUw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %87
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=Ummx-qFq6jE&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
