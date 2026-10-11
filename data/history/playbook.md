@@ -1,8 +1,8 @@
 # Playbook (auto-evolving)
-- Hook: the opening sentence establishes immediate physical danger or irreversible impact without statistical throat-clearing.
-- Structure: reveal the direct physical consequence early, hold the cosmic cause for the middle, and land the payoff in the final third.
+- Hook: begin directly with an immediate physical sensation or blunt force of impact before identifying the cosmic object.
+- Structure: reveal the anatomical trauma in the first third, expose the cosmic mechanism in the middle, and land the irreversible consequence before the loop.
 - Language: strip adjectives; anchor cosmic phenomena directly to concrete human sensations and plain physical matter.
-- Length: aim for 16-20 shots and 65-80 seconds where retention peaks.
+- Length: aim for 16-18 shots and 65-78 seconds where audience retention peaks.
 - Restraint: limit numbers to physical scales the viewer can feel, avoiding dense statistical intervals.
 - Emphasis: use colored emphasis sparingly on pivotal turning points and lethal consequences rather than frequent decorative beats.
 - Ending: close on an irreversible end state that cleanly echoes the first image and hook line.

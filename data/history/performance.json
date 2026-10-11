@@ -221,15 +221,15 @@
       "rationale": "Differentiating speaker types visually helps viewers follow the narrative flow faster."
     },
     "stats": {
-      "views": 310,
+      "views": 312,
       "likes": 5,
       "comments": 0,
-      "hours_live": 229.4,
-      "views_per_hour": 1.35,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 235.0,
+      "views_per_hour": 1.33,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 179,
       "views_72h": 297,
-      "average_view_percentage": 37.44,
+      "average_view_percentage": 37.71,
       "average_view_duration": 46,
       "shares": 0
     },
@@ -417,6 +417,11 @@
       {
         "h": 229.4,
         "views": 310,
+        "likes": 5
+      },
+      {
+        "h": 235.0,
+        "views": 312,
         "likes": 5
       }
     ]
@@ -1506,15 +1511,15 @@
       "rationale": "Early concrete numbers establish grounded scale immediately and boost early viewer engagement."
     },
     "stats": {
-      "views": 1214,
+      "views": 1216,
       "likes": 38,
       "comments": 3,
-      "hours_live": 171.3,
-      "views_per_hour": 7.09,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 176.9,
+      "views_per_hour": 6.88,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 558,
       "views_72h": 1209,
-      "average_view_percentage": 82.37,
+      "average_view_percentage": 82.38,
       "average_view_duration": 44,
       "shares": 1
     },
@@ -1617,6 +1622,11 @@
       {
         "h": 171.3,
         "views": 1214,
+        "likes": 38
+      },
+      {
+        "h": 176.9,
+        "views": 1216,
         "likes": 38
       }
     ]
@@ -1738,13 +1748,13 @@
       "views": 622,
       "likes": 13,
       "comments": 0,
-      "hours_live": 144.6,
-      "views_per_hour": 4.3,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 150.2,
+      "views_per_hour": 4.14,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 556,
       "views_72h": 587,
-      "average_view_percentage": 69.38,
-      "average_view_duration": 79,
+      "average_view_percentage": 70.19,
+      "average_view_duration": 80,
       "shares": 0
     },
     "stats_history": [
@@ -1820,6 +1830,11 @@
       },
       {
         "h": 144.6,
+        "views": 622,
+        "likes": 13
+      },
+      {
+        "h": 150.2,
         "views": 622,
         "likes": 13
       }
@@ -1918,16 +1933,16 @@
       "rationale": "Data shows top videos averaged 22% emphasis while bottom videos averaged 35%, suggesting fewer colored beats increases visual impact."
     },
     "stats": {
-      "views": 128,
-      "likes": 3,
+      "views": 132,
+      "likes": 4,
       "comments": 0,
-      "hours_live": 135.4,
-      "views_per_hour": 0.95,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 141.0,
+      "views_per_hour": 0.94,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 118,
       "views_72h": 119,
-      "average_view_percentage": 57.440000000000005,
-      "average_view_duration": 47,
+      "average_view_percentage": 57.3,
+      "average_view_duration": 46,
       "shares": 0
     },
     "stats_history": [
@@ -2000,6 +2015,11 @@
         "h": 135.4,
         "views": 128,
         "likes": 3
+      },
+      {
+        "h": 141.0,
+        "views": 132,
+        "likes": 4
       }
     ]
   },
@@ -2096,15 +2116,15 @@
       "rationale": "Grounded consequence closings reinforce visceral stakes and increase seamless looping retention."
     },
     "stats": {
-      "views": 1216,
+      "views": 1220,
       "likes": 32,
       "comments": 1,
-      "hours_live": 72.9,
-      "views_per_hour": 16.67,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 78.5,
+      "views_per_hour": 15.54,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 1177,
       "views_72h": 1212,
-      "average_view_percentage": 40.91,
+      "average_view_percentage": 40.72,
       "average_view_duration": 26,
       "shares": 0
     },
@@ -2152,6 +2172,11 @@
       {
         "h": 72.9,
         "views": 1216,
+        "likes": 32
+      },
+      {
+        "h": 78.5,
+        "views": 1220,
         "likes": 32
       }
     ]
@@ -2265,14 +2290,17 @@
       "rationale": "Directly anchoring cosmic forces to anatomical parts amplifies visceral danger and boosts short-form watch duration."
     },
     "stats": {
-      "views": 1183,
+      "views": 1192,
       "likes": 60,
       "comments": 0,
-      "hours_live": 49.1,
-      "views_per_hour": 24.1,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 54.7,
+      "views_per_hour": 21.81,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 1161,
-      "views_72h": null
+      "views_72h": null,
+      "average_view_percentage": 55.88000000000001,
+      "average_view_duration": 43,
+      "shares": 0
     },
     "stats_history": [
       {
@@ -2303,6 +2331,11 @@
       {
         "h": 49.1,
         "views": 1183,
+        "likes": 60
+      },
+      {
+        "h": 54.7,
+        "views": 1192,
         "likes": 60
       }
     ]
@@ -2353,12 +2386,12 @@
       "rationale": "Countdowns establish immediate stakes and capitalize on top-performing videos that ground visceral physical danger within seconds."
     },
     "stats": {
-      "views": 1283,
-      "likes": 20,
+      "views": 1288,
+      "likes": 22,
       "comments": 0,
-      "hours_live": 25.9,
-      "views_per_hour": 49.62,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "hours_live": 31.4,
+      "views_per_hour": 40.98,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": 1283,
       "views_72h": null
     },
@@ -2377,6 +2410,11 @@
         "h": 25.9,
         "views": 1283,
         "likes": 20
+      },
+      {
+        "h": 31.4,
+        "views": 1288,
+        "likes": 22
       }
     ]
   },
@@ -2426,12 +2464,12 @@
       "rationale": "High-contrast visual danger cues on the opening frame increase early engagement and reinforce the countdown hook."
     },
     "stats": {
-      "views": 294,
-      "likes": 6,
-      "comments": 0,
-      "hours_live": 1.7,
-      "views_per_hour": 177.55,
-      "fetched_at": "2026-10-11T13:27:31+00:00",
+      "views": 1007,
+      "likes": 44,
+      "comments": 1,
+      "hours_live": 7.2,
+      "views_per_hour": 139.28,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
       "views_24h": null,
       "views_72h": null
     },
@@ -2440,6 +2478,11 @@
         "h": 1.7,
         "views": 294,
         "likes": 6
+      },
+      {
+        "h": 7.2,
+        "views": 1007,
+        "likes": 44
       }
     ]
   },
@@ -2487,6 +2530,69 @@
       "name": "tactile_sensory_hook_clause",
       "change": "Begin the hook sentence with an immediate tactile physical sensation of impact before naming the cosmic object.",
       "rationale": "Top-retaining shorts show that grounding immediate physical feeling hooks viewers before abstract astronomical context."
+    },
+    "stats": {
+      "views": 765,
+      "likes": 35,
+      "comments": 1,
+      "hours_live": 5.0,
+      "views_per_hour": 151.59,
+      "fetched_at": "2026-10-11T19:01:58+00:00",
+      "views_24h": null,
+      "views_72h": null
+    },
+    "stats_history": [
+      {
+        "h": 5.0,
+        "views": 765,
+        "likes": 35
+      }
+    ]
+  },
+  {
+    "video_id": "P3XH7Z79GpU",
+    "platform": "youtube",
+    "run_id": "38166216841",
+    "published_at": "2026-10-11T19:23:27+00:00",
+    "event": {
+      "title": "Betelgeuse Could Explode Tonight",
+      "series": "Space",
+      "issue": "betelgeuse",
+      "year": 2026,
+      "publisher": "NASA/ESA"
+    },
+    "profile": {
+      "shots": 16,
+      "words": 207,
+      "duration": 72.5,
+      "words_per_minute": 171,
+      "hook": "Seven hundred times wider than our Sun, the red supergiant Betelgeuse is dying.",
+      "hook_words": 13,
+      "title": "The terrifying scale of the dying supergiant Betelgeuse",
+      "title_length": 55,
+      "emphasis": {
+        "danger": 2,
+        "normal": 12,
+        "turn": 1,
+        "reveal": 1
+      }
+    },
+    "voice": "Orus",
+    "review": {
+      "mode": "video+measured",
+      "scores": {
+        "subtitle_sync": 86.66666666666667,
+        "scene_match": 95,
+        "delivery": 86.66666666666667,
+        "visual_readability": 85
+      },
+      "issues": [],
+      "summary": "The documentary narration is clear and well-paced, with visuals that effectively illustrate the complex astronomical concepts. The captions are legible and synchronized, though minor adjustments to their position and size could further enhance the viewing experience."
+    },
+    "experiment": {
+      "name": "body_tissue_payoff_resolution",
+      "change": "Conclude the final shot narration beat with the permanent physical state of human tissue rather than a cosmic body summary.",
+      "rationale": "Ending on human cellular or bodily consequence reinforces personal stakes and strengthens loop retention."
     },
     "stats": {}
   }

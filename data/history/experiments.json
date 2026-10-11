@@ -570,6 +570,17 @@
       "name": "tactile_sensory_hook_clause",
       "change": "Begin the hook sentence with an immediate tactile physical sensation of impact before naming the cosmic object.",
       "rationale": "Top-retaining shorts show that grounding immediate physical feeling hooks viewers before abstract astronomical context."
+    },
+    "verdict": "kept",
+    "judged_by": "model"
+  },
+  {
+    "run_id": "38166216841",
+    "chosen_at": "2026-10-11T19:02:18+00:00",
+    "experiment": {
+      "name": "body_tissue_payoff_resolution",
+      "change": "Conclude the final shot narration beat with the permanent physical state of human tissue rather than a cosmic body summary.",
+      "rationale": "Ending on human cellular or bodily consequence reinforces personal stakes and strengthens loop retention."
     }
   }
 ]

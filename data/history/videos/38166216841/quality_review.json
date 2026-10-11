@@ -1,0 +1,59 @@
+{
+  "candidate_observed": true,
+  "narration_language_ok": true,
+  "no_critical_errors": true,
+  "subtitle_sync": 86.66666666666667,
+  "scene_match": 95,
+  "delivery": 86.66666666666667,
+  "visual_readability": 85,
+  "observations": [
+    {
+      "second": 0,
+      "detail": "The video begins with a dramatic red nebula and clear, centered captions."
+    },
+    {
+      "second": 5,
+      "detail": "A scale graphic effectively compares Betelgeuse to the Sun as narrated."
+    },
+    {
+      "second": 15,
+      "detail": "A light loss counter accurately tracks the narration about the star's dimming."
+    },
+    {
+      "second": 35,
+      "detail": "The transition to the core collapse scene is well-timed with the narration."
+    },
+    {
+      "second": 55,
+      "detail": "The supernova remnant visual matches the discussion of the blast's safety."
+    },
+    {
+      "second": 70,
+      "detail": "The video concludes by returning to the initial nebula visual for a thematic loop."
+    }
+  ],
+  "issues": [],
+  "style_adjustments": {
+    "caption_y": 0.55,
+    "font_size": 80,
+    "zoom_amount": 0.12
+  },
+  "summary": "The documentary narration is clear and well-paced, with visuals that effectively illustrate the complex astronomical concepts. The captions are legible and synchronized, though minor adjustments to their position and size could further enhance the viewing experience.",
+  "review_mode": "video+measured",
+  "model_scores": {
+    "subtitle_sync": 85,
+    "scene_match": 80,
+    "delivery": 75,
+    "visual_readability": 85
+  },
+  "measured_scores": {
+    "subtitle_sync": 86.66666666666667,
+    "scene_match": 95,
+    "delivery": 86.66666666666667
+  },
+  "turkish_narration": true,
+  "warnings": [],
+  "passed": true,
+  "failed_checks": [],
+  "subjective_assessment": true
+}

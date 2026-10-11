@@ -1,0 +1,358 @@
+{
+  "script": {
+    "title": "The terrifying scale of the dying supergiant Betelgeuse",
+    "description": "The red supergiant Betelgeuse is acting strangely, and a supernova could be imminent. Here is what happens when a star this size dies.",
+    "hook_card": "THE GIANT IS DYING",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "page_020_p00",
+        "narration": "Seven hundred times wider than our Sun, the red supergiant Betelgeuse is dying.",
+        "fact_ids": [
+          "fact_000",
+          "fact_009"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "page_009_p00",
+        "narration": "This bloated titan is so vast it defies our sense of scale.",
+        "fact_ids": [
+          "fact_000"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "scale",
+          "big": "Betelgeuse",
+          "small": "Sun",
+          "ratio": 700.0,
+          "label": "Stellar Diameter"
+        },
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "page_003_p00",
+        "narration": "Placed in our solar system, its surface would swallow everything out to Jupiter.",
+        "fact_ids": [
+          "fact_002"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "Jupiter",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "page_015_p00",
+        "narration": "In 2019, the star dimmed dramatically, losing over half its usual luster.",
+        "fact_ids": [
+          "fact_005"
+        ],
+        "effect": null,
+        "graphic": {
+          "type": "counter",
+          "value": 60.0,
+          "unit": "percent",
+          "label": "Light Loss"
+        },
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "turn"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "page_012_p00",
+        "narration": "It had exhaled a massive soot cloud, weighing several times our moon.",
+        "fact_ids": [
+          "fact_007"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "page_005_p00",
+        "narration": "Deep within its belly, the star is now desperately fusing carbon to survive.",
+        "fact_ids": [
+          "fact_008"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "Carbon",
+        "motion": "push",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "page_016_p00",
+        "narration": "But once the core turns to iron, the internal pressure simply vanishes.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "page_011_p00",
+        "narration": "Gravity wins instantly, crushing the core in a fraction of a second.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": "pressure",
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "danger"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "page_017_p00",
+        "narration": "A titanic shockwave rebounds, shredding the star’s outer layers into the void.",
+        "fact_ids": [
+          "fact_010"
+        ],
+        "effect": "flash",
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "page_001_p00",
+        "narration": "The flash will be so intense it rivals the glow of a full moon.",
+        "fact_ids": [
+          "fact_011"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "up",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_010",
+        "panel_id": "page_010_p00",
+        "narration": "For weeks, you could look up and see a second sun in the midday sky.",
+        "fact_ids": [
+          "fact_011",
+          "fact_012"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "down",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_011",
+        "panel_id": "page_018_p00",
+        "narration": "At night, this distant ghost would be bright enough to cast sharp shadows.",
+        "fact_ids": [
+          "fact_012"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "left",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_012",
+        "panel_id": "page_004_p00",
+        "narration": "We are safe from the blast, protected by seven hundred light-years of vacuum.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_013",
+        "panel_id": "page_014_p00",
+        "narration": "It would be the first supernova seen from Earth in four hundred years.",
+        "fact_ids": [
+          "fact_014"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "push",
+        "emphasis": "reveal"
+      },
+      {
+        "id": "shot_014",
+        "panel_id": "page_002_p00",
+        "narration": "While the light reaches us, the lethal radiation will never touch your skin.",
+        "fact_ids": [
+          "fact_013"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "right",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_015",
+        "panel_id": "page_020_p00",
+        "narration": "Seven hundred times wider than our Sun, Betelgeuse is a ticking clock in the night.",
+        "fact_ids": [
+          "fact_009"
+        ],
+        "effect": null,
+        "graphic": null,
+        "impact_word": "",
+        "motion": "pull",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Seven hundred times wider than our Sun, the red supergiant Betelgeuse is dying. This bloated titan is so vast it defies our sense of scale. Placed in our solar system, its surface would swallow everything out to Jupiter. In 2019, the star dimmed dramatically, losing over half its usual luster. It had exhaled a massive soot cloud, weighing several times our moon. Deep within its belly, the star is now desperately fusing carbon to survive. But once the core turns to iron, the internal pressure simply vanishes. Gravity wins instantly, crushing the core in a fraction of a second. A titanic shockwave rebounds, shredding the star’s outer layers into the void. The flash will be so intense it rivals the glow of a full moon. For weeks, you could look up and see a second sun in the midday sky. At night, this distant ghost would be bright enough to cast sharp shadows. We are safe from the blast, protected by seven hundred light-years of vacuum. It would be the first supernova seen from Earth in four hundred years. While the light reaches us, the lethal radiation will never touch your skin. Seven hundred times wider than our Sun, Betelgeuse is a ticking clock in the night.",
+    "repaired_evidence": 0,
+    "skipped_shots": [],
+    "craft": {
+      "shape": "inside",
+      "shape_brief": "Go inside the object layer by layer (surface, atmosphere, core), what the viewer sees, hears and feels at each layer, then out again.",
+      "hook_type": "number",
+      "hook_brief": "one astonishing number, stated plainly, then what it means"
+    },
+    "editor_notes": "I replaced the list-like facts with a narrative flow, used evocative verbs like 'shredding' and 'exhaled', and used the star's scale as a bookend hook.",
+    "headline_candidates": {
+      "titles": [
+        "The terrifying scale of the dying supergiant Betelgeuse",
+        "How the explosion of Betelgeuse will look from Earth",
+        "The massive star Betelgeuse is preparing to explode",
+        "Betelgeuse is dying and it will change our night sky",
+        "Why the giant star Betelgeuse is about to disappear"
+      ],
+      "hook_cards": [
+        "THE GIANT IS DYING",
+        "SEVEN HUNDRED TIMES WIDER",
+        "A SUPERGIANT IS DYING",
+        "THE STAR IS FAILING",
+        "BETELGEUSE IS DYING"
+      ]
+    },
+    "event": {
+      "id": "space_betelgeuse",
+      "title": "Betelgeuse Could Explode Tonight",
+      "publisher": "NASA/ESA",
+      "series": "Space",
+      "issue": "betelgeuse",
+      "year": 2026,
+      "universe": "science",
+      "characters": [],
+      "summary": "brighter than the full Moon, visible in daylight for months",
+      "famous_line": "brighter than the full Moon, visible in daylight for months",
+      "image_terms": [
+        "Betelgeuse",
+        "supernova remnant",
+        "Crab Nebula",
+        "Cassiopeia A"
+      ],
+      "source_urls": [
+        "https://earthsky.org/brightest-stars/betelgeuse-will-explode-someday/",
+        "https://morningoverview.com/betelgeuse-could-explode-as-a-supernova-at-any-time-and-it-would-be-visible-in-daylight/",
+        "https://starwalk.space/en/news/betelgeuse-star-will-be-supernova",
+        "https://morningoverview.com/the-red-giant-betelgeuse-could-explode-as-a-supernova-bright-enough-to-see-by-day/",
+        "https://commons.wikimedia.org/wiki/File:Vela_Supernova_Remnant_-_Noirlab2406a.jpg",
+        "https://images.nasa.gov/details/GSFC_20100126_Nova_m10547_SuperNova",
+        "https://commons.wikimedia.org/wiki/File:Supernova_Remnant_SN_1006.jpg",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e002134",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e002159",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e000053",
+        "https://images.nasa.gov/details/PIA06909",
+        "https://commons.wikimedia.org/wiki/File:Betelgeuse_captured_by_ALMA.jpg",
+        "https://commons.wikimedia.org/wiki/File:Betelgeuse_(30036871174).jpg",
+        "https://images.nasa.gov/details/GSFC_20171208_Archive_e002183"
+      ],
+      "url": "https://earthsky.org/brightest-stars/betelgeuse-will-explode-someday/",
+      "_source": "space"
+    },
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "mode": "relevance",
+      "variety_warnings": []
+    },
+    "full_description": "The red supergiant Betelgeuse is acting strangely, and a supernova could be imminent. Here is what happens when a star this size dies.\nImages: NASA / ESA / JWST and Wikimedia Commons (public domain and CC BY). Credits: (Credit) ESO/TIMER survey (cc by 4.0); ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella (cc by 4.0); CTIO/NOIRLab/DOE/NSF/AURA Image Processing: T.A. Rector (University of Alaska An (cc by 4.0); GSFC (public domain (NASA)); Giuseppe Donatiello (cc0); MSFC (public domain (NASA)); Michael McClare, Dana Berry (public domain (NASA video)); NASA/CXC/Rutgers/J.Warren &amp; J.Hughes et al. (public domain); NASA/ESA/Johns Hopkins University (public domain (NASA)); NASA/JPL-Caltech/CXC/ESA/NRAO/J. Rho (SETI Institute) (public domain (NASA)); NASA/JPL-Caltech/DSS (public domain (NASA)); NASA/JPL-Caltech/MPIA (public domain (NASA)); X-ray: NASA/CXC/Rutgers/G.Cassam-Chenaï, J.Hughes et al.; Radio: NRAO/AUI/NSF/GB (cc by 4.0); X-ray: NASA/CXC/Rutgers/J.Hughes; Optical: NASA/STScI (public domain)\nSources:\nhttps://commons.wikimedia.org/wiki/File:Betelgeuse_(30036871174).jpg\nhttps://commons.wikimedia.org/wiki/File:Betelgeuse_captured_by_ALMA.jpg\nhttps://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg\nhttps://commons.wikimedia.org/wiki/File:Supernova_Remnant_SN_1006.jpg\nhttps://commons.wikimedia.org/wiki/File:Tycho-supernova-xray.jpg\nhttps://commons.wikimedia.org/wiki/File:Vela_Supernova_Remnant_-_Noirlab2406a.jpg\nhttps://commons.wikimedia.org/wiki/File:Vela_supernova_-_VST_-_Eso2214a.jpg\nhttps://images.nasa.gov/details/9905980\nhttps://images.nasa.gov/details/GSFC_20100126_Nova_m10547_SuperNova\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e002134\nhttps://images.nasa.gov/details/GSFC_20171208_Archive_e002159\nhttps://images.nasa.gov/details/PIA06909\nhttps://images.nasa.gov/details/PIA10725\nhttps://images.nasa.gov/details/PIA16606\nhttps://images.nasa.gov/details/PIA22569",
+    "hashtags": [
+      "space",
+      "shorts",
+      "nasa",
+      "science",
+      "astronomy",
+      "universe"
+    ],
+    "instagram_caption": "The terrifying scale of the dying supergiant Betelgeuse\n\nThe red supergiant Betelgeuse is acting strangely, and a supernova could be imminent. Here is what happens when a star this size dies."
+  },
+  "sources": [
+    "https://commons.wikimedia.org/wiki/File:Betelgeuse_(30036871174).jpg",
+    "https://commons.wikimedia.org/wiki/File:Betelgeuse_captured_by_ALMA.jpg",
+    "https://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg",
+    "https://commons.wikimedia.org/wiki/File:Supernova_Remnant_SN_1006.jpg",
+    "https://commons.wikimedia.org/wiki/File:Tycho-supernova-xray.jpg",
+    "https://commons.wikimedia.org/wiki/File:Vela_Supernova_Remnant_-_Noirlab2406a.jpg",
+    "https://commons.wikimedia.org/wiki/File:Vela_supernova_-_VST_-_Eso2214a.jpg",
+    "https://images.nasa.gov/details/9905980",
+    "https://images.nasa.gov/details/GSFC_20100126_Nova_m10547_SuperNova",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e002134",
+    "https://images.nasa.gov/details/GSFC_20171208_Archive_e002159",
+    "https://images.nasa.gov/details/PIA06909",
+    "https://images.nasa.gov/details/PIA10725",
+    "https://images.nasa.gov/details/PIA16606",
+    "https://images.nasa.gov/details/PIA22569"
+  ],
+  "voice": {
+    "voice": "Orus",
+    "rankings": [
+      {
+        "voice": "Orus",
+        "naturalness": 95,
+        "pronunciation": 95,
+        "energy": 90,
+        "reason": "Delivers an engaging, theatrical, dramatic performance perfectly suited for documentary shorts. Excellent pauses and emphasis.",
+        "score": 94.0
+      },
+      {
+        "voice": "Gacrux",
+        "naturalness": 90,
+        "pronunciation": 92,
+        "energy": 88,
+        "reason": "Very clear articulation with good narrative pacing and tone. Slightly less dramatic tension than Orus, but still fits the style well.",
+        "score": 90.4
+      },
+      {
+        "voice": "Fenrir",
+        "naturalness": 88,
+        "pronunciation": 90,
+        "energy": 85,
+        "reason": "Good clear delivery, but slightly more casual and less dramatic tension than Orus.",
+        "score": 88.2
+      }
+    ],
+    "selection": "audio_audition",
+    "subjective_assessment": true,
+    "tts_model": "gemini-3.1-flash-tts-preview"
+  },
+  "editing_profile": "space-science-en-v2"
+}
