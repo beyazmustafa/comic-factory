@@ -1,6 +1,6 @@
-run_id: 38172782634  attempt: 1  event: workflow_dispatch
+run_id: 38175644207  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261011T203518232062Z/run.json
+--- data/runs/20261011T211645645096Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,17 +40,17 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38172782634",
+  "run_id": "38175644207",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "a52a31dc35e526f4fa800ee70afd62753b7a430bfad2a9e2c73b907d623ff59a",
-  "metadata_sha256": "886b837855a66b0a52a1b2601327e7f9eec7e5a17549b0042661d35a8fa9f652",
-  "quality_sha256": "023ab6b551381e43ffeea615d2ab690723d2b8261a3d7841006c3bc0ce318245",
-  "api_calls": 4,
-  "duration": 28.0,
-  "voice": "none",
+  "video_sha256": "e0033a172b75b6faa997d1f97153ec4337f8479ce213282e096c7700110c2c3c",
+  "metadata_sha256": "6c9eb23f19085718fe1358bc24dd472e697239d5a8b692f44fb9f4761e253089",
+  "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
+  "api_calls": 7,
+  "duration": 45.85,
+  "voice": "Charon",
   "event": {
-    "id": "sim_three-body_20261011T203518232062Z",
+    "id": "sim_three-body_20261011T211645645096Z",
     "title": "The three-body problem.",
     "series": "Simulation",
     "issue": "three-body",
@@ -64,11 +64,7 @@ produce step outcome: success
   },
   "localized": []
 }
---- data/runs/20261011T203518232062Z/diagnostics/provider_events.json
-[
-  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
-]
---- data/runs/20261011T203518232062Z/diagnostics/providers.json
+--- data/runs/20261011T211645645096Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -90,9 +86,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -187,13 +183,22 @@ produce step outcome: success
 }
 --- studio.log (son 300 satır)
 → Senaryo: three-body
-Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-→ Simülasyon render
-Simülasyon karesi 0/840
-Simülasyon karesi 120/840
-Simülasyon karesi 240/840
-Simülasyon karesi 360/840
-Simülasyon karesi 480/840
-Simülasyon karesi 600/840
-Simülasyon karesi 720/840
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T203518232062Z/review.html
+→ Anlatım sesi
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Simülasyon render (45.9 sn)
+Simülasyon: three-body, 1333 kare, kare başına 1.79 adım
+Simülasyon karesi 0/1375
+Simülasyon karesi 150/1375
+Simülasyon karesi 300/1375
+Simülasyon karesi 450/1375
+Simülasyon karesi 600/1375
+Simülasyon karesi 750/1375
+Simülasyon karesi 900/1375
+Simülasyon karesi 1050/1375
+Simülasyon karesi 1200/1375
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T211645645096Z/review.html

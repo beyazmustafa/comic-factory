@@ -1,0 +1,90 @@
+{
+  "script": {
+    "title": "Why Three Stars Can Never Truly Stay Together",
+    "description": "A silent numerical simulation illustrates how chaotic energy transfers inevitably resolve the three-body problem by ejecting one star.",
+    "hook_card": "The three-body problem.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "Three equal stars enter a mutual gravitational dance. Because three bodies cannot share energy evenly, their paths become chaotic almost immediately.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "With every close pass, momentum transfers unevenly between them. Two bodies briefly pair up, while the third drains energy from their center of mass.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "Eventually, a single tight encounter imparts enough kinetic energy to fling one star outward forever, leaving the remaining pair in a stable binary orbit.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Three equal stars enter a mutual gravitational dance. Because three bodies cannot share energy evenly, their paths become chaotic almost immediately. With every close pass, momentum transfers unevenly between them. Two bodies briefly pair up, while the third drains energy from their center of mass. Eventually, a single tight encounter imparts enough kinetic energy to fling one star outward forever, leaving the remaining pair in a stable binary orbit.",
+    "event": {
+      "id": "sim_three-body_20261011T211645645096Z",
+      "title": "The three-body problem.",
+      "series": "Simulation",
+      "issue": "three-body",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "three-body",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "three-body",
+    "phases": [
+      {
+        "at": 0.0,
+        "subtitle": "Three stars share mutual gravity.",
+        "narration": "Three equal stars enter a mutual gravitational dance. Because three bodies cannot share energy evenly, their paths become chaotic almost immediately.",
+        "title": "The three-body problem."
+      },
+      {
+        "at": 16.53,
+        "subtitle": "Repeated encounters redistribute orbital energy.",
+        "narration": "With every close pass, momentum transfers unevenly between them. Two bodies briefly pair up, while the third drains energy from their center of mass.",
+        "title": "The three-body problem."
+      },
+      {
+        "at": "event",
+        "subtitle": "One body gains escape velocity.",
+        "narration": "Eventually, a single tight encounter imparts enough kinetic energy to fling one star outward forever, leaving the remaining pair in a stable binary orbit.",
+        "title": "One escapes.\nTwo remain bound.",
+        "target": 0.6410032715376227
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "A silent numerical simulation illustrates how chaotic energy transfers inevitably resolve the three-body problem by ejecting one star.\n\nA physics simulation rendered by code. ",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "Why Three Stars Can Never Truly Stay Together\n\nA silent numerical simulation illustrates how chaotic energy transfers inevitably resolve the three-body problem by ejecting one star."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}
