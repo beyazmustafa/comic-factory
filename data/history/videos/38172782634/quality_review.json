@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "review_mode": "simulation",
+  "subtitle_sync": 100,
+  "scene_match": 100,
+  "delivery": 100,
+  "visual_readability": 95,
+  "summary": "Code-generated simulation; no speech to align.",
+  "failed_checks": [],
+  "issues": []
+}

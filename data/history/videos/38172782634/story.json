@@ -1,0 +1,76 @@
+{
+  "title": "How Chaos Resolves in the Three-Body Problem",
+  "description": "A silent simulation showing how three mutually orbiting stars exchange energy until one is ejected into deep space.",
+  "hook_card": "",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "sim",
+      "narration": "The three-body problem.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "sim",
+      "narration": "Mutual gravity links three stars.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "sim",
+      "narration": "Close encounters transfer kinetic energy.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "sim",
+      "narration": "A stable binary remains behind.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "The three-body problem. Mutual gravity links three stars. Close encounters transfer kinetic energy. A stable binary remains behind.",
+  "event": {
+    "id": "sim_three-body_20261011T203518232062Z",
+    "title": "The three-body problem.",
+    "series": "Simulation",
+    "issue": "three-body",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "three-body",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "scenario": "three-body",
+  "phases": [
+    {
+      "at": 0.0,
+      "subtitle": "Mutual gravity links three stars.",
+      "title": "The three-body problem."
+    },
+    {
+      "at": 0.3,
+      "subtitle": "Close encounters transfer kinetic energy.",
+      "title": "The three-body problem."
+    },
+    {
+      "at": "event",
+      "subtitle": "A stable binary remains behind.",
+      "title": "One star escapes.\nTwo remain bound."
+    }
+  ],
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
