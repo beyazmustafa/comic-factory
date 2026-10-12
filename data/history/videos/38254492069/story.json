@@ -1,0 +1,71 @@
+{
+  "title": "How Matter Spirals into a Black Hole",
+  "description": "Watch how friction drains the energy of orbiting gas until it slips past the event horizon.",
+  "hook_card": "Falling into darkness.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "sim",
+      "narration": "A cloud of gas loops safely in space, held in place by the steady pull of a heavy black hole.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "sim",
+      "narration": "Rubbing together, the swirling streams heat up, lose their balance, and slowly drift inward toward the dark center.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "sim",
+      "narration": "Once the gas slips past the dark edge, it vanishes from view entirely, and no light can ever return.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "A cloud of gas loops safely in space, held in place by the steady pull of a heavy black hole. Rubbing together, the swirling streams heat up, lose their balance, and slowly drift inward toward the dark center. Once the gas slips past the dark edge, it vanishes from view entirely, and no light can ever return.",
+  "event": {
+    "id": "sim_black-hole_20261012T131749135471Z",
+    "title": "Falling into darkness.",
+    "series": "Simulation",
+    "issue": "black-hole",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "black-hole",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "scenario": "black-hole",
+  "phases": [
+    {
+      "at": 0.0,
+      "subtitle": "Gas circles the black hole.",
+      "narration": "A cloud of gas loops safely in space, held in place by the steady pull of a heavy black hole.",
+      "title": "Falling into darkness."
+    },
+    {
+      "at": 10.719999999999999,
+      "subtitle": "Friction drains its speed.",
+      "narration": "Rubbing together, the swirling streams heat up, lose their balance, and slowly drift inward toward the dark center.",
+      "title": "Falling into darkness."
+    },
+    {
+      "at": 20.39,
+      "subtitle": "Matter crosses the final boundary.",
+      "narration": "Once the gas slips past the dark edge, it vanishes from view entirely, and no light can ever return.",
+      "title": "The orbit ends.\nNothing comes back."
+    }
+  ],
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

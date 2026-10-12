@@ -2875,5 +2875,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "t4NXziIcCyg",
+    "platform": "youtube",
+    "run_id": "38254492069",
+    "published_at": "2026-10-12T13:26:07+00:00",
+    "event": {
+      "title": "Falling into darkness.",
+      "series": "Simulation",
+      "issue": "black-hole",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 57,
+      "duration": 32.3,
+      "words_per_minute": 106,
+      "hook": "A cloud of gas loops safely in space, held in place by the steady pull of a heavy black hole.",
+      "hook_words": 20,
+      "title": "How Matter Spirals into a Black Hole",
+      "title_length": 36,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
