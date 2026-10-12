@@ -236,8 +236,8 @@ def align_clip(api, path, text, directory, soft=False):
         except Exception as error:
             errors.append(f"{model}: {type(error).__name__}: {str(error)[:350]}")
         save_json(directory / "alignment_errors.json", errors)
-    floor = max(78, api.settings.alignment_threshold - 6)
-    if soft and best and best["metrics"]["score"] >= floor and best["metrics"].get("coverage", 0) >= 90:
+    floor = max(74, api.settings.alignment_threshold - 6)
+    if soft and best and best["metrics"]["score"] >= floor and best["metrics"].get("coverage", 0) >= 84:
         api.note(f"Ses bölümü eşik altında kabul edildi ({best['metrics']['score']:.1f}/100, son deneme).")
         best["metrics"]["soft_accept"] = True
         return best

@@ -331,7 +331,14 @@ def generate(settings, topic="", api_factory=None):
         narration_story = {"shots": [{"id": f"shot_{i:03}", "narration": p["narration"], "emphasis": "normal"} for i, p in enumerate(texts["phases"])]}
         narration_story["narration"] = " ".join(s["narration"] for s in narration_story["shots"])
         cache = ROOT / "data" / "cache-v2"
+        # Short calm passages with proper nouns (Betelgeuse, Juno): one word Whisper
+        # spells differently costs several points, so the bar is a little lower here;
+        # a mismatched word only gets an estimated caption time.
+        from dataclasses import replace as _replace
+
+        api.settings = _replace(settings, alignment_threshold=min(settings.alignment_threshold, 80))
         audio_path, words, speech_seconds = voice.build_audio(api, narration_story, getattr(settings, "sim_voice", "Charon"), calm_style, cache)
+        api.settings = settings
         head = 1.2  # silence before the voice starts; the title has a moment alone
         # phase timing follows the narration: each phase begins where its passage begins
         starts, cursor = [], 0
