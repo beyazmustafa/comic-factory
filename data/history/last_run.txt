@@ -1,12 +1,12 @@
-run_id: 38210523227  attempt: 1  event: workflow_dispatch
+run_id: 38211245320  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261012T060218006790Z/run.json
+--- data/runs/20261012T061128984016Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "saturn-rings",
+  "topic": "jupiter-inside",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,42 +40,47 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38210523227",
+  "run_id": "38211245320",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "9265b66f11d7411204cbe0ae7ab32933c12cb7299c473825dfa0a86ac63fdf1b",
-  "metadata_sha256": "d02986632990f9bba25af430781b70b9afd97bcc2d1a823f8ef25d60871dfb49",
+  "video_sha256": "d90c90395d0b73590710f4fb3c436c8947a971f6e7592d80448acaa7f5d6572a",
+  "metadata_sha256": "ce0260a2f504d15f1f7018c7e3a7af015610c1e874349a65085d48fa334f14ab",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 26,
-  "duration": 36.52,
+  "api_calls": 43,
+  "duration": 36.480000000000004,
   "voice": "Charon",
   "event": {
-    "id": "sim_saturn-rings_20261012T060218006790Z",
-    "title": "Saturn's rings are young.",
+    "id": "sim_jupiter-inside_20261012T061128984016Z",
+    "title": "Inside Jupiter.",
     "series": "Simulation",
-    "issue": "saturn-rings",
+    "issue": "jupiter-inside",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "saturn-rings",
+    "scenario": "jupiter-inside",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261012T060218006790Z/diagnostics/provider_events.json
+--- data/runs/20261012T061128984016Z/diagnostics/provider_events.json
 [
   "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Yedek ses modeli gemini-3.8-flash-tts metni düzgün okumadı; bir sonraki motora geçildi.",
-  "Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
   "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261012T060218006790Z/diagnostics/providers.json
+--- data/runs/20261012T061128984016Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -192,51 +197,51 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261012T060218006790Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 10.; whisper-large-v3-turbo: 30.8/100 (duyulan: “Read only the exact English text inside quote once. No additions, omissions, translation, ”, 47.5 sn)"
-]
 --- studio.log (son 300 satır)
-→ Senaryo: saturn-rings
+→ Senaryo: jupiter-inside
 Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 30.8/100 | whisper-large-v3-turbo
-Yedek ses modeli gemini-3.8-flash-tts metni düzgün okumadı; bir sonraki motora geçildi.
-Ses bölümü 1, deneme 2
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.7/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 → Simülasyon render (36.5 sn)
-NASA görsel: 'Saturn Cassini' için 10 sonuç
-/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/PIL/Image.py:3578: DecompressionBombWarning: Image size (138240000 pixels) exceeds limit of 89478485 pixels, could be decompression bomb DOS attack.
-  warnings.warn(
-Görsel seçimi: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-NASA görsel: 'Saturn rings Cassini' için 9 sonuç
-NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA219
+NASA görsel: 'Jupiter clouds JunoCam' için 10 sonuç
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA144
 Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Sahne karesi 0/1095
-Sahne karesi 150/1095
-Sahne karesi 300/1095
-Sahne karesi 450/1095
-Sahne karesi 600/1095
-Sahne karesi 750/1095
-Sahne karesi 900/1095
-Sahne karesi 1050/1095
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T060218006790Z/review.html
+NASA görsel: 'Jupiter Juno clouds' için 10 sonuç
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA144
+Görsel seçimi: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görsel seçimi: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+NASA görsel: 'Jupiter Great Red Spot Juno' için 10 sonuç
+Sahne karesi 0/1094
+Sahne karesi 150/1094
+Sahne karesi 300/1094
+Sahne karesi 450/1094
+Sahne karesi 600/1094
+Sahne karesi 750/1094
+Sahne karesi 900/1094
+Sahne karesi 1050/1094
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T061128984016Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Why Saturn's Rings Are Younger Than the Dinosaurs #Shorts
+Başlık: What Happens When You Fall Into Jupiter? #Shorts
 Görünürlük: unlisted
 
-Yükleme: %78
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=h2lm2AX9pM4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %43
+Yükleme: %87
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=OxcyHHoQiNU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

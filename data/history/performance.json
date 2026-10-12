@@ -2835,5 +2835,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "OxcyHHoQiNU",
+    "platform": "youtube",
+    "run_id": "38211245320",
+    "published_at": "2026-10-12T06:19:30+00:00",
+    "event": {
+      "title": "Inside Jupiter.",
+      "series": "Simulation",
+      "issue": "jupiter-inside",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 84,
+      "duration": 36.5,
+      "words_per_minute": 138,
+      "hook": "When Juno looks at Jupiter, it sees bright swirling clouds of ammonia. There is no solid landscape beneath these storms, only an endless drop into deep air.",
+      "hook_words": 27,
+      "title": "What Happens When You Fall Into Jupiter?",
+      "title_length": 40,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

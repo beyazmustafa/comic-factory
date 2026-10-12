@@ -1,0 +1,207 @@
+{
+  "script": {
+    "title": "What Happens When You Fall Into Jupiter?",
+    "description": "A calm look at how Jupiter transitions from ammonia clouds to liquid hydrogen and a dissolving central core.",
+    "hook_card": "Inside Jupiter.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "When Juno looks at Jupiter, it sees bright swirling clouds of ammonia. There is no solid landscape beneath these storms, only an endless drop into deep air.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "Going deeper, the gas squeezes into a warm ocean of liquid hydrogen. Under crushing pressure, this liquid turns into a glowing metal that conducts electricity like wire.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "At the very center lies a heavy core hotter than the surface of the Sun. Over billions of years, this rocky heart has been slowly melting into the metallic liquid.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "When Juno looks at Jupiter, it sees bright swirling clouds of ammonia. There is no solid landscape beneath these storms, only an endless drop into deep air. Going deeper, the gas squeezes into a warm ocean of liquid hydrogen. Under crushing pressure, this liquid turns into a glowing metal that conducts electricity like wire. At the very center lies a heavy core hotter than the surface of the Sun. Over billions of years, this rocky heart has been slowly melting into the metallic liquid.",
+    "event": {
+      "id": "sim_jupiter-inside_20261012T061128984016Z",
+      "title": "Inside Jupiter.",
+      "series": "Simulation",
+      "issue": "jupiter-inside",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "jupiter-inside",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "jupiter-inside",
+    "phases": [
+      {
+        "subtitle": "Ammonia clouds form the outer atmosphere.",
+        "narration": "When Juno looks at Jupiter, it sees bright swirling clouds of ammonia. There is no solid landscape beneath these storms, only an endless drop into deep air.",
+        "scene": {
+          "type": "image",
+          "query": "Jupiter Juno clouds",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "stats": {
+          "time": [
+            [
+              "69,911",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Inside Jupiter.",
+        "at": 0.0
+      },
+      {
+        "subtitle": "Gas compresses into liquid and metal.",
+        "narration": "Going deeper, the gas squeezes into a warm ocean of liquid hydrogen. Under crushing pressure, this liquid turns into a glowing metal that conducts electricity like wire.",
+        "scene": {
+          "type": "cutaway",
+          "layers": [
+            [
+              "Ammonia clouds",
+              1.0,
+              [
+                230,
+                200,
+                170
+              ]
+            ],
+            [
+              "Liquid hydrogen",
+              0.9,
+              [
+                255,
+                160,
+                90
+              ]
+            ],
+            [
+              "Metallic hydrogen",
+              0.78,
+              [
+                170,
+                140,
+                255
+              ]
+            ],
+            [
+              "Core",
+              0.2,
+              [
+                255,
+                90,
+                90
+              ]
+            ]
+          ]
+        },
+        "stats": {
+          "time": [
+            [
+              "69,911",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "24,000",
+              [
+                255,
+                90,
+                90
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Inside Jupiter.",
+        "at": 11.93
+      },
+      {
+        "subtitle": "The hot core dissolves inside.",
+        "narration": "At the very center lies a heavy core hotter than the surface of the Sun. Over billions of years, this rocky heart has been slowly melting into the metallic liquid.",
+        "scene": {
+          "type": "image",
+          "query": "Jupiter Great Red Spot Juno",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "stats": {
+          "time": [
+            [
+              "69,911",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "24,000",
+              [
+                255,
+                90,
+                90
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Inside Jupiter.",
+        "at": 23.66
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "A calm look at how Jupiter transitions from ammonia clouds to liquid hydrogen and a dissolving central core.\n\nA physics simulation rendered by code. @Facctsaboutspace\nImages: Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing by G (https://images.nasa.gov/details/PIA25729); Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing: Kev (https://images.nasa.gov/details/PIA25691); JPL (https://images.nasa.gov/details/PIA21778)\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "What Happens When You Fall Into Jupiter?\n\nA calm look at how Jupiter transitions from ammonia clouds to liquid hydrogen and a dissolving central core."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}
