@@ -191,7 +191,7 @@ def nasa_search(query, count=12):
         nasa_id = data.get("nasa_id", "")
         # ~orig.jpg / ~large.jpg exist for most assets; the preview is ~thumb.
         large = re.sub(r"~(thumb|small|medium)\.(jpg|png)$", r"~large.\2", href)
-        rows.append({"image_url": large, "fallback_url": href, "title": title,
+        rows.append({"image_url": large, "fallback_url": href, "manifest": item.get("href", ""), "title": title,
                      "source_url": f"https://images.nasa.gov/details/{nasa_id}" if nasa_id else href,
                      "credit": clean(data.get("secondary_creator") or data.get("center") or "NASA"),
                      "description": clean(data.get("description"))[:300]})

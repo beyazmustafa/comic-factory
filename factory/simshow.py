@@ -199,7 +199,19 @@ def fetch_image(api, query, directory, focus):
         for row in rows:
             if len(found) >= 4:
                 break
-            candidates = [row.get("image_url"), (row.get("image_url") or "").replace("~large", "~orig"), row.get("fallback_url")]
+            candidates = []
+            if row.get("manifest"):
+                # the asset manifest lists the real renditions; guessing names gives 403s
+                try:
+                    body, _ = fetcher.get(row["manifest"], 2_000_000)
+                    files = json.loads(body.decode("utf-8", "ignore"))
+                    if isinstance(files, list):
+                        images = [f for f in files if isinstance(f, str) and f.casefold().endswith((".jpg", ".jpeg", ".png"))]
+                        images.sort(key=lambda f: ("~orig" not in f, "~large" not in f, "~medium" not in f, "~small" not in f))
+                        candidates += images[:3]
+                except Exception:  # noqa: BLE001
+                    pass
+            candidates += [row.get("image_url"), row.get("fallback_url")]
             for url in dict.fromkeys(u for u in candidates if u):
                 try:
                     body, _ = fetcher.get(url, 40_000_000)
