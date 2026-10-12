@@ -1,0 +1,185 @@
+{
+  "title": "What Will Happen When Our Sun Reaches the End of Its Life?",
+  "description": "This short documentary explores the distant future of our solar system, showing how the Sun will change from a stable star into a white dwarf.",
+  "hook_card": "The Sun's last days.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "sim",
+      "narration": "For billions of years, our star has steadily burned its inner fuel. It has reached the middle of its long journey, quietly shining upon our world.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "sim",
+      "narration": "Eventually, the core fuel will fade. The star grows enormously larger, expanding outward through space until it finally overtakes the orbits of Mercury and Venus.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "sim",
+      "narration": "The outer gas drifts away to form a bright cloud. Only a dense core stays behind, cooling slowly in the dark as a tiny white dwarf.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "For billions of years, our star has steadily burned its inner fuel. It has reached the middle of its long journey, quietly shining upon our world. Eventually, the core fuel will fade. The star grows enormously larger, expanding outward through space until it finally overtakes the orbits of Mercury and Venus. The outer gas drifts away to form a bright cloud. Only a dense core stays behind, cooling slowly in the dark as a tiny white dwarf.",
+  "event": {
+    "id": "sim_sun-death_20261012T015405645607Z",
+    "title": "The Sun's last days.",
+    "series": "Simulation",
+    "issue": "sun-death",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "sun-death",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "scenario": "sun-death",
+  "phases": [
+    {
+      "subtitle": "The Sun is halfway through life.",
+      "narration": "For billions of years, our star has steadily burned its inner fuel. It has reached the middle of its long journey, quietly shining upon our world.",
+      "scene": {
+        "type": "timeline",
+        "events": [
+          [
+            -4600,
+            "Born",
+            [
+              255,
+              220,
+              110
+            ]
+          ],
+          [
+            0,
+            "Today",
+            [
+              235,
+              236,
+              250
+            ]
+          ],
+          [
+            5000,
+            "Red giant",
+            [
+              255,
+              90,
+              90
+            ]
+          ],
+          [
+            7000,
+            "White dwarf",
+            [
+              120,
+              220,
+              255
+            ]
+          ]
+        ],
+        "unit": "million years",
+        "span": 18
+      },
+      "stats": {
+        "right": [
+          [
+            "1",
+            [
+              255,
+              220,
+              110
+            ],
+            ""
+          ]
+        ]
+      },
+      "title": "The Sun's last days.",
+      "at": 0.0
+    },
+    {
+      "subtitle": "It swells wider and swallows planets.",
+      "narration": "Eventually, the core fuel will fade. The star grows enormously larger, expanding outward through space until it finally overtakes the orbits of Mercury and Venus.",
+      "scene": {
+        "type": "scale",
+        "items": [
+          [
+            "Sun today",
+            1,
+            [
+              255,
+              220,
+              110
+            ]
+          ],
+          [
+            "Red giant",
+            200,
+            [
+              255,
+              90,
+              90
+            ]
+          ]
+        ],
+        "unit": "× today"
+      },
+      "stats": {
+        "right": [
+          [
+            "200",
+            [
+              255,
+              90,
+              90
+            ],
+            ""
+          ]
+        ]
+      },
+      "title": "The Sun's last days.",
+      "at": 11.059999999999999
+    },
+    {
+      "subtitle": "A white dwarf remains behind.",
+      "narration": "The outer gas drifts away to form a bright cloud. Only a dense core stays behind, cooling slowly in the dark as a tiny white dwarf.",
+      "scene": {
+        "type": "image",
+        "query": "Helix Nebula",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "stats": {
+        "right": [
+          [
+            "0.01",
+            [
+              120,
+              220,
+              255
+            ],
+            ""
+          ]
+        ]
+      },
+      "title": "The Sun's last days.",
+      "at": 22.55
+    }
+  ],
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -2755,5 +2755,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "LciU_8yFKlg",
+    "platform": "youtube",
+    "run_id": "38193618030",
+    "published_at": "2026-10-12T02:02:08+00:00",
+    "event": {
+      "title": "The Sun's last days.",
+      "series": "Simulation",
+      "issue": "sun-death",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 77,
+      "duration": 34.5,
+      "words_per_minute": 134,
+      "hook": "For billions of years, our star has steadily burned its inner fuel. It has reached the middle of its long journey, quietly shining upon our world.",
+      "hook_words": 26,
+      "title": "What Will Happen When Our Sun Reaches the End of Its Life?",
+      "title_length": 58,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
