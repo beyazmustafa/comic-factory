@@ -1,6 +1,6 @@
-run_id: 38254492069  attempt: 1  event: schedule
+run_id: 38315077614  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261012T131749135471Z/run.json
+--- data/runs/20261012T221107582758Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,35 +40,31 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38254492069",
+  "run_id": "38315077614",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "94355986e43dcba3ca67fdce7fce90b228bf1d754fd98e7a8e1a9e5151476ae9",
-  "metadata_sha256": "dea14c01492f6fea19829125b50946a4da732bdda7dcccde3a11234b94cfe8f5",
+  "video_sha256": "8653389cf020cc9aa804e0a8f508cfe2fde975f70bf79f5ac6bfdb6dee026cdf",
+  "metadata_sha256": "3223590b45ddfec95835c6e4e551e6ffbb10fc7442456611ad95ebecd9121f3f",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 8,
-  "duration": 32.339999999999996,
+  "api_calls": 6,
+  "duration": 34.089999999999996,
   "voice": "Charon",
   "event": {
-    "id": "sim_black-hole_20261012T131749135471Z",
-    "title": "Falling into darkness.",
+    "id": "sim_roche-limit_20261012T221107582758Z",
+    "title": "The Roche limit.",
     "series": "Simulation",
-    "issue": "black-hole",
+    "issue": "roche-limit",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "black-hole",
+    "scenario": "roche-limit",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261012T131749135471Z/diagnostics/provider_events.json
-[
-  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
-]
---- data/runs/20261012T131749135471Z/diagnostics/providers.json
+--- data/runs/20261012T221107582758Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -186,54 +182,56 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Senaryo: black-hole
-Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+→ Senaryo: roche-limit
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Simülasyon render (32.3 sn)
-NASA görsel: 'black hole accretion disk visualization' için 1 sonuç
-Simülasyon: black-hole, 928 kare, kare başına 6.00 adım
-Simülasyon karesi 0/970
-Simülasyon karesi 150/970
-Simülasyon karesi 300/970
-Simülasyon karesi 450/970
-Simülasyon karesi 600/970
-Simülasyon karesi 750/970
-Simülasyon karesi 900/970
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T131749135471Z/review.html
+→ Simülasyon render (34.1 sn)
+NASA görsel: 'Saturn rings Cassini' için 9 sonuç
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA219
+Simülasyon: roche-limit, 980 kare, kare başına 5.00 adım
+Simülasyon karesi 0/1022
+Simülasyon karesi 150/1022
+Simülasyon karesi 300/1022
+Simülasyon karesi 450/1022
+Simülasyon karesi 600/1022
+Simülasyon karesi 750/1022
+Simülasyon karesi 900/1022
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T221107582758Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: How Matter Spirals into a Black Hole #Shorts
+Başlık: How a Falling Moon Turns Into a Planetary Ring #Shorts
 Görünürlük: public
 
-Yükleme: %57
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=t4NXziIcCyg&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=9A9hsLwjA00&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T131749135471Z/video.mp4
-Boyut: 13.9 MB
-Açıklama uzunluğu: 186 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T221107582758Z/video.mp4
+Boyut: 5.7 MB
+Açıklama uzunluğu: 213 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17967846180187944).
+Instagram: container oluşturuldu (17967909081187944).
 Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18117441193989682
+Instagram Reel başarıyla yayınlandı: 18130411141754077
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================

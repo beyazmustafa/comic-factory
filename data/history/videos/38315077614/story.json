@@ -1,0 +1,71 @@
+{
+  "title": "How a Falling Moon Turns Into a Planetary Ring",
+  "description": "A visual simulation showing what happens when a moon crosses the Roche limit and tidal forces tear it apart.",
+  "hook_card": "The Roche limit.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "sim",
+      "narration": "A stray moon loses height and slowly falls inward, circling closer to the heavy world that holds it in space.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "sim",
+      "narration": "The planet pulls harder on the moon's near face than its far side, stretching the cold rock into an egg shape.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "sim",
+      "narration": "Passing the invisible boundary, self-gravity fails completely, tearing the moon into fragments that drift into a thin, quiet ring.",
+      "fact_ids": [],
+      "motion": "hold",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "A stray moon loses height and slowly falls inward, circling closer to the heavy world that holds it in space. The planet pulls harder on the moon's near face than its far side, stretching the cold rock into an egg shape. Passing the invisible boundary, self-gravity fails completely, tearing the moon into fragments that drift into a thin, quiet ring.",
+  "event": {
+    "id": "sim_roche-limit_20261012T221107582758Z",
+    "title": "The Roche limit.",
+    "series": "Simulation",
+    "issue": "roche-limit",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "roche-limit",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "scenario": "roche-limit",
+  "phases": [
+    {
+      "at": 0.0,
+      "subtitle": "A moon drifts inward.",
+      "narration": "A stray moon loses height and slowly falls inward, circling closer to the heavy world that holds it in space.",
+      "title": "The Roche limit."
+    },
+    {
+      "at": 11.44,
+      "subtitle": "Gravity pulls unevenly across it.",
+      "narration": "The planet pulls harder on the moon's near face than its far side, stretching the cold rock into an egg shape.",
+      "title": "The Roche limit."
+    },
+    {
+      "at": 19.58,
+      "subtitle": "The shattered pieces spread out.",
+      "narration": "Passing the invisible boundary, self-gravity fails completely, tearing the moon into fragments that drift into a thin, quiet ring.",
+      "title": "The moon breaks.\nA ring remains."
+    }
+  ],
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -2915,5 +2915,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "9A9hsLwjA00",
+    "platform": "youtube",
+    "run_id": "38315077614",
+    "published_at": "2026-10-12T22:21:32+00:00",
+    "event": {
+      "title": "The Roche limit.",
+      "series": "Simulation",
+      "issue": "roche-limit",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 60,
+      "duration": 34.1,
+      "words_per_minute": 106,
+      "hook": "A stray moon loses height and slowly falls inward, circling closer to the heavy world that holds it in space.",
+      "hook_words": 20,
+      "title": "How a Falling Moon Turns Into a Planetary Ring",
+      "title_length": 46,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
