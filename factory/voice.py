@@ -7,6 +7,7 @@ import shutil
 import wave
 import subprocess
 import sys
+import time
 import numpy as np
 from google.genai import types
 from groq import Groq
@@ -91,19 +92,34 @@ def edge_synthesize(text, voice, path, rate="+4%"):
     path.parent.mkdir(parents=True, exist_ok=True)
     media = path.with_suffix(".mp3")
     try:
-        subprocess.run(
-            [sys.executable, "-m", "edge_tts", "--voice", identifier, f"--rate={rate}",
-             "--text", text, "--write-media", str(media)],
-            check=True, capture_output=True, text=True, timeout=240,
-        )
+        # Microsoft's endpoint drops connections now and then (403 / websocket
+        # resets), so a failed attempt is retried with a growing pause.
+        last_error = None
+        for pause in (0, 5, 12, 25):
+            if pause:
+                time.sleep(pause)
+            try:
+                subprocess.run(
+                    [sys.executable, "-m", "edge_tts", "--voice", identifier, f"--rate={rate}",
+                     "--text", text, "--write-media", str(media)],
+                    check=True, capture_output=True, text=True, timeout=240,
+                )
+                if media.exists() and media.stat().st_size > 1000:
+                    break
+                raise SpeechFailure("edge-tts boş dosya üretti")
+            except (subprocess.SubprocessError, OSError, SpeechFailure) as error:
+                last_error = error
+        else:
+            detail = str(getattr(last_error, "stderr", "") or last_error).strip()
+            raise SpeechFailure(f"edge-tts başarısız: …{detail[-300:]}") from last_error
         subprocess.run(
             [ffmpeg_binary(), "-y", "-v", "error", "-i", str(media), "-ac", "1", "-ar", str(RATE),
              "-c:a", "pcm_s16le", str(path)],
             check=True, capture_output=True, text=True, timeout=240,
         )
     except (subprocess.SubprocessError, OSError) as error:
-        detail = getattr(error, "stderr", "") or str(error)
-        raise SpeechFailure(f"edge-tts başarısız: {str(detail)[:300]}") from error
+        detail = str(getattr(error, "stderr", "") or error).strip()
+        raise SpeechFailure(f"edge-tts başarısız: …{detail[-300:]}") from error
     finally:
         try:
             media.unlink()
