@@ -154,10 +154,13 @@ class ScaleScene(Scene):
             gap = (y1 - y0 - 60) / n
             for k, (label, value, color) in enumerate(self.items):
                 yy = y0 + 40 + k * gap
-                length = (x1 - x0 - 300) * (value / biggest) * p
-                d.text((x0 + 10, yy), label.upper(), font=sim.font("bold", 22), fill=INK + (240,), anchor="lm")
+                caption = f"{_fmt(value)} {self.unit}".strip()
+                label_font, value_font = sim.font("bold", 22), sim.font("mono", 24)
+                room = max(len(f"{_fmt(v)} {self.unit}".strip()) for _, v, _ in self.items) * 15 + 30
+                length = max(0, x1 - x0 - 250 - room) * (value / biggest) * p
+                d.text((x0 + 10, yy), label.upper(), font=label_font, fill=INK + (240,), anchor="lm")
                 d.rectangle((x0 + 250, yy - 10, x0 + 250 + max(4, length), yy + 10), fill=color + (230,))
-                d.text((x0 + 262 + max(4, length), yy), f"{_fmt(value)} {self.unit}".strip(), font=sim.font("mono", 24), fill=color + (255,), anchor="lm")
+                d.text((x0 + 262 + max(4, length), yy), caption, font=value_font, fill=color + (255,), anchor="lm")
 
 
 # ----------------------------------------------------------------- timeline

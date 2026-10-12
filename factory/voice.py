@@ -249,6 +249,9 @@ def gemini_synthesize_with(api, model, text, voice, style, path):
 DELIVERY: {style.get("narrator_delivery", "")}
 {style.get("voice_character", "Fluent natural " + language_name(api) + ", confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.")}
 <transcript>{text}</transcript>"""
+    if model != api.settings.tts_model:
+        # Stand-in models have read the instructions aloud; they get the bare script.
+        prompt = text
     response = api.request(
         f"Ses {voice} ({model})",
         lambda: api.client.models.generate_content(

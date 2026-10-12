@@ -48,7 +48,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "jupiter-inside", "backdrop": "Jupiter Juno", "title": "Inside Jupiter.",
+        "key": "jupiter-inside", "backdrop": "Jupiter clouds JunoCam", "title": "Inside Jupiter.",
         "brief": "Jupiter has no surface: clouds of ammonia, then hydrogen gas thickening into liquid, then metallic hydrogen under crushing pressure, around a hot, partly dissolved core.",
         "caption": "Gas giant · no solid surface",
         "stats": [{"id": "time", "label": "RADIUS · KM"}, {"id": "right", "label": "CORE TEMPERATURE · °C"}],
@@ -62,7 +62,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "voyager", "backdrop": "Voyager spacecraft", "title": "Voyager 1.",
+        "key": "voyager", "backdrop": "Pale Blue Dot Voyager", "title": "Voyager 1.",
         "brief": "Launched in 1977, Voyager 1 is the farthest human-made object, about 24 billion km away in interstellar space; its radio signal takes over 22 hours to reach Earth; its power will run out around 2030.",
         "caption": "Interstellar space · launched 1977",
         "stats": [{"id": "time", "label": "SIGNAL DELAY"}, {"id": "right", "label": "DISTANCE · BILLION KM"}],
@@ -76,7 +76,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "planet-sizes", "backdrop": "solar system planets", "title": "The planets to scale.",
+        "key": "planet-sizes", "backdrop": "Jupiter Great Red Spot", "title": "The planets to scale.",
         "brief": "The eight planets at true relative size: Jupiter is eleven times wider than Earth, and the Sun is ten times wider than Jupiter; all the planets together would fit inside the Sun with room to spare.",
         "caption": "True relative sizes",
         "stats": [{"id": "time", "label": "EARTH RADIUS · KM"}, {"id": "right", "label": "JUPITER · EARTHS"}],
@@ -132,7 +132,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "earth-inside", "backdrop": "Earth from space", "title": "Inside the Earth.",
+        "key": "earth-inside", "backdrop": "Earth Blue Marble", "title": "Inside the Earth.",
         "brief": "Earth's crust is thinner than an apple's skin in proportion; beneath it the mantle, the liquid iron outer core that makes our magnetic field, and a solid inner core as hot as the Sun's surface.",
         "caption": "Cutaway · 6,371 km to the centre",
         "stats": [{"id": "time", "label": "DEPTH TO CENTRE · KM"}, {"id": "right", "label": "INNER CORE · °C"}],
@@ -174,7 +174,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "saturn-rings", "backdrop": "Saturn Cassini", "title": "Saturn's rings are young.",
+        "key": "saturn-rings", "backdrop": "Saturn rings Cassini photograph", "title": "Saturn's rings are young.",
         "brief": "Saturn's rings are mostly water ice, up to 280,000 km wide but often only about 10 metres thick; Cassini found they are probably only 100 to 400 million years old and are slowly raining onto the planet.",
         "caption": "Water ice · 10 metres thick",
         "stats": [{"id": "time", "label": "RING WIDTH · KM"}, {"id": "right", "label": "THICKNESS · METRES"}],

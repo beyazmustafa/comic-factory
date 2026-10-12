@@ -192,10 +192,10 @@ class Renderer:
         arr = np.asarray(picture, dtype=np.float32)
         y = np.linspace(0, 1, H)[:, None, None]
         # brightness profile: dark behind the title block, lighter behind the panel, dark again at the bottom
-        profile = np.where(y < 0.3, 0.22, np.where(y < 0.78, 0.22 + 0.26 * np.sin(np.pi * (y - 0.3) / 0.48), 0.2))
+        profile = np.where(y < 0.3, 0.2, np.where(y < 0.78, 0.2 + 0.2 * np.sin(np.pi * (y - 0.3) / 0.48), 0.2))
         arr = arr * profile
         # keep it blue-dark: pull saturation toward the house navy
-        arr = arr * 0.85 + np.array(BG, dtype=np.float32) * 0.15
+        arr = arr * 0.8 + np.array(BG, dtype=np.float32) * 0.2
         return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
 
     def _noise(self):

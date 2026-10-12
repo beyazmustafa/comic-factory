@@ -235,7 +235,7 @@ def fetch_image(api, query, directory, focus):
                 try:
                     data = api.json(
                         "Görsel seçimi",
-                        f"""Pick the ONE photograph that best shows "{query}" for a calm science Short: the subject clearly visible and beautiful, not a diagram, not a group photo, not text. Return {{"best":<index starting at 0>,"focus":[x,y] fractions of the most important point in that image}}.""",
+                        f"""Pick the ONE photograph that best shows "{query}" for a calm science Short: the subject clearly visible and beautiful; prefer a real photograph or telescope image over an artist's concept, a spacecraft render, a diagram, a group photo or anything with text. Return {{"best":<index starting at 0>,"focus":[x,y] fractions of the most important point in that image}}.""",
                         images=[(f"img{i}", p) for i, (p, _, _, _) in enumerate(found)],
                     )
                     index = int(data.get("best", 0))
