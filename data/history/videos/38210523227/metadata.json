@@ -1,0 +1,235 @@
+{
+  "script": {
+    "title": "Why Saturn's Rings Are Younger Than the Dinosaurs",
+    "description": "Saturn's vast icy rings are only ten meters thick in most places and are slowly falling into the planet.",
+    "hook_card": "Saturn's rings are young.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "The Cassini spacecraft slipped into the clear space between Saturn and its rings, looking back at millions of icy particles drifting together in silence.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "These bands of bright water ice reach farther across than the distance to our Moon, yet most parts are only ten meters thick.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "Dinosaurs walked Earth before the rings existed, and gravity is already pulling their ice downward, washing them away into the planet below.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Cassini spacecraft slipped into the clear space between Saturn and its rings, looking back at millions of icy particles drifting together in silence. These bands of bright water ice reach farther across than the distance to our Moon, yet most parts are only ten meters thick. Dinosaurs walked Earth before the rings existed, and gravity is already pulling their ice downward, washing them away into the planet below.",
+    "event": {
+      "id": "sim_saturn-rings_20261012T060218006790Z",
+      "title": "Saturn's rings are young.",
+      "series": "Simulation",
+      "issue": "saturn-rings",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "saturn-rings",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "saturn-rings",
+    "phases": [
+      {
+        "subtitle": "Cassini drifted through the inner gap.",
+        "narration": "The Cassini spacecraft slipped into the clear space between Saturn and its rings, looking back at millions of icy particles drifting together in silence.",
+        "scene": {
+          "type": "image",
+          "query": "Saturn rings Cassini",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "stats": {
+          "time": [
+            [
+              "280,000",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "10",
+              [
+                120,
+                220,
+                255
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Saturn's rings are young.",
+        "at": 0.0
+      },
+      {
+        "subtitle": "They are impossibly wide yet thin.",
+        "narration": "These bands of bright water ice reach farther across than the distance to our Moon, yet most parts are only ten meters thick.",
+        "scene": {
+          "type": "scale",
+          "items": [
+            [
+              "Thickness",
+              0.01,
+              [
+                120,
+                220,
+                255
+              ]
+            ],
+            [
+              "Earth–Moon",
+              384,
+              [
+                160,
+                165,
+                200
+              ]
+            ],
+            [
+              "Ring width",
+              280,
+              [
+                255,
+                220,
+                110
+              ]
+            ]
+          ],
+          "unit": "thousand km",
+          "mode": "bars"
+        },
+        "stats": {
+          "time": [
+            [
+              "280,000",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "10",
+              [
+                120,
+                220,
+                255
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Saturn's rings are young.",
+        "at": 13.029999999999998
+      },
+      {
+        "subtitle": "They are raining into the clouds.",
+        "narration": "Dinosaurs walked Earth before the rings existed, and gravity is already pulling their ice downward, washing them away into the planet below.",
+        "scene": {
+          "type": "timeline",
+          "events": [
+            [
+              -4500,
+              "Saturn forms",
+              [
+                255,
+                220,
+                110
+              ]
+            ],
+            [
+              -300,
+              "Rings form",
+              [
+                120,
+                220,
+                255
+              ]
+            ],
+            [
+              0,
+              "Today",
+              [
+                235,
+                236,
+                250
+              ]
+            ],
+            [
+              300,
+              "Rings gone",
+              [
+                160,
+                165,
+                200
+              ]
+            ]
+          ],
+          "unit": "million years",
+          "span": 16
+        },
+        "stats": {
+          "right": [
+            [
+              "10",
+              [
+                120,
+                220,
+                255
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "Saturn's rings are young.",
+        "at": 22.43
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Saturn's vast icy rings are only ten meters thick in most places and are slowly falling into the planet.\n\nA physics simulation rendered by code. @Facctsaboutspace\nImages: NASA/JPL (https://images.nasa.gov/details/PIA03883); NASA/JPL-Caltech/Space Science Institute (https://images.nasa.gov/details/PIA18313)\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "Why Saturn's Rings Are Younger Than the Dinosaurs\n\nSaturn's vast icy rings are only ten meters thick in most places and are slowly falling into the planet."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}

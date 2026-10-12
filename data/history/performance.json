@@ -2795,5 +2795,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "h2lm2AX9pM4",
+    "platform": "youtube",
+    "run_id": "38210523227",
+    "published_at": "2026-10-12T06:08:36+00:00",
+    "event": {
+      "title": "Saturn's rings are young.",
+      "series": "Simulation",
+      "issue": "saturn-rings",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 69,
+      "duration": 36.5,
+      "words_per_minute": 113,
+      "hook": "The Cassini spacecraft slipped into the clear space between Saturn and its rings, looking back at millions of icy particles drifting together in silence.",
+      "hook_words": 24,
+      "title": "Why Saturn's Rings Are Younger Than the Dinosaurs",
+      "title_length": 49,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
