@@ -1,6 +1,6 @@
-run_id: 38209502402  attempt: 1  event: workflow_dispatch
+run_id: 38210093894  attempt: 1  event: workflow_dispatch
 produce step outcome: failure
---- data/runs/20261012T054836336569Z/run.json
+--- data/runs/20261012T055629607035Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,14 +40,14 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38209502402",
-  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "38210093894",
+  "error": "SpeechFailure: 3. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261012T054836336569Z/diagnostics/provider_events.json
+--- data/runs/20261012T055629607035Z/diagnostics/provider_events.json
 [
-  "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
+  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261012T054836336569Z/diagnostics/providers.json
+--- data/runs/20261012T055629607035Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -69,9 +69,9 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -164,12 +164,12 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261012T054836336569Z/audio/chunk_001/failures.json
+--- data/runs/20261012T055629607035Z/audio/chunk_002/failures.json
 [
-  "edge-tts başarısız: … status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=2b89a772fcfe4be9a5a66212165991c9&Sec-MS-GEC=70CFA40F47603E1A652B2E11EF023EB8FE1360C636DB45AC4E9A3C6B05B5ED4D&Sec-MS-GEC-Version=1-143.0.3650.75'",
-  "edge-tts başarısız: … status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=7cb420d3be3843749fb796529ce477a9&Sec-MS-GEC=70CFA40F47603E1A652B2E11EF023EB8FE1360C636DB45AC4E9A3C6B05B5ED4D&Sec-MS-GEC-Version=1-143.0.3650.75'",
-  "edge-tts başarısız: … status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=0a027064c15a43ca8bab5a85650e9b89&Sec-MS-GEC=70CFA40F47603E1A652B2E11EF023EB8FE1360C636DB45AC4E9A3C6B05B5ED4D&Sec-MS-GEC-Version=1-143.0.3650.75'",
-  "edge-tts başarısız: … status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=9613a2c1904446f88a03fdc4488f680b&Sec-MS-GEC=70CFA40F47603E1A652B2E11EF023EB8FE1360C636DB45AC4E9A3C6B05B5ED4D&Sec-MS-GEC-Version=1-143.0.3650.75'"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 39.0/100; whisper-large-v3-turbo: 39.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 29.9/100; whisper-large-v3-turbo: 28.9/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 29.9/100; whisper-large-v3-turbo: 29.9/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 39.0/100; whisper-large-v3-turbo: 39.0/100"
 ]
 --- studio.log (son 300 satır)
 → Senaryo: saturn-rings
@@ -177,8 +177,18 @@ produce step outcome: failure
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses bölümü 2, deneme 2
-Ses bölümü 2, deneme 3
-Ses bölümü 2, deneme 4
-HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 95.7/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 39.0/100 | whisper-large-v3
+Ses eşleştirme: 39.0/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 2
+Ses eşleştirme: 29.9/100 | whisper-large-v3
+Ses eşleştirme: 28.9/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 3
+Ses eşleştirme: 29.9/100 | whisper-large-v3
+Ses eşleştirme: 29.9/100 | whisper-large-v3-turbo
+Ses bölümü 3, deneme 4
+Ses eşleştirme: 39.0/100 | whisper-large-v3
+Ses eşleştirme: 39.0/100 | whisper-large-v3-turbo
+HATA: 3. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
