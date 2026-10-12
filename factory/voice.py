@@ -9,9 +9,11 @@ import subprocess
 import sys
 import time
 import numpy as np
+import requests
+from urllib.parse import quote
 from google.genai import types
 from groq import Groq
-from .api import FactoryError, ProviderOverloaded, SpeechFailure
+from .api import FactoryError, ProviderOverloaded, SpeechFailure, version_key
 from .core import align_words, ffmpeg_binary, file_hash, save_json, language_name
 
 RATE = 24000
@@ -22,6 +24,14 @@ EDGE_VOICE_IDS = {"Ahmet": "tr-TR-AhmetNeural", "Emel": "tr-TR-EmelNeural",
                   "Christopher": "en-US-ChristopherNeural", "Guy": "en-US-GuyNeural",
                   "Andrew": "en-US-AndrewNeural", "Ryan": "en-GB-RyanNeural", "Brian": "en-US-BrianNeural"}
 EDGE_DEFAULT = {"tr": "Ahmet", "en": "Christopher"}
+# Engines in the order they are tried; a run never climbs back up once it
+# has dropped down, so the narrator stays the same for the whole video.
+TTS_ENGINES = ("gemini", "edge", "pollinations")
+POLLINATIONS_AUDIO = "https://text.pollinations.ai/"
+# Any voice name → the closest keyless OpenAI-style voice on Pollinations.
+POLLINATIONS_VOICES = {"Charon": "onyx", "Andrew": "onyx", "Christopher": "onyx", "Brian": "onyx",
+                       "Ryan": "echo", "Orus": "ash", "Fenrir": "ash", "Puck": "echo", "Ahmet": "onyx",
+                       "Gacrux": "nova", "Emel": "nova"}
 AUDITION_TEXTS = {
     "tr": "Bir kahramanın en büyük gücü, bir anda en korkunç düşmanına dönüşebilir. Thor bunu öğrendiğinde artık çok geçti. Çünkü asıl tehlike dışarıda değil, kendi bedeninin içindeydi. Peki bu noktaya nasıl geldi?",
     "en": "A hero's greatest power can become his deadliest enemy in a single heartbeat. By the time the Black Terror understood that, it was already too late. Because the real danger was never outside. It was inside his own body. So how did it come to this?",
@@ -129,30 +139,118 @@ def edge_synthesize(text, voice, path, rate="+4%"):
     return path
 
 
-def synthesize(api, text, voice, style, path):
-    """Gemini TTS; on provider overload the matching edge-tts voice is used."""
-    rate = str(style.get("speech_rate", "+4%"))
-    if voice in EDGE_VOICE_IDS:
-        return edge_synthesize(text, voice, path, rate)
-    if getattr(api, "tts_fallback", False):
-        return edge_synthesize(text, edge_voice_for(api, voice), path, rate)
+def tts_engine(api):
+    return getattr(api, "tts_engine", "gemini")
+
+
+def degrade_tts(api, engine, reason):
+    """Drop the run to the given engine for every remaining chunk."""
+    api.tts_engine = engine
+    api.tts_fallback = engine != "gemini"
+    api.note(f"{reason}; {engine} sesine geçildi.")
+
+
+def pollinations_synthesize(text, voice, path):
+    """Keyless OpenAI-style voices served by Pollinations; last resort."""
+    chosen = POLLINATIONS_VOICES.get(voice, "onyx")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    media = path.with_suffix(".mp3")
+    url = POLLINATIONS_AUDIO + quote(text, safe="")
+    last_error = None
+    for pause in (0, 8, 20):
+        if pause:
+            time.sleep(pause)
+        try:
+            response = requests.get(url, params={"model": "openai-audio", "voice": chosen},
+                                    timeout=(15, 180), headers={"User-Agent": "comic-factory/1.0"})
+            kind = response.headers.get("content-type", "")
+            if response.status_code != 200 or not kind.startswith("audio") or len(response.content) < 2000:
+                raise SpeechFailure(f"pollinations {response.status_code} {kind}: {response.text[:120]}")
+            media.write_bytes(response.content)
+            subprocess.run(
+                [ffmpeg_binary(), "-y", "-v", "error", "-i", str(media), "-ac", "1", "-ar", str(RATE),
+                 "-c:a", "pcm_s16le", str(path)],
+                check=True, capture_output=True, text=True, timeout=240,
+            )
+            break
+        except (requests.RequestException, subprocess.SubprocessError, OSError, SpeechFailure) as error:
+            last_error = error
+    else:
+        raise SpeechFailure(f"pollinations sesi başarısız: {str(last_error)[-300:]}") from last_error
     try:
-        return gemini_synthesize(api, text, voice, style, path)
-    except ProviderOverloaded as error:
-        api.tts_fallback = True
-        api.note(f"Gemini TTS yanıt vermiyor ({str(error)[:120]}); edge-tts sesine geçildi.")
-        return edge_synthesize(text, edge_voice_for(api, voice), path, rate)
+        media.unlink()
+    except OSError:
+        pass
+    write_wave(path, trim_edges(read_wave(path)))
+    return path
+
+
+def synthesize(api, text, voice, style, path):
+    """Gemini TTS → edge-tts → Pollinations; a failing engine is left behind
+    for the rest of the run so later chunks go straight to the one that works."""
+    rate = str(style.get("speech_rate", "+4%"))
+    engine = tts_engine(api)
+    if voice in EDGE_VOICE_IDS and engine == "gemini":
+        engine = "edge"
+    errors = []
+    for name in TTS_ENGINES[TTS_ENGINES.index(engine):]:
+        try:
+            if name == "gemini":
+                result = gemini_synthesize(api, text, voice, style, path)
+            elif name == "edge":
+                edge_voice = voice if voice in EDGE_VOICE_IDS else edge_voice_for(api, voice)
+                result = edge_synthesize(text, edge_voice, path, rate)
+            else:
+                result = pollinations_synthesize(text, voice, path)
+            api.last_engine = name
+            return result
+        except (ProviderOverloaded, SpeechFailure) as error:
+            errors.append(f"{name}: {str(error)[:160]}")
+            following = TTS_ENGINES[TTS_ENGINES.index(name) + 1:]
+            if not following:
+                break
+            degrade_tts(api, following[0], f"{name} TTS yanıt vermiyor ({str(error)[:120]})")
+    raise SpeechFailure("Hiçbir ses motoru yanıt vermedi: " + " | ".join(errors))
+
+
+def gemini_tts_models(api):
+    """Configured TTS model first, then every other TTS model the key lists
+    (each has its own free quota), newest first; exhausted ones are skipped."""
+    dead = getattr(api, "dead_tts", set())
+    chain = [api.settings.tts_model]
+    try:
+        listed = (api.discover() or {}).get("gemini_raw", []) if hasattr(api, "discover") else []
+    except Exception:
+        listed = []
+    extra = sorted((m for m in listed if "tts" in m.casefold() and m not in chain), key=version_key, reverse=True)
+    return [m for m in chain + extra if m not in dead] or [api.settings.tts_model]
 
 
 def gemini_synthesize(api, text, voice, style, path):
+    models = gemini_tts_models(api)
+    errors = []
+    for model in models:
+        try:
+            return gemini_synthesize_with(api, model, text, voice, style, path)
+        except ProviderOverloaded as error:
+            errors.append(str(error)[:160])
+            if not hasattr(api, "dead_tts"):
+                api.dead_tts = set()
+            api.dead_tts.add(model)
+            if model != models[-1]:
+                api.note(f"Ses modeli {model} kotası doldu; sıradaki TTS modeline geçildi.")
+    raise ProviderOverloaded("; ".join(errors) or "Gemini TTS modeli kalmadı.")
+
+
+def gemini_synthesize_with(api, model, text, voice, style, path):
     prompt = f"""Read ONLY the exact {language_name(api)} text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
 {style.get("voice_character", "Fluent natural " + language_name(api) + ", confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.")}
 <transcript>{text}</transcript>"""
     response = api.request(
-        "Ses " + voice,
+        f"Ses {voice} ({model})",
         lambda: api.client.models.generate_content(
-            model=api.settings.tts_model,
+            model=model,
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_modalities=["AUDIO"],
@@ -417,8 +515,10 @@ def build_audio(api, story, voice, style, cache):
     letting the narrator change between sentences."""
     output, aligned, duration, engines = _build_audio(api, story, voice, style, cache)
     if len(engines) > 1:
-        fallback = edge_voice_for(api, voice)
-        api.note(f"Anlatıcı sesi bölüm ortasında değişmişti ({', '.join(sorted(engines))}); tüm video {fallback} ile yeniden seslendirildi.")
+        lowest = max(engines, key=lambda e: TTS_ENGINES.index(e) if e in TTS_ENGINES else 0)
+        fallback = edge_voice_for(api, voice) if lowest == "edge" else voice
+        api.note(f"Anlatıcı sesi bölüm ortasında değişmişti ({', '.join(sorted(engines))}); tüm video {lowest} ({fallback}) ile yeniden seslendirildi.")
+        api.tts_engine = lowest
         api.tts_fallback = True
         output, aligned, duration, engines = _build_audio(api, story, fallback, style, cache)
     return output, aligned, duration
@@ -480,7 +580,7 @@ def _build_audio(api, story, voice, style, cache):
                     path = synthesize(api, text, voice, style, work / "narration.wav")
                     last_try = attempt == api.settings.repair_attempts - 1
                     accepted = align_clip(api, path, text, work, soft=last_try)
-                    engine = "edge" if (voice in EDGE_VOICE_IDS or getattr(api, "tts_fallback", False)) else "gemini"
+                    engine = getattr(api, "last_engine", "edge" if voice in EDGE_VOICE_IDS else tts_engine(api))
                     accepted.update(audio_sha256=file_hash(path), signature=key, engine=engine)
                     shutil.copy2(path, directory / "narration.wav")
                     save_json(directory / "accepted.json", accepted)

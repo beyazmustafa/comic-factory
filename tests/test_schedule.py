@@ -128,6 +128,27 @@ class VoiceFallbackTests(unittest.TestCase):
                 voice.synthesize(api, "Merhaba", "Orus", {}, Path(temporary) / "b.wav")
                 self.assertEqual(edge_mock.call_count, 2)
 
+    def test_edge_failure_falls_through_to_pollinations(self):
+        import tempfile
+        from pathlib import Path
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from factory import voice
+        from factory.api import ProviderOverloaded, SpeechFailure
+
+        with tempfile.TemporaryDirectory() as temporary:
+            api = SimpleNamespace(settings=Mock(tts_model="t", language="en"), note=Mock(), directory=Path(temporary))
+            gemini = patch.object(voice, "gemini_synthesize", side_effect=ProviderOverloaded("429"))
+            edge = patch.object(voice, "edge_synthesize", side_effect=SpeechFailure("403"))
+            polli = patch.object(voice, "pollinations_synthesize", side_effect=lambda text, name, path: (name, path))
+            with gemini as gemini_mock, edge as edge_mock, polli as polli_mock:
+                result = voice.synthesize(api, "Hello", "Charon", {}, Path(temporary) / "a.wav")
+                self.assertEqual(result[0], "Charon")
+                self.assertEqual(api.tts_engine, "pollinations")
+                self.assertEqual(api.last_engine, "pollinations")
+                voice.synthesize(api, "Hello", "Charon", {}, Path(temporary) / "b.wav")
+                self.assertEqual((gemini_mock.call_count, edge_mock.call_count, polli_mock.call_count), (1, 1, 2))
+
 
 class DiscoveryTests(unittest.TestCase):
     def test_chain_is_rebuilt_from_what_the_providers_list(self):
