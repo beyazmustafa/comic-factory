@@ -88,7 +88,7 @@ jobs:
       PYTHONUNBUFFERED: '1'
       # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
       # Scheduled runs stay in preview until the new simulation format is approved.
-      TASK: ${{ inputs.task || 'preview' }}
+      TASK: ${{ inputs.task || 'create_and_publish' }}
       TOPIC: ${{ inputs.topic || '' }}
       SOURCE: ${{ inputs.source || '' }}
       DURATION: ${{ inputs.duration || '150' }}

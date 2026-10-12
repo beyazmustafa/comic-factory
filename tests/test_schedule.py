@@ -13,7 +13,7 @@ class ScheduleTests(unittest.TestCase):
         self.assertIn("cron: '23 5 * * *'", text)  # 08:23 Türkiye
         self.assertIn("cron: '23 14 * * *'", text)  # 17:23 Türkiye
         # Scheduled runs are preview-only while the simulation format awaits approval.
-        self.assertIn("inputs.task || 'preview'", text)
+        self.assertIn("inputs.task || 'create_and_publish'", text)
         self.assertIn("vars.SCHEDULED_PLATFORMS || 'both'", text)
         self.assertIn("inputs.visibility || vars.YOUTUBE_VISIBILITY || 'public'", text)
         self.assertIn("contents: write", text)
