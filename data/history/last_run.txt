@@ -1,11 +1,11 @@
-run_id: 38192240775  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261012T013259665222Z/run.json
+run_id: 38192926623  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261012T014322805971Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "betelgeuse",
   "settings": {
     "target_seconds": 150,
@@ -40,15 +40,47 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38192240775",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "38192926623",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "0287e849e3f597a987afa1eeb423c1dfb56a4f9059aa2a39ed96fd1a2a63b30a",
+  "metadata_sha256": "024fbccf1fc62ef9580e0f05cc93196612b4a099d3b791c0281a22d6ad8c97ad",
+  "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
+  "api_calls": 36,
+  "duration": 32.58,
+  "voice": "Charon",
+  "event": {
+    "id": "sim_betelgeuse_20261012T014322805971Z",
+    "title": "When Betelgeuse dies.",
+    "series": "Simulation",
+    "issue": "betelgeuse",
+    "year": 2026,
+    "publisher": "Original",
+    "universe": "science",
+    "scenario": "betelgeuse",
+    "_source": "sim",
+    "url": "",
+    "source_urls": []
+  },
+  "localized": []
 }
---- data/runs/20261012T013259665222Z/diagnostics/provider_events.json
+--- data/runs/20261012T014322805971Z/diagnostics/provider_events.json
 [
   "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261012T013259665222Z/diagnostics/providers.json
+--- data/runs/20261012T014322805971Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -70,8 +102,8 @@ produce step outcome: failure
     "gemini-3.8-flash"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b"
   ],
   "errors": [],
@@ -165,28 +197,47 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261012T013259665222Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 0.0/100; whisper-large-v3-turbo: 0.0/100",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100"
-]
 --- studio.log (son 300 satır)
 → Senaryo: betelgeuse
 Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Konu metinleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
 Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 0.0/100 | whisper-large-v3
-Ses eşleştirme: 0.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 84.6/100 | whisper-large-v3
-Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 88.0/100 | whisper-large-v3
+→ Simülasyon render (32.6 sn)
+NASA görsel: 'Betelgeuse star' için 3 sonuç
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA166
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA055
+NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA216
+Sahne karesi 0/977
+Sahne karesi 150/977
+Sahne karesi 300/977
+Sahne karesi 450/977
+Sahne karesi 600/977
+Sahne karesi 750/977
+Sahne karesi 900/977
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T014322805971Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Understanding the Life and Future Supernova of Betelgeuse #Shorts
+Görünürlük: unlisted
+
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=vR0Jz6eqjyA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

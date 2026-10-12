@@ -2715,5 +2715,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "vR0Jz6eqjyA",
+    "platform": "youtube",
+    "run_id": "38192926623",
+    "published_at": "2026-10-12T01:50:21+00:00",
+    "event": {
+      "title": "When Betelgeuse dies.",
+      "series": "Simulation",
+      "issue": "betelgeuse",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 73,
+      "duration": 32.6,
+      "words_per_minute": 134,
+      "hook": "High up in the winter sky, this massive red star sits prominently within the constellation of Orion, dwarfing our own sun many times over.",
+      "hook_words": 24,
+      "title": "Understanding the Life and Future Supernova of Betelgeuse",
+      "title_length": 57,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
