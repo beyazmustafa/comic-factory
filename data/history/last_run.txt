@@ -1,12 +1,12 @@
-run_id: 38193618030  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261012T015405645607Z/run.json
+run_id: 38209107624  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261012T054326640389Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "sun-death",
+  "status": "failed",
+  "stage": "setup",
+  "topic": "saturn-rings",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,48 +40,14 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38193618030",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "d0302d1cd48da58e683d2ae51303fa054e5e4b19daadfe7117f17ee499d18b43",
-  "metadata_sha256": "6af3e9ed7ff76860139e05ad00f7727af3b6d23f0ad04672368b36db2e47ebf2",
-  "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 38,
-  "duration": 34.51,
-  "voice": "Charon",
-  "event": {
-    "id": "sim_sun-death_20261012T015405645607Z",
-    "title": "The Sun's last days.",
-    "series": "Simulation",
-    "issue": "sun-death",
-    "year": 2026,
-    "publisher": "Original",
-    "universe": "science",
-    "scenario": "sun-death",
-    "_source": "sim",
-    "url": "",
-    "source_urls": []
-  },
-  "localized": []
+  "run_id": "38209107624",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261012T015405645607Z/diagnostics/provider_events.json
+--- data/runs/20261012T054326640389Z/diagnostics/provider_events.json
 [
-  "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.",
-  "Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video Andrew ile yeniden seslendirildi."
+  "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261012T015405645607Z/diagnostics/providers.json
+--- data/runs/20261012T054326640389Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -104,8 +70,8 @@ produce step outcome: success
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -198,59 +164,21 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261012T015405645607Z/audio/chunk_000/failures.json
+--- data/runs/20261012T054326640389Z/audio/chunk_001/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 0.0/100; whisper-large-v3-turbo: 0.0/100"
+  "edge-tts başarısız: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py\", line 588, in stream\n    async for message in self.__stream():\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py",
+  "edge-tts başarısız: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py\", line 588, in stream\n    async for message in self.__stream():\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py",
+  "edge-tts başarısız: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py\", line 588, in stream\n    async for message in self.__stream():\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py",
+  "edge-tts başarısız: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py\", line 588, in stream\n    async for message in self.__stream():\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/communicate.py"
 ]
 --- studio.log (son 300 satır)
-→ Senaryo: sun-death
-Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Konu metinleri: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+→ Senaryo: saturn-rings
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video Andrew ile yeniden seslendirildi.
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 0.0/100 | whisper-large-v3
-Ses eşleştirme: 0.0/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Simülasyon render (34.5 sn)
-NASA görsel: 'Helix Nebula' için 9 sonuç
-Sahne karesi 0/1035
-Sahne karesi 150/1035
-Sahne karesi 300/1035
-Sahne karesi 450/1035
-Sahne karesi 600/1035
-Sahne karesi 750/1035
-Sahne karesi 900/1035
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T015405645607Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: What Will Happen When Our Sun Reaches the End of Its Life? #Shorts
-Görünürlük: unlisted
-
-Yükleme: %61
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=LciU_8yFKlg&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Ses bölümü 2, deneme 2
+Ses bölümü 2, deneme 3
+Ses bölümü 2, deneme 4
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
