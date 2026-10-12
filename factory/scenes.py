@@ -25,7 +25,11 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from . import sim
 
-PANEL = (90, 610, 990, 1100)   # x0, y0, x1, y1 of the middle panel (virtual px)
+PANEL = (90, 610, 990, 1100)   # default middle panel; renderer.panel overrides (tall layout when no grid)
+
+
+def panel_of(renderer):
+    return getattr(renderer, "panel", PANEL)
 INK = (235, 236, 250)
 GREY = (150, 152, 178)
 
@@ -72,10 +76,8 @@ class ImageScene(Scene):
         self.full = full
         self._cache = {}
 
-    def _frame_image(self, t, duration_hint=30.0):
-        x0, y0, x1, y1 = PANEL
-        if self.full:
-            y0, y1 = 590, 1150
+    def _frame_image(self, t, panel, duration_hint=30.0):
+        x0, y0, x1, y1 = panel
         w, h = (x1 - x0) * sim.SS, (y1 - y0) * sim.SS
         zoom = 1.0 + self.drift * _ease(t / duration_hint)
         iw, ih = self.image.size
@@ -92,7 +94,7 @@ class ImageScene(Scene):
         return crop, (x0, y0, x1, y1)
 
     def draw(self, frame, renderer, t, phase_t):
-        crop, (x0, y0, x1, y1) = self._frame_image(t)
+        crop, (x0, y0, x1, y1) = self._frame_image(t, panel_of(renderer))
         layer = Image.new("RGBA", crop.size, (0, 0, 0, 0))
         layer.paste(crop, (0, 0))
         # rounded corners + soft inner vignette so the photo sits in the design
@@ -108,7 +110,8 @@ class ImageScene(Scene):
         frame.alpha_composite(layer, (x0 * sim.SS, y0 * sim.SS))
         d = sim.ScaledDraw(frame)
         if self.credit:
-            d.text((x1 - 8, y1 - 18), self.credit, font=sim.font("mono", 18), fill=(150, 152, 178, 200), anchor="rm")
+            tag = self.credit.split("/")[0].split(",")[0].strip()[:28] or "NASA"
+            d.text((x1 - 14, y1 - 20), tag.upper(), font=sim.font("mono", 16), fill=(150, 152, 178, 170), anchor="rm")
 
 
 # -------------------------------------------------------------------- scale
@@ -123,13 +126,13 @@ class ScaleScene(Scene):
 
     def draw(self, frame, renderer, t, phase_t):
         d = sim.ScaledDraw(frame)
-        x0, y0, x1, y1 = PANEL
+        x0, y0, x1, y1 = panel_of(renderer)
         p = _ease(phase_t / 1.6)
         values = [v for _, v, _ in self.items]
         biggest = max(values) or 1
         if self.mode == "discs":
             # pack discs left to right; biggest disc radius fits the panel height
-            max_r = 190
+            max_r = min(300, (y1 - y0) * 0.36, (x1 - x0) * 0.42 / max(1, len(values)) * 1.6)
             radii = [max(3.0, max_r * (v / biggest) ** 0.5) if v / biggest > 0.0004 else 3.0 for v in values]
             total = sum(2 * r for r in radii) + 70 * (len(radii) - 1)
             x = 540 - total / 2
@@ -167,40 +170,53 @@ class TimelineScene(Scene):
         self.span = span_seconds
         self.log = log
 
-    def _pos(self, value):
+    def _pos(self, value, panel=PANEL):
+        """Events are spaced evenly (a ten-million-year gap and a hundred-year
+        gap both get room for their labels); values are shown as text."""
         values = [v for v, _, _ in self.events]
-        lo, hi = min(values), max(values)
-        if self.log and lo > 0:
-            f = (math.log10(value) - math.log10(lo)) / max(1e-9, math.log10(hi) - math.log10(lo))
+        if len(values) < 2:
+            return (panel[0] + panel[2]) / 2
+        # fractional index of value between its neighbours
+        order = sorted(range(len(values)), key=lambda i: values[i])
+        sorted_values = [values[i] for i in order]
+        if value <= sorted_values[0]:
+            f = 0.0
+        elif value >= sorted_values[-1]:
+            f = 1.0
         else:
-            f = (value - lo) / max(1e-9, hi - lo)
-        return PANEL[0] + 60 + f * (PANEL[2] - PANEL[0] - 120)
+            k = max(i for i in range(len(sorted_values)) if sorted_values[i] <= value)
+            lo, hi = sorted_values[k], sorted_values[k + 1]
+            f = (k + (value - lo) / max(1e-9, hi - lo)) / (len(sorted_values) - 1)
+        return panel[0] + 80 + f * (panel[2] - panel[0] - 160)
+
+    def _current(self, t):
+        values = sorted(v for v, _, _ in self.events)
+        progress = _ease(min(1.0, t / self.span))
+        k = progress * (len(values) - 1)
+        i = min(len(values) - 2, int(k))
+        return values[i] + (values[i + 1] - values[i]) * (k - i)
 
     def draw(self, frame, renderer, t, phase_t):
         d = sim.ScaledDraw(frame)
-        y = (PANEL[1] + PANEL[3]) / 2
-        d.line([(PANEL[0] + 40, y), (PANEL[2] - 40, y)], fill=(90, 100, 170, 200), width=2)
-        progress = _ease(min(1.0, t / self.span))
-        values = [v for v, _, _ in self.events]
-        current = values[0] + (values[-1] - values[0]) * progress
+        panel = panel_of(renderer)
+        y = (panel[1] + panel[3]) / 2
+        d.line([(panel[0] + 40, y), (panel[2] - 40, y)], fill=(90, 100, 170, 200), width=2)
+        current = self._current(t)
         for k, (value, label, color) in enumerate(self.events):
-            x = self._pos(value)
+            x = self._pos(value, panel)
             reached = value <= current + 1e-9
             d.ellipse((x - 9, y - 9, x + 9, y + 9), fill=color + (255,) if reached else (40, 44, 80, 255), outline=color + (255,), width=2)
             above = k % 2 == 0
-            ty = y - 56 if above else y + 56
-            d.text((x, ty), label, font=sim.font("regular", 24), fill=INK + (235 if reached else 120,), anchor="mm")
-            d.text((x, ty + (-32 if above else 32)), _fmt(value), font=sim.font("mono", 22), fill=color + (220,), anchor="mm")
-        mx = self._pos(current)
+            ty = y - 70 if above else y + 70
+            d.text((x, ty), label, font=sim.font("regular", 26), fill=INK + (235 if reached else 120,), anchor="mm")
+            d.text((x, ty + (-36 if above else 36)), _fmt(value), font=sim.font("mono", 22), fill=color + (220,), anchor="mm")
+        mx = self._pos(current, panel)
         glow = renderer.glow((255, 255, 255), 30)
         frame.alpha_composite(glow, (int((mx - 30) * sim.SS), int((y - 30) * sim.SS)))
         d.ellipse((mx - 7, y - 7, mx + 7, y + 7), fill=(255, 255, 255, 255))
 
     def stats(self, t):
-        values = [v for v, _, _ in self.events]
-        progress = _ease(min(1.0, t / self.span))
-        current = values[0] + (values[-1] - values[0]) * progress
-        return {"time": [(_fmt(round(current)), INK, "")]}
+        return {"time": [(_fmt(round(self._current(t))), INK, "")]}
 
 
 # -------------------------------------------------------------------- light
@@ -214,8 +230,9 @@ class LightScene(Scene):
 
     def draw(self, frame, renderer, t, phase_t):
         d = sim.ScaledDraw(frame)
-        y = (PANEL[1] + PANEL[3]) / 2
-        xa, xb = PANEL[0] + 120, PANEL[2] - 120
+        panel = panel_of(renderer)
+        y = (panel[1] + panel[3]) / 2
+        xa, xb = panel[0] + 120, panel[2] - 120
         for (label, color, r), x in ((self.a, xa), (self.b, xb)):
             glow = renderer.glow(color, r + 30)
             frame.alpha_composite(glow, (int((x - r - 30) * sim.SS), int((y - r - 30) * sim.SS)))
@@ -249,8 +266,9 @@ class CutawayScene(Scene):
 
     def draw(self, frame, renderer, t, phase_t):
         d = sim.ScaledDraw(frame)
-        cx, cy = 400, (PANEL[1] + PANEL[3]) / 2
-        R = 215
+        panel = panel_of(renderer)
+        cx, cy = panel[0] + (panel[2] - panel[0]) * 0.34, (panel[1] + panel[3]) / 2
+        R = min(300, (panel[3] - panel[1]) * 0.36)
         p = _ease(phase_t / 1.4)
         for k, (label, frac, color) in enumerate(self.layers):
             r = R * frac * p
@@ -260,10 +278,11 @@ class CutawayScene(Scene):
         ImageDraw.Draw(wedge).pieslice(((cx - R - 4) * sim.SS, (cy - R - 4) * sim.SS, (cx + R + 4) * sim.SS, (cy + R + 4) * sim.SS), -90, 0, fill=sim.BG + (255,))
         frame.alpha_composite(wedge)
         for k, (label, frac, color) in enumerate(self.layers):
-            ly = PANEL[1] + 60 + k * 52
-            d.line([(cx + R * frac * 0.72 * p, cy - R * frac * 0.72 * p), (700, ly)], fill=color + (150,), width=1)
-            d.ellipse((700 - 6, ly - 6, 700 + 6, ly + 6), fill=color + (255,))
-            d.text((718, ly), label, font=sim.font("regular", 24), fill=INK + (240,), anchor="lm")
+            lx = panel[0] + (panel[2] - panel[0]) * 0.66
+            ly = cy - 26 * (len(self.layers) - 1) + k * 52
+            d.line([(cx + R * frac * 0.72 * p, cy - R * frac * 0.72 * p), (lx - 14, ly)], fill=color + (150,), width=1)
+            d.ellipse((lx - 6, ly - 6, lx + 6, ly + 6), fill=color + (255,))
+            d.text((lx + 14, ly), label, font=sim.font("regular", 26), fill=INK + (240,), anchor="lm")
 
 
 # -------------------------------------------------------------------- orbit

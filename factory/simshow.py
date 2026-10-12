@@ -367,8 +367,9 @@ def generate(settings, topic="", api_factory=None):
             silent = sim.render(key, texts, directory / "sim_video.mp4", duration=duration)
         # captions: small, quiet, phrase by phrase, below the simulation
         caption_words = [{**w, "emphasis": "normal"} for w in words]
+        tall_layout = composed
         caption_style = {**calm_style, "font_style": "regular", "font_size": 34, "stroke_width": 2, "shadow_depth": 0, "word_pop_ms": 0,
-                         "caption_x": 0.5, "caption_y": 0.66, "caption_mode": "group", "caption_words": 5, "uppercase": False,
+                         "caption_x": 0.5, "caption_y": 0.83 if tall_layout else 0.66, "caption_mode": "group", "caption_words": 5, "uppercase": False,
                          "text_color": "#B8BBD0", "active_color": "#FFFFFF", "stroke_color": "#05050C", "emphasis_colors": {}, "language": settings.language}
         subtitle = render.captions(caption_words, caption_style, directory / "captions.ass", head)
         drone = directory / "drone.wav"

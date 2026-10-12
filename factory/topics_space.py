@@ -111,7 +111,7 @@ TOPICS = [
         "phases": [
             {"fact": "Four hundred kilometres up, the station is still inside Earth's gravity; it weighs almost as much as on the ground.", "scene": {"type": "image", "query": "International Space Station Earth", "focus": [0.5, 0.5]},
              "stats": {"time": [("400", INK, "")], "right": [("7.66", BLUE, "")]}},
-            {"fact": "It is falling, but moving sideways at seven point seven kilometres per second, so the ground curves away beneath it.", "scene": {"type": "orbit", "scenario": "escape-velocity"},
+            {"fact": "It is falling, but moving sideways at seven point seven kilometres per second, so the ground curves away beneath it.", "scene": {"type": "image", "query": "ISS orbit Earth limb", "focus": [0.5, 0.5]},
              "stats": {"time": [("400", INK, "")]}},
             {"fact": "One lap takes ninety-two minutes; the crew sees sixteen sunrises a day.", "scene": {"type": "image", "query": "ISS sunrise orbit", "focus": [0.5, 0.5]},
              "stats": {"time": [("400", INK, "")], "right": [("92", BLUE, "min")]}},

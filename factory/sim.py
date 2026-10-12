@@ -166,6 +166,8 @@ class Renderer:
         self.grid_cam_height = 1.0
         self.grid_focal = 1500.0
         self.handle = scenario.get("handle", "")
+        self.tall = bool(scenario.get("tall", False))
+        self.panel = (60, 600, 1020, 1470) if self.tall else (90, 610, 990, 1100)
         self.noise = self._noise()
         self._band_mask = None
         self._haze = None
@@ -283,7 +285,7 @@ class Renderer:
                 cx += w + gap
         caption = self.s.get("caption", "")
         if caption:
-            draw.text((105, 1130), caption, font=font("mono", 26), fill=(165, 168, 195, 255), anchor="lm")
+            draw.text((105, 1520 if self.tall else 1130), caption, font=font("mono", 26), fill=(165, 168, 195, 255), anchor="lm")
 
     # --- frame
     def render_frame(self, scene, phase, stats_values, t=0.0, phase_t=0.0, fade=1.0):
@@ -612,8 +614,9 @@ def render_plan(plan, output, note=print):
                         "stats": {"time": [(value, color, unit)], ...}}]}
     Scenes are objects from factory.scenes; a new scene fades in over 0.5 s.
     """
+    tall = not any(getattr(p["scene"], "uses_grid", False) for p in plan["phases"])
     renderer = Renderer({"handle": plan.get("handle", ""), "caption": plan.get("caption", ""),
-                         "stats": plan.get("stats", []), "grid": plan.get("grid", True), "scale": 150})
+                         "stats": plan.get("stats", []), "grid": plan.get("grid", True), "scale": 150, "tall": tall})
     frames_dir = output.parent / "sim_frames"
     frames_dir.mkdir(parents=True, exist_ok=True)
     duration = float(plan["duration"])
