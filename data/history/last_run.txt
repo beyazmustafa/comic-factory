@@ -1,12 +1,12 @@
-run_id: 38181035845  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261011T223633854506Z/run.json
+run_id: 38192240775  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261012T013259665222Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "jupiter-inside",
+  "status": "failed",
+  "stage": "setup",
+  "topic": "betelgeuse",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,41 +40,15 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38181035845",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "d121478c33b8047b4e6f4a204c5bb3c7a76e27f945db5a1cb9183d58611d34bf",
-  "metadata_sha256": "f575d5c56d071f8adbc81a4d3cf1ffdbc5f082440c4c37d08327a0627e2432fd",
-  "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 21,
-  "duration": 35.260000000000005,
-  "voice": "Charon",
-  "event": {
-    "id": "sim_jupiter-inside_20261011T223633854506Z",
-    "title": "Inside Jupiter.",
-    "series": "Simulation",
-    "issue": "jupiter-inside",
-    "year": 2026,
-    "publisher": "Original",
-    "universe": "science",
-    "scenario": "jupiter-inside",
-    "_source": "sim",
-    "url": "",
-    "source_urls": []
-  },
-  "localized": []
+  "run_id": "38192240775",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261011T223633854506Z/diagnostics/provider_events.json
+--- data/runs/20261012T013259665222Z/diagnostics/provider_events.json
 [
   "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi."
 ]
---- data/runs/20261011T223633854506Z/diagnostics/providers.json
+--- data/runs/20261012T013259665222Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -191,45 +165,28 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261011T223633854506Z/audio/chunk_001/failures.json
+--- data/runs/20261012T013259665222Z/audio/chunk_000/failures.json
 [
-  "edge-tts başarısız: Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/edge_tts/__main__.py\", line 6, in <module>\n    main()\n  File \"/opt/hostedtoolcache/"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 0.0/100; whisper-large-v3-turbo: 0.0/100",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 84.6/100; whisper-large-v3-turbo: 84.6/100"
 ]
 --- studio.log (son 300 satır)
-→ Senaryo: jupiter-inside
+→ Senaryo: betelgeuse
 Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Konu metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
+Ses eşleştirme: 84.6/100 | whisper-large-v3
+Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 2
 Gemini TTS yanıt vermiyor (Ses Charon: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, pl); edge-tts sesine geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses bölümü 2, deneme 2
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Simülasyon render (35.3 sn)
-NASA görsel: 'Jupiter Juno clouds' için 8 sonuç
-NASA görsel: 'Jupiter Great Red Spot Juno' için 8 sonuç
-Sahne karesi 0/1057
-Sahne karesi 150/1057
-Sahne karesi 300/1057
-Sahne karesi 450/1057
-Sahne karesi 600/1057
-Sahne karesi 750/1057
-Sahne karesi 900/1057
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261011T223633854506Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: The Strange Reality of What Lies Inside Jupiter #Shorts
-Görünürlük: unlisted
-
-Yükleme: %87
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=Ummx-qFq6jE&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Ses eşleştirme: 84.6/100 | whisper-large-v3
+Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 3
+Ses eşleştirme: 0.0/100 | whisper-large-v3
+Ses eşleştirme: 0.0/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 4
+Ses eşleştirme: 84.6/100 | whisper-large-v3
+Ses eşleştirme: 84.6/100 | whisper-large-v3-turbo
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
