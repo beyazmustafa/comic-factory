@@ -20,7 +20,7 @@ GREY = (160, 165, 200)
 
 TOPICS = [
     {
-        "key": "betelgeuse", "title": "When Betelgeuse dies.",
+        "key": "betelgeuse", "backdrop": "Orion nebula Hubble", "title": "When Betelgeuse dies.",
         "brief": "Betelgeuse, the red supergiant in Orion, about 640 light-years away, is near the end of its life and will explode as a supernova within roughly 100,000 years; it would shine as bright as the half Moon for weeks.",
         "caption": "Red supergiant · Orion",
         "stats": [{"id": "time", "label": "DISTANCE · LIGHT-YEARS"}, {"id": "right", "label": "RADIUS · SUNS"}],
@@ -34,7 +34,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "sun-light-delay", "title": "The Sun you see is old.",
+        "key": "sun-light-delay", "backdrop": "solar flare SDO", "title": "The Sun you see is old.",
         "brief": "Light takes 8 minutes 20 seconds to reach Earth from the Sun; what we see is the Sun as it was. If it vanished, we would not know for eight minutes; Neptune would not know for four hours.",
         "caption": "Speed of light · 299,792 km/s",
         "stats": [{"id": "time", "label": "LIGHT TRAVEL TIME"}, {"id": "right", "label": "DISTANCE · MILLION KM"}],
@@ -48,7 +48,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "jupiter-inside", "title": "Inside Jupiter.",
+        "key": "jupiter-inside", "backdrop": "Jupiter Juno", "title": "Inside Jupiter.",
         "brief": "Jupiter has no surface: clouds of ammonia, then hydrogen gas thickening into liquid, then metallic hydrogen under crushing pressure, around a hot, partly dissolved core.",
         "caption": "Gas giant · no solid surface",
         "stats": [{"id": "time", "label": "RADIUS · KM"}, {"id": "right", "label": "CORE TEMPERATURE · °C"}],
@@ -62,7 +62,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "voyager", "title": "Voyager 1.",
+        "key": "voyager", "backdrop": "Voyager spacecraft", "title": "Voyager 1.",
         "brief": "Launched in 1977, Voyager 1 is the farthest human-made object, about 24 billion km away in interstellar space; its radio signal takes over 22 hours to reach Earth; its power will run out around 2030.",
         "caption": "Interstellar space · launched 1977",
         "stats": [{"id": "time", "label": "SIGNAL DELAY"}, {"id": "right", "label": "DISTANCE · BILLION KM"}],
@@ -76,7 +76,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "planet-sizes", "title": "The planets to scale.",
+        "key": "planet-sizes", "backdrop": "solar system planets", "title": "The planets to scale.",
         "brief": "The eight planets at true relative size: Jupiter is eleven times wider than Earth, and the Sun is ten times wider than Jupiter; all the planets together would fit inside the Sun with room to spare.",
         "caption": "True relative sizes",
         "stats": [{"id": "time", "label": "EARTH RADIUS · KM"}, {"id": "right", "label": "JUPITER · EARTHS"}],
@@ -90,7 +90,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "sun-death", "title": "The Sun's last days.",
+        "key": "sun-death", "backdrop": "Helix Nebula", "title": "The Sun's last days.",
         "brief": "In about five billion years the Sun swells into a red giant that swallows Mercury and Venus and boils Earth; then it sheds its outer layers into a nebula and shrinks to a white dwarf the size of Earth.",
         "caption": "Stellar evolution · G-type star",
         "stats": [{"id": "time", "label": "TIME FROM NOW · YEARS"}, {"id": "right", "label": "RADIUS · TODAY'S SUN"}],
@@ -104,7 +104,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "iss-orbit", "title": "The station that never falls.",
+        "key": "iss-orbit", "backdrop": "International Space Station Earth", "title": "The station that never falls.",
         "brief": "The ISS orbits at about 400 km, moving at 7.66 km/s, circling Earth every 92 minutes; it is falling all the time but moving sideways fast enough to keep missing the ground.",
         "caption": "Low Earth orbit · 400 km",
         "stats": [{"id": "time", "label": "ALTITUDE · KM"}, {"id": "right", "label": "SPEED · KM/S"}],
@@ -118,7 +118,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "mars-distance", "title": "How far is Mars.",
+        "key": "mars-distance", "backdrop": "Mars Perseverance landscape", "title": "How far is Mars.",
         "brief": "Mars is between 55 and 400 million km away depending on the orbits; radio signals take 3 to 22 minutes one way, so rovers must drive themselves.",
         "caption": "Earth–Mars · changing distance",
         "stats": [{"id": "time", "label": "SIGNAL DELAY"}, {"id": "right", "label": "DISTANCE · MILLION KM"}],
@@ -132,7 +132,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "earth-inside", "title": "Inside the Earth.",
+        "key": "earth-inside", "backdrop": "Earth from space", "title": "Inside the Earth.",
         "brief": "Earth's crust is thinner than an apple's skin in proportion; beneath it the mantle, the liquid iron outer core that makes our magnetic field, and a solid inner core as hot as the Sun's surface.",
         "caption": "Cutaway · 6,371 km to the centre",
         "stats": [{"id": "time", "label": "DEPTH TO CENTRE · KM"}, {"id": "right", "label": "INNER CORE · °C"}],
@@ -146,7 +146,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "deep-field", "title": "A grain of sand of sky.",
+        "key": "deep-field", "backdrop": "Hubble ultra deep field", "title": "A grain of sand of sky.",
         "brief": "The Hubble and Webb deep fields pointed at an apparently empty patch of sky the size of a grain of sand held at arm's length and found thousands of galaxies; the oldest light is over 13 billion years old.",
         "caption": "Deep field · thousands of galaxies",
         "stats": [{"id": "time", "label": "EXPOSURE · HOURS"}, {"id": "right", "label": "GALAXIES IN FRAME"}],
@@ -160,7 +160,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "moon-drift", "title": "The Moon is leaving.",
+        "key": "moon-drift", "backdrop": "Moon surface LRO", "title": "The Moon is leaving.",
         "brief": "The Moon moves away from Earth by about 3.8 cm per year because tides transfer Earth's spin to the Moon's orbit; days are getting longer, and total solar eclipses will end in about 600 million years.",
         "caption": "Tidal drift · 3.8 cm per year",
         "stats": [{"id": "time", "label": "DISTANCE · KM"}, {"id": "right", "label": "DRIFT · CM PER YEAR"}],
@@ -174,7 +174,7 @@ TOPICS = [
         ],
     },
     {
-        "key": "saturn-rings", "title": "Saturn's rings are young.",
+        "key": "saturn-rings", "backdrop": "Saturn Cassini", "title": "Saturn's rings are young.",
         "brief": "Saturn's rings are mostly water ice, up to 280,000 km wide but often only about 10 metres thick; Cassini found they are probably only 100 to 400 million years old and are slowly raining onto the planet.",
         "caption": "Water ice · 10 metres thick",
         "stats": [{"id": "time", "label": "RING WIDTH · KM"}, {"id": "right", "label": "THICKNESS · METRES"}],

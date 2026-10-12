@@ -166,11 +166,37 @@ class Renderer:
         self.grid_cam_height = 1.0
         self.grid_focal = 1500.0
         self.handle = scenario.get("handle", "")
+        self.backdrop = self._backdrop(scenario.get("backdrop"))
         self.tall = bool(scenario.get("tall", False))
         self.panel = (60, 600, 1020, 1470) if self.tall else (90, 610, 990, 1100)
         self.noise = self._noise()
         self._band_mask = None
         self._haze = None
+
+    def _backdrop(self, path):
+        """A related photograph behind everything: covered to the frame,
+        softened, and darkened most where the text lives, so the design
+        still reads as the design and the photo as atmosphere."""
+        if not path:
+            return None
+        try:
+            with Image.open(path) as source:
+                picture = source.convert("RGB")
+        except (OSError, ValueError):
+            return None
+        W, H = WIDTH * SS, HEIGHT * SS
+        scale = max(W / picture.width, H / picture.height)
+        picture = picture.resize((max(W, round(picture.width * scale)), max(H, round(picture.height * scale))), Image.Resampling.LANCZOS)
+        left, top = (picture.width - W) // 2, (picture.height - H) // 2
+        picture = picture.crop((left, top, left + W, top + H)).filter(ImageFilter.GaussianBlur(5 * SS))
+        arr = np.asarray(picture, dtype=np.float32)
+        y = np.linspace(0, 1, H)[:, None, None]
+        # brightness profile: dark behind the title block, lighter behind the panel, dark again at the bottom
+        profile = np.where(y < 0.3, 0.22, np.where(y < 0.78, 0.22 + 0.26 * np.sin(np.pi * (y - 0.3) / 0.48), 0.2))
+        arr = arr * profile
+        # keep it blue-dark: pull saturation toward the house navy
+        arr = arr * 0.85 + np.array(BG, dtype=np.float32) * 0.15
+        return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
 
     def _noise(self):
         rng = np.random.default_rng(1)
@@ -290,7 +316,7 @@ class Renderer:
     # --- frame
     def render_frame(self, scene, phase, stats_values, t=0.0, phase_t=0.0, fade=1.0):
         W, H = WIDTH * SS, HEIGHT * SS
-        frame = Image.new("RGBA", (W, H), BG + (255,))
+        frame = self.backdrop.copy() if self.backdrop is not None else Image.new("RGBA", (W, H), BG + (255,))
         band = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         gdraw = ScaledDraw(band)
         world = getattr(scene, "world", None)
@@ -476,6 +502,9 @@ def binary_planet(texts):
                    "speed_unit": "km/s", "speed_scale": 30.0, "time_scale": 4.0, "caption": texts.get("caption", "Stars' gravitational fields")}
 
 
+BACKDROPS = {"three-body": "globular star cluster Hubble", "gravity-assist": "Jupiter Juno", "roche-limit": "Saturn rings Cassini",
+             "black-hole": "black hole accretion disk visualization", "escape-velocity": "Earth from space ISS", "binary-planet": "star field Hubble"}
+
 SCENARIOS = {
     "three-body": (three_body, "Three stars bound by gravity; chaotic orbits; close passes exchange energy until one star is flung out."),
     "gravity-assist": (gravity_assist, "A probe sweeps past a moving planet and leaves faster than it arrived: the planet's own motion hands it speed."),
@@ -521,6 +550,7 @@ def render(scenario_key, texts, output, duration=28.0, note=print):
     make, _ = SCENARIOS[scenario_key]
     world, cfg = make(texts)
     cfg["handle"] = texts.get("handle", "")
+    cfg["backdrop"] = texts.get("backdrop")
     phases = texts["phases"]
     renderer = Renderer(cfg)
     frames_dir = output.parent / "sim_frames"
@@ -615,7 +645,7 @@ def render_plan(plan, output, note=print):
     Scenes are objects from factory.scenes; a new scene fades in over 0.5 s.
     """
     tall = not any(getattr(p["scene"], "uses_grid", False) for p in plan["phases"])
-    renderer = Renderer({"handle": plan.get("handle", ""), "caption": plan.get("caption", ""),
+    renderer = Renderer({"handle": plan.get("handle", ""), "caption": plan.get("caption", ""), "backdrop": plan.get("backdrop"),
                          "stats": plan.get("stats", []), "grid": plan.get("grid", True), "scale": 150, "tall": tall})
     frames_dir = output.parent / "sim_frames"
     frames_dir.mkdir(parents=True, exist_ok=True)

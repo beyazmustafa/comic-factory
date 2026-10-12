@@ -368,6 +368,16 @@ def generate(settings, topic="", api_factory=None):
         save_json(directory / "sim_texts.json", {"scenario": key, **texts, "duration": duration})
         print(f"→ Simülasyon render ({duration:.1f} sn)", flush=True)
         used_images = []
+        # a related NASA photograph behind the whole design
+        backdrop_query = (topic_spec.get("backdrop") if composed else None) or sim.BACKDROPS.get(key)
+        if not backdrop_query and composed:
+            backdrop_query = next((p["scene"]["query"] for p in texts["phases"] if p["scene"].get("type") == "image"), None)
+        texts["backdrop"] = None
+        if backdrop_query:
+            bpath, bcredit, bsource = fetch_image(api, backdrop_query, directory, [0.5, 0.5])
+            if "starfield" not in str(bpath):
+                texts["backdrop"] = str(bpath)
+                used_images.append({"query": backdrop_query, "file": str(bpath), "credit": bcredit, "source": bsource})
         if composed:
             plan_phases = []
             for phase in texts["phases"]:
@@ -380,7 +390,8 @@ def generate(settings, topic="", api_factory=None):
                     labels[0] = {"id": "time", "label": "LIGHT TRAVEL TIME"}
                 plan_phases.append({"at": phase["at"], "title": phase["title"], "subtitle": phase["subtitle"], "scene": scene,
                                     "stats": phase.get("stats", {}), "stats_labels": labels})
-            plan = {"handle": handle, "caption": texts["caption"], "duration": duration, "stats": texts["stats"], "phases": plan_phases}
+            plan = {"handle": handle, "caption": texts["caption"], "duration": duration, "stats": texts["stats"], "phases": plan_phases,
+                    "backdrop": texts.get("backdrop")}
             silent = sim.render_plan(plan, directory / "sim_video.mp4")
         else:
             silent = sim.render(key, texts, directory / "sim_video.mp4", duration=duration)
