@@ -3,6 +3,7 @@ import hashlib
 import json
 import math
 import os
+import re
 import shutil
 import wave
 import subprocess
@@ -243,6 +244,7 @@ def gemini_synthesize(api, text, voice, style, path):
 
 
 def gemini_synthesize_with(api, model, text, voice, style, path):
+    api.last_tts_model = model
     prompt = f"""Read ONLY the exact {language_name(api)} text inside <transcript> once. No additions, omissions, translation, paraphrase, spoken instructions or music.
 DELIVERY: {style.get("narrator_delivery", "")}
 {style.get("voice_character", "Fluent natural " + language_name(api) + ", confident documentary energy like a dramatic YouTube Shorts narrator, varied emphasis, short dramatic pauses, consistent narrator identity. No newsreader monotone, shouting, growling or whispering. Roughly 150–170 words/minute.")}
@@ -267,7 +269,7 @@ DELIVERY: {style.get("narrator_delivery", "")}
             ),
         ),
     )
-    blocks = []
+    blocks, sample_rate = [], RATE
     for candidate in response.candidates or []:
         for part in getattr(getattr(candidate, "content", None), "parts", None) or []:
             inline = getattr(part, "inline_data", None)
@@ -276,6 +278,9 @@ DELIVERY: {style.get("narrator_delivery", "")}
                 and getattr(inline, "data", None)
                 and str(getattr(inline, "mime_type", "")).startswith("audio/")
             ):
+                match = re.search(r"rate=(\d+)", str(inline.mime_type))
+                if match:
+                    sample_rate = int(match.group(1))
                 blocks.append(
                     base64.b64decode(inline.data)
                     if isinstance(inline.data, str)
@@ -294,6 +299,10 @@ DELIVERY: {style.get("narrator_delivery", "")}
         if len(data) % 2:
             raise SpeechFailure("Eksik PCM örneği.")
         samples = np.frombuffer(data, dtype="<i2")
+        if sample_rate != RATE and sample_rate > 0:
+            # Some TTS models answer at 48 kHz etc.; bring it to the house rate.
+            positions = np.arange(0, len(samples), sample_rate / RATE)
+            samples = np.interp(positions, np.arange(len(samples)), samples.astype(np.float64)).astype("<i2")
     write_wave(path, trim_edges(samples))
     return path
 
@@ -346,7 +355,8 @@ def align_clip(api, path, text, directory, soft=False):
                 return result
             if best is None or metrics["score"] > best["metrics"]["score"]:
                 best = result
-            errors.append(f"{model}: {metrics['score']:.1f}/100")
+            heard = " ".join(str(w.get("word", "")) for w in (raw or []) if isinstance(w, dict))[:90]
+            errors.append(f"{model}: {metrics['score']:.1f}/100 (duyulan: “{heard}”, {duration:.1f} sn)")
         except Exception as error:
             errors.append(f"{model}: {type(error).__name__}: {str(error)[:350]}")
         save_json(directory / "alignment_errors.json", errors)
@@ -591,6 +601,12 @@ def _build_audio(api, story, voice, style, cache):
                 except SpeechFailure as error:
                     failures.append(str(error))
                     save_json(directory / "failures.json", failures)
+                    stand_in = getattr(api, "last_tts_model", "")
+                    if getattr(api, "last_engine", "") == "gemini" and stand_in and stand_in != api.settings.tts_model:
+                        # A stand-in TTS model whose reading does not match the
+                        # script is not tried again; the next model/engine is.
+                        api.dead_tts = getattr(api, "dead_tts", set()) | {stand_in}
+                        api.note(f"Yedek ses modeli {stand_in} metni düzgün okumadı; bir sonraki motora geçildi.")
         if accepted is None:
             raise SpeechFailure(
                 f"{i + 1}. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
