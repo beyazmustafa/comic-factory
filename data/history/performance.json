@@ -2995,5 +2995,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "0BkoDilzDRw",
+    "platform": "youtube",
+    "run_id": "38461569342",
+    "published_at": "2026-10-13T20:26:27+00:00",
+    "event": {
+      "title": "How Far Is Mars.",
+      "series": "Simulation",
+      "issue": "mars-distance",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 79,
+      "duration": 42.5,
+      "words_per_minute": 112,
+      "hook": "From hundreds of millions of kilometers away, scientists send daily instructions to the Perseverance rover, steering our robotic presence across an ancient Martian lakebed.",
+      "hook_words": 24,
+      "title": "Why Mars Rovers Must Drive Themselves Across the Red Planet",
+      "title_length": 59,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

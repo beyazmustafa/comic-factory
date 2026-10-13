@@ -1,6 +1,6 @@
-run_id: 38399813825  attempt: 1  event: schedule
+run_id: 38461569342  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261013T124744226242Z/run.json
+--- data/runs/20261013T201748557900Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,37 +40,40 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38399813825",
+  "run_id": "38461569342",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "1410780404f6971598a833d7979e60f51dd1e9e15ae2948566fa8849d41e40fa",
-  "metadata_sha256": "ace8885d8e2fb2938fd61d090c9ab39d2bedfc45413464e7f7d2b5ffef984123",
+  "video_sha256": "b67367f83849cbf8c00d78b0e37d01e53e9d60b651f6a7e2595d2065bf1b5846",
+  "metadata_sha256": "bd22d86fc68c3e6284efe3e3ab169e46d06d1653ea4a24e1ed83eaffbe56d823",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 13,
-  "duration": 39.50000000000001,
+  "api_calls": 24,
+  "duration": 42.510000000000005,
   "voice": "Charon",
   "event": {
-    "id": "sim_escape-velocity_20261013T124744226242Z",
-    "title": "Orbital speed limits.",
+    "id": "sim_mars-distance_20261013T201748557900Z",
+    "title": "How Far Is Mars.",
     "series": "Simulation",
-    "issue": "escape-velocity",
+    "issue": "mars-distance",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "escape-velocity",
+    "scenario": "mars-distance",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261013T124744226242Z/diagnostics/provider_events.json
+--- data/runs/20261013T201748557900Z/diagnostics/provider_events.json
 [
-  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261013T124744226242Z/diagnostics/providers.json
+--- data/runs/20261013T201748557900Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -89,12 +92,13 @@ produce step outcome: success
     "gemini-omni-1.1-flash",
     "gemini-3.6-flash",
     "gemini-3.7-flash",
-    "gemini-3.8-flash"
+    "gemini-3.8-flash",
+    "gemini-4-argon"
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -129,6 +133,7 @@ produce step outcome: success
     "gemini-3.6-flash",
     "gemini-3.7-flash",
     "gemini-3.8-flash",
+    "gemini-4-argon",
     "lyria-3-clip-preview",
     "lyria-3-pro-preview",
     "lyria-3.5",
@@ -188,59 +193,57 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Senaryo: escape-velocity
-Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+→ Senaryo: mars-distance
+Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Simülasyon render (39.5 sn)
-NASA görsel: 'Earth from space ISS' için 10 sonuç
-Simülasyon: escape-velocity, 1143 kare, kare başına 5.00 adım
-Simülasyon karesi 0/1185
-Simülasyon karesi 150/1185
-Simülasyon karesi 300/1185
-Simülasyon karesi 450/1185
-Simülasyon karesi 600/1185
-Simülasyon karesi 750/1185
-Simülasyon karesi 900/1185
-Simülasyon karesi 1050/1185
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T124744226242Z/review.html
+Ses eşleştirme: 92.6/100 | whisper-large-v3
+→ Simülasyon render (42.5 sn)
+NASA görsel: 'Mars Perseverance landscape' için 9 sonuç
+NASA görsel: 'Mars surface Perseverance' için 9 sonuç
+Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Sahne karesi 0/1275
+Sahne karesi 150/1275
+Sahne karesi 300/1275
+Sahne karesi 450/1275
+Sahne karesi 600/1275
+Sahne karesi 750/1275
+Sahne karesi 900/1275
+Sahne karesi 1050/1275
+Sahne karesi 1200/1275
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T201748557900Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Why objects orbit or escape gravity explained visually #Shorts
+Başlık: Why Mars Rovers Must Drive Themselves Across the Red Planet #Shorts
 Görünürlük: public
 
-Yükleme: %32
-Yükleme: %64
-Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=RPXw5_86pc4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %38
+Yükleme: %77
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=0BkoDilzDRw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T124744226242Z/video.mp4
-Boyut: 24.9 MB
-Açıklama uzunluğu: 236 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T201748557900Z/video.mp4
+Boyut: 20.6 MB
+Açıklama uzunluğu: 268 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17967992766187944).
+Instagram: container oluşturuldu (17968048803187944).
 Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -248,7 +251,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18121166686941825
+Instagram Reel başarıyla yayınlandı: 18131019202821991
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================
