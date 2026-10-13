@@ -1,6 +1,6 @@
-run_id: 38315077614  attempt: 1  event: schedule
+run_id: 38399813825  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261012T221107582758Z/run.json
+--- data/runs/20261013T124744226242Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,31 +40,37 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38315077614",
+  "run_id": "38399813825",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "8653389cf020cc9aa804e0a8f508cfe2fde975f70bf79f5ac6bfdb6dee026cdf",
-  "metadata_sha256": "3223590b45ddfec95835c6e4e551e6ffbb10fc7442456611ad95ebecd9121f3f",
+  "video_sha256": "1410780404f6971598a833d7979e60f51dd1e9e15ae2948566fa8849d41e40fa",
+  "metadata_sha256": "ace8885d8e2fb2938fd61d090c9ab39d2bedfc45413464e7f7d2b5ffef984123",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 6,
-  "duration": 34.089999999999996,
+  "api_calls": 13,
+  "duration": 39.50000000000001,
   "voice": "Charon",
   "event": {
-    "id": "sim_roche-limit_20261012T221107582758Z",
-    "title": "The Roche limit.",
+    "id": "sim_escape-velocity_20261013T124744226242Z",
+    "title": "Orbital speed limits.",
     "series": "Simulation",
-    "issue": "roche-limit",
+    "issue": "escape-velocity",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "roche-limit",
+    "scenario": "escape-velocity",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261012T221107582758Z/diagnostics/providers.json
+--- data/runs/20261013T124744226242Z/diagnostics/provider_events.json
+[
+  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+]
+--- data/runs/20261013T124744226242Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -86,9 +92,9 @@ produce step outcome: success
     "gemini-3.8-flash"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -182,46 +188,57 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Senaryo: roche-limit
+→ Senaryo: escape-velocity
+Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Simülasyon render (34.1 sn)
-NASA görsel: 'Saturn rings Cassini' için 9 sonuç
-NASA görsel indirilemedi: HTTPError: 403 Client Error: Forbidden for url: https://images-assets.nasa.gov/image/PIA219
-Simülasyon: roche-limit, 980 kare, kare başına 5.00 adım
-Simülasyon karesi 0/1022
-Simülasyon karesi 150/1022
-Simülasyon karesi 300/1022
-Simülasyon karesi 450/1022
-Simülasyon karesi 600/1022
-Simülasyon karesi 750/1022
-Simülasyon karesi 900/1022
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T221107582758Z/review.html
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Simülasyon render (39.5 sn)
+NASA görsel: 'Earth from space ISS' için 10 sonuç
+Simülasyon: escape-velocity, 1143 kare, kare başına 5.00 adım
+Simülasyon karesi 0/1185
+Simülasyon karesi 150/1185
+Simülasyon karesi 300/1185
+Simülasyon karesi 450/1185
+Simülasyon karesi 600/1185
+Simülasyon karesi 750/1185
+Simülasyon karesi 900/1185
+Simülasyon karesi 1050/1185
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T124744226242Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: How a Falling Moon Turns Into a Planetary Ring #Shorts
+Başlık: Why objects orbit or escape gravity explained visually #Shorts
 Görünürlük: public
 
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=9A9hsLwjA00&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %32
+Yükleme: %64
+Yükleme: %96
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=RPXw5_86pc4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261012T221107582758Z/video.mp4
-Boyut: 5.7 MB
-Açıklama uzunluğu: 213 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T124744226242Z/video.mp4
+Boyut: 24.9 MB
+Açıklama uzunluğu: 236 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17967909081187944).
+Instagram: container oluşturuldu (17967992766187944).
 Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -231,7 +248,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18130411141754077
+Instagram Reel başarıyla yayınlandı: 18121166686941825
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================

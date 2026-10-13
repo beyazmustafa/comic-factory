@@ -2955,5 +2955,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "RPXw5_86pc4",
+    "platform": "youtube",
+    "run_id": "38399813825",
+    "published_at": "2026-10-13T12:59:07+00:00",
+    "event": {
+      "title": "Orbital speed limits.",
+      "series": "Simulation",
+      "issue": "escape-velocity",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 67,
+      "duration": 39.5,
+      "words_per_minute": 102,
+      "hook": "Gravity pulls every object toward the center. Without enough sideways movement, the launched craft simply arcs upward and crashes back down.",
+      "hook_words": 21,
+      "title": "Why objects orbit or escape gravity explained visually",
+      "title_length": 54,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

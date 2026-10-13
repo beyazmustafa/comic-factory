@@ -1,0 +1,89 @@
+{
+  "script": {
+    "title": "Why objects orbit or escape gravity explained visually",
+    "description": "A clear visual look at how launch speed determines whether an object falls back, enters orbit, or escapes a planet forever.",
+    "hook_card": "Orbital speed limits.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "Gravity pulls every object toward the center. Without enough sideways movement, the launched craft simply arcs upward and crashes back down.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "With extra speed, the ground curves away just as fast as the craft drops. It falls constantly without ever hitting the surface.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "At escape velocity, the craft moves too fast for gravity to stop it. The pull grows weaker, and it travels into deep space forever.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Gravity pulls every object toward the center. Without enough sideways movement, the launched craft simply arcs upward and crashes back down. With extra speed, the ground curves away just as fast as the craft drops. It falls constantly without ever hitting the surface. At escape velocity, the craft moves too fast for gravity to stop it. The pull grows weaker, and it travels into deep space forever.",
+    "event": {
+      "id": "sim_escape-velocity_20261013T124744226242Z",
+      "title": "Orbital speed limits.",
+      "series": "Simulation",
+      "issue": "escape-velocity",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "escape-velocity",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "escape-velocity",
+    "phases": [
+      {
+        "at": 0.0,
+        "subtitle": "Too slow falls back.",
+        "narration": "Gravity pulls every object toward the center. Without enough sideways movement, the launched craft simply arcs upward and crashes back down.",
+        "title": "Orbital speed limits."
+      },
+      {
+        "at": 13.979999999999999,
+        "subtitle": "Just right circles.",
+        "narration": "With extra speed, the ground curves away just as fast as the craft drops. It falls constantly without ever hitting the surface.",
+        "title": "Orbital speed limits."
+      },
+      {
+        "at": 25.439999999999998,
+        "subtitle": "Fast enough, and gravity loses.",
+        "narration": "At escape velocity, the craft moves too fast for gravity to stop it. The pull grows weaker, and it travels into deep space forever.",
+        "title": "One never returns."
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "A clear visual look at how launch speed determines whether an object falls back, enters orbit, or escapes a planet forever.\n\nA physics simulation rendered by code. @Facctsaboutspace\nImages: JSC (https://images.nasa.gov/details/iss048e046923)\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "Why objects orbit or escape gravity explained visually\n\nA clear visual look at how launch speed determines whether an object falls back, enters orbit, or escapes a planet forever."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}
