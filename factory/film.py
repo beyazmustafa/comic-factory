@@ -71,10 +71,11 @@ def words_of(text):
 
 def write_script(api, topic, clips, handle):
     facts = "\n".join(f"- {fact}" for fact in topic["facts"])
+    ordered = sorted(clips, key=lambda c: ({"footage": 0, "visualization": 1, "animation": 2}[c["kind"]], -c["quality"]))
     listing = "\n".join(
-        f"- {c['id']}: {c['shows'] or c['what']} | {c['kind']} | up to {max(w[1] - w[0] for w in c['windows']):.0f} s | "
-        f"source: \"{c['title']}\" ({c.get('date', '')[:4]})"
-        for c in clips)
+        f"- {c['id']}{' ★ (best real imagery — use it for beat 1 if it fits)' if i == 0 else ''}: {c['shows'] or c['what']} | {c['kind']} | "
+        f"up to {max(w[1] - w[0] for w in c['windows']):.0f} s | source: \"{c['title']}\" ({c.get('date', '')[:4]})"
+        for i, c in enumerate(ordered))
     callouts = "\n".join(f"- [{i}] {c['value']} — {c['label']}" for i, c in enumerate(topic.get("callouts", [])))
     prompt = f"""You are writing a calm, premium vertical documentary Short (60–80 seconds) for the channel {handle}.
 Subject: {topic['subject']}.
@@ -315,8 +316,9 @@ def generate(settings, topic="", api_factory=None):
         duration = min(MAX_SECONDS, speech_seconds + HEAD + 0.3 + END_SECONDS)
         print(f"→ Kurgu ({duration:.1f} sn, {len(script['beats'])} beat, {len(clips)} kesit)", flush=True)
         shots = build_timeline(script, clips, starts, duration)
-        kinds = [s["kind"] for s in shots]
-        kicker = "Real footage · NASA" if kinds and kinds[0] == "footage" else ("NASA visualization" if kinds and kinds[0] == "visualization" else "NASA archive")
+        first = next(c for c in clips if c["id"] == shots[0]["clip"])
+        agency = {"hubble": "ESA/Hubble", "webb": "ESA/Webb"}.get(first.get("source"), "NASA")
+        kicker = {"footage": f"Real footage · {agency}", "visualization": f"{agency} visualization"}.get(first["kind"], f"{agency} archive")
         plan = {"duration": duration, "handle": handle, "hook": script["hook"], "kicker": kicker, "closing": script["closing"],
                 "hook_seconds": HOOK_SECONDS, "end_seconds": END_SECONDS, "dissolve_frames": DISSOLVE, "shots": shots}
         save_json(directory / "film_plan.json", plan)
@@ -365,12 +367,15 @@ def generate(settings, topic="", api_factory=None):
         used_assets = {}
         for c in clips:
             if any(s["clip"] == c["id"] for s in shots):
-                used_assets[c["asset"]] = (c.get("credit") or "NASA", c.get("title", ""), c.get("page_url", ""))
+                used_assets[c["asset"]] = (c.get("credit") or "NASA", c.get("title", "")[:80], c.get("page_url", ""))
         credit_lines = [f"{credit} — {title} ({url})" if url else f"{credit} — {title}" for credit, title, url in used_assets.values()]
+        licences = sorted({c.get("licence", "") for c in clips if any(s["clip"] == c["id"] for s in shots) and c.get("licence")})
         hashtags = ["space", "nasa", "shorts", "astronomy", "science", "universe", "documentary"]
-        full = script["description"] + "\n\nReal footage and visualizations from NASA's public archives (public domain), edited for " + (handle or "the channel") + ".\n"
+        full = script["description"] + "\n\nReal footage and visualizations from public space-agency archives, edited for " + (handle or "the channel") + ".\n"
         if credit_lines:
             full += "Footage: " + "; ".join(credit_lines)[:1500] + "\n"
+        if licences:
+            full += "Licences: " + ", ".join(licences)[:200] + "\n"
         metadata = {"script": {**story, "full_description": full, "hashtags": hashtags,
                                "instagram_caption": script["youtube_title"] + "\n\n" + script["description"] + "\n\nFootage: NASA (public domain)."},
                     "sources": [], "voice": {"voice": "none"}, "editing_profile": "film-v1", "language": settings.language}

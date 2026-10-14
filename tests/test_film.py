@@ -90,6 +90,24 @@ class FootageTests(unittest.TestCase):
         self.assertTrue(footage.net_options("https://a/b.mp4"))
         self.assertEqual(footage.net_options("/tmp/x.mp4"), [])
 
+    def test_sdo_candidates_and_title_filter(self):
+        rows = footage.sdo_candidates(["2024-05-10"])
+        self.assertEqual(len(rows), len(footage.SDO_CHANNELS))
+        self.assertIn("2024/05/10/20240510_1024_0304.mp4", rows[0]["sdo_url"])
+        self.assertTrue(footage.skip_title("NASA Science Live: We Landed on Mars [Episode 29]"))
+        self.assertFalse(footage.skip_title("Perseverance Rover's Descent and Touchdown on Mars"))
+
+    def test_judge_splits_stretches_around_text_frames(self):
+        class Api:
+            def json(self, label, prompt, **kwargs):
+                return {"relevant": True, "usable": True, "quality": 8, "kind": "footage", "what": "x", "text_frames": [3],
+                        "stretches": [{"start": 0, "end": 6, "focus": [0.5, 0.5], "shows": "clouds"}]}
+        frames = [(i * 6.0, Path(f"/tmp/f{i}.jpg")) for i in range(8)]
+        flags = [False, False, False, False, False, True, False, False]
+        verdict = footage.judge_asset(Api(), {"subject": "s"}, {"id": "a", "title": "t"}, frames, flags, Path("/tmp/sheet.jpg"))
+        self.assertEqual([(s["start"], s["end"]) for s in verdict["stretches"]], [(0, 2), (4, 4), (6, 6)])
+        self.assertEqual(verdict["excluded"], [3, 5])
+
 
 class CutTests(unittest.TestCase):
     def test_crop_window_is_9_16_and_follows_focus(self):
