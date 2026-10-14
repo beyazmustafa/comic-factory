@@ -135,10 +135,10 @@ def validate_script(data, topic, clips):
         except (TypeError, ValueError):
             callout = None
         beats.append({"clip": clip["id"], "narration": narration, "label": label, "callout": callout})
-    # at most two callouts, never two in a row
+    # at most two callouts, never two in a row, never under the hook card
     seen = 0
     for index, beat in enumerate(beats):
-        if beat["callout"] and (seen >= 2 or (index and beats[index - 1]["callout"])):
+        if beat["callout"] and (index == 0 or seen >= 2 or beats[index - 1]["callout"]):
             beat["callout"] = None
         elif beat["callout"]:
             seen += 1

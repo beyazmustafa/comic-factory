@@ -358,7 +358,6 @@ def commons_renditions(asset):
     data = commons_get({"action": "query", "titles": asset["commons_title"], "prop": "videoinfo",
                         "viprop": "url|size|derivatives|extmetadata|mediatype", "format": "json"})
     pages = data.get("query", {}).get("pages", {})
-    pages = response.json().get("query", {}).get("pages", {})
     info = next((p.get("videoinfo", [{}])[0] for p in pages.values() if p.get("videoinfo")), None)
     if not info or info.get("mediatype") != "VIDEO":
         raise ValueError("not a video")
