@@ -3359,5 +3359,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "AR69pjU7jyM",
+    "platform": "youtube",
+    "run_id": "38653286053",
+    "published_at": "2026-10-14T23:40:28+00:00",
+    "event": {
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 137,
+      "duration": 63.8,
+      "words_per_minute": 129,
+      "hook": "For over a decade SDO has watched the Sun, imaging it every twelve seconds and sending back 1.5 TB daily.",
+      "hook_words": 20,
+      "title": "Solar Dynamics Observatory: Flares, Loops, and Eruptions",
+      "title_length": 56,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

@@ -1,12 +1,12 @@
-run_id: 38651164534  attempt: 1  event: workflow_dispatch
+run_id: 38653286053  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261014T225919906056Z/run.json
+--- data/runs/20261014T231949523636Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "moon-tour",
+  "topic": "sdo-sun",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,57 +40,56 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38651164534",
+  "run_id": "38653286053",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "d82662feb7598d23dfa89f78c3d24f1c71252fc5b37a00332527676c682a2d49",
-  "metadata_sha256": "7adc4df1eea49a70652ec7c83121ca4db9938a17eb85c3a56d4bfc1f21f02496",
+  "video_sha256": "dfa26a636f9acc1906d558574cde3356eb633e0f771dd304087a1316a1557714",
+  "metadata_sha256": "5ee1bb2de0d948c59748413c16cb318e1d0a5e9baf59965fe4e43b87d290213d",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 58,
-  "duration": 65.81,
+  "api_calls": 51,
+  "duration": 63.79999999999999,
   "voice": "Charon",
   "event": {
-    "id": "film_moon-tour_20261014T225919906056Z",
-    "title": "The Moon in 4K.",
+    "id": "film_sdo-sun_20261014T231949523636Z",
+    "title": "The Sun, every twelve seconds.",
     "series": "NASA footage",
-    "issue": "moon-tour",
+    "issue": "sdo-sun",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "moon-tour",
+    "scenario": "sdo-sun",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD",
-      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
-      "https://images.nasa.gov/details/GSFC_20120220_LRO_m10915_ graben_moon",
-      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20140911_SDO_m11651_Flare",
+      "https://images.nasa.gov/details/GSFC_20141024_SDO_m11718_Flares",
+      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
     ]
   },
   "localized": []
 }
---- data/runs/20261014T225919906056Z/diagnostics/provider_events.json
+--- data/runs/20261014T231949523636Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme svs:4619: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4619: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4619: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4619: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4619: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4619: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Yedek ses modeli gemini-2.5-flash-preview-tts metni düzgün okumadı; bir sonraki motora geçildi.",
-  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261014T225919906056Z/diagnostics/providers.json
+--- data/runs/20261014T231949523636Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -114,8 +113,8 @@ produce step outcome: success
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,73 +208,72 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261014T225919906056Z/audio/chunk_001/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 14.; whisper-large-v3-turbo: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 28."
-]
 --- studio.log (son 300 satır)
-→ Konu: moon-tour
-Görüntü adayları: 75 (moon-tour)
+→ Konu: sdo-sun
+Görüntü adayları: 97 (sdo-sun)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
-Çözümlenen video: 12
-Görüntü değerlendirme svs:4619: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4619: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4619: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4619: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4619: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4619: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-svs:4619: elendi (8/10, visualization) A 4K tour of the Moon's surface based on Lunar Reconnaissance Orbiter 
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) Lunar surface imagery and global views mapped by the Lunar Reconnaissa
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) Flyover of the Lee Lincoln scarp at the Apollo 17 landing site
-nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: kullanılır (7/10, visualization) NASA visualization of the Moon's South Pole and the VIPER rover landin
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: kullanılır (8/10, visualization) NASA visualizations and orbital imagery of the Moon mapped by the Luna
-Kullanılır kesit: 8 (103 sn temiz görüntü)
+Çözümlenemedi commons:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 171 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 9
+nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (8/10, footage) NASA Solar Dynamics Observatory imagery capturing solar flares and mag
+nasa:GSFC_20160426_SDO_m12224_SolarFlare: kullanılır (8/10, footage) NASA Solar Dynamics Observatory imagery of a solar flare and active re
+nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA Solar Dynamics Observatory footage of an arching solar eruption a
+nasa:GSFC_20140911_SDO_m11651_Flare: kullanılır (9/10, footage) Solar Dynamics Observatory imagery of the September 10, 2014 X1.6 sola
+nasa:GSFC_20141024_SDO_m11718_Flares: kullanılır (8/10, footage) NASA's Solar Dynamics Observatory captures giant sunspot eruptions and
+Kullanılır kesit: 8 (154 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 93.3/100 | whisper-large-v3
+Ses eşleştirme: 89.2/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Yedek ses modeli gemini-2.5-flash-preview-tts metni düzgün okumadı; bir sonraki motora geçildi.
-Ses bölümü 2, deneme 2
-Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 86.1/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 86.1/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
+Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (65.8 sn, 8 beat, 8 kesit)
-  kurgu 10/66 sn
-  kurgu 20/66 sn
-  kurgu 30/66 sn
-  kurgu 40/66 sn
-  kurgu 50/66 sn
-  kurgu 60/66 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T225919906056Z/review.html
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 89.5/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 96.4/100 | whisper-large-v3
+→ Kurgu (63.8 sn, 8 beat, 8 kesit)
+  kurgu 10/64 sn
+  kurgu 20/64 sn
+  kurgu 30/64 sn
+  kurgu 40/64 sn
+  kurgu 50/64 sn
+  kurgu 60/64 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T231949523636Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: LRO Maps the Moon in Stunning Detail #Shorts
+Başlık: Solar Dynamics Observatory: Flares, Loops, and Eruptions #Shorts
 Görünürlük: unlisted
 
-Yükleme: %10
-Yükleme: %20
-Yükleme: %30
-Yükleme: %40
-Yükleme: %51
-Yükleme: %61
+Yükleme: %7
+Yükleme: %15
+Yükleme: %23
+Yükleme: %31
+Yükleme: %39
+Yükleme: %47
+Yükleme: %55
+Yükleme: %63
 Yükleme: %71
-Yükleme: %81
-Yükleme: %92
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=L1n9Tf7GrJ0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %79
+Yükleme: %87
+Yükleme: %95
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=AR69pjU7jyM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

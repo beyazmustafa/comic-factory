@@ -1,0 +1,151 @@
+{
+  "title": "Solar Dynamics Observatory: Flares, Loops, and Eruptions",
+  "description": "The Solar Dynamics Observatory has been imaging the Sun continuously since 2010, delivering a new picture every twelve seconds. This short explores the Sun’s size, temperature extremes, magnetic loops, and powerful flares captured by SDO.",
+  "hook_card": "The Sun, every twelve seconds.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "For over a decade SDO has watched the Sun, imaging it every twelve seconds and sending back 1.5 TB daily.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c07",
+      "narration": "Here the solar disc spans 1.39 million km, enough to line up 109 Earths side by side.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c02",
+      "narration": "In these teal and magenta filters, glowing loops trace magnetic field lines, each loop larger than many Earths.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c05",
+      "narration": "A sudden X1.6 flare erupts, releasing energy comparable to millions of hydrogen bombs in seconds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c06",
+      "narration": "The corona glows above, exceeding one million degrees, a mystery why it outshines the 5,500 °C surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "Light from this fiery sphere travels eight minutes and twenty seconds to reach Earth, while particles lag behind for days.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "Every eleven years the Sun’s magnetic poles reverse, reshaping loops and flare patterns across the disc.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "These dynamic arches pulse, a constant ballet of plasma guided by invisible magnetic ropes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "For over a decade SDO has watched the Sun, imaging it every twelve seconds and sending back 1.5 TB daily. Here the solar disc spans 1.39 million km, enough to line up 109 Earths side by side. In these teal and magenta filters, glowing loops trace magnetic field lines, each loop larger than many Earths. A sudden X1.6 flare erupts, releasing energy comparable to millions of hydrogen bombs in seconds. The corona glows above, exceeding one million degrees, a mystery why it outshines the 5,500 °C surface. Light from this fiery sphere travels eight minutes and twenty seconds to reach Earth, while particles lag behind for days. Every eleven years the Sun’s magnetic poles reverse, reshaping loops and flare patterns across the disc. These dynamic arches pulse, a constant ballet of plasma guided by invisible magnetic ropes.",
+  "event": {
+    "id": "film_sdo-sun_20261014T231949523636Z",
+    "title": "The Sun, every twelve seconds.",
+    "series": "NASA footage",
+    "issue": "sdo-sun",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "sdo-sun",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20140911_SDO_m11651_Flare",
+      "https://images.nasa.gov/details/GSFC_20141024_SDO_m11718_Flares",
+      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
+    ]
+  },
+  "scenario": "sdo-sun",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "For over a decade SDO has watched the Sun, imaging it every twelve seconds and sending back 1.5 TB daily.",
+      "label": "NASA · SDO · 2015",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Here the solar disc spans 1.39 million km, enough to line up 109 Earths side by side.",
+      "label": "NASA · SDO · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "In these teal and magenta filters, glowing loops trace magnetic field lines, each loop larger than many Earths.",
+      "label": "NASA · SDO · 2016",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "A sudden X1.6 flare erupts, releasing energy comparable to millions of hydrogen bombs in seconds.",
+      "label": "NASA · SDO · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "The corona glows above, exceeding one million degrees, a mystery why it outshines the 5,500 °C surface.",
+      "label": "NASA · SDO · 2014",
+      "callout": {
+        "value": "1,000,000 °C",
+        "label": "the outer atmosphere"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "Light from this fiery sphere travels eight minutes and twenty seconds to reach Earth, while particles lag behind for days.",
+      "label": "NASA · SDO · 2016",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Every eleven years the Sun’s magnetic poles reverse, reshaping loops and flare patterns across the disc.",
+      "label": "NASA · SDO · 2015",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "These dynamic arches pulse, a constant ballet of plasma guided by invisible magnetic ropes.",
+      "label": "NASA · SDO · 2014",
+      "callout": null
+    }
+  ],
+  "closing": "Its magnetic heartbeat shapes space weather for the whole solar system.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
