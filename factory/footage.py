@@ -337,21 +337,32 @@ def commons_get(params):
     return {}
 
 
+_download_lock = threading.Lock()
+
+
 def download(url, path, maximum):
-    """Stream a file to disk with our User-Agent (the hosts that refuse ffmpeg's requests accept this)."""
+    """Stream a file to disk with our User-Agent, one at a time with a pause
+    (Wikimedia throttles bulk downloads from shared runners; a 429 is retried once)."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with requests.get(url, stream=True, timeout=(15, 120), headers=HEADERS) as response:
-        response.raise_for_status()
-        if int(response.headers.get("Content-Length", "0") or 0) > maximum:
-            raise ValueError("file too large")
-        size = 0
-        with path.open("wb") as handle:
-            for chunk in response.iter_content(1 << 16):
-                handle.write(chunk)
-                size += len(chunk)
-                if size > maximum:
+    with _download_lock:
+        for attempt in range(2):
+            with requests.get(url, stream=True, timeout=(15, 180), headers=HEADERS) as response:
+                if response.status_code == 429 and attempt == 0:
+                    time.sleep(25)
+                    continue
+                response.raise_for_status()
+                if int(response.headers.get("Content-Length", "0") or 0) > maximum:
                     raise ValueError("file too large")
-    return path
+                size = 0
+                with path.open("wb") as handle:
+                    for chunk in response.iter_content(1 << 16):
+                        handle.write(chunk)
+                        size += len(chunk)
+                        if size > maximum:
+                            raise ValueError("file too large")
+            time.sleep(2.0)
+            return path
+    raise ValueError("download refused (429)")
 
 
 def commons_renditions(asset):
@@ -730,8 +741,10 @@ def candidates_for(topic):
             add(esa_search(site, query))
     if topic.get("sdo"):
         add(sdo_candidates(topic["sdo"][:2]))
+    commons_rows = []
     for query in topic.get("commons", [])[:2]:
-        add(commons_search(query))
+        commons_rows += commons_search(query)
+    add(commons_rows[:5])  # Wikimedia throttles bulk downloads; a few strong hits are enough
     return rows
 
 
