@@ -258,29 +258,58 @@ class ShotReader:
         self.buffer = []
         width, height = int(shot["width"]), int(shot["height"])
         focus = shot.get("focus", (0.5, 0.5))
-        cw, ch, cx, cy = crop_window(width, height, focus, shot.get("active"))
+        active = shot.get("active")
+        cw, ch, cx, cy = crop_window(width, height, focus, active)
         fx = (focus[0] * width - cx) / cw  # focus inside the crop, as fractions
         fy = (focus[1] * height - cy) / ch
         speed = float(shot.get("speed", 1.0))
         length = (shot["src_out"] - shot["src_in"]) / speed + 0.5
-        filters = [f"crop={cw}:{ch}:{cx}:{cy}", f"scale={W}:{H}:flags=lanczos"]
-        if abs(speed - 1.0) > 0.01:
-            filters.append(f"setpts=PTS/{speed:.4f}")
+        crop_width = float(shot.get("crop_width", 0.32) or 0.32)
+        wide = crop_width > 0.36
+        grade_filters = []
         if grade:
-            if H / max(1, ch) > 1.25:
+            if not wide and H / max(1, ch) > 1.25:
                 # an upscaled 1080p source gets a little acutance back
-                filters.append("unsharp=5:5:0.45:3:3:0.0")
-            filters += ["eq=contrast=1.07:saturation=1.08:gamma=0.98", "noise=alls=4:allf=t+u"]
-        filters.append(f"fps={FPS}")
+                grade_filters.append("unsharp=5:5:0.45:3:3:0.0")
+            grade_filters += ["eq=contrast=1.07:saturation=1.08:gamma=0.98", "noise=alls=4:allf=t+u"]
         z0, z1 = shot.get("zoom", (1.0, 1.06))
+        if wide:
+            z0, z1 = 1.0 + (z0 - 1.0) * 0.5, 1.0 + (z1 - 1.0) * 0.5
+        zoom_filter = ""
         if abs(z1 - z0) > 0.001 or abs(z0 - 1.0) > 0.001:
             n = max(1, frames_needed - 1)
             zoom = f"{z0:.4f}+({z1 - z0:.4f})*(0.5-0.5*cos(PI*min(1,on/{n})))"
-            filters.append(f"zoompan=z='{zoom}':x='min(max(0,{fx:.4f}*iw-iw/zoom/2),iw-iw/zoom)':"
-                           f"y='min(max(0,{fy:.4f}*ih-ih/zoom/2),ih-ih/zoom)':d=1:s={W}x{H}:fps={FPS}")
+            zx, zy = (0.5, 0.5) if wide else (fx, fy)
+            zoom_filter = (f"zoompan=z='{zoom}':x='min(max(0,{zx:.4f}*iw-iw/zoom/2),iw-iw/zoom)':"
+                           f"y='min(max(0,{zy:.4f}*ih-ih/zoom/2),ih-ih/zoom)':d=1:s={W}x{H}:fps={FPS}")
+        speed_filter = [f"setpts=PTS/{speed:.4f}"] if abs(speed - 1.0) > 0.01 else []
+        if not wide:
+            filters = [f"crop={cw}:{ch}:{cx}:{cy}", f"scale={W}:{H}:flags=lanczos", *speed_filter, *grade_filters, f"fps={FPS}"]
+            if zoom_filter:
+                filters.append(zoom_filter)
+            graph = ["-vf", ",".join(filters)]
+        else:
+            # the composition needs width: the region sits over a blurred, darkened fill of the same frame
+            ax, ay, aw, ah = active if active else (0, 0, width, height)
+            rw = int(min(aw, aw * crop_width))
+            rh = int(min(ah, rw * 16 / 9))
+            rw -= rw % 2
+            rh -= rh % 2
+            rx = int(max(ax, min(ax + aw - rw, focus[0] * width - rw / 2)))
+            ry = int(max(ay, min(ay + ah - rh, focus[1] * height - rh / 2)))
+            fg_h = int(H * 0.5) if rw / rh < 0.9 else -2  # tall regions are capped, wide ones keep their aspect
+            fg_scale = f"scale={W}:-2" if fg_h == -2 else f"scale=-2:{min(H - 160, int(W * rh / rw))}"
+            chain = (f"[0:v]{','.join(speed_filter) + ',' if speed_filter else ''}split=2[bg][fg];"
+                     f"[bg]crop={cw}:{ch}:{cx}:{cy},scale={W}:{H}:flags=bicubic,boxblur=luma_radius=28:luma_power=2:chroma_radius=14,"
+                     f"eq=brightness=-0.28:saturation=0.75[bgs];"
+                     f"[fg]crop={rw}:{rh}:{rx}:{ry},{fg_scale}:flags=lanczos[fgs];"
+                     f"[bgs][fgs]overlay=(W-w)/2:(H-h)/2:format=auto,{','.join(grade_filters) + ',' if grade_filters else ''}fps={FPS}"
+                     + (f",{zoom_filter}" if zoom_filter else "") + "[out]")
+            graph = ["-filter_complex", chain, "-map", "[out]"]
+        self.graph = graph
         self.process = subprocess.Popen(
             ["ffmpeg", "-v", "error", "-nostdin", "-ss", f"{shot['src_in']:.3f}", "-i", str(shot["file"]), "-t", f"{length:.3f}",
-             "-vf", ",".join(filters), "-frames:v", str(frames_needed + 2), "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+             *graph, "-frames:v", str(frames_needed + 2), "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, bufsize=W * H * 3 * 4)
 
     def _raw(self):

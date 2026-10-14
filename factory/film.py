@@ -96,8 +96,11 @@ Rules of the voice: calm, precise, concrete, present tense for what is on screen
 "Watch the…") in at least four beats; one idea per beat; every number comes from the facts; no hype words
 (incredible, mind-blowing, unbelievable), no "imagine", no "welcome", no "in this video", no questions to the viewer, no lists.
 Beat 1 is the hook: the most surprising true statement, said plainly. The middle builds understanding. The last beat delivers
-a payoff that makes the hook land. Then a closing line (max 14 words) that invites a rewatch or a comment, calm, not salesy.
-Use each clip at most twice and prefer the clips marked "footage" for the hook; a clip's beat must not be longer than its usable length.
+a payoff that makes the hook land. Then a closing line (max 12 words) shown on screen in silence: a resonant fact or image that
+lingers (e.g. "The next crew will fly this same path." / "It is still falling, 50 years later.") — never an instruction to the
+viewer: no share, comment, like, follow, subscribe, reflect, thoughts, below.
+Use each clip at most twice, never in two consecutive beats, and vary the views (do not string together beats that show the same
+thing); prefer the clips marked "footage" for the hook; a clip's beat must not be longer than its usable length.
 Labels: a short on-screen tag per beat, 2–5 words, like "NASA · JUNO · 2017" (mission/instrument + year when known).
 Total narration 130 to 185 words.
 
@@ -147,8 +150,9 @@ def validate_script(data, topic, clips):
         hook = topic["title"]
     title = re.sub(r"\s+", " ", str(data.get("youtube_title") or "")).strip()[:70] or topic["title"]
     closing = re.sub(r"\s+", " ", str(data.get("closing") or "")).strip()
-    if words_of(closing) > 16 or len(closing) < 8:
-        closing = "Real footage. Follow for the next one."
+    salesy = re.search(r"\b(share|comment|like|follow|subscribe|reflect|thoughts|below|tell us|let us know)\b", closing, flags=re.I)
+    if words_of(closing) > 14 or len(closing) < 8 or salesy:
+        closing = topic.get("closing") or f"{topic['title'].rstrip('.')}. Real footage."
     description = re.sub(r"\s+", " ", str(data.get("description") or "")).strip()[:500] or topic["subject"].capitalize() + "."
     return {"hook": hook, "youtube_title": title, "description": description, "beats": beats, "closing": closing}
 
@@ -202,7 +206,8 @@ def build_timeline(script, clips, starts, duration):
                 use_count[(source["id"], best)] = use_count.get((source["id"], best), 0) + 1
                 shots.append({"beat": index, "clip": source["id"], "asset": source["asset"], "file": source["file"], "width": source["width"],
                               "height": source["height"], "src_in": round(src_in, 3), "src_out": round(src_out, 3), "speed": round(speed, 3),
-                              "focus": tuple(source["focus"]), "active": source.get("active"), "zoom": (1.0, 1.06) if len(shots) % 2 == 0 else (1.06, 1.0),
+                              "focus": tuple(source["focus"]), "active": source.get("active"), "crop_width": source.get("crop_width", 0.32),
+                              "zoom": (1.0, 1.06) if len(shots) % 2 == 0 else (1.06, 1.0),
                               "t0": round(t0 + placed, 3), "t1": round(t0 + placed + shot_len, 3), "label": beat["label"] if first else "",
                               "callout": beat["callout"] if first else None, "kind": source["kind"]})
                 placed += shot_len

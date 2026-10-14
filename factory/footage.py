@@ -28,6 +28,7 @@ import json
 import re
 import shutil
 import subprocess
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -58,7 +59,8 @@ SKIP_TITLE = ("interview", "briefing", "press conference", "news conference", "b
               "nasa explorers", "talks", "chat", "conversation", "hubblecast", "webb cast", "commentary", "coverage",
               "science live", "calendar", "valentine", "infographic", "challenge", "mission overview", "what's up")
 SVS_TYPES = {"Visualization": 0, "Animation": 1, "Produced Video": 2}
-MAX_ASSET_SECONDS = 15 * 60
+MAX_ASSET_SECONDS = 45 * 60
+COMMONS_MAX_BYTES = 450_000_000
 MIN_ASSET_SECONDS = 6
 MAX_PIXELS = 4096 * 2304
 OCR_WORD = re.compile(r"^[A-Za-z][A-Za-z'’-]{2,}[.,!?:;]*$")
@@ -179,11 +181,8 @@ def sdo_candidates(dates):
 def commons_search(query, count=10):
     """Wikimedia Commons videos; licence is checked when the asset is resolved."""
     try:
-        response = requests.get(COMMONS_API, params={"action": "query", "list": "search", "srsearch": f"{query} filetype:video",
-                                                     "srnamespace": 6, "srlimit": count, "format": "json"},
-                                timeout=(10, 30), headers=HEADERS)
-        response.raise_for_status()
-        hits = response.json().get("query", {}).get("search", [])
+        hits = commons_get({"action": "query", "list": "search", "srsearch": f"{query} filetype:video",
+                            "srnamespace": 6, "srlimit": count, "format": "json"}).get("query", {}).get("search", [])
     except Exception as error:  # noqa: BLE001
         print(f"Commons araması ({query}): {type(error).__name__}: {str(error)[:80]}", flush=True)
         return []
@@ -321,11 +320,44 @@ def sdo_renditions(asset):
     return [{"url": url, "width": 1024, "height": 1024, "tag": "orig"}], None
 
 
+_commons_lock = threading.Lock()
+
+
+def commons_get(params):
+    """One Commons API call at a time, with a pause and one retry on 429."""
+    with _commons_lock:
+        for attempt in range(2):
+            response = requests.get(COMMONS_API, params=params, timeout=(10, 40), headers=HEADERS)
+            if response.status_code == 429 and attempt == 0:
+                time.sleep(6)
+                continue
+            response.raise_for_status()
+            time.sleep(1.0)
+            return response.json()
+    return {}
+
+
+def download(url, path, maximum):
+    """Stream a file to disk with our User-Agent (the hosts that refuse ffmpeg's requests accept this)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with requests.get(url, stream=True, timeout=(15, 120), headers=HEADERS) as response:
+        response.raise_for_status()
+        if int(response.headers.get("Content-Length", "0") or 0) > maximum:
+            raise ValueError("file too large")
+        size = 0
+        with path.open("wb") as handle:
+            for chunk in response.iter_content(1 << 16):
+                handle.write(chunk)
+                size += len(chunk)
+                if size > maximum:
+                    raise ValueError("file too large")
+    return path
+
+
 def commons_renditions(asset):
-    response = requests.get(COMMONS_API, params={"action": "query", "titles": asset["commons_title"], "prop": "videoinfo",
-                                                 "viprop": "url|size|derivatives|extmetadata|mediatype", "format": "json"},
-                            timeout=(10, 40), headers=HEADERS)
-    response.raise_for_status()
+    data = commons_get({"action": "query", "titles": asset["commons_title"], "prop": "videoinfo",
+                        "viprop": "url|size|derivatives|extmetadata|mediatype", "format": "json"})
+    pages = data.get("query", {}).get("pages", {})
     pages = response.json().get("query", {}).get("pages", {})
     info = next((p.get("videoinfo", [{}])[0] for p in pages.values() if p.get("videoinfo")), None)
     if not info or info.get("mediatype") != "VIDEO":
@@ -380,13 +412,24 @@ RESOLVERS = {"nasa": nasa_renditions, "svs": svs_renditions, "hubble": esa_rendi
              "sdo": sdo_renditions, "commons": commons_renditions}
 
 
-def resolve(asset):
-    """Fill renditions, pick the best (≤4K) and a small one for sampling; probe the best."""
+def resolve(asset, directory=None):
+    """Fill renditions, pick the best (≤4K) and a small one for sampling; probe the best.
+    Commons files are downloaded whole (Wikimedia refuses ffmpeg's piecemeal requests)."""
     renditions, small = RESOLVERS[asset["source"]](asset)
     if not renditions:
         raise ValueError("no usable rendition")
     best = renditions[0]
     small = small or best
+    if asset["source"] == "commons" and directory is not None:
+        folder = Path(directory) / "downloads"
+        local_best = download(best["url"], folder / (re.sub(r"[^a-z0-9]+", "_", asset["id"].casefold())[:50] + "_best" + Path(best["url"].split("?")[0]).suffix), COMMONS_MAX_BYTES)
+        local_small = local_best
+        if small["url"] != best["url"]:
+            try:
+                local_small = download(small["url"], folder / (re.sub(r"[^a-z0-9]+", "_", asset["id"].casefold())[:50] + "_small" + Path(small["url"].split("?")[0]).suffix), 120_000_000)
+            except Exception:  # noqa: BLE001
+                local_small = local_best
+        best, small = {**best, "url": str(local_best)}, {**small, "url": str(local_small)}
     info = probe(best["url"])
     if info["duration"] <= 0:
         raise ValueError("no duration")
@@ -442,7 +485,7 @@ def has_text(path):
 def sample(asset, directory, workers=4):
     """Evenly spaced frames across the small rendition (seeks only fetch what they need), each OCR-checked."""
     duration = asset["duration"]
-    count = max(8, min(16, int(round(duration / 6))))
+    count = max(8, min(24, int(round(duration / 6))))
     times = sample_times(duration, count)
     directory.mkdir(parents=True, exist_ok=True)
     frames = [None] * count
@@ -530,12 +573,14 @@ Then decide which stretches are usable as full-screen footage on a phone. A stre
 - is not a black/white blank, not a multi-panel collage, not a blurry or tiny inset.
 Group consecutive usable frames into stretches (start index, end index, inclusive). Prefer the most striking, cinematic imagery.
 For each stretch give the focus point of the main subject as fractions [x, y] of the frame (0..1, from top-left) — the vertical
-crop will be centred there — and say in a few words what is on screen.
+crop will be centred there — and the fraction of the frame WIDTH the composition needs: 0.32 when a phone-shaped slice around the
+focus shows the subject well (most cases), larger (up to 1.0) when the meaning needs the width (a spacecraft on one side and a planet
+on the other, a long horizon, a wide panorama); say in a few words what is on screen.
 Also classify the imagery: "footage" (a real camera or telescope image sequence), "visualization" (rendered from real data, e.g. a
 flyover built from spacecraft measurements) or "animation" (an artist's render of hardware or events).
 Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": "footage"|"visualization"|"animation",
 "what": "one line: what this video shows", "text_frames": [indices with any on-screen text], "people_frames": [indices with people],
-"stretches": [{{"start": <index>, "end": <index>, "focus": [x, y], "shows": "...", "score": 1-10 for sharpness and beauty}}]}}."""
+"stretches": [{{"start": <index>, "end": <index>, "focus": [x, y], "width": 0.32-1.0, "shows": "...", "score": 1-10 for sharpness and beauty}}]}}."""
     data = api.json(f"Görüntü değerlendirme {asset['id']}", prompt, images=[("contact sheet", sheet)])
     excluded = set(flagged)
     for key in ("text_frames", "people_frames"):
@@ -561,6 +606,10 @@ Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": 
             score = 7
         if score < 5:
             continue
+        try:
+            crop_width = min(1.0, max(0.32, float(row.get("width") or 0.32)))
+        except (TypeError, ValueError):
+            crop_width = 0.32
         # split the stretch around excluded frames
         run = []
         for index in list(range(a, b + 1)) + [None]:
@@ -568,7 +617,7 @@ Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": 
                 run.append(index)
                 continue
             if run:
-                stretches.append({"start": run[0], "end": run[-1], "focus": [fx, fy], "shows": clean(row.get("shows"))[:120], "score": score})
+                stretches.append({"start": run[0], "end": run[-1], "focus": [fx, fy], "width": crop_width, "shows": clean(row.get("shows"))[:120], "score": score})
             run = []
     kind = str(data.get("kind") or "footage").casefold()
     kind = kind if kind in ("footage", "visualization", "animation") else "footage"
@@ -700,7 +749,7 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
     log(f"Sıralanan aday: {len(ranked)}")
     resolved = []
     with ThreadPoolExecutor(max_workers=5) as pool:
-        jobs = {pool.submit(resolve, dict(asset)): asset for asset in ranked}
+        jobs = {pool.submit(resolve, dict(asset), root): asset for asset in ranked}
         for job in as_completed(jobs):
             asset = jobs[job]
             try:
@@ -765,7 +814,7 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
                           "date": asset.get("date", ""), "credit": asset.get("credit", ""), "licence": asset.get("licence", ""),
                           "page_url": asset.get("page_url", ""), "file": str(clip_path), "source_start": start,
                           "duration": analysis["duration"], "width": analysis["width"], "height": analysis["height"], "fps": analysis["fps"],
-                          "windows": usable, "focus": stretch["focus"], "shows": stretch["shows"] or verdict["what"], "active": analysis["active"],
+                          "windows": usable, "focus": stretch["focus"], "crop_width": stretch.get("width", 0.32), "shows": stretch["shows"] or verdict["what"], "active": analysis["active"],
                           "quality": min(verdict["quality"], stretch.get("score", verdict["quality"])), "kind": verdict["kind"], "what": verdict["what"]})
             taken += 1
     (root / "judged.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidates],
