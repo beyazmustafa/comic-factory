@@ -3236,5 +3236,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "lWMgR1qYEfw",
+    "platform": "youtube",
+    "run_id": "38646240102",
+    "published_at": "2026-10-14T22:29:28+00:00",
+    "event": {
+      "title": "Twenty-five seconds of fuel.",
+      "series": "NASA footage",
+      "issue": "apollo-11",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 151,
+      "duration": 63.9,
+      "words_per_minute": 142,
+      "hook": "The first landing on the Moon almost ended in an abort, with only twenty-five seconds of fuel left.",
+      "hook_words": 18,
+      "title": "Apollo 11: The Near-Abort Moon Landing",
+      "title_length": 38,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

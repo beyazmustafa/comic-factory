@@ -1,0 +1,167 @@
+{
+  "title": "Apollo 11: The Near-Abort Moon Landing",
+  "description": "In July 1969 the Eagle touched down with only twenty-five seconds of fuel left. This short film recounts the critical moments of the Apollo 11 moonwalk.",
+  "hook_card": "Twenty-five seconds of fuel.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c04",
+      "narration": "The first landing on the Moon almost ended in an abort, with only twenty-five seconds of fuel left.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c03",
+      "narration": "Here the Eagle descends toward a boulder-strewn plain, while the guidance computer flashes 1202 alarms.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "Watch the ladder as Neil Armstrong steps onto the Moon, taking manual control to avoid the crater.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c01",
+      "narration": "This close view shows Armstrong's gloved hand gripping the rail, a moment captured for 600 million viewers.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "Here Buzz Aldrin follows, and together they spend two and a half hours collecting 21.5 kilograms of rock.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c02",
+      "narration": "This scene shows the crew placing experiments, while the Moon lies 384,400 kilometers away from Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "Watch the second descent as Aldrin steps onto the dust, confirming the mission after the near-abort.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c04",
+      "narration": "Now the world knows twelve people have walked this surface, a legacy begun by that fragile landing.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "Here the Eagle rests, a silent reminder of the three-day journey that brought humanity to the Moon.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "The first landing on the Moon almost ended in an abort, with only twenty-five seconds of fuel left. Here the Eagle descends toward a boulder-strewn plain, while the guidance computer flashes 1202 alarms. Watch the ladder as Neil Armstrong steps onto the Moon, taking manual control to avoid the crater. This close view shows Armstrong's gloved hand gripping the rail, a moment captured for 600 million viewers. Here Buzz Aldrin follows, and together they spend two and a half hours collecting 21.5 kilograms of rock. This scene shows the crew placing experiments, while the Moon lies 384,400 kilometers away from Earth. Watch the second descent as Aldrin steps onto the dust, confirming the mission after the near-abort. Now the world knows twelve people have walked this surface, a legacy begun by that fragile landing. Here the Eagle rests, a silent reminder of the three-day journey that brought humanity to the Moon.",
+  "event": {
+    "id": "film_apollo-11_20261014T221518417530Z",
+    "title": "Twenty-five seconds of fuel.",
+    "series": "NASA footage",
+    "issue": "apollo-11",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "apollo-11",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/Apollo_11_Intro_720p",
+      "https://images.nasa.gov/details/Apollo_11_moonwalk_montage_720p",
+      "https://images.nasa.gov/details/Buzz_Descends_Comparison__720p",
+      "https://images.nasa.gov/details/KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560"
+    ]
+  },
+  "scenario": "apollo-11",
+  "beats": [
+    {
+      "clip": "c04",
+      "narration": "The first landing on the Moon almost ended in an abort, with only twenty-five seconds of fuel left.",
+      "label": "NASA · Apollo 11 · 1969",
+      "callout": {
+        "value": "25 s",
+        "label": "of fuel left"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "Here the Eagle descends toward a boulder-strewn plain, while the guidance computer flashes 1202 alarms.",
+      "label": "Apollo 11 · Descent · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Watch the ladder as Neil Armstrong steps onto the Moon, taking manual control to avoid the crater.",
+      "label": "Neil Armstrong · EVA · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "This close view shows Armstrong's gloved hand gripping the rail, a moment captured for 600 million viewers.",
+      "label": "Apollo 11 · Broadcast · 1969",
+      "callout": {
+        "value": "600 million",
+        "label": "people watching"
+      }
+    },
+    {
+      "clip": "c05",
+      "narration": "Here Buzz Aldrin follows, and together they spend two and a half hours collecting 21.5 kilograms of rock.",
+      "label": "Buzz Aldrin · EVA · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "This scene shows the crew placing experiments, while the Moon lies 384,400 kilometers away from Earth.",
+      "label": "Apollo 11 · Science · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Watch the second descent as Aldrin steps onto the dust, confirming the mission after the near-abort.",
+      "label": "Buzz Aldrin · First Steps · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Now the world knows twelve people have walked this surface, a legacy begun by that fragile landing.",
+      "label": "Apollo 11 · Legacy · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Here the Eagle rests, a silent reminder of the three-day journey that brought humanity to the Moon.",
+      "label": "Eagle · Resting · 1969",
+      "callout": null
+    }
+  ],
+  "closing": "The Moon still watches, unchanged since 1969.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -1,6 +1,6 @@
-run_id: 38642938580  attempt: 1  event: workflow_dispatch
+run_id: 38646240102  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261014T214832982408Z/run.json
+--- data/runs/20261014T221518417530Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,37 +40,36 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38642938580",
+  "run_id": "38646240102",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "cd65fba8559635f873e5614ca55749fa2ced15d7bde025ce28581964c85a444f",
-  "metadata_sha256": "c1e519bb5a5f8e8e6e532204be7542b2e31a9b31209f4ed16c709edf4e04b269",
+  "video_sha256": "bf94ba2cec4452673bc9a896a6d08ba5e814484e5fe6420363622d66ed4c45e4",
+  "metadata_sha256": "c8c0e49fffe1e378aab0dd8b5a7eaab83b9aeb01a3fbbac34fbf603cb2843eeb",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 60,
-  "duration": 63.11999999999999,
+  "api_calls": 58,
+  "duration": 63.919999999999995,
   "voice": "Charon",
   "event": {
-    "id": "film_artemis-1_20261014T214832982408Z",
-    "title": "Farther than Apollo.",
+    "id": "film_apollo-11_20261014T221518417530Z",
+    "title": "Twenty-five seconds of fuel.",
     "series": "NASA footage",
-    "issue": "artemis-1",
+    "issue": "apollo-11",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "artemis-1",
+    "scenario": "apollo-11",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
-      "https://images.nasa.gov/details/Flight Day 14",
-      "https://images.nasa.gov/details/KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595",
-      "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
-      "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+      "https://images.nasa.gov/details/Apollo_11_Intro_720p",
+      "https://images.nasa.gov/details/Apollo_11_moonwalk_montage_720p",
+      "https://images.nasa.gov/details/Buzz_Descends_Comparison__720p",
+      "https://images.nasa.gov/details/KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560"
     ]
   },
   "localized": []
 }
---- data/runs/20261014T214832982408Z/diagnostics/provider_events.json
+--- data/runs/20261014T221518417530Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -78,16 +77,17 @@ produce step outcome: success
   "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
+  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261014T214832982408Z/diagnostics/providers.json
+--- data/runs/20261014T221518417530Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -110,9 +110,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,107 +209,88 @@ produce step outcome: success
 --- studio.log (son 300 satır)
 → Konu: juno-jupiter
 Görüntü adayları: 54 (juno-jupiter)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
-Çözümlenemedi commons:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm: ValueError: ffprobe: wikimedia.org/wikipedia/commons/9/97/Jupiter_-_PJ7_-_Great_Red_Spot_Flyover_%2846
-Çözümlenemedi commons:Jupiter - Perijove 22 (48898282817).webm: ValueError: ffprobe: https://upload.wikimedia.org/wikipedia/commons/4/4c/Jupiter_-_Perijove_22_%284889
-Çözümlenemedi commons:Juno flyby of Jupiter, Perijove 16 (PIA22906).webm: ValueError: ffprobe: load.wikimedia.org/wikipedia/commons/3/31/Juno_flyby_of_Jupiter%2C_Perijove_16_%2
-Çözümlenemedi commons:Jupiter - PJ9-81 - Flyover (46306916355).webm: ValueError: ffprobe: ps://upload.wikimedia.org/wikipedia/commons/b/bf/Jupiter_-_PJ9-81_-_Flyover_%2846
-Çözümlenemedi commons:Jupiter - PJ9-82 - Flyover (46497896404).webm: ValueError: ffprobe: ps://upload.wikimedia.org/wikipedia/commons/d/db/Jupiter_-_PJ9-82_-_Flyover_%2846
-Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM (close-up).webm: ValueError: ffprobe: imedia.org/wikipedia/commons/0/05/Jupiter_North_Pole_Infrared_Flyover_by_JIRAM_%2
-Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM.webm: ValueError: ffprobe: ps://upload.wikimedia.org/wikipedia/commons/6/61/Jupiter_North_Pole_Infrared_Flyo
-Çözümlenemedi commons:PIA23807-PlanetJupiter-FlyOver-Animation-20200602.webm: ValueError: ffprobe: upload.wikimedia.org/wikipedia/commons/f/f2/PIA23807-PlanetJupiter-FlyOver-Animat
-Çözümlenemedi commons:Juno - JunoCam.webm: HTTPError: 429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?actio
+Çözümlenemedi commons:Juno flyby of Jupiter, Perijove 16 (PIA22906).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter - Perijove 20 Flyover (48926361292).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter - PJ9-81 - Flyover (46306916355).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter - PJ9-82 - Flyover (46497896404).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter - Perijove 22 (48898282817).webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter Perijove-08 Animation Derived from JunoCam Images.webm: NameError: name 'response' is not defined
 Çözümlenemedi svs:12367: ValueError: no usable rendition
-Çözümlenen video: 2
-Değerlendirilemedi commons:Jupiter - Perijove 20 Flyover (48926361292).webm: ValueError: too few frames (0/10): m.
-Error opening input files: Server returned 4XX Client Error, but
-Değerlendirilemedi commons:Jupiter Perijove-08 Animation Derived from JunoCam Images.webm: ValueError: too few frames (0/12): m.
-Error opening input files: Server returned 4XX Client Error, but
+Çözümlenemedi commons:PIA23807-PlanetJupiter-FlyOver-Animation-20200602.webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Juno - JunoCam.webm: HTTPError: 429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?actio
+Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM.webm: NameError: name 'response' is not defined
+Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM (close-up).webm: NameError: name 'response' is not defined
+Çözümlenen video: 0
 Kullanılır kesit: 0 (0 sn temiz görüntü)
 Konu atlandı (juno-jupiter): Yeterli temiz görüntü yok (0 kesit, 0 sn).
 → Konu: apollo-11
-Commons araması (Apollo 11 landing footage): HTTPError: 429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api
-Commons araması (Apollo 11 EVA): HTTPError: 429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api
-Görüntü adayları: 34 (apollo-11)
+Görüntü adayları: 40 (apollo-11)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
-Süre uygun değil nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: 2404 sn
-Süre uygun değil nasa:KSC-19940705-MH-NAS01-0001-Apollo_11_25th_Historical_Footage_and_Broll-B_0905: 2366 sn
+Çözümlenemedi commons:Restored Apollo 11 Moonwalk - Original NASA EVA Mission Video - Walking on the Moon.webm: NameError: name 'response' is not defined
 Süre uygun değil nasa:KSC-20090716-MH-NAS01-0001-Apollo_11_Restored_Moonwalk-HM_795: 3492 sn
+Düşük çözünürlük nasa:KSC-19940705-MH-NAS01-0001-Apollo_11_25th_Historical_Footage_and_Broll-B_0905: 720x480
 Süre uygun değil nasa:KSC-19690716-MH-NAS01-0001-The_Flight_of_Apollo_11_The_Eagle_Has_Landed_HS_from_Film_JSC-DVC_1928: 2820 sn
-Düşük çözünürlük nasa:ksc_080504_apollo: 320x212
-Süre uygun değil nasa:KSC-19850101-MH-NAS01-0001-Apollo_11_Buzz_Aldrin_Experts-B_2141: 2903 sn
-Çözümlenen video: 6
-nasa:Apollo_11_moonwalk_montage_720p: elendi (7/10, footage) Original black and white television broadcast footage of the Apollo 11
-nasa:Apollo_11_Intro_720p: kullanılır (7/10, footage) Archival footage of the Apollo 11 mission including the Saturn V launc
-nasa:Buzz_Descends_Comparison__720p: elendi (6/10, footage) Restored archival footage of Buzz Aldrin descending the Lunar Module l
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:Raising_The_American_Flag_Comparison_720p: elendi (6/10, footage) Neil Armstrong and Buzz Aldrin raise the American flag on the moon dur
-nasa:Apollo_11_Plaque_Comparison_720p: elendi (5/10, footage) Neil Armstrong reads the commemorative plaque on the Apollo 11 lunar m
-svs:5535: konu dışı (2/10, visualization) A map showing sunlit parts of the lunar surface visible to Apollo astr
-Kullanılır kesit: 3 (36 sn temiz görüntü)
-Konu atlandı (apollo-11): Yeterli temiz görüntü yok (3 kesit, 36 sn).
-→ Konu: artemis-1
-Görüntü adayları: 99 (artemis-1)
-Sıralanan aday: 12
-Süre uygun değil nasa:art001m1203451716: 1500 sn
-Süre uygun değil nasa:Artemis I FD15 Orion Moon: 6552 sn
-Süre uygun değil nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209: 1008 sn
-Süre uygun değil nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: 976 sn
-Çözümlenen video: 8
-nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022: kullanılır (8/10, footage) Orion spacecraft and the Moon during the Artemis I mission
-nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: kullanılır (8/10, footage) Orion capsule and Earth in the distance during the Artemis I mission
-nasa:Flight Day 14: kullanılır (8/10, footage) Orion spacecraft looking back at the Earth and the Moon during Artemis
-nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595: kullanılır (7/10, footage) Orion capsule's view of Earth and the Sun during the Artemis I mission
-nasa:Moon Below Orion art001m1013251756: kullanılır (7/10, footage) Orion spacecraft flying past the Moon with a crescent moon visible in 
-Kesitte temiz pencere yok nasa:Moon Below Orion art001m1013251756 138-162 (yazı: 0, kesme: 0)
-nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250: elendi (2/10, footage) Distant view of Earth as a tiny speck in space during the Artemis I mi
-nasa:ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B: kullanılır (8/10, footage) Orion captures Earthset behind the Moon
-Değerlendirilemedi commons:Artemis I Orion First Imagery of Earth (KSC-20221116-MH-NAS01-0001-Artemis I Orion First Imagery of Earth-3314595).webm: ValueError: too few frames (2/16): m.
-Error opening input files: Server returned 4XX Client Error, but
-Kullanılır kesit: 6 (146 sn temiz görüntü)
+Çözümlenemedi commons:MSC (PTL) - Apollo 11 TV Transmission at GET 109-22 to 114-25 - Moon Walk- Part 1 of 9.webm: NameError: name 'response' is not defined
+Çözümlenen video: 7
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:Apollo_11_moonwalk_montage_720p: kullanılır (8/10, footage) Archival footage of the Apollo 11 moonwalk, showing astronauts descend
+nasa:Apollo_11_Intro_720p: kullanılır (7/10, footage) Highlights from the Apollo 11 mission, from launch to lunar exploratio
+nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: kullanılır (8/10, footage) Apollo 11 historical archival footage covering launch, lunar descent, 
+nasa:Buzz_Descends_Comparison__720p: kullanılır (5/10, footage) Buzz Aldrin descending the lunar module ladder
+nasa:Raising_The_American_Flag_Comparison_720p: elendi (4/10, footage) Apollo 11 flag raising video comparison between NASA archive and resto
+nasa:Apollo_11_Plaque_Comparison_720p: elendi (3/10, footage) Neil Armstrong unveils the commemorative plaque on the Apollo 11 lunar
+svs:5535: konu dışı (3/10, visualization) A map showing sunlit lunar surface visibility for Apollo missions.
+Kullanılır kesit: 7 (141 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 96.8/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 97.1/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 90.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
 Ses bölümü 4, deneme 1
+Ses eşleştirme: 97.0/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (63.1 sn, 10 beat, 6 kesit)
-  kurgu 10/63 sn
-  kurgu 20/63 sn
-  kurgu 30/63 sn
-  kurgu 40/63 sn
-  kurgu 50/63 sn
-  kurgu 60/63 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T214832982408Z/review.html
+→ Kurgu (63.9 sn, 9 beat, 7 kesit)
+  kurgu 10/64 sn
+  kurgu 20/64 sn
+  kurgu 30/64 sn
+  kurgu 40/64 sn
+  kurgu 50/64 sn
+  kurgu 60/64 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T221518417530Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Artemis I Orion’s Moon Flyby – 2022 Mission Overview #Shorts
+Başlık: Apollo 11: The Near-Abort Moon Landing #Shorts
 Görünürlük: unlisted
 
-Yükleme: %15
-Yükleme: %31
-Yükleme: %46
-Yükleme: %62
-Yükleme: %77
-Yükleme: %93
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TYxWR9zrmUI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %12
+Yükleme: %24
+Yükleme: %36
+Yükleme: %49
+Yükleme: %61
+Yükleme: %73
+Yükleme: %86
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=lWMgR1qYEfw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
