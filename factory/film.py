@@ -105,8 +105,12 @@ thing); prefer the clips marked "footage" for the hook; a clip's beat must not b
 Labels: a short on-screen tag per beat, 2–5 words, like "NASA · JUNO · 2017" (mission/instrument + year when known).
 Total narration 130 to 185 words.
 
+Write numbers the way the narrator should say them: units in full words (kilometres, degrees, terabytes), no abbreviations
+except °C; never "km/h" or "TB" in the narration.
+
 Return JSON:
-{{"hook": "on-screen hook, max 7 words", "youtube_title": "max 60 characters, specific, no clickbait punctuation",
+{{"hook": "on-screen hook, max 7 words", "youtube_title": "max 60 characters: one specific, curiosity-driving line written like a
+documentary title (e.g. 'The Sun, photographed every 12 seconds for 15 years'), no colon lists, no clickbait punctuation",
 "description": "two sentences for the video description",
 "beats": [{{"clip": "c00", "narration": "...", "label": "NASA · MISSION · YEAR", "callout": <index or null>}}],
 "closing": "..."}}"""

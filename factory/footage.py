@@ -578,7 +578,7 @@ First decide relevance: the video must actually show {topic['subject']} (or its 
 different planet, mission or phenomenon is NOT relevant even if it is beautiful.
 Then decide which stretches are usable as full-screen footage on a phone. A stretch is usable only if EVERY sampled frame in it:
 - shows the subject or closely related real imagery (spacecraft/telescope footage, orbital views, science visualization),
-- has NO burned-in text, captions, subtitles, logos, title cards, charts, diagrams, slides or watermarks,
+- has NO burned-in text, captions, subtitles, logos, title cards, charts, diagrams, slides, grid or coordinate lines, arrows or watermarks,
 - has NO presenters, interviewees, studio or control-room scenes, hands, or people talking,
 - is not a black/white blank, not a multi-panel collage, not a blurry or tiny inset.
 Group consecutive usable frames into stretches (start index, end index, inclusive). Prefer the most striking, cinematic imagery.
