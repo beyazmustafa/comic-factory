@@ -230,17 +230,19 @@ def callout_layers(callout):
 
 
 # ------------------------------------------------------------- decoding
-def crop_window(width, height, focus):
-    """9:16 window inside the source around the focus point (fractions)."""
-    ch = min(height, int(width * 16 / 9))
+def crop_window(width, height, focus, active=None):
+    """9:16 window inside the source around the focus point (fractions of the
+    full frame); `active` = (x, y, w, h) keeps the window off letterbox bars."""
+    ax, ay, aw, ah = active if active else (0, 0, width, height)
+    ch = min(ah, int(aw * 16 / 9))
     cw = int(ch * 9 / 16)
     cw -= cw % 2
     ch -= ch % 2
     fx, fy = focus
     cx = int(round(fx * width - cw / 2))
     cy = int(round(fy * height - ch / 2))
-    cx = max(0, min(width - cw, cx))
-    cy = max(0, min(height - ch, cy))
+    cx = max(ax, min(ax + aw - cw, cx))
+    cy = max(ay, min(ay + ah - ch, cy))
     return cw, ch, cx, cy
 
 
@@ -256,7 +258,7 @@ class ShotReader:
         self.buffer = []
         width, height = int(shot["width"]), int(shot["height"])
         focus = shot.get("focus", (0.5, 0.5))
-        cw, ch, cx, cy = crop_window(width, height, focus)
+        cw, ch, cx, cy = crop_window(width, height, focus, shot.get("active"))
         fx = (focus[0] * width - cx) / cw  # focus inside the crop, as fractions
         fy = (focus[1] * height - cy) / ch
         speed = float(shot.get("speed", 1.0))

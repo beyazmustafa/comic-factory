@@ -198,7 +198,7 @@ def build_timeline(script, clips, starts, duration):
                 use_count[(source["id"], best)] = use_count.get((source["id"], best), 0) + 1
                 shots.append({"beat": index, "clip": source["id"], "asset": source["asset"], "file": source["file"], "width": source["width"],
                               "height": source["height"], "src_in": round(src_in, 3), "src_out": round(src_out, 3), "speed": round(speed, 3),
-                              "focus": tuple(source["focus"]), "zoom": (1.0, 1.06) if len(shots) % 2 == 0 else (1.06, 1.0),
+                              "focus": tuple(source["focus"]), "active": source.get("active"), "zoom": (1.0, 1.06) if len(shots) % 2 == 0 else (1.06, 1.0),
                               "t0": round(t0 + placed, 3), "t1": round(t0 + placed + shot_len, 3), "label": beat["label"] if first else "",
                               "callout": beat["callout"] if first else None, "kind": source["kind"]})
                 placed += shot_len
@@ -222,7 +222,7 @@ def build_timeline(script, clips, starts, duration):
 
 
 # ---------------------------------------------------------------- captions
-def captions(words, path, offset, family, size=36, group=5):
+def captions(words, path, offset, family, size=40, group=5):
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {cut.W}

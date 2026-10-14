@@ -342,12 +342,12 @@ def commons_renditions(asset):
     asset["date"] = clean((meta.get("DateTimeOriginal") or {}).get("value"))[:10]
     asset["description"] = asset.get("description") or clean(re.sub(r"<[^>]+>", " ", (meta.get("ImageDescription") or {}).get("value") or ""))[:400]
     renditions = []
-    original = {"url": info.get("url"), "width": int(info.get("width") or 0), "height": int(info.get("height") or 0), "tag": "orig"}
+    original = {"url": str(info.get("url") or "").split("?")[0], "width": int(info.get("width") or 0), "height": int(info.get("height") or 0), "tag": "orig"}
     if original["url"] and original["width"] * original["height"] <= MAX_PIXELS:
         renditions.append(original)
     for d in info.get("derivatives") or []:
-        src, width, height = d.get("src"), int(d.get("width") or 0), int(d.get("height") or 0)
-        if not src or not height or "webm" not in str(d.get("type", "")) and "mp4" not in str(d.get("type", "")):
+        src, width, height = str(d.get("src") or "").split("?")[0], int(d.get("width") or 0), int(d.get("height") or 0)
+        if not src or not height or not src.casefold().endswith((".webm", ".mp4")):
             continue
         if width * height <= MAX_PIXELS:
             renditions.append({"url": src, "width": width, "height": height, "tag": "orig" if height >= 1080 else "small"})
@@ -446,6 +446,7 @@ def sample(asset, directory, workers=4):
     times = sample_times(duration, count)
     directory.mkdir(parents=True, exist_ok=True)
     frames = [None] * count
+    failures = []
     with ThreadPoolExecutor(max_workers=workers) as pool:
         jobs = {pool.submit(grab_frame, asset["small"], t, directory / f"s{i:02}.jpg"): i for i, t in enumerate(times)}
         for job in as_completed(jobs):
@@ -453,10 +454,10 @@ def sample(asset, directory, workers=4):
             try:
                 frames[i] = (times[i], job.result())
             except Exception as error:  # noqa: BLE001
-                print(f"Kare alınamadı ({asset['id']} @{times[i]:.0f}s): {str(error)[:80]}", flush=True)
+                failures.append(str(error)[-90:])
     frames = [f for f in frames if f]
     if len(frames) < max(4, count // 2):
-        raise ValueError("too few frames")
+        raise ValueError(f"too few frames ({len(frames)}/{count}): {failures[0] if failures else ''}")
     with ThreadPoolExecutor(max_workers=2) as pool:
         flags = list(pool.map(lambda f: has_text(f[1]), frames))
     return frames, flags
@@ -534,7 +535,7 @@ Also classify the imagery: "footage" (a real camera or telescope image sequence)
 flyover built from spacecraft measurements) or "animation" (an artist's render of hardware or events).
 Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": "footage"|"visualization"|"animation",
 "what": "one line: what this video shows", "text_frames": [indices with any on-screen text], "people_frames": [indices with people],
-"stretches": [{{"start": <index>, "end": <index>, "focus": [x, y], "shows": "..."}}]}}."""
+"stretches": [{{"start": <index>, "end": <index>, "focus": [x, y], "shows": "...", "score": 1-10 for sharpness and beauty}}]}}."""
     data = api.json(f"Görüntü değerlendirme {asset['id']}", prompt, images=[("contact sheet", sheet)])
     excluded = set(flagged)
     for key in ("text_frames", "people_frames"):
@@ -554,6 +555,12 @@ Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": 
             fx, fy = (min(0.95, max(0.05, float(v))) for v in focus[:2])
         except (TypeError, ValueError):
             fx, fy = 0.5, 0.5
+        try:
+            score = int(row.get("score") or 7)
+        except (TypeError, ValueError):
+            score = 7
+        if score < 5:
+            continue
         # split the stretch around excluded frames
         run = []
         for index in list(range(a, b + 1)) + [None]:
@@ -561,7 +568,7 @@ Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": 
                 run.append(index)
                 continue
             if run:
-                stretches.append({"start": run[0], "end": run[-1], "focus": [fx, fy], "shows": clean(row.get("shows"))[:120]})
+                stretches.append({"start": run[0], "end": run[-1], "focus": [fx, fy], "shows": clean(row.get("shows"))[:120], "score": score})
             run = []
     kind = str(data.get("kind") or "footage").casefold()
     kind = kind if kind in ("footage", "visualization", "animation") else "footage"
@@ -611,6 +618,22 @@ def text_intervals(path, duration, step=1.0, pad=0.8):
     return intervals
 
 
+def active_area(path, width, height, duration):
+    """Letterbox/pillarbox bars → the picture's real rectangle (x, y, w, h), or None for a full frame."""
+    start = max(0.0, min(duration - 2.0, duration * 0.3))
+    result = subprocess.run(["ffmpeg", "-v", "info", "-ss", f"{start:.2f}", "-i", str(path), "-t", "2.5", "-vf", "cropdetect=24:4:0",
+                             "-an", "-f", "null", "-"], capture_output=True, text=True, timeout=300)
+    found = re.findall(r"crop=(\d+):(\d+):(\d+):(\d+)", result.stderr or "")
+    if not found:
+        return None
+    w, h, x, y = (int(v) for v in found[-1])
+    if w < width * 0.5 or h < height * 0.5:
+        return None  # a mostly dark frame, not bars
+    if w >= width * 0.96 and h >= height * 0.96:
+        return None
+    return [x, y, w, h]
+
+
 def analyse(path):
     """Hard cuts, black stretches and on-screen text inside a local clip, plus its real duration/size."""
     info = probe(str(path), timeout=60)
@@ -627,6 +650,7 @@ def analyse(path):
         blocked.append((float(match.group(1)), float(match.group(2))))
     text = text_intervals(path, duration)
     blocked += text
+    active = active_area(path, info["width"], info["height"], duration)
     edges = sorted({0.0, duration, *cuts, *[b for pair in blocked for b in pair]})
     windows = []
     for a, b in zip(edges, edges[1:]):
@@ -636,7 +660,7 @@ def analyse(path):
             continue
         windows.append((round(a, 2), round(b, 2)))
     return {"duration": duration, "width": info["width"], "height": info["height"], "fps": info["fps"], "cuts": cuts,
-            "black": blocked, "text": text, "windows": windows}
+            "black": blocked, "text": text, "windows": windows, "active": active}
 
 
 # ------------------------------------------------------------------ driver
@@ -741,8 +765,8 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
                           "date": asset.get("date", ""), "credit": asset.get("credit", ""), "licence": asset.get("licence", ""),
                           "page_url": asset.get("page_url", ""), "file": str(clip_path), "source_start": start,
                           "duration": analysis["duration"], "width": analysis["width"], "height": analysis["height"], "fps": analysis["fps"],
-                          "windows": usable, "focus": stretch["focus"], "shows": stretch["shows"] or verdict["what"],
-                          "quality": verdict["quality"], "kind": verdict["kind"], "what": verdict["what"]})
+                          "windows": usable, "focus": stretch["focus"], "shows": stretch["shows"] or verdict["what"], "active": analysis["active"],
+                          "quality": min(verdict["quality"], stretch.get("score", verdict["quality"])), "kind": verdict["kind"], "what": verdict["what"]})
             taken += 1
     (root / "judged.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidates],
                                                   "ranked": [c["id"] for c in ranked], "judged": judged}, indent=1, ensure_ascii=False), encoding="utf-8")
