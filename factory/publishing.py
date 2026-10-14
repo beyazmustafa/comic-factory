@@ -135,6 +135,9 @@ def recent_duplicate(title: str, language: str, days: int = 10) -> str:
         except ValueError:
             continue
         if when >= cutoff and row.get("video_id"):
+            # an unlisted preview does not block the public release of the same title
+            if str(row.get("visibility") or "public") != "public" and os.getenv("YOUTUBE_VISIBILITY", "").strip().lower() == "public":
+                continue
             return str(row["video_id"])
     return ""
 
@@ -154,10 +157,13 @@ def publish_run(directory: Path, platforms: str) -> dict:
     results = {}
     for platform in selected:
         previous = journal.get(platform, {})
-        if previous.get("status") == "success":
+        going_public = platform == "youtube" and os.getenv("YOUTUBE_VISIBILITY", "").strip().lower() == "public"
+        if previous.get("status") == "success" and not (going_public and previous.get("visibility") not in (None, "public")):
             print(f"{platform}: daha önce yüklendi, tekrar gönderilmedi.")
             results[platform] = previous
             continue
+        if previous.get("status") == "success":
+            print("youtube: önceki yükleme liste dışıydı; herkese açık olarak yeniden yükleniyor.")
         if previous.get("status") in {"sending", "uncertain"}:
             results[platform] = {
                 "status": "blocked",
@@ -172,6 +178,8 @@ def publish_run(directory: Path, platforms: str) -> dict:
                 prepare_youtube_credentials()
                 youtube.VIDEO_FILE, youtube.SCRIPT_FILE = video, metadata
                 old = youtube.find_previous_upload(manifest["video_sha256"])
+                if old and going_public and old.get("privacy_status") != "public":
+                    old = None
                 if old:
                     identifier = old["video_id"]
                 else:
@@ -181,7 +189,7 @@ def publish_run(directory: Path, platforms: str) -> dict:
                     save_json(journal_path, journal)
                     sending = True
                     identifier = youtube.upload_video(client, title, description, tags)
-                    journal[platform] = {"status": "success", "id": identifier}
+                    journal[platform] = {"status": "success", "id": identifier, "visibility": youtube.visibility()}
                     save_json(journal_path, journal)
                     youtube.set_thumbnail(client, identifier, directory / "thumbnail.jpg")
                     youtube.save_upload_history(

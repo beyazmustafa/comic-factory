@@ -14,6 +14,7 @@ survives cache loss and is readable by a human.
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -111,6 +112,7 @@ def record_publication(run_directory: Path, platform: str, video_id: str) -> Non
             "event": {k: manifest.get("event", {}).get(k) for k in ("title", "series", "issue", "year", "publisher")},
             "profile": story_profile(script, manifest.get("duration")),
             "voice": manifest.get("voice"),
+            "visibility": (os.getenv("YOUTUBE_VISIBILITY", "").strip().lower() or "unlisted") if platform == "youtube" else "public",
             "review": {
                 "mode": review.get("review_mode"),
                 "scores": {k: review.get(k) for k in ("subtitle_sync", "scene_match", "delivery", "visual_readability")},
