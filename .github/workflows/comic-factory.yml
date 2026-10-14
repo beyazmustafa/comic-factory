@@ -1,7 +1,7 @@
 name: Comic Factory Studio
 'on':
   schedule:
-    # Günde iki üretim + yükleme: 08:23 ve 17:23 Türkiye saati (UTC+3).
+    # Günde iki üretim + yükleme: 11:23 ve 17:23 Türkiye saati (UTC+3).
     # Tam saat başı cron'lar GitHub'da saatlerce gecikebiliyor; dakika kaydırıldı.
     - cron: '23 8 * * *'
     - cron: '23 14 * * *'
@@ -88,7 +88,6 @@ jobs:
     env:
       PYTHONUNBUFFERED: '1'
       # Zamanlanmış koşuda inputs boştur; varsayılanlar burada çözülür.
-      # Scheduled runs stay in preview until the new simulation format is approved.
       TASK: ${{ inputs.task || 'create_and_publish' }}
       TOPIC: ${{ inputs.topic || '' }}
       SOURCE: ${{ inputs.source || '' }}
