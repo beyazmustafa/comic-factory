@@ -3,7 +3,7 @@ name: Comic Factory Studio
   schedule:
     # Günde iki üretim + yükleme: 08:23 ve 17:23 Türkiye saati (UTC+3).
     # Tam saat başı cron'lar GitHub'da saatlerce gecikebiliyor; dakika kaydırıldı.
-    - cron: '23 5 * * *'
+    - cron: '23 8 * * *'
     - cron: '23 14 * * *'
   workflow_dispatch:
     inputs:
