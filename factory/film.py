@@ -25,6 +25,7 @@ from .core import ass_time, escape_ass, file_hash, save_json
 
 HOOK_SECONDS = 3.4
 END_SECONDS = 2.8
+MAX_SHOT = 6.5      # a beat longer than this is covered by two shots — the picture keeps moving
 HEAD = 0.9          # silence before the narrator starts (the hook card has a beat alone)
 MAX_SECONDS = 150.0
 DISSOLVE = 10       # frames
@@ -178,21 +179,24 @@ def build_timeline(script, clips, starts, duration):
                 best = min(choices, key=lambda i: (use_count.get((source["id"], i), 0), -(source["windows"][i][1] - source["windows"][i][0])))
                 w0, w1 = source["windows"][best]
                 available = w1 - w0
-                need = (span - placed) + DISSOLVE / cut.FPS
+                remaining = span - placed
+                # long beats are split so no shot outstays its welcome (unless the remainder would be a stub)
+                target = remaining if remaining <= MAX_SHOT or remaining - MAX_SHOT < 2.5 else min(MAX_SHOT, remaining * 0.55)
+                need = target + DISSOLVE / cut.FPS
                 if available >= need:
                     src_in = w0 + (available - need) / 2
                     src_out = src_in + need
                     speed = 1.0
-                    shot_len = span - placed
+                    shot_len = target
                 elif available >= need * 0.72:
                     speed = max(0.72, available / need)
                     src_in, src_out = w0, w1
-                    shot_len = span - placed
+                    shot_len = target
                 else:
-                    # too short for the whole beat: use it at a gentle slow-motion for part of the beat
+                    # too short for the target: use it at a gentle slow-motion for part of the beat
                     speed = 0.8
                     src_in, src_out = w0, w1
-                    shot_len = min(span - placed, available / speed - DISSOLVE / cut.FPS)
+                    shot_len = min(target, available / speed - DISSOLVE / cut.FPS)
                     if shot_len < 1.5:
                         continue
                 use_count[(source["id"], best)] = use_count.get((source["id"], best), 0) + 1
@@ -216,8 +220,8 @@ def build_timeline(script, clips, starts, duration):
             shot["transition"] = "cut"
             continue
         previous = shots[index - 1]
-        same = previous["asset"] == shot["asset"]
-        shot["transition"] = "dissolve" if (same or index % 4 == 0 or shot["beat"] == previous["beat"]) else "cut"
+        # mostly straight cuts; a dissolve every third beat breathes a little
+        shot["transition"] = "dissolve" if (shot["beat"] != previous["beat"] and shot["beat"] % 3 == 0) else "cut"
     return shots
 
 

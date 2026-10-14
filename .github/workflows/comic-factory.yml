@@ -231,16 +231,7 @@ jobs:
               ffmpeg -v error -y -i "$d/video.mp4" -vf "fps=1/6,scale=216:-1,tile=8x3" -frames:v 1 -q:v 6 "$out/frames.jpg" || true
               # four larger frames (hook, two from the middle, the end card) for a closer look at typography and crops
               len=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$d/video.mp4" 2>/dev/null || echo 30)
-              python3 - "$d/video.mp4" "$out/frames_hd.jpg" "$len" <<'PY' || true
-          import subprocess, sys
-          video, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])
-          times = [1.6, length * 0.35, length * 0.62, max(0, length - 1.4)]
-          parts = []
-          for i, t in enumerate(times):
-              parts += ["-ss", f"{t:.2f}", "-i", video]
-          fc = "".join(f"[{i}:v]scale=480:-2,trim=end_frame=1,setpts=PTS-STARTPTS[v{i}];" for i in range(4)) + "".join(f"[v{i}]" for i in range(4)) + "hstack=inputs=4"
-          subprocess.run(["ffmpeg", "-v", "error", "-y", *parts, "-filter_complex", fc, "-frames:v", "1", "-q:v", "4", out], check=False, timeout=300)
-          PY
+              python3 tools/history_frames.py "$d/video.mp4" "$out/frames_hd.jpg" "$len" || true
             fi
           done
           tail -n 300 data/logs/studio.log 2>/dev/null || echo "(log yok)"
