@@ -257,6 +257,11 @@ def build_timeline(script, clips, starts, duration):
     for a, b in zip(shots, shots[1:]):
         a["t1"] = b["t0"]
     shots[-1]["t1"] = duration
+    # full-screen footage is the rule; wide (letterboxed) compositions stay the exception
+    wide = [s for s in shots if float(s.get("crop_width") or 0.32) > 0.36]
+    allowed = max(1, round(len(shots) * 0.3))
+    for shot in sorted(wide, key=lambda s: float(s["crop_width"]))[: max(0, len(wide) - allowed)]:
+        shot["crop_width"] = 0.32
     for index, shot in enumerate(shots):
         if index == 0:
             shot["transition"] = "cut"

@@ -583,9 +583,9 @@ Then decide which stretches are usable as full-screen footage on a phone. A stre
 - is not a black/white blank, not a multi-panel collage, not a blurry or tiny inset.
 Group consecutive usable frames into stretches (start index, end index, inclusive). Prefer the most striking, cinematic imagery.
 For each stretch give the focus point of the main subject as fractions [x, y] of the frame (0..1, from top-left) — the vertical
-crop will be centred there — and the fraction of the frame WIDTH the composition needs: 0.32 when a phone-shaped slice around the
-focus shows the subject well (most cases), larger (up to 1.0) when the meaning needs the width (a spacecraft on one side and a planet
-on the other, a long horizon, a wide panorama); say in a few words what is on screen.
+crop will be centred there — and the fraction of the frame WIDTH the composition needs: 0.32 (a phone-shaped slice around the
+focus, the default — full-screen footage looks best) unless that slice would cut away something essential, e.g. a spacecraft on one
+side and a planet on the other; then 0.6 or 1.0. Say in a few words what is on screen.
 Also classify the imagery: "footage" (a real camera or telescope image sequence), "visualization" (rendered from real data, e.g. a
 flyover built from spacecraft measurements) or "animation" (an artist's render of hardware or events).
 Return {{"relevant": true|false, "usable": true|false, "quality": 1-10, "kind": "footage"|"visualization"|"animation",
