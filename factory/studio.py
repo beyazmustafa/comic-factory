@@ -466,7 +466,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Türkçe çizgi roman video stüdyosu")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--refresh-stats", action="store_true")
-    parser.add_argument("--source", choices=["sim", "space", "famous", "auto", "archive", "web", "studio", "mix"])
+    parser.add_argument("--source", choices=["film", "sim", "space", "famous", "auto", "archive", "web", "studio", "mix"])
     parser.add_argument("--topic", default="")
     parser.add_argument("--duration", type=int)
     parser.add_argument("--voice", choices=["auto", "Orus", "Gacrux", "Fenrir", "Puck", "Ahmet", "Emel"])
@@ -495,11 +495,12 @@ def main(argv=None):
             publish_all(args.publish_run, args.platforms)
             return 0
         settings = Settings.load(target_seconds=args.duration, voice=args.voice, source=args.source)
-        if settings.source == "sim" and not args.voice_test:
-            from . import simshow
+        if settings.source in ("sim", "film") and not args.voice_test:
+            from . import film, simshow
 
             emit_directory(ROOT / "data" / "runs")
-            directory = simshow.generate(settings, args.topic.strip())
+            maker = film.generate if settings.source == "film" else simshow.generate
+            directory = maker(settings, args.topic.strip())
             emit_directory(directory)
         else:
             directory = generate(

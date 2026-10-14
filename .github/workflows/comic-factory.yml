@@ -18,11 +18,12 @@ name: Comic Factory Studio
         - voice_test
         - refresh_stats
       source:
-        description: Kaynak — boşsa factory.json (sim = fizik simülasyonu)
+        description: Kaynak — boşsa factory.json (film = NASA görüntülü belgesel, sim = fizik simülasyonu)
         type: choice
         default: ''
         options:
         - ''
+        - film
         - sim
         - space
         - famous
@@ -131,6 +132,8 @@ jobs:
       run: |
         sudo apt-get update -qq
         sudo apt-get install -y ffmpeg fonts-dejavu-core fonts-dejavu-extra poppler-utils p7zip-full
+        sudo apt-get install -y fonts-inter || true
+        fc-cache -f >/dev/null 2>&1 || true
         python -m pip install -r requirements.txt
     - name: Restore history and successful audio
       uses: actions/cache/restore@v4
@@ -256,6 +259,8 @@ jobs:
         path: |
           ${{ steps.produce.outputs.run_directory }}/
           !${{ steps.produce.outputs.run_directory }}/render/
+          !${{ steps.produce.outputs.run_directory }}/footage/**/*.mp4
+          !${{ steps.produce.outputs.run_directory }}/footage/**/samples/
         if-no-files-found: error
         retention-days: 30
         compression-level: 0

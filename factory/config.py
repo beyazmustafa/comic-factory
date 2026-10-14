@@ -125,8 +125,8 @@ class Settings:
                 raise ValueError(f"{key} metin olmalı.")
         if result.language not in {"en", "tr"}:
             raise ValueError("language en veya tr olmalı.")
-        if result.source not in {"sim", "space", "famous", "auto", "archive", "web", "studio", "mix"}:
-            raise ValueError("source famous, auto, archive, web, studio veya mix olmalı.")
+        if result.source not in {"film", "sim", "space", "famous", "auto", "archive", "web", "studio", "mix"}:
+            raise ValueError("source film, sim, space, famous, auto, archive, web, studio veya mix olmalı.")
         if not result.archive_query.strip():
             raise ValueError("archive_query boş olamaz.")
         return result
