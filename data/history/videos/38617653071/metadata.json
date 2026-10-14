@@ -1,0 +1,89 @@
+{
+  "script": {
+    "title": "How a planet can throw a spacecraft across the solar system",
+    "description": "Watch how a spacecraft uses a planet's orbital motion to gain speed without using any fuel.",
+    "hook_card": "The gravity assist.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "A small spacecraft travels through the deep cold of space toward a massive world. The planet is not sitting still, but moves quickly along its own wide orbit.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "As the craft nears the planet, gravity takes hold. The massive world pulls on the smaller object, curving its straight path into a long, sweeping arc.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "Because the planet is moving, it drags the probe along with it. The craft steals a tiny bit of the planet's motion and leaves much faster than it arrived.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "A small spacecraft travels through the deep cold of space toward a massive world. The planet is not sitting still, but moves quickly along its own wide orbit. As the craft nears the planet, gravity takes hold. The massive world pulls on the smaller object, curving its straight path into a long, sweeping arc. Because the planet is moving, it drags the probe along with it. The craft steals a tiny bit of the planet's motion and leaves much faster than it arrived.",
+    "event": {
+      "id": "sim_gravity-assist_20261014T184508027020Z",
+      "title": "The gravity assist.",
+      "series": "Simulation",
+      "issue": "gravity-assist",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "gravity-assist",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "gravity-assist",
+    "phases": [
+      {
+        "at": 0.0,
+        "subtitle": "A probe approaches a moving planet.",
+        "narration": "A small spacecraft travels through the deep cold of space toward a massive world. The planet is not sitting still, but moves quickly along its own wide orbit.",
+        "title": "The gravity assist."
+      },
+      {
+        "at": 15.819999999999999,
+        "subtitle": "The planet's pull bends its path.",
+        "narration": "As the craft nears the planet, gravity takes hold. The massive world pulls on the smaller object, curving its straight path into a long, sweeping arc.",
+        "title": "The gravity assist."
+      },
+      {
+        "at": 30.169999999999998,
+        "subtitle": "The planet's motion hands it speed.",
+        "narration": "Because the planet is moving, it drags the probe along with it. The craft steals a tiny bit of the planet's motion and leaves much faster than it arrived.",
+        "title": "The planet slows.\nThe probe accelerates."
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Watch how a spacecraft uses a planet's orbital motion to gain speed without using any fuel.\n\nA physics simulation rendered by code. @Facctsaboutspace\nImages: NASA/JPL-Caltech (https://images.nasa.gov/details/PIA21771)\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "How a planet can throw a spacecraft across the solar system\n\nWatch how a spacecraft uses a planet's orbital motion to gain speed without using any fuel."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}

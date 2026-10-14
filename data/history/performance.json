@@ -3075,5 +3075,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "EDYiLCK4ucI",
+    "platform": "youtube",
+    "run_id": "38617653071",
+    "published_at": "2026-10-14T18:53:32+00:00",
+    "event": {
+      "title": "The gravity assist.",
+      "series": "Simulation",
+      "issue": "gravity-assist",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 83,
+      "duration": 45.4,
+      "words_per_minute": 110,
+      "hook": "A small spacecraft travels through the deep cold of space toward a massive world. The planet is not sitting still, but moves quickly along its own wide orbit.",
+      "hook_words": 28,
+      "title": "How a planet can throw a spacecraft across the solar system",
+      "title_length": 59,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

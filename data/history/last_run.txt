@@ -1,6 +1,6 @@
-run_id: 38548677403  attempt: 1  event: schedule
+run_id: 38617653071  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261014T101941770461Z/run.json
+--- data/runs/20261014T184508027020Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,31 +40,40 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38548677403",
+  "run_id": "38617653071",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "81ad65d14f38823fdffa1e2bd2f1a7c1b3d635911c2f7fc802298ba679cf040e",
-  "metadata_sha256": "1cf0cabca0c58466c0e65ef7edffe0b60272ff524ce8bc99e9de6df4747c9161",
+  "video_sha256": "a8dbb86b8d17c817fd272e5dba93f483022715117934a6ffb9f2a5de388518c3",
+  "metadata_sha256": "7d255a5c4b2d50600cdd3cf600493854cb8d7e56466e80fc8d0fb21f5f53bd66",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 11,
-  "duration": 35.38,
+  "api_calls": 21,
+  "duration": 45.39000000000001,
   "voice": "Charon",
   "event": {
-    "id": "sim_deep-field_20261014T101941770461Z",
-    "title": "A grain of sand.",
+    "id": "sim_gravity-assist_20261014T184508027020Z",
+    "title": "The gravity assist.",
     "series": "Simulation",
-    "issue": "deep-field",
+    "issue": "gravity-assist",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "deep-field",
+    "scenario": "gravity-assist",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261014T101941770461Z/diagnostics/providers.json
+--- data/runs/20261014T184508027020Z/diagnostics/provider_events.json
+[
+  "Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Simülasyon metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+]
+--- data/runs/20261014T184508027020Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -88,8 +97,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -184,47 +193,55 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Senaryo: deep-field
+→ Senaryo: gravity-assist
+Simülasyon metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Simülasyon metinleri: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 95.5/100 | whisper-large-v3
-→ Simülasyon render (35.4 sn)
-NASA görsel: 'Hubble ultra deep field' için 6 sonuç
-NASA görsel: 'Hubble ultra deep field' için 6 sonuç
-Sahne karesi 0/1061
-Sahne karesi 150/1061
-Sahne karesi 300/1061
-Sahne karesi 450/1061
-Sahne karesi 600/1061
-Sahne karesi 750/1061
-Sahne karesi 900/1061
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T101941770461Z/review.html
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Simülasyon render (45.4 sn)
+NASA görsel: 'Jupiter Juno' için 10 sonuç
+Simülasyon: gravity-assist, 1319 kare, kare başına 5.00 adım
+Simülasyon karesi 0/1361
+Simülasyon karesi 150/1361
+Simülasyon karesi 300/1361
+Simülasyon karesi 450/1361
+Simülasyon karesi 600/1361
+Simülasyon karesi 750/1361
+Simülasyon karesi 900/1361
+Simülasyon karesi 1050/1361
+Simülasyon karesi 1200/1361
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T184508027020Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: What Lies Inside a Grain of Sand in Space? #Shorts
+Başlık: How a planet can throw a spacecraft across the solar system #Shorts
 Görünürlük: public
 
-Yükleme: %57
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=nib-rjtddXY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %60
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=EDYiLCK4ucI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T101941770461Z/video.mp4
-Boyut: 13.8 MB
-Açıklama uzunluğu: 212 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T184508027020Z/video.mp4
+Boyut: 13.2 MB
+Açıklama uzunluğu: 209 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17968124928187944).
+Instagram: container oluşturuldu (17968190679187944).
 Instagram: video işleniyor...
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -233,7 +250,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18127471972849511
+Instagram Reel başarıyla yayınlandı: 17916471243462834
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================
