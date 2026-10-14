@@ -1,0 +1,151 @@
+{
+  "title": "How NASA's Juno Flies Past Jupiter's Clouds",
+  "description": "NASA's Juno spacecraft skims just 4,200 kilometers above Jupiter's cloud tops at tremendous speeds. Here is what the probe sees while enduring the planet's extreme radiation environment.",
+  "hook_card": "Jupiter, seen closer than ever before",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c02",
+      "narration": "No spacecraft has flown closer to Jupiter's clouds than this one, arriving on July 4, 2016.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "This giant world is eleven times wider than Earth, yet spins completely around once every ten hours.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "Inside, its electronics sit protected within a titanium vault with one-centimetre walls to survive punishing radiation.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "Here, Juno swings past the cloud tops at roughly 4,200 kilometres altitude about every orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c03",
+      "narration": "At closest approach, the probe sweeps over the planet at about 210,000 kilometres per hour.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "Watch the Great Red Spot drift below, an ancient storm system watched for more than 150 years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "This storm measures about 16,000 kilometres wide, carrying fierce internal winds moving around 430 kilometres per hour.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c01",
+      "narration": "At the north pole, Juno uncovered eight continent-sized cyclones arranged around a single central storm.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "No spacecraft has flown closer to Jupiter's clouds than this one, arriving on July 4, 2016. This giant world is eleven times wider than Earth, yet spins completely around once every ten hours. Inside, its electronics sit protected within a titanium vault with one-centimetre walls to survive punishing radiation. Here, Juno swings past the cloud tops at roughly 4,200 kilometres altitude about every orbit. At closest approach, the probe sweeps over the planet at about 210,000 kilometres per hour. Watch the Great Red Spot drift below, an ancient storm system watched for more than 150 years. This storm measures about 16,000 kilometres wide, carrying fierce internal winds moving around 430 kilometres per hour. At the north pole, Juno uncovered eight continent-sized cyclones arranged around a single central storm.",
+  "event": {
+    "id": "film_juno-jupiter_20261014T203049610062Z",
+    "title": "Jupiter, seen closer than ever before",
+    "series": "NASA footage",
+    "issue": "juno-jupiter",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "juno-jupiter",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+      "https://svs.gsfc.nasa.gov/13821"
+    ]
+  },
+  "scenario": "juno-jupiter",
+  "beats": [
+    {
+      "clip": "c02",
+      "narration": "No spacecraft has flown closer to Jupiter's clouds than this one, arriving on July 4, 2016.",
+      "label": "NASA · JUNO · 2016",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "This giant world is eleven times wider than Earth, yet spins completely around once every ten hours.",
+      "label": "NASA · JUPITER · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Inside, its electronics sit protected within a titanium vault with one-centimetre walls to survive punishing radiation.",
+      "label": "NASA · JUNO SPACECRAFT · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Here, Juno swings past the cloud tops at roughly 4,200 kilometres altitude about every orbit.",
+      "label": "NASA · JUNO ORBIT · 2018",
+      "callout": {
+        "value": "4,200 km",
+        "label": "above the clouds"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "At closest approach, the probe sweeps over the planet at about 210,000 kilometres per hour.",
+      "label": "NASA · JUNO · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Watch the Great Red Spot drift below, an ancient storm system watched for more than 150 years.",
+      "label": "NASA · GREAT RED SPOT · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "This storm measures about 16,000 kilometres wide, carrying fierce internal winds moving around 430 kilometres per hour.",
+      "label": "NASA · GREAT RED SPOT · 2018",
+      "callout": {
+        "value": "430 km/h",
+        "label": "winds in the Great Red Spot"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "At the north pole, Juno uncovered eight continent-sized cyclones arranged around a single central storm.",
+      "label": "NASA · JUPITER POLE · 2018",
+      "callout": null
+    }
+  ],
+  "closing": "Share your thoughts on Juno's journey across Jupiter's cloud tops below.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -3115,5 +3115,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "popWm5Nt7hg",
+    "platform": "youtube",
+    "run_id": "38632558524",
+    "published_at": "2026-10-14T20:43:26+00:00",
+    "event": {
+      "title": "Jupiter, seen closer than ever before",
+      "series": "NASA footage",
+      "issue": "juno-jupiter",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 128,
+      "duration": 82.5,
+      "words_per_minute": 93,
+      "hook": "No spacecraft has flown closer to Jupiter's clouds than this one, arriving on July 4, 2016.",
+      "hook_words": 16,
+      "title": "How NASA's Juno Flies Past Jupiter's Clouds",
+      "title_length": 43,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
