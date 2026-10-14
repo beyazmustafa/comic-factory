@@ -3155,5 +3155,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "L3ZG7YIqmqE",
+    "platform": "youtube",
+    "run_id": "38636849215",
+    "published_at": "2026-10-14T21:20:46+00:00",
+    "event": {
+      "title": "Seven minutes of terror on Mars.",
+      "series": "NASA footage",
+      "issue": "perseverance-landing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 130,
+      "duration": 75.0,
+      "words_per_minute": 104,
+      "hook": "This is real footage of a one-ton rover descending directly toward the red surface of Mars.",
+      "hook_words": 16,
+      "title": "How NASA Filmed Perseverance Landing on Mars",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
