@@ -3318,5 +3318,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "L1n9Tf7GrJ0",
+    "platform": "youtube",
+    "run_id": "38651164534",
+    "published_at": "2026-10-14T23:17:42+00:00",
+    "event": {
+      "title": "The Moon in 4K.",
+      "series": "NASA footage",
+      "issue": "moon-tour",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 130,
+      "duration": 65.8,
+      "words_per_minute": 119,
+      "hook": "The orbiter’s high‑resolution mapping reveals the Lee Lincoln scarp, a testament to precise lunar surveying.",
+      "hook_words": 15,
+      "title": "LRO Maps the Moon in Stunning Detail",
+      "title_length": 36,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

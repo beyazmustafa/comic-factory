@@ -1,0 +1,153 @@
+{
+  "title": "LRO Maps the Moon in Stunning Detail",
+  "description": "The Lunar Reconnaissance Orbiter has photographed almost every square metre of the Moon. See craters, basins and the footprints that will last millions of years.",
+  "hook_card": "The Moon in 4K.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "The orbiter’s high‑resolution mapping reveals the Lee Lincoln scarp, a testament to precise lunar surveying.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "Since 2009 the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "The Moon spans 3,474 km in diameter and sits 384,400 km away, drifting outward 3.8 cm each year.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c04",
+      "narration": "Here the South Pole‑Aitken basin stretches 2,500 km across and plunges 8 km deep, a massive impact scar.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c06",
+      "narration": "In permanently shadowed polar craters, temperatures fall below minus 230 °C, preserving water ice for billions of years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c07",
+      "narration": "Tycho crater dominates this region, 86 km wide with a central peak rising about 2 km tall.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c05",
+      "narration": "Without wind or rain, the astronauts' footprints remain untouched, destined to survive for millions of years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c01",
+      "narration": "Our view of Earth glows beyond as the mapped Moon drifts steadily away.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "The orbiter’s high‑resolution mapping reveals the Lee Lincoln scarp, a testament to precise lunar surveying. Since 2009 the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre. The Moon spans 3,474 km in diameter and sits 384,400 km away, drifting outward 3.8 cm each year. Here the South Pole‑Aitken basin stretches 2,500 km across and plunges 8 km deep, a massive impact scar. In permanently shadowed polar craters, temperatures fall below minus 230 °C, preserving water ice for billions of years. Tycho crater dominates this region, 86 km wide with a central peak rising about 2 km tall. Without wind or rain, the astronauts' footprints remain untouched, destined to survive for millions of years. Our view of Earth glows beyond as the mapped Moon drifts steadily away.",
+  "event": {
+    "id": "film_moon-tour_20261014T225919906056Z",
+    "title": "The Moon in 4K.",
+    "series": "NASA footage",
+    "issue": "moon-tour",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "moon-tour",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD",
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20120220_LRO_m10915_ graben_moon",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+    ]
+  },
+  "scenario": "moon-tour",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "The orbiter’s high‑resolution mapping reveals the Lee Lincoln scarp, a testament to precise lunar surveying.",
+      "label": "NASA · LRO · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Since 2009 the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre.",
+      "label": "NASA · LRO · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The Moon spans 3,474 km in diameter and sits 384,400 km away, drifting outward 3.8 cm each year.",
+      "label": "NASA · LRO · 2009",
+      "callout": {
+        "value": "3.8 cm",
+        "label": "farther away every year"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "Here the South Pole‑Aitken basin stretches 2,500 km across and plunges 8 km deep, a massive impact scar.",
+      "label": "NASA · LRO · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "In permanently shadowed polar craters, temperatures fall below minus 230 °C, preserving water ice for billions of years.",
+      "label": "NASA · LRO · 2021",
+      "callout": {
+        "value": "-230 °C",
+        "label": "inside polar craters"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "Tycho crater dominates this region, 86 km wide with a central peak rising about 2 km tall.",
+      "label": "NASA · LRO · 2012",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Without wind or rain, the astronauts' footprints remain untouched, destined to survive for millions of years.",
+      "label": "NASA · LRO · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Our view of Earth glows beyond as the mapped Moon drifts steadily away.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    }
+  ],
+  "closing": "The Moon keeps drifting, 3.8 cm farther every year.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
