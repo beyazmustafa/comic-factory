@@ -1,6 +1,6 @@
-run_id: 38461569342  attempt: 1  event: schedule
+run_id: 38548677403  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261013T201748557900Z/run.json
+--- data/runs/20261014T101941770461Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,40 +40,31 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38461569342",
+  "run_id": "38548677403",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "b67367f83849cbf8c00d78b0e37d01e53e9d60b651f6a7e2595d2065bf1b5846",
-  "metadata_sha256": "bd22d86fc68c3e6284efe3e3ab169e46d06d1653ea4a24e1ed83eaffbe56d823",
+  "video_sha256": "81ad65d14f38823fdffa1e2bd2f1a7c1b3d635911c2f7fc802298ba679cf040e",
+  "metadata_sha256": "1cf0cabca0c58466c0e65ef7edffe0b60272ff524ce8bc99e9de6df4747c9161",
   "quality_sha256": "c65bdd60d6ffc44c9357405250592991bee5210a62e152592497453fc6fb496c",
-  "api_calls": 24,
-  "duration": 42.510000000000005,
+  "api_calls": 11,
+  "duration": 35.38,
   "voice": "Charon",
   "event": {
-    "id": "sim_mars-distance_20261013T201748557900Z",
-    "title": "How Far Is Mars.",
+    "id": "sim_deep-field_20261014T101941770461Z",
+    "title": "A grain of sand.",
     "series": "Simulation",
-    "issue": "mars-distance",
+    "issue": "deep-field",
     "year": 2026,
     "publisher": "Original",
     "universe": "science",
-    "scenario": "mars-distance",
+    "scenario": "deep-field",
     "_source": "sim",
     "url": "",
     "source_urls": []
   },
   "localized": []
 }
---- data/runs/20261013T201748557900Z/diagnostics/provider_events.json
-[
-  "Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
-]
---- data/runs/20261013T201748557900Z/diagnostics/providers.json
+--- data/runs/20261014T101941770461Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -97,8 +88,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -193,56 +184,47 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Senaryo: mars-distance
-Konu metinleri: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Konu metinleri: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+→ Senaryo: deep-field
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 92.6/100 | whisper-large-v3
-→ Simülasyon render (42.5 sn)
-NASA görsel: 'Mars Perseverance landscape' için 9 sonuç
-NASA görsel: 'Mars surface Perseverance' için 9 sonuç
-Görsel seçimi: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görsel seçimi: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Sahne karesi 0/1275
-Sahne karesi 150/1275
-Sahne karesi 300/1275
-Sahne karesi 450/1275
-Sahne karesi 600/1275
-Sahne karesi 750/1275
-Sahne karesi 900/1275
-Sahne karesi 1050/1275
-Sahne karesi 1200/1275
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T201748557900Z/review.html
+Ses eşleştirme: 95.5/100 | whisper-large-v3
+→ Simülasyon render (35.4 sn)
+NASA görsel: 'Hubble ultra deep field' için 6 sonuç
+NASA görsel: 'Hubble ultra deep field' için 6 sonuç
+Sahne karesi 0/1061
+Sahne karesi 150/1061
+Sahne karesi 300/1061
+Sahne karesi 450/1061
+Sahne karesi 600/1061
+Sahne karesi 750/1061
+Sahne karesi 900/1061
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T101941770461Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Why Mars Rovers Must Drive Themselves Across the Red Planet #Shorts
+Başlık: What Lies Inside a Grain of Sand in Space? #Shorts
 Görünürlük: public
 
-Yükleme: %38
-Yükleme: %77
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=0BkoDilzDRw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %57
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=nib-rjtddXY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261013T201748557900Z/video.mp4
-Boyut: 20.6 MB
-Açıklama uzunluğu: 268 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T101941770461Z/video.mp4
+Boyut: 13.8 MB
+Açıklama uzunluğu: 212 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17968048803187944).
+Instagram: container oluşturuldu (17968124928187944).
 Instagram: video işleniyor...
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -251,7 +233,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18131019202821991
+Instagram Reel başarıyla yayınlandı: 18127471972849511
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================

@@ -1,0 +1,225 @@
+{
+  "script": {
+    "title": "What Lies Inside a Grain of Sand in Space?",
+    "description": "Pointing space telescopes at an apparently empty speck of the night sky revealed thousands of ancient galaxies.",
+    "hook_card": "A grain of sand.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "sim",
+        "narration": "Astronomers turned the telescope toward an empty black void in the night sky and left the camera open for days on end.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "sim",
+        "narration": "The tiny field covers no more space than a grain of sand held at arm's length, yet holds thousands of island universes.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "sim",
+        "narration": "The faintest red glows began their journey over thirteen billion years ago, traveling across space when the cosmos was still brand new.",
+        "fact_ids": [],
+        "motion": "hold",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Astronomers turned the telescope toward an empty black void in the night sky and left the camera open for days on end. The tiny field covers no more space than a grain of sand held at arm's length, yet holds thousands of island universes. The faintest red glows began their journey over thirteen billion years ago, traveling across space when the cosmos was still brand new.",
+    "event": {
+      "id": "sim_deep-field_20261014T101941770461Z",
+      "title": "A grain of sand.",
+      "series": "Simulation",
+      "issue": "deep-field",
+      "year": 2026,
+      "publisher": "Original",
+      "universe": "science",
+      "scenario": "deep-field",
+      "_source": "sim",
+      "url": "",
+      "source_urls": []
+    },
+    "scenario": "deep-field",
+    "phases": [
+      {
+        "subtitle": "They aimed into total darkness.",
+        "narration": "Astronomers turned the telescope toward an empty black void in the night sky and left the camera open for days on end.",
+        "scene": {
+          "type": "image",
+          "query": "Hubble ultra deep field",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "stats": {
+          "time": [
+            [
+              "270",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "10,000",
+              [
+                170,
+                140,
+                255
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "A grain of sand.",
+        "at": 0.0
+      },
+      {
+        "subtitle": "Each smudge is a galaxy.",
+        "narration": "The tiny field covers no more space than a grain of sand held at arm's length, yet holds thousands of island universes.",
+        "scene": {
+          "type": "scale",
+          "items": [
+            [
+              "Full Moon",
+              30,
+              [
+                160,
+                165,
+                200
+              ]
+            ],
+            [
+              "Deep field",
+              2.4,
+              [
+                170,
+                140,
+                255
+              ]
+            ]
+          ],
+          "unit": "arcmin"
+        },
+        "stats": {
+          "time": [
+            [
+              "270",
+              [
+                235,
+                236,
+                250
+              ],
+              ""
+            ]
+          ],
+          "right": [
+            [
+              "10,000",
+              [
+                170,
+                140,
+                255
+              ],
+              ""
+            ]
+          ]
+        },
+        "title": "A grain of sand.",
+        "at": 10.27
+      },
+      {
+        "subtitle": "The oldest light traveled billions.",
+        "narration": "The faintest red glows began their journey over thirteen billion years ago, traveling across space when the cosmos was still brand new.",
+        "scene": {
+          "type": "timeline",
+          "events": [
+            [
+              13800,
+              "Big Bang",
+              [
+                255,
+                90,
+                90
+              ]
+            ],
+            [
+              13200,
+              "First galaxies",
+              [
+                170,
+                140,
+                255
+              ]
+            ],
+            [
+              4600,
+              "Sun forms",
+              [
+                255,
+                220,
+                110
+              ]
+            ],
+            [
+              0,
+              "Today",
+              [
+                235,
+                236,
+                250
+              ]
+            ]
+          ],
+          "unit": "million years ago",
+          "span": 16
+        },
+        "stats": {
+          "right": [
+            [
+              "13,800",
+              [
+                255,
+                90,
+                90
+              ],
+              "Myr"
+            ]
+          ]
+        },
+        "title": "A grain of sand.",
+        "at": 20.48
+      }
+    ],
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Pointing space telescopes at an apparently empty speck of the night sky revealed thousands of ancient galaxies.\n\nA physics simulation rendered by code. @Facctsaboutspace\nImages: GSFC (https://images.nasa.gov/details/GSFC_20171208_Archive_e001061); GSFC (https://images.nasa.gov/details/hubble-sees-a-legion-of-galaxies_25608651281_o)\n",
+    "hashtags": [
+      "space",
+      "shorts",
+      "physics",
+      "simulation",
+      "science",
+      "astronomy"
+    ],
+    "instagram_caption": "What Lies Inside a Grain of Sand in Space?\n\nPointing space telescopes at an apparently empty speck of the night sky revealed thousands of ancient galaxies."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "simulation-v1",
+  "language": "en"
+}

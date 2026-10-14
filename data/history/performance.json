@@ -3035,5 +3035,45 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "nib-rjtddXY",
+    "platform": "youtube",
+    "run_id": "38548677403",
+    "published_at": "2026-10-14T10:36:38+00:00",
+    "event": {
+      "title": "A grain of sand.",
+      "series": "Simulation",
+      "issue": "deep-field",
+      "year": 2026,
+      "publisher": "Original"
+    },
+    "profile": {
+      "shots": 3,
+      "words": 66,
+      "duration": 35.4,
+      "words_per_minute": 112,
+      "hook": "Astronomers turned the telescope toward an empty black void in the night sky and left the camera open for days on end.",
+      "hook_words": 22,
+      "title": "What Lies Inside a Grain of Sand in Space?",
+      "title_length": 42,
+      "emphasis": {
+        "normal": 3
+      }
+    },
+    "voice": "Charon",
+    "review": {
+      "mode": "simulation",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Code-generated simulation; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
