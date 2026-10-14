@@ -1,0 +1,198 @@
+{
+  "script": {
+    "title": "Artemis I Orion’s Moon Flyby – 2022 Mission Overview",
+    "description": "The uncrewed Orion capsule circles the Moon, reaching record distances for a crewed‑design vehicle. See the journey from launch to Pacific splashdown.",
+    "hook_card": "Farther than Apollo.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "This capsule flew farther from Earth than any spacecraft built for humans.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c01",
+        "narration": "Here Orion glides past the Moon, a silent sentinel on its 25‑day journey.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c02",
+        "narration": "Watch the tiny Earth recede as Orion travels toward the far side of the Moon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "This view shows Orion, Earth, and Moon together, a reminder of our home beyond the horizon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c05",
+        "narration": "Here Earth sets behind the Moon, captured by cameras on Orion’s solar arrays.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c04",
+        "narration": "Watch the crescent Earth glow, a fragile blue marble framed by black space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c02",
+        "narration": "Orion reached 432,000 km from Earth, the farthest distance any crewed‑design vehicle has traveled.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c01",
+        "narration": "During re‑entry its heat shield endured about 2,800 °C, protecting the capsule from intense friction.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c03",
+        "narration": "Now Orion splashes down in the Pacific, completing a 25.5‑day test of future lunar voyages.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "c05",
+        "narration": "Here the Earth and Moon appear side by side, a visual promise of the next crewed Artemis missions.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This capsule flew farther from Earth than any spacecraft built for humans. Here Orion glides past the Moon, a silent sentinel on its 25‑day journey. Watch the tiny Earth recede as Orion travels toward the far side of the Moon. This view shows Orion, Earth, and Moon together, a reminder of our home beyond the horizon. Here Earth sets behind the Moon, captured by cameras on Orion’s solar arrays. Watch the crescent Earth glow, a fragile blue marble framed by black space. Orion reached 432,000 km from Earth, the farthest distance any crewed‑design vehicle has traveled. During re‑entry its heat shield endured about 2,800 °C, protecting the capsule from intense friction. Now Orion splashes down in the Pacific, completing a 25.5‑day test of future lunar voyages. Here the Earth and Moon appear side by side, a visual promise of the next crewed Artemis missions.",
+    "event": {
+      "id": "film_artemis-1_20261014T214832982408Z",
+      "title": "Farther than Apollo.",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "artemis-1",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
+        "https://images.nasa.gov/details/Flight Day 14",
+        "https://images.nasa.gov/details/KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595",
+        "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+        "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+      ]
+    },
+    "scenario": "artemis-1",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "This capsule flew farther from Earth than any spacecraft built for humans.",
+        "label": "NASA · Artemis I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Here Orion glides past the Moon, a silent sentinel on its 25‑day journey.",
+        "label": "NASA · Orion",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Watch the tiny Earth recede as Orion travels toward the far side of the Moon.",
+        "label": "NASA · Orion · Earth",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "This view shows Orion, Earth, and Moon together, a reminder of our home beyond the horizon.",
+        "label": "NASA · Orion · Earth‑Moon",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Here Earth sets behind the Moon, captured by cameras on Orion’s solar arrays.",
+        "label": "NASA · Orion · Sunset",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Watch the crescent Earth glow, a fragile blue marble framed by black space.",
+        "label": "NASA · Orion · Earth",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Orion reached 432,000 km from Earth, the farthest distance any crewed‑design vehicle has traveled.",
+        "label": "NASA · Distance",
+        "callout": {
+          "value": "432,000 km",
+          "label": "from Earth"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "During re‑entry its heat shield endured about 2,800 °C, protecting the capsule from intense friction.",
+        "label": "NASA · Heat Shield",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Now Orion splashes down in the Pacific, completing a 25.5‑day test of future lunar voyages.",
+        "label": "NASA · Splashdown",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Here the Earth and Moon appear side by side, a visual promise of the next crewed Artemis missions.",
+        "label": "NASA · Future",
+        "callout": null
+      }
+    ],
+    "closing": "Reflect on this milestone and share your thoughts below.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The uncrewed Orion capsule circles the Moon, reaching record distances for a crewed‑design vehicle. See the journey from launch to Pacific splashdown.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JSC — Artemis I Flight Day Five: Orion and the Moon (https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022); JSC — Artemis I Flight Day 5: Orion and Earth (https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946); JSC — Artemis I Flight Day 14: Orion Sees the Earth and Moon (https://images.nasa.gov/details/Flight Day 14); KSC — Artemis I Orion First Imagery of Earth (https://images.nasa.gov/details/KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595); JSC — Flight Day 6: Orion Captures Earthset (https://images.nasa.gov/details/ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "Artemis I Orion’s Moon Flyby – 2022 Mission Overview\n\nThe uncrewed Orion capsule circles the Moon, reaching record distances for a crewed‑design vehicle. See the journey from launch to Pacific splashdown.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

@@ -3195,5 +3195,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "TYxWR9zrmUI",
+    "platform": "youtube",
+    "run_id": "38642938580",
+    "published_at": "2026-10-14T22:10:09+00:00",
+    "event": {
+      "title": "Farther than Apollo.",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 10,
+      "words": 144,
+      "duration": 63.1,
+      "words_per_minute": 137,
+      "hook": "This capsule flew farther from Earth than any spacecraft built for humans.",
+      "hook_words": 12,
+      "title": "Artemis I Orion’s Moon Flyby – 2022 Mission Overview",
+      "title_length": 52,
+      "emphasis": {
+        "normal": 10
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
