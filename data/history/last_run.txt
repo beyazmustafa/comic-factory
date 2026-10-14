@@ -1,6 +1,6 @@
-run_id: 38646240102  attempt: 1  event: workflow_dispatch
+run_id: 38648153159  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261014T221518417530Z/run.json
+--- data/runs/20261014T223146538206Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,36 +40,34 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38646240102",
+  "run_id": "38648153159",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "bf94ba2cec4452673bc9a896a6d08ba5e814484e5fe6420363622d66ed4c45e4",
-  "metadata_sha256": "c8c0e49fffe1e378aab0dd8b5a7eaab83b9aeb01a3fbbac34fbf603cb2843eeb",
+  "video_sha256": "071a34825bf976e98397ea6a47dac701c869d7976ac1166aacb932b5d046deb3",
+  "metadata_sha256": "5e8ee03260fbd84c4b14eeeac165c3b2f9b2b01212ff0376cb738c91e103466c",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 58,
-  "duration": 63.919999999999995,
+  "api_calls": 61,
+  "duration": 84.02095833333334,
   "voice": "Charon",
   "event": {
-    "id": "film_apollo-11_20261014T221518417530Z",
-    "title": "Twenty-five seconds of fuel.",
+    "id": "film_bennu_20261014T223146538206Z",
+    "title": "Touching an asteroid.",
     "series": "NASA footage",
-    "issue": "apollo-11",
+    "issue": "bennu",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "apollo-11",
+    "scenario": "bennu",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/Apollo_11_Intro_720p",
-      "https://images.nasa.gov/details/Apollo_11_moonwalk_montage_720p",
-      "https://images.nasa.gov/details/Buzz_Descends_Comparison__720p",
-      "https://images.nasa.gov/details/KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560"
+      "https://images.nasa.gov/details/GSFC_20210510_M13854_BennuFarewell",
+      "https://svs.gsfc.nasa.gov/20360"
     ]
   },
   "localized": []
 }
---- data/runs/20261014T221518417530Z/diagnostics/provider_events.json
+--- data/runs/20261014T223146538206Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -77,17 +75,19 @@ produce step outcome: success
   "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
+  "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
+  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261014T221518417530Z/diagnostics/providers.json
+--- data/runs/20261014T223146538206Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -111,8 +111,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,88 +209,97 @@ produce step outcome: success
 --- studio.log (son 300 satır)
 → Konu: juno-jupiter
 Görüntü adayları: 54 (juno-jupiter)
-Sıralanan aday: 12
-Çözümlenemedi commons:Juno flyby of Jupiter, Perijove 16 (PIA22906).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter - Perijove 20 Flyover (48926361292).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter - PJ9-81 - Flyover (46306916355).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter - PJ9-82 - Flyover (46497896404).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter - Perijove 22 (48898282817).webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter Perijove-08 Animation Derived from JunoCam Images.webm: NameError: name 'response' is not defined
-Çözümlenemedi svs:12367: ValueError: no usable rendition
-Çözümlenemedi commons:PIA23807-PlanetJupiter-FlyOver-Animation-20200602.webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Juno - JunoCam.webm: HTTPError: 429 Client Error: Too Many Requests for url: https://commons.wikimedia.org/w/api.php?actio
-Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM.webm: NameError: name 'response' is not defined
-Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM (close-up).webm: NameError: name 'response' is not defined
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (juno-jupiter): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: apollo-11
-Görüntü adayları: 40 (apollo-11)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
-Çözümlenemedi commons:Restored Apollo 11 Moonwalk - Original NASA EVA Mission Video - Walking on the Moon.webm: NameError: name 'response' is not defined
-Süre uygun değil nasa:KSC-20090716-MH-NAS01-0001-Apollo_11_Restored_Moonwalk-HM_795: 3492 sn
-Düşük çözünürlük nasa:KSC-19940705-MH-NAS01-0001-Apollo_11_25th_Historical_Footage_and_Broll-B_0905: 720x480
-Süre uygun değil nasa:KSC-19690716-MH-NAS01-0001-The_Flight_of_Apollo_11_The_Eagle_Has_Landed_HS_from_Film_JSC-DVC_1928: 2820 sn
-Çözümlenemedi commons:MSC (PTL) - Apollo 11 TV Transmission at GET 109-22 to 114-25 - Moon Walk- Part 1 of 9.webm: NameError: name 'response' is not defined
-Çözümlenen video: 7
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:Apollo_11_moonwalk_montage_720p: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:Apollo_11_moonwalk_montage_720p: kullanılır (8/10, footage) Archival footage of the Apollo 11 moonwalk, showing astronauts descend
-nasa:Apollo_11_Intro_720p: kullanılır (7/10, footage) Highlights from the Apollo 11 mission, from launch to lunar exploratio
-nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: kullanılır (8/10, footage) Apollo 11 historical archival footage covering launch, lunar descent, 
-nasa:Buzz_Descends_Comparison__720p: kullanılır (5/10, footage) Buzz Aldrin descending the lunar module ladder
-nasa:Raising_The_American_Flag_Comparison_720p: elendi (4/10, footage) Apollo 11 flag raising video comparison between NASA archive and resto
-nasa:Apollo_11_Plaque_Comparison_720p: elendi (3/10, footage) Neil Armstrong unveils the commemorative plaque on the Apollo 11 lunar
-svs:5535: konu dışı (3/10, visualization) A map showing sunlit lunar surface visibility for Apollo missions.
-Kullanılır kesit: 7 (141 sn temiz görüntü)
+Çözümlenemedi commons:Juno flyby of Jupiter, Perijove 16 (PIA22906).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter - PJ7 - Great Red Spot Flyover (46500577734).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter - Perijove 20 Flyover (48926361292).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter - PJ9-81 - Flyover (46306916355).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter - PJ9-82 - Flyover (46497896404).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter - Perijove 22 (48898282817).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter Perijove-08 Animation Derived from JunoCam Images.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi svs:12367: ValueError: no usable rendition
+Çözümlenemedi commons:PIA23807-PlanetJupiter-FlyOver-Animation-20200602.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Juno - JunoCam.webm: ValueError: licence not reusable: CC BY-SA 4.0
+Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Jupiter North Pole Infrared Flyover by JIRAM (close-up).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (juno-jupiter): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: bennu
+Görüntü adayları: 62 (bennu)
+Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 9
+Çözümlenemedi commons:OSIRIS-REx-AsteroidBennu-TakingSample-20201020.webm: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
+Çözümlenemedi commons:Asteroid Bennu's Surprising Surface Revealed by OSIRIS-REx (short form).webm: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
+Çözümlenemedi commons:Significant Mission Milestones in OSIRIS-REx Journey to Bennu and Back (SVS14724 - OREX BENNU 4K).webm: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
+Çözümlenen video: 6
+nasa:GSFC_20201021_M13745_TAG: elendi (5/10, footage) OSIRIS-REx spacecraft collecting a sample from asteroid Bennu
+svs:20360: kullanılır (8/10, animation) Data-driven animation of the OSIRIS-REx spacecraft touching down and c
+svs:4862: elendi (7/10, visualization) Visualization of the OSIRIS-REx spacecraft trajectory and maneuvers du
+nasa:GSFC_20210510_M13854_BennuFarewell: kullanılır (8/10, visualization) OSIRIS-REx sample collection at asteroid Bennu and return to Earth
+Kullanılır kesit: 4 (51 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 96.8/100 | whisper-large-v3
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses eşleştirme: 95.2/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 97.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
 Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (63.9 sn, 9 beat, 7 kesit)
-  kurgu 10/64 sn
-  kurgu 20/64 sn
-  kurgu 30/64 sn
-  kurgu 40/64 sn
-  kurgu 50/64 sn
-  kurgu 60/64 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T221518417530Z/review.html
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 6, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 7, deneme 1
+Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 95.6/100 | whisper-large-v3
+→ Kurgu (84.0 sn, 8 beat, 4 kesit)
+  kurgu 10/84 sn
+  kurgu 20/84 sn
+  kurgu 30/84 sn
+  kurgu 40/84 sn
+  kurgu 50/84 sn
+  kurgu 60/84 sn
+  kurgu 70/84 sn
+  kurgu 80/84 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261014T223146538206Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Apollo 11: The Near-Abort Moon Landing #Shorts
+Başlık: OSIRIS‑REx Touches Bennu and Returns Sample #Shorts
 Görünürlük: unlisted
 
-Yükleme: %12
-Yükleme: %24
-Yükleme: %36
+Yükleme: %7
+Yükleme: %14
+Yükleme: %21
+Yükleme: %28
+Yükleme: %35
+Yükleme: %42
 Yükleme: %49
-Yükleme: %61
-Yükleme: %73
-Yükleme: %86
-Yükleme: %98
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=lWMgR1qYEfw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %57
+Yükleme: %64
+Yükleme: %71
+Yükleme: %78
+Yükleme: %85
+Yükleme: %92
+Yükleme: %99
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=kykfaQuamC8&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)

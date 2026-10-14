@@ -1,0 +1,148 @@
+{
+  "title": "OSIRIS‑REx Touches Bennu and Returns Sample",
+  "description": "OSIRIS‑REx successfully collected a sample from asteroid Bennu in October 2020 and returned it to Earth in 2023. The mission revealed water‑bearing minerals and organic compounds, offering clues to the solar system’s history.",
+  "hook_card": "Touching an asteroid.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c02",
+      "narration": "Watch a robot arm touch an asteroid 320 million kilometres away. The moment marks humanity’s first direct contact with a near‑Earth object.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c00",
+      "narration": "The spacecraft reaches Bennu, a 500‑metre wide rubble‑pile, in December 2018. Its sensors scan the irregular terrain to plan a safe touchdown.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c01",
+      "narration": "On 20 October 2020 the arm extends toward the gray surface, hovering for seconds. The camera records the moment as the probe inches closer.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c00",
+      "narration": "The surface yields like a ball pit, the arm sinking half a metre. Thrusters fire, pulling the arm back and sealing the sample inside.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "The capsule holds 121.6 grams of material, the largest sample from beyond the Moon. Scientists later find water‑bearing minerals and organic molecules within the rocks.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c03",
+      "narration": "The spacecraft turns homeward, carrying the sealed capsule toward Earth. It arrives in the Utah desert on 24 September 2023, safe after a long voyage.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "Analysis reveals water‑bearing minerals and organic molecules locked in the Bennu rocks. These clues help explain how water arrived on early Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "Bennu continues to drift, with a 1‑in‑2,700 chance of Earth impact in 2182. Monitoring remains essential for future planetary‑defense strategies.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Watch a robot arm touch an asteroid 320 million kilometres away. The moment marks humanity’s first direct contact with a near‑Earth object. The spacecraft reaches Bennu, a 500‑metre wide rubble‑pile, in December 2018. Its sensors scan the irregular terrain to plan a safe touchdown. On 20 October 2020 the arm extends toward the gray surface, hovering for seconds. The camera records the moment as the probe inches closer. The surface yields like a ball pit, the arm sinking half a metre. Thrusters fire, pulling the arm back and sealing the sample inside. The capsule holds 121.6 grams of material, the largest sample from beyond the Moon. Scientists later find water‑bearing minerals and organic molecules within the rocks. The spacecraft turns homeward, carrying the sealed capsule toward Earth. It arrives in the Utah desert on 24 September 2023, safe after a long voyage. Analysis reveals water‑bearing minerals and organic molecules locked in the Bennu rocks. These clues help explain how water arrived on early Earth. Bennu continues to drift, with a 1‑in‑2,700 chance of Earth impact in 2182. Monitoring remains essential for future planetary‑defense strategies.",
+  "event": {
+    "id": "film_bennu_20261014T223146538206Z",
+    "title": "Touching an asteroid.",
+    "series": "NASA footage",
+    "issue": "bennu",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "bennu",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20210510_M13854_BennuFarewell",
+      "https://svs.gsfc.nasa.gov/20360"
+    ]
+  },
+  "scenario": "bennu",
+  "beats": [
+    {
+      "clip": "c02",
+      "narration": "Watch a robot arm touch an asteroid 320 million kilometres away. The moment marks humanity’s first direct contact with a near‑Earth object.",
+      "label": "NASA · OSIRIS‑REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The spacecraft reaches Bennu, a 500‑metre wide rubble‑pile, in December 2018. Its sensors scan the irregular terrain to plan a safe touchdown.",
+      "label": "NASA · OSIRIS‑REx · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "On 20 October 2020 the arm extends toward the gray surface, hovering for seconds. The camera records the moment as the probe inches closer.",
+      "label": "NASA · OSIRIS‑REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The surface yields like a ball pit, the arm sinking half a metre. Thrusters fire, pulling the arm back and sealing the sample inside.",
+      "label": "NASA · OSIRIS‑REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The capsule holds 121.6 grams of material, the largest sample from beyond the Moon. Scientists later find water‑bearing minerals and organic molecules within the rocks.",
+      "label": "NASA · OSIRIS‑REx · 2020",
+      "callout": {
+        "value": "121.6 g",
+        "label": "brought home"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "The spacecraft turns homeward, carrying the sealed capsule toward Earth. It arrives in the Utah desert on 24 September 2023, safe after a long voyage.",
+      "label": "NASA · OSIRIS‑REx · 2023",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Analysis reveals water‑bearing minerals and organic molecules locked in the Bennu rocks. These clues help explain how water arrived on early Earth.",
+      "label": "NASA · OSIRIS‑REx · 2023",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Bennu continues to drift, with a 1‑in‑2,700 chance of Earth impact in 2182. Monitoring remains essential for future planetary‑defense strategies.",
+      "label": "NASA · OSIRIS‑REx · 2020",
+      "callout": null
+    }
+  ],
+  "closing": "A tiny rock carries clues to our solar system’s origins.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

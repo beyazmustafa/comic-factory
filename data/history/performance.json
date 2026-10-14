@@ -3277,5 +3277,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "kykfaQuamC8",
+    "platform": "youtube",
+    "run_id": "38648153159",
+    "published_at": "2026-10-14T22:57:10+00:00",
+    "event": {
+      "title": "Touching an asteroid.",
+      "series": "NASA footage",
+      "issue": "bennu",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 184,
+      "duration": 84.0,
+      "words_per_minute": 131,
+      "hook": "Watch a robot arm touch an asteroid 320 million kilometres away. The moment marks humanity’s first direct contact with a near‑Earth object.",
+      "hook_words": 22,
+      "title": "OSIRIS‑REx Touches Bennu and Returns Sample",
+      "title_length": 43,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
