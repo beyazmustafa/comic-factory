@@ -92,9 +92,10 @@ NUMBERS available for a big on-screen callout (choose at most 2, by index):
 {callouts}
 
 Write 8 to 11 beats. Each beat = one clip on screen + one or two spoken sentences (10 to 24 words) that fit that clip.
-Rules of the voice: calm, precise, concrete, present tense for what is on screen; tie words to picture ("This is…", "Here…",
-"Watch the…") in at least four beats; one idea per beat; every number comes from the facts; no hype words
-(incredible, mind-blowing, unbelievable), no "imagine", no "welcome", no "in this video", no questions to the viewer, no lists.
+Rules of the voice: calm, precise, concrete, present tense for what is on screen; tie words to picture ("This is…", "Here…")
+in two or three beats, not more; one idea per beat, in a clear chronological or causal order; every number comes from the facts;
+no filler clauses that just restate a fact unrelated to the picture; no hype words (incredible, mind-blowing, unbelievable),
+no "imagine", no "welcome", no "in this video", no questions to the viewer, no lists.
 Beat 1 is the hook: the most surprising true statement, said plainly. The middle builds understanding. The last beat delivers
 a payoff that makes the hook land. Then a closing line (max 12 words) shown on screen in silence: a resonant fact or image that
 lingers (e.g. "The next crew will fly this same path." / "It is still falling, 50 years later.") — never an instruction to the
@@ -110,7 +111,43 @@ Return JSON:
 "beats": [{{"clip": "c00", "narration": "...", "label": "NASA · MISSION · YEAR", "callout": <index or null>}}],
 "closing": "..."}}"""
     data = api.json("Belgesel senaryosu", prompt)
-    return validate_script(data, topic, clips)
+    script = validate_script(data, topic, clips)
+    return polish_script(api, topic, script, clips)
+
+
+def polish_script(api, topic, script, clips):
+    """A second pass by the writer as its own editor: order, clarity, no filler, same facts and shape."""
+    facts = "\n".join(f"- {fact}" for fact in topic["facts"])
+    by_id = {c["id"]: c for c in clips}
+    draft = "\n".join(f"{i + 1}. [{b['clip']}: {by_id[b['clip']]['shows'][:70]}] {b['narration']}" for i, b in enumerate(script["beats"]))
+    prompt = f"""You are the script editor of a calm, premium documentary Short about {topic['subject']}.
+Tighten this draft narration without changing its facts, beat count, clip assignments or overall length (each beat 10–24 words).
+Make the order chronological or causal and make each beat say one clear thing that matches the clip in brackets.
+Remove filler, repeated ideas, and sentences that describe something the clip does not show. Keep numbers exactly as in the facts.
+Keep "This is / Here / Watch" phrasing to at most three beats. Plain, concrete, warm. No hype, no questions, no instructions to the viewer.
+
+FACTS:
+{facts}
+
+DRAFT:
+{draft}
+
+Return {{"beats": [{{"narration": "..."}}, ...]}} with exactly {len(script['beats'])} entries in the same order."""
+    try:
+        data = api.json("Senaryo düzelti", prompt)
+        rows = data.get("beats") or []
+        if len(rows) != len(script["beats"]):
+            return script
+        polished = []
+        for beat, row in zip(script["beats"], rows):
+            text = re.sub(r"\s+", " ", str(row.get("narration", "") if isinstance(row, dict) else row)).strip()
+            polished.append({**beat, "narration": text if 8 <= words_of(text) <= 28 else beat["narration"]})
+        total = sum(words_of(b["narration"]) for b in polished)
+        if 110 <= total <= 215:
+            return {**script, "beats": polished}
+    except Exception as error:  # noqa: BLE001
+        print(f"Düzelti atlandı: {str(error)[:100]}", flush=True)
+    return script
 
 
 def validate_script(data, topic, clips):
