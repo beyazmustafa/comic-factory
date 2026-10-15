@@ -424,12 +424,12 @@ def render(plan, output, log=print):
                 width = int(W * t / duration)
                 if width > 0:
                     frame[0:4, :width] = (frame[0:4, :width].astype(np.float32) * 0.45 + progress_track[:, :width] * 0.55).astype(np.uint8)
-            # callout
-            if shot.get("callout") and shot["t0"] in callouts and t >= shot["t0"] + 0.25:
+            # callout (never over the end card)
+            if shot.get("callout") and shot["t0"] in callouts and t >= shot["t0"] + 0.25 and t < end_from - 0.2:
                 values, sequence, label_layer = callouts[shot["t0"]]
                 local = t - shot["t0"] - 0.25
                 frame_index = min(len(sequence) - 1, int(local * FPS))
-                show = min(ease_out(local / 0.3), max(0.0, min(1.0, (shot["t1"] - t) / 0.35)))
+                show = min(ease_out(local / 0.3), max(0.0, min(1.0, (min(shot["t1"], end_from - 0.2) - t) / 0.35)))
                 values[sequence[frame_index]].paint(frame, opacity=show, dy=(1 - ease_out(local / 0.4)) * 18)
                 label_layer.paint(frame, opacity=0.95 * show * ease_out((local - 0.2) / 0.4))
             # end card

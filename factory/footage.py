@@ -544,9 +544,23 @@ def has_face(path, threshold=0.6):
     return False
 
 
+def is_blank(path):
+    """Nearly black (or nearly white) frame with nothing in it."""
+    try:
+        with Image.open(path) as picture:
+            grey = picture.convert("L").resize((64, 36))
+            pixels = list(grey.getdata())
+        mean = sum(pixels) / len(pixels)
+        return (mean < 8 and max(pixels) < 60) or mean > 245
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def unclean(path, trim_bottom=0.0):
-    """Frame carries text or a face → never usable. `trim_bottom` ignores a known
-    timestamp strip (SDO daily movies stamp the date along the bottom edge)."""
+    """Frame carries text or a face, or is blank → never usable. `trim_bottom` ignores a
+    known timestamp strip (SDO daily movies stamp the date along the bottom edge)."""
+    if is_blank(path):
+        return True
     if not trim_bottom:
         return has_text(path) or has_face(path)
     with Image.open(path) as picture:
@@ -750,7 +764,7 @@ def text_intervals(path, duration, step=1.0, pad=0.8, trim_bottom=0.0):
 def active_area(path, width, height, duration):
     """Letterbox/pillarbox bars → the picture's real rectangle (x, y, w, h), or None for a full frame."""
     start = max(0.0, min(duration - 2.0, duration * 0.3))
-    result = subprocess.run(["ffmpeg", "-v", "info", "-ss", f"{start:.2f}", "-i", str(path), "-t", "2.5", "-vf", "cropdetect=24:4:0",
+    result = subprocess.run(["ffmpeg", "-v", "info", "-ss", f"{start:.2f}", "-i", str(path), "-t", "2.5", "-vf", "cropdetect=48:4:0",
                              "-an", "-f", "null", "-"], capture_output=True, text=True, timeout=300)
     found = re.findall(r"crop=(\d+):(\d+):(\d+):(\d+)", result.stderr or "")
     if not found:

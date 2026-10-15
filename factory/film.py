@@ -180,7 +180,7 @@ def validate_script(data, topic, clips):
     # at most two callouts, never two in a row, never under the hook card
     seen = 0
     for index, beat in enumerate(beats):
-        if beat["callout"] and (index == 0 or seen >= 2 or beats[index - 1]["callout"]):
+        if beat["callout"] and (index == 0 or index == len(beats) - 1 or seen >= 2 or beats[index - 1]["callout"]):
             beat["callout"] = None
         elif beat["callout"]:
             seen += 1
