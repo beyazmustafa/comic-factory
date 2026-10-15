@@ -492,6 +492,63 @@ def has_text(path):
     return len(ocr_words(path)) >= 2
 
 
+_face_net = None
+MODEL_DIR = Path(__file__).resolve().parent.parent / "data" / "models"
+
+
+def _face_detector():
+    """OpenCV's SSD face detector (res10) when its two model files are present; Haar cascades
+    are far too noisy on craters and plasma, so without the model no face check runs."""
+    global _face_net
+    if _face_net is None:
+        _face_net = False
+        prototxt, weights = MODEL_DIR / "deploy.prototxt", MODEL_DIR / "res10.caffemodel"
+        if prototxt.is_file() and weights.is_file() and weights.stat().st_size > 1_000_000:
+            try:
+                import cv2
+
+                _face_net = cv2.dnn.readNetFromCaffe(str(prototxt), str(weights))
+            except Exception:  # noqa: BLE001
+                _face_net = False
+    return _face_net or None
+
+
+_face_lock = threading.Lock()
+
+
+def has_face(path, threshold=0.6):
+    """A presenter, interviewee or crowd: a confident face of a plausible size."""
+    net = _face_detector()
+    if net is None:
+        return False
+    try:
+        import cv2
+
+        image = cv2.imread(str(path))
+        if image is None:
+            return False
+        height, width = image.shape[:2]
+        blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
+        with _face_lock:
+            net.setInput(blob)
+            detections = net.forward()
+        for i in range(detections.shape[2]):
+            confidence = float(detections[0, 0, i, 2])
+            if confidence < threshold:
+                continue
+            x1, y1, x2, y2 = detections[0, 0, i, 3:7]
+            if (x2 - x1) * width >= width * 0.05 and (y2 - y1) * height >= height * 0.05:
+                return True
+    except Exception:  # noqa: BLE001
+        return False
+    return False
+
+
+def unclean(path):
+    """Frame carries text or a face → never usable."""
+    return has_text(path) or has_face(path)
+
+
 def sample(asset, directory, workers=4):
     """Evenly spaced frames across the small rendition (seeks only fetch what they need), each OCR-checked."""
     duration = asset["duration"]
@@ -512,7 +569,7 @@ def sample(asset, directory, workers=4):
     if len(frames) < max(4, count // 2):
         raise ValueError(f"too few frames ({len(frames)}/{count}): {failures[0] if failures else ''}")
     with ThreadPoolExecutor(max_workers=2) as pool:
-        flags = list(pool.map(lambda f: has_text(f[1]), frames))
+        flags = list(pool.map(lambda f: unclean(f[1]), frames))
     return frames, flags
 
 
@@ -569,13 +626,15 @@ def judge_asset(api, topic, asset, frames, flags, sheet):
     """One look at the contact sheet: relevant? which stretches are clean? where is the subject?"""
     count = len(frames)
     flagged = [i for i, f in enumerate(flags) if f]
-    ocr_note = (f"\nAn OCR pass found on-screen text in frames {flagged}; those frames are excluded whatever you decide." if flagged else "")
+    ocr_note = (f"\nAn automatic pass found on-screen text or a person in frames {flagged}; those frames are excluded whatever you decide." if flagged else "")
     prompt = f"""You are the picture editor of a calm, premium vertical documentary Short about {topic['subject']}.
 This contact sheet shows {count} frames (#0..#{count - 1}, with timestamps) sampled evenly from one video:
 title: "{asset['title']}" ({asset.get('date', '')}); description: "{asset.get('description', '')[:300]}".{ocr_note}
 
 First decide relevance: the video must actually show {topic['subject']} (or its direct subject matter). A video about a
 different planet, mission or phenomenon is NOT relevant even if it is beautiful.
+If any sampled frame shows a presenter, an interview or a studio, this is a produced programme: mark usable=false unless the
+remaining frames are clearly raw mission footage with nothing added. When in doubt, reject.
 Then decide which stretches are usable as full-screen footage on a phone. A stretch is usable only if EVERY sampled frame in it:
 - shows the subject or closely related real imagery (spacecraft/telescope footage, orbital views, science visualization),
 - has NO burned-in text, captions, subtitles, logos, title cards, charts, diagrams, slides, grid or coordinate lines, arrows or watermarks,
@@ -653,8 +712,8 @@ def extract(url, start, end, path, margin=1.0):
 
 
 def text_intervals(path, duration, step=1.0, pad=0.8):
-    """Seconds of a local clip whose frames carry readable text (one OCR per second)."""
-    if not shutil.which("tesseract"):
+    """Seconds of a local clip whose frames carry readable text or a face (one check per second)."""
+    if not shutil.which("tesseract") and _face_detector() is None:
         return []
     folder = Path(path).with_suffix("")
     folder.mkdir(parents=True, exist_ok=True)
@@ -662,7 +721,7 @@ def text_intervals(path, duration, step=1.0, pad=0.8):
                     str(folder / "t%03d.jpg")], capture_output=True, timeout=600)
     frames = sorted(folder.glob("t*.jpg"))
     with ThreadPoolExecutor(max_workers=2) as pool:
-        flags = list(pool.map(has_text, frames))
+        flags = list(pool.map(unclean, frames))
     intervals = []
     for index, flag in enumerate(flags):
         if flag:
@@ -797,6 +856,9 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
         state = "kullanılır" if verdict["usable"] else ("konu dışı" if not verdict["relevant"] else "elendi")
         log(f"{asset['id']}: {state} ({verdict['quality']}/10, {verdict['kind']}) {verdict['what'][:70]}")
         if not verdict["usable"] or verdict["quality"] < 5:
+            continue
+        if len(verdict["excluded"]) > len(frames) * 0.25:
+            log(f"{asset['id']}: üretilmiş program gibi (karelerin {len(verdict['excluded'])}/{len(frames)} kısmı yazı/insan); atlandı")
             continue
         spacing = asset["duration"] / max(1, len(frames))
         taken = 0

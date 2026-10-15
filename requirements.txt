@@ -14,3 +14,4 @@ google-auth-oauthlib==1.4.1
 google-api-python-client==2.200.0
 cloudinary==1.46.2
 edge-tts>=7.0.0
+opencv-python-headless>=4.9
