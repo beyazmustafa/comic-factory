@@ -1,0 +1,186 @@
+{
+  "script": {
+    "title": "The story of the first helicopter to fly on Mars",
+    "description": "Discover how NASA's Ingenuity helicopter achieved historic powered flight on Mars. Explore its record-breaking mission and engineering feats.",
+    "hook_card": "A helicopter on Mars.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "This is the first aircraft to fly on another planet, hovering above Mars.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c03",
+        "narration": "Here the helicopter operates in air about one percent as dense as Earth's sea‑level atmosphere.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "To generate lift, its carbon‑composite rotors spin at roughly 2,400 revolutions per minute.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c04",
+        "narration": "It weighs 1.8 kg and its two rotors span 1.2 metres, demanding precise engineering.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c05",
+        "narration": "On 19 April 2021 it hovered three metres for about 39 seconds, the first powered flight on another world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "Originally planned for five test flights in 30 days, the mission continued far beyond that schedule.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "Over almost three years it completed 72 flights, traveling more than 17 km across the terrain.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c04",
+        "narration": "It climbed to 24 metres and reached 36 km/h before a rotor blade was damaged in January 2024.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c01",
+        "narration": "Inside the craft is a small piece of fabric from the Wright brothers' 1903 Flyer.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This is the first aircraft to fly on another planet, hovering above Mars. Here the helicopter operates in air about one percent as dense as Earth's sea‑level atmosphere. To generate lift, its carbon‑composite rotors spin at roughly 2,400 revolutions per minute. It weighs 1.8 kg and its two rotors span 1.2 metres, demanding precise engineering. On 19 April 2021 it hovered three metres for about 39 seconds, the first powered flight on another world. Originally planned for five test flights in 30 days, the mission continued far beyond that schedule. Over almost three years it completed 72 flights, traveling more than 17 km across the terrain. It climbed to 24 metres and reached 36 km/h before a rotor blade was damaged in January 2024. Inside the craft is a small piece of fabric from the Wright brothers' 1903 Flyer.",
+    "event": {
+      "id": "film_ingenuity_20261015T032621859285Z",
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "ingenuity",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+        "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+        "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+        "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+      ]
+    },
+    "scenario": "ingenuity",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "This is the first aircraft to fly on another planet, hovering above Mars.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Here the helicopter operates in air about one percent as dense as Earth's sea‑level atmosphere.",
+        "label": "NASA · INGENUITY · 2021",
+        "callout": {
+          "value": "1%",
+          "label": "of Earth's air density"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "To generate lift, its carbon‑composite rotors spin at roughly 2,400 revolutions per minute.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "It weighs 1.8 kg and its two rotors span 1.2 metres, demanding precise engineering.",
+        "label": "NASA · INGENUITY · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "On 19 April 2021 it hovered three metres for about 39 seconds, the first powered flight on another world.",
+        "label": "NASA · INGENUITY · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Originally planned for five test flights in 30 days, the mission continued far beyond that schedule.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "Over almost three years it completed 72 flights, traveling more than 17 km across the terrain.",
+        "label": "NASA · MARS HELICOPTER · 2023",
+        "callout": {
+          "value": "72",
+          "label": "flights, planned for 5"
+        }
+      },
+      {
+        "clip": "c04",
+        "narration": "It climbed to 24 metres and reached 36 km/h before a rotor blade was damaged in January 2024.",
+        "label": "NASA · INGENUITY · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Inside the craft is a small piece of fabric from the Wright brothers' 1903 Flyer.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      }
+    ],
+    "closing": "Earth's history carried into the Martian skies.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Discover how NASA's Ingenuity helicopter achieved historic powered flight on Mars. Explore its record-breaking mission and engineering feats.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — First Video of NASA’s Ingenuity Mars Helicopter in Flight, Including Takeoff and (https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight); JPL — Perseverance Rover's Mastcam-Z Captures Ingenuity's Third FlightNASA’s Ingenuity (https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video); JPL — Ingenuity Mars Helicopter Flight Update Media Reel (https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080); JPL — JPL-20200429-TECHf-0002-Mars Helicopter Animation (https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The story of the first helicopter to fly on Mars\n\nDiscover how NASA's Ingenuity helicopter achieved historic powered flight on Mars. Explore its record-breaking mission and engineering feats.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

@@ -1,12 +1,12 @@
-run_id: 38672430612  attempt: 1  event: workflow_dispatch
+run_id: 38676169945  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261015T024343016855Z/run.json
+--- data/runs/20261015T032621859285Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "pluto",
+  "topic": "ingenuity",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,58 +40,56 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38672430612",
+  "run_id": "38676169945",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "853df3001952b02df99529eee4ef2cf766158d0e54ba5c975c9c6e7b92f7f8a3",
-  "metadata_sha256": "bb0d5882e510c51af3df5b2ac020b2856a3e14a4d3114e6f7d5a43112335064a",
+  "video_sha256": "9c93cf3ae5bf1f1c4c86dfc74e8d79a99452fe153409996827442097477ad407",
+  "metadata_sha256": "a2eb16329c8c9c1c7999b2e57acfe59b073f875da05d6f3a60aafaa425fab176",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 72,
-  "duration": 77.20095833333333,
+  "api_calls": 62,
+  "duration": 68.75,
   "voice": "Charon",
   "event": {
-    "id": "film_hubble-servicing_20261015T024343016855Z",
-    "title": "The telescope that was born blind.",
+    "id": "film_ingenuity_20261015T032621859285Z",
+    "title": "A helicopter on Mars.",
     "series": "NASA footage",
-    "issue": "hubble-servicing",
+    "issue": "ingenuity",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "hubble-servicing",
+    "scenario": "ingenuity",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://esahubble.org/videos/heic0907b/",
-      "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
-      "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
-      "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan",
-      "https://images.nasa.gov/details/GSFC_20080520_HST_m10217_Zoom_Out",
-      "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002"
+      "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+      "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+      "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T024343016855Z/diagnostics/provider_events.json
+--- data/runs/20261015T032621859285Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü değerlendirme nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
+  "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
+  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261015T024343016855Z/diagnostics/providers.json
+--- data/runs/20261015T032621859285Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -115,8 +113,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -211,96 +209,55 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: pluto
-Görüntü adayları: 43 (pluto)
-Sıralanan aday: 0
-Çözümlenen video: 0
-Görüntü adayları: 4 (pluto, Commons)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 4
-Çözümlenemedi commons:Pluto-FlyoverAnimation-20150918.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Charon Flyover from New Horizons.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 2
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-commons:Pluto Flyover from New Horizons.webm: kullanılır (8/10, visualization) Pluto flyover visualization from New Horizons data
-commons:Animated Flyover of Pluto’s Icy Mountain and Plains.ogv: kullanılır (8/10, visualization) Animated flyover visualization of Pluto's icy mountains and plains bas
-Kullanılır kesit: 3 (78 sn temiz görüntü)
-Konu atlandı (pluto): Yeterli temiz görüntü yok (3 kesit, 78 sn).
-→ Konu: hubble-deep-field
-Görüntü adayları: 36 (hubble-deep-field)
+→ Konu: ingenuity
+Görüntü adayları: 46 (ingenuity)
 Sıralanan aday: 12
-Çözümlenemedi hubble:heic0611a: ValueError: no usable rendition
-Çözümlenemedi hubble:heic0406c: ValueError: no usable rendition
-Çözümlenemedi hubble:heic0406b: ValueError: no usable rendition
-Çözümlenen video: 9
-hubble:heic0714g: elendi (7/10, visualization) A 3D flythrough visualization through the Hubble Ultra Deep Field gala
-hubble:heic0916a: kullanılır (8/10, visualization) A zoom sequence into the Hubble Ultra Deep Field revealing distant gal
-hubble:heic0714c: kullanılır (8/10, visualization) A zoom sequence through the distant galaxies of the Hubble Ultra Deep 
-hubble:heic0714c: üretilmiş program gibi (karelerin 7/8 kısmı yazı/insan); atlandı
-hubble:heic0714b: elendi (4/10, visualization) Compact galaxies in the Hubble Ultra Deep Field with overlaid diagrams
-svs:13921: kullanılır (8/10, visualization) Simulated Ultra-Deep Field space flight showcasing distant galaxies an
-svs:13921: üretilmiş program gibi (karelerin 12/24 kısmı yazı/insan); atlandı
-Değerlendirilemedi svs:13793: ValueError: too few frames (4/15): frame 27.7s: 
-svs:13902: elendi (3/10, footage) Hubble Ultra Deep Field documentary with presenters and subtitles
-svs:13609: elendi (6/10, footage) Hubble Space Telescope observations of distant galaxies and deep space
-svs:13893: elendi (8/10, visualization) Sonification and visualization of the Hubble Ultra Deep Field galaxies
-Görüntü adayları: 4 (hubble-deep-field, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 4
-Çözümlenemedi commons:NASA-HubbleLegacyFieldZoomOut-20190502.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:A Flight Through the CANDELS Ultra Deep Survey Field.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Ultra Deep Field, Hubble zoom xo.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Hubble Ultra Deep Field Video near constellation Fornax.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 1 (26 sn temiz görüntü)
-Konu atlandı (hubble-deep-field): Yeterli temiz görüntü yok (1 kesit, 26 sn).
-→ Konu: hubble-servicing
-Görüntü adayları: 52 (hubble-servicing)
-Sıralanan aday: 12
-Çözümlenemedi hubble:heic0202b: ValueError: no usable rendition
-Çözümlenemedi hubble:heic0618a: ValueError: no usable rendition
-Çözümlenemedi hubble:heic0202a: ValueError: no usable rendition
-Çözümlenen video: 9
-nasa:GSFC_20080519_HST_m10212_OutNaround: kullanılır (8/10, footage) The Hubble Space Telescope in orbit above Earth
-nasa:GSFC_20080520_HST_m10216_Whip_Pan: kullanılır (8/10, animation) An animation of the Hubble Space Telescope in orbit passing by and fad
-nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001: elendi (8/10, footage) Astronauts working in the payload bay of the Space Shuttle during Hubb
-nasa:GSFC_20080519_HST_m10213-SlowLook1: kullanılır (8/10, footage) The Hubble Space Telescope in orbit
-nasa:GSFC_20080822_HST_m10235_Release_BTY_002: kullanılır (7/10, animation) Animated sequence depicts the release of the Hubble Space Telescope fr
-nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007: elendi (7/10, footage) Astronaut performing battery module replacement on the Hubble Space Te
-nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply: elendi (8/10, animation) Animation of an astronaut servicing the Hubble Space Telescope
-hubble:heic0907b: kullanılır (8/10, footage) Space Shuttle Atlantis carrying the Hubble Space Telescope in orbit ab
-nasa:GSFC_20080520_HST_m10217_Zoom_Out: kullanılır (8/10, animation) An animation showing the Hubble Space Telescope orbiting Earth and zoo
-Kullanılır kesit: 6 (108 sn temiz görüntü)
+Düşük çözünürlük nasa:JPL-20220527-M2020f-0001-NASAs_Ingenuity_Mars_Helicopter_Captures_Video_of_Record_Flight2: 640x480
+Süre uygun değil nasa:Mars Helicopter Flights VF 929 FINAL: 2941 sn
+Çözümlenen video: 10
+nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter performing its historic first flight,
+Görüntü değerlendirme nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter performing its third flight across th
+nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (5/10, footage) JPL control room reaction to Ingenuity's fourth flight with brief Mars
+Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: elendi (6/10, footage) NASA mission control personnel monitoring the second flight of the Ing
+nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: elendi (7/10, footage) NASA mission control personnel monitoring the Ingenuity helicopter's t
+nasa:JPL-20210507-TECHf-0001-Ingenuity 5th Flight Recap: elendi (4/10, footage) NASA mission control personnel monitoring the Ingenuity Mars Helicopte
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: kullanılır (8/10, footage) NASA's Ingenuity helicopter flying on Mars captured by the Perseveranc
+nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: kullanılır (8/10, footage) NASA's Perseverance rover films the Ingenuity helicopter flying on Mar
+nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: üretilmiş program gibi (karelerin 15/24 kısmı yazı/insan); atlandı
+nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: kullanılır (8/10, animation) Animation of NASA's Ingenuity helicopter flying on Mars alongside the 
+Kullanılır kesit: 8 (183 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 91.9/100 | whisper-large-v3
+Ses eşleştirme: 95.1/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 97.6/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
+Ses eşleştirme: 93.7/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
 Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 93.3/100 | whisper-large-v3
-→ Kurgu (77.2 sn, 9 beat, 6 kesit)
-  kurgu 10/77 sn
-  kurgu 20/77 sn
-  kurgu 30/77 sn
-  kurgu 40/77 sn
-  kurgu 50/77 sn
-  kurgu 60/77 sn
-  kurgu 70/77 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/review.html
+Ses eşleştirme: 96.9/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 91.4/100 | whisper-large-v3
+→ Kurgu (68.8 sn, 9 beat, 8 kesit)
+  kurgu 10/69 sn
+  kurgu 20/69 sn
+  kurgu 30/69 sn
+  kurgu 40/69 sn
+  kurgu 50/69 sn
+  kurgu 60/69 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T032621859285Z/review.html
