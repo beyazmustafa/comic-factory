@@ -1,12 +1,12 @@
-run_id: 38678423914  attempt: 1  event: workflow_dispatch
+run_id: 38680439118  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261015T035223561856Z/run.json
+--- data/runs/20261015T041524241260Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "launch-power",
+  "topic": "mars-sunset",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,36 +40,37 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38678423914",
+  "run_id": "38680439118",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "5313d5cb9bbe6f47c7a3c3b5efaa7cddc249cf6f36ebe0e66941ea0035ae11f2",
-  "metadata_sha256": "8845ffef0ff9cec3d099dd15a516a1c3e757c8b482389175ba6cb73ef75c572a",
+  "video_sha256": "3a81e82f7365fe980513836b71ecde9ac57dbbb04b576a54427f66850d1cb170",
+  "metadata_sha256": "4e4a640ffdec0d8f2d03d44cd0b53f62945ab04e8a1003ae351d362c935b0d63",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 63,
-  "duration": 61.71999999999999,
+  "api_calls": 59,
+  "duration": 68.67,
   "voice": "Charon",
   "event": {
-    "id": "film_launch-power_20261015T035223561856Z",
-    "title": "The most powerful machines ever built.",
+    "id": "film_hurricane_20261015T041524241260Z",
+    "title": "Inside the eye.",
     "series": "NASA footage",
-    "issue": "launch-power",
+    "issue": "hurricane",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "launch-power",
+    "scenario": "hurricane",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/Artemis_SLS_Pan_Logotype_camF10B_Final",
-      "https://images.nasa.gov/details/MSFC_SLS_01142021_SLS_Orion_Animation_0034",
-      "https://images.nasa.gov/details/SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
-      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
+      "https://images.nasa.gov/details/iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "https://images.nasa.gov/details/iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+      "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+      "https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T035223561856Z/diagnostics/provider_events.json
+--- data/runs/20261015T041524241260Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -83,16 +84,16 @@ produce step outcome: success
   "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "gemini TTS yanıt vermiyor (Ses Charon (gemini-3.8-flash-lite-tts): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exc); edge sesine geçildi.",
-  "Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video edge (Andrew) ile yeniden seslendirildi."
+  "gemini TTS yanıt vermiyor (Ses Charon (gemini-3.1-flash-tts-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You ); edge sesine geçildi."
 ]
---- data/runs/20261015T035223561856Z/diagnostics/providers.json
+--- data/runs/20261015T041524241260Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -115,9 +116,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -212,8 +213,8 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: launch-power
-Görüntü adayları: 49 (launch-power)
+→ Konu: mars-sunset
+Görüntü adayları: 20 (mars-sunset)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
@@ -226,21 +227,27 @@ Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanaca
 Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 9
-Çözümlenen video: 9
-nasa:Ultimate Saturn V Launch w Enhanced Sound: kullanılır (8/10, footage) Saturn V rocket launches and liftoff sequences
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) NASA's Space Launch System (SLS) rocket launching during the Artemis I
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (karelerin 16/24 kısmı yazı/insan); atlandı
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) NASA's Space Launch System lifting off from pad 39B
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: üretilmiş program gibi (karelerin 4/13 kısmı yazı/insan); atlandı
-nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: kullanılır (8/10, footage) NASA's Space Launch System (SLS) rocket launching at night during the 
-nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: üretilmiş program gibi (karelerin 8/24 kısmı yazı/insan); atlandı
-nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) NASA's Space Launch System (SLS) lifting off from pad 39B during the A
-nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: üretilmiş program gibi (karelerin 8/21 kısmı yazı/insan); atlandı
-nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034: kullanılır (8/10, animation) Animation depicting NASA's Space Launch System and the Artemis I missi
-nasa:Artemis_SLS_Pan_Logotype_camF10B_Final: kullanılır (8/10, animation) NASA's Space Launch System (SLS) rocket on the Mobile Launcher
-nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1: kullanılır (8/10, animation) Animation of NASA's Space Launch System (SLS) Artemis I mission rollou
-Kullanılır kesit: 8 (125 sn temiz görüntü)
+Sıralanan aday: 2
+Çözümlenen video: 2
+nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc: kullanılır (7/10, footage) NASA rovers exploring and capturing imagery on the Martian surface
+nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc: üretilmiş program gibi (0 karede insan, 9/11 kare elendi); atlandı
+nasa:JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover: konu dışı (3/10, footage) Mars landscape tour of Jezero Crater by Perseverance rover
+Görüntü adayları: 1 (mars-sunset, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 0
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (mars-sunset): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: hurricane
+Görüntü adayları: 64 (hurricane)
+Sıralanan aday: 12
+Çözümlenen video: 12
+nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701: kullanılır (9/10, footage) International Space Station flyover of Hurricane Beryl
+nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904: kullanılır (8/10, footage) International Space Station live views of Hurricane Dorian from orbit
+nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008: kullanılır (9/10, footage) International Space Station external cameras capturing Hurricane Milto
+nasa:iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926: kullanılır (8/10, footage) Live views of Hurricane Helene from the International Space Station
+nasa:jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009: kullanılır (8/10, footage) International Space Station external camera views of Hurricane Milton 
+Kullanılır kesit: 8 (208 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
@@ -248,30 +255,23 @@ Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a ver
 Ses bölümü 1, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
 Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 88.3/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
 Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 87.2/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-gemini TTS yanıt vermiyor (Ses Charon (gemini-3.8-flash-lite-tts): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exc); edge sesine geçildi.
-Ses eşleştirme: 97.2/100 | whisper-large-v3
-Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video edge (Andrew) ile yeniden seslendirildi.
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 88.3/100 | whisper-large-v3
+gemini TTS yanıt vermiyor (Ses Charon (gemini-3.1-flash-tts-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You ); edge sesine geçildi.
+Ses eşleştirme: 93.6/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 86.7/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 87.9/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 97.2/100 | whisper-large-v3
-→ Kurgu (61.7 sn, 9 beat, 8 kesit)
-  kurgu 10/62 sn
-  kurgu 20/62 sn
-  kurgu 30/62 sn
-  kurgu 40/62 sn
-  kurgu 50/62 sn
-  kurgu 60/62 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/review.html
+Ses eşleştirme: 93.5/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (68.7 sn, 9 beat, 8 kesit)
+  kurgu 10/69 sn
+  kurgu 20/69 sn
+  kurgu 30/69 sn
+  kurgu 40/69 sn
+  kurgu 50/69 sn
+  kurgu 60/69 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T041524241260Z/review.html

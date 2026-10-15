@@ -1,0 +1,168 @@
+{
+  "title": "Hurricanes from Space: Calm Eye, Furious Edge",
+  "description": "From the International Space Station and weather satellites we watch hurricanes spin above Earth. The footage reveals the quiet eye and the extreme winds that power these storms.",
+  "hook_card": "Inside the eye.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "From orbit the storm stretches across Earth's curve, a massive vortex spanning hundreds of kilometres.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "Here the eye appears as a clear circle, thirty to sixty‑five kilometres wide, surrounded by swirling clouds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c01",
+      "narration": "This close view shows the calm centre where winds drop to a gentle breath while the surrounding storm roars.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "Across the limb the cloud shield spans more than a thousand kilometres; the station traverses it in roughly two minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c06",
+      "narration": "Here the eyewall winds surge beyond 250 kilometres per hour, the peak speeds of a category‑five hurricane.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "From thirty‑five‑eight‑hundred kilometres above, GOES satellites capture the storm every thirty seconds, monitoring its evolution.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "This view illustrates the hurricane’s heat release, about two hundred times the world’s total electricity generation.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c07",
+      "narration": "Here the storm spins anticlockwise in the northern hemisphere, a giant vortex turning the atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c05",
+      "narration": "The station continues its orbit, repeatedly observing hurricanes as they move across the planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "From orbit the storm stretches across Earth's curve, a massive vortex spanning hundreds of kilometres. Here the eye appears as a clear circle, thirty to sixty‑five kilometres wide, surrounded by swirling clouds. This close view shows the calm centre where winds drop to a gentle breath while the surrounding storm roars. Across the limb the cloud shield spans more than a thousand kilometres; the station traverses it in roughly two minutes. Here the eyewall winds surge beyond 250 kilometres per hour, the peak speeds of a category‑five hurricane. From thirty‑five‑eight‑hundred kilometres above, GOES satellites capture the storm every thirty seconds, monitoring its evolution. This view illustrates the hurricane’s heat release, about two hundred times the world’s total electricity generation. Here the storm spins anticlockwise in the northern hemisphere, a giant vortex turning the atmosphere. The station continues its orbit, repeatedly observing hurricanes as they move across the planet.",
+  "event": {
+    "id": "film_hurricane_20261015T041524241260Z",
+    "title": "Inside the eye.",
+    "series": "NASA footage",
+    "issue": "hurricane",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hurricane",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "https://images.nasa.gov/details/iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+      "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+      "https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009"
+    ]
+  },
+  "scenario": "hurricane",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "From orbit the storm stretches across Earth's curve, a massive vortex spanning hundreds of kilometres.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Here the eye appears as a clear circle, thirty to sixty‑five kilometres wide, surrounded by swirling clouds.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "This close view shows the calm centre where winds drop to a gentle breath while the surrounding storm roars.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Across the limb the cloud shield spans more than a thousand kilometres; the station traverses it in roughly two minutes.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Here the eyewall winds surge beyond 250 kilometres per hour, the peak speeds of a category‑five hurricane.",
+      "label": "NASA · ISS · 2024",
+      "callout": {
+        "value": "250 km/h",
+        "label": "in the eyewall"
+      }
+    },
+    {
+      "clip": "c05",
+      "narration": "From thirty‑five‑eight‑hundred kilometres above, GOES satellites capture the storm every thirty seconds, monitoring its evolution.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "This view illustrates the hurricane’s heat release, about two hundred times the world’s total electricity generation.",
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "200×",
+        "label": "the world's electricity"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "Here the storm spins anticlockwise in the northern hemisphere, a giant vortex turning the atmosphere.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The station continues its orbit, repeatedly observing hurricanes as they move across the planet.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    }
+  ],
+  "closing": "A hurricane releases heat about two hundred times global electricity generation.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

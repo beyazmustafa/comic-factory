@@ -1,0 +1,192 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:JPL-20220919-INSIGHf-0001-InSight Captures Sound of a Meteoroid Striking Mars_1080",
+   "title": "InSight Captures Sound of a Meteoroid Striking Mars",
+   "date": "2022-09-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200213-MH-GEB01-0001-Mars_2020_Unbagging_and_Additional_Processing_in_PHSF-3243450",
+   "title": "Mars 2020 Rover and Sky Crane Unbagging, Cleaning and Additional Processing",
+   "date": "2020-02-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc",
+   "title": "Mars After Dark: What NASA Rovers Really See",
+   "date": "2025-04-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover",
+   "title": "Explore Mars' Jezero Crater with NASA’s Perseverance Rover",
+   "date": "2021-12-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201221-M2020f-0001-Perseverance Arrives at Mars - UHD Master",
+   "title": "Perseverance Arrives at Mars: Feb. 18, 2021",
+   "date": "2020-12-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+   "title": "Perseverance Rover’s Descent and Touchdown on Mars: Onboard Camera Views",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210305-M2020f-0001Perseverance Lands on Mars UHD Master",
+   "title": "Perseverance Rover Lands on Mars, as the World Watches",
+   "date": "2021-03-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+   "title": "NASA's Mars 2020 Perseverance Rover Landing Animations",
+   "date": "2020-12-21",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5646",
+   "title": "How to See the Proposed Carroll Crater",
+   "date": "2026-05-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5633",
+   "title": "Simulating the Artemis II Lunar Flyby on April 6, 2026",
+   "date": "2026-04-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5622",
+   "title": "Artemis II: Sending Humans Beyond the Magnetosphere",
+   "date": "2026-03-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5617",
+   "title": "ESCAPADE Visits the Distant Magnetotail",
+   "date": "2026-02-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5609",
+   "title": "Heliophysics Satellite Fleet - 2026",
+   "date": "2026-01-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3335",
+   "title": "Meteor Crater Topography",
+   "date": "2025-12-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14938",
+   "title": "Artemis Science: Visualizing NASA’s Next Lunar Flyby",
+   "date": "2025-12-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5503",
+   "title": "ESCAPADE Theoretical Flight Through Active Mars Magnetosphere",
+   "date": "2025-11-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5535",
+   "title": "What Apollo Saw in Sunlight While in Orbit",
+   "date": "2025-08-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5536",
+   "title": "Simulated Artemis II Lunar Flyby",
+   "date": "2025-08-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5514",
+   "title": "Solar Storm Excites Martian Magnetosphere for Fulldome",
+   "date": "2025-04-07",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Boris desktop screenmate, Introduction-wjx2j04cTcw.webm",
+   "title": "Boris desktop screenmate, Introduction-wjx2j04cTcw",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc",
+  "nasa:JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover"
+ ],
+ "judged": [
+  {
+   "id": "nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc",
+   "title": "Mars After Dark: What NASA Rovers Really See",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "footage",
+   "what": "NASA rovers exploring and capturing imagery on the Martian surface",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "stretches": [
+    {
+     "start": 9,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "NASA rover on the Martian surface",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "nasa:JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover",
+   "title": "Explore Mars' Jezero Crater with NASA’s Perseverance Rover",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "footage",
+   "what": "Mars landscape tour of Jezero Crater by Perseverance rover",
+   "excluded": [
+    2,
+    6,
+    8,
+    9,
+    10,
+    13,
+    14,
+    15,
+    16,
+    17,
+    20
+   ],
+   "stretches": []
+  }
+ ]
+}

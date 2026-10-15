@@ -1,0 +1,590 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+   "title": "Expedition 71 International Space Station Flyover of Hurricane Beryl - Monday, July 1, 2024",
+   "date": "2024-07-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+   "title": "iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+   "date": "2019-09-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+   "title": "INTERNATIONAL SPACE STATION CAMERAS CAPTURE NEW VIEWS OF HURRICANE MILTON",
+   "date": "2024-10-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+   "title": "Live Views of Hurricane Helene from the International Space Station – Thursday, September 26, 2024",
+   "date": "2024-09-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Expedition_69_Space_Station_Flies_Over_Hurricane_Franklin_Replay",
+   "title": "HURRICANE FRANKLIN IS SEEN FROM THE INTERNATIONAL SPACE STATION",
+   "date": "2023-08-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Expedition_69_Space_Station_Flies_Over_Hurricane_Idalia_Live",
+   "title": "HURRICANE IDALIA IS SEEN FROM THE INTERNATIONAL SPACE STATION",
+   "date": "2023-08-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009",
+   "title": "Cameras On The International Space Station Capture New Views Of Hurricane Milton - Oct. 9, 2024",
+   "date": "2024-10-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss064m263021644-Expedition_64_Hurricane_Zeta_Flyover_201028_1391974_1",
+   "title": "SPACE STATION CAMERAS PROVIDE VIEWS OF HURRICANE ZETA",
+   "date": "2020-10-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000251_Expedition_67_Space_Station_Flyover_of_Hurricane_Ian_220928",
+   "title": "Expedition 67 International Space Station Flyover of Hurricane Ian - Sept. 28, 2022",
+   "date": "2022-09-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2025m000148-Hurricane_Erin_Seen_From_International_Space_Station",
+   "title": "Hurricane Erin Seen From International Space Station - 8-19-2025",
+   "date": "2025-08-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2024m000168-Additional_Views_of_Hurricane_Helene_from_the_International_Space_Station",
+   "title": "Additional Views of Hurricane Helene from the International Space Station",
+   "date": "2024-09-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000241_Expedition_67_Hurricane_Ian_Flyover_220926",
+   "title": "Expedition 67 International Space Station Flyover of Hurricane Ian - Sept. 26, 2022",
+   "date": "2022-09-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Expedition_69_ Space_Station_Flies_Over_Hurricane_Idalia_230830_1874509",
+   "title": "HURRICANE IDALIA IS SEEN FROM THE INTERNATIONAL SPACE STATION AFTER LANDFALL",
+   "date": "2023-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss060m262411659_2019_0829_ISS_Views_of_Hurricane_Dorian",
+   "title": "iss060m262411659_2019_0829_ISS_Views_of_Hurricane_Dorian",
+   "date": "2019-08-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2019m000803_Hurricane_Dorian_190830",
+   "title": "ISS cameras capture views of Hurricane Dorian – August 30, 2019",
+   "date": "2019-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss060m262491204_Expedition_60_Hurricane_Dorian_Flyover_09-06-19",
+   "title": "iss060m262491204_Expedition_60_Hurricane_Dorian_Flyover_09-06-19",
+   "date": "2019-09-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss060m262461429_Expedition_60_ISS_Hurricane_Dorian_Live_Views_2019_0903",
+   "title": "iss060m262461429_Expedition_60_ISS_Hurricane_Dorian_Live_Views_2019_0903",
+   "date": "2019-09-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2019m000804_Hurricane_Dorian_190831",
+   "title": "ISS Views of Hurricane Dorian - August 31, 2019",
+   "date": "2019-08-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:iss060m262481254_Hurricane_Dorian_Live_Views_Sept_5_2019_0905",
+   "title": "iss060m262481254_Hurricane_Dorian_Live_Views_Sept_5_2019_0905",
+   "date": "2019-09-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2019m000806_Hurricane_Dorian_190902",
+   "title": "ISS Views of Hurricane Dorian - September 2, 2019",
+   "date": "2019-09-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2020m000226_Tropical_Storm_ Laura_Gulf_Fly-over_200824-MP4",
+   "title": "jsc2020m000226_Tropical_Storm_ Laura_Gulf_Fly-over_200824-MP4",
+   "date": "2020-08-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2019m000805_Hurricane_Dorian_190901",
+   "title": "ISS Views of Hurricane Dorian - September 1, 2019",
+   "date": "2019-09-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220301-MH-AJW01-0001-GOES_T_Isolated_Launch_Views_4K-3295642",
+   "title": "GOES-T Isolated Launch Views - 4K",
+   "date": "2022-03-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220301-MH-AJW01-0001-GOES_T_Isolated_Launch_Views_720p-3295642",
+   "title": "GOES-T Isolated Launch Views - 720p",
+   "date": "2022-03-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160527_Hurricanes_m12251_HurricaneDrought",
+   "title": "Ten-Year Gap in Major Hurricanes Continues: Hurricane Drought",
+   "date": "2016-05-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140529_HS3_m11559_Kickoff",
+   "title": "HS3: Global Hawks Soar into Storms",
+   "date": "2014-05-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20171004_m12738_RapidIntensification",
+   "title": "Intense String of Hurricanes Seen from Space",
+   "date": "2017-10-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160527_Hurricanes_m12251_Drought2016",
+   "title": "Ten-Year Gap in Major Hurricanes Continues: Drought 2016",
+   "date": "2016-05-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150413_Hurricane_m11870_Drought",
+   "title": "What Are The Chances Of Another Katrina?",
+   "date": "2015-05-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20161017_GPM_m12391_Matthew_Wrap",
+   "title": "GPM Sees Hurricane Matthew's Life Cycle",
+   "date": "2016-10-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170725_Alantic_m12628_Hurricanes",
+   "title": "Building a Hurricane Season in the Atlantic Ocean",
+   "date": "2017-07-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20161007_IMERG_m12389_Matthew_WS",
+   "title": "NASA Calculates Matthew's Heavy Rains - Wide Shot",
+   "date": "2016-10-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20161007_IMERG_m12389_HeavyRains",
+   "title": "NASA Calculates Matthew's Heavy Rains - Close Up",
+   "date": "2016-10-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20190905-MH-CMS01_0001-DART_Support_for_Hurricane_Dorian-3230374",
+   "title": "DART Support for Hurricane Dorian",
+   "date": "2019-09-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20171113_Hurricanes_m12772_Aerosols",
+   "title": "2017 Hurricanes and Aerosols Simulation",
+   "date": "2017-11-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20190830-MH-GEB01_0001-ML_Move_for_Hurricane_Prep-3230279",
+   "title": "Mobile Launcher Move for Hurricane Preparations",
+   "date": "2019-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_081505_goesn_onguard",
+   "title": "KSC-05-S-00274",
+   "date": "2005-08-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240606-MH-GEB01-0001-GOES_U_Media_Day_Astrotech-M7188",
+   "title": "GOES-U Media Day at Astrotech",
+   "date": "2024-06-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_081505_goesn_showcase",
+   "title": "KSC-05-S-00277",
+   "date": "2005-08-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_041405_goes_ready",
+   "title": "KSC-05-S-00082",
+   "date": "2005-04-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170830_GPM_m12697_Hurricane_Harvey",
+   "title": "NASA Captures Hurricane Harvey's Rainfall",
+   "date": "2017-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170830_GPM_m4458_Harvey",
+   "title": "NASA Captures Hurricane Harvey's Rainfall: Visualization",
+   "date": "2017-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_081505_goesn_dress_3",
+   "title": "KSC-05-S-00282",
+   "date": "2005-08-24",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5681",
+   "title": "Hurricane Polo Makes Landfall in Baja California",
+   "date": "2026-10-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5669",
+   "title": "GEOS Aerosols (2025)",
+   "date": "2026-08-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15035",
+   "title": "Forty Years of Change in Louisiana’s Wetlands",
+   "date": "2026-05-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5576",
+   "title": "TROPICS Eyes Hurricane Erin",
+   "date": "2025-08-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5575",
+   "title": "Powerful Hurricane Erin forms in the Atlantic",
+   "date": "2025-08-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5572",
+   "title": "GEOS Aerosols",
+   "date": "2025-08-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5552",
+   "title": "Science On A Sphere: Aerosols in the Air",
+   "date": "2025-06-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5515",
+   "title": "2024 Atlantic Hurricane Season (Vertical Mode)",
+   "date": "2025-03-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5468",
+   "title": "2024 Atlantic Hurricane Season",
+   "date": "2025-02-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5131",
+   "title": "Hurricane Ian's Clouds, Lightning, Humidity and Winds",
+   "date": "2024-12-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5217",
+   "title": "Northern California Fires in September 2020",
+   "date": "2024-12-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5405",
+   "title": "TROPICS Monitors Milton",
+   "date": "2024-10-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5670",
+   "title": "High-Resolution True Color Earth Imagery Simulated by GEOS During the 2026 Total Solar Eclipse",
+   "date": "2026-08-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5587",
+   "title": "Moon Phase and Libration, 2026",
+   "date": "2025-12-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5588",
+   "title": "Moon Phase and Libration, 2026 South Up",
+   "date": "2025-12-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5573",
+   "title": "FireSense Satellite Fleet",
+   "date": "2025-09-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5258",
+   "title": "Tracking Satellites and Space Debris in Earth Orbit (Feb 2024)",
+   "date": "2025-06-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5417",
+   "title": "GeoXO - OCX",
+   "date": "2024-12-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5415",
+   "title": "Moon Phase and Libration, 2025",
+   "date": "2024-11-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5416",
+   "title": "Moon Phase and Libration, 2025 South Up",
+   "date": "2024-11-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5377",
+   "title": "Accumulated Hurricane Tracks 1900 to 2023",
+   "date": "2024-09-23",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+  "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+  "nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+  "nasa:iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+  "nasa:jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009",
+  "nasa:jsc2022m000251_Expedition_67_Space_Station_Flyover_of_Hurricane_Ian_220928",
+  "svs:5515",
+  "svs:5576",
+  "svs:5405",
+  "nasa:jsc2025m000148-Hurricane_Erin_Seen_From_International_Space_Station",
+  "nasa:jsc2022m000241_Expedition_67_Hurricane_Ian_Flyover_220926",
+  "nasa:jsc2020m000226_Tropical_Storm_ Laura_Gulf_Fly-over_200824-MP4"
+ ],
+ "judged": [
+  {
+   "id": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+   "title": "Expedition 71 International Space Station Flyover of Hurricane Beryl - Monday, July 1, 2024",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "International Space Station flyover of Hurricane Beryl",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up of Hurricane Beryl's eye from orbit",
+     "score": 8
+    },
+    {
+     "start": 13,
+     "end": 19,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Wide orbital view of Hurricane Beryl and Earth's limb",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+   "title": "iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "International Space Station live views of Hurricane Dorian from orbit",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 10,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Views of Earth, cloud cover, and Hurricane Dorian from the International Space Station",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+   "title": "INTERNATIONAL SPACE STATION CAMERAS CAPTURE NEW VIEWS OF HURRICANE MILTON",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "International Space Station external cameras capturing Hurricane Milton from orbit.",
+   "excluded": [
+    23
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 6,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Stunning orbital view of Hurricane Milton's defined eye and swirling bands",
+     "score": 9
+    },
+    {
+     "start": 13,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Massive hurricane cloud shields stretching across the curved limb of Earth",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+   "title": "Live Views of Hurricane Helene from the International Space Station – Thursday, September 26, 2024",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Live views of Hurricane Helene from the International Space Station",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Earth curve and ISS hardware",
+     "score": 7
+    },
+    {
+     "start": 19,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Hurricane Helene spiral cloud bands seen through ISS window",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009",
+   "title": "Cameras On The International Space Station Capture New Views Of Hurricane Milton - Oct. 9, 2024",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "International Space Station external camera views of Hurricane Milton over the Gulf of Mexico",
+   "excluded": [
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.4
+     ],
+     "width": 0.32,
+     "shows": "Wide approach view of Hurricane Milton with ISS solar arrays",
+     "score": 8
+    },
+    {
+     "start": 6,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Detailed close-up of the hurricane cloud formations and eye wall",
+     "score": 8
+    },
+    {
+     "start": 13,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Orbital perspective of the massive storm system from the space station",
+     "score": 8
+    }
+   ]
+  }
+ ]
+}
