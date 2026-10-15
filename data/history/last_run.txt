@@ -1,12 +1,12 @@
-run_id: 38664295059  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261015T011227144913Z/run.json
+run_id: 38666611191  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
+--- data/runs/20261015T013822107453Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "perseverance-landing",
+  "status": "failed",
+  "stage": "setup",
+  "topic": "earth-night",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,56 +40,26 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38664295059",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "5a84fba9a9015acdb87c1ab547e4c50d2cdd230a2ad709921aa86a5b8d5e37fd",
-  "metadata_sha256": "b8578f72da7e195f6668211fd5eab0360cfd5470461c1e515cc4e75d5bc573ed",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 59,
-  "duration": 63.379999999999995,
-  "voice": "Charon",
-  "event": {
-    "id": "film_perseverance-landing_20261015T011227144913Z",
-    "title": "Seven minutes of terror.",
-    "series": "NASA footage",
-    "issue": "perseverance-landing",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "perseverance-landing",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
-      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
-      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
-    ]
-  },
-  "localized": []
+  "run_id": "38666611191",
+  "error": "FactoryError: Hiçbir konu için yeterli NASA görüntüsü bulunamadı."
 }
---- data/runs/20261015T011227144913Z/diagnostics/provider_events.json
+--- data/runs/20261015T013822107453Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5570: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261015T011227144913Z/diagnostics/providers.json
+--- data/runs/20261015T013822107453Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -113,8 +83,8 @@ produce step outcome: success
   ],
   "groq": [
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,55 +179,66 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: perseverance-landing
-Görüntü adayları: 54 (perseverance-landing)
-Sıralanan aday: 11
-Çözümlenemedi commons:Flight over the Mars 2020 Perseverance rover landing site ESA441709.webm: ValueError: licence not reusable: CC BY-SA 3.0 igo
-Çözümlenemedi commons:Perseverance Rover's Descent and Touchdown on Mars (SVS31250 - Perseverance-landing-2160p).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Perseverance Entry Descent Landing.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Perseverance Rover's Descent and Touchdown on Mars (SVS31250 - Perseverance-landing-1080p).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:NASA's Mars 2020 Perseverance Rover Landing Animations-rzmd7RouGrM.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 6
-Görüntü değerlendirme nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (9/10, footage) Perseverance rover's real onboard descent and landing cameras approach
-Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Onboard camera footage of the Perseverance rover's descent and landing
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Animations depicting key events during the entry, descent, and landing
-Kullanılır kesit: 7 (156 sn temiz görüntü)
-→ Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-→ Anlatım sesi
-Ses bölümü 1, deneme 1
-Ses eşleştirme: 78.1/100 | whisper-large-v3
-Ses eşleştirme: 81.7/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 1
-Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 86.4/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 94.1/100 | whisper-large-v3
-→ Kurgu (63.4 sn, 9 beat, 7 kesit)
-  kurgu 10/63 sn
-  kurgu 20/63 sn
-  kurgu 30/63 sn
-  kurgu 40/63 sn
-  kurgu 50/63 sn
-  kurgu 60/63 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T011227144913Z/review.html
+→ Konu: earth-night
+Görüntü adayları: 52 (earth-night)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 12
+Çözümlenemedi commons:Alexander Gerst’s Earth timelapses (2017 reissue) ESA380570.webm: ValueError: licence not reusable: CC BY-SA 3.0 igo
+Çözümlenemedi svs:31374: ValueError: no usable rendition
+Süre uygun değil svs:5261: 5 sn
+Çözümlenemedi commons:Alexander Gerst’s Earth timelapses (2017 reissue).webm: ValueError: licence not reusable: CC BY-SA 3.0
+Çözümlenemedi svs:5313: ValueError: no usable rendition
+Çözümlenen video: 7
+Görüntü değerlendirme svs:5570: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5570: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+svs:5570: konu dışı (5/10, visualization) Spinning Earth with clouds and daytime continents
+svs:5477: elendi (6/10, visualization) Global map animation showing the day and night cycle of Earth with nig
+svs:5475: elendi (5/10, visualization) NASA Black Marble animation showing changes in global night lights fro
+svs:5634: elendi (6/10, visualization) Global nighttime lights change from 2014 to 2022
+svs:5011: elendi (5/10, visualization) Global map visualization of lightning events detected from the ISS
+svs:5276: elendi (5/10, visualization) Global flat map showing changes in Earth's night lights from 2012 to 2
+svs:4429: elendi (5/10, visualization) Satellite data visualization of a lightning storm over Northern Alabam
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (earth-night): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: crab-nebula
+Görüntü adayları: 30 (crab-nebula)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 12
+Çözümlenemedi hubble:heic0515a_fd: ValueError: no usable rendition
+Çözümlenemedi hubble:heic0515b: ValueError: no usable rendition
+Çözümlenemedi commons:Hubble’s Inside The Image- Crab Nebula (SVS14287).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:The Crab Nebula - A Flickering X-ray Candle.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:The Crab Nebula NASA.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Crab Nebula- The Crab Nebula- A Cosmic Icon (2009-crab).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Hubble’s Inside The Image- Crab Nebula (SVS14287 CRAB VERT MP4).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 5
+nasa:GSFC_20190424_HST_m13189_Hubble29: konu dışı (1/10, footage) Hubble Space Telescope 29th Anniversary highlights featuring various a
+svs:14287: elendi (7/10, footage) Hubble Space Telescope observations and discussion of the Crab Nebula
+hubble:heic1614a: kullanılır (9/10, footage) A deep telescopic zoom into the Crab Nebula, showcasing its expanding 
+hubble:potw1720a: elendi (5/10, footage) Crab Nebula seen in different wavelengths
+hubble:heic1907b: konu dışı (5/10, footage) Zooming in on the Southern Crab Nebula
+Kullanılır kesit: 1 (26 sn temiz görüntü)
+Konu atlandı (crab-nebula): Yeterli temiz görüntü yok (1 kesit, 26 sn).
+→ Konu: earthrise
+Görüntü adayları: 31 (earthrise)
+Sıralanan aday: 7
+Çözümlenemedi commons:Earthrise in 4K LHbFIieK-uo.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:NASA - Earthrise- The 45th Anniversary dE-vOscpiNc.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Earthrise.ogv: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
+Çözümlenen video: 4
+svs:4593: elendi (2/10, visualization) Telemetry data overlays with mission parameters during Apollo 8
+svs:4129: elendi (1/10, visualization) Apollo 8 telemetry data overlays with extensive on-screen text
+svs:3936: elendi (8/10, visualization) Earth rising above the lunar horizon, Apollo 8 data visualization
+svs:4801: elendi (6/10, visualization) Visualization of Apollo 8 orbiting the Moon and the NASA Earth observi
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (earthrise): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+HATA: Hiçbir konu için yeterli NASA görüntüsü bulunamadı.
