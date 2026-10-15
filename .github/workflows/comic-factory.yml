@@ -232,7 +232,7 @@ jobs:
               cp "$d/story.json" "$out/story.json"
               [ -f "$d/quality_review.json" ] && cp "$d/quality_review.json" "$out/quality_review.json"
               [ -f "$d/metadata.json" ] && cp "$d/metadata.json" "$out/metadata.json"
-              [ -f "$d/footage/judged.json" ] && cp "$d/footage/judged.json" "$out/judged.json"
+              for j in "$d"/footage/judged_*.json; do [ -f "$j" ] && cp "$j" "$out/"; done
               [ -f "$d/film_plan.json" ] && cp "$d/film_plan.json" "$out/film_plan.json"
               ffmpeg -v error -y -i "$d/video.mp4" -vf "fps=1/6,scale=216:-1,tile=8x3" -frames:v 1 -q:v 6 "$out/frames.jpg" || true
               # four larger frames (hook, two from the middle, the end card) for a closer look at typography and crops

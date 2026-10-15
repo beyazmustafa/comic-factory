@@ -762,7 +762,7 @@ def analyse(path):
     for match in re.finditer(r"pts_time:\s*([0-9.]+)", result.stderr or ""):
         cuts.append(float(match.group(1)))
     blocked = []
-    result = subprocess.run(["ffmpeg", "-v", "info", "-i", str(path), "-vf", "scale=320:-2,blackdetect=d=0.3:pic_th=0.96:pix_th=0.12",
+    result = subprocess.run(["ffmpeg", "-v", "info", "-i", str(path), "-vf", "scale=320:-2,blackdetect=d=0.3:pic_th=0.999:pix_th=0.05",
                              "-an", "-f", "null", "-"], capture_output=True, text=True, timeout=600)
     for match in re.finditer(r"black_start:([0-9.]+)\s+black_end:([0-9.]+)", result.stderr or ""):
         blocked.append((float(match.group(1)), float(match.group(2))))
@@ -891,7 +891,7 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
                           "windows": usable, "focus": stretch["focus"], "crop_width": stretch.get("width", 0.32), "shows": stretch["shows"] or verdict["what"], "active": analysis["active"],
                           "quality": min(verdict["quality"], stretch.get("score", verdict["quality"])), "kind": verdict["kind"], "what": verdict["what"]})
             taken += 1
-    (root / "judged.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidates],
+    (root / f"judged_{topic['key']}.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidates],
                                                   "ranked": [c["id"] for c in ranked], "judged": judged}, indent=1, ensure_ascii=False), encoding="utf-8")
     seconds = sum(max(w[1] - w[0] for w in c["windows"]) for c in clips)
     log(f"Kullanılır kesit: {len(clips)} ({seconds:.0f} sn temiz görüntü)")
