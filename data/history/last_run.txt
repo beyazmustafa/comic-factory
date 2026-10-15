@@ -1,277 +1,44 @@
-run_id: 38680439118  attempt: 1  event: workflow_dispatch
-produce step outcome: success
---- data/runs/20261015T041524241260Z/run.json
-{
-  "schema": 2,
-  "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
-  "topic": "mars-sunset",
-  "settings": {
-    "target_seconds": 150,
-    "max_events": 3,
-    "max_pages": 16,
-    "max_shots": 40,
-    "max_api_calls": 250,
-    "max_minutes": 110,
-    "repair_attempts": 4,
-    "chunk_words": 42,
-    "alignment_threshold": 86,
-    "panel_threshold": 85,
-    "gemini_model": "gemini-3.7-flash",
-    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
-    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
-    "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural",
-    "tts_model": "gemini-3.1-flash-tts-preview",
-    "whisper_model": "whisper-large-v3",
-    "voice": "auto",
-    "music_file": "",
-    "music_gain_db": -25,
-    "caption_offset": 0,
-    "language": "en",
-    "languages": "en",
-    "channel_theme": "space",
-    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
-    "source": "film",
-    "brand_handle": "@Facctsaboutspace",
-    "sim_seconds": 28,
-    "image_model": "",
-    "archive_query": "mediatype:texts AND collection:(comics)",
-    "archive_max_year": 1963,
-    "archive_scan_limit": 72
-  },
-  "run_id": "38680439118",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "3a81e82f7365fe980513836b71ecde9ac57dbbb04b576a54427f66850d1cb170",
-  "metadata_sha256": "4e4a640ffdec0d8f2d03d44cd0b53f62945ab04e8a1003ae351d362c935b0d63",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 59,
-  "duration": 68.67,
-  "voice": "Charon",
-  "event": {
-    "id": "film_hurricane_20261015T041524241260Z",
-    "title": "Inside the eye.",
-    "series": "NASA footage",
-    "issue": "hurricane",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "hurricane",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
-      "https://images.nasa.gov/details/iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
-      "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
-      "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
-      "https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009"
-    ]
-  },
-  "localized": []
-}
---- data/runs/20261015T041524241260Z/diagnostics/provider_events.json
-[
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "gemini TTS yanıt vermiyor (Ses Charon (gemini-3.1-flash-tts-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You ); edge sesine geçildi."
-]
---- data/runs/20261015T041524241260Z/diagnostics/providers.json
-{
-  "gemini": [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-flash-latest",
-    "gemini-flash-lite-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-3-flash-preview",
-    "gemini-3.1-pro-preview",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-omni-flash-preview",
-    "gemini-omni-1.1-flash",
-    "gemini-3.6-flash",
-    "gemini-3.7-flash",
-    "gemini-3.8-flash",
-    "gemini-4-argon"
-  ],
-  "groq": [
-    "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
-  ],
-  "errors": [],
-  "gemini_raw": [
-    "gemini-2.5-flash",
-    "gemini-2.5-pro",
-    "gemini-2.5-flash-preview-tts",
-    "gemini-2.5-pro-preview-tts",
-    "gemma-4-26b-a4b-it",
-    "gemma-4-31b-it",
-    "gemini-flash-latest",
-    "gemini-flash-lite-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-2.5-flash-image",
-    "gemini-3-flash-preview",
-    "gemini-3.1-pro-preview",
-    "gemini-3.1-pro-preview-customtools",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-lite",
-    "gemini-3-pro-image-preview",
-    "gemini-3-pro-image",
-    "nano-banana-pro-preview",
-    "gemini-3.1-flash-image-preview",
-    "gemini-3.1-flash-image",
-    "gemini-3.1-flash-lite-image",
-    "gemini-nano-banana-2.1",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-omni-flash-preview",
-    "gemini-omni-1.1-flash",
-    "gemini-3.5-transcribe",
-    "gemini-3.6-flash",
-    "gemini-3.7-flash",
-    "gemini-3.8-flash",
-    "gemini-4-argon",
-    "lyria-3-clip-preview",
-    "lyria-3-pro-preview",
-    "lyria-3.5",
-    "gemini-3.1-flash-tts-preview",
-    "gemini-3.8-flash-tts",
-    "gemini-3.8-flash-lite-tts",
-    "gemini-robotics-er-2-preview",
-    "gemini-2.5-computer-use-preview-10-2025",
-    "antigravity-preview-05-2026",
-    "antigravity-preview-09-2026",
-    "antigravity-preview-latest",
-    "deep-research-max-preview-04-2026",
-    "deep-research-preview-04-2026",
-    "deep-research-pro-preview-12-2025",
-    "gemini-embedding-001",
-    "gemini-embedding-2-preview",
-    "gemini-embedding-2",
-    "aqa",
-    "veo-3.1-generate-preview",
-    "veo-3.1-fast-generate-preview",
-    "veo-3.1-lite-generate-preview",
-    "gemini-3.5-transcribe-live",
-    "gemini-2.5-flash-native-audio-latest",
-    "gemini-2.5-flash-native-audio-preview-09-2025",
-    "gemini-2.5-flash-native-audio-preview-12-2025",
-    "gemini-3.1-flash-live-preview",
-    "gemini-3.8-live",
-    "gemini-3.8-live-extended-thinking",
-    "gemini-robotics-er-2-streaming-preview",
-    "gemini-3.5-live-translate-preview",
-    "lyria-realtime-exp"
-  ],
-  "gemini_chain": [
-    "gemini-3.7-flash",
-    "gemini-3.8-flash",
-    "gemini-2.5-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.1-pro-preview",
-    "gemini-3-flash-preview",
-    "gemini-2.5-pro",
-    "gemini-omni-1.1-flash",
-    "gemini-flash-latest",
-    "gemini-omni-flash-preview",
-    "gemini-pro-latest",
-    "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
-    "gemini-3.1-flash-lite-preview",
-    "gemini-2.5-flash-lite",
-    "gemini-flash-lite-latest"
-  ],
-  "groq_chain": [],
-  "groq_text_chain": [
-    "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
-  ]
-}
+run_id: 38697316092  attempt: 1  event: workflow_dispatch
+produce step outcome: failure
 --- studio.log (son 300 satır)
-→ Konu: mars-sunset
-Görüntü adayları: 20 (mars-sunset)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 2
-Çözümlenen video: 2
-nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc: kullanılır (7/10, footage) NASA rovers exploring and capturing imagery on the Martian surface
-nasa:JPL-20250415-MARSf-0001-What_You_See_at_Night_on_Mars_2160cc: üretilmiş program gibi (0 karede insan, 9/11 kare elendi); atlandı
-nasa:JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover: konu dışı (3/10, footage) Mars landscape tour of Jezero Crater by Perseverance rover
-Görüntü adayları: 1 (mars-sunset, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 0
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (mars-sunset): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: hurricane
-Görüntü adayları: 64 (hurricane)
-Sıralanan aday: 12
-Çözümlenen video: 12
-nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701: kullanılır (9/10, footage) International Space Station flyover of Hurricane Beryl
-nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904: kullanılır (8/10, footage) International Space Station live views of Hurricane Dorian from orbit
-nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008: kullanılır (9/10, footage) International Space Station external cameras capturing Hurricane Milto
-nasa:iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926: kullanılır (8/10, footage) Live views of Hurricane Helene from the International Space Station
-nasa:jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009: kullanılır (8/10, footage) International Space Station external camera views of Hurricane Milton 
-Kullanılır kesit: 8 (208 sn temiz görüntü)
-→ Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-→ Anlatım sesi
-Ses bölümü 1, deneme 1
-Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-gemini TTS yanıt vermiyor (Ses Charon (gemini-3.1-flash-tts-preview): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You ); edge sesine geçildi.
-Ses eşleştirme: 93.6/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 87.9/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 93.5/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (68.7 sn, 9 beat, 8 kesit)
-  kurgu 10/69 sn
-  kurgu 20/69 sn
-  kurgu 30/69 sn
-  kurgu 40/69 sn
-  kurgu 50/69 sn
-  kurgu 60/69 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T041524241260Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: SDO watches the Sun every twelve seconds #Shorts
+Görünürlük: public
+
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: data/incoming/video.mp4
+Boyut: 94.1 MB
+Açıklama uzunluğu: 376 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17968272288187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 18091372283207729
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).
+HATA: Yükleme tamamlanmadı: youtube: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
