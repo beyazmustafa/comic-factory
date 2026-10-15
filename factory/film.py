@@ -50,8 +50,31 @@ def used_topics():
     return [key for _, key in rows]
 
 
+OUTCOMES = ROOT / "data" / "history" / "film_topics.json"
+
+
+def topic_outcomes():
+    try:
+        return json.loads(OUTCOMES.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def record_outcome(key, ok):
+    """Remember which topics the archives can actually supply; failures go to the back of the queue."""
+    data = topic_outcomes()
+    row = data.setdefault(key, {"ok": 0, "fail": 0})
+    row["ok" if ok else "fail"] = row.get("ok" if ok else "fail", 0) + 1
+    row["last"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    try:
+        save_json(OUTCOMES, data)
+    except OSError:
+        pass
+
+
 def pick_topics(topic=""):
-    """Requested topic first (by key or words), then the least recently used ones."""
+    """Requested topic first (by key or words), then the least recently used ones,
+    with topics that failed before (no clean footage found) pushed back."""
     wanted = topic.strip().casefold()
     ordered = []
     if wanted:
@@ -61,7 +84,13 @@ def pick_topics(topic=""):
             ordered.append(match["key"])
     history = used_topics()
     last_seen = {key: index for index, key in enumerate(history)}
-    rest = sorted((k for k in topics_film.KEYS if k not in ordered), key=lambda k: (last_seen.get(k, -1), k))
+    outcomes = topic_outcomes()
+
+    def penalty(key):
+        row = outcomes.get(key, {})
+        return max(0, int(row.get("fail", 0)) - int(row.get("ok", 0)))
+
+    rest = sorted((k for k in topics_film.KEYS if k not in ordered), key=lambda k: (penalty(k), last_seen.get(k, -1), k))
     return ordered + rest
 
 
@@ -331,14 +360,16 @@ def generate(settings, topic="", api_factory=None):
         api = (api_factory or Api)(settings, directory)
         handle = str(getattr(settings, "brand_handle", "") or "")
         clips, spec = None, None
-        for key in pick_topics(topic)[:3]:
+        for key in pick_topics(topic)[:5]:
             spec = topics_film.by_key(key)
             print(f"→ Konu: {key}", flush=True)
             try:
                 clips = footage.harvest(api, spec, directory)
+                record_outcome(key, True)
                 break
             except FactoryError as error:
                 print(f"Konu atlandı ({key}): {error}", flush=True)
+                record_outcome(key, False)
                 clips = None
         if not clips:
             raise FactoryError("Hiçbir konu için yeterli NASA görüntüsü bulunamadı.")

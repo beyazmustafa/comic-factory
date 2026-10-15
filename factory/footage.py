@@ -283,6 +283,10 @@ def _head_ok(url):
         return False
 
 
+ESA_FOLDERS = {"ultra_hd": (3840, 2160), "hd_1080p25_screen": (1920, 1080), "hd_and_apple": (1280, 720),
+               "medium_podcast": (640, 360), "large_qt": (720, 405)}
+
+
 def esa_renditions(asset):
     site, identifier = asset["source"], asset["esa_id"]
     try:
@@ -301,15 +305,26 @@ def esa_renditions(asset):
     description = re.search(r'<meta name="description" content="([^"]*)"', page)
     if description:
         asset["description"] = clean(description.group(1))[:400]
+    # every archive link the page offers, by folder
+    found = {}
+    for match in re.finditer(r"https?://[a-z0-9.]*(?:esahubble|esawebb)\.org/(?:media/)?archives/videos/([a-z0-9_]+)/([A-Za-z0-9_.-]+\.(?:mp4|m4v|mov))", page):
+        folder, name = match.group(1), match.group(2)
+        if folder in ESA_FOLDERS and folder not in found:
+            found[folder] = https(match.group(0))
     cdn = ESA_CDN[site]
+    if "hd_1080p25_screen" not in found and _head_ok(f"{cdn}/archives/videos/hd_1080p25_screen/{identifier}.mp4"):
+        found["hd_1080p25_screen"] = f"{cdn}/archives/videos/hd_1080p25_screen/{identifier}.mp4"
     renditions = []
-    for folder, width, height in (("ultra_hd", 3840, 2160), ("hd_1080p25_screen", 1920, 1080)):
-        url = f"{cdn}/archives/videos/{folder}/{identifier}.mp4"
-        if url in page or (folder == "hd_1080p25_screen" and _head_ok(url)) or (folder == "ultra_hd" and _head_ok(url)):
-            renditions.append({"url": url, "width": width, "height": height, "tag": "orig"})
-    small = {"url": f"{cdn}/archives/videos/medium_podcast/{identifier}.mp4", "width": 640, "height": 360, "tag": "small"}
-    if not _head_ok(small["url"]):
-        small = None
+    for folder in ("ultra_hd", "hd_1080p25_screen", "hd_and_apple"):
+        if folder in found:
+            width, height = ESA_FOLDERS[folder]
+            renditions.append({"url": found[folder], "width": width, "height": height, "tag": "orig" if height >= 1080 else "small"})
+    small = None
+    for folder in ("medium_podcast", "large_qt", "hd_and_apple"):
+        if folder in found:
+            width, height = ESA_FOLDERS[folder]
+            small = {"url": found[folder], "width": width, "height": height, "tag": "small"}
+            break
     return renditions, small
 
 
@@ -807,7 +822,9 @@ def analyse(path, trim_bottom=0.0):
 
 
 # ------------------------------------------------------------------ driver
-def candidates_for(topic):
+def candidates_for(topic, commons=False):
+    """Search hits for the topic; Wikimedia Commons only on request (its servers
+    throttle shared runners hard, so it is a second phase when the rest is thin)."""
     rows, seen = [], set()
 
     def add(items):
@@ -825,10 +842,11 @@ def candidates_for(topic):
             add(esa_search(site, query))
     if topic.get("sdo"):
         add(sdo_candidates(topic["sdo"][:2]))
-    commons_rows = []
-    for query in topic.get("commons", [])[:2]:
-        commons_rows += commons_search(query)
-    add(commons_rows[:5])  # Wikimedia throttles bulk downloads; a few strong hits are enough
+    if commons:
+        commons_rows = []
+        for query in topic.get("commons", [])[:2]:
+            commons_rows += commons_search(query)
+        add(commons_rows[:4])
     return rows
 
 
@@ -837,89 +855,97 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
     root = Path(directory) / "footage"
     root.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
-    candidates = candidates_for(topic)
-    log(f"Görüntü adayları: {len(candidates)} ({topic['key']})")
-    if not candidates:
-        raise FactoryError("Arşivlerde aday video bulunamadı.")
-    ranked = rank_candidates(api, topic, candidates, keep=12)
-    log(f"Sıralanan aday: {len(ranked)}")
-    resolved = []
-    with ThreadPoolExecutor(max_workers=5) as pool:
-        jobs = {pool.submit(resolve, dict(asset), root): asset for asset in ranked}
-        for job in as_completed(jobs):
-            asset = jobs[job]
-            try:
-                item = job.result()
-            except Exception as error:  # noqa: BLE001
-                log(f"Çözümlenemedi {asset['id']}: {type(error).__name__}: {str(error)[:90]}")
-                continue
-            if not (MIN_ASSET_SECONDS <= item["duration"] <= MAX_ASSET_SECONDS):
-                log(f"Süre uygun değil {item['id']}: {item['duration']:.0f} sn")
-                continue
-            if item["height"] and item["height"] < 700:
-                log(f"Düşük çözünürlük {item['id']}: {item['width']}x{item['height']}")
-                continue
-            resolved.append(item)
-    order = {a["id"]: i for i, a in enumerate(ranked)}
-    resolved.sort(key=lambda a: order.get(a["id"], 99))
-    log(f"Çözümlenen video: {len(resolved)}")
-    clips, judged = [], []
-    for asset in resolved:
-        if len(clips) >= want or time.monotonic() - started > 16 * 60:
+    clips, judged, ranked_ids, candidate_rows = [], [], [], []
+    for phase, use_commons in enumerate((False, True)):
+        if phase and (len(clips) >= minimum + 1 or not topic.get("commons")):
             break
-        api.check()
-        folder = root / re.sub(r"[^a-z0-9]+", "_", asset["id"].casefold())[:60]
-        try:
-            frames, flags = sample(asset, folder / "samples")
-            sheet = contact_sheet(frames, folder / "sheet.jpg")
-            verdict = judge_asset(api, topic, asset, frames, flags, sheet)
-        except Exception as error:  # noqa: BLE001
-            log(f"Değerlendirilemedi {asset['id']}: {type(error).__name__}: {str(error)[:90]}")
+        candidates = [c for c in candidates_for(topic, commons=use_commons) if c["source"] == "commons" or not phase]
+        if phase:
+            candidates = [c for c in candidates if c["source"] == "commons"]
+        candidate_rows += candidates
+        log(f"Görüntü adayları: {len(candidates)} ({topic['key']}{', Commons' if phase else ''})")
+        if not candidates:
             continue
-        judged.append({"id": asset["id"], "title": asset["title"], **{k: verdict[k] for k in ("relevant", "usable", "quality", "kind", "what", "excluded")},
-                       "stretches": verdict["stretches"]})
-        state = "kullanılır" if verdict["usable"] else ("konu dışı" if not verdict["relevant"] else "elendi")
-        log(f"{asset['id']}: {state} ({verdict['quality']}/10, {verdict['kind']}) {verdict['what'][:70]}")
-        if not verdict["usable"] or verdict["quality"] < 5:
-            continue
-        if len(verdict["excluded"]) > len(frames) * 0.25:
-            log(f"{asset['id']}: üretilmiş program gibi (karelerin {len(verdict['excluded'])}/{len(frames)} kısmı yazı/insan); atlandı")
-            continue
-        spacing = asset["duration"] / max(1, len(frames))
-        taken = 0
-        for stretch in sorted(verdict["stretches"], key=lambda s: -(s["end"] - s["start"])):
-            if taken >= 3 or len(clips) >= want:
+        ranked = rank_candidates(api, topic, candidates, keep=12 if not phase else 4)
+        ranked_ids += [c["id"] for c in ranked]
+        log(f"Sıralanan aday: {len(ranked)}")
+        resolved = []
+        with ThreadPoolExecutor(max_workers=5) as pool:
+            jobs = {pool.submit(resolve, dict(asset), root): asset for asset in ranked}
+            for job in as_completed(jobs):
+                asset = jobs[job]
+                try:
+                    item = job.result()
+                except Exception as error:  # noqa: BLE001
+                    log(f"Çözümlenemedi {asset['id']}: {type(error).__name__}: {str(error)[:90]}")
+                    continue
+                if not (MIN_ASSET_SECONDS <= item["duration"] <= MAX_ASSET_SECONDS):
+                    log(f"Süre uygun değil {item['id']}: {item['duration']:.0f} sn")
+                    continue
+                if item["height"] and item["height"] < 700:
+                    log(f"Düşük çözünürlük {item['id']}: {item['width']}x{item['height']}")
+                    continue
+                resolved.append(item)
+        order = {a["id"]: i for i, a in enumerate(ranked)}
+        resolved.sort(key=lambda a: order.get(a["id"], 99))
+        log(f"Çözümlenen video: {len(resolved)}")
+        for asset in resolved:
+            if len(clips) >= want or time.monotonic() - started > 18 * 60:
                 break
-            start = frames[stretch["start"]][0] - spacing * 0.5
-            end = frames[stretch["end"]][0] + spacing * 0.5
-            start, end = max(0.0, start), min(asset["duration"], end)
-            if end - start < 3.0:
-                continue
-            if end - start > 24:
-                centre = (start + end) / 2
-                start, end = centre - 12, centre + 12
-            clip_path = folder / f"clip_{taken}.mp4"
+            api.check()
+            folder = root / re.sub(r"[^a-z0-9]+", "_", asset["id"].casefold())[:60]
             try:
-                extract(asset["best"], start, end, clip_path)
-                analysis = analyse(clip_path, asset.get("trim_bottom", 0.0))
-                if asset.get("trim_bottom") and not analysis["active"]:
-                    analysis["active"] = [0, 0, analysis["width"], int(analysis["height"] * (1 - asset["trim_bottom"]))]
+                frames, flags = sample(asset, folder / "samples")
+                sheet = contact_sheet(frames, folder / "sheet.jpg")
+                verdict = judge_asset(api, topic, asset, frames, flags, sheet)
             except Exception as error:  # noqa: BLE001
-                log(f"Kesit alınamadı {asset['id']} {start:.0f}-{end:.0f}: {str(error)[:90]}")
+                log(f"Değerlendirilemedi {asset['id']}: {type(error).__name__}: {str(error)[:90]}")
                 continue
-            usable = [w for w in analysis["windows"] if w[1] - w[0] >= 2.5]
-            if not usable:
-                log(f"Kesitte temiz pencere yok {asset['id']} {start:.0f}-{end:.0f} (yazı: {len(analysis['text'])}, kesme: {len(analysis['cuts'])})")
+            judged.append({"id": asset["id"], "title": asset["title"], **{k: verdict[k] for k in ("relevant", "usable", "quality", "kind", "what", "excluded")},
+                           "stretches": verdict["stretches"]})
+            state = "kullanılır" if verdict["usable"] else ("konu dışı" if not verdict["relevant"] else "elendi")
+            log(f"{asset['id']}: {state} ({verdict['quality']}/10, {verdict['kind']}) {verdict['what'][:70]}")
+            if not verdict["usable"] or verdict["quality"] < 5:
                 continue
-            clips.append({"id": f"c{len(clips):02}", "asset": asset["id"], "source": asset["source"], "title": asset["title"],
-                          "date": asset.get("date", ""), "credit": asset.get("credit", ""), "licence": asset.get("licence", ""),
-                          "page_url": asset.get("page_url", ""), "file": str(clip_path), "source_start": start,
-                          "duration": analysis["duration"], "width": analysis["width"], "height": analysis["height"], "fps": analysis["fps"],
-                          "windows": usable, "focus": stretch["focus"], "crop_width": stretch.get("width", 0.32), "shows": stretch["shows"] or verdict["what"], "active": analysis["active"],
-                          "quality": min(verdict["quality"], stretch.get("score", verdict["quality"])), "kind": verdict["kind"], "what": verdict["what"]})
-            taken += 1
-    (root / f"judged_{topic['key']}.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidates],
-                                                  "ranked": [c["id"] for c in ranked], "judged": judged}, indent=1, ensure_ascii=False), encoding="utf-8")
+            if len(verdict["excluded"]) > len(frames) * 0.25:
+                log(f"{asset['id']}: üretilmiş program gibi (karelerin {len(verdict['excluded'])}/{len(frames)} kısmı yazı/insan); atlandı")
+                continue
+            spacing = asset["duration"] / max(1, len(frames))
+            taken = 0
+            for stretch in sorted(verdict["stretches"], key=lambda s: -(s["end"] - s["start"])):
+                if taken >= 3 or len(clips) >= want:
+                    break
+                start = frames[stretch["start"]][0] - spacing * 0.5
+                end = frames[stretch["end"]][0] + spacing * 0.5
+                start, end = max(0.0, start), min(asset["duration"], end)
+                if end - start < 3.0:
+                    continue
+                if end - start > 24:
+                    centre = (start + end) / 2
+                    start, end = centre - 12, centre + 12
+                clip_path = folder / f"clip_{taken}.mp4"
+                try:
+                    extract(asset["best"], start, end, clip_path)
+                    analysis = analyse(clip_path, asset.get("trim_bottom", 0.0))
+                    if asset.get("trim_bottom") and not analysis["active"]:
+                        analysis["active"] = [0, 0, analysis["width"], int(analysis["height"] * (1 - asset["trim_bottom"]))]
+                except Exception as error:  # noqa: BLE001
+                    log(f"Kesit alınamadı {asset['id']} {start:.0f}-{end:.0f}: {str(error)[:90]}")
+                    continue
+                usable = [w for w in analysis["windows"] if w[1] - w[0] >= 2.5]
+                if not usable:
+                    log(f"Kesitte temiz pencere yok {asset['id']} {start:.0f}-{end:.0f} (yazı: {len(analysis['text'])}, kesme: {len(analysis['cuts'])})")
+                    continue
+                clips.append({"id": f"c{len(clips):02}", "asset": asset["id"], "source": asset["source"], "title": asset["title"],
+                              "date": asset.get("date", ""), "credit": asset.get("credit", ""), "licence": asset.get("licence", ""),
+                              "page_url": asset.get("page_url", ""), "file": str(clip_path), "source_start": start,
+                              "duration": analysis["duration"], "width": analysis["width"], "height": analysis["height"], "fps": analysis["fps"],
+                              "windows": usable, "focus": stretch["focus"], "crop_width": stretch.get("width", 0.32), "shows": stretch["shows"] or verdict["what"],
+                              "active": analysis["active"], "quality": min(verdict["quality"], stretch.get("score", verdict["quality"])),
+                              "kind": verdict["kind"], "what": verdict["what"]})
+                taken += 1
+    (root / f"judged_{topic['key']}.json").write_text(json.dumps({"candidates": [{k: c.get(k) for k in ("id", "title", "date", "source")} for c in candidate_rows],
+                                                                  "ranked": ranked_ids, "judged": judged}, indent=1, ensure_ascii=False), encoding="utf-8")
     seconds = sum(max(w[1] - w[0] for w in c["windows"]) for c in clips)
     log(f"Kullanılır kesit: {len(clips)} ({seconds:.0f} sn temiz görüntü)")
     if len(clips) < minimum or seconds < 30:
