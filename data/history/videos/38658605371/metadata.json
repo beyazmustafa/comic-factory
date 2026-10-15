@@ -1,0 +1,172 @@
+{
+  "script": {
+    "title": "DART crash reshapes asteroid orbit in seconds",
+    "description": "In September 2022 the DART spacecraft deliberately collided with Dimorphos, shortening its orbit by thirty two minutes. This short documentary follows the final moments and the scientific breakthrough of humanity’s first asteroid deflection test.",
+    "hook_card": "We hit an asteroid on purpose.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "The final full image, taken two seconds before impact, shows Dimorphos’s rocky surface on 26 September 2022.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c01",
+        "narration": "The DART spacecraft, a 570‑kilogram probe, speeds toward the 160‑metre moonlet orbiting Didymos.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c02",
+        "narration": "Traveling at about 22,000 km/h, it closes the final two seconds before collision.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "The impact shatters the surface, ejecting a bright plume of dust and rock into space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c00",
+        "narration": "The plume expands into a tail thousands of kilometres long, confirming high‑velocity material ejection.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c01",
+        "narration": "From a safe distance, Italy’s LICIACube captures the debris cloud, providing the first close‑up view.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c02",
+        "narration": "Scientists measure Dimorphos’s orbit shortened by 32 minutes, the 73‑second success threshold.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "The collision demonstrates humanity’s first successful asteroid deflection, a milestone for planetary protection.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The final full image, taken two seconds before impact, shows Dimorphos’s rocky surface on 26 September 2022. The DART spacecraft, a 570‑kilogram probe, speeds toward the 160‑metre moonlet orbiting Didymos. Traveling at about 22,000 km/h, it closes the final two seconds before collision. The impact shatters the surface, ejecting a bright plume of dust and rock into space. The plume expands into a tail thousands of kilometres long, confirming high‑velocity material ejection. From a safe distance, Italy’s LICIACube captures the debris cloud, providing the first close‑up view. Scientists measure Dimorphos’s orbit shortened by 32 minutes, the 73‑second success threshold. The collision demonstrates humanity’s first successful asteroid deflection, a milestone for planetary protection.",
+    "event": {
+      "id": "film_dart_20261015T001244297537Z",
+      "title": "We hit an asteroid on purpose.",
+      "series": "NASA footage",
+      "issue": "dart",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "dart",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://commons.wikimedia.org/wiki/File:DART's_Collision_with_Dimorphos_(back_view)_An_animation_looking_from_behind_as_NASA's_first_planetary_defense_test_mission,_the_Double_Asteroid_Redirection_Test_(DART),_collides_with_the_asteroid_moonlet_Dimorphos.webm",
+        "https://commons.wikimedia.org/wiki/File:DART-_Double_Asteroid_Redirection_Test_(SVS31194_-_dart_impact_replay_1080p25).webm",
+        "https://commons.wikimedia.org/wiki/File:Dart_impact_replay.webm",
+        "https://commons.wikimedia.org/wiki/File:Dart_impact_replay_stabilized.webm"
+      ]
+    },
+    "scenario": "dart",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "The final full image, taken two seconds before impact, shows Dimorphos’s rocky surface on 26 September 2022.",
+        "label": "NASA · DART · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "The DART spacecraft, a 570‑kilogram probe, speeds toward the 160‑metre moonlet orbiting Didymos.",
+        "label": "NASA · DART · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Traveling at about 22,000 km/h, it closes the final two seconds before collision.",
+        "label": "NASA · DART · 2022",
+        "callout": {
+          "value": "22,000 km/h",
+          "label": "impact speed"
+        }
+      },
+      {
+        "clip": "c03",
+        "narration": "The impact shatters the surface, ejecting a bright plume of dust and rock into space.",
+        "label": "NASA · DART · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The plume expands into a tail thousands of kilometres long, confirming high‑velocity material ejection.",
+        "label": "NASA · DART · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "From a safe distance, Italy’s LICIACube captures the debris cloud, providing the first close‑up view.",
+        "label": "ESA · LICIACube · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Scientists measure Dimorphos’s orbit shortened by 32 minutes, the 73‑second success threshold.",
+        "label": "NASA · DART · 2022",
+        "callout": {
+          "value": "32 min",
+          "label": "orbit shortened"
+        }
+      },
+      {
+        "clip": "c03",
+        "narration": "The collision demonstrates humanity’s first successful asteroid deflection, a milestone for planetary protection.",
+        "label": "NASA · DART · 2022",
+        "callout": null
+      }
+    ],
+    "closing": "A new era of planetary defense begins today.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In September 2022 the DART spacecraft deliberately collided with Dimorphos, shortening its orbit by thirty two minutes. This short documentary follows the final moments and the scientific breakthrough of humanity’s first asteroid deflection test.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: NASA's Scientific Visualization Studio - Marit Jentoft-Nilsen — DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25) (https://commons.wikimedia.org/wiki/File:DART-_Double_Asteroid_Redirection_Test_(SVS31194_-_dart_impact_replay_1080p25).webm); NASA/Johns Hopkins APL — Dart impact replay stabilized (https://commons.wikimedia.org/wiki/File:Dart_impact_replay_stabilized.webm); NASA/Johns Hopkins APL — Dart impact replay (https://commons.wikimedia.org/wiki/File:Dart_impact_replay.webm); NASA/Johns Hopkins APL/Jon Emmerich — DART's Collision with Dimorphos (back view) An animation looking from behind as  (https://commons.wikimedia.org/wiki/File:DART's_Collision_with_Dimorphos_(back_view)_An_animation_looking_from_behind_as_NASA's_first_planetary_defense_test_mission,_the_Double_Asteroid_Redirection_Test_(DART),_collides_with_the_asteroid_moonlet_Dimorphos.webm)\nLicences: Public domain\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "DART crash reshapes asteroid orbit in seconds\n\nIn September 2022 the DART spacecraft deliberately collided with Dimorphos, shortening its orbit by thirty two minutes. This short documentary follows the final moments and the scientific breakthrough of humanity’s first asteroid deflection test.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

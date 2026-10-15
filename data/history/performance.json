@@ -3441,5 +3441,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "K9ySeckcAg4",
+    "platform": "youtube",
+    "run_id": "38658605371",
+    "published_at": "2026-10-15T00:46:06+00:00",
+    "event": {
+      "title": "We hit an asteroid on purpose.",
+      "series": "NASA footage",
+      "issue": "dart",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 112,
+      "duration": 66.2,
+      "words_per_minute": 101,
+      "hook": "The final full image, taken two seconds before impact, shows Dimorphos’s rocky surface on 26 September 2022.",
+      "hook_words": 17,
+      "title": "DART crash reshapes asteroid orbit in seconds",
+      "title_length": 45,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

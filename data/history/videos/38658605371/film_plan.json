@@ -1,0 +1,370 @@
+{
+  "duration": 66.24,
+  "handle": "@Facctsaboutspace",
+  "hook": "We hit an asteroid on purpose.",
+  "kicker": "Real footage · NASA",
+  "closing": "A new era of planetary defense begins today.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_double_asteroid_redirection_test_svs31194_dart_/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.5,
+      "src_out": 6.93,
+      "speed": 0.941,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.5,
+      "label": "NASA · DART · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "commons:Dart impact replay.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_impact_replay_webm/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.598,
+      "src_out": 6.832,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.5,
+      "t1": 12.4,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "commons:Dart impact replay stabilized.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_impact_replay_stabilized_webm/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.66,
+      "src_out": 6.67,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        386,
+        0,
+        1160,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 12.4,
+      "t1": 18.076,
+      "label": "NASA · DART · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "commons:DART's Collision with Dimorphos (back view) An animation looking from behind as NASA's first planetary defense test mission, the Double Asteroid Redirection Test (DART), collides with the asteroid moonlet Dimorphos.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_s_collision_with_dimorphos_back_view_an_animati/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 5.661,
+      "src_out": 10.639,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        924,
+        176,
+        2916,
+        1984
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.076,
+      "t1": 22.72,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "commons:Dart impact replay.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_impact_replay_webm/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.5,
+      "src_out": 6.93,
+      "speed": 0.856,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 22.72,
+      "t1": 29.9,
+      "label": "NASA · DART · 2022",
+      "callout": {
+        "value": "22,000 km/h",
+        "label": "impact speed"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "commons:DART's Collision with Dimorphos (back view) An animation looking from behind as NASA's first planetary defense test mission, the Double Asteroid Redirection Test (DART), collides with the asteroid moonlet Dimorphos.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_s_collision_with_dimorphos_back_view_an_animati/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.983,
+      "src_out": 11.317,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        924,
+        176,
+        2916,
+        1984
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.9,
+      "t1": 35.9,
+      "label": "NASA · DART · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_double_asteroid_redirection_test_svs31194_dart_/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.5,
+      "src_out": 6.93,
+      "speed": 0.93,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 35.9,
+      "t1": 42.48,
+      "label": "NASA · DART · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c01",
+      "asset": "commons:Dart impact replay stabilized.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_impact_replay_stabilized_webm/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.4,
+      "src_out": 6.93,
+      "speed": 0.869,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        386,
+        0,
+        1160,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 42.48,
+      "t1": 49.66,
+      "label": "ESA · LICIACube · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "commons:Dart impact replay.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_impact_replay_webm/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.5,
+      "src_out": 6.93,
+      "speed": 0.886,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 49.66,
+      "t1": 56.58,
+      "label": "NASA · DART · 2022",
+      "callout": {
+        "value": "32 min",
+        "label": "orbit shortened"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "commons:DART's Collision with Dimorphos (back view) An animation looking from behind as NASA's first planetary defense test mission, the Double Asteroid Redirection Test (DART), collides with the asteroid moonlet Dimorphos.webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_s_collision_with_dimorphos_back_view_an_animati/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 5.327,
+      "src_out": 10.973,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        924,
+        176,
+        2916,
+        1984
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.58,
+      "t1": 61.893,
+      "label": "NASA · DART · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T001244297537Z/footage/commons_dart_double_asteroid_redirection_test_svs31194_dart_/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.375,
+      "src_out": 6.055,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        448,
+        24,
+        1024,
+        1024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 61.893,
+      "t1": 66.24,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
