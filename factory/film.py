@@ -155,6 +155,7 @@ def polish_script(api, topic, script, clips):
     facts = "\n".join(f"- {fact}" for fact in topic["facts"])
     by_id = {c["id"]: c for c in clips}
     draft = "\n".join(f"{i + 1}. [{b['clip']}: {by_id[b['clip']]['shows'][:70]}] {b['narration']}" for i, b in enumerate(script["beats"]))
+    draft += f"\nCLOSING LINE (on screen, unspoken): {script['closing']}"
     prompt = f"""You are the script editor of a calm, premium documentary Short about {topic['subject']}.
 Tighten this draft narration without changing its beat count, clip assignments or overall length (each beat 10–24 words).
 Every claim must be traceable to the FACTS below: delete or rewrite any detail that is not there, even if it sounds plausible
@@ -169,7 +170,10 @@ FACTS:
 DRAFT:
 {draft}
 
-Return {{"beats": [{{"narration": "..."}}, ...]}} with exactly {len(script['beats'])} entries in the same order."""
+Also check the closing line: it must be true to the facts (no invented numbers or years) and at most 12 words; return it
+unchanged if it is fine, or fixed if it is not.
+
+Return {{"beats": [{{"narration": "..."}}, ...], "closing": "..."}} with exactly {len(script['beats'])} beats in the same order."""
     try:
         data = api.json("Senaryo düzelti", prompt)
         rows = data.get("beats") or []
@@ -180,8 +184,12 @@ Return {{"beats": [{{"narration": "..."}}, ...]}} with exactly {len(script['beat
             text = re.sub(r"\s+", " ", str(row.get("narration", "") if isinstance(row, dict) else row)).strip()
             polished.append({**beat, "narration": text if 8 <= words_of(text) <= 28 else beat["narration"]})
         total = sum(words_of(b["narration"]) for b in polished)
+        closing = re.sub(r"\s+", " ", str(data.get("closing") or "")).strip()
+        salesy = re.search(r"\b(share|comment|like|follow|subscribe|reflect|thoughts|below|tell us|let us know)\b", closing, flags=re.I)
+        if not (8 <= len(closing) and words_of(closing) <= 14) or salesy:
+            closing = script["closing"]
         if 110 <= total <= 215:
-            return {**script, "beats": polished}
+            return {**script, "beats": polished, "closing": closing}
     except Exception as error:  # noqa: BLE001
         print(f"Düzelti atlandı: {str(error)[:100]}", flush=True)
     return script
