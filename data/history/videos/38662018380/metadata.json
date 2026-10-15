@@ -1,0 +1,182 @@
+{
+  "script": {
+    "title": "SDO watches the Sun every twelve seconds",
+    "description": "The Solar Dynamics Observatory has been imaging the Sun in multiple wavelengths since 2010, delivering about one point five terabytes of data each day. This short explores flares, magnetic loops and eruptions captured in stunning detail.",
+    "hook_card": "The Sun, every twelve seconds.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Since its 2010 launch, SDO has watched the Sun nonstop, recording this bright flare and erupting loops.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c01",
+        "narration": "SDO images the full solar disk every twelve seconds, revealing active regions in ultraviolet and extreme ultraviolet wavelengths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c03",
+        "narration": "Here, glowing plasma follows magnetic field lines, forming loops larger than many Earths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "A large flare erupts, releasing energy equal to millions of hydrogen bombs.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c04",
+        "narration": "The eruption launches a coronal mass ejection, a particle cloud that reaches Earth in one to three days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c05",
+        "narration": "From this full‑disk view, the Sun’s surface shines at five thousand five hundred degrees Celsius, its corona over a million degrees.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c00",
+        "narration": "Each flash reaches Earth in eight minutes twenty seconds, delivering light that sustains climate and life.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "The Sun’s magnetic poles reverse roughly every eleven years, reshaping loop and eruption patterns.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c04",
+        "narration": "Through constant vigilance, SDO records the Sun’s breathing, turning fleeting drama into a continuous story.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Since its 2010 launch, SDO has watched the Sun nonstop, recording this bright flare and erupting loops. SDO images the full solar disk every twelve seconds, revealing active regions in ultraviolet and extreme ultraviolet wavelengths. Here, glowing plasma follows magnetic field lines, forming loops larger than many Earths. A large flare erupts, releasing energy equal to millions of hydrogen bombs. The eruption launches a coronal mass ejection, a particle cloud that reaches Earth in one to three days. From this full‑disk view, the Sun’s surface shines at five thousand five hundred degrees Celsius, its corona over a million degrees. Each flash reaches Earth in eight minutes twenty seconds, delivering light that sustains climate and life. The Sun’s magnetic poles reverse roughly every eleven years, reshaping loop and eruption patterns. Through constant vigilance, SDO records the Sun’s breathing, turning fleeting drama into a continuous story.",
+    "event": {
+      "id": "film_sdo-sun_20261015T004831092532Z",
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "sdo-sun",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+        "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
+      ]
+    },
+    "scenario": "sdo-sun",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Since its 2010 launch, SDO has watched the Sun nonstop, recording this bright flare and erupting loops.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "SDO images the full solar disk every twelve seconds, revealing active regions in ultraviolet and extreme ultraviolet wavelengths.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Here, glowing plasma follows magnetic field lines, forming loops larger than many Earths.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "A large flare erupts, releasing energy equal to millions of hydrogen bombs.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The eruption launches a coronal mass ejection, a particle cloud that reaches Earth in one to three days.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "From this full‑disk view, the Sun’s surface shines at five thousand five hundred degrees Celsius, its corona over a million degrees.",
+        "label": "NASA · SDO · 2015",
+        "callout": {
+          "value": "1,000,000 °C",
+          "label": "the outer atmosphere"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "Each flash reaches Earth in eight minutes twenty seconds, delivering light that sustains climate and life.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The Sun’s magnetic poles reverse roughly every eleven years, reshaping loop and eruption patterns.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Through constant vigilance, SDO records the Sun’s breathing, turning fleeting drama into a continuous story.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      }
+    ],
+    "closing": "One star, endless cycles, shaping every moment on Earth.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The Solar Dynamics Observatory has been imaging the Sun in multiple wavelengths since 2010, delivering about one point five terabytes of data each day. This short explores flares, magnetic loops and eruptions captured in stunning detail.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein — Graceful Eruption (https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare); Genna Duberstein, Tom Bridgman, Sarah Frazier — NASA’s SDO Captures Stunning View of April 17 Solar Flare (https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare); Genna Duberstein, Tom Bridgman, Karen Fox — Arching Eruption (https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "SDO watches the Sun every twelve seconds\n\nThe Solar Dynamics Observatory has been imaging the Sun in multiple wavelengths since 2010, delivering about one point five terabytes of data each day. This short explores flares, magnetic loops and eruptions captured in stunning detail.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
