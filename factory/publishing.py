@@ -142,6 +142,13 @@ def recent_duplicate(title: str, language: str, days: int = 10) -> str:
     return ""
 
 
+def definite_failure(message: str) -> bool:
+    """Errors the platform raises before accepting any bytes: nothing was published, so a retry is safe."""
+    lower = str(message or "").casefold()
+    return any(word in lower for word in ("exceeded the number of videos", "uploadlimitexceeded", "quotaexceeded",
+                                          "quota", "invalid_grant", "unauthorized", "forbidden"))
+
+
 def publish_run(directory: Path, platforms: str) -> dict:
     manifest, video, metadata = validate_run(directory)
     script_meta = json.loads(metadata.read_text(encoding="utf-8")).get("script", {})
@@ -164,7 +171,7 @@ def publish_run(directory: Path, platforms: str) -> dict:
             continue
         if previous.get("status") == "success":
             print("youtube: önceki yükleme liste dışıydı; herkese açık olarak yeniden yükleniyor.")
-        if previous.get("status") in {"sending", "uncertain"}:
+        if previous.get("status") in {"sending", "uncertain"} and not definite_failure(previous.get("error", "")):
             results[platform] = {
                 "status": "blocked",
                 "error": "Önceki gönderimin sonucu belirsiz. Platform hesabını kontrol et; data/publishing kaydını buna göre düzelt.",
@@ -229,7 +236,7 @@ def publish_run(directory: Path, platforms: str) -> dict:
                 results[platform] = journal[platform]
             else:
                 results[platform] = {
-                    "status": "uncertain" if sending else "failed",
+                    "status": "uncertain" if sending and not definite_failure(str(error)) else "failed",
                     "error": str(error),
                 }
         journal[platform] = results[platform]
