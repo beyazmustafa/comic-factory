@@ -103,7 +103,7 @@ def write_script(api, topic, clips, handle):
     facts = "\n".join(f"- {fact}" for fact in topic["facts"])
     ordered = sorted(clips, key=lambda c: ({"footage": 0, "visualization": 1, "animation": 2}[c["kind"]], -c["quality"]))
     listing = "\n".join(
-        f"- {c['id']}{' ★ (best real imagery — use it for beat 1 if it fits)' if i == 0 else ''}: {c['shows'] or c['what']} | {c['kind']} | "
+        f"- {c['id']}{' ★ (best real imagery — a good opening if it illustrates the hook; otherwise open on the clip that does)' if i == 0 else ''}: {c['shows'] or c['what']} | {c['kind']} | "
         f"up to {max(w[1] - w[0] for w in c['windows']):.0f} s | source: \"{c['title']}\" ({c.get('date', '')[:4]})"
         for i, c in enumerate(ordered))
     callouts = "\n".join(f"- [{i}] {c['value']} — {c['label']}" for i, c in enumerate(topic.get("callouts", [])))
@@ -131,7 +131,8 @@ lingers (e.g. "The next crew will fly this same path." / "It is still falling, 5
 viewer: no share, comment, like, follow, subscribe, reflect, thoughts, below.
 Use each clip at most twice, never in two consecutive beats, and vary the views (do not string together beats that show the same
 thing); prefer the clips marked "footage" for the hook; a clip's beat must not be longer than its usable length.
-Labels: a short on-screen tag per beat, 2–5 words, like "NASA · JUNO · 2017" (mission/instrument + year when known).
+Labels: a short on-screen tag per beat, 2–5 words, like "NASA · JUNO · 2017": the agency or mission that made the picture plus
+the year when known; never generic words such as "Science" or "Space".
 Total narration 130 to 185 words.
 
 Write numbers the way the narrator should say them: units in full words (kilometres, degrees, terabytes), no abbreviations
@@ -155,7 +156,9 @@ def polish_script(api, topic, script, clips):
     by_id = {c["id"]: c for c in clips}
     draft = "\n".join(f"{i + 1}. [{b['clip']}: {by_id[b['clip']]['shows'][:70]}] {b['narration']}" for i, b in enumerate(script["beats"]))
     prompt = f"""You are the script editor of a calm, premium documentary Short about {topic['subject']}.
-Tighten this draft narration without changing its facts, beat count, clip assignments or overall length (each beat 10–24 words).
+Tighten this draft narration without changing its beat count, clip assignments or overall length (each beat 10–24 words).
+Every claim must be traceable to the FACTS below: delete or rewrite any detail that is not there, even if it sounds plausible
+(no invented instruments, discoveries, dates or adjectives like "icy plumes" unless the facts say so).
 Make the order chronological or causal and make each beat say one clear thing that matches the clip in brackets.
 Remove filler, repeated ideas, and sentences that describe something the clip does not show. Keep numbers exactly as in the facts.
 Keep "This is / Here / Watch" phrasing to at most three beats. Plain, concrete, warm. No hype, no questions, no instructions to the viewer.

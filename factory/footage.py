@@ -566,7 +566,9 @@ def is_blank(path):
             grey = picture.convert("L").resize((64, 36))
             pixels = list(grey.getdata())
         mean = sum(pixels) / len(pixels)
-        return (mean < 8 and max(pixels) < 60) or mean > 245
+        lit = sum(1 for v in pixels if v > 40) / len(pixels)
+        # nothing in it, or only a few bright specks in the dark (a distant dot is not a shot)
+        return (mean < 8 and max(pixels) < 60) or (mean < 15 and lit < 0.02) or mean > 245
     except Exception:  # noqa: BLE001
         return False
 
