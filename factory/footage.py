@@ -680,7 +680,8 @@ remaining frames are clearly raw mission footage with nothing added. When in dou
 Then decide which stretches are usable as full-screen footage on a phone. A stretch is usable only if EVERY sampled frame in it:
 - shows the subject or closely related real imagery (spacecraft/telescope footage, orbital views, science visualization),
 - has NO burned-in text, captions, subtitles, logos, title cards, charts, diagrams, slides, grid or coordinate lines, arrows or watermarks,
-- has NO presenters, interviewees, studio or control-room scenes, hands, or people talking,
+- has NO presenters, interviewees, studio, lab, clean-room or control-room scenes, hands, or people talking (indoor scenes on
+  Earth are not usable unless the subject itself is that hardware being built),
 - is not a black/white blank, not a multi-panel collage, not a blurry or tiny inset.
 Group consecutive usable frames into stretches (start index, end index, inclusive). Prefer the most striking, cinematic imagery.
 For each stretch give the focus point of the main subject as fractions [x, y] of the frame (0..1, from top-left) — the vertical
