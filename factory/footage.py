@@ -174,7 +174,7 @@ def sdo_candidates(dates):
             rows.append({"id": f"sdo:{y}{m}{d}_{channel}", "source": "sdo", "title": f"SDO {label} — {date}", "query": "sdo",
                          "description": f"Solar Dynamics Observatory daily movie, {label}, {date}.", "date": str(date),
                          "credit": "NASA/SDO", "licence": "public domain (NASA)", "page_url": "https://sdo.gsfc.nasa.gov/data/",
-                         "sdo_url": SDO_DAILY.format(y=y, m=m, d=d, channel=channel)})
+                         "sdo_url": SDO_DAILY.format(y=y, m=m, d=d, channel=channel), "trim_bottom": 0.08})
     return rows
 
 
@@ -544,9 +544,20 @@ def has_face(path, threshold=0.6):
     return False
 
 
-def unclean(path):
-    """Frame carries text or a face → never usable."""
-    return has_text(path) or has_face(path)
+def unclean(path, trim_bottom=0.0):
+    """Frame carries text or a face → never usable. `trim_bottom` ignores a known
+    timestamp strip (SDO daily movies stamp the date along the bottom edge)."""
+    if not trim_bottom:
+        return has_text(path) or has_face(path)
+    with Image.open(path) as picture:
+        picture = picture.convert("RGB")
+        trimmed = picture.crop((0, 0, picture.width, int(picture.height * (1 - trim_bottom))))
+        scratch = Path(str(path) + ".trim.jpg")
+        trimmed.save(scratch, "JPEG", quality=90)
+    try:
+        return has_text(scratch) or has_face(scratch)
+    finally:
+        scratch.unlink(missing_ok=True)
 
 
 def sample(asset, directory, workers=4):
@@ -569,7 +580,7 @@ def sample(asset, directory, workers=4):
     if len(frames) < max(4, count // 2):
         raise ValueError(f"too few frames ({len(frames)}/{count}): {failures[0] if failures else ''}")
     with ThreadPoolExecutor(max_workers=2) as pool:
-        flags = list(pool.map(lambda f: unclean(f[1]), frames))
+        flags = list(pool.map(lambda f: unclean(f[1], asset.get("trim_bottom", 0.0)), frames))
     return frames, flags
 
 
@@ -711,7 +722,7 @@ def extract(url, start, end, path, margin=1.0):
     return path
 
 
-def text_intervals(path, duration, step=1.0, pad=0.8):
+def text_intervals(path, duration, step=1.0, pad=0.8, trim_bottom=0.0):
     """Seconds of a local clip whose frames carry readable text or a face (one check per second)."""
     if not shutil.which("tesseract") and _face_detector() is None:
         return []
@@ -721,7 +732,7 @@ def text_intervals(path, duration, step=1.0, pad=0.8):
                     str(folder / "t%03d.jpg")], capture_output=True, timeout=600)
     frames = sorted(folder.glob("t*.jpg"))
     with ThreadPoolExecutor(max_workers=2) as pool:
-        flags = list(pool.map(unclean, frames))
+        flags = list(pool.map(lambda f: unclean(f, trim_bottom), frames))
     intervals = []
     for index, flag in enumerate(flags):
         if flag:
@@ -752,7 +763,7 @@ def active_area(path, width, height, duration):
     return [x, y, w, h]
 
 
-def analyse(path):
+def analyse(path, trim_bottom=0.0):
     """Hard cuts, black stretches and on-screen text inside a local clip, plus its real duration/size."""
     info = probe(str(path), timeout=60)
     duration = info["duration"]
@@ -766,7 +777,7 @@ def analyse(path):
                              "-an", "-f", "null", "-"], capture_output=True, text=True, timeout=600)
     for match in re.finditer(r"black_start:([0-9.]+)\s+black_end:([0-9.]+)", result.stderr or ""):
         blocked.append((float(match.group(1)), float(match.group(2))))
-    text = text_intervals(path, duration)
+    text = text_intervals(path, duration, trim_bottom=trim_bottom)
     blocked += text
     active = active_area(path, info["width"], info["height"], duration)
     edges = sorted({0.0, duration, *cuts, *[b for pair in blocked for b in pair]})
@@ -876,7 +887,9 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
             clip_path = folder / f"clip_{taken}.mp4"
             try:
                 extract(asset["best"], start, end, clip_path)
-                analysis = analyse(clip_path)
+                analysis = analyse(clip_path, asset.get("trim_bottom", 0.0))
+                if asset.get("trim_bottom") and not analysis["active"]:
+                    analysis["active"] = [0, 0, analysis["width"], int(analysis["height"] * (1 - asset["trim_bottom"]))]
             except Exception as error:  # noqa: BLE001
                 log(f"Kesit alınamadı {asset['id']} {start:.0f}-{end:.0f}: {str(error)[:90]}")
                 continue
