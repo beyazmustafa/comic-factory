@@ -1,0 +1,492 @@
+{
+  "duration": 93.6,
+  "handle": "@Facctsaboutspace",
+  "hook": "Outside.",
+  "kicker": "Real footage · NASA",
+  "closing": "Future crews will add more spacewalks as the station keeps orbiting.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.116,
+      "src_out": 15.884,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.434,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 7.495,
+      "src_out": 12.275,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.434,
+      "t1": 9.88,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 19.77,
+      "src_out": 24.33,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 9.88,
+      "t1": 15.247,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 13.072,
+      "src_out": 16.658,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.247,
+      "t1": 18.5,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.0,
+      "src_out": 3.73,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 18.5,
+      "t1": 22.829,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000274_russian_spacewalk_56_221122_mp4/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.458,
+      "src_out": 16.542,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 22.829,
+      "t1": 29.58,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.454,
+      "src_out": 9.946,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 29.58,
+      "t1": 34.739,
+      "label": "Roscosmos · ISS · 2022",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      },
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c05",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 15.923,
+      "src_out": 20.477,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        0,
+        1172,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 34.739,
+      "t1": 38.96,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 17.514,
+      "src_out": 22.886,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 38.96,
+      "t1": 43.998,
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 2.972,
+      "src_out": 7.428,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        0,
+        1172,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 43.998,
+      "t1": 48.12,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 13.663,
+      "src_out": 22.737,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        0,
+        1172,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.12,
+      "t1": 56.86,
+      "label": "Roscosmos · ISS · 2022",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 6.468,
+      "src_out": 13.302,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.86,
+      "t1": 63.36,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.643,
+      "src_out": 16.357,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 63.36,
+      "t1": 69.74,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000105_russian_spacewalk_52_animation_220415_mp/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.528,
+      "src_out": 9.872,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 69.74,
+      "t1": 74.751,
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.784,
+      "src_out": 15.216,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 74.751,
+      "t1": 78.85,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_jsc2022m000274_russian_spacewalk_56_221122_mp4/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 78.85,
+      "t1": 85.35,
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.708,
+      "src_out": 17.292,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 85.35,
+      "t1": 93.6,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

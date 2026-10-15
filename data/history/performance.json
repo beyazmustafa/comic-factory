@@ -3482,5 +3482,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "AbFJ6pfw_Gk",
+    "platform": "youtube",
+    "run_id": "38785342732",
+    "published_at": "2026-10-15T19:04:06+00:00",
+    "event": {
+      "title": "Outside.",
+      "series": "NASA footage",
+      "issue": "spacewalk",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 165,
+      "duration": 93.6,
+      "words_per_minute": 106,
+      "hook": "This is a helmet camera, four hundred kilometres up, traveling twenty‑eight thousand kilometres per hour.",
+      "hook_words": 15,
+      "title": "Helmet Camera Walks Around the International Space Station",
+      "title_length": 58,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

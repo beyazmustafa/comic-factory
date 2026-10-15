@@ -1,0 +1,166 @@
+{
+  "title": "Helmet Camera Walks Around the International Space Station",
+  "description": "A helmet camera follows astronauts as they work outside the International Space Station. The narration explains the suit, temperature extremes, and the history of spacewalks.",
+  "hook_card": "Outside.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "This is a helmet camera, four hundred kilometres up, traveling twenty‑eight thousand kilometres per hour.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "Here the suit, fourteen layers thick, weighs nothing in microgravity yet the astronaut must move it.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c02",
+      "narration": "Here the astronaut breathes pure oxygen for hours before the walk to avoid the bends, suit pressure one third sea‑level.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "Here a sunrise occurs every ninety minutes, heating the suit to plus one hundred twenty degrees Celsius in sunlight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c04",
+      "narration": "Here the small SAFER jetpack rests on the astronaut’s back, ready if a tether ever fails.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "Here the crew spends six to eight hours outside, contributing to more than two hundred seventy spacewalks for the station.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "Here the astronaut drifts in vacuum, shade at minus one hundred fifty degrees Celsius, sun at plus one hundred twenty degrees.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c04",
+      "narration": "Here the first spacewalk began in March 1965, when Alexei Leonov stepped outside for twelve minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c03",
+      "narration": "Here the station continues to orbit at four hundred kilometres, the suit protecting the astronaut as they repair the world’s largest laboratory.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This is a helmet camera, four hundred kilometres up, traveling twenty‑eight thousand kilometres per hour. Here the suit, fourteen layers thick, weighs nothing in microgravity yet the astronaut must move it. Here the astronaut breathes pure oxygen for hours before the walk to avoid the bends, suit pressure one third sea‑level. Here a sunrise occurs every ninety minutes, heating the suit to plus one hundred twenty degrees Celsius in sunlight. Here the small SAFER jetpack rests on the astronaut’s back, ready if a tether ever fails. Here the crew spends six to eight hours outside, contributing to more than two hundred seventy spacewalks for the station. Here the astronaut drifts in vacuum, shade at minus one hundred fifty degrees Celsius, sun at plus one hundred twenty degrees. Here the first spacewalk began in March 1965, when Alexei Leonov stepped outside for twelve minutes. Here the station continues to orbit at four hundred kilometres, the suit protecting the astronaut as they repair the world’s largest laboratory.",
+  "event": {
+    "id": "film_spacewalk_20261015T182537046577Z",
+    "title": "Outside.",
+    "series": "NASA footage",
+    "issue": "spacewalk",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "spacewalk",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "https://images.nasa.gov/details/jsc2022m000274_Russian_Spacewalk_56_221122-MP4"
+    ]
+  },
+  "scenario": "spacewalk",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "This is a helmet camera, four hundred kilometres up, traveling twenty‑eight thousand kilometres per hour.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Here the suit, fourteen layers thick, weighs nothing in microgravity yet the astronaut must move it.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Here the astronaut breathes pure oxygen for hours before the walk to avoid the bends, suit pressure one third sea‑level.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Here a sunrise occurs every ninety minutes, heating the suit to plus one hundred twenty degrees Celsius in sunlight.",
+      "label": "Roscosmos · ISS · 2022",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "Here the small SAFER jetpack rests on the astronaut’s back, ready if a tether ever fails.",
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Here the crew spends six to eight hours outside, contributing to more than two hundred seventy spacewalks for the station.",
+      "label": "Roscosmos · ISS · 2022",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "Here the astronaut drifts in vacuum, shade at minus one hundred fifty degrees Celsius, sun at plus one hundred twenty degrees.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Here the first spacewalk began in March 1965, when Alexei Leonov stepped outside for twelve minutes.",
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Here the station continues to orbit at four hundred kilometres, the suit protecting the astronaut as they repair the world’s largest laboratory.",
+      "label": "Roscosmos · ISS · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "Future crews will add more spacewalks as the station keeps orbiting.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

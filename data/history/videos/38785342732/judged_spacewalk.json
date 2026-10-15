@@ -1,0 +1,426 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:Spacesuits Prepped for Upcoming Spacewalks",
+   "title": "Spacesuits Prepped for Upcoming Spacewalks",
+   "date": "2019-10-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NHQ_2019_1018_all woman spacewalk",
+   "title": "First All-Woman Spacewalk",
+   "date": "2019-10-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2026m000932_Spacewalk_101_AVAIL1080p",
+   "title": "Spacewalk 101",
+   "date": "2026-10-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+   "title": "U.S. Spacewalk 83 Animation - Dec. 21, 2022",
+   "date": "2022-12-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000176_Russian_European_Space_Agency_Spacewalk_Animation",
+   "title": "Russian, European Space Agency Spacewalk Animation",
+   "date": "2022-07-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NHQ_2019_1018_President Trump Congratulates All Woman Spacewalk Crew",
+   "title": "President Trump Congratulates All Woman Spacewalk Crew",
+   "date": "2019-10-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2020m001420_Russian_Spacewalk_47_Animation_MP4",
+   "title": "Russian Spacewalk #47 Animation",
+   "date": "2020-11-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+   "title": "FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+   "date": "2019-10-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2019m000990_Suiting_Up_for_a_Spacewalk_MP4",
+   "title": "Suiting Up for a Spacewalk",
+   "date": "2019-11-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2021m000170_US_Spacewalk_74_Animation",
+   "title": "U.S. Spacewalk 74 Animation",
+   "date": "2021-06-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+   "title": "Russian Spacewalk 56 - Nov. 23,2022",
+   "date": "2022-11-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2023m000116_Russian_Spacewalk_57_Animation",
+   "title": "Roscosmos Cosmonauts Prepare to Conduct Spacewalk",
+   "date": "2023-05-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2023m000127_Russian_Spacewalk_59_Animation",
+   "title": "Roscosmos Cosmonauts to Conduct Spacewalk Outside the Space Station",
+   "date": "2023-06-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:APACHE - Spacewalking in Virtual Reality",
+   "title": "APACHE: Spacewalking in Virtual Reality",
+   "date": "2025-07-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2021m000069_US_Spacewalk_71_Animation_MP4",
+   "title": "U.S. Spacewalk 71 Animation",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2021m000187_Celebrating_20_Years_of_Space_Station_Spacewalks",
+   "title": "Celebrating 20 Years of International Space Station Spacewalks",
+   "date": "2021-07-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2021m000056_US_Spacewalk_69_Animation-210121",
+   "title": "US Spacewalk 69 Animation",
+   "date": "2021-01-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2021m000057_US_Spacewalk_70_Animation-210121",
+   "title": "US Spacewalk 70 Animation",
+   "date": "2021-01-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000280_US_EVA_82_Animation_221203",
+   "title": "U.S. Spacewalk 82 Animation - Dec. 3, 2022",
+   "date": "2022-12-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2023m000118_Russian_Spacewalk_58_Animation_230510-MP4",
+   "title": "Russian Spacewalk 58 Animation - May 23, 2023",
+   "date": "2023-05-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+   "title": "RUSSIAN COSMONAUTS CONDUCT SPACEWALK TO ACTIVATE NEW STATION ROBOTIC ARM",
+   "date": "2022-04-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2025m000112_US_Spacewalk_93_Animation_250424-MP4",
+   "title": "US Spacewalk 93 Animation",
+   "date": "2025-04-24",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:14792",
+   "title": "Astrophysics Missions Vertical Video",
+   "date": "2025-05-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14680",
+   "title": "Astronauts Prepare for NICER Repair Training",
+   "date": "2025-01-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14678",
+   "title": "Astronauts Practice NICER Repair",
+   "date": "2025-01-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14679",
+   "title": "NICER Caddy Preparation",
+   "date": "2024-12-13",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14603",
+   "title": "NICER Hardware and Patch Kit",
+   "date": "2024-07-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14609",
+   "title": "Anodizing NICER’s Patches",
+   "date": "2024-07-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13724",
+   "title": "OSIRIS-REx: Countdown to TAG",
+   "date": "2020-09-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13566",
+   "title": "Hubble Archive - Servicing Mission 3B, STS-109",
+   "date": "2020-03-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12194",
+   "title": "The Compton Legacy: A Quarter-century of Gamma-ray Science",
+   "date": "2016-04-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:10437",
+   "title": "Inside Hubble's Control Room During a Spacewalk",
+   "date": "2009-05-15",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:NHQ_2019_1018_all woman spacewalk",
+  "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+  "nasa:jsc2019m000990_Suiting_Up_for_a_Spacewalk_MP4",
+  "nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+  "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4"
+ ],
+ "judged": [
+  {
+   "id": "nasa:NHQ_2019_1018_all woman spacewalk",
+   "title": "First All-Woman Spacewalk",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA astronauts performing spacewalks outside the International Space Station",
+   "excluded": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 0,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "ISS exterior structure",
+     "score": 8
+    },
+    {
+     "start": 2,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "ISS exterior structure in orbit",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+   "title": "FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Helmet camera footage of astronauts conducting a spacewalk outside the International Space Station.",
+   "excluded": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    20
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Exterior views of the International Space Station and Earth horizon from helmet camera",
+     "score": 8
+    },
+    {
+     "start": 6,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Exterior views of the International Space Station and Earth horizon from helmet camera",
+     "score": 8
+    },
+    {
+     "start": 12,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacewalkers working on station truss structure",
+     "score": 9
+    },
+    {
+     "start": 17,
+     "end": 17,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Astronauts performing maintenance tasks on the International Space Station exterior",
+     "score": 8
+    },
+    {
+     "start": 21,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Astronauts performing maintenance tasks on the International Space Station exterior",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:jsc2019m000990_Suiting_Up_for_a_Spacewalk_MP4",
+   "title": "Suiting Up for a Spacewalk",
+   "relevant": false,
+   "usable": false,
+   "quality": 4,
+   "kind": "footage",
+   "what": "Astronauts preparing and suiting up inside the International Space Station",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+   "title": "Russian Spacewalk 56 - Nov. 23,2022",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Roscosmos cosmonauts conducting a spacewalk outside the International Space Station",
+   "excluded": [
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Cosmonauts working outside the International Space Station against the backdrop of Earth and space",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+   "title": "RUSSIAN COSMONAUTS CONDUCT SPACEWALK TO ACTIVATE NEW STATION ROBOTIC ARM",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "3D animation of Russian cosmonauts conducting a spacewalk outside the International Space Station",
+   "excluded": [
+    0,
+    2,
+    11,
+    12,
+    22,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Cosmonauts working on the exterior of the space station module",
+     "score": 7
+    },
+    {
+     "start": 13,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Cosmonauts conducting EVA tasks outside the station",
+     "score": 7
+    }
+   ]
+  }
+ ]
+}

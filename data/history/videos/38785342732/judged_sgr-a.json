@@ -1,0 +1,343 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:JPL-20250409-NUSTARf-0001-Hunting_Hidden_Black_Holes_2160cc",
+   "title": "NuSTAR-Hunting Hidden Black Holes",
+   "date": "2025-04-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ARC-20200103-AAV3244-SOFIA-GalacticCenter-RptrPkg-NASAWeb",
+   "title": "SOFIA Reveals New View of Milky Way’s Center",
+   "date": "2020-01-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_062304_chandra",
+   "title": "KSC-04-S-00200",
+   "date": "2004-06-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:sonify_galactic_all",
+   "title": "Sounds from Around the Milky Way",
+   "date": "2020-09-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_030409_kepler_webcast1",
+   "title": "KSC-09-S-00022",
+   "date": "2009-03-05",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:4851",
+   "title": "Deep Star Maps 2020",
+   "date": "2020-09-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3895",
+   "title": "Deep Star Maps",
+   "date": "2012-01-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15053",
+   "title": "NASA’s Fermi Mission Reveals Related Supernova Remnants",
+   "date": "2026-06-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15047",
+   "title": "Milky Way Habitable Zone",
+   "date": "2026-05-28",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14979",
+   "title": "Early Testing of Aerogel and Silicon Detectors for TIGERISS",
+   "date": "2026-03-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14968",
+   "title": "XRISM Clocks Hot Wind of Galaxy M82",
+   "date": "2026-03-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14976",
+   "title": "Fermi's 15-year View of the Gamma-Ray Sky",
+   "date": "2026-02-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14924",
+   "title": "\"Dark Galaxy\" Identified by Hubble",
+   "date": "2026-02-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14942",
+   "title": "Roman and Webb Comparison Graphics from Far and Wide",
+   "date": "2026-01-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14922",
+   "title": "Anatomy of an Active Galactic Nucleus",
+   "date": "2025-12-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14905",
+   "title": "Black Hole Environments, Explained",
+   "date": "2025-11-28",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14921",
+   "title": "IMAP Testing and Integration at NASA’s Kennedy Space Center",
+   "date": "2025-11-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5586",
+   "title": "Extreme Mass Ratio Black Hole Inspirals (EMRIs)",
+   "date": "2026-01-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14719",
+   "title": "Swift Studies Gas-Churning Monster Black Holes",
+   "date": "2024-11-13",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5366",
+   "title": "Solar Eclipse Shadow Shape Explained",
+   "date": "2024-09-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14576",
+   "title": "NASA Black Hole Visualization Takes Viewers Beyond the Brink",
+   "date": "2024-05-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14585",
+   "title": "Beyond the Brink: Tracking a Simulated Plunge into a Black Hole",
+   "date": "2024-05-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:31353",
+   "title": "Supermassive Black Holes",
+   "date": "2025-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20378",
+   "title": "Long Gamma-Ray Burst",
+   "date": "2023-09-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20374",
+   "title": "XRISM Beauty Shots",
+   "date": "2022-12-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15091",
+   "title": "Flash Talk: Roman Science Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15061",
+   "title": "LINK Arrives at NASA Wallops, Begins Rocket Integration",
+   "date": "2026-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15041",
+   "title": "NASA's Fermi Spies a Supercharged Supernova",
+   "date": "2026-05-20",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:ngc7006_4kultrahd",
+   "title": "Closeup view of NGC 7006",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2521a",
+   "title": "Pan: NGC 3507",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2534a",
+   "title": "Pan: Messier 96",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1308a",
+   "title": "Probing a galactic halo with Hubble",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2436a",
+   "title": "Pan: IC 4709",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2435a",
+   "title": "Pan: UGC 3478",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2505a",
+   "title": "Pan: LEDA 132905",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "webb:weic2328a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2520a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2520b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:potm2404a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2617b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2520c",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:potm2404b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2611a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "commons:VLT images of the S301 star orbiting Sagittarius A* (eso2612a).webm",
+   "title": "VLT images of the S301 star orbiting Sagittarius A* (eso2612a)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Sagittarius A*- Milky Way Monster Stars in Cosmic Reality Show (2003-0203long).mpeg",
+   "title": "Sagittarius A*- Milky Way Monster Stars in Cosmic Reality Show (2003-0203long).mpeg",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:VLT images of the S301 star orbiting Sagittarius A* (square layout) (eso2612b).webm",
+   "title": "VLT images of the S301 star orbiting Sagittarius A* (square layout) (eso2612b)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Sagittarius A* and J144701-5919- Peering Into The Heart of Darkness (2010-sgra).webm",
+   "title": "Sagittarius A* and J144701-5919- Peering Into The Heart of Darkness (2010-sgra)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:14585",
+  "svs:14576",
+  "nasa:ARC-20200103-AAV3244-SOFIA-GalacticCenter-RptrPkg-NASAWeb",
+  "svs:14976",
+  "commons:Sagittarius A* and J144701-5919- Peering Into The Heart of Darkness (2010-sgra).webm",
+  "commons:VLT images of the S301 star orbiting Sagittarius A* (eso2612a).webm",
+  "commons:Sagittarius A*- Milky Way Monster Stars in Cosmic Reality Show (2003-0203long).mpeg"
+ ],
+ "judged": [
+  {
+   "id": "svs:14576",
+   "title": "NASA Black Hole Visualization Takes Viewers Beyond the Brink",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "NASA supercomputer visualization of a camera trajectory around a supermassive black hole featuring diagram lines and trajectory paths",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:ARC-20200103-AAV3244-SOFIA-GalacticCenter-RptrPkg-NASAWeb",
+   "title": "SOFIA Reveals New View of Milky Way’s Center",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "footage",
+   "what": "NASA SOFIA infrared panorama of the Milky Way's center",
+   "excluded": [
+    1,
+    2,
+    4,
+    9,
+    13
+   ],
+   "stretches": []
+  }
+ ]
+}
