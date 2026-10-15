@@ -612,6 +612,8 @@ def sample(asset, directory, workers=4):
         raise ValueError(f"too few frames ({len(frames)}/{count}): {failures[0] if failures else ''}")
     with ThreadPoolExecutor(max_workers=2) as pool:
         flags = list(pool.map(lambda f: unclean(f[1], asset.get("trim_bottom", 0.0)), frames))
+        faces = list(pool.map(lambda f: has_face(f[1]), frames))
+    asset["face_frames"] = sum(1 for f in faces if f)
     return frames, flags
 
 
@@ -910,8 +912,8 @@ def harvest(api, topic, directory, want=8, minimum=4, log=print):
             log(f"{asset['id']}: {state} ({verdict['quality']}/10, {verdict['kind']}) {verdict['what'][:70]}")
             if not verdict["usable"] or verdict["quality"] < 5:
                 continue
-            if len(verdict["excluded"]) > len(frames) * 0.25:
-                log(f"{asset['id']}: üretilmiş program gibi (karelerin {len(verdict['excluded'])}/{len(frames)} kısmı yazı/insan); atlandı")
+            if asset.get("face_frames", 0) > len(frames) * 0.25 or len(verdict["excluded"]) > len(frames) * 0.6:
+                log(f"{asset['id']}: üretilmiş program gibi ({asset.get('face_frames', 0)} karede insan, {len(verdict['excluded'])}/{len(frames)} kare elendi); atlandı")
                 continue
             spacing = asset["duration"] / max(1, len(frames))
             taken = 0
