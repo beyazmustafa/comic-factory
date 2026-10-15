@@ -1,0 +1,163 @@
+{
+  "title": "First Real Footage of a Mars Rover Landing",
+  "description": "Watch the Perseverance rover's historic touchdown captured by its own cameras. Every moment from entry to surface is shown in real time.",
+  "hook_card": "Seven minutes of terror.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "The rover entered Mars’ atmosphere at twenty thousand kilometres per hour, captured by a downward‑facing camera.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "A twenty‑one point five metre parachute unfurled supersonically, its pattern spelling Dare Mighty Things in binary.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c01",
+      "narration": "The downward camera shows the rover descending, the red landscape rushing past in a blur.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "The skycrane hovered, lowering the one‑ton rover on seven point six metre cables.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c03",
+      "narration": "Below, Jezero Crater spreads out, the ancient lakebed where rivers flowed billions of years ago.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "The skycrane released the rover, which touched the surface as the descent stage rockets away.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "The rover stands on the dusty plain, instruments ready to explore the ancient shoreline.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "The rover’s wheels settle, dust swirling, as the descent stage retreats to crash far away.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c00",
+      "narration": "Radio signals took eleven minutes to reach Earth, so the landing was complete before anyone heard it.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "The rover entered Mars’ atmosphere at twenty thousand kilometres per hour, captured by a downward‑facing camera. A twenty‑one point five metre parachute unfurled supersonically, its pattern spelling Dare Mighty Things in binary. The downward camera shows the rover descending, the red landscape rushing past in a blur. The skycrane hovered, lowering the one‑ton rover on seven point six metre cables. Below, Jezero Crater spreads out, the ancient lakebed where rivers flowed billions of years ago. The skycrane released the rover, which touched the surface as the descent stage rockets away. The rover stands on the dusty plain, instruments ready to explore the ancient shoreline. The rover’s wheels settle, dust swirling, as the descent stage retreats to crash far away. Radio signals took eleven minutes to reach Earth, so the landing was complete before anyone heard it.",
+  "event": {
+    "id": "film_perseverance-landing_20261015T011227144913Z",
+    "title": "Seven minutes of terror.",
+    "series": "NASA footage",
+    "issue": "perseverance-landing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "perseverance-landing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
+    ]
+  },
+  "scenario": "perseverance-landing",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "The rover entered Mars’ atmosphere at twenty thousand kilometres per hour, captured by a downward‑facing camera.",
+      "label": "NASA · Perseverance · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "A twenty‑one point five metre parachute unfurled supersonically, its pattern spelling Dare Mighty Things in binary.",
+      "label": "NASA · Landing Animation · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The downward camera shows the rover descending, the red landscape rushing past in a blur.",
+      "label": "NASA · Descent View · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The skycrane hovered, lowering the one‑ton rover on seven point six metre cables.",
+      "label": "NASA · Skycrane · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Below, Jezero Crater spreads out, the ancient lakebed where rivers flowed billions of years ago.",
+      "label": "NASA · Jezero Crater · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The skycrane released the rover, which touched the surface as the descent stage rockets away.",
+      "label": "NASA · Skycrane Release · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "The rover stands on the dusty plain, instruments ready to explore the ancient shoreline.",
+      "label": "NASA · Surface Vista · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The rover’s wheels settle, dust swirling, as the descent stage retreats to crash far away.",
+      "label": "NASA · Rover on Ground · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Radio signals took eleven minutes to reach Earth, so the landing was complete before anyone heard it.",
+      "label": "NASA · Communication · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      }
+    }
+  ],
+  "closing": "The rover still sends data from Jezero, a new chapter begins.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -1,12 +1,12 @@
-run_id: 38662018380  attempt: 1  event: workflow_dispatch
-produce step outcome: failure
---- data/runs/20261015T004831092532Z/run.json
+run_id: 38664295059  attempt: 1  event: workflow_dispatch
+produce step outcome: success
+--- data/runs/20261015T011227144913Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "sdo-sun",
+  "topic": "perseverance-landing",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,48 +40,48 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38662018380",
+  "run_id": "38664295059",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "d6c252bb9270d66250860947a2e0d39965f7ac1087aa8ef4ae47389c7ad5361b",
-  "metadata_sha256": "2543b08e5fa95d5a9ecbad56a10ad641c7c50411186d5322cce8af4cb8ed3b9d",
+  "video_sha256": "5a84fba9a9015acdb87c1ab547e4c50d2cdd230a2ad709921aa86a5b8d5e37fd",
+  "metadata_sha256": "b8578f72da7e195f6668211fd5eab0360cfd5470461c1e515cc4e75d5bc573ed",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 61,
-  "duration": 69.12,
+  "api_calls": 59,
+  "duration": 63.379999999999995,
   "voice": "Charon",
   "event": {
-    "id": "film_sdo-sun_20261015T004831092532Z",
-    "title": "The Sun, every twelve seconds.",
+    "id": "film_perseverance-landing_20261015T011227144913Z",
+    "title": "Seven minutes of terror.",
     "series": "NASA footage",
-    "issue": "sdo-sun",
+    "issue": "perseverance-landing",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "sdo-sun",
+    "scenario": "perseverance-landing",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T004831092532Z/diagnostics/provider_events.json
+--- data/runs/20261015T011227144913Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
@@ -89,7 +89,7 @@ produce step outcome: failure
   "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261015T004831092532Z/diagnostics/providers.json
+--- data/runs/20261015T011227144913Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -112,9 +112,9 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,67 +209,55 @@ produce step outcome: failure
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: sdo-sun
-Görüntü adayları: 97 (sdo-sun)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 12
-Çözümlenemedi commons:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:NASA's SDO Captures a February Solar Flare Triple Play (SVS14536).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 171 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 8
-sdo:20240510_0304: elendi (8/10, footage) Solar Dynamics Observatory daily movie of the Sun in 304 angstroms sho
-sdo:20240510_0171: elendi (8/10, footage) Solar Dynamics Observatory daily movie showing coronal loops on the Su
-sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 131 Angstrom showing solar f
-sdo:20240510_0193: elendi (8/10, footage) Solar Dynamics Observatory daily movie showing the solar corona in 193
-sdo:20240510_0094: elendi (8/10, footage) Solar Dynamics Observatory 94 angstrom view showing solar flares
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) NASA Solar Dynamics Observatory imagery capturing a solar flare and co
-nasa:GSFC_20160426_SDO_m12224_SolarFlare: kullanılır (8/10, footage) NASA's Solar Dynamics Observatory captures a mid-level solar flare, ma
-nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA SDO imagery of a solar arching eruption and coronal mass ejection
-Kullanılır kesit: 6 (134 sn temiz görüntü)
+→ Konu: perseverance-landing
+Görüntü adayları: 54 (perseverance-landing)
+Sıralanan aday: 11
+Çözümlenemedi commons:Flight over the Mars 2020 Perseverance rover landing site ESA441709.webm: ValueError: licence not reusable: CC BY-SA 3.0 igo
+Çözümlenemedi commons:Perseverance Rover's Descent and Touchdown on Mars (SVS31250 - Perseverance-landing-2160p).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Perseverance Entry Descent Landing.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Perseverance Rover's Descent and Touchdown on Mars (SVS31250 - Perseverance-landing-1080p).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:NASA's Mars 2020 Perseverance Rover Landing Animations-rzmd7RouGrM.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 6
+Görüntü değerlendirme nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (9/10, footage) Perseverance rover's real onboard descent and landing cameras approach
+Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Onboard camera footage of the Perseverance rover's descent and landing
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Animations depicting key events during the entry, descent, and landing
+Kullanılır kesit: 7 (156 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses eşleştirme: 78.1/100 | whisper-large-v3
+Ses eşleştirme: 81.7/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 86.4/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
+Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
 Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 89.7/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 90.0/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.5/100 | whisper-large-v3
-→ Kurgu (69.1 sn, 9 beat, 6 kesit)
-  kurgu 10/69 sn
-  kurgu 20/69 sn
-  kurgu 30/69 sn
-  kurgu 40/69 sn
-  kurgu 50/69 sn
-  kurgu 60/69 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T004831092532Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: SDO watches the Sun every twelve seconds #Shorts
-Görünürlük: unlisted
-
-HATA: Yükleme tamamlanmadı: youtube: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+Ses eşleştirme: 94.1/100 | whisper-large-v3
+→ Kurgu (63.4 sn, 9 beat, 7 kesit)
+  kurgu 10/63 sn
+  kurgu 20/63 sn
+  kurgu 30/63 sn
+  kurgu 40/63 sn
+  kurgu 50/63 sn
+  kurgu 60/63 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T011227144913Z/review.html
