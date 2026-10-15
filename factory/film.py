@@ -110,7 +110,8 @@ except °C; never "km/h" or "TB" in the narration.
 
 Return JSON:
 {{"hook": "on-screen hook, max 7 words", "youtube_title": "max 60 characters: one specific, curiosity-driving line written like a
-documentary title (e.g. 'The Sun, photographed every 12 seconds for 15 years'), no colon lists, no clickbait punctuation",
+documentary title for a general audience (e.g. 'A satellite has photographed the Sun every 12 seconds since 2010'); plain words,
+no acronyms or mission codes unless famous (Hubble, Apollo, Voyager), no colon lists, no clickbait punctuation",
 "description": "two sentences for the video description",
 "beats": [{{"clip": "c00", "narration": "...", "label": "NASA · MISSION · YEAR", "callout": <index or null>}}],
 "closing": "..."}}"""
