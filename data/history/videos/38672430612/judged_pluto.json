@@ -1,0 +1,360 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20150710_NewHorizons_m11941_Enlil",
+   "title": "Tracking Space Weather for New Horizons with an Enlil Model",
+   "date": "2015-07-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011906_nh_launchchange",
+   "title": "KSC-06-S-00004",
+   "date": "2006-01-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_launchchange7",
+   "title": "KSC-05-S-00336",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver6",
+   "title": "KSC-06-S-00031",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz6",
+   "title": "KSC-06-S-00020",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz10",
+   "title": "KSC-06-S-00024",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_stelzer",
+   "title": "KSC-05-S-00329",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_intro",
+   "title": "KSC-05-S-00325",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_open",
+   "title": "KSC-06-S-00012",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz1",
+   "title": "KSC-06-S-00014",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_quarter",
+   "title": "KSC-06-S-00015",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver7",
+   "title": "KSC-06-S-00032",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz3",
+   "title": "KSC-06-S-00017",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver5",
+   "title": "KSC-06-S-00030",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011906_nh_spacesep",
+   "title": "KSC-06-S-00008",
+   "date": "2006-01-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_fountain",
+   "title": "KSC-06-S-00037",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz7",
+   "title": "KSC-06-S-00021",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver8",
+   "title": "KSC-06-S-00033",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011906_nh_intro",
+   "title": "KSC-06-S-00002",
+   "date": "2006-01-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz2",
+   "title": "KSC-06-S-00016",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011906_nh_lsp",
+   "title": "KSC-06-S-00003",
+   "date": "2006-01-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver4",
+   "title": "KSC-06-S-00029",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_stern",
+   "title": "KSC-05-S-00327",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver2",
+   "title": "KSC-06-S-00027",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_lsp",
+   "title": "KSC-05-S-00330",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz9",
+   "title": "KSC-06-S-00023",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_newwindow",
+   "title": "KSC-05-S-00337",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver3",
+   "title": "KSC-06-S-00028",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_kusnierkiewicz4",
+   "title": "KSC-06-S-00018",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011506_nh_weaver1",
+   "title": "KSC-06-S-00026",
+   "date": "2006-01-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011706_nh_abort",
+   "title": "KSC-05-S-00338",
+   "date": "2006-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4758",
+   "title": "The Path of Comet 2I/Borisov",
+   "date": "2019-10-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4680",
+   "title": "Space Weather to the Edge of the Solar System - Revisited",
+   "date": "2018-10-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4139",
+   "title": "Voyager 1 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4392",
+   "title": "Space Weather to the Edge of the Solar System",
+   "date": "2015-12-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3635",
+   "title": "IBEX First Skymap Release",
+   "date": "2009-10-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3595",
+   "title": "Sentinels of the Heliosphere",
+   "date": "2009-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3570",
+   "title": "NASA's Heliophysics Observatories Study the Sun and Geospace",
+   "date": "2008-12-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20363",
+   "title": "Animation: Heliosphere",
+   "date": "2022-03-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20306",
+   "title": "Solar Orbiter - NASA Animations",
+   "date": "2020-01-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20042",
+   "title": "Voyager Meets a Coronal Mass Ejection",
+   "date": "2004-12-03",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20043",
+   "title": "Coronal Mass Ejections Blast their Way Through the Solar System",
+   "date": "2004-12-03",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Pluto Flyover from New Horizons.webm",
+   "title": "Pluto Flyover from New Horizons",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Charon Flyover from New Horizons.webm",
+   "title": "Charon Flyover from New Horizons",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Pluto-FlyoverAnimation-20150918.webm",
+   "title": "Pluto-FlyoverAnimation-20150918",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Animated Flyover of Pluto’s Icy Mountain and Plains.ogv",
+   "title": "Animated Flyover of Pluto’s Icy Mountain and Plains",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "commons:Pluto Flyover from New Horizons.webm",
+  "commons:Animated Flyover of Pluto’s Icy Mountain and Plains.ogv",
+  "commons:Pluto-FlyoverAnimation-20150918.webm",
+  "commons:Charon Flyover from New Horizons.webm"
+ ],
+ "judged": [
+  {
+   "id": "commons:Pluto Flyover from New Horizons.webm",
+   "title": "Pluto Flyover from New Horizons",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Pluto flyover visualization from New Horizons data",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    19
+   ],
+   "stretches": [
+    {
+     "start": 4,
+     "end": 18,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Flyover view of Pluto's varied surface terrain and mountains",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "commons:Animated Flyover of Pluto’s Icy Mountain and Plains.ogv",
+   "title": "Animated Flyover of Pluto’s Icy Mountain and Plains",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Animated flyover visualization of Pluto's icy mountains and plains based on New Horizons data",
+   "excluded": [
+    0,
+    6
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.45
+     ],
+     "width": 0.32,
+     "shows": "Simulated flyover across Pluto's rugged icy mountains (Norgay Montes)",
+     "score": 8
+    },
+    {
+     "start": 7,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Simulated flyover across Pluto's smooth cellular plains (Sputnik Planum)",
+     "score": 8
+    }
+   ]
+  }
+ ]
+}

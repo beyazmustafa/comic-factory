@@ -1,12 +1,12 @@
-run_id: 38668405123  attempt: 1  event: workflow_dispatch
+run_id: 38672430612  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261015T015814869366Z/run.json
+--- data/runs/20261015T024343016855Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "webb-pillars",
+  "topic": "pluto",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,36 +40,38 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38668405123",
+  "run_id": "38672430612",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "c9ed058c2a5843d69d4c2631e1ebe572983e9727a373135734c64891a3c8cedd",
-  "metadata_sha256": "9082564294c0b4b2053dc291edcb56405eb3039a4c69d803ecbbda4b20d4e020",
+  "video_sha256": "853df3001952b02df99529eee4ef2cf766158d0e54ba5c975c9c6e7b92f7f8a3",
+  "metadata_sha256": "bb0d5882e510c51af3df5b2ac020b2856a3e14a4d3114e6f7d5a43112335064a",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 82,
-  "duration": 65.11,
+  "api_calls": 72,
+  "duration": 77.20095833333333,
   "voice": "Charon",
   "event": {
-    "id": "film_europa_20261015T015814869366Z",
-    "title": "An ocean under the ice.",
+    "id": "film_hubble-servicing_20261015T024343016855Z",
+    "title": "The telescope that was born blind.",
     "series": "NASA footage",
-    "issue": "europa",
+    "issue": "hubble-servicing",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "europa",
+    "scenario": "hubble-servicing",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://esahubble.org/videos/heic1322a/",
-      "https://esahubble.org/videos/heic1322b/",
-      "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
-      "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
+      "https://esahubble.org/videos/heic0907b/",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10217_Zoom_Out",
+      "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T015814869366Z/diagnostics/provider_events.json
+--- data/runs/20261015T024343016855Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -77,24 +79,19 @@ produce step outcome: success
   "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261015T015814869366Z/diagnostics/providers.json
+--- data/runs/20261015T024343016855Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -117,9 +114,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -214,117 +211,96 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: webb-pillars
-Görüntü adayları: 54 (webb-pillars)
+→ Konu: pluto
+Görüntü adayları: 43 (pluto)
+Sıralanan aday: 0
+Çözümlenen video: 0
+Görüntü adayları: 4 (pluto, Commons)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 8
-Süre uygun değil nasa:First Fulll Color Images and Data from the James Webb Space Telescope: 3277 sn
-Süre uygun değil nasa:Coverage of the launch of the James Webb Space Telescope on an Ariane 5 rocket from the Guiana Space Center in Kourou, French Guiana: 8146 sn
-Çözümlenen video: 6
-nasa:1511201_JWST_L-D_Apvd_Final: kullanılır (8/10, animation) James Webb Space Telescope launch, deployment sequence, and deep space
-nasa:1511201_JWST_L-D_Apvd_Final: üretilmiş program gibi (karelerin 13/24 kısmı yazı/insan); atlandı
-nasa:GSFC_201908006_JWST_m13273_SMS_Deploy: elendi (5/10, footage) The James Webb Space Telescope secondary mirror deployment and testing
-svs:20350: kullanılır (8/10, animation) The James Webb Space Telescope in space near L2
-svs:14911: kullanılır (8/10, footage) James Webb Space Telescope deep space observations and orbital views
-svs:14911: üretilmiş program gibi (karelerin 17/24 kısmı yazı/insan); atlandı
-nasa:James_Webb_Space_Telescope__An_Overview_1080: kullanılır (7/10, animation) The deployment, construction, and launch of the James Webb Space Teles
-nasa:James_Webb_Space_Telescope__An_Overview_1080: üretilmiş program gibi (karelerin 18/24 kısmı yazı/insan); atlandı
-nasa:12987-Worth_the_Wait: elendi (4/10, footage) Behind-the-scenes assembly and animation of the James Webb Space Teles
-Görüntü adayları: 4 (webb-pillars, Commons)
+Sıralanan aday: 4
+Çözümlenemedi commons:Pluto-FlyoverAnimation-20150918.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Charon Flyover from New Horizons.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 2
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme commons:Pluto Flyover from New Horizons.webm: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+commons:Pluto Flyover from New Horizons.webm: kullanılır (8/10, visualization) Pluto flyover visualization from New Horizons data
+commons:Animated Flyover of Pluto’s Icy Mountain and Plains.ogv: kullanılır (8/10, visualization) Animated flyover visualization of Pluto's icy mountains and plains bas
+Kullanılır kesit: 3 (78 sn temiz görüntü)
+Konu atlandı (pluto): Yeterli temiz görüntü yok (3 kesit, 78 sn).
+→ Konu: hubble-deep-field
+Görüntü adayları: 36 (hubble-deep-field)
+Sıralanan aday: 12
+Çözümlenemedi hubble:heic0611a: ValueError: no usable rendition
+Çözümlenemedi hubble:heic0406c: ValueError: no usable rendition
+Çözümlenemedi hubble:heic0406b: ValueError: no usable rendition
+Çözümlenen video: 9
+hubble:heic0714g: elendi (7/10, visualization) A 3D flythrough visualization through the Hubble Ultra Deep Field gala
+hubble:heic0916a: kullanılır (8/10, visualization) A zoom sequence into the Hubble Ultra Deep Field revealing distant gal
+hubble:heic0714c: kullanılır (8/10, visualization) A zoom sequence through the distant galaxies of the Hubble Ultra Deep 
+hubble:heic0714c: üretilmiş program gibi (karelerin 7/8 kısmı yazı/insan); atlandı
+hubble:heic0714b: elendi (4/10, visualization) Compact galaxies in the Hubble Ultra Deep Field with overlaid diagrams
+svs:13921: kullanılır (8/10, visualization) Simulated Ultra-Deep Field space flight showcasing distant galaxies an
+svs:13921: üretilmiş program gibi (karelerin 12/24 kısmı yazı/insan); atlandı
+Değerlendirilemedi svs:13793: ValueError: too few frames (4/15): frame 27.7s: 
+svs:13902: elendi (3/10, footage) Hubble Ultra Deep Field documentary with presenters and subtitles
+svs:13609: elendi (6/10, footage) Hubble Space Telescope observations of distant galaxies and deep space
+svs:13893: elendi (8/10, visualization) Sonification and visualization of the Hubble Ultra Deep Field galaxies
+Görüntü adayları: 4 (hubble-deep-field, Commons)
 Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Sıralanan aday: 4
-Çözümlenemedi commons:Webb Space Telescope Studies the Pillars of Creation (SVS31286).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 2160p30 h265).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 1080p30).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Pillars of Creation Star in New Visualization from NASA’s Hubble and Webb Telescopes (SVS14616).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:NASA-HubbleLegacyFieldZoomOut-20190502.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:A Flight Through the CANDELS Ultra Deep Survey Field.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Ultra Deep Field, Hubble zoom xo.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Hubble Ultra Deep Field Video near constellation Fornax.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenen video: 0
-Kullanılır kesit: 2 (45 sn temiz görüntü)
-Konu atlandı (webb-pillars): Yeterli temiz görüntü yok (2 kesit, 45 sn).
-→ Konu: eclipse-shadow
-Görüntü adayları: 46 (eclipse-shadow)
-Sıralanan aday: 9
+Kullanılır kesit: 1 (26 sn temiz görüntü)
+Konu atlandı (hubble-deep-field): Yeterli temiz görüntü yok (1 kesit, 26 sn).
+→ Konu: hubble-servicing
+Görüntü adayları: 52 (hubble-servicing)
+Sıralanan aday: 12
+Çözümlenemedi hubble:heic0202b: ValueError: no usable rendition
+Çözümlenemedi hubble:heic0618a: ValueError: no usable rendition
+Çözümlenemedi hubble:heic0202a: ValueError: no usable rendition
 Çözümlenen video: 9
-nasa:GSFC_20170720_August_m12669_EPICEclipse: kullanılır (8/10, animation) Animation showing the alignment of the Sun, Moon, and Earth during a t
-nasa:GSFC_20170720_August_m12669_EPICEclipse: üretilmiş program gibi (karelerin 6/12 kısmı yazı/insan); atlandı
-nasa:GSFC_20170822_Total_m12690_Eclipse: elendi (8/10, footage) NASA EPIC camera natural color imagery of Earth from space during the 
-svs:4467: elendi (7/10, visualization) The shadow of the Moon crossing North America during the August 21, 20
-svs:5670: elendi (5/10, visualization) Simulated view of Earth from space showing the Moon's shadow crossing 
-svs:5656: elendi (5/10, visualization) Animations of the August 12, 2026, total solar eclipse shadow crossing
-nasa:GSFC_20160414_Moon_m12117_Eclipse: kullanılır (8/10, visualization) Visualizing the 2017 total solar eclipse and the Moon's shadow crossin
-nasa:GSFC_20160414_Moon_m12117_Eclipse: üretilmiş program gibi (karelerin 7/13 kısmı yazı/insan); atlandı
-nasa:GSFC_20161025_Eclipse_m12412_Path: elendi (6/10, visualization) NASA data visualization tracking the 2017 total solar eclipse shadow a
-nasa:GSFC_20170830_MultiSpacecraft_m12698_eclipse: elendi (7/10, footage) Various spacecraft and satellite views of the 2017 total solar eclipse
-svs:12698: elendi (7/10, footage) Various spacecraft and satellite views of the 2017 total solar eclipse
-Görüntü adayları: 4 (eclipse-shadow, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 3
-Çözümlenemedi commons:Solar Eclipse From Polar-Orbiting Satellite (CIRA 2023-04-20 - labels).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Solar Eclipse of May 10th, 2013 from Space -Hinode XRT-.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Solar Eclipse from Space xo.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (eclipse-shadow): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: enceladus
-Görüntü adayları: 20 (enceladus)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 3
-Çözümlenemedi svs:14162: ValueError: no usable rendition
-Çözümlenemedi svs:12735: ValueError: no usable rendition
-Çözümlenen video: 1
-svs:20384: kullanılır (7/10, visualization) Visualizations of ice geysers erupting from the surface of Saturn's mo
-Görüntü adayları: 3 (enceladus, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 1
-Çözümlenemedi commons:PIA17198-Enceladus-20151026hd.webm: ValueError: licence not reusable: unknown
-Çözümlenen video: 0
-Kullanılır kesit: 2 (20 sn temiz görüntü)
-Konu atlandı (enceladus): Yeterli temiz görüntü yok (2 kesit, 20 sn).
-→ Konu: europa
-Görüntü adayları: 54 (europa)
-Sıralanan aday: 9
-Çözümlenemedi svs:2946: ValueError: no usable rendition
-Çözümlenen video: 8
-nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: kullanılır (8/10, animation) Animations of NASA's Europa Clipper spacecraft journeying from Earth t
-nasa:2022-H1_V_EuropaClipper-4: elendi (5/10, footage) Testing NASA's Europa Clipper hardware inside the Langley Sound Chambe
-hubble:heic1322b: kullanılır (8/10, animation) Artist's impression of flying past Europa's plumes near Jupiter
-hubble:heic1322a: kullanılır (8/10, animation) Artist's impression of Europa with plumes passing in front of Jupiter
-svs:3617: kullanılır (7/10, visualization) Visualization showing the orbits of Jupiter's inner moons pushing in t
-svs:3617: üretilmiş program gibi (karelerin 7/8 kısmı yazı/insan); atlandı
-svs:13966: elendi (5/10, visualization) Hubble Space Telescope observations of water vapor on Europa
-nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336: kullanılır (8/10, footage) The launch of NASA's Europa Clipper spacecraft aboard a SpaceX Falcon 
-Kullanılır kesit: 8 (188 sn temiz görüntü)
+nasa:GSFC_20080519_HST_m10212_OutNaround: kullanılır (8/10, footage) The Hubble Space Telescope in orbit above Earth
+nasa:GSFC_20080520_HST_m10216_Whip_Pan: kullanılır (8/10, animation) An animation of the Hubble Space Telescope in orbit passing by and fad
+nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001: elendi (8/10, footage) Astronauts working in the payload bay of the Space Shuttle during Hubb
+nasa:GSFC_20080519_HST_m10213-SlowLook1: kullanılır (8/10, footage) The Hubble Space Telescope in orbit
+nasa:GSFC_20080822_HST_m10235_Release_BTY_002: kullanılır (7/10, animation) Animated sequence depicts the release of the Hubble Space Telescope fr
+nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007: elendi (7/10, footage) Astronaut performing battery module replacement on the Hubble Space Te
+nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply: elendi (8/10, animation) Animation of an astronaut servicing the Hubble Space Telescope
+hubble:heic0907b: kullanılır (8/10, footage) Space Shuttle Atlantis carrying the Hubble Space Telescope in orbit ab
+nasa:GSFC_20080520_HST_m10217_Zoom_Out: kullanılır (8/10, animation) An animation showing the Hubble Space Telescope orbiting Earth and zoo
+Kullanılır kesit: 6 (108 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 97.5/100 | whisper-large-v3
+Ses eşleştirme: 91.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.2/100 | whisper-large-v3
+Ses eşleştirme: 97.6/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 82.6/100 | whisper-large-v3
+Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 96.9/100 | whisper-large-v3
-→ Kurgu (65.1 sn, 10 beat, 8 kesit)
-  kurgu 10/65 sn
-  kurgu 20/65 sn
-  kurgu 30/65 sn
-  kurgu 40/65 sn
-  kurgu 50/65 sn
-  kurgu 60/65 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/review.html
+Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 93.3/100 | whisper-large-v3
+→ Kurgu (77.2 sn, 9 beat, 6 kesit)
+  kurgu 10/77 sn
+  kurgu 20/77 sn
+  kurgu 30/77 sn
+  kurgu 40/77 sn
+  kurgu 50/77 sn
+  kurgu 60/77 sn
+  kurgu 70/77 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/review.html

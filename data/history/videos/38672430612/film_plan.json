@@ -1,0 +1,396 @@
+{
+  "duration": 77.20095833333333,
+  "handle": "@Facctsaboutspace",
+  "hook": "The telescope that was born blind.",
+  "kicker": "Real footage · NASA",
+  "closing": "It still watches, fifty years later.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080519_hst_m10212_outnaround/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.5,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080519_hst_m10213_slowlook1/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.188,
+      "src_out": 10.742,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.5,
+      "t1": 12.72,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c04",
+      "asset": "hubble:heic0907b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/hubble_heic0907b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 4.608,
+      "src_out": 11.762,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        260,
+        1920,
+        820
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 12.72,
+      "t1": 19.54,
+      "label": "NASA · Atlantis · 2008",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080520_hst_m10216_whip_pan/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.77,
+      "src_out": 14.13,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        636,
+        0,
+        644,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.54,
+      "t1": 24.567,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20080520_HST_m10217_Zoom_Out",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080520_hst_m10217_zoom_out/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 5.277,
+      "src_out": 9.723,
+      "speed": 1.0,
+      "focus": [
+        0.35,
+        0.35
+      ],
+      "active": [
+        532,
+        4,
+        748,
+        712
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 24.567,
+      "t1": 28.68,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080822_hst_m10235_release_bty_002/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.231,
+      "src_out": 11.669,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 28.68,
+      "t1": 34.785,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080822_hst_m10235_release_bty_002/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.786,
+      "src_out": 11.114,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 34.785,
+      "t1": 39.78,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080520_hst_m10216_whip_pan/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.098,
+      "src_out": 14.802,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        636,
+        0,
+        644,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 39.78,
+      "t1": 46.15,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20080520_HST_m10217_Zoom_Out",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080520_hst_m10217_zoom_out/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 3.393,
+      "src_out": 11.607,
+      "speed": 1.0,
+      "focus": [
+        0.35,
+        0.35
+      ],
+      "active": [
+        532,
+        4,
+        748,
+        712
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 46.15,
+      "t1": 54.03,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080519_hst_m10212_outnaround/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.598,
+      "src_out": 16.402,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 54.03,
+      "t1": 60.5,
+      "label": "NASA · HST · 2008",
+      "callout": {
+        "value": "1.6 million",
+        "label": "observations"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080519_hst_m10213_slowlook1/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 3.698,
+      "src_out": 11.232,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.5,
+      "t1": 67.7,
+      "label": "NASA · HST · 2008",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c04",
+      "asset": "hubble:heic0907b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/hubble_heic0907b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.406,
+      "src_out": 10.964,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        260,
+        1920,
+        820
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 67.7,
+      "t1": 72.926,
+      "label": "NASA · Atlantis · 2008",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T024343016855Z/footage/nasa_gsfc_20080519_hst_m10212_outnaround/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.696,
+      "src_out": 15.304,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 72.926,
+      "t1": 77.20095833333333,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

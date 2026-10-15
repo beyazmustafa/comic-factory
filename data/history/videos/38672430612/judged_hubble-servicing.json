@@ -1,0 +1,536 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+   "title": "HST Out and Around",
+   "date": "2008-05-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+   "title": "HST Fly-By",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001",
+   "title": "Fine Guidance Sensor Installation EVA Unpacking New Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_Remove_BTY_003",
+   "title": "Fine Guidance Sensor Installation EVA Removal of Old Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_Install_BTY_001",
+   "title": "Fine Guidance Sensor Installation EVA Installing New Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+   "title": "Slow Look at HST 1",
+   "date": "2008-05-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+   "title": "Slow Look at HST 2",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+   "title": "HST SM4 Hubble Deploy Released Clip 2",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_BTY_008",
+   "title": "HST SM4 Hubble Deploy Released",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Aperture_BTY_005",
+   "title": "HST SM4 Hubble Deploy Release Apature",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Revers_007",
+   "title": "HST SM4 Hubble Deploy On Robotic Arm",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Fire_006",
+   "title": "HST SM4 Hubble Deploy Released from Arm",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10237_Close_Door",
+   "title": "HST SM4 — Astronauts Close HST Doors for Last Time",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007",
+   "title": "HST SM4 Battery Module Replacement EVA Zoom Out",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Door_Close_BTY",
+   "title": "HST SM4 Battery Module Replacement EVA Closing Door",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Door_Open_BTY_005",
+   "title": "HST SM4 Battery Module Replacement EVA Door Opening",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Fly_BTY_016",
+   "title": "HST SM4 Battery Module Replacement EVA Fly In",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Cable_Remove_BTY",
+   "title": "HST SM4 Battery Module Replacement EVA Cable Removal",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10217_Zoom_Out",
+   "title": "HST Zoom-Way-Out",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply",
+   "title": "HST SM4 ACS Power Supply",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_RemoveCard_B",
+   "title": "HST SM4 ACS Card Removal 2",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_CEPR_Replace",
+   "title": "HST SM4 ACS CEPR Replace",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_PowerConnect",
+   "title": "HST SM4 ACS Power Connect",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_Open_Door",
+   "title": "HST SM4 ACS Opening Door",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_RemoveCard",
+   "title": "HST SM4 ACS CEPR Removal of Card",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_062708_ssm",
+   "title": "KSC-08-S-00054",
+   "date": "2008-06-27",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20394",
+   "title": "Habitable Worlds Observatory (HWO) Animations and Stills",
+   "date": "2024-11-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20395",
+   "title": "Habitable Worlds Observatory Additional Spacecraft Designs",
+   "date": "2024-11-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15102",
+   "title": "Dying Star Creates Brand New Planet",
+   "date": "2026-10-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "date": "2026-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15090",
+   "title": "Flash Talk: Roman Spacecraft Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15091",
+   "title": "Flash Talk: Roman Science Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15080",
+   "title": "Roman: Go For Launch",
+   "date": "2026-08-28",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15072",
+   "title": "Roman and Hubble Space Telescope Mirror Comparison Turntables",
+   "date": "2026-08-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15070",
+   "title": "Roman and Hubble Scale Graphic with Andromeda Galaxy and Moon",
+   "date": "2026-07-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15050",
+   "title": "Ancient Galaxy Amazes Scientists",
+   "date": "2026-06-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14983",
+   "title": "“Cosmic Echoes” Audio Activation",
+   "date": "2026-05-08",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0907b",
+   "title": "Space Shuttle Atlantis with Hubble",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1808b",
+   "title": "The centre of the Lagoon Nebula over time",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0618a",
+   "title": "New Hubble Servicing Mission to upgrade instruments",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0202b",
+   "title": "Capturing Hubble with the robotic arm",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2514a",
+   "title": "Pan: Kohoutek 4-55",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0202a",
+   "title": "Positioning the Space Shuttle before the capture",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1608c",
+   "title": "Pan across the Bubble Nebula",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:mountain-neb_4kultrahd",
+   "title": "Mystic Mountain",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2408b",
+   "title": "Pan: Little Dumbbell Nebula (M76)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hubble_15_full_movie",
+   "title": "Hubble - 15 years of discovery",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:ann1515a",
+   "title": "Winner of the 25 and under category — Hubble's Universe",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hst15_black_hole",
+   "title": "Black hole (artist's impression)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hst15_light_speed",
+   "title": "Light speed animation",
+   "date": "",
+   "source": "hubble"
+  }
+ ],
+ "ranked": [
+  "nasa:GSFC_20080519_HST_m10212_OutNaround",
+  "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+  "nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001",
+  "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+  "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+  "nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007",
+  "nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply",
+  "hubble:heic0907b",
+  "hubble:heic0618a",
+  "hubble:heic0202b",
+  "hubble:heic0202a",
+  "nasa:GSFC_20080520_HST_m10217_Zoom_Out"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+   "title": "HST Out and Around",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "The Hubble Space Telescope in orbit above Earth",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "The Hubble Space Telescope orbiting Earth with solar arrays deployed",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+   "title": "HST Fly-By",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "An animation of the Hubble Space Telescope in orbit passing by and fading into the distance",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.4
+     ],
+     "width": 0.32,
+     "shows": "Hubble Space Telescope fly-by above Earth",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001",
+   "title": "Fine Guidance Sensor Installation EVA Unpacking New Box",
+   "relevant": true,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Astronauts working in the payload bay of the Space Shuttle during Hubble servicing mission",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+   "title": "Slow Look at HST 1",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "The Hubble Space Telescope in orbit",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.55,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Hubble Space Telescope in orbit against Earth background",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+   "title": "HST SM4 Hubble Deploy Released Clip 2",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "Animated sequence depicts the release of the Hubble Space Telescope from space shuttle Atlantis",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Hubble Space Telescope deployment mechanism releasing from the shuttle cargo bay",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007",
+   "title": "HST SM4 Battery Module Replacement EVA Zoom Out",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "Astronaut performing battery module replacement on the Hubble Space Telescope during EVA",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply",
+   "title": "HST SM4 ACS Power Supply",
+   "relevant": true,
+   "usable": false,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animation of an astronaut servicing the Hubble Space Telescope",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "hubble:heic0907b",
+   "title": "Space Shuttle Atlantis with Hubble",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Space Shuttle Atlantis carrying the Hubble Space Telescope in orbit above Earth",
+   "excluded": [
+    0,
+    7
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 6,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Space Shuttle Atlantis with Hubble in the payload bay against Earth's horizon",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10217_Zoom_Out",
+   "title": "HST Zoom-Way-Out",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "An animation showing the Hubble Space Telescope orbiting Earth and zooming out into deep space.",
+   "excluded": [
+    6,
+    7
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 5,
+     "focus": [
+      0.35,
+      0.35
+     ],
+     "width": 0.32,
+     "shows": "Hubble Space Telescope orbiting above Earth with camera zooming out",
+     "score": 8
+    }
+   ]
+  }
+ ]
+}

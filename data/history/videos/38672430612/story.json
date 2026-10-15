@@ -1,0 +1,166 @@
+{
+  "title": "How astronauts fixed Hubble's blurry vision",
+  "description": "Hubble launched with a mirror error of two microns, producing blurred images. Five astronaut servicing missions restored its vision and upgraded its instruments.",
+  "hook_card": "The telescope that was born blind.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "Hubble launched on 24 April 1990 with a 2.4 metre mirror off by about 2 microns, blurring its first images.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "The shuttle Atlantis is shown in the payload bay, echoing the launch that placed Hubble in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c02",
+      "narration": "At an altitude of about 540 km, Hubble circles Earth every 95 minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "In December 1993 astronauts performed five spacewalks to install corrective optics, making Hubble's vision sharp.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "The new optics restored clarity, letting Hubble capture sharp images of the universe.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes and solar panels, extending its life.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "Now Hubble has made more than 1.6 million observations, continuing to explore the universe.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "Its 2.4 metre mirror still gathers faint light, turning distant photons into detailed pictures.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c04",
+      "narration": "Orbiting silently, Hubble continues its mission, a testament to human ingenuity and perseverance.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Hubble launched on 24 April 1990 with a 2.4 metre mirror off by about 2 microns, blurring its first images. The shuttle Atlantis is shown in the payload bay, echoing the launch that placed Hubble in orbit. At an altitude of about 540 km, Hubble circles Earth every 95 minutes. In December 1993 astronauts performed five spacewalks to install corrective optics, making Hubble's vision sharp. The new optics restored clarity, letting Hubble capture sharp images of the universe. Five servicing missions, the last in 2009, replaced cameras, gyroscopes and solar panels, extending its life. Now Hubble has made more than 1.6 million observations, continuing to explore the universe. Its 2.4 metre mirror still gathers faint light, turning distant photons into detailed pictures. Orbiting silently, Hubble continues its mission, a testament to human ingenuity and perseverance.",
+  "event": {
+    "id": "film_hubble-servicing_20261015T024343016855Z",
+    "title": "The telescope that was born blind.",
+    "series": "NASA footage",
+    "issue": "hubble-servicing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hubble-servicing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic0907b/",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10217_Zoom_Out",
+      "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002"
+    ]
+  },
+  "scenario": "hubble-servicing",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "Hubble launched on 24 April 1990 with a 2.4 metre mirror off by about 2 microns, blurring its first images.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The shuttle Atlantis is shown in the payload bay, echoing the launch that placed Hubble in orbit.",
+      "label": "NASA · Atlantis · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "At an altitude of about 540 km, Hubble circles Earth every 95 minutes.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "In December 1993 astronauts performed five spacewalks to install corrective optics, making Hubble's vision sharp.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The new optics restored clarity, letting Hubble capture sharp images of the universe.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes and solar panels, extending its life.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Now Hubble has made more than 1.6 million observations, continuing to explore the universe.",
+      "label": "NASA · HST · 2008",
+      "callout": {
+        "value": "1.6 million",
+        "label": "observations"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "Its 2.4 metre mirror still gathers faint light, turning distant photons into detailed pictures.",
+      "label": "NASA · HST · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Orbiting silently, Hubble continues its mission, a testament to human ingenuity and perseverance.",
+      "label": "NASA · Atlantis · 2008",
+      "callout": null
+    }
+  ],
+  "closing": "It still watches, fifty years later.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
