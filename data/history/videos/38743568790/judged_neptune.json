@@ -1,0 +1,460 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4140",
+   "title": "Voyager 2 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4145",
+   "title": "Neptune's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4559",
+   "title": "Kepler Stares at Neptune",
+   "date": "2017-04-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4087",
+   "title": "IBEX Heliotail Observations",
+   "date": "2013-07-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3595",
+   "title": "Sentinels of the Heliosphere",
+   "date": "2009-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3570",
+   "title": "NASA's Heliophysics Observatories Study the Sun and Geospace",
+   "date": "2008-12-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20245",
+   "title": "Roman Space Telescope Orbit Diagrams",
+   "date": "2016-09-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "date": "2026-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14840",
+   "title": "Why Is Neptune Glowing Like This?",
+   "date": "2025-05-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14780",
+   "title": "NASA Scientists Spot Candidate for Speediest Exoplanet System",
+   "date": "2025-02-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14397",
+   "title": "Neptune’s Disappearing Clouds Linked to the Solar Cycle",
+   "date": "2023-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1904a",
+   "title": "Animation of Neptune’s moon Hippocamp",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1420a",
+   "title": "Zoom into HAT-P-11",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:ann1115a",
+   "title": "Neptune and its moons",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2113c",
+   "title": "Hubble Takes a Grand Tour of the Solar System",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2113b",
+   "title": "Pans of Hubble’s Grand Tour of the Solar System",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "webb:weic2214b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2214a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "commons:Voyager 2 neptune rotation 6-22-89.ogv",
+   "title": "Voyager 2 neptune rotation 6-22-89",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Animation of Voyager 2 trajectory.webm",
+   "title": "Animation of Voyager 2 trajectory",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Voyager the Grand Tour.ogv",
+   "title": "Voyager the Grand Tour",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Voyager grand tour.ogv",
+   "title": "Voyager grand tour",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:14840",
+  "svs:14397",
+  "hubble:ann1115a",
+  "svs:4559",
+  "svs:4667",
+  "svs:4145",
+  "svs:4140",
+  "hubble:heic1904a",
+  "hubble:heic2113c",
+  "hubble:heic2113b",
+  "svs:15092",
+  "commons:Voyager 2 neptune rotation 6-22-89.ogv"
+ ],
+ "judged": [
+  {
+   "id": "svs:14840",
+   "title": "Why Is Neptune Glowing Like This?",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Neptune's glowing mid-latitude auroras observed by space telescopes",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:14397",
+   "title": "Neptune’s Disappearing Clouds Linked to the Solar Cycle",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Neptune's disappearing clouds linked to the solar cycle",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stretches": []
+  },
+  {
+   "id": "hubble:ann1115a",
+   "title": "Neptune and its moons",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Telescope time-lapse observation of Neptune rotating",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Neptune rotating against a dark background",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:4559",
+   "title": "Kepler Stares at Neptune",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "Kepler visualization of Neptune rotating in space",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Neptune rotating against a starfield",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Scientific visualization of Neptune's magnetosphere",
+   "excluded": [
+    2,
+    3,
+    6,
+    8
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4145",
+   "title": "Neptune's Magnetosphere",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "A scientific visualization of Neptune's complex magnetosphere and magnetic field lines",
+   "excluded": [
+    2,
+    8
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4140",
+   "title": "Voyager 2 Trajectory through the Solar System",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "Voyager 2 trajectory visualization through the solar system with extensive text labels and grid lines",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "stretches": []
+  },
+  {
+   "id": "hubble:heic1904a",
+   "title": "Animation of Neptune’s moon Hippocamp",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animation of Neptune's small inner moon Hippocamp",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Hippocamp against a starry background with a distant star",
+     "score": 7
+    },
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.35,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Neptune and Hippocamp in space",
+     "score": 8
+    },
+    {
+     "start": 4,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Detailed close-up of moon Hippocamp",
+     "score": 7
+    },
+    {
+     "start": 6,
+     "end": 7,
+     "focus": [
+      0.55,
+      0.7
+     ],
+     "width": 0.6,
+     "shows": "Hippocamp passing by Neptune",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic2113c",
+   "title": "Hubble Takes a Grand Tour of the Solar System",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "Hubble observations of outer planets in a multi-panel collage",
+   "excluded": [],
+   "stretches": []
+  },
+  {
+   "id": "hubble:heic2113b",
+   "title": "Pans of Hubble’s Grand Tour of the Solar System",
+   "relevant": false,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Hubble's Grand Tour of the Solar System showing multiple planets including Jupiter, Saturn, Uranus, and Neptune",
+   "excluded": [],
+   "stretches": []
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "Tiny Worlds Discovered by Hubble and Webb",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22,
+    23
+   ],
+   "stretches": []
+  }
+ ]
+}

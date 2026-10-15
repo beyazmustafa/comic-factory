@@ -1,0 +1,151 @@
+{
+  "title": "Voyager's lone glimpse of Neptune's raging winds",
+  "description": "Voyager 2 flew past Neptune in 1989, revealing its massive storms and icy moon Triton. Hubble and Webb later observed the planet’s changing atmosphere and vanished dark spot.",
+  "hook_card": "The windiest world.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "Voyager 2, the only spacecraft to visit Neptune, flew past on 25 August 1989.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "Neptune orbits four and a half billion kilometres from the Sun, so its sunlight takes over four hours to reach us.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "Its atmosphere roars with winds reaching two thousand kilometres per hour, the fastest measured on any planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "Voyager captured a Great Dark Spot, a storm as large as Earth, which disappeared when Hubble later surveyed Neptune.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c02",
+      "narration": "Neptune’s moon Triton orbits backwards and erupts nitrogen geysers, hinting it was captured from the Kuiper Belt.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "A single year on Neptune spans one hundred sixty‑five Earth years, a slow dance around the distant Sun.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c03",
+      "narration": "A small moon circles Neptune, tracing a delicate arc in the dim light.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "Winds of two thousand kilometres per hour sculpt Neptune’s atmosphere, a dynamic world Voyager once observed.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Voyager 2, the only spacecraft to visit Neptune, flew past on 25 August 1989. Neptune orbits four and a half billion kilometres from the Sun, so its sunlight takes over four hours to reach us. Its atmosphere roars with winds reaching two thousand kilometres per hour, the fastest measured on any planet. Voyager captured a Great Dark Spot, a storm as large as Earth, which disappeared when Hubble later surveyed Neptune. Neptune’s moon Triton orbits backwards and erupts nitrogen geysers, hinting it was captured from the Kuiper Belt. A single year on Neptune spans one hundred sixty‑five Earth years, a slow dance around the distant Sun. A small moon circles Neptune, tracing a delicate arc in the dim light. Winds of two thousand kilometres per hour sculpt Neptune’s atmosphere, a dynamic world Voyager once observed.",
+  "event": {
+    "id": "film_neptune_20261015T133413113238Z",
+    "title": "The windiest world.",
+    "series": "NASA footage",
+    "issue": "neptune",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "neptune",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/ann1115a/",
+      "https://esahubble.org/videos/heic1904a/"
+    ]
+  },
+  "scenario": "neptune",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "Voyager 2, the only spacecraft to visit Neptune, flew past on 25 August 1989.",
+      "label": "NASA · Voyager · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Neptune orbits four and a half billion kilometres from the Sun, so its sunlight takes over four hours to reach us.",
+      "label": "Hubble · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Its atmosphere roars with winds reaching two thousand kilometres per hour, the fastest measured on any planet.",
+      "label": "NASA · Voyager · 1989",
+      "callout": {
+        "value": "2,000 km/h",
+        "label": "winds"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "Voyager captured a Great Dark Spot, a storm as large as Earth, which disappeared when Hubble later surveyed Neptune.",
+      "label": "Hubble · 1996",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Neptune’s moon Triton orbits backwards and erupts nitrogen geysers, hinting it was captured from the Kuiper Belt.",
+      "label": "NASA · Voyager · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "A single year on Neptune spans one hundred sixty‑five Earth years, a slow dance around the distant Sun.",
+      "label": "NASA · Voyager · 1989",
+      "callout": {
+        "value": "165 years",
+        "label": "one orbit"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "A small moon circles Neptune, tracing a delicate arc in the dim light.",
+      "label": "NASA · Voyager · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Winds of two thousand kilometres per hour sculpt Neptune’s atmosphere, a dynamic world Voyager once observed.",
+      "label": "NASA · Voyager · 1989",
+      "callout": null
+    }
+  ],
+  "closing": "Its storms still whisper across the solar system.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

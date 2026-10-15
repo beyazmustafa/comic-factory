@@ -1,0 +1,209 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_072304_msgrinstruments",
+   "title": "KSC-04-S-00258",
+   "date": "2004-07-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_072004_mes",
+   "title": "KSC-04-S-00254",
+   "date": "2004-07-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_070704_messprev",
+   "title": "KSC-04-S-00216",
+   "date": "2004-07-08",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5401",
+   "title": "Powerful Hurricane Milton forms in the Gulf of Mexico, sweeps into Florida",
+   "date": "2024-10-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4954",
+   "title": "Mercury Makes Waves Cruising through the Solar Wind",
+   "date": "2021-11-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4776",
+   "title": "Ten Years of Solar Dynamics Observatory",
+   "date": "2020-06-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4763",
+   "title": "Mercury Transit, 2019 (SDO 4K imagery)",
+   "date": "2019-11-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4703",
+   "title": "The Helios Missions",
+   "date": "2019-04-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4653",
+   "title": "Parker Solar Probe and Solar Orbiter Trajectories",
+   "date": "2018-06-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4461",
+   "title": "Mercury Transit 2016 from SDO/HMI",
+   "date": "2016-06-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4462",
+   "title": "Mercury Transit 2016 from SDO/AIA at 171 Ångstroms",
+   "date": "2016-06-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4463",
+   "title": "Mercury Transit 2016 from SDO/AIA at 304 Ångstroms",
+   "date": "2016-06-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4314",
+   "title": "2017 Total Solar Eclipse in the U.S.",
+   "date": "2015-09-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4312",
+   "title": "Measuring Mercury's Magnetism",
+   "date": "2015-06-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4258",
+   "title": "Mercury Mascons for the Cover of <i>JGR Planets</i>",
+   "date": "2015-02-06",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Video - Mercury 2nd Fly-By - NASA's Messenger 2008 (52825727725).webm",
+   "title": "Video - Mercury 2nd Fly-By - NASA's Messenger 2008 (52825727725)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:MESSENGER interplanetary departure.webm",
+   "title": "MESSENGER interplanetary departure",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:MESSENGER False Color Mercury Globe Spin.webm",
+   "title": "MESSENGER False Color Mercury Globe Spin",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Global View of Mercury – Animation (SVS14110).webm",
+   "title": "Global View of Mercury – Animation (SVS14110)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:4312",
+  "svs:4258",
+  "svs:4954",
+  "svs:4763",
+  "svs:4461",
+  "svs:4462",
+  "svs:4463",
+  "commons:Global View of Mercury – Animation (SVS14110).webm",
+  "commons:MESSENGER False Color Mercury Globe Spin.webm",
+  "commons:Video - Mercury 2nd Fly-By - NASA's Messenger 2008 (52825727725).webm",
+  "commons:MESSENGER interplanetary departure.webm"
+ ],
+ "judged": [
+  {
+   "id": "svs:4954",
+   "title": "Mercury Makes Waves Cruising through the Solar Wind",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "A scientific animation showing Mercury's elliptical orbit and its interaction with the solar magnetic field.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4763",
+   "title": "Mercury Transit, 2019 (SDO 4K imagery)",
+   "relevant": false,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Mercury transiting the Sun as seen by the Solar Dynamics Observatory (SDO)",
+   "excluded": [],
+   "stretches": []
+  },
+  {
+   "id": "svs:4461",
+   "title": "Mercury Transit 2016 from SDO/HMI",
+   "relevant": false,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "A transit of Mercury across the Sun as seen by the Solar Dynamics Observatory (SDO)",
+   "excluded": [],
+   "stretches": []
+  },
+  {
+   "id": "svs:4462",
+   "title": "Mercury Transit 2016 from SDO/AIA at 171 Ångstroms",
+   "relevant": false,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "A time-lapse of Mercury transiting across the Sun as seen by the Solar Dynamics Observatory (SDO).",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 16,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "Mercury appears as a tiny black dot moving across the face of the Sun in extreme ultraviolet light.",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:4463",
+   "title": "Mercury Transit 2016 from SDO/AIA at 304 Ångstroms",
+   "relevant": false,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "A composite time-lapse of Mercury transiting the Sun as seen by SDO in 304 Ångstroms",
+   "excluded": [],
+   "stretches": []
+  }
+ ]
+}

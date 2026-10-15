@@ -1,0 +1,218 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20150420_Orbit_m11858_2014",
+   "title": "Earth from Orbit 2014",
+   "date": "2015-04-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20180124_m12825_ISS_Airglow",
+   "title": "GOLD Resources: ISS Airglow",
+   "date": "2018-01-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20180105_GOLD_m12817_Airglow_Milkyway",
+   "title": "Why NASA Is Exploring The Edge Of Our Planet: Airglow",
+   "date": "2018-01-05",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:31375",
+   "title": "ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm",
+   "date": "2026-03-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5609",
+   "title": "Heliophysics Satellite Fleet - 2026",
+   "date": "2026-01-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5476",
+   "title": "SOS - Earth Observing Fleet - Jan 2025",
+   "date": "2025-05-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5443",
+   "title": "Heliophysics Sentinels 2024",
+   "date": "2024-12-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5434",
+   "title": "Collecting Global Methane Emissions with EMIT",
+   "date": "2024-12-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5389",
+   "title": "Tracking methane with EMIT and AVIRIS-3",
+   "date": "2024-11-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5360",
+   "title": "Global Methane Emissions",
+   "date": "2024-08-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5332",
+   "title": "NASA’s Greenhouse-Gas (GHG) Satellites",
+   "date": "2024-07-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5272",
+   "title": "Methane plumes detected by EMIT Space Mission",
+   "date": "2024-05-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5011",
+   "title": "Lightning Events Detected from the International Space Station (ISS) 2017-2023",
+   "date": "2023-10-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5067",
+   "title": "Earth Observing Fleet - Now",
+   "date": "2023-01-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5061",
+   "title": "Earth Observing Fleet (January 2023)",
+   "date": "2023-01-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5622",
+   "title": "Artemis II: Sending Humans Beyond the Magnetosphere",
+   "date": "2026-03-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5095",
+   "title": "USFS/GEDI Old Growth Forest Visualizations",
+   "date": "2023-04-20",
+   "source": "svs"
+  },
+  {
+   "id": "commons:STS-131 ISS flyaround.ogv",
+   "title": "STS-131 ISS flyaround",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:STS-119 ISS Flyaround.ogv",
+   "title": "STS-119 ISS Flyaround",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Sts128 flyaround.ogv",
+   "title": "Sts128 flyaround",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Step Inside the International Space Station (Full Tour).webm",
+   "title": "Step Inside the International Space Station (Full Tour)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:31375",
+  "nasa:GSFC_20180124_m12825_ISS_Airglow",
+  "svs:5332",
+  "svs:5434",
+  "commons:STS-119 ISS Flyaround.ogv",
+  "commons:STS-131 ISS flyaround.ogv",
+  "commons:Sts128 flyaround.ogv"
+ ],
+ "judged": [
+  {
+   "id": "svs:31375",
+   "title": "ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm",
+   "relevant": false,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "Earth's aurora and limb viewed from the International Space Station without showing the station exterior",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20180124_m12825_ISS_Airglow",
+   "title": "GOLD Resources: ISS Airglow",
+   "relevant": false,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Time-lapse footage of Earth's atmosphere and airglow taken from the ISS, without the Space Station structure visible",
+   "excluded": [],
+   "stretches": []
+  },
+  {
+   "id": "svs:5332",
+   "title": "NASA’s Greenhouse-Gas (GHG) Satellites",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "Computer visualization of ISS and OCO-2 satellite ground track orbits over a monochrome Earth globe with text overlays",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5434",
+   "title": "Collecting Global Methane Emissions with EMIT",
+   "relevant": false,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Data visualization showing the orbital swath paths and global methane emission detections from the EMIT instrument on Earth",
+   "excluded": [
+    0
+   ],
+   "stretches": []
+  }
+ ]
+}

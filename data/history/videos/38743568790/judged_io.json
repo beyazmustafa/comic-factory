@@ -1,0 +1,112 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:HispanosdelaNASA_Lucas Paganini",
+   "title": "Hispan@s de la NASA - Lucas Paganini",
+   "date": "2021-11-03",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5639",
+   "title": "Daily Visualizations of the Largest Wildfires in the United States: 2026",
+   "date": "2026-06-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5557",
+   "title": "Daily Visualizations of the Largest Wildfires in the United States: 2025",
+   "date": "2025-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4721",
+   "title": "Three Simulated Greenland Ice Sheet Response Scenarios: 2008 - 2300",
+   "date": "2019-06-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4722",
+   "title": "Jakobshavn Regional View of Three Simulated Greenland Ice Sheet Response Scenarios: 2008 - 2300",
+   "date": "2019-06-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4727",
+   "title": "Greenland View of Three Simulated Greenland Ice Sheet Response Scenarios: 2008 - 2300",
+   "date": "2019-06-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4664",
+   "title": "Jupiter's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4142",
+   "title": "Jupiter's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3604",
+   "title": "Pull out from Jupiter Showing Moon Orbits",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3616",
+   "title": "Galilean moon orbits from Callisto into Jupiter",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3617",
+   "title": "Inner moons of Jupiter Push In to Europa",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:2946",
+   "title": "Europa's Synthetic Subsurface Heat Transport (Version 2)",
+   "date": "2006-05-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14282",
+   "title": "Spitzer, TESS Find Potential Earth-Size World Covered in Volcanoes",
+   "date": "2023-05-17",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Io rotating.ogv",
+   "title": "Io rotating",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Io rotating 2.ogv",
+   "title": "Io rotating 2",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Io - July 10 1979 (34594402621).webm",
+   "title": "Io - July 10 1979 (34594402621)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Lascar volcano 360 digital elevation model topography.webm",
+   "title": "Lascar volcano 360 digital elevation model topography",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "commons:Io rotating.ogv",
+  "commons:Io rotating 2.ogv",
+  "commons:Io - July 10 1979 (34594402621).webm"
+ ],
+ "judged": []
+}

@@ -1,30 +1,349 @@
-run_id: 38697316092  attempt: 1  event: workflow_dispatch
+run_id: 38743568790  attempt: 1  event: schedule
 produce step outcome: failure
+--- data/runs/20261015T133413113238Z/run.json
+{
+  "schema": 2,
+  "version": "",
+  "status": "ready",
+  "stage": "Tamamlandı",
+  "topic": "",
+  "settings": {
+    "target_seconds": 150,
+    "max_events": 3,
+    "max_pages": 16,
+    "max_shots": 40,
+    "max_api_calls": 250,
+    "max_minutes": 110,
+    "repair_attempts": 4,
+    "chunk_words": 42,
+    "alignment_threshold": 86,
+    "panel_threshold": 85,
+    "gemini_model": "gemini-3.7-flash",
+    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
+    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
+    "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural",
+    "tts_model": "gemini-3.1-flash-tts-preview",
+    "whisper_model": "whisper-large-v3",
+    "voice": "auto",
+    "music_file": "",
+    "music_gain_db": -25,
+    "caption_offset": 0,
+    "language": "en",
+    "languages": "en",
+    "channel_theme": "space",
+    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
+    "source": "film",
+    "brand_handle": "@Facctsaboutspace",
+    "sim_seconds": 28,
+    "image_model": "",
+    "archive_query": "mediatype:texts AND collection:(comics)",
+    "archive_max_year": 1963,
+    "archive_scan_limit": 72
+  },
+  "run_id": "38743568790",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "e4b56c6f3a9a82a20c626b0ae5468d93dcaa895a99938602d77c00139774d44c",
+  "metadata_sha256": "0f1fc1e1bb38a34b4483c502325bf287f4541cd0b908ce8d93183db625daf612",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 88,
+  "duration": 78.73,
+  "voice": "Charon",
+  "event": {
+    "id": "film_neptune_20261015T133413113238Z",
+    "title": "The windiest world.",
+    "series": "NASA footage",
+    "issue": "neptune",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "neptune",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/ann1115a/",
+      "https://esahubble.org/videos/heic1904a/"
+    ]
+  },
+  "localized": []
+}
+--- data/runs/20261015T133413113238Z/diagnostics/provider_events.json
+[
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14840: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+]
+--- data/runs/20261015T133413113238Z/diagnostics/providers.json
+{
+  "gemini": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-4-argon"
+  ],
+  "groq": [
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
+  ],
+  "errors": [],
+  "gemini_raw": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash-preview-tts",
+    "gemini-2.5-pro-preview-tts",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-31b-it",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash-image",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-pro-preview-customtools",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3-pro-image-preview",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "gemini-nano-banana-2.1",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-3.5-transcribe",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-4-argon",
+    "lyria-3-clip-preview",
+    "lyria-3-pro-preview",
+    "lyria-3.5",
+    "gemini-3.1-flash-tts-preview",
+    "gemini-3.8-flash-tts",
+    "gemini-3.8-flash-lite-tts",
+    "gemini-robotics-er-2-preview",
+    "gemini-2.5-computer-use-preview-10-2025",
+    "antigravity-preview-05-2026",
+    "antigravity-preview-09-2026",
+    "antigravity-preview-latest",
+    "deep-research-max-preview-04-2026",
+    "deep-research-preview-04-2026",
+    "deep-research-pro-preview-12-2025",
+    "gemini-embedding-001",
+    "gemini-embedding-2-preview",
+    "gemini-embedding-2",
+    "aqa",
+    "veo-3.1-generate-preview",
+    "veo-3.1-fast-generate-preview",
+    "veo-3.1-lite-generate-preview",
+    "gemini-3.5-transcribe-live",
+    "gemini-2.5-flash-native-audio-latest",
+    "gemini-2.5-flash-native-audio-preview-09-2025",
+    "gemini-2.5-flash-native-audio-preview-12-2025",
+    "gemini-3.1-flash-live-preview",
+    "gemini-3.8-live",
+    "gemini-3.8-live-extended-thinking",
+    "gemini-robotics-er-2-streaming-preview",
+    "gemini-3.5-live-translate-preview",
+    "lyria-realtime-exp"
+  ],
+  "gemini_chain": [
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-2.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.1-pro-preview",
+    "gemini-3-flash-preview",
+    "gemini-2.5-pro",
+    "gemini-omni-1.1-flash",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview",
+    "gemini-pro-latest",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-flash-lite-latest"
+  ],
+  "groq_chain": [],
+  "groq_text_chain": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ]
+}
 --- studio.log (son 300 satır)
+→ Konu: io
+Görüntü adayları: 13 (io)
+Sıralanan aday: 0
+Çözümlenen video: 0
+Görüntü adayları: 4 (io, Commons)
+Sıralanan aday: 3
+Çözümlenemedi commons:Io rotating.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Io rotating 2.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Io - July 10 1979 (34594402621).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (io): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: iss-station
+Görüntü adayları: 18 (iss-station)
+Sıralanan aday: 4
+Çözümlenen video: 4
+svs:31375: konu dışı (7/10, footage) Earth's aurora and limb viewed from the International Space Station wi
+nasa:GSFC_20180124_m12825_ISS_Airglow: konu dışı (8/10, footage) Time-lapse footage of Earth's atmosphere and airglow taken from the IS
+svs:5332: konu dışı (3/10, visualization) Computer visualization of ISS and OCO-2 satellite ground track orbits 
+svs:5434: konu dışı (5/10, visualization) Data visualization showing the orbital swath paths and global methane 
+Görüntü adayları: 4 (iss-station, Commons)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 3
+Çözümlenemedi commons:STS-119 ISS Flyaround.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:STS-131 ISS flyaround.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Sts128 flyaround.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (iss-station): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: mars-dust
+Görüntü adayları: 16 (mars-dust)
+Sıralanan aday: 4
+Çözümlenen video: 4
+Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220622-MARSRf-0001-Mars_Report: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20220622-MARSRf-0001-Mars_Report: elendi (7/10, footage) NASA Mars News Report on wind, dust devils, and global dust storms fea
+nasa:JPL-20211115-MARSf-0001-Hows the Weather on Mars: elendi (7/10, footage) A NASA report on Martian weather featuring rover footage, orbital view
+svs:13006: konu dışı (6/10, footage) A NASA interview and educational video featuring Hubble Space Telescop
+svs:13821: elendi (7/10, animation) A NASA animation explaining how Mars' global dust storms contribute to
+Görüntü adayları: 4 (mars-dust, Commons)
+Sıralanan aday: 2
+Çözümlenemedi commons:The Serpent Dust Devil of Mars.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Intracrater Dunes and Dust Devil Tracks on Mars (33884377188).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (mars-dust): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: mercury
+Görüntü adayları: 15 (mercury)
+Sıralanan aday: 7
+Çözümlenemedi svs:4258: ValueError: no usable rendition
+Çözümlenemedi svs:4312: ValueError: no usable rendition
+Çözümlenen video: 5
+svs:4954: elendi (6/10, animation) A scientific animation showing Mercury's elliptical orbit and its inte
+svs:4763: konu dışı (8/10, footage) Mercury transiting the Sun as seen by the Solar Dynamics Observatory (
+svs:4461: konu dışı (7/10, footage) A transit of Mercury across the Sun as seen by the Solar Dynamics Obse
+svs:4462: konu dışı (8/10, footage) A time-lapse of Mercury transiting across the Sun as seen by the Solar
+svs:4463: konu dışı (7/10, footage) A composite time-lapse of Mercury transiting the Sun as seen by SDO in
+Görüntü adayları: 4 (mercury, Commons)
+Sıralanan aday: 4
+Çözümlenemedi commons:Global View of Mercury – Animation (SVS14110).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:MESSENGER False Color Mercury Globe Spin.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Video - Mercury 2nd Fly-By - NASA's Messenger 2008 (52825727725).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:MESSENGER interplanetary departure.webm: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (mercury): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: neptune
+Görüntü adayları: 21 (neptune)
+Sıralanan aday: 11
+Çözümlenen video: 11
+Görüntü değerlendirme svs:14840: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:14840: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme svs:14840: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:14840: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:14840: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:14840: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+svs:14840: elendi (5/10, visualization) Neptune's glowing mid-latitude auroras observed by space telescopes
+svs:14397: elendi (5/10, visualization) Neptune's disappearing clouds linked to the solar cycle
+hubble:ann1115a: kullanılır (8/10, footage) Telescope time-lapse observation of Neptune rotating
+svs:4559: kullanılır (7/10, visualization) Kepler visualization of Neptune rotating in space
+Kesitte temiz pencere yok svs:4559 7-31 (yazı: 22, kesme: 0)
+svs:4667: elendi (5/10, visualization) Scientific visualization of Neptune's magnetosphere
+svs:4145: elendi (5/10, visualization) A scientific visualization of Neptune's complex magnetosphere and magn
+svs:4140: konu dışı (3/10, visualization) Voyager 2 trajectory visualization through the solar system with exten
+hubble:heic1904a: kullanılır (8/10, animation) Animation of Neptune's small inner moon Hippocamp
+hubble:heic2113c: konu dışı (3/10, visualization) Hubble observations of outer planets in a multi-panel collage
+hubble:heic2113b: konu dışı (5/10, visualization) Hubble's Grand Tour of the Solar System showing multiple planets inclu
+svs:15092: konu dışı (3/10, visualization) Tiny Worlds Discovered by Hubble and Webb
+Görüntü adayları: 4 (neptune, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 1
+Çözümlenemedi commons:Voyager 2 neptune rotation 6-22-89.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 4 (56 sn temiz görüntü)
+→ Senaryo
+Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+→ Anlatım sesi
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 88.5/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 94.4/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 91.4/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 93.0/100 | whisper-large-v3
+→ Kurgu (78.7 sn, 8 beat, 4 kesit)
+  kurgu 10/79 sn
+  kurgu 20/79 sn
+  kurgu 30/79 sn
+  kurgu 40/79 sn
+  kurgu 50/79 sn
+  kurgu 60/79 sn
+  kurgu 70/79 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T133413113238Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: SDO watches the Sun every twelve seconds #Shorts
+Başlık: Voyager's lone glimpse of Neptune's raging winds #Shorts
 Görünürlük: public
 
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: data/incoming/video.mp4
-Boyut: 94.1 MB
-Açıklama uzunluğu: 376 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T133413113238Z/video.mp4
+Boyut: 60.9 MB
+Açıklama uzunluğu: 321 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17968272288187944).
+Instagram: container oluşturuldu (17968317333187944).
 Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -36,7 +355,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18091372283207729
+Instagram Reel başarıyla yayınlandı: 18633397084009565
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================
