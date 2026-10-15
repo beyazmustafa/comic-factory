@@ -1,0 +1,667 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+   "title": "Ultimate Saturn V Launch w Enhanced Sound",
+   "date": "2020-02-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Michoud_Apollo_Work",
+   "title": "Michoud Assembly Facility Historic Resource Reel",
+   "date": "2019-07-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20190605-VP-MWC01-Explore Kennedy-Pad39B",
+   "title": "Explore Kennedy: Pad 39B",
+   "date": "2019-06-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NHQ_2019_1114_Apollo 12 - The Pinpoint Mission",
+   "title": "Apollo 12 - The Pinpoint Mission",
+   "date": "2019-11-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_030911_flyout_crawler",
+   "title": "KSC-11-S-00018",
+   "date": "2011-03-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-1960s-MH-NAS01-0001-Apollo_Saturn_V_Crawler,_VAB_Pad_Film_To_Tape",
+   "title": "Film to Tape - Apollo, Saturn V, Crawler, VAB, Pad 39A",
+   "date": "1960-01-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200416-VP-MWC01-001-INSIDEKSC-3248173",
+   "title": "Inside KSC! for April 17, 2020",
+   "date": "2020-04-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20190917_Artemis 1 ES Join_BROLL",
+   "title": "NASA joins last of five sections for Space Launch System Rocket stage",
+   "date": "2019-09-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20190917_Artemis 1 ES Join_Artemis logo",
+   "title": "NASA joins last of five sections for Space Launch System Rocket stage",
+   "date": "2019-09-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20190917_Artemis 1 ES Join_Music_Artemis logo",
+   "title": "NASA joins last of five sections for Space Launch System Rocket stage",
+   "date": "2019-09-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20190613_Artemis 1 Mate",
+   "title": "Space Launch System Completed Major Assembly Milestone For Rocket’s Core Stage",
+   "date": "2019-06-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_011806_crawlers40th",
+   "title": "KSC-06-S-00010",
+   "date": "2006-01-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_042905_crawler_myers",
+   "title": "KSC-05-S-00100",
+   "date": "2005-05-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20191107_Artemis1-Eng4_install-Approved",
+   "title": "All 4 Engines Attached to the SLS Core Stage for Artemis I Mission",
+   "date": "2019-11-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2",
+   "title": "0157_MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2",
+   "date": "2021-03-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+   "title": "Artemis I – SLS Launch and Mission Animation – Jan 2021",
+   "date": "2021-01-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+   "title": "Artemis I Launch (Press Site)",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210708-MH-CSH01-0001-First_Joint_Launch_Countdown_Sim-3275967",
+   "title": "Artemis I SLS First Joint Launch Countdown Simulation",
+   "date": "2021-07-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:SLS-4091 August 2022 Artemis I Resource Reel 081922",
+   "title": "SLS-4091 August 2022 Artemis I Resource Reel 081922",
+   "date": "2022-08-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_102621_SLS_Resource_Reel_0119",
+   "title": "October 2021 SLS Resource Reel_0119 MSFC SLS 10262021 Artemis I and Artemis II",
+   "date": "2021-10-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_20230412_April Resource Reel",
+   "title": "MSFC_20230412_April Resource Reel",
+   "date": "2023-04-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220603-MH-CSH01_0002-Artemis_CT2_Roll_Into_VAB_HB3-3306439",
+   "title": "CT-2 Rolls Into VAB for Artemis I WDR Rollout",
+   "date": "2022-06-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:SLS-4659_MSFC_08152023_August 2023 Resource Reel",
+   "title": "Space Launch System Resource Reel – August 2023",
+   "date": "2023-08-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+   "title": "Artemis I Isolated Launch Views",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+   "title": "SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+   "date": "2022-08-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis_SLS_Pan_Logotype_camF10B_Final",
+   "title": "Artemis_SLS_Animation with NASA Logotype pan camF10B_Final",
+   "date": "2020-10-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210427-MH-MTD01-0001_Artemis_I_Core_Stage_Arrival_at_KSC_DRONE-3274757",
+   "title": "Artemis I Core Stage Arrival at KSC - DRONE",
+   "date": "2021-04-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis I Launches to the Moon (Official NASA Recap)",
+   "title": "Artemis I Launches to the Moon (Official NASA Recap)",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_SLS_ArtemisI_Progress-60secs",
+   "title": "The Hardware For NASA’s Artemis I Mission Comes Together (60 second version, No sound)",
+   "date": "2019-09-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+   "title": "Artemis I Launch Imagery",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+   "title": "Artemis I Slow Motion Liftoff",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210429-MH-JBP01-0001-Artemis_I_Core_Stage_Offload_to_VAB_DRONE-3274867",
+   "title": "Artemis I Core Stage Offload to VAB - DRONE",
+   "date": "2021-04-29",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4803",
+   "title": "Apollo 13 S-IVB Impact Site",
+   "date": "2020-04-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4665",
+   "title": "Saturn's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4666",
+   "title": "Uranus' Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4139",
+   "title": "Voyager 1 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4140",
+   "title": "Voyager 2 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4143",
+   "title": "Saturn's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4144",
+   "title": "Uranus' Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4145",
+   "title": "Neptune's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4218",
+   "title": "Procellarum Rifts for the Cover of <i>Nature</i>",
+   "date": "2014-10-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14938",
+   "title": "Artemis Science: Visualizing NASA’s Next Lunar Flyby",
+   "date": "2025-12-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20412",
+   "title": "Artemis II Flight Path Animations",
+   "date": "2026-01-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14195",
+   "title": "Artemis I",
+   "date": "2022-08-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:11857",
+   "title": "Hubble 25th Anniversary Live Shot Resource Page",
+   "date": "2015-04-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:11790",
+   "title": "Reach, Strive, Achieve: Sandra Cauffman's TEDx Talk",
+   "date": "2015-02-26",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+  "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+  "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+  "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+  "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+  "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+  "nasa:Artemis_SLS_Pan_Logotype_camF10B_Final",
+  "nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+  "nasa:NHQ_2019_1114_Apollo 12 - The Pinpoint Mission"
+ ],
+ "judged": [
+  {
+   "id": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+   "title": "Ultimate Saturn V Launch w Enhanced Sound",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Saturn V rocket launches and liftoff sequences",
+   "excluded": [
+    0,
+    1,
+    21,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 20,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Saturn V rocket launch and liftoff footage",
+     "score": 8
+    },
+    {
+     "start": 22,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Saturn V ascending in flight",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+   "title": "Artemis I Isolated Launch Views",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA's Space Launch System (SLS) rocket launching during the Artemis I mission",
+   "excluded": [
+    0,
+    1,
+    2,
+    5,
+    8,
+    10,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Rocket lifting off at night with bright exhaust plume",
+     "score": 7
+    },
+    {
+     "start": 6,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Rocket ascending through the upper atmosphere",
+     "score": 7
+    },
+    {
+     "start": 9,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Distant view of the rocket's flight trajectory",
+     "score": 6
+    },
+    {
+     "start": 11,
+     "end": 11,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Intense close-up of bright rocket engine exhaust",
+     "score": 8
+    },
+    {
+     "start": 13,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Massive exhaust plume illuminating the launch area",
+     "score": 8
+    },
+    {
+     "start": 19,
+     "end": 19,
+     "focus": [
+      0.5,
+      0.8
+     ],
+     "width": 0.32,
+     "shows": "Fully lit launch pad structure during liftoff",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+   "title": "Artemis I Slow Motion Liftoff",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA's Space Launch System lifting off from pad 39B",
+   "excluded": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "stretches": [
+    {
+     "start": 4,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.4
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket lifting off from the launch pad with massive plume and smoke",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+   "title": "Artemis I Launch (Press Site)",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA's Space Launch System (SLS) rocket launching at night during the Artemis I flight test",
+   "excluded": [
+    0,
+    1,
+    2,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket lifting off the pad with massive illumination",
+     "score": 8
+    },
+    {
+     "start": 18,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket ascending into the dark upper atmosphere",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+   "title": "Artemis I Launch Imagery",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA's Space Launch System (SLS) lifting off from pad 39B during the Artemis I mission.",
+   "excluded": [
+    0,
+    1,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 14,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket launch and ascent",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+   "title": "Artemis I – SLS Launch and Mission Animation – Jan 2021",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animation depicting NASA's Space Launch System and the Artemis I mission to the Moon",
+   "excluded": [
+    13,
+    15,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket assembly and launch pad preparation",
+     "score": 8
+    },
+    {
+     "start": 6,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS liftoff and ascent sequence",
+     "score": 8
+    },
+    {
+     "start": 14,
+     "end": 14,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Orion spacecraft lunar trajectory, orbit, and splashdown",
+     "score": 8
+    },
+    {
+     "start": 16,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Orion spacecraft lunar trajectory, orbit, and splashdown",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:Artemis_SLS_Pan_Logotype_camF10B_Final",
+   "title": "Artemis_SLS_Animation with NASA Logotype pan camF10B_Final",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "NASA's Space Launch System (SLS) rocket on the Mobile Launcher",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket on the Mobile Launcher",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+   "title": "SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animation of NASA's Space Launch System (SLS) Artemis I mission rollout, launch, and Orion spacecraft in orbit",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "SLS rocket rollout, launch pad views, and liftoff ascent",
+     "score": 8
+    },
+    {
+     "start": 11,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Booster separation, orbital flight, and Orion spacecraft deploy",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}

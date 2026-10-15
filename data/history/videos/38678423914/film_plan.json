@@ -1,0 +1,285 @@
+{
+  "duration": 61.71999999999999,
+  "handle": "@Facctsaboutspace",
+  "hook": "The most powerful machines ever built.",
+  "kicker": "Real footage · NASA",
+  "closing": "The next crew will fly this same path.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 18.87,
+      "src_out": 25.43,
+      "speed": 0.821,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 7.66,
+      "label": "NASA · SATURN V · 1969",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 6.2,
+      "speed": 0.925,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 7.66,
+      "t1": 14.03,
+      "label": "NASA · SATURN V · 1970",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.133,
+      "src_out": 10.067,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 14.03,
+      "t1": 20.63,
+      "label": "NASA · SLS · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 13.468,
+      "src_out": 20.762,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 20.63,
+      "t1": 27.59,
+      "label": "NASA · SLS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:Artemis_SLS_Pan_Logotype_camF10B_Final",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_artemis_sls_pan_logotype_camf10b_final/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.273,
+      "src_out": 16.727,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 27.59,
+      "t1": 34.71,
+      "label": "NASA · ORION · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c07",
+      "asset": "nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_sls_4091_august_2022_sls_animation_resource_reel_short_/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.218,
+      "src_out": 13.352,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 34.71,
+      "t1": 40.51,
+      "label": "NASA · SLS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 13.27,
+      "src_out": 18.87,
+      "speed": 0.855,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 40.51,
+      "t1": 46.73,
+      "label": "NASA · SATURN V · 1972",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.858,
+      "src_out": 17.912,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 46.73,
+      "t1": 52.45,
+      "label": "NASA · ORION · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c02",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.669,
+      "src_out": 7.101,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 52.45,
+      "t1": 57.548,
+      "label": "NASA · SLS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.33,
+      "src_out": 7.1,
+      "speed": 0.837,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 57.548,
+      "t1": 61.71999999999999,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
-run_id: 38676169945  attempt: 1  event: workflow_dispatch
+run_id: 38678423914  attempt: 1  event: workflow_dispatch
 produce step outcome: success
---- data/runs/20261015T032621859285Z/run.json
+--- data/runs/20261015T035223561856Z/run.json
 {
   "schema": 2,
   "version": "",
   "status": "ready",
   "stage": "Tamamlandı",
-  "topic": "ingenuity",
+  "topic": "launch-power",
   "settings": {
     "target_seconds": 150,
     "max_events": 3,
@@ -40,56 +40,59 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38676169945",
+  "run_id": "38678423914",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "9c93cf3ae5bf1f1c4c86dfc74e8d79a99452fe153409996827442097477ad407",
-  "metadata_sha256": "a2eb16329c8c9c1c7999b2e57acfe59b073f875da05d6f3a60aafaa425fab176",
+  "video_sha256": "5313d5cb9bbe6f47c7a3c3b5efaa7cddc249cf6f36ebe0e66941ea0035ae11f2",
+  "metadata_sha256": "8845ffef0ff9cec3d099dd15a516a1c3e757c8b482389175ba6cb73ef75c572a",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 62,
-  "duration": 68.75,
+  "api_calls": 63,
+  "duration": 61.71999999999999,
   "voice": "Charon",
   "event": {
-    "id": "film_ingenuity_20261015T032621859285Z",
-    "title": "A helicopter on Mars.",
+    "id": "film_launch-power_20261015T035223561856Z",
+    "title": "The most powerful machines ever built.",
     "series": "NASA footage",
-    "issue": "ingenuity",
+    "issue": "launch-power",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "ingenuity",
+    "scenario": "launch-power",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
-      "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
-      "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
-      "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+      "https://images.nasa.gov/details/Artemis_SLS_Pan_Logotype_camF10B_Final",
+      "https://images.nasa.gov/details/MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "https://images.nasa.gov/details/SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T032621859285Z/diagnostics/provider_events.json
+--- data/runs/20261015T035223561856Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.",
   "Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
-  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi."
+  "Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.",
+  "gemini TTS yanıt vermiyor (Ses Charon (gemini-3.8-flash-lite-tts): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exc); edge sesine geçildi.",
+  "Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video edge (Andrew) ile yeniden seslendirildi."
 ]
---- data/runs/20261015T032621859285Z/diagnostics/providers.json
+--- data/runs/20261015T035223561856Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -112,9 +115,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -209,55 +212,66 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: ingenuity
-Görüntü adayları: 46 (ingenuity)
-Sıralanan aday: 12
-Düşük çözünürlük nasa:JPL-20220527-M2020f-0001-NASAs_Ingenuity_Mars_Helicopter_Captures_Video_of_Record_Flight2: 640x480
-Süre uygun değil nasa:Mars Helicopter Flights VF 929 FINAL: 2941 sn
-Çözümlenen video: 10
-nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter performing its historic first flight,
-Görüntü değerlendirme nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter performing its third flight across th
-nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (5/10, footage) JPL control room reaction to Ingenuity's fourth flight with brief Mars
-Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: elendi (6/10, footage) NASA mission control personnel monitoring the second flight of the Ing
-nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: elendi (7/10, footage) NASA mission control personnel monitoring the Ingenuity helicopter's t
-nasa:JPL-20210507-TECHf-0001-Ingenuity 5th Flight Recap: elendi (4/10, footage) NASA mission control personnel monitoring the Ingenuity Mars Helicopte
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: kullanılır (8/10, footage) NASA's Ingenuity helicopter flying on Mars captured by the Perseveranc
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: kullanılır (8/10, footage) NASA's Perseverance rover films the Ingenuity helicopter flying on Mar
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: üretilmiş program gibi (karelerin 15/24 kısmı yazı/insan); atlandı
-nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: kullanılır (8/10, animation) Animation of NASA's Ingenuity helicopter flying on Mars alongside the 
-Kullanılır kesit: 8 (183 sn temiz görüntü)
+→ Konu: launch-power
+Görüntü adayları: 49 (launch-power)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 9
+Çözümlenen video: 9
+nasa:Ultimate Saturn V Launch w Enhanced Sound: kullanılır (8/10, footage) Saturn V rocket launches and liftoff sequences
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) NASA's Space Launch System (SLS) rocket launching during the Artemis I
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (karelerin 16/24 kısmı yazı/insan); atlandı
+nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) NASA's Space Launch System lifting off from pad 39B
+nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: üretilmiş program gibi (karelerin 4/13 kısmı yazı/insan); atlandı
+nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: kullanılır (8/10, footage) NASA's Space Launch System (SLS) rocket launching at night during the 
+nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: üretilmiş program gibi (karelerin 8/24 kısmı yazı/insan); atlandı
+nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) NASA's Space Launch System (SLS) lifting off from pad 39B during the A
+nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: üretilmiş program gibi (karelerin 8/21 kısmı yazı/insan); atlandı
+nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034: kullanılır (8/10, animation) Animation depicting NASA's Space Launch System and the Artemis I missi
+nasa:Artemis_SLS_Pan_Logotype_camF10B_Final: kullanılır (8/10, animation) NASA's Space Launch System (SLS) rocket on the Mobile Launcher
+nasa:SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1: kullanılır (8/10, animation) Animation of NASA's Space Launch System (SLS) Artemis I mission rollou
+Kullanılır kesit: 8 (125 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 95.1/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
 Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 93.7/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
 Ses modeli gemini-3.8-flash-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 96.9/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
+Ses eşleştirme: 88.3/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
 Ses modeli gemini-2.5-flash-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
 Ses modeli gemini-2.5-pro-preview-tts kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 91.4/100 | whisper-large-v3
-→ Kurgu (68.8 sn, 9 beat, 8 kesit)
-  kurgu 10/69 sn
-  kurgu 20/69 sn
-  kurgu 30/69 sn
-  kurgu 40/69 sn
-  kurgu 50/69 sn
-  kurgu 60/69 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T032621859285Z/review.html
+Ses eşleştirme: 87.2/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+gemini TTS yanıt vermiyor (Ses Charon (gemini-3.8-flash-lite-tts): ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exc); edge sesine geçildi.
+Ses eşleştirme: 97.2/100 | whisper-large-v3
+Anlatıcı sesi bölüm ortasında değişmişti (edge, gemini); tüm video edge (Andrew) ile yeniden seslendirildi.
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 88.3/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 86.7/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 97.2/100 | whisper-large-v3
+→ Kurgu (61.7 sn, 9 beat, 8 kesit)
+  kurgu 10/62 sn
+  kurgu 20/62 sn
+  kurgu 30/62 sn
+  kurgu 40/62 sn
+  kurgu 50/62 sn
+  kurgu 60/62 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T035223561856Z/review.html

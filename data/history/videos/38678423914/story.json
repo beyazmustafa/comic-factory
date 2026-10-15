@@ -1,0 +1,164 @@
+{
+  "title": "Saturn V and SLS: The Mightiest Rockets Ever Built",
+  "description": "We compare the legendary Saturn V with NASA’s modern Space Launch System, the most powerful rockets humanity has built. Discover how their size, thrust and fuel consumption shape the future of lunar exploration.",
+  "hook_card": "The most powerful machines ever built.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "This rocket burned about thirteen tonnes of fuel each second, its roar among the loudest ever recorded.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "At one hundred ten metres tall, the Saturn V dominated the launch pad, a single column of power.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "Decades later NASA assembled the Space Launch System, a ninety‑eight metre tall vehicle for Artemis.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "At liftoff the SLS generates thirty‑nine million newtons of thrust, exceeding the Saturn V’s power.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "Most of the SLS’s mass is propellant, leaving the Orion capsule a tiny fraction of the stack.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c07",
+      "narration": "The SLS lifts away, its engines roaring like the thunder of the Saturn V before it.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "Each Saturn V launch burned thirteen tonnes of propellant each second, a relentless firestorm.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "Orion rides atop the SLS toward the Moon, continuing Apollo’s legacy.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "From the thunderous Saturn V to the even mightier SLS, humanity’s reach expands.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This rocket burned about thirteen tonnes of fuel each second, its roar among the loudest ever recorded. At one hundred ten metres tall, the Saturn V dominated the launch pad, a single column of power. Decades later NASA assembled the Space Launch System, a ninety‑eight metre tall vehicle for Artemis. At liftoff the SLS generates thirty‑nine million newtons of thrust, exceeding the Saturn V’s power. Most of the SLS’s mass is propellant, leaving the Orion capsule a tiny fraction of the stack. The SLS lifts away, its engines roaring like the thunder of the Saturn V before it. Each Saturn V launch burned thirteen tonnes of propellant each second, a relentless firestorm. Orion rides atop the SLS toward the Moon, continuing Apollo’s legacy. From the thunderous Saturn V to the even mightier SLS, humanity’s reach expands.",
+  "event": {
+    "id": "film_launch-power_20261015T035223561856Z",
+    "title": "The most powerful machines ever built.",
+    "series": "NASA footage",
+    "issue": "launch-power",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "launch-power",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/Artemis_SLS_Pan_Logotype_camF10B_Final",
+      "https://images.nasa.gov/details/MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "https://images.nasa.gov/details/SLS-4091 August 2022 SLS Animation Resource Reel Short Form_1",
+      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
+    ]
+  },
+  "scenario": "launch-power",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "This rocket burned about thirteen tonnes of fuel each second, its roar among the loudest ever recorded.",
+      "label": "NASA · SATURN V · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "At one hundred ten metres tall, the Saturn V dominated the launch pad, a single column of power.",
+      "label": "NASA · SATURN V · 1970",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "Decades later NASA assembled the Space Launch System, a ninety‑eight metre tall vehicle for Artemis.",
+      "label": "NASA · SLS · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "At liftoff the SLS generates thirty‑nine million newtons of thrust, exceeding the Saturn V’s power.",
+      "label": "NASA · SLS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Most of the SLS’s mass is propellant, leaving the Orion capsule a tiny fraction of the stack.",
+      "label": "NASA · ORION · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "The SLS lifts away, its engines roaring like the thunder of the Saturn V before it.",
+      "label": "NASA · SLS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Each Saturn V launch burned thirteen tonnes of propellant each second, a relentless firestorm.",
+      "label": "NASA · SATURN V · 1972",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Orion rides atop the SLS toward the Moon, continuing Apollo’s legacy.",
+      "label": "NASA · ORION · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "From the thunderous Saturn V to the even mightier SLS, humanity’s reach expands.",
+      "label": "NASA · SLS · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "The next crew will fly this same path.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
