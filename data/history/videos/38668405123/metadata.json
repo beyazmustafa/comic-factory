@@ -1,0 +1,197 @@
+{
+  "script": {
+    "title": "Europa's Hidden Ocean and the Europa Clipper Mission",
+    "description": "Explore how NASA's Europa Clipper will investigate the icy moon's subsurface ocean. Discover the science behind Jupiter's tidal flexing and upcoming flybys.",
+    "hook_card": "An ocean under the ice.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c05",
+        "narration": "On 14 October 2024, the Falcon Heavy lifted the Europa Clipper toward the distant moon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c06",
+        "narration": "It is NASA’s largest planetary spacecraft, built to endure the long journey to Jupiter.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "Its solar arrays span about thirty metres, gathering sunlight for the seven‑year cruise.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c07",
+        "narration": "The probe will reach Jupiter in 2030 and conduct forty‑nine close flybys of Europa.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c00",
+        "narration": "Its first pass will skim just twenty‑five kilometres above Europa’s cracked icy crust.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c03",
+        "narration": "Jupiter’s gravity stretches Europa as it orbits, flexing the hidden ocean and keeping it liquid.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c04",
+        "narration": "In September 2022, Juno flew three hundred fifty kilometres above Europa, photographing icy plumes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c02",
+        "narration": "Beneath fifteen to twenty‑five kilometres of ice lies a salty ocean holding twice Earth’s water.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c07",
+        "narration": "The spacecraft carries instruments to measure ice thickness, chemistry and search for signs of life.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "c00",
+        "narration": "Each of the forty‑nine passes will map Europa’s surface in unprecedented detail, revealing cracks and warm spots.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "On 14 October 2024, the Falcon Heavy lifted the Europa Clipper toward the distant moon. It is NASA’s largest planetary spacecraft, built to endure the long journey to Jupiter. Its solar arrays span about thirty metres, gathering sunlight for the seven‑year cruise. The probe will reach Jupiter in 2030 and conduct forty‑nine close flybys of Europa. Its first pass will skim just twenty‑five kilometres above Europa’s cracked icy crust. Jupiter’s gravity stretches Europa as it orbits, flexing the hidden ocean and keeping it liquid. In September 2022, Juno flew three hundred fifty kilometres above Europa, photographing icy plumes. Beneath fifteen to twenty‑five kilometres of ice lies a salty ocean holding twice Earth’s water. The spacecraft carries instruments to measure ice thickness, chemistry and search for signs of life. Each of the forty‑nine passes will map Europa’s surface in unprecedented detail, revealing cracks and warm spots.",
+    "event": {
+      "id": "film_europa_20261015T015814869366Z",
+      "title": "An ocean under the ice.",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "europa",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://esahubble.org/videos/heic1322a/",
+        "https://esahubble.org/videos/heic1322b/",
+        "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+        "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
+      ]
+    },
+    "scenario": "europa",
+    "beats": [
+      {
+        "clip": "c05",
+        "narration": "On 14 October 2024, the Falcon Heavy lifted the Europa Clipper toward the distant moon.",
+        "label": "SpaceX · Falcon Heavy · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "It is NASA’s largest planetary spacecraft, built to endure the long journey to Jupiter.",
+        "label": "NASA · Europa Clipper · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Its solar arrays span about thirty metres, gathering sunlight for the seven‑year cruise.",
+        "label": "NASA · Solar Arrays · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "The probe will reach Jupiter in 2030 and conduct forty‑nine close flybys of Europa.",
+        "label": "NASA · Arrival · 2030",
+        "callout": {
+          "value": "49",
+          "label": "flybys planned"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "Its first pass will skim just twenty‑five kilometres above Europa’s cracked icy crust.",
+        "label": "NASA · Flyby · 2030",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Jupiter’s gravity stretches Europa as it orbits, flexing the hidden ocean and keeping it liquid.",
+        "label": "Science · Tidal Flexing · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "In September 2022, Juno flew three hundred fifty kilometres above Europa, photographing icy plumes.",
+        "label": "Juno · Flyby · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Beneath fifteen to twenty‑five kilometres of ice lies a salty ocean holding twice Earth’s water.",
+        "label": "Science · Subsurface Ocean · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "The spacecraft carries instruments to measure ice thickness, chemistry and search for signs of life.",
+        "label": "NASA · Instruments · 2030",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Each of the forty‑nine passes will map Europa’s surface in unprecedented detail, revealing cracks and warm spots.",
+        "label": "NASA · Mapping · 2030",
+        "callout": null
+      }
+    ],
+    "closing": "Europa’s hidden sea waits for humanity’s first close look.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Explore how NASA's Europa Clipper will investigate the icy moon's subsurface ocean. Discover the science behind Jupiter's tidal flexing and upcoming flybys.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — NASA’s Europa Clipper Mission Animations (https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations); NASA, ESA, and M. Kornmesser Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne, — Flying past Europa’s plumes (artist’s impression) (https://esahubble.org/videos/heic1322b/); NASA, ESA, and M. Kornmesser. Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne — Illustrated fly-by of Europa's plumes (artist's impression) (https://esahubble.org/videos/heic1322a/); KSC — NASA'S SpaceX Europa Clipper Isolated Launch Views (https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336)\nLicences: CC BY 4.0, public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "Europa's Hidden Ocean and the Europa Clipper Mission\n\nExplore how NASA's Europa Clipper will investigate the icy moon's subsurface ocean. Discover the science behind Jupiter's tidal flexing and upcoming flybys.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

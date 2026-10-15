@@ -1,0 +1,594 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_El lanzamiento de Europa Clipper",
+   "title": "El lanzamiento de Europa Clipper",
+   "date": "2024-10-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20220811-Europa Clipper Arrives in its New Home-UHD_wMetadata",
+   "title": "JPL-20220811-Europa Clipper Arrives in its New Home-UHD_wMetadata",
+   "date": "2022-08-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+   "title": "NASA’s Europa Clipper Mission Animations",
+   "date": "2024-04-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240611-CLIPPRf-0001-Packing and Shipping Europa Clipper",
+   "title": "Packing and Shipping NASA’s Europa Clipper",
+   "date": "2024-06-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230817-CLIPPRf-0001-Europa Clipper Spacecraft Assembly Media Reel",
+   "title": "Europa Clipper Spacecraft Assembly Media Reel",
+   "date": "2023-08-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240823-VP-MWC01-001-EUROPA-CLIPPER-CAM-TIMELAPSE-M8789",
+   "title": "Europa Clipper Cam Solar Arrays Installation Timelapse",
+   "date": "2024-08-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20241002-CLIPPRf-0001-Europa Clipper PreLaunch Media Reel",
+   "title": "Europa Clipper Prelaunch Media Reel",
+   "date": "2024-10-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240515-CLIPPRf-0001-Europa Clipper Science Overview Video",
+   "title": "Why Does NASA Want to Explore Jupiter’s Ocean Moon? (Europa Clipper Science Overview)",
+   "date": "2024-05-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230424-CLIPPRf-0001-Spacecraft Makers Episode 01_2160p",
+   "title": "Spacecraft Makers: Introducing Europa Clipper",
+   "date": "2023-05-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20241004-MH-CSH01-0001-Europa_Clipper_Transport_to_Pad39A_PHSF-M9447",
+   "title": "Europa Clipper Transport",
+   "date": "2024-10-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240821-MH-GEB01-0001-Europa_Clipper_Solar_Array_Deployment_PHSF-M8663",
+   "title": "Europa Clipper Solar Array Deployment",
+   "date": "2024-08-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240802-MH-GEB01-0001-Europa_Clipper_Solar_Array_Install_PHSF-M8368",
+   "title": "Europa Clipper Solar Array Install",
+   "date": "2024-08-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240327-CLIPPRf-0001-Europa Clipper TVAC Timelapse",
+   "title": "Europa Clipper Moves Into JPL’s Space Simulator",
+   "date": "2024-03-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240306-MH-FMX01_Europa_Clipper_Solar_Wing_Deployment-WON_M5059",
+   "title": "Europa Clipper Solar Wing Deployment",
+   "date": "2024-02-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240823-MH-CSH01-0001-Europa_Clipper_Second_Solar_Array_Work-M8663",
+   "title": "Europa Clipper Second Solar Array Stow",
+   "date": "2024-08-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240827-CLIPPRf-0001-Meet Europa Clipper Solar Array Wings",
+   "title": "Meet Europa Clipper’s Solar Array ‘Wings’",
+   "date": "2024-08-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240909-CLIPPRf-0001-Spacecraft Makers EP06 Planetary Protection",
+   "title": "Spacecraft Makers: How We Keep Europa Clipper Super Clean",
+   "date": "2024-09-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240523-MH-CSH01-0001-Europa_Clipper_Arrival_LLF-M6669",
+   "title": "Europa Clipper Arrival",
+   "date": "2024-05-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20241002-MH-KLS01-0002-Europa_Clipper_Encapsulation_PHSF-M9448",
+   "title": "NASA's Europa Clipper Encapsulation",
+   "date": "2024-10-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240524-MH-ILW01-0002-Europa_Clipper_Lift_and_Push_into_PHSF-M6668",
+   "title": "NASA's Europa Clipper Lift and Push into PHSF at the Kennedy Space Center",
+   "date": "2024-05-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240815-MH-GEB01-0001-Europa_Clipper_Solar_Panel_Installation_and_Integration_Part_2-M8368",
+   "title": "Europa Clipper Solar Array Installation & Integration (Part 2)",
+   "date": "2024-08-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240528-MH-FJM01-0001-Europa_Clipper_Spacecraft_Rotate_to_Vertical_Lift_and_Mate_to_Work_Stand-M6668",
+   "title": "Europa Clipper Spacecraft Rotate to Vertical, Lift and Mate to Work Stand",
+   "date": "2024-05-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-.20240307-MH-CSH01-0001-Europa_Clipper_Solar_Array_Antenna_Install_PHSF-M5495",
+   "title": "Europa Clipper Solar Array Install",
+   "date": "2024-03-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20240221-MH-KLS01-0002-NASA's_Europa_Clipper_Solar_Array_Arrival -M3392",
+   "title": "NASA's Europa Clipper Solar Array Arrival and Offload",
+   "date": "2024-02-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+   "title": "NASA'S SpaceX Europa Clipper Isolated Launch Views",
+   "date": "2024-10-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230809-CLIPPRf-0001-Spacecraft Makers Episode 02",
+   "title": "Spacecraft Makers: Testing Europa Clipper’s Magnetometer",
+   "date": "2023-08-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240411-CLIPPRf-0001-Europa_Clipper_Media_Day_Highlight_Reel",
+   "title": "NASA Invites Media to See Europa Clipper Spacecraft Media Reel",
+   "date": "2024-04-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:2022-H1_V_EuropaClipper-4",
+   "title": "2022-H1_V_EuropaClipper-4",
+   "date": "2022-03-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240311-CLIPPRf-0001-NASA Unveils Design for Message Heading to Jupiters Moon Europa",
+   "title": "JPL-20240311-CLIPPRf-0001-NASA Unveils Design for Message Heading to Jupiters Moon Europa",
+   "date": "2024-03-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:What You Need to Know About Europa",
+   "title": "What You Need to Know About Europa",
+   "date": "2026-08-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20241119-TECHf-0001-Underwater_Robots_for_Space_Exploration",
+   "title": "NASA Tests Swimming Robots for Exploring Oceans on Icy Moons",
+   "date": "2024-11-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Is There Potential for Life on Europa? - Horizontal",
+   "title": "Is There Potential for Life on Europa?",
+   "date": "2025-02-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230601-CLIPPRf-0001-Ada Limon In Praise of Mystery",
+   "title": "A Poem for Europa by U.S. Poet Laureate Ada Limón",
+   "date": "2023-06-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Underwater Robots for Space Exploration - videographer of the year",
+   "title": "Underwater Robots for Space Exploration - videographer of the year",
+   "date": "2025-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20220606-CLIPPRf-0001-Europa_Clipper_Main_Body_Arrival_JPL_2160",
+   "title": "Main Body of NASA’s Europa Clipper Spacecraft Arrives at JPL from APL",
+   "date": "2022-06-06",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3604",
+   "title": "Pull out from Jupiter Showing Moon Orbits",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3616",
+   "title": "Galilean moon orbits from Callisto into Jupiter",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3617",
+   "title": "Inner moons of Jupiter Push In to Europa",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:2946",
+   "title": "Europa's Synthetic Subsurface Heat Transport (Version 2)",
+   "date": "2006-05-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:2947",
+   "title": "Europa's Synthetic Subsurface Heat Transport (Version 1)",
+   "date": "2006-05-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20221",
+   "title": "Bennu's Journey Animation Resource Page",
+   "date": "2014-11-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20218",
+   "title": "Bennu's Journey Resource Page",
+   "date": "2014-10-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15014",
+   "title": "What Webb Learns from Light",
+   "date": "2026-05-02",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14510",
+   "title": "Hubble Uncovers Water Vapor In Small Exoplanet’s Atmosphere",
+   "date": "2024-01-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13966",
+   "title": "Water Vapor Detected In Europa’s Atmosphere",
+   "date": "2021-10-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12772",
+   "title": "2017 Hurricanes and Aerosols Simulation",
+   "date": "2021-05-05",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2017a",
+   "title": "Hubble’s New Views of Jupiter",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1504a",
+   "title": "Time-lapse of Jupiter’s three moon transit",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1504b",
+   "title": "Time-lapse of Jupiter’s three moon transit, time stamped",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1504c",
+   "title": "Simulation of Galilean Satellites orbiting Jupiter",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1322b",
+   "title": "Flying past Europa’s plumes (artist’s impression)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1322a",
+   "title": "Illustrated fly-by of Europa's plumes (artist's impression)",
+   "date": "",
+   "source": "hubble"
+  }
+ ],
+ "ranked": [
+  "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+  "nasa:2022-H1_V_EuropaClipper-4",
+  "hubble:heic1322b",
+  "hubble:heic1322a",
+  "svs:3617",
+  "svs:2946",
+  "svs:13966",
+  "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+  "nasa:JPL-20220811-Europa Clipper Arrives in its New Home-UHD_wMetadata"
+ ],
+ "judged": [
+  {
+   "id": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+   "title": "NASA’s Europa Clipper Mission Animations",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animations of NASA's Europa Clipper spacecraft journeying from Earth to Jupiter and performing flybys of Europa.",
+   "excluded": [
+    3,
+    8,
+    11,
+    13,
+    14,
+    17
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft launching and leaving Earth",
+     "score": 8
+    },
+    {
+     "start": 4,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft deploying solar arrays and equipment booms in space",
+     "score": 8
+    },
+    {
+     "start": 9,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft performing a gravity assist flyby of Mars",
+     "score": 8
+    },
+    {
+     "start": 12,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft solar panels glistening in sunlight",
+     "score": 8
+    },
+    {
+     "start": 15,
+     "end": 16,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft arriving at the Jupiter system and Europa",
+     "score": 8
+    },
+    {
+     "start": 18,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Europa Clipper flying close over Europa's fractured icy surface",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:2022-H1_V_EuropaClipper-4",
+   "title": "2022-H1_V_EuropaClipper-4",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "footage",
+   "what": "Testing NASA's Europa Clipper hardware inside the Langley Sound Chamber",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    9,
+    10,
+    13,
+    19,
+    21,
+    22,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "hubble:heic1322b",
+   "title": "Flying past Europa’s plumes (artist’s impression)",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Artist's impression of flying past Europa's plumes near Jupiter",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.55,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Europa passing by Jupiter with a visible plume",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic1322a",
+   "title": "Illustrated fly-by of Europa's plumes (artist's impression)",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Artist's impression of Europa with plumes passing in front of Jupiter",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Europa transiting Jupiter with visible water vapor plumes",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:3617",
+   "title": "Inner moons of Jupiter Push In to Europa",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "Visualization showing the orbits of Jupiter's inner moons pushing in to Europa",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "stretches": [
+    {
+     "start": 7,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Europa filling the screen",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:13966",
+   "title": "Water Vapor Detected In Europa’s Atmosphere",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Hubble Space Telescope observations of water vapor on Europa",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+   "title": "NASA'S SpaceX Europa Clipper Isolated Launch Views",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "The launch of NASA's Europa Clipper spacecraft aboard a SpaceX Falcon Heavy rocket.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 4,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Falcon Heavy lifting off against a blue sky",
+     "score": 8
+    },
+    {
+     "start": 11,
+     "end": 11,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Intense rocket ascent with bright exhaust plume",
+     "score": 8
+    },
+    {
+     "start": 23,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Europa Clipper spacecraft operating in space",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}

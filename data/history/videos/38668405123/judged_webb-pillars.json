@@ -1,0 +1,673 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:JPL-20231222-SOLSYSf-0001-NASA Telescopes Reveal Hidden Universe",
+   "title": "NASA Telescopes Reveal an Invisible Infrared Universe",
+   "date": "2023-12-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20220315_Webb_Alignment_Briefing",
+   "title": "James Webb Space Telescope Mirror Alignment Update",
+   "date": "2022-03-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:James_Webb_Space_Telescope__An_Overview_1080",
+   "title": "James Webb Space Telescope: An Overview",
+   "date": "2019-03-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Social_Media_Video_Master_A",
+   "title": "Vibration Testing of NASA's James Webb Space Telescope",
+   "date": "2019-03-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:First Fulll Color Images and Data from the James Webb Space Telescope",
+   "title": "First Full-Color Images and Data from the James Webb Space Telescope",
+   "date": "2022-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:12987-Worth_the_Wait",
+   "title": "James Webb Space Telescope: Worth the Wait",
+   "date": "2019-03-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:12395-Top_Ten_JWST_Facts_H264",
+   "title": "Top Ten Facts about the James Webb Space Telescope",
+   "date": "2019-03-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Webb_Mirror_Phasing_ChamberA_Social_media-h264",
+   "title": "Alignment of the Primary Mirror Segments of The James Webb Space Telescope",
+   "date": "2019-03-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Webb_Move_from_Houston_to_LA",
+   "title": "NASA’s James Webb Space Telescope Arrives Safely at Northrop Grumman Aerospace Systems in California",
+   "date": "2019-03-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MIRI_Feature_Edit",
+   "title": "James Webb Space Telescope’s Multifaceted MIRI",
+   "date": "2019-03-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:1511201_JWST_L-D_Apvd_Final",
+   "title": "Webb Telescope Launch and Deploy (12-minute)",
+   "date": "2019-03-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190718_JWST_m13165_Contributors",
+   "title": "NASA's Webb Telescope Shines with American Ingenuity",
+   "date": "2019-07-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:How Does Helium Make Stuff Cold_mp4",
+   "title": "How Does Helium Make Stuff Cold_mp4",
+   "date": "2022-01-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Coverage of the launch of the James Webb Space Telescope on an Ariane 5 rocket from the Guiana Space Center in Kourou, French Guiana",
+   "title": "Launch of the James Webb Space Telescope on an Ariane 5 rocket from the Guiana Space Center in Kourou, French Guiana",
+   "date": "2021-12-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_201908006_JWST_m13273_SMS_Deploy",
+   "title": "The Webb Telescope's Unfolding Secondary Mirror",
+   "date": "2019-08-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:OTIS_Practice_Move_7-14-17_Master_B_HD_H264",
+   "title": "Webb Telescope Structure Practice Move 7-14-16",
+   "date": "2019-03-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Acoustic_Testing_Social_Media_Video_Master_B",
+   "title": "Webb Telescope Acoustic Testing Social Media Video",
+   "date": "2019-03-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:STTARS_Feature",
+   "title": "A Look at Webb Telescope’s Specially Designed Shipping Container",
+   "date": "2019-03-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:12610-Webb_Moves_to_Johnson_Space_Center",
+   "title": "Webb Moves to Johnson Space Center",
+   "date": "2019-03-14",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5673",
+   "title": "Roman Telescope Launch and Orbit at L2",
+   "date": "2026-08-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:31356",
+   "title": "Cosmic Caverns in the Cat’s Paw Nebula",
+   "date": "2025-08-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:31344",
+   "title": "Herbig-Haro 49/50 Stellar Jets",
+   "date": "2025-05-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20350",
+   "title": "Webb at L2",
+   "date": "2024-09-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15098",
+   "title": "NASA, Partners Prepare EXCITE for Antarctic Flight",
+   "date": "2026-09-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "date": "2026-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15090",
+   "title": "Flash Talk: Roman Spacecraft Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15091",
+   "title": "Flash Talk: Roman Science Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14911",
+   "title": "Webb’s Biggest Discoveries",
+   "date": "2026-07-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15041",
+   "title": "NASA's Fermi Spies a Supercharged Supernova",
+   "date": "2026-05-20",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:eagle-neb_4kultrahd",
+   "title": "The Eagle Nebula",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501b",
+   "title": "Pan over Pillars of Creation — visible",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501c",
+   "title": "Pan over Pillars of Creation — Infrared",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501d",
+   "title": "The Pillars of Creation — fade from visible to infrared",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501f",
+   "title": "Zoom into Pillars of Creation",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501e",
+   "title": "Tour of Eagle Nebula",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1501g",
+   "title": "3D exploration of Pillars of Creation",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "webb:weic2216a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2216b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2216c",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2218b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2218a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2218c",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2216d",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2619b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2601a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2420a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2417a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:potm2310a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2324a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2316a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2311a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 1080p30).webm",
+   "title": "Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 1080p30)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 2160p30 h265).webm",
+   "title": "Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 2160p30 h265)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Webb Space Telescope Studies the Pillars of Creation (SVS31286).webm",
+   "title": "Webb Space Telescope Studies the Pillars of Creation (SVS31286)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Pillars of Creation Star in New Visualization from NASA’s Hubble and Webb Telescopes (SVS14616).webm",
+   "title": "Pillars of Creation Star in New Visualization from NASA’s Hubble and Webb Telescopes (SVS14616)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "nasa:1511201_JWST_L-D_Apvd_Final",
+  "nasa:GSFC_201908006_JWST_m13273_SMS_Deploy",
+  "nasa:Coverage of the launch of the James Webb Space Telescope on an Ariane 5 rocket from the Guiana Space Center in Kourou, French Guiana",
+  "nasa:First Fulll Color Images and Data from the James Webb Space Telescope",
+  "svs:20350",
+  "svs:14911",
+  "nasa:James_Webb_Space_Telescope__An_Overview_1080",
+  "nasa:12987-Worth_the_Wait",
+  "commons:Webb Space Telescope Studies the Pillars of Creation (SVS31286).webm",
+  "commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 2160p30 h265).webm",
+  "commons:Pillars of Creation- Hubble vs Webb (SVS31202 - Pillars of creation 1080p30).webm",
+  "commons:Pillars of Creation Star in New Visualization from NASA’s Hubble and Webb Telescopes (SVS14616).webm"
+ ],
+ "judged": [
+  {
+   "id": "nasa:1511201_JWST_L-D_Apvd_Final",
+   "title": "Webb Telescope Launch and Deploy (12-minute)",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "James Webb Space Telescope launch, deployment sequence, and deep space view",
+   "excluded": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Rocket launch and initial separation stages in orbit",
+     "score": 8
+    },
+    {
+     "start": 20,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Deployed telescope in space and deep field imagery",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_201908006_JWST_m13273_SMS_Deploy",
+   "title": "The Webb Telescope's Unfolding Secondary Mirror",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "footage",
+   "what": "The James Webb Space Telescope secondary mirror deployment and testing",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:20350",
+   "title": "Webb at L2",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "The James Webb Space Telescope in space near L2",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "James Webb Space Telescope with golden primary mirrors and sunshield",
+     "score": 9
+    },
+    {
+     "start": 6,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "James Webb Space Telescope maneuvering in space",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:14911",
+   "title": "Webb’s Biggest Discoveries",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "James Webb Space Telescope deep space observations and orbital views",
+   "excluded": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15,
+    17,
+    18,
+    20,
+    21,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 0,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Distant galaxy",
+     "score": 8
+    },
+    {
+     "start": 2,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spiral galaxy",
+     "score": 8
+    },
+    {
+     "start": 5,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spiral galaxy view",
+     "score": 8
+    },
+    {
+     "start": 13,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Deep space field",
+     "score": 7
+    },
+    {
+     "start": 16,
+     "end": 16,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Galaxy core",
+     "score": 8
+    },
+    {
+     "start": 19,
+     "end": 19,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Cosmic ring structure",
+     "score": 8
+    },
+    {
+     "start": 22,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "JWST in orbit",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:James_Webb_Space_Telescope__An_Overview_1080",
+   "title": "James Webb Space Telescope: An Overview",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "The deployment, construction, and launch of the James Webb Space Telescope",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    19,
+    20,
+    21,
+    22
+   ],
+   "stretches": [
+    {
+     "start": 7,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spacecraft maneuvers and deployment animation",
+     "score": 8
+    },
+    {
+     "start": 10,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Rocket launch into space",
+     "score": 8
+    },
+    {
+     "start": 17,
+     "end": 18,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "JWST golden mirrors in cleanroom assembly",
+     "score": 9
+    },
+    {
+     "start": 23,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Deep space starfield and optical flare",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "nasa:12987-Worth_the_Wait",
+   "title": "James Webb Space Telescope: Worth the Wait",
+   "relevant": true,
+   "usable": false,
+   "quality": 4,
+   "kind": "footage",
+   "what": "Behind-the-scenes assembly and animation of the James Webb Space Telescope with prominent text overlays and cleanroom personnel.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  }
+ ]
+}

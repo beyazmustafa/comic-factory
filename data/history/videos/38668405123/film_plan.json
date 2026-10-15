@@ -1,0 +1,337 @@
+{
+  "duration": 65.11,
+  "handle": "@Facctsaboutspace",
+  "hook": "An ocean under the ice.",
+  "kicker": "Real footage · NASA",
+  "closing": "Europa’s hidden sea waits for humanity’s first close look.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_ksc_20241014_mh_ajn01_0001_spacex_europa_clipper_isolat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.133,
+      "src_out": 16.867,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 7.4,
+      "label": "SpaceX · Falcon Heavy · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c06",
+      "asset": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_ksc_20241014_mh_ajn01_0001_spacex_europa_clipper_isolat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.963,
+      "src_out": 16.037,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 7.4,
+      "t1": 13.14,
+      "label": "NASA · Europa Clipper · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.418,
+      "src_out": 15.582,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 13.14,
+      "t1": 17.97,
+      "label": "NASA · Solar Arrays · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c07",
+      "asset": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_ksc_20241014_mh_ajn01_0001_spacex_europa_clipper_isolat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.993,
+      "src_out": 16.007,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 17.97,
+      "t1": 23.65,
+      "label": "NASA · Arrival · 2030",
+      "callout": {
+        "value": "49",
+        "label": "flybys planned"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.903,
+      "src_out": 16.097,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        328,
+        2252,
+        1504
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 23.65,
+      "t1": 29.51,
+      "label": "NASA · Flyby · 2030",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c03",
+      "asset": "hubble:heic1322b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/hubble_heic1322b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 7.363,
+      "src_out": 13.037,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.51,
+      "t1": 34.85,
+      "label": "Science · Tidal Flexing · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c04",
+      "asset": "hubble:heic1322a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/hubble_heic1322a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.028,
+      "src_out": 16.902,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        196,
+        0,
+        1724,
+        1080
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 34.85,
+      "t1": 42.39,
+      "label": "Juno · Flyby · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.568,
+      "src_out": 10.632,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        1252,
+        108,
+        2492,
+        1756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 42.39,
+      "t1": 48.12,
+      "label": "Science · Subsurface Ocean · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 18.243,
+      "src_out": 25.557,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        1252,
+        108,
+        2492,
+        1756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.12,
+      "t1": 55.1,
+      "label": "NASA · Instruments · 2030",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 9,
+      "clip": "c00",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.081,
+      "src_out": 15.919,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        328,
+        2252,
+        1504
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 55.1,
+      "t1": 60.605,
+      "label": "NASA · Mapping · 2030",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 9,
+      "clip": "c05",
+      "asset": "nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261015T015814869366Z/footage/nasa_ksc_20241014_mh_ajn01_0001_spacex_europa_clipper_isolat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.581,
+      "src_out": 15.419,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.605,
+      "t1": 65.11,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

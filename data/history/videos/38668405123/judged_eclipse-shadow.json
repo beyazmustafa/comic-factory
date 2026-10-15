@@ -1,0 +1,554 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20170720_August_m12669_EPICEclipse",
+   "title": "A New View of August's Total Solar Eclipse",
+   "date": "2017-07-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170921_Eclipse_m12715_Baseball",
+   "title": "Baseball Hits an Eclipse",
+   "date": "2017-09-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140130_SDO_m11463_Eclipse-Flare",
+   "title": "SDO Lunar Transit, Prominence Eruption, and M-Class Flare",
+   "date": "2014-01-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20231014_Annular_Solar_Eclipse",
+   "title": "Ring of Fire: 2023 Annular Solar Eclipse Broadcast",
+   "date": "2023-10-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150915_SOHO_m11975_comets",
+   "title": "3,000 Comets for SOHO",
+   "date": "2015-09-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_081505_goesn_dress_1A",
+   "title": "KSC-05-S-00278",
+   "date": "2005-08-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190107_TESS_m12853_1stPlanet4k",
+   "title": "TESS Rounds Up its First Planets, Snares Far-flung Supernovae",
+   "date": "2019-01-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160414_Moon_m12117_Eclipse",
+   "title": "Visualizing the 2017 All-American Eclipse",
+   "date": "2016-04-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170614_Eclipse_m12534_Plane",
+   "title": "What determines when we have an eclipse?",
+   "date": "2017-06-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140408_LRO_M11516_Lunar",
+   "title": "Understanding Lunar Eclipses",
+   "date": "2014-04-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20161025_Eclipse_m12412_Path",
+   "title": "Tracing the 2017 Solar Eclipse",
+   "date": "2016-12-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20110617_LRO_m10794_Eclipse_Shadow",
+   "title": "LRO's Diviner Takes the Moon's Temperature During Eclipse: Shadow Line",
+   "date": "2011-06-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170721_LRO_m12648_SolarEclipse",
+   "title": "The Moon's Role in a Solar Eclipse",
+   "date": "2017-07-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20260812_TotalSolarEclipse",
+   "title": "2026 Total Solar Eclipse",
+   "date": "2026-08-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170830_MultiSpacecraft_m12698_eclipse",
+   "title": "What Spacecraft Saw During the 2017 Solar Eclipse",
+   "date": "2017-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20260303_LunarEclipse_02",
+   "title": "MAF_20260303_LunarEclipse_02",
+   "date": "2026-03-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20260303_LunarEclipse-TL-epb",
+   "title": "Total Lunar Eclipse 2026 – New Orleans",
+   "date": "2026-03-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MAF_20260303_LunarEclipse-Broll",
+   "title": "Total Lunar Eclipse 2026 – New Orleans",
+   "date": "2026-03-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20240408_Solar_Eclipse_Telescopes",
+   "title": "2024 Total Solar Eclipse: Through the Eyes of NASA [Telescope Feed]",
+   "date": "2024-04-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170725_m12179_EclipseJets",
+   "title": "NASA Jets Chase The Total Solar Eclipse",
+   "date": "2017-07-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20260303-MH-JBS01-0001-Full_Moon_and Sunrise_at_KSC-M19750",
+   "title": "Full Moon at KSC",
+   "date": "2026-03-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170822_Total_m12690_Eclipse",
+   "title": "An EPIC View of the 2017 Total Solar Eclipse",
+   "date": "2017-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5672",
+   "title": "August 27-28, 2026 Deep Partial Lunar Eclipse",
+   "date": "2026-08-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5670",
+   "title": "High-Resolution True Color Earth Imagery Simulated by GEOS During the 2026 Total Solar Eclipse",
+   "date": "2026-08-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5656",
+   "title": "Animations of the August 12, 2026, Total Solar Eclipse",
+   "date": "2026-07-13",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5649",
+   "title": "Four Days of Solar Dynamics in 16 Minutes",
+   "date": "2026-06-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5647",
+   "title": "Map of the August 12, 2026, Total Solar Eclipse",
+   "date": "2026-05-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5604",
+   "title": "March 3, 2026 Total Lunar Eclipse: Shadow View",
+   "date": "2026-01-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5605",
+   "title": "March 3, 2026 Total Lunar Eclipse: Telescopic View",
+   "date": "2026-01-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5606",
+   "title": "March 3, 2026 Total Lunar Eclipse: Visibility Map",
+   "date": "2026-01-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5510",
+   "title": "Map of the March 29, 2025 Partial Solar Eclipse",
+   "date": "2025-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5498",
+   "title": "M8.8 flare from Active Region 13981 - February 3, 2025",
+   "date": "2025-02-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5471",
+   "title": "March 13-14, 2025 Total Lunar Eclipse: Shadow View",
+   "date": "2025-01-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5472",
+   "title": "March 13-14, 2025 Total Lunar Eclipse: Telescopic View",
+   "date": "2025-01-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4887",
+   "title": "Heliophysics Sentinels 2020 (Forecast Version)",
+   "date": "2021-03-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4772",
+   "title": "Earth Observing Fleet (December 2019)",
+   "date": "2019-12-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4583",
+   "title": "NASA's Near-Earth Science Mission Fleet: March 2017",
+   "date": "2017-11-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4558",
+   "title": "NASA's Earth Observing Fleet: March 2017",
+   "date": "2017-04-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4467",
+   "title": "2017 Solar Eclipse from L1",
+   "date": "2016-05-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20392",
+   "title": "Space Weather and NOAA's Space Weather Follow On at Lagrange point 1 (SWFO-L1)",
+   "date": "2024-11-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14779",
+   "title": "NASA's Illuminate Series (2025)",
+   "date": "2025-02-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14450",
+   "title": "NASA Annular Eclipse Imagery",
+   "date": "2023-11-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13891",
+   "title": "An EPIC View of the Moon’s Shadow During the June 10 Solar Eclipse",
+   "date": "2021-07-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13056",
+   "title": "EPIC New Science from 1 Million Miles Away",
+   "date": "2018-09-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12742",
+   "title": "NASA Satellites See Wildfires from Space",
+   "date": "2017-10-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12698",
+   "title": "What Spacecraft Saw During the 2017 Solar Eclipse",
+   "date": "2017-08-30",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Solar Eclipse from Space xo.ogv",
+   "title": "Solar Eclipse from Space xo",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Moon transit of sun large.ogv",
+   "title": "Moon transit of sun large",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Solar Eclipse of May 10th, 2013 from Space -Hinode XRT-.webm",
+   "title": "Solar Eclipse of May 10th, 2013 from Space -Hinode XRT-",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Solar Eclipse From Polar-Orbiting Satellite (CIRA 2023-04-20 - labels).webm",
+   "title": "Solar Eclipse From Polar-Orbiting Satellite (CIRA 2023-04-20 - labels)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "nasa:GSFC_20170720_August_m12669_EPICEclipse",
+  "nasa:GSFC_20170822_Total_m12690_Eclipse",
+  "svs:4467",
+  "svs:5670",
+  "svs:5656",
+  "nasa:GSFC_20160414_Moon_m12117_Eclipse",
+  "nasa:GSFC_20161025_Eclipse_m12412_Path",
+  "nasa:GSFC_20170830_MultiSpacecraft_m12698_eclipse",
+  "svs:12698",
+  "commons:Solar Eclipse From Polar-Orbiting Satellite (CIRA 2023-04-20 - labels).webm",
+  "commons:Solar Eclipse of May 10th, 2013 from Space -Hinode XRT-.webm",
+  "commons:Solar Eclipse from Space xo.ogv"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20170720_August_m12669_EPICEclipse",
+   "title": "A New View of August's Total Solar Eclipse",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Animation showing the alignment of the Sun, Moon, and Earth during a total solar eclipse.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+   ],
+   "stretches": [
+    {
+     "start": 7,
+     "end": 11,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Sun, Moon, and Earth alignment casting a shadow across the globe",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20170822_Total_m12690_Eclipse",
+   "title": "An EPIC View of the 2017 Total Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA EPIC camera natural color imagery of Earth from space during the 2017 total solar eclipse",
+   "excluded": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4467",
+   "title": "2017 Solar Eclipse from L1",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "The shadow of the Moon crossing North America during the August 21, 2017 total solar eclipse",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5670",
+   "title": "High-Resolution True Color Earth Imagery Simulated by GEOS During the 2026 Total Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Simulated view of Earth from space showing the Moon's shadow crossing during the 2026 total solar eclipse.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5656",
+   "title": "Animations of the August 12, 2026, Total Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Animations of the August 12, 2026, total solar eclipse shadow crossing Earth",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20160414_Moon_m12117_Eclipse",
+   "title": "Visualizing the 2017 All-American Eclipse",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Visualizing the 2017 total solar eclipse and the Moon's shadow crossing Earth from space",
+   "excluded": [
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Earth and Moon shadow visualization from space",
+     "score": 8
+    },
+    {
+     "start": 7,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Moon passing in front of Earth",
+     "score": 9
+    },
+    {
+     "start": 12,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Deep space observatory spacecraft",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20161025_Eclipse_m12412_Path",
+   "title": "Tracing the 2017 Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "NASA data visualization tracking the 2017 total solar eclipse shadow across Earth",
+   "excluded": [
+    0,
+    1,
+    3,
+    9,
+    14,
+    15,
+    16,
+    17,
+    18,
+    21,
+    22,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20170830_MultiSpacecraft_m12698_eclipse",
+   "title": "What Spacecraft Saw During the 2017 Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "Various spacecraft and satellite views of the 2017 total solar eclipse.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:12698",
+   "title": "What Spacecraft Saw During the 2017 Solar Eclipse",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "Various spacecraft and satellite views of the 2017 total solar eclipse crossing Earth and the Sun",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "stretches": []
+  }
+ ]
+}

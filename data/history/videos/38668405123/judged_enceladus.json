@@ -1,0 +1,186 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_082404_newmoons",
+   "title": "KSC-04-S-00310",
+   "date": "2004-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240508-EELSf-0001-EELS Media Reel",
+   "title": "EELS (Exobiology Extant Life Surveyor) Media Reel",
+   "date": "2023-05-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:The_Search_for_Life_H264",
+   "title": "The Search for Life",
+   "date": "2022-03-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20241119-TECHf-0001-Underwater_Robots_for_Space_Exploration",
+   "title": "NASA Tests Swimming Robots for Exploring Oceans on Icy Moons",
+   "date": "2024-11-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240508-EELSf-0002-Testing Out JPLs New Snake Robot",
+   "title": "Testing Out JPL’s New Snake Robot",
+   "date": "2023-05-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Underwater Robots for Space Exploration - videographer of the year",
+   "title": "Underwater Robots for Space Exploration - videographer of the year",
+   "date": "2025-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:4218",
+   "title": "Procellarum Rifts for the Cover of <i>Nature</i>",
+   "date": "2014-10-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20384",
+   "title": "Enceladus",
+   "date": "2023-05-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14898",
+   "title": "Our Home In Space Series",
+   "date": "2025-09-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14162",
+   "title": "Saturn Through the Veil of Enceladus – Artist’s Concept",
+   "date": "2022-05-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13947",
+   "title": "Video Visions of the Future",
+   "date": "2021-10-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13692",
+   "title": "Ocean Worlds Social Videos",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13693",
+   "title": "Ocean Worlds: The Search for Life",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12735",
+   "title": "Cassini's Last Images",
+   "date": "2018-03-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12880",
+   "title": "Cosmic Designs and The Planets",
+   "date": "2018-03-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12709",
+   "title": "Cassini's Infrared Saturn",
+   "date": "2017-09-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12585",
+   "title": "Europa Water Vapor Plumes - More Hubble Evidence",
+   "date": "2017-04-13",
+   "source": "svs"
+  },
+  {
+   "id": "svs:11889",
+   "title": "NASA On Air: NASA's New Images Of Saturn's Icy Moon Hyperion (6/4/2015)",
+   "date": "2015-06-04",
+   "source": "svs"
+  },
+  {
+   "id": "commons:PIA17198-Enceladus-20151026hd.webm",
+   "title": "PIA17198-Enceladus-20151026hd",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:KSC-04-S-00310 (ksc 082404 newmoons).webm",
+   "title": "KSC-04-S-00310 (ksc 082404 newmoons)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Size Comparison of the Universe 2021 - Musik - Quellen.webm",
+   "title": "Size Comparison of the Universe 2021 - Musik - Quellen",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:20384",
+  "svs:12735",
+  "svs:14162",
+  "commons:PIA17198-Enceladus-20151026hd.webm"
+ ],
+ "judged": [
+  {
+   "id": "svs:20384",
+   "title": "Enceladus",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "Visualizations of ice geysers erupting from the surface of Saturn's moon Enceladus.",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Ice geysers erupting from Enceladus with Saturn in the background",
+     "score": 8
+    },
+    {
+     "start": 5,
+     "end": 5,
+     "focus": [
+      0.6,
+      0.6
+     ],
+     "width": 0.32,
+     "shows": "Enceladus globe with Saturn behind",
+     "score": 7
+    }
+   ]
+  }
+ ]
+}
