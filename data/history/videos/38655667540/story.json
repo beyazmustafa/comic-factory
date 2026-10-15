@@ -1,0 +1,148 @@
+{
+  "title": "Cassini's Final Descent into Saturn's Atmosphere",
+  "description": "Cassini spent thirteen years orbiting Saturn before its planned plunge into the planet. This short documentary recounts the final dives and the mission’s lasting discoveries.",
+  "hook_card": "Cassini's last dive.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "Cassini launched in 1997, reached Saturn in 2004, and after thirteen years of orbit will be flown into the planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "The mission now begins its daring descent toward Saturn, guiding the spacecraft toward the swirling clouds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c05",
+      "narration": "The rings span about 280,000 kilometres, yet in places they are only ten metres thick, composed mainly of water ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "Enceladus erupts icy geysers, a discovery that indicates hidden oceans beneath its crust.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c00",
+      "narration": "Cassini weaves through a narrow two‑thousand kilometre gap between the rings and Saturn, completing twenty‑two precise dives.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "A six‑sided jet stream crowns Saturn’s north pole, the hexagon spanning roughly thirty‑thousand kilometres.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "On 15 September 2017 the probe tilts nose‑first, beginning its final plunge into Saturn’s atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "The radio signal fades, taking eighty‑three minutes to travel the distance back to Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Cassini launched in 1997, reached Saturn in 2004, and after thirteen years of orbit will be flown into the planet. The mission now begins its daring descent toward Saturn, guiding the spacecraft toward the swirling clouds. The rings span about 280,000 kilometres, yet in places they are only ten metres thick, composed mainly of water ice. Enceladus erupts icy geysers, a discovery that indicates hidden oceans beneath its crust. Cassini weaves through a narrow two‑thousand kilometre gap between the rings and Saturn, completing twenty‑two precise dives. A six‑sided jet stream crowns Saturn’s north pole, the hexagon spanning roughly thirty‑thousand kilometres. On 15 September 2017 the probe tilts nose‑first, beginning its final plunge into Saturn’s atmosphere. The radio signal fades, taking eighty‑three minutes to travel the distance back to Earth.",
+  "event": {
+    "id": "film_cassini-finale_20261014T234248377863Z",
+    "title": "Cassini's last dive.",
+    "series": "NASA footage",
+    "issue": "cassini-finale",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "cassini-finale",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20170912_Cassini_m12709_CIRS_Long",
+      "https://images.nasa.gov/details/GSFC_20170912_Cassini_m12709_CIRS_Short"
+    ]
+  },
+  "scenario": "cassini-finale",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "Cassini launched in 1997, reached Saturn in 2004, and after thirteen years of orbit will be flown into the planet.",
+      "label": "NASA · CASSINI · 2017",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The mission now begins its daring descent toward Saturn, guiding the spacecraft toward the swirling clouds.",
+      "label": "NASA · CASSINI",
+      "callout": {
+        "value": "13 years",
+        "label": "in orbit around Saturn"
+      }
+    },
+    {
+      "clip": "c05",
+      "narration": "The rings span about 280,000 kilometres, yet in places they are only ten metres thick, composed mainly of water ice.",
+      "label": "NASA · RINGS",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Enceladus erupts icy geysers, a discovery that indicates hidden oceans beneath its crust.",
+      "label": "NASA · ENCELADUS",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Cassini weaves through a narrow two‑thousand kilometre gap between the rings and Saturn, completing twenty‑two precise dives.",
+      "label": "NASA · GAP",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "A six‑sided jet stream crowns Saturn’s north pole, the hexagon spanning roughly thirty‑thousand kilometres.",
+      "label": "NASA · HEXAGON",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "On 15 September 2017 the probe tilts nose‑first, beginning its final plunge into Saturn’s atmosphere.",
+      "label": "NASA · FINAL DIVE",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The radio signal fades, taking eighty‑three minutes to travel the distance back to Earth.",
+      "label": "NASA · SIGNAL",
+      "callout": null
+    }
+  ],
+  "closing": "Its radio whisper reached Earth after eighty‑three minutes.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

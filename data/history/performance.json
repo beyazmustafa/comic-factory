@@ -3400,5 +3400,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "ks00mWfsYCk",
+    "platform": "youtube",
+    "run_id": "38655667540",
+    "published_at": "2026-10-15T00:07:28+00:00",
+    "event": {
+      "title": "Cassini's last dive.",
+      "series": "NASA footage",
+      "issue": "cassini-finale",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 129,
+      "duration": 65.9,
+      "words_per_minute": 117,
+      "hook": "Cassini launched in 1997, reached Saturn in 2004, and after thirteen years of orbit will be flown into the planet.",
+      "hook_words": 20,
+      "title": "Cassini's Final Descent into Saturn's Atmosphere",
+      "title_length": 48,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "unlisted",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
