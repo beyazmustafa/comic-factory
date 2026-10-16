@@ -3523,5 +3523,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "UMnLj1WxdQs",
+    "platform": "youtube",
+    "run_id": "38907156761",
+    "published_at": "2026-10-16T13:44:26+00:00",
+    "event": {
+      "title": "Lakes of methane.",
+      "series": "NASA footage",
+      "issue": "titan",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 139,
+      "duration": 86.6,
+      "words_per_minute": 96,
+      "hook": "Titan is the only moon with liquid rivers and seas, composed of methane and ethane.",
+      "hook_words": 15,
+      "title": "Titan's Methane Lakes and Huygens' Historic Descent",
+      "title_length": 51,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

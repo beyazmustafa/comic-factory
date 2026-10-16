@@ -1,0 +1,378 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_012805_touchdown",
+   "title": "KSC-05-S-00034",
+   "date": "2005-01-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_110404_cassini_flyby",
+   "title": "KSC-04-S-00352",
+   "date": "2004-11-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_061404_cassini",
+   "title": "KSC-04-S-00195",
+   "date": "2004-06-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "date": "2013-09-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_071304_ctitan",
+   "title": "KSC-04-S-00236",
+   "date": "2004-07-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute Jul. 17, 2026",
+   "title": "NASA Minute: Jul. 17, 2026",
+   "date": "2026-07-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute March 27, 2026",
+   "title": "NASA Minute: March 27, 2026",
+   "date": "2026-03-27",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:79",
+   "title": "Lunar Rotation and Flyby from Clementine Data (with route map)",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:80",
+   "title": "Lunar Rotation and Flyby from Clementine Data",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20311",
+   "title": "Dragonfly Animation Resource Page",
+   "date": "2020-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14951",
+   "title": "Are Titan’s Lakes Teeming with Primitive Cells?",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14843",
+   "title": "Webb Spies Rain Clouds, New Molecule on Titan",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14460",
+   "title": "Roman Wide Field Instrument Fully Integrated at Ball Aerospace",
+   "date": "2023-11-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14162",
+   "title": "Saturn Through the Veil of Enceladus – Artist’s Concept",
+   "date": "2022-05-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13947",
+   "title": "Video Visions of the Future",
+   "date": "2021-10-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13692",
+   "title": "Ocean Worlds Social Videos",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13693",
+   "title": "Ocean Worlds: The Search for Life",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13562",
+   "title": "The Science of Dragonfly",
+   "date": "2020-02-25",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:ksc_012805_touchdown",
+  "nasa:ksc_110404_cassini_flyby",
+  "nasa:ksc_071304_ctitan",
+  "nasa:GSFC_20130930_Titan_m11339_Propylene",
+  "svs:5530",
+  "svs:20403",
+  "svs:20411",
+  "svs:20311",
+  "svs:13562",
+  "svs:14843",
+  "svs:14951",
+  "svs:14162"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "animation",
+   "what": "A NASA Goddard educational video featuring a presenter explaining the detection of propylene on Titan with graphics and models",
+   "excluded": [
+    2,
+    4,
+    6,
+    7,
+    8,
+    9,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "Global circulation model visualization simulating atmospheric and seasonal variations on Saturn's moon Titan",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Rotating simulation of Titan's atmosphere, clouds, and surface features over seasonal cycles",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Animation of the James Webb Space Telescope observing Saturn and Titan",
+   "excluded": [
+    6
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "JWST traveling through space toward Saturn and Titan",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "Animations illustrating organic molecules forming protocells in Titan's hydrocarbon lakes",
+   "excluded": [
+    3,
+    4,
+    5
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Acrylonitrile molecule model floating in Titan's environment",
+     "score": 7
+    },
+    {
+     "start": 6,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Acrylonitrile molecule close-up animation",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:20311",
+   "title": "Dragonfly Animation Resource Page",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "animation",
+   "what": "Molecular structures and signal graphs explaining chirality",
+   "excluded": [
+    4,
+    5,
+    6
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:13562",
+   "title": "The Science of Dragonfly",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "The science instruments and surface operations of NASA's Dragonfly mission on Titan",
+   "excluded": [
+    5,
+    6,
+    14,
+    22
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Dragonfly descending and flying over Titan's dunes",
+     "score": 8
+    },
+    {
+     "start": 7,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Drilling and sample transfer mechanisms inside Dragonfly",
+     "score": 7
+    },
+    {
+     "start": 15,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Mass spectrometer analysis and Dragonfly on Titan's surface",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:14843",
+   "title": "Webb Spies Rain Clouds, New Molecule on Titan",
+   "relevant": false,
+   "usable": false,
+   "quality": 4,
+   "kind": "visualization",
+   "what": "JWST observations and animations of Titan's atmosphere and molecules",
+   "excluded": [
+    2,
+    4,
+    6,
+    11,
+    13
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:14951",
+   "title": "Are Titan’s Lakes Teeming with Primitive Cells?",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "animation",
+   "what": "A NASA science short about Titan's hydrocarbon lakes and primitive cell structures",
+   "excluded": [
+    2,
+    6,
+    8,
+    13,
+    18,
+    19,
+    20,
+    23
+   ],
+   "stretches": []
+  }
+ ]
+}

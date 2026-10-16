@@ -1,0 +1,420 @@
+{
+  "duration": 86.57,
+  "handle": "@Facctsaboutspace",
+  "hook": "Lakes of methane.",
+  "kicker": "NASA visualization",
+  "closing": "Titan's methane seas still ripple under an alien sky.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "svs:20403",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_20403/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.638,
+      "src_out": 15.362,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.39,
+      "label": "NASA · JWST · 2025",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.628,
+      "src_out": 15.372,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.39,
+      "t1": 9.8,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "svs:20411",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_20411/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.0,
+      "src_out": 5.27,
+      "speed": 0.912,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 9.8,
+      "t1": 15.245,
+      "label": "NASA · JWST · 2025",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.606,
+      "src_out": 15.394,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.245,
+      "t1": 19.7,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.788,
+      "src_out": 9.412,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 19.7,
+      "t1": 24.991,
+      "label": "NASA · Chemistry · 2026",
+      "callout": {
+        "value": "-180 °C",
+        "label": "on the surface"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c05",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 15.984,
+      "src_out": 20.646,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 24.991,
+      "t1": 29.32,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 18.8,
+      "src_out": 26.0,
+      "speed": 0.809,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 29.32,
+      "t1": 37.89,
+      "label": "ESA · Huygens · 2005",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.497,
+      "src_out": 8.133,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 37.89,
+      "t1": 43.192,
+      "label": "ESA · Huygens · 2005",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.664,
+      "src_out": 15.336,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 43.192,
+      "t1": 47.53,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.578,
+      "src_out": 17.422,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 47.53,
+      "t1": 56.04,
+      "label": "NASA · Cassini · 2017",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c05",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 15.052,
+      "src_out": 21.578,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 56.04,
+      "t1": 62.233,
+      "label": "NASA · Dragonfly · 2028",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "svs:20403",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_20403/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.8,
+      "src_out": 15.2,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 62.233,
+      "t1": 67.3,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.333,
+      "src_out": 9.867,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 67.3,
+      "t1": 73.5,
+      "label": "NASA · Dragonfly · 2028",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c02",
+      "asset": "svs:20411",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_20411/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.0,
+      "src_out": 5.27,
+      "speed": 0.771,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 73.5,
+      "t1": 80.0,
+      "label": "NASA · Cassini · 2017",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c01",
+      "asset": "svs:20403",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/footage/svs_20403/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.048,
+      "src_out": 15.952,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 80.0,
+      "t1": 86.57,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    }
+  ]
+}

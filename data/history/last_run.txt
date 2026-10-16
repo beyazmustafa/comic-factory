@@ -1,6 +1,6 @@
-run_id: 38785342732  attempt: 1  event: schedule
+run_id: 38907156761  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261015T182537046577Z/run.json
+--- data/runs/20261016T132200937639Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,54 +40,53 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38785342732",
+  "run_id": "38907156761",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "8ed5cd45aec83dae5443570f338a2905f8e5fa44b34c423a7b899be34e7ad0c0",
-  "metadata_sha256": "726a9924bd8ead5c53a80f07b761f5ab1e14d5c4b9c8253a5b37d09fb4bd8a30",
+  "video_sha256": "cfafceea6df857ad59dff4ae5b1a7197da55d6be277c5bae7b945877ba79c80e",
+  "metadata_sha256": "5c90e50183e9e524bfbac80426c9b7335a636dc0e0f7a61164be16f37322c7d5",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 65,
-  "duration": 93.6,
+  "api_calls": 52,
+  "duration": 86.57,
   "voice": "Charon",
   "event": {
-    "id": "film_spacewalk_20261015T182537046577Z",
-    "title": "Outside.",
+    "id": "film_titan_20261016T132200937639Z",
+    "title": "Lakes of methane.",
     "series": "NASA footage",
-    "issue": "spacewalk",
+    "issue": "titan",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "spacewalk",
+    "scenario": "titan",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
-      "https://images.nasa.gov/details/jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
-      "https://images.nasa.gov/details/jsc2022m000274_Russian_Spacewalk_56_221122-MP4"
+      "https://svs.gsfc.nasa.gov/13562",
+      "https://svs.gsfc.nasa.gov/20403",
+      "https://svs.gsfc.nasa.gov/20411",
+      "https://svs.gsfc.nasa.gov/5530"
     ]
   },
   "localized": []
 }
---- data/runs/20261015T182537046577Z/diagnostics/provider_events.json
+--- data/runs/20261016T132200937639Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme svs:4957: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4957: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:20403: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:20403: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:20403: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261015T182537046577Z/diagnostics/providers.json
+--- data/runs/20261016T132200937639Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -110,9 +109,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -207,128 +206,93 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: parker
-Görüntü adayları: 25 (parker)
-Sıralanan aday: 8
+→ Konu: titan
+Görüntü adayları: 24 (titan)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 12
+Düşük çözünürlük nasa:ksc_110404_cassini_flyby: 320x212
+Düşük çözünürlük nasa:ksc_012805_touchdown: 320x212
+Düşük çözünürlük nasa:ksc_071304_ctitan: 320x212
+Çözümlenemedi svs:14162: ValueError: no usable rendition
 Çözümlenen video: 8
-svs:4958: elendi (4/10, visualization) Data visualization of Parker Solar Probe's orbit around the Sun with m
-Görüntü değerlendirme svs:4957: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:4957: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-svs:4957: elendi (5/10, visualization) Parker Solar Probe magnetic field data visualization showing switchbac
-svs:5428: elendi (3/10, visualization) Orbital trajectory visualization of Parker Solar Probe around the Sun
-svs:5534: elendi (6/10, visualization) Visualization of the Parker Solar Probe's extended orbit around the Su
-svs:4970: elendi (4/10, visualization) Visualization of the inner solar system showing the Parker Solar Probe
-svs:4805: elendi (4/10, animation) Orbital diagram visualization of coordinated solar missions including 
-nasa:GSFC_20180725_Parker_m12903_CoronalHeating_Short: elendi (4/10, animation) An animated educational explainer about the Sun's coronal heating myst
-nasa:GSFC_20180725_Parker_m12903_CoronalHeating: elendi (6/10, animation) An animated educational explainer detailing the Sun's coronal heating 
-Görüntü adayları: 4 (parker, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 3
-Çözümlenemedi commons:Parker Solar Probe touches the Sun.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Parker Solar Probe Encounters Streamers on the Way to the Sun.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Parker Solar Probe- Humanity’s Closest Encounter with the Sun (SVS14741 - PSP AcrossAcutalSun H264).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (parker): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: sgr-a
-Görüntü adayları: 44 (sgr-a)
-Sıralanan aday: 4
-Çözümlenemedi svs:14976: ValueError: no usable rendition
-Çözümlenemedi svs:14585: ValueError: no usable rendition
-Çözümlenen video: 2
-svs:14576: elendi (5/10, visualization) NASA supercomputer visualization of a camera trajectory around a super
-nasa:ARC-20200103-AAV3244-SOFIA-GalacticCenter-RptrPkg-NASAWeb: elendi (6/10, footage) NASA SOFIA infrared panorama of the Milky Way's center
-Görüntü adayları: 4 (sgr-a, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 3
-Çözümlenemedi commons:Sagittarius A* and J144701-5919- Peering Into The Heart of Darkness (2010-sgra).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:VLT images of the S301 star orbiting Sagittarius A* (eso2612a).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Sagittarius A*- Milky Way Monster Stars in Cosmic Reality Show (2003-0203long).mpeg: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (sgr-a): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: spacewalk
-Görüntü adayları: 32 (spacewalk)
-Sıralanan aday: 5
-Çözümlenen video: 5
-nasa:NHQ_2019_1018_all woman spacewalk: kullanılır (8/10, footage) NASA astronauts performing spacewalks outside the International Space 
-nasa:NHQ_2019_1018_all woman spacewalk: üretilmiş program gibi (0 karede insan, 18/21 kare elendi); atlandı
-nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: kullanılır (8/10, footage) Helmet camera footage of astronauts conducting a spacewalk outside the
-nasa:jsc2019m000990_Suiting_Up_for_a_Spacewalk_MP4: konu dışı (4/10, footage) Astronauts preparing and suiting up inside the International Space Sta
-nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: kullanılır (8/10, footage) Roscosmos cosmonauts conducting a spacewalk outside the International 
-nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4: kullanılır (7/10, animation) 3D animation of Russian cosmonauts conducting a spacewalk outside the 
-Kullanılır kesit: 6 (124 sn temiz görüntü)
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20130930_Titan_m11339_Propylene: elendi (5/10, animation) A NASA Goddard educational video featuring a presenter explaining the 
+svs:5530: kullanılır (7/10, visualization) Global circulation model visualization simulating atmospheric and seas
+Görüntü değerlendirme svs:20403: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:20403: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:20403: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+svs:20403: kullanılır (8/10, visualization) Animation of the James Webb Space Telescope observing Saturn and Titan
+svs:20411: kullanılır (7/10, animation) Animations illustrating organic molecules forming protocells in Titan'
+svs:20311: konu dışı (3/10, animation) Molecular structures and signal graphs explaining chirality
+svs:13562: kullanılır (7/10, animation) The science instruments and surface operations of NASA's Dragonfly mis
+svs:14843: konu dışı (4/10, visualization) JWST observations and animations of Titan's atmosphere and molecules
+svs:14951: elendi (5/10, animation) A NASA science short about Titan's hydrocarbon lakes and primitive cel
+Kullanılır kesit: 6 (107 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 83.7/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 85.0/100 | whisper-large-v3
+Ses eşleştirme: 93.3/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 91.7/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 81.1/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 90.8/100 | whisper-large-v3
-→ Kurgu (93.6 sn, 9 beat, 6 kesit)
-  kurgu 10/94 sn
-  kurgu 20/94 sn
-  kurgu 30/94 sn
-  kurgu 40/94 sn
-  kurgu 50/94 sn
-  kurgu 60/94 sn
-  kurgu 70/94 sn
-  kurgu 80/94 sn
-  kurgu 90/94 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/review.html
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+→ Kurgu (86.6 sn, 9 beat, 6 kesit)
+  kurgu 10/87 sn
+  kurgu 20/87 sn
+  kurgu 30/87 sn
+  kurgu 40/87 sn
+  kurgu 50/87 sn
+  kurgu 60/87 sn
+  kurgu 70/87 sn
+  kurgu 80/87 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Helmet Camera Walks Around the International Space Station #Shorts
+Başlık: Titan's Methane Lakes and Huygens' Historic Descent #Shorts
 Görünürlük: public
 
 Yükleme: %8
 Yükleme: %16
-Yükleme: %25
+Yükleme: %24
 Yükleme: %33
-Yükleme: %42
-Yükleme: %50
-Yükleme: %59
-Yükleme: %67
-Yükleme: %76
-Yükleme: %84
-Yükleme: %93
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=AbFJ6pfw_Gk&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %41
+Yükleme: %49
+Yükleme: %58
+Yükleme: %66
+Yükleme: %74
+Yükleme: %82
+Yükleme: %91
+Yükleme: %99
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=UMnLj1WxdQs&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261015T182537046577Z/video.mp4
-Boyut: 94.5 MB
-Açıklama uzunluğu: 331 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/video.mp4
+Boyut: 96.4 MB
+Açıklama uzunluğu: 274 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17968357458187944).
+Instagram: container oluşturuldu (17968472064187944).
 Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
@@ -340,7 +304,7 @@ Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: IN_PROGRESS
 Instagram işlem durumu: FINISHED
 Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 17874661437594667
+Instagram Reel başarıyla yayınlandı: 18118855580283156
 ====================================================================
 INSTAGRAM REEL TAMAMLANDI
 ====================================================================

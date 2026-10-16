@@ -1,0 +1,183 @@
+{
+  "script": {
+    "title": "Titan's Methane Lakes and Huygens' Historic Descent",
+    "description": "Titan is the only moon with liquid methane seas. This short explores Huygens' descent and Cassini's radar view of its lakes.",
+    "hook_card": "Lakes of methane.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c01",
+        "narration": "Titan is the only moon with liquid rivers and seas, composed of methane and ethane.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c00",
+        "narration": "Titan is larger than Mercury and is wrapped in a thick nitrogen atmosphere with surface pressure 1.5 times Earth’s.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c02",
+        "narration": "Surface temperatures near minus 180 °C keep methane and ethane in liquid form.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c01",
+        "narration": "On 14 January 2005, Huygens parachuted for two and a half hours before landing on Titan.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c03",
+        "narration": "After landing, Huygens transmitted data for about 72 minutes, the longest transmission from another world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c00",
+        "narration": "Cassini’s radar later mapped dark seas, revealing Kraken Mare, a basin larger than the Caspian Sea.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c05",
+        "narration": "Future missions will follow these shores; Dragonfly will launch in 2028 and fly across Titan in the 2030s.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c04",
+        "narration": "Titan’s methane seas and surrounding terrain will be examined when Dragonfly arrives.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c02",
+        "narration": "Titan remains the only moon where liquid methane rivers carve valleys, confirming Huygens’s historic discovery.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Titan is the only moon with liquid rivers and seas, composed of methane and ethane. Titan is larger than Mercury and is wrapped in a thick nitrogen atmosphere with surface pressure 1.5 times Earth’s. Surface temperatures near minus 180 °C keep methane and ethane in liquid form. On 14 January 2005, Huygens parachuted for two and a half hours before landing on Titan. After landing, Huygens transmitted data for about 72 minutes, the longest transmission from another world. Cassini’s radar later mapped dark seas, revealing Kraken Mare, a basin larger than the Caspian Sea. Future missions will follow these shores; Dragonfly will launch in 2028 and fly across Titan in the 2030s. Titan’s methane seas and surrounding terrain will be examined when Dragonfly arrives. Titan remains the only moon where liquid methane rivers carve valleys, confirming Huygens’s historic discovery.",
+    "event": {
+      "id": "film_titan_20261016T132200937639Z",
+      "title": "Lakes of methane.",
+      "series": "NASA footage",
+      "issue": "titan",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "titan",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://svs.gsfc.nasa.gov/13562",
+        "https://svs.gsfc.nasa.gov/20403",
+        "https://svs.gsfc.nasa.gov/20411",
+        "https://svs.gsfc.nasa.gov/5530"
+      ]
+    },
+    "scenario": "titan",
+    "beats": [
+      {
+        "clip": "c01",
+        "narration": "Titan is the only moon with liquid rivers and seas, composed of methane and ethane.",
+        "label": "NASA · JWST · 2025",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Titan is larger than Mercury and is wrapped in a thick nitrogen atmosphere with surface pressure 1.5 times Earth’s.",
+        "label": "NASA · JWST · 2025",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Surface temperatures near minus 180 °C keep methane and ethane in liquid form.",
+        "label": "NASA · Chemistry · 2026",
+        "callout": {
+          "value": "-180 °C",
+          "label": "on the surface"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "On 14 January 2005, Huygens parachuted for two and a half hours before landing on Titan.",
+        "label": "ESA · Huygens · 2005",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "After landing, Huygens transmitted data for about 72 minutes, the longest transmission from another world.",
+        "label": "ESA · Huygens · 2005",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Cassini’s radar later mapped dark seas, revealing Kraken Mare, a basin larger than the Caspian Sea.",
+        "label": "NASA · Cassini · 2017",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Future missions will follow these shores; Dragonfly will launch in 2028 and fly across Titan in the 2030s.",
+        "label": "NASA · Dragonfly · 2028",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Titan’s methane seas and surrounding terrain will be examined when Dragonfly arrives.",
+        "label": "NASA · Dragonfly · 2028",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Titan remains the only moon where liquid methane rivers carve valleys, confirming Huygens’s historic discovery.",
+        "label": "NASA · Cassini · 2017",
+        "callout": null
+      }
+    ],
+    "closing": "Titan's methane seas still ripple under an alien sky.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Titan is the only moon with liquid methane seas. This short explores Huygens' descent and Cassini's radar view of its lakes.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: {'Visualizations by': [{'name': 'AJ Christensen', 'employer': 'SSAI'}, {'name':  — Webb Confirms Seasonal Variations in Titan Climate Model (https://svs.gsfc.nasa.gov/5530); {'Visualizations by': [{'name': 'Jenny McElligott', 'employer': 'eMITS'}], 'Prod — Titan science results from James Webb Space Telescope: animation resource page (https://svs.gsfc.nasa.gov/20403); {'Visualizations by': [{'name': 'Kim Dongjae', 'employer': 'eMITS'}], 'Produced  — A Pathway to Protocells on Titan – Animations (https://svs.gsfc.nasa.gov/20411); {'Produced by': [{'name': 'Dan Gallagher', 'employer': 'eMITS'}], 'Visualization — The Science of Dragonfly (https://svs.gsfc.nasa.gov/13562)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "Titan's Methane Lakes and Huygens' Historic Descent\n\nTitan is the only moon with liquid methane seas. This short explores Huygens' descent and Cassini's radar view of its lakes.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
