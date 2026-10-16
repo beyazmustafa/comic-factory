@@ -1,11 +1,11 @@
-run_id: 38907156761  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261016T132200937639Z/run.json
+run_id: 38945424996  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261016T181228445366Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,53 +40,35 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "38907156761",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "cfafceea6df857ad59dff4ae5b1a7197da55d6be277c5bae7b945877ba79c80e",
-  "metadata_sha256": "5c90e50183e9e524bfbac80426c9b7335a636dc0e0f7a61164be16f37322c7d5",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 52,
-  "duration": 86.57,
-  "voice": "Charon",
-  "event": {
-    "id": "film_titan_20261016T132200937639Z",
-    "title": "Lakes of methane.",
-    "series": "NASA footage",
-    "issue": "titan",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "titan",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://svs.gsfc.nasa.gov/13562",
-      "https://svs.gsfc.nasa.gov/20403",
-      "https://svs.gsfc.nasa.gov/20411",
-      "https://svs.gsfc.nasa.gov/5530"
-    ]
-  },
-  "localized": []
+  "run_id": "38945424996",
+  "error": "SpeechFailure: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261016T132200937639Z/diagnostics/provider_events.json
+--- data/runs/20261016T181228445366Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:20403: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:20403: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:20403: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Görüntü değerlendirme nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: gemini-3.1-flash-lite-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: gemini-2.5-flash-lite kapalı/erişilemez, bu koşuda atlanacak.",
   "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
   "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261016T132200937639Z/diagnostics/providers.json
+--- data/runs/20261016T181228445366Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -109,9 +91,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -205,36 +187,93 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261016T181228445366Z/audio/chunk_004/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 73.1/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crude design vehi”, 8.9 sn); whisper-large-v3-turbo: 77.6/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crewed design veh”, 8.9 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 73.1/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crude design vehi”, 9.2 sn); whisper-large-v3-turbo: 73.1/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crude design vehi”, 9.2 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.6/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crewed design veh”, 9.0 sn); whisper-large-v3-turbo: 77.6/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crewed design veh”, 9.0 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 73.1/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crude design vehi”, 9.3 sn); whisper-large-v3-turbo: 73.1/100 (duyulan: “At its farthest, Orion was 432,000 kilometers from Earth, a record for a crude design vehi”, 9.3 sn)"
+]
 --- studio.log (son 300 satır)
-→ Konu: titan
-Görüntü adayları: 24 (titan)
+→ Konu: venus
+Görüntü adayları: 14 (venus)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 0
+Çözümlenen video: 0
+Görüntü adayları: 4 (venus, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 2
+Çözümlenemedi commons:Magellan venus radar results.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Magellan to venus.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (venus): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: voyager
+Görüntü adayları: 40 (voyager)
+Sıralanan aday: 7
+Çözümlenen video: 7
+svs:5609: elendi (5/10, visualization) A tour of the NASA Heliophysics fleet from near-Earth satellites out t
+svs:4360: elendi (5/10, visualization) Trajectories and orbital paths of the heliophysics fleet from Earth to
+svs:4589: elendi (6/10, visualization) NASA scientific visualization zooming out from Earth past the heliopau
+svs:5443: konu dışı (3/10, visualization) NASA heliophysics fleet orbits and heliosphere diagram
+svs:4898: elendi (5/10, visualization) NASA heliophysics fleet and Voyager probes orbital visualization with 
+svs:4822: elendi (5/10, visualization) NASA Heliophysics fleet visualization from Earth to the Voyager probes
+nasa:GSFC_20090318_SED_m10411_Top_5_No_2: kullanılır (7/10, animation) Animations and visualizations of the Voyager probes and the heliospher
+Görüntü adayları: 4 (voyager, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 4
+Çözümlenemedi commons:Voyager-a retrospective 1990.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Voyager Humanity's Farthest Journey.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Voyager grand tour.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Conceptual of Voyager II.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 3 (42 sn temiz görüntü)
+Konu atlandı (voyager): Yeterli temiz görüntü yok (3 kesit, 42 sn).
+→ Konu: webb-first-image
+Görüntü adayları: 27 (webb-first-image)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 4
+Süre uygun değil nasa:First Fulll Color Images and Data from the James Webb Space Telescope: 3277 sn
+Çözümlenemedi svs:14269: ValueError: no usable rendition
+Çözümlenen video: 2
+nasa:NHQ_2022_0712_VF_NASA Reveals Webb Telescope’s First Images of Unseen Universe: elendi (3/10, footage) NASA video revealing James Webb Space Telescope's first images with st
+nasa:JPL-20231222-SOLSYSf-0001-NASA Telescopes Reveal Hidden Universe: konu dışı (3/10, footage) An overview of NASA infrared telescopes and nebulae, lacking the requi
+Görüntü adayları: 3 (webb-first-image, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 1
+Çözümlenemedi commons:Webb's Science Mission Begins- First Light Images As Compared to Hubble (SVS31188 - deep-field 1).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (webb-first-image): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: artemis-1
+Görüntü adayları: 90 (artemis-1)
 Sıralanan aday: 12
-Düşük çözünürlük nasa:ksc_110404_cassini_flyby: 320x212
-Düşük çözünürlük nasa:ksc_012805_touchdown: 320x212
-Düşük çözünürlük nasa:ksc_071304_ctitan: 320x212
-Çözümlenemedi svs:14162: ValueError: no usable rendition
-Çözümlenen video: 8
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20130930_Titan_m11339_Propylene: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20130930_Titan_m11339_Propylene: elendi (5/10, animation) A NASA Goddard educational video featuring a presenter explaining the 
-svs:5530: kullanılır (7/10, visualization) Global circulation model visualization simulating atmospheric and seas
-Görüntü değerlendirme svs:20403: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:20403: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:20403: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-svs:20403: kullanılır (8/10, visualization) Animation of the James Webb Space Telescope observing Saturn and Titan
-svs:20411: kullanılır (7/10, animation) Animations illustrating organic molecules forming protocells in Titan'
-svs:20311: konu dışı (3/10, animation) Molecular structures and signal graphs explaining chirality
-svs:13562: kullanılır (7/10, animation) The science instruments and surface operations of NASA's Dragonfly mis
-svs:14843: konu dışı (4/10, visualization) JWST observations and animations of Titan's atmosphere and molecules
-svs:14951: elendi (5/10, animation) A NASA science short about Titan's hydrocarbon lakes and primitive cel
-Kullanılır kesit: 6 (107 sn temiz görüntü)
+Süre uygun değil nasa:Artemis I FD15 Orion Moon: 6552 sn
+Çözümlenen video: 11
+nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022: kullanılır (8/10, footage) Orion spacecraft and the Moon captured by a wing-tip camera on Artemis
+nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: kullanılır (8/10, footage) Orion spacecraft in space with Earth visible in the distance
+nasa:Flight Day 14: kullanılır (9/10, footage) Orion capsule in deep space looking back at Earth and the Moon
+nasa:Moon Below Orion art001m1013251756: kullanılır (8/10, footage) The Orion spacecraft passing above the crescent Moon during the Artemi
+Görüntü değerlendirme nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: kullanılır (9/10, footage) Orion spacecraft solar array capturing the Moon during the Artemis I m
+nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: kullanılır (9/10, footage) Orion spacecraft performing a lunar flyby during the Artemis I mission
+Görüntü değerlendirme nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: gemini-3.1-flash-lite-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: gemini-2.5-flash-lite kapalı/erişilemez, bu koşuda atlanacak.
+nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: kullanılır (8/10, footage) Orion spacecraft views the Moon and Earth during lunar flyby
+nasa:FD 19 Earth: kullanılır (8/10, footage) Orion spacecraft in deep space with Earth visible in the distance
+Kullanılır kesit: 8 (208 sn temiz görüntü)
 → Senaryo
 Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
@@ -242,70 +281,21 @@ Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a ver
 Ses bölümü 1, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 93.3/100 | whisper-large-v3
+Ses eşleştirme: 93.2/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 86.7/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-→ Kurgu (86.6 sn, 9 beat, 6 kesit)
-  kurgu 10/87 sn
-  kurgu 20/87 sn
-  kurgu 30/87 sn
-  kurgu 40/87 sn
-  kurgu 50/87 sn
-  kurgu 60/87 sn
-  kurgu 70/87 sn
-  kurgu 80/87 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: Titan's Methane Lakes and Huygens' Historic Descent #Shorts
-Görünürlük: public
-
-Yükleme: %8
-Yükleme: %16
-Yükleme: %24
-Yükleme: %33
-Yükleme: %41
-Yükleme: %49
-Yükleme: %58
-Yükleme: %66
-Yükleme: %74
-Yükleme: %82
-Yükleme: %91
-Yükleme: %99
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=UMnLj1WxdQs&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261016T132200937639Z/video.mp4
-Boyut: 96.4 MB
-Açıklama uzunluğu: 274 karakter
-Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Instagram: container oluşturuldu (17968472064187944).
-Instagram: video işleniyor...
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: IN_PROGRESS
-Instagram işlem durumu: FINISHED
-Instagram: Reel yayınlanıyor...
-Instagram Reel başarıyla yayınlandı: 18118855580283156
-====================================================================
-INSTAGRAM REEL TAMAMLANDI
-====================================================================
-Cloudinary: geçici video silindi (ok).
+Ses eşleştirme: 73.1/100 | whisper-large-v3
+Ses eşleştirme: 77.6/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 2
+Ses eşleştirme: 73.1/100 | whisper-large-v3
+Ses eşleştirme: 73.1/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 3
+Ses eşleştirme: 77.6/100 | whisper-large-v3
+Ses eşleştirme: 77.6/100 | whisper-large-v3-turbo
+Ses bölümü 5, deneme 4
+Ses eşleştirme: 73.1/100 | whisper-large-v3
+Ses eşleştirme: 73.1/100 | whisper-large-v3-turbo
+HATA: 5. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
