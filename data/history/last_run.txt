@@ -1,11 +1,11 @@
-run_id: 39031840806  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261017T121700826642Z/run.json
+run_id: 39053318492  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261017T172116563933Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,10 +40,49 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39031840806",
-  "error": "SpeechFailure: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "39053318492",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "2f366369277df8f7a2fb2c3dcc45cc7be16fa1278642e52b746fdc12ededa09f",
+  "metadata_sha256": "087739333f21f9b9170cd8228b5b563007bced731ac2903675049983744fc570",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 43,
+  "duration": 95.3,
+  "voice": "Charon",
+  "event": {
+    "id": "film_artemis-1_20261017T172116563933Z",
+    "title": "Farther than Apollo",
+    "series": "NASA footage",
+    "issue": "artemis-1",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "artemis-1",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+      "https://images.nasa.gov/details/Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+      "https://images.nasa.gov/details/FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+      "https://images.nasa.gov/details/Flight Day 14",
+      "https://images.nasa.gov/details/Moon Below Orion art001m1013251756",
+      "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+      "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022",
+      "https://images.nasa.gov/details/art001m1203451716"
+    ]
+  },
+  "localized": []
 }
---- data/runs/20261017T121700826642Z/diagnostics/providers.json
+--- data/runs/20261017T172116563933Z/diagnostics/provider_events.json
+[
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+]
+--- data/runs/20261017T172116563933Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -66,8 +105,8 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b"
   ],
   "errors": [],
@@ -162,45 +201,94 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261017T121700826642Z/audio/chunk_003/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 17.1 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 17.1 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.3 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.3 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.9 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.9 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.6 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “It entered the atmosphere at 40,000 kilometers per hour, its heat shield reaching 2,800 de”, 16.6 sn)"
-]
 --- studio.log (son 300 satır)
 → Konu: artemis-1
 Görüntü adayları: 90 (artemis-1)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
 Süre uygun değil nasa:Artemis I FD15 Orion Moon: 6552 sn
 Çözümlenen video: 11
-nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250: elendi (2/10, footage) Distant view of Earth rising from behind the Moon, but the frames are 
-nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209: kullanılır (8/10, footage) Earth setting behind the Moon as seen from Orion's solar array camera 
-nasa:Flight Day 14: kullanılır (9/10, footage) Orion spacecraft in distant retrograde lunar orbit with Earth and Moon
-nasa:FD14 SAW: kullanılır (8/10, footage) Orion spacecraft service module and solar array wing extended against 
-nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022: kullanılır (8/10, footage) Camera view from Orion's solar array wing showing the spacecraft capsu
-nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: kullanılır (9/10, footage) Artemis I Orion spacecraft optical camera view looking back at the lun
-nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: kullanılır (8/10, footage) Camera view from Orion's solar array showing the capsule, the lunar li
-Kullanılır kesit: 8 (193 sn temiz görüntü)
+nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250: elendi (2/10, footage) Earthrise view after Orion's outbound powered flyby around the Moon, t
+nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209: kullanılır (9/10, footage) Earth setting behind the lunar limb as seen from the Orion spacecraft 
+nasa:Moon Below Orion art001m1013251756: kullanılır (8/10, footage) Views of the crescent Moon and parts of the Orion spacecraft during Fl
+nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022: kullanılır (8/10, footage) Real footage from Orion's solar array camera showing the spacecraft wi
+Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: kullanılır (9/10, footage) The Orion spacecraft in deep space with a distant Earth visible in the
+nasa:Flight Day 14: kullanılır (9/10, footage) The Orion spacecraft in lunar orbit with the Earth and Moon visible in
+nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: kullanılır (9/10, footage) Raw onboard camera footage from the Artemis I Orion capsule during its
+nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031: kullanılır (9/10, footage) Orion spacecraft's view of the Moon's cratered surface with a distant 
+nasa:art001m1203451716: kullanılır (8/10, footage) Onboard camera footage of the Artemis I Orion capsule reentering Earth
+Kullanılır kesit: 8 (208 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 82.5/100 | whisper-large-v3
+Ses eşleştirme: 87.4/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 97.5/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 86.1/100 | whisper-large-v3
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 2
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 3
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 4
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-HATA: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 82.4/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (95.3 sn, 9 beat, 8 kesit)
+  kurgu 10/95 sn
+  kurgu 20/95 sn
+  kurgu 30/95 sn
+  kurgu 40/95 sn
+  kurgu 50/95 sn
+  kurgu 60/95 sn
+  kurgu 70/95 sn
+  kurgu 80/95 sn
+  kurgu 90/95 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261017T172116563933Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: The spacecraft that flew farther than any human vehicle #Shorts
+Görünürlük: public
+
+Yükleme: %13
+Yükleme: %27
+Yükleme: %40
+Yükleme: %54
+Yükleme: %68
+Yükleme: %81
+Yükleme: %95
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=mj4695Nm1B0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261017T172116563933Z/video.mp4
+Boyut: 58.6 MB
+Açıklama uzunluğu: 370 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Instagram: container oluşturuldu (17968667142187944).
+Instagram: video işleniyor...
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: IN_PROGRESS
+Instagram işlem durumu: FINISHED
+Instagram: Reel yayınlanıyor...
+Instagram Reel başarıyla yayınlandı: 18155182153522754
+====================================================================
+INSTAGRAM REEL TAMAMLANDI
+====================================================================
+Cloudinary: geçici video silindi (ok).

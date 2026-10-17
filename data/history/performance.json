@@ -3564,5 +3564,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "mj4695Nm1B0",
+    "platform": "youtube",
+    "run_id": "39053318492",
+    "published_at": "2026-10-17T17:42:37+00:00",
+    "event": {
+      "title": "Farther than Apollo",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 180,
+      "duration": 95.3,
+      "words_per_minute": 113,
+      "hook": "This capsule flew farther from Earth than any spacecraft built for humans, reaching four hundred and thirty-two thousand kilometres away.",
+      "hook_words": 20,
+      "title": "The spacecraft that flew farther than any human vehicle",
+      "title_length": 55,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
