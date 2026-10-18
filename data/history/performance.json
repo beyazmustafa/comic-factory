@@ -3605,5 +3605,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "4I6ze5Qt9xs",
+    "platform": "youtube",
+    "run_id": "39149568226",
+    "published_at": "2026-10-18T18:05:21+00:00",
+    "event": {
+      "title": "Touching an asteroid.",
+      "series": "NASA footage",
+      "issue": "bennu",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 130,
+      "duration": 76.5,
+      "words_per_minute": 102,
+      "hook": "A robotic arm makes contact with an asteroid more than 320 million kilometres from Earth.",
+      "hook_words": 15,
+      "title": "A robotic arm touches an asteroid 320 million km away",
+      "title_length": 53,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

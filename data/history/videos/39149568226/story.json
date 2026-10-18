@@ -1,0 +1,165 @@
+{
+  "title": "A robotic arm touches an asteroid 320 million km away",
+  "description": "In October 2020, NASA's OSIRIS-REx spacecraft touched asteroid Bennu to collect a pristine sample of the early solar system. The spacecraft returned the rocks to Earth in September 2023, revealing water-bearing minerals and organic molecules.",
+  "hook_card": "Touching an asteroid.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c01",
+      "narration": "A robotic arm makes contact with an asteroid more than 320 million kilometres from Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c06",
+      "narration": "This is Bennu, a rubble-pile asteroid about 500 metres wide, reached by OSIRIS-REx in December 2018.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c02",
+      "narration": "The rubble-pile world held loosely bound rock waiting for the spacecraft to make its attempt.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c07",
+      "narration": "On 20 October 2020, OSIRIS-REx descended toward the surface of the distant asteroid.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "Its arm touched the asteroid for a few seconds, and the surface gave way like a ball pit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "The arm sank about half a metre before thrusters pulled the spacecraft safely back.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c05",
+      "narration": "It collected 121.6 grams, the largest sample ever returned from beyond the Moon.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "The sample capsule returned to Earth, landing in the Utah desert on 24 September 2023.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c04",
+      "narration": "Scientists found water-bearing minerals and organic molecules within the collected rocks.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "A robotic arm makes contact with an asteroid more than 320 million kilometres from Earth. This is Bennu, a rubble-pile asteroid about 500 metres wide, reached by OSIRIS-REx in December 2018. The rubble-pile world held loosely bound rock waiting for the spacecraft to make its attempt. On 20 October 2020, OSIRIS-REx descended toward the surface of the distant asteroid. Its arm touched the asteroid for a few seconds, and the surface gave way like a ball pit. The arm sank about half a metre before thrusters pulled the spacecraft safely back. It collected 121.6 grams, the largest sample ever returned from beyond the Moon. The sample capsule returned to Earth, landing in the Utah desert on 24 September 2023. Scientists found water-bearing minerals and organic molecules within the collected rocks.",
+  "event": {
+    "id": "film_bennu_20261018T172717650613Z",
+    "title": "Touching an asteroid.",
+    "series": "NASA footage",
+    "issue": "bennu",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "bennu",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20200226_M4795_BennuGlobal",
+      "https://images.nasa.gov/details/GSFC_20201008_M13729_BennuTour",
+      "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
+      "https://images.nasa.gov/details/GSFC_20210511_M13857_OREx_Imagery",
+      "https://svs.gsfc.nasa.gov/20360"
+    ]
+  },
+  "scenario": "bennu",
+  "beats": [
+    {
+      "clip": "c01",
+      "narration": "A robotic arm makes contact with an asteroid more than 320 million kilometres from Earth.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "This is Bennu, a rubble-pile asteroid about 500 metres wide, reached by OSIRIS-REx in December 2018.",
+      "label": "NASA · OSIRIS-REx · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The rubble-pile world held loosely bound rock waiting for the spacecraft to make its attempt.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "On 20 October 2020, OSIRIS-REx descended toward the surface of the distant asteroid.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Its arm touched the asteroid for a few seconds, and the surface gave way like a ball pit.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The arm sank about half a metre before thrusters pulled the spacecraft safely back.",
+      "label": "NASA · OSIRIS-REx · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "It collected 121.6 grams, the largest sample ever returned from beyond the Moon.",
+      "label": "NASA · OSIRIS-REx · 2021",
+      "callout": {
+        "value": "121.6 g",
+        "label": "brought home"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "The sample capsule returned to Earth, landing in the Utah desert on 24 September 2023.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Scientists found water-bearing minerals and organic molecules within the collected rocks.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    }
+  ],
+  "closing": "Bennu has about a 1-in-2,700 chance of hitting Earth in the year 2182.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

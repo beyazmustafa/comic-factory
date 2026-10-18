@@ -1,11 +1,11 @@
-run_id: 39128230018  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261018T124104209555Z/run.json
+run_id: 39149568226  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261018T172717650613Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,10 +40,41 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39128230018",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "39149568226",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "d0bcd46195a9a5f896ec5dbd00cf5c31281c786b25a9de51b5e4954b6fcbfca5",
+  "metadata_sha256": "169a08467d818f15eb45ecba0adf14adf8b6eca743e9bc7ad34c88d0e53de588",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 34,
+  "duration": 76.45,
+  "voice": "Charon",
+  "event": {
+    "id": "film_bennu_20261018T172717650613Z",
+    "title": "Touching an asteroid.",
+    "series": "NASA footage",
+    "issue": "bennu",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "bennu",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20200226_M4795_BennuGlobal",
+      "https://images.nasa.gov/details/GSFC_20201008_M13729_BennuTour",
+      "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
+      "https://images.nasa.gov/details/GSFC_20210511_M13857_OREx_Imagery",
+      "https://svs.gsfc.nasa.gov/20360"
+    ]
+  },
+  "localized": []
 }
---- data/runs/20261018T124104209555Z/diagnostics/providers.json
+--- data/runs/20261018T172717650613Z/diagnostics/provider_events.json
+[
+  "Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
+]
+--- data/runs/20261018T172717650613Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -162,47 +193,95 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261018T124104209555Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 15.2 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “In lunar orbit, the Module Eagle prepared to carry its crew down toward the lunar surface.”, 15.2 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 16.5 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 16.5 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 16.5 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 16.5 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 15.0 sn); whisper-large-v3-turbo: 76.6/100 (duyulan: “In lunar orbit, the module Eagle prepared to carry its crew down toward the lunar surface.”, 15.0 sn)"
-]
 --- studio.log (son 300 satır)
 → Konu: apollo-11
 Görüntü adayları: 34 (apollo-11)
-Sıralanan aday: 10
+Sıralanan aday: 12
 Süre uygun değil nasa:KSC-19690716-MH-NAS01-0001-The_Flight_of_Apollo_11_The_Eagle_Has_Landed_HS_from_Film_JSC-DVC_1928: 2820 sn
-Süre uygun değil nasa:KSC-20090716-MH-NAS01-0001-Apollo_11_Restored_Moonwalk-HM_795: 3492 sn
 Düşük çözünürlük nasa:KSC-19940705-MH-NAS01-0001-Apollo_11_25th_Historical_Footage_and_Broll-B_0905: 720x480
+Süre uygun değil nasa:KSC-20090716-MH-NAS01-0001-Apollo_11_Restored_Moonwalk-HM_795: 3492 sn
+Düşük çözünürlük nasa:ksc_080504_apollo: 320x212
 Süre uygun değil nasa:KSC-19850101-MH-NAS01-0001-Apollo_11_Buzz_Aldrin_Experts-B_2141: 2903 sn
-Çözümlenen video: 6
-nasa:Apollo_11_moonwalk_montage_720p: elendi (7/10, footage) Archival television footage of the Apollo 11 moonwalk, showing the des
-nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: kullanılır (7/10, footage) Archival footage compilation of the Apollo 11 mission including launch
-nasa:Buzz_Descends_Comparison__720p: elendi (6/10, footage) Apollo 11 lunar module ladder descent footage of Buzz Aldrin
+Çözümlenen video: 7
+nasa:Apollo_11_moonwalk_montage_720p: elendi (7/10, footage) Archival television footage of the Apollo 11 lunar surface EVA, includ
+nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: kullanılır (6/10, footage) Apollo 11 B-roll footage showing launch, lunar descent, surface EVA, a
+nasa:Apollo_11_Intro_720p: elendi (5/10, footage) Apollo 11 mission highlights montage including launch, news anchor Wal
+nasa:Buzz_Descends_Comparison__720p: elendi (6/10, footage) Apollo 11 TV broadcast of Buzz Aldrin descending the lunar module ladd
+Görüntü değerlendirme nasa:Raising_The_American_Flag_Comparison_720p: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 nasa:Raising_The_American_Flag_Comparison_720p: elendi (6/10, footage) Apollo 11 astronauts raising the American flag on the lunar surface
-nasa:Apollo_11_Plaque_Comparison_720p: elendi (6/10, footage) Apollo 11 EVA footage showing an astronaut near the lunar module ladde
-nasa:Apollo_11_Intro_720p: elendi (5/10, footage) Apollo 11 mission montage including news broadcast, control room, laun
+nasa:Apollo_11_Plaque_Comparison_720p: elendi (5/10, footage) Apollo 11 lunar module ladder and commemorative plaque TV footage rest
+svs:5535: konu dışı (3/10, visualization) An informational lunar map diagram showing visible sunlight areas for 
 Görüntü adayları: 4 (apollo-11, Commons)
-Sıralanan aday: 3
-Çözümlenen video: 3
-commons:Historic Apollo 11 Moon Landing Footage.webm: elendi (3/10, footage) NASA 50th anniversary rebroadcast of Apollo 11 featuring CBS News broa
-commons:MSC (PTL) - Apollo 11 TV Transmission at GET 109-22 to 114-25 - Moon Walk- Part 1 of 9.webm: kullanılır (5/10, footage) Apollo 11 lunar surface TV broadcast showing the lunar module ladder a
-commons:Historic Apollo 11 Footage; Returning to Earth after Moon Landing.webm: elendi (4/10, footage) Apollo 11 recovery footage and post-splashdown quarantine on USS Horne
-Kullanılır kesit: 5 (102 sn temiz görüntü)
+Sıralanan aday: 2
+Çözümlenen video: 2
+commons:MSC (PTL) - Apollo 11 TV Transmission at GET 109-22 to 114-25 - Moon Walk- Part 1 of 9.webm: elendi (5/10, footage) Apollo 11 live slow-scan television transmission showing Neil Armstron
+commons:Historic Apollo 11 Moon Landing Footage.webm: elendi (4/10, footage) Apollo 50th anniversary broadcast combining archival CBS News broadcas
+Kullanılır kesit: 3 (55 sn temiz görüntü)
+Konu atlandı (apollo-11): Yeterli temiz görüntü yok (3 kesit, 55 sn).
+→ Konu: bennu
+Görüntü adayları: 52 (bennu)
+Sıralanan aday: 12
+Çözümlenemedi svs:5069: ValueError: no usable rendition
+Çözümlenen video: 11
+nasa:GSFC_20201021_M13745_TAG: elendi (5/10, footage) Produced broadcast with control room reactions, animation, and real Sa
+svs:20360: kullanılır (9/10, visualization) Data-driven scientific visualization showing OSIRIS-REx touching down 
+svs:5010: elendi (6/10, visualization) 3D digital terrain model visualization of surface height change at Ben
+nasa:GSFC_20210415_M13837_Flyover: kullanılır (8/10, footage) OSIRIS-REx camera views of asteroid Bennu, the TAG sample collection e
+svs:4862: elendi (5/10, visualization) Orbital diagram visualization of OSIRIS-REx trajectory descending towa
+nasa:GSFC_20210510_M13854_BennuFarewell: elendi (7/10, animation) Produced overview of OSIRIS-REx sampling Bennu and returning sample to
+nasa:GSFC_20201008_M13729_BennuTour: kullanılır (8/10, visualization) Science visualization and 3D digital terrain model flyovers of asteroi
+svs:4863: kullanılır (8/10, visualization) Scientific visualization showing OSIRIS-REx trajectory around asteroid
+svs:4863: üretilmiş program gibi (0 karede insan, 8/10 kare elendi); atlandı
+nasa:GSFC_20200226_M4795_BennuGlobal: kullanılır (9/10, visualization) A rotating 3D global shape and surface model of asteroid Bennu on a bl
+nasa:GSFC_20191212_M4771_site_flyovers: elendi (5/10, visualization) Multi-panel comparison collage showing candidate sample sites on aster
+nasa:GSFC_20210511_M13857_OREx_Imagery: kullanılır (8/10, footage) NASA compilation showcasing OSIRIS-REx camera views and observations o
+Kullanılır kesit: 8 (152 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 76.6/100 | whisper-large-v3
-Ses eşleştirme: 76.6/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (76.5 sn, 9 beat, 8 kesit)
+  kurgu 10/76 sn
+  kurgu 20/76 sn
+  kurgu 30/76 sn
+  kurgu 40/76 sn
+  kurgu 50/76 sn
+  kurgu 60/76 sn
+  kurgu 70/76 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261018T172717650613Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: A robotic arm touches an asteroid 320 million km away #Shorts
+Görünürlük: public
+
+Yükleme: %7
+Yükleme: %14
+Yükleme: %21
+Yükleme: %28
+Yükleme: %35
+Yükleme: %42
+Yükleme: %50
+Yükleme: %57
+Yükleme: %64
+Yükleme: %71
+Yükleme: %78
+Yükleme: %85
+Yükleme: %93
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=4I6ze5Qt9xs&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261018T172717650613Z/video.mp4
+Boyut: 111.7 MB
+Açıklama uzunluğu: 394 karakter
+Cloudinary: video geçici olarak yükleniyor...
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 117103600. Maximum is 104857600.
