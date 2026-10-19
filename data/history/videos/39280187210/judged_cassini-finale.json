@@ -1,0 +1,415 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_082404_newmoons",
+   "title": "KSC-04-S-00310",
+   "date": "2004-08-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20121025_Saturn_m11038_Storm",
+   "title": "Saturn's Record-Setting Storm",
+   "date": "2012-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_110404_cassini_flyby",
+   "title": "KSC-04-S-00352",
+   "date": "2004-11-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_061404_cassini",
+   "title": "KSC-04-S-00195",
+   "date": "2004-06-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "date": "2013-09-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_071304_ctitan",
+   "title": "KSC-04-S-00236",
+   "date": "2004-07-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_012805_touchdown",
+   "title": "KSC-05-S-00034",
+   "date": "2005-01-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20121025_Saturn_m11038_Hesman",
+   "title": "Saturn's Record-Setting Storm: Brigette Hesman",
+   "date": "2012-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_070704_messprev",
+   "title": "KSC-04-S-00216",
+   "date": "2004-07-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4803",
+   "title": "Apollo 13 S-IVB Impact Site",
+   "date": "2020-04-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4665",
+   "title": "Saturn's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4666",
+   "title": "Uranus' Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4139",
+   "title": "Voyager 1 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4140",
+   "title": "Voyager 2 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4143",
+   "title": "Saturn's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4144",
+   "title": "Uranus' Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4145",
+   "title": "Neptune's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4218",
+   "title": "Procellarum Rifts for the Cover of <i>Nature</i>",
+   "date": "2014-10-01",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3604",
+   "title": "Pull out from Jupiter Showing Moon Orbits",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3607",
+   "title": "Shoemaker-Levy 9 Hitting Jupiter with Orbit Trails",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3609",
+   "title": "Rotation Period Comparison Between Earth and Jupiter",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3610",
+   "title": "Jupiter Cloud Sequence from Cassini",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3616",
+   "title": "Galilean moon orbits from Callisto into Jupiter",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3617",
+   "title": "Inner moons of Jupiter Push In to Europa",
+   "date": "2009-09-21",
+   "source": "svs"
+  },
+  {
+   "id": "svs:2936",
+   "title": "The fastest CME of Cycle 23 overtakes another fast CME",
+   "date": "2004-05-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14534",
+   "title": "NASA's Heliophysics Division Director Joe Westlake",
+   "date": "2024-02-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14162",
+   "title": "Saturn Through the Veil of Enceladus – Artist’s Concept",
+   "date": "2022-05-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13809",
+   "title": "Exploring Our Solar System with Dr. Amy Simon",
+   "date": "2021-02-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13693",
+   "title": "Ocean Worlds: The Search for Life",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:12735",
+   "title": "Cassini's Last Images",
+   "date": "2018-03-19",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:astro_bk",
+   "title": "Saturn",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:astro_aa",
+   "title": "Saturn's rings",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:astro_bj",
+   "title": "Saturn",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2312a",
+   "title": "Saturn (October 2023)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1917a",
+   "title": "Pan Over Saturn",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1003b",
+   "title": "Saturn's stunning double show",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0720f",
+   "title": "HD 189733b orbiting the star HD 189733 (artist's impression)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "commons:Cassini's Grand Finale.ogv",
+   "title": "Cassini's Grand Finale",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox.ogv",
+   "title": "Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Video - Spinning Saturn - Cassini (51784196854).webm",
+   "title": "Video - Spinning Saturn - Cassini (51784196854)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Saturn ring spokes (captured by Cassini).ogv",
+   "title": "Saturn ring spokes (captured by Cassini)",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:12735",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+  "svs:14162",
+  "svs:4665",
+  "svs:4143",
+  "commons:Cassini's Grand Finale.ogv",
+  "commons:Video - Spinning Saturn - Cassini (51784196854).webm",
+  "commons:Saturn ring spokes (captured by Cassini).ogv",
+  "commons:Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox.ogv"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "relevant": true,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "Cassini's infrared observations of Saturn and its moons",
+   "excluded": [
+    0,
+    1,
+    4,
+    6,
+    8,
+    9,
+    10,
+    12,
+    16,
+    17,
+    18,
+    20,
+    21
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Cassini infrared observations and scientific analysis of Saturn",
+   "excluded": [
+    0,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    22
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4665",
+   "title": "Saturn's Magnetosphere",
+   "relevant": false,
+   "usable": false,
+   "quality": 3,
+   "kind": "visualization",
+   "what": "A scientific visualization of Saturn's magnetosphere with coordinate grids and moon labels",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:4143",
+   "title": "Saturn's Magnetosphere",
+   "relevant": true,
+   "usable": false,
+   "quality": 5,
+   "kind": "visualization",
+   "what": "Visualization of Saturn's magnetosphere with magnetic field lines, moon labels, and coordinate grids.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stretches": []
+  }
+ ]
+}

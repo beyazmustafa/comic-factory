@@ -3646,5 +3646,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "BxSkjBYGSns",
+    "platform": "youtube",
+    "run_id": "39280187210",
+    "published_at": "2026-10-19T16:42:30+00:00",
+    "event": {
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 144,
+      "duration": 88.9,
+      "words_per_minute": 97,
+      "hook": "A satellite watches the Sun without blinking, capturing an image every twelve seconds since 2010.",
+      "hook_words": 15,
+      "title": "A satellite captures the Sun every twelve seconds",
+      "title_length": 49,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

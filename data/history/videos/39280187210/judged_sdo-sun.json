@@ -1,0 +1,736 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20170211_SDO_m12500_Year7",
+   "title": "SDO: Year 7",
+   "date": "2017-02-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140404_SDO_m11517_Flare",
+   "title": "Graceful Eruption",
+   "date": "2014-04-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+   "title": "NASA’s SDO Captures Stunning View of April 17 Solar Flare",
+   "date": "2016-04-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140130_SDO_m11463_Eclipse-Flare",
+   "title": "SDO Lunar Transit, Prominence Eruption, and M-Class Flare",
+   "date": "2014-01-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150211_SDO_m11742_Year5",
+   "title": "SDO: Year 5",
+   "date": "2015-02-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170403_Trio_m12563_SolarFlares",
+   "title": "April 2017 Solar Flare Trio",
+   "date": "2017-04-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170804_SDO_m12105_SunSpot",
+   "title": "Two Weeks in the Life of a Sunspot",
+   "date": "2017-08-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+   "title": "Arching Eruption",
+   "date": "2015-06-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20120420_SDO_m10966_Year2",
+   "title": "SDO: Year 2",
+   "date": "2012-04-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130211_SDO_m11203_Year3",
+   "title": "SDO: Year 3",
+   "date": "2013-02-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150211_SDO_m11762_5Years",
+   "title": "Five Year Time-lapse of SDO",
+   "date": "2015-02-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140911_SDO_m11651_Flare",
+   "title": "September 10, 2014 X1.6 flare",
+   "date": "2014-09-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140610_SDO_m11564_XFlares",
+   "title": "Sun Emits 3 X-class Flares in 2 Days",
+   "date": "2014-06-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20110421_SDO_m10748_Year1",
+   "title": "SDO: Year One",
+   "date": "2011-04-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20141024_SDO_m11718_Flares",
+   "title": "Giant Sunspot Continues to Erupt with Substantial Flares",
+   "date": "2014-10-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160509_Mercury_m12235_Transit2016",
+   "title": "2016 Mercury Transit Timelapse",
+   "date": "2016-05-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140211_SDO_m11460_Year4",
+   "title": "SDO: Year 4",
+   "date": "2014-02-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20141222_SDO_m11721_Lights",
+   "title": "Holiday Lights on the Sun",
+   "date": "2014-12-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+   "title": "Phoenix Prominence Eruption",
+   "date": "2015-05-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150914_SDO_m11993_transit",
+   "title": "SDO Transit - September 2015",
+   "date": "2015-09-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160212_SDO_m12144_Year6",
+   "title": "SDO: Year 6",
+   "date": "2016-02-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20131217_ArgoSun_m11385",
+   "title": "Jewel Box Sun",
+   "date": "2013-12-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20121023_SDO_m11120_Flare",
+   "title": "Active Region on the Sun Emits Another Flare",
+   "date": "2012-10-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160725_Flares_m12326_July2016",
+   "title": "SDO Sees Trio of Mid-Level Flares",
+   "date": "2016-07-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130715_SDO_m11199_Reconnection",
+   "title": "X Marks the Spot: SDO Sees Reconnection",
+   "date": "2013-07-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140825_SDO_m11629_SolarFlare",
+   "title": "Late Summer M5 Solar Flare - August, 24, 2014",
+   "date": "2014-08-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+   "title": "NASA’s SDO Captures Stunning 4K View of April 17 Solar Flare",
+   "date": "2016-04-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140709_SDO_m11605_Firework_Flare",
+   "title": "Firework Flare",
+   "date": "2014-07-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140507_XClass_m11522_Flare",
+   "title": "The Best Observed X-class Flare",
+   "date": "2014-05-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20110207_STEREO_m10720_Stonehenge",
+   "title": "From Stonehenge to STEREO: A One Minute History of How We See the Sun",
+   "date": "2011-02-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20171116_Flare_m12640_Flux",
+   "title": "How Solar Flares Affect Earth",
+   "date": "2017-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140221_IRIS_m11483_Flare",
+   "title": "NASA's IRIS Spots Its Largest Solar Flare",
+   "date": "2014-02-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130226_SDO_m11179_Vocab",
+   "title": "Space Weather Vocabulary",
+   "date": "2013-02-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140530_IRIS_m11556_FirstCME",
+   "title": "A First for NASA's IRIS: Observing a Gigantic Eruption of Solar Material",
+   "date": "2014-05-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130513_SDO_m11285_X_Flares",
+   "title": "First X-Class Solar Flares of 2013",
+   "date": "2013-05-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170817_m12693_FirstCMEDuringEclipse",
+   "title": "A Total Solar Eclipse Revealed Solar Storms 100 Years Before Satellites",
+   "date": "2017-08-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140703_STEREO_m11602_Solar",
+   "title": "STEREO Solar Conjunction",
+   "date": "2014-07-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140925_CME_m11660_CCMC",
+   "title": "Comparing CMEs",
+   "date": "2014-09-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_2013_IRIS_m11256_Mission_Trailer",
+   "title": "IRIS: Studying the Energy Flow that Powers the Solar Atmosphere",
+   "date": "2013-06-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20120307_SDO_m10925_Flare",
+   "title": "HD Close up of March 6th X5.4 Flare",
+   "date": "2012-03-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_rex",
+   "title": "KSC-06-S-00222",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_intro",
+   "title": "KSC-06-S-00216",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_tower",
+   "title": "KSC-06-S-00218",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_omar",
+   "title": "KSC-06-S-00224",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_lsp",
+   "title": "KSC-06-S-00221",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_launch",
+   "title": "KSC-06-S-00220",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_ed",
+   "title": "KSC-06-S-00219",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_kennedy",
+   "title": "KSC-06-S-00217",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_102506_stereo_adams",
+   "title": "KSC-06-S-00223",
+   "date": "2006-10-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160815_Radiation_m12328_Belts",
+   "title": "Supercharging the Radiation Belts",
+   "date": "2016-08-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150710_NewHorizons_m11941_Enlil",
+   "title": "Tracking Space Weather for New Horizons with an Enlil Model",
+   "date": "2015-07-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160512_MMS_m12239_First_Results",
+   "title": "MMS First Results",
+   "date": "2016-05-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160523_Paradox_m11853_Faint",
+   "title": "The Faint Young Star Paradox: Solar Storms May Have Been Key to Life on Earth",
+   "date": "2016-05-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20151201_SOHO_m12052_20th",
+   "title": "SOHO Celebrates 20 Years of Space-based Science",
+   "date": "2015-12-01",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5649",
+   "title": "Four Days of Solar Dynamics in 16 Minutes",
+   "date": "2026-06-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5609",
+   "title": "Heliophysics Satellite Fleet - 2026",
+   "date": "2026-01-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5560",
+   "title": "M8.4 flare from Active Region 14114 - June 15, 2025",
+   "date": "2025-07-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5561",
+   "title": "M6.3 flare from Active Region 14114 - June 16, 2025",
+   "date": "2025-07-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5562",
+   "title": "X1.2 flare from Active Region 14114 - June 17, 2025",
+   "date": "2025-07-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5564",
+   "title": "An X1.9 flare from AR 14114 - June 19, 2025",
+   "date": "2025-07-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5559",
+   "title": "M6.8 flare from Active Region 14105 - June 14, 2025",
+   "date": "2025-07-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5550",
+   "title": "M8.9 flare from Active Region 14098 - May 25, 2025",
+   "date": "2025-07-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5551",
+   "title": "M8.1 flare from Active Region 14100 - May 30, 2025",
+   "date": "2025-07-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5549",
+   "title": "X1.1 flare from Active Region 14098 - May 25, 2025",
+   "date": "2025-06-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5543",
+   "title": "Solar Magnetic Field - from Solar Minimum to Solar Maximum",
+   "date": "2025-06-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:31375",
+   "title": "ISS views Aurora from the November 11-13, 2025 Geomagnetic Storm",
+   "date": "2026-03-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:31374",
+   "title": "Aurora Mosaic from the Geomagnetic Storm of November 11-13, 2025",
+   "date": "2026-03-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5375",
+   "title": "Carrington Class Coronal Mass Ejection - ENLIL Simulation of A Series of CMEs",
+   "date": "2025-08-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5541",
+   "title": "X1.2 flare from Active Region 14086 - May 13, 2025",
+   "date": "2025-05-28",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5644",
+   "title": "The Moon Passes Through Earth's Magnetotail for Fulldome",
+   "date": "2026-04-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5514",
+   "title": "Solar Storm Excites Martian Magnetosphere for Fulldome",
+   "date": "2025-04-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14719",
+   "title": "Swift Studies Gas-Churning Monster Black Holes",
+   "date": "2024-11-13",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5214",
+   "title": "Geomagnetic Storm Causes Satellite Loss for Fulldome",
+   "date": "2024-02-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5185",
+   "title": "PACE orbit with Ocean Color Instrument (OCI) data",
+   "date": "2023-12-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5048",
+   "title": "Moon Phase and Libration, 2023",
+   "date": "2022-11-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5049",
+   "title": "Moon Phase and Libration, 2023 South Up",
+   "date": "2022-11-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5019",
+   "title": "PACE orbit with swaths and instrument fields of view",
+   "date": "2022-10-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4983",
+   "title": "Global Carbon Dioxide 2020-2021 for Hyperwalls",
+   "date": "2022-04-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4955",
+   "title": "Moon Phase and Libration, 2022",
+   "date": "2021-11-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4956",
+   "title": "Moon Phase and Libration, 2022 South Up",
+   "date": "2021-11-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4949",
+   "title": "Global Carbon Dioxide 2020-2021",
+   "date": "2021-11-02",
+   "source": "svs"
+  },
+  {
+   "id": "sdo:20240510_0304",
+   "title": "SDO 304 Å, the chromosphere — 2024-05-10",
+   "date": "2024-05-10",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20240510_0171",
+   "title": "SDO 171 Å, coronal loops — 2024-05-10",
+   "date": "2024-05-10",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20240510_0131",
+   "title": "SDO 131 Å, flaring regions — 2024-05-10",
+   "date": "2024-05-10",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20240510_0193",
+   "title": "SDO 193 Å, the corona — 2024-05-10",
+   "date": "2024-05-10",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20240510_0094",
+   "title": "SDO 94 Å, flares — 2024-05-10",
+   "date": "2024-05-10",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20241003_0304",
+   "title": "SDO 304 Å, the chromosphere — 2024-10-03",
+   "date": "2024-10-03",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20241003_0171",
+   "title": "SDO 171 Å, coronal loops — 2024-10-03",
+   "date": "2024-10-03",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20241003_0131",
+   "title": "SDO 131 Å, flaring regions — 2024-10-03",
+   "date": "2024-10-03",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20241003_0193",
+   "title": "SDO 193 Å, the corona — 2024-10-03",
+   "date": "2024-10-03",
+   "source": "sdo"
+  },
+  {
+   "id": "sdo:20241003_0094",
+   "title": "SDO 94 Å, flares — 2024-10-03",
+   "date": "2024-10-03",
+   "source": "sdo"
+  }
+ ],
+ "ranked": [
+  "nasa:GSFC_20140404_SDO_m11517_Flare",
+  "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+  "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+  "nasa:GSFC_20140911_SDO_m11651_Flare",
+  "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+  "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+  "nasa:GSFC_20120307_SDO_m10925_Flare",
+  "sdo:20240510_0304",
+  "sdo:20240510_0171",
+  "sdo:20240510_0131",
+  "sdo:20240510_0193",
+  "sdo:20240510_0094"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20140404_SDO_m11517_Flare",
+   "title": "Graceful Eruption",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Solar Dynamics Observatory imagery of solar flares and magnetic loops",
+   "excluded": [
+    0,
+    1,
+    11
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up views of solar flares and dynamic magnetic loops",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+   "title": "NASA’s SDO Captures Stunning View of April 17 Solar Flare",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "NASA Solar Dynamics Observatory footage capturing a solar flare and active regions on the Sun",
+   "excluded": [
+    0,
+    6,
+    10,
+    12
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Full disk view of the Sun in different wavelengths transitioning to close-ups of active regions and solar flares",
+     "score": 8
+    },
+    {
+     "start": 7,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up of solar active regions and flare activity in extreme ultraviolet",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+   "title": "Arching Eruption",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Solar Dynamics Observatory footage of a massive solar eruption and coronal loops",
+   "excluded": [
+    0,
+    14,
+    15
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Full disk view of the Sun with active regions and coronal loops",
+     "score": 8
+    },
+    {
+     "start": 4,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up of towering magnetic loops and a dramatic solar eruption",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20140911_SDO_m11651_Flare",
+   "title": "September 10, 2014 X1.6 flare",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "September 10, 2014 X1.6 solar flare captured by the Solar Dynamics Observatory",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Golden coronal loops on the Sun",
+     "score": 9
+    },
+    {
+     "start": 3,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Intense solar flare eruption in red wavelengths",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+   "title": "Phoenix Prominence Eruption",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "NASA Solar Dynamics Observatory capturing a dramatic prominence eruption and magnetic loops on the Sun",
+   "excluded": [
+    0,
+    20
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 19,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Solar prominence eruption and intense magnetic loops in extreme ultraviolet",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}

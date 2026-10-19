@@ -1,0 +1,168 @@
+{
+  "title": "A satellite captures the Sun every twelve seconds",
+  "description": "The Solar Dynamics Observatory has been imaging the Sun continuously since 2010. This short film reveals the Sun’s loops, flares and eruptions in unprecedented detail.",
+  "hook_card": "The Sun, every twelve seconds.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "A satellite watches the Sun without blinking, capturing an image every twelve seconds since 2010.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "The star spans 1.39 million kilometres, enough to line up one hundred and nine Earths side by side.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c06",
+      "narration": "Above the visible surface, plasma follows magnetic field lines, forming glowing loops larger than many Earths.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c05",
+      "narration": "When magnetic stress releases, a flare erupts, unleashing energy comparable to millions of hydrogen bombs.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c07",
+      "narration": "The outer atmosphere, the corona, burns at over one million degrees Celsius, far hotter than the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "Each twelve‑second snapshot shows magnetic loops reshaping, a restless dance of charged plasma.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "Light from these eruptions reaches Earth in eight minutes twenty seconds, while particles arrive one to three days later.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c07",
+      "narration": "Every eleven years the Sun’s magnetic poles flip, reshaping the pattern of loops and flares.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c01",
+      "narration": "Through relentless observation, we watch our star breathe, a constant reminder of its powerful, ever‑changing heart.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "A satellite watches the Sun without blinking, capturing an image every twelve seconds since 2010. The star spans 1.39 million kilometres, enough to line up one hundred and nine Earths side by side. Above the visible surface, plasma follows magnetic field lines, forming glowing loops larger than many Earths. When magnetic stress releases, a flare erupts, unleashing energy comparable to millions of hydrogen bombs. The outer atmosphere, the corona, burns at over one million degrees Celsius, far hotter than the surface. Each twelve‑second snapshot shows magnetic loops reshaping, a restless dance of charged plasma. Light from these eruptions reaches Earth in eight minutes twenty seconds, while particles arrive one to three days later. Every eleven years the Sun’s magnetic poles flip, reshaping the pattern of loops and flares. Through relentless observation, we watch our star breathe, a constant reminder of its powerful, ever‑changing heart.",
+  "event": {
+    "id": "film_sdo-sun_20261019T154517821544Z",
+    "title": "The Sun, every twelve seconds.",
+    "series": "NASA footage",
+    "issue": "sdo-sun",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "sdo-sun",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20140911_SDO_m11651_Flare",
+      "https://images.nasa.gov/details/GSFC_20150501_SDO_m11864_Phoenix",
+      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
+    ]
+  },
+  "scenario": "sdo-sun",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "A satellite watches the Sun without blinking, capturing an image every twelve seconds since 2010.",
+      "label": "NASA · SDO · 2010",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The star spans 1.39 million kilometres, enough to line up one hundred and nine Earths side by side.",
+      "label": "NASA · SDO · 2016",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Above the visible surface, plasma follows magnetic field lines, forming glowing loops larger than many Earths.",
+      "label": "NASA · SDO · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "When magnetic stress releases, a flare erupts, unleashing energy comparable to millions of hydrogen bombs.",
+      "label": "NASA · SDO · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "The outer atmosphere, the corona, burns at over one million degrees Celsius, far hotter than the surface.",
+      "label": "NASA · Phoenix · 2015",
+      "callout": {
+        "value": "1,000,000 °C",
+        "label": "the outer atmosphere"
+      }
+    },
+    {
+      "clip": "c00",
+      "narration": "Each twelve‑second snapshot shows magnetic loops reshaping, a restless dance of charged plasma.",
+      "label": "NASA · Graceful · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Light from these eruptions reaches Earth in eight minutes twenty seconds, while particles arrive one to three days later.",
+      "label": "NASA · Arching · 2015",
+      "callout": {
+        "value": "8 min 20 s",
+        "label": "for its light to reach us"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "Every eleven years the Sun’s magnetic poles flip, reshaping the pattern of loops and flares.",
+      "label": "NASA · SDO · 2015",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Through relentless observation, we watch our star breathe, a constant reminder of its powerful, ever‑changing heart.",
+      "label": "NASA · SDO · 2010",
+      "callout": null
+    }
+  ],
+  "closing": "The Sun’s rhythm shapes life on Earth.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

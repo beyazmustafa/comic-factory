@@ -1,0 +1,547 @@
+{
+  "duration": 88.87,
+  "handle": "@Facctsaboutspace",
+  "hook": "The Sun, every twelve seconds.",
+  "kicker": "Real footage · NASA",
+  "closing": "The Sun’s rhythm shapes life on Earth.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.726,
+      "src_out": 16.274,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        160,
+        1832,
+        920
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.215,
+      "label": "NASA · SDO · 2010",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20140911_SDO_m11651_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20140911_sdo_m11651_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 8.776,
+      "src_out": 14.194,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.215,
+      "t1": 11.3,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.163,
+      "src_out": 15.837,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        196,
+        246,
+        1536,
+        800
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.3,
+      "t1": 16.64,
+      "label": "NASA · SDO · 2016",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20140911_SDO_m11651_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20140911_sdo_m11651_flare/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.049,
+      "src_out": 9.751,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        20,
+        0,
+        1796,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 16.64,
+      "t1": 21.01,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c07",
+      "asset": "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150501_sdo_m11864_phoenix/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.88,
+      "src_out": 16.12,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        168,
+        212,
+        700,
+        508
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 21.01,
+      "t1": 26.917,
+      "label": "NASA · SDO · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.417,
+      "src_out": 15.583,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 26.917,
+      "t1": 31.75,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.011,
+      "src_out": 15.559,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        34,
+        1728,
+        1012
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 31.75,
+      "t1": 36.964,
+      "label": "NASA · SDO · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.765,
+      "src_out": 10.365,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        410,
+        102,
+        1096,
+        752
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 36.964,
+      "t1": 41.23,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 3.2,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        34,
+        1728,
+        1012
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 41.23,
+      "t1": 44.897,
+      "label": "NASA · Phoenix · 2015",
+      "callout": {
+        "value": "1,000,000 °C",
+        "label": "the outer atmosphere"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 16.13,
+      "src_out": 19.0,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        410,
+        102,
+        1096,
+        752
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 44.897,
+      "t1": 48.151,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c07",
+      "asset": "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150501_sdo_m11864_phoenix/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 11.564,
+      "src_out": 14.436,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        168,
+        212,
+        700,
+        508
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.151,
+      "t1": 50.69,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 8.888,
+      "src_out": 17.112,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 50.69,
+      "t1": 58.58,
+      "label": "NASA · Graceful · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.11,
+      "src_out": 11.02,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        410,
+        102,
+        1096,
+        752
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 58.58,
+      "t1": 64.157,
+      "label": "NASA · Arching · 2015",
+      "callout": {
+        "value": "8 min 20 s",
+        "label": "for its light to reach us"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.552,
+      "src_out": 15.448,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        160,
+        1832,
+        920
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 64.157,
+      "t1": 68.72,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c07",
+      "asset": "nasa:GSFC_20150501_SDO_m11864_Phoenix",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150501_sdo_m11864_phoenix/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.913,
+      "src_out": 17.087,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        168,
+        212,
+        700,
+        508
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 68.72,
+      "t1": 76.56,
+      "label": "NASA · SDO · 2015",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        196,
+        246,
+        1536,
+        800
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 76.56,
+      "t1": 83.06,
+      "label": "NASA · SDO · 2010",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20150630_SDO_m11908_ArchingEruption",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/footage/nasa_gsfc_20150630_sdo_m11908_archingeruption/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.928,
+      "src_out": 16.072,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        160,
+        1832,
+        920
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 83.06,
+      "t1": 88.87,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
