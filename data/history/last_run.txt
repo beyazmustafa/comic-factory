@@ -1,6 +1,6 @@
-run_id: 39280187210  attempt: 1  event: schedule
+run_id: 39315650166  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261019T154517821544Z/run.json
+--- data/runs/20261019T200125426000Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,58 +40,39 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39280187210",
+  "run_id": "39315650166",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "c24bdb19524a4cd14b0a83c5033928e4422c2cf5aef7f9d61b11a34516574345",
-  "metadata_sha256": "ab770e5551284b1aac3f7d3e6916b17e714199561f242c8af5d0a0100c35c6f4",
+  "video_sha256": "34db3f9569d72c91f66de610d1aed7a34f6728f16d6923680b9dfc6147d45989",
+  "metadata_sha256": "b203ca045b06f49dbb575c56068ae5acfaed1668a160721ee146842d992eb715",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 79,
-  "duration": 88.87,
+  "api_calls": 20,
+  "duration": 100.74,
   "voice": "Charon",
   "event": {
-    "id": "film_sdo-sun_20261019T154517821544Z",
-    "title": "The Sun, every twelve seconds.",
+    "id": "film_moon-tour_20261019T200125426000Z",
+    "title": "The Moon Mapped in Detail",
     "series": "NASA footage",
-    "issue": "sdo-sun",
+    "issue": "moon-tour",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "sdo-sun",
+    "scenario": "moon-tour",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20140911_SDO_m11651_Flare",
-      "https://images.nasa.gov/details/GSFC_20150501_SDO_m11864_Phoenix",
-      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare"
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
     ]
   },
   "localized": []
 }
---- data/runs/20261019T154517821544Z/diagnostics/provider_events.json
+--- data/runs/20261019T200125426000Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261019T154517821544Z/diagnostics/providers.json
+--- data/runs/20261019T200125426000Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -114,9 +95,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -211,167 +192,75 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: apollo-11
-Görüntü adayları: 34 (apollo-11)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 10
-Süre uygun değil nasa:KSC-20090716-MH-NAS01-0001-Apollo_11_Restored_Moonwalk-HM_795: 3492 sn
-Süre uygun değil nasa:KSC-19690716-MH-NAS01-0001-The_Flight_of_Apollo_11_The_Eagle_Has_Landed_HS_from_Film_JSC-DVC_1928: 2820 sn
-Düşük çözünürlük nasa:KSC-19940705-MH-NAS01-0001-Apollo_11_25th_Historical_Footage_and_Broll-B_0905: 720x480
-Süre uygun değil nasa:KSC-19850101-MH-NAS01-0001-Apollo_11_Buzz_Aldrin_Experts-B_2141: 2903 sn
-Çözümlenen video: 6
-nasa:Apollo_11_moonwalk_montage_720p: elendi (7/10, footage) Apollo 11 astronauts descending the lunar module ladder and walking on
-nasa:Buzz_Descends_Comparison__720p: elendi (6/10, footage) Buzz Aldrin descending the Apollo 11 lunar module ladder
-nasa:Raising_The_American_Flag_Comparison_720p: kullanılır (6/10, footage) Neil Armstrong and Buzz Aldrin raise the American flag on the lunar su
-nasa:Apollo_11_Plaque_Comparison_720p: elendi (4/10, footage) Apollo 11 EVA television comparison showing astronauts unveiling the c
-nasa:Apollo_11_Intro_720p: elendi (5/10, footage) Montage of Apollo 11 mission highlights including liftoff, lunar surfa
-nasa:KSC-19690716-MH-NAS01-0001-Apollo_11_Historical_Footage_and_Broll-DVC_1560: elendi (5/10, footage) Apollo 11 historical B-roll footage including interviews, mission prep
-Görüntü adayları: 4 (apollo-11, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 2
-Çözümlenemedi commons:MSC (PTL) - Apollo 11 TV Transmission at GET 109-22 to 114-25 - Moon Walk- Part 1 of 9.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Historic Apollo 11 Moon Landing Footage.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 2 (25 sn temiz görüntü)
-Konu atlandı (apollo-11): Yeterli temiz görüntü yok (2 kesit, 25 sn).
 → Konu: moon-tour
 Görüntü adayları: 75 (moon-tour)
 Sıralanan aday: 12
-Düşük çözünürlük nasa:ksc_061809_lrolcross_sep: 800x450
-Çözümlenen video: 11
-svs:4619: elendi (8/10, visualization) A visual tour of the Moon's terrain using Lunar Reconnaissance Orbiter
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (5/10, visualization) NASA Lunar Reconnaissance Orbiter data revealing recent geological act
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (7/10, visualization) NASA Lunar Reconnaissance Orbiter data revealing pits on the Moon's su
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 10/13 kare elendi); atlandı
-nasa:GSFC_20140324_LROC_m11494_JGarvin: kullanılır (7/10, visualization) NASA scientist Jim Garvin highlights high-resolution imagery of the Mo
-nasa:GSFC_20140324_LROC_m11494_JGarvin: üretilmiş program gibi (0 karede insan, 16/24 kare elendi); atlandı
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) Global and detailed surface views of the Moon mapped by the Lunar Reco
-nasa:GSFC_20190618_LRO_m13229_10Years: kullanılır (8/10, footage) Launch and orbital mission highlights of NASA's Lunar Reconnaissance O
-nasa:GSFC_20190618_LRO_m13229_10Years: üretilmiş program gibi (0 karede insan, 14/19 kare elendi); atlandı
-nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt2: elendi (5/10, visualization) Lunar Reconnaissance Orbiter mapping and observing the Moon surface
-nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt1: kullanılır (8/10, visualization) The Moon observed and mapped by the Lunar Reconnaissance Orbiter
-nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt1: üretilmiş program gibi (0 karede insan, 16/21 kare elendi); atlandı
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (8/10, visualization) A 3D visualization of the Lee Lincoln scarp at the Apollo 17 landing s
-nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (5/10, visualization) NASA LRO mission discovering new impact craters on the Moon
-nasa:GSFC_20150727_LRO_m11949_Lunar: elendi (6/10, visualization) NASA's Lunar Reconnaissance Orbiter operating and mapping the Moon
-Görüntü adayları: 0 (moon-tour, Commons)
-Kullanılır kesit: 3 (66 sn temiz görüntü)
-Konu atlandı (moon-tour): Yeterli temiz görüntü yok (3 kesit, 66 sn).
-→ Konu: cassini-finale
-Görüntü adayları: 44 (cassini-finale)
-Sıralanan aday: 6
-Çözümlenemedi svs:14162: ValueError: no usable rendition
-Çözümlenemedi svs:12735: ValueError: no usable rendition
-Çözümlenen video: 4
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: elendi (3/10, visualization) Cassini's infrared observations of Saturn and its moons
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: elendi (5/10, visualization) Cassini infrared observations and scientific analysis of Saturn
-svs:4665: konu dışı (3/10, visualization) A scientific visualization of Saturn's magnetosphere with coordinate g
-svs:4143: elendi (5/10, visualization) Visualization of Saturn's magnetosphere with magnetic field lines, moo
-Görüntü adayları: 4 (cassini-finale, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 4
-Çözümlenemedi commons:Cassini's Grand Finale.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Video - Spinning Saturn - Cassini (51784196854).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Saturn ring spokes (captured by Cassini).ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (cassini-finale): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: dart
-Görüntü adayları: 36 (dart)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 6
-Süre uygun değil nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a: 5633 sn
-Süre uygun değil hubble:heic2212a: 3 sn
-Çözümlenen video: 4
-nasa:DART Recap Video: elendi (5/10, animation) A recap of NASA's DART spacecraft impact on asteroid Dimorphos
-svs:14322: kullanılır (7/10, visualization) The DART and OSIRIS-REx missions exploring and impacting asteroids
-svs:14215: elendi (4/10, visualization) Hubble observations and visualizations of the DART impact aftermath on
-hubble:heic2302a: elendi (7/10, footage) Hubble Space Telescope capturing debris expanding from the DART impact
-Görüntü adayları: 4 (dart, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 4
-Çözümlenemedi commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Dart impact replay stabilized.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Dart impact replay.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Orbital effect of DART's impact on Dimorphos.webm: HTTPError: 429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less d
-Çözümlenen video: 0
-Kullanılır kesit: 3 (29 sn temiz görüntü)
-Konu atlandı (dart): Yeterli temiz görüntü yok (3 kesit, 29 sn).
-→ Konu: sdo-sun
-Görüntü adayları: 92 (sdo-sun)
-Sıralanan aday: 12
 Çözümlenen video: 12
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (8/10, footage) Solar Dynamics Observatory imagery of solar flares and magnetic loops
-nasa:GSFC_20160426_SDO_m12224_SolarFlare: kullanılır (8/10, footage) NASA Solar Dynamics Observatory footage capturing a solar flare and ac
-nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) Solar Dynamics Observatory footage of a massive solar eruption and cor
-nasa:GSFC_20140911_SDO_m11651_Flare: kullanılır (9/10, footage) September 10, 2014 X1.6 solar flare captured by the Solar Dynamics Obs
-nasa:GSFC_20150501_SDO_m11864_Phoenix: kullanılır (9/10, footage) NASA Solar Dynamics Observatory capturing a dramatic prominence erupti
-Kullanılır kesit: 8 (172 sn temiz görüntü)
+svs:4619: elendi (1/10, visualization) Black title or coordinate screens showing lunar coordinates and scale 
+Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution orbital views and mosaic imagery of the lunar surface 
+nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) 3D orbital digital terrain visualization of the Lee Lincoln Scarp faul
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (7/10, visualization) NASA Lunar Reconnaissance Orbiter imagery and 3D terrain models of lun
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 10/13 kare elendi); atlandı
+nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (5/10, animation) NASA produced news video featuring an interview with scientist Thomas 
+nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (5/10, visualization) A produced NASA documentary video with scientist interviews explaining
+nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Scientific visualizations of the Moon's permanently shadowed regions m
+Kullanılır kesit: 5 (86 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 84.8/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 93.3/100 | whisper-large-v3
+Ses eşleştirme: 90.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 85.3/100 | whisper-large-v3
+Ses eşleştirme: 93.9/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (88.9 sn, 9 beat, 8 kesit)
-  kurgu 10/89 sn
-  kurgu 20/89 sn
-  kurgu 30/89 sn
-  kurgu 40/89 sn
-  kurgu 50/89 sn
-  kurgu 60/89 sn
-  kurgu 70/89 sn
-  kurgu 80/89 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/review.html
+→ Kurgu (100.7 sn, 9 beat, 5 kesit)
+  kurgu 10/101 sn
+  kurgu 20/101 sn
+  kurgu 30/101 sn
+  kurgu 40/101 sn
+  kurgu 50/101 sn
+  kurgu 60/101 sn
+  kurgu 70/101 sn
+  kurgu 80/101 sn
+  kurgu 90/101 sn
+  kurgu 100/101 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T200125426000Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A satellite captures the Sun every twelve seconds #Shorts
+Başlık: A NASA spacecraft has mapped nearly every metre of the Moon #Shorts
 Görünürlük: public
 
-Yükleme: %6
-Yükleme: %12
-Yükleme: %19
-Yükleme: %25
-Yükleme: %32
-Yükleme: %38
+Yükleme: %5
+Yükleme: %11
+Yükleme: %17
+Yükleme: %22
+Yükleme: %28
+Yükleme: %34
+Yükleme: %39
 Yükleme: %45
 Yükleme: %51
-Yükleme: %58
-Yükleme: %64
-Yükleme: %71
-Yükleme: %77
-Yükleme: %84
-Yükleme: %90
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=BxSkjBYGSns&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %56
+Yükleme: %62
+Yükleme: %68
+Yükleme: %74
+Yükleme: %79
+Yükleme: %85
+Yükleme: %91
+Yükleme: %96
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=9mSfUmlbct8&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T154517821544Z/video.mp4
-Boyut: 123.7 MB
-Açıklama uzunluğu: 315 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T200125426000Z/video.mp4
+Boyut: 140.4 MB
+Açıklama uzunluğu: 398 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 129717549. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 147256283. Maximum is 104857600.

@@ -3687,5 +3687,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "9mSfUmlbct8",
+    "platform": "youtube",
+    "run_id": "39315650166",
+    "published_at": "2026-10-19T20:27:06+00:00",
+    "event": {
+      "title": "The Moon Mapped in Detail",
+      "series": "NASA footage",
+      "issue": "moon-tour",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 158,
+      "duration": 100.7,
+      "words_per_minute": 94,
+      "hook": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, systematically photographing almost every square metre.",
+      "hook_words": 16,
+      "title": "A NASA spacecraft has mapped nearly every metre of the Moon",
+      "title_length": 59,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

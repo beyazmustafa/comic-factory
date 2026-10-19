@@ -1,0 +1,166 @@
+{
+  "title": "A NASA spacecraft has mapped nearly every metre of the Moon",
+  "description": "Since 2009, NASA's Lunar Reconnaissance Orbiter has gathered high-resolution imagery across the entire lunar surface. These precise maps reveal ancient impact basins, permanent polar shadows, and preserved footprints from human exploration.",
+  "hook_card": "The Moon Mapped in Detail",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c02",
+      "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, systematically photographing almost every square metre.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c00",
+      "narration": "From orbit, its cameras document the rugged lunar surface, capturing impact craters and sweeping rilles across the landscape.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "The Moon spans 3,474 km wide and orbits 384,400 km away, silently illuminated by the shifting sunlight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c01",
+      "narration": "Year after year, the Moon drifts steadily outward from Earth at a rate of 3.8 cm annually.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c00",
+      "narration": "Impact features dot the globe, including Tycho crater, which measures 86 km wide with a central peak about 2 km tall.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c03",
+      "narration": "The South Pole-Aitken basin is about 2,500 km across and 8 km deep, among the largest known impact craters.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "Across the rotating lunar surface, some polar craters have remained untouched by sunlight for billions of years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "Their shadowed floors are colder than minus 230 °C and hold reservoirs of water ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "With no wind or rain to sweep the surface, the astronauts' footprints will last for millions of years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, systematically photographing almost every square metre. From orbit, its cameras document the rugged lunar surface, capturing impact craters and sweeping rilles across the landscape. The Moon spans 3,474 km wide and orbits 384,400 km away, silently illuminated by the shifting sunlight. Year after year, the Moon drifts steadily outward from Earth at a rate of 3.8 cm annually. Impact features dot the globe, including Tycho crater, which measures 86 km wide with a central peak about 2 km tall. The South Pole-Aitken basin is about 2,500 km across and 8 km deep, among the largest known impact craters. Across the rotating lunar surface, some polar craters have remained untouched by sunlight for billions of years. Their shadowed floors are colder than minus 230 °C and hold reservoirs of water ice. With no wind or rain to sweep the surface, the astronauts' footprints will last for millions of years.",
+  "event": {
+    "id": "film_moon-tour_20261019T200125426000Z",
+    "title": "The Moon Mapped in Detail",
+    "series": "NASA footage",
+    "issue": "moon-tour",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "moon-tour",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+    ]
+  },
+  "scenario": "moon-tour",
+  "beats": [
+    {
+      "clip": "c02",
+      "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, systematically photographing almost every square metre.",
+      "label": "NASA · LRO · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "From orbit, its cameras document the rugged lunar surface, capturing impact craters and sweeping rilles across the landscape.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The Moon spans 3,474 km wide and orbits 384,400 km away, silently illuminated by the shifting sunlight.",
+      "label": "NASA · LRO · 2013",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Year after year, the Moon drifts steadily outward from Earth at a rate of 3.8 cm annually.",
+      "label": "NASA · LRO · 2011",
+      "callout": {
+        "value": "3.8 cm",
+        "label": "farther away every year"
+      }
+    },
+    {
+      "clip": "c00",
+      "narration": "Impact features dot the globe, including Tycho crater, which measures 86 km wide with a central peak about 2 km tall.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "The South Pole-Aitken basin is about 2,500 km across and 8 km deep, among the largest known impact craters.",
+      "label": "NASA · LRO · 2013",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Across the rotating lunar surface, some polar craters have remained untouched by sunlight for billions of years.",
+      "label": "NASA · LRO · 2013",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Their shadowed floors are colder than minus 230 °C and hold reservoirs of water ice.",
+      "label": "NASA · LRO · 2013",
+      "callout": {
+        "value": "-230 °C",
+        "label": "inside polar craters"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "With no wind or rain to sweep the surface, the astronauts' footprints will last for millions of years.",
+      "label": "NASA · LRO · 2019",
+      "callout": null
+    }
+  ],
+  "closing": "With no wind or rain, the astronauts' footprints will last for millions of years.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
