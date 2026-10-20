@@ -1,6 +1,6 @@
-run_id: 39432433748  attempt: 1  event: schedule
+run_id: 39475679185  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261020T134118095599Z/run.json
+--- data/runs/20261020T183352396710Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,19 +40,28 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39432433748",
+  "run_id": "39475679185",
   "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261020T134118095599Z/diagnostics/provider_events.json
+--- data/runs/20261020T183352396710Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:4143: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme hubble:heic2302a: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme hubble:heic2302a: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme hubble:heic2302a: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme hubble:heic2302a: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme hubble:heic2302a: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme hubble:heic2302a: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261020T134118095599Z/diagnostics/providers.json
+--- data/runs/20261020T183352396710Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -75,9 +84,9 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -171,66 +180,74 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261020T134118095599Z/audio/chunk_001/failures.json
+--- data/runs/20261020T183352396710Z/audio/chunk_001/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.7 sn); whisper-large-v3-turbo: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.7 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 18.6 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 18.6 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.0 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “This 570 kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.0 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.3 sn); whisper-large-v3-turbo: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.3 sn)"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, dare mighty things across the”, 18.5 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling DARE MIGHTY THINGS across the ”, 18.5 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling dare mighty things across the ”, 18.4 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling dare mighty things across the ”, 18.4 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, dare mighty things across the”, 18.4 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls its binary pattern spelling DARE MIGHTY THINGS across the s”, 18.4 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, DARE MIGHTY THINGS, across th”, 18.8 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling DARE MIGHTY THINGS across the ”, 18.8 sn)"
 ]
 --- studio.log (son 300 satır)
-→ Konu: cassini-finale
-Görüntü adayları: 44 (cassini-finale)
-Sıralanan aday: 7
-Çözümlenemedi svs:14162: ValueError: no usable rendition
-Çözümlenemedi svs:12735: ValueError: no usable rendition
-Çözümlenen video: 5
-Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: elendi (6/10, visualization) NASA produced documentary featurette about Cassini's infrared CIRS obs
-Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: elendi (7/10, visualization) NASA produced documentary about Cassini's CIRS instrument with present
-svs:4665: elendi (6/10, visualization) Scientific 3D visualization showing Saturn's magnetic field lines and 
-Görüntü değerlendirme svs:4143: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-svs:4143: elendi (4/10, visualization) 3D visualization of Saturn's magnetic field lines and moon orbits
-nasa:GSFC_20121025_Saturn_m11038_Storm: konu dışı (5/10, visualization) A science feature about Saturn's 2010 Great White Spot storm recorded 
-Görüntü adayları: 4 (cassini-finale, Commons)
-Sıralanan aday: 4
-Çözümlenemedi commons:Cassini's Grand Finale.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Video - Spinning Saturn - Cassini (51784196854).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Saturn ring spokes (captured by Cassini).ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (cassini-finale): Yeterli temiz görüntü yok (0 kesit, 0 sn).
 → Konu: dart
 Görüntü adayları: 36 (dart)
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 6
+Sıralanan aday: 7
 Süre uygun değil nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a: 5633 sn
 Süre uygun değil hubble:heic2212a: 3 sn
-Çözümlenen video: 4
+Çözümlenen video: 5
+Görüntü değerlendirme hubble:heic2302a: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme hubble:heic2302a: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme hubble:heic2302a: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme hubble:heic2302a: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme hubble:heic2302a: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme hubble:heic2302a: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 hubble:heic2302a: elendi (8/10, footage) Hubble Space Telescope time-lapse footage of the debris cloud and tail
 svs:14215: kullanılır (7/10, footage) Hubble Space Telescope observations of the DART impact aftermath and o
 svs:14215: üretilmiş program gibi (0 karede insan, 21/24 kare elendi); atlandı
-svs:14322: kullanılır (8/10, visualization) A cinematic visualization of the DART mission to Dimorphos and OSIRIS-
-nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675: kullanılır (7/10, footage) Launch of the DART spacecraft from Vandenberg Space Force Base, includ
-Kullanılır kesit: 6 (107 sn temiz görüntü)
+Görüntü değerlendirme nasa:DART Recap Video: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:DART Recap Video: elendi (5/10, animation) NASA recap video of the DART spacecraft mission targeting asteroid Dim
+nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675: elendi (4/10, footage) DART spacecraft launch and ascent views from Vandenberg Space Force Ba
+svs:14322: kullanılır (8/10, animation) Visualizations and spacecraft footage of asteroid missions DART and OS
+Görüntü adayları: 4 (dart, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 4
+Çözümlenemedi commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Dart impact replay stabilized.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Dart impact replay.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Orbital effect of DART's impact on Dimorphos.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 3 (31 sn temiz görüntü)
+Konu atlandı (dart): Yeterli temiz görüntü yok (3 kesit, 31 sn).
+→ Konu: perseverance-landing
+Görüntü adayları: 49 (perseverance-landing)
+Sıralanan aday: 6
+Çözümlenen video: 6
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Perseverance rover's onboard camera views during descent and landing o
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (8/10, footage) Perseverance rover landing on Mars captured by onboard cameras
+nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: kullanılır (8/10, footage) First 360-degree view of the landing site captured by NASA's Persevera
+nasa:JPL-20210218-M2020f-0003-Perseverance Landing Wrap v2: kullanılır (8/10, animation) NASA's Perseverance rover landing sequence on Mars and first camera vi
+nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Animations depicting key events during the entry, descent, and landing
+Kullanılır kesit: 8 (145 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses eşleştirme: 93.7/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 76.9/100 | whisper-large-v3
-Ses eşleştirme: 76.9/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 2
-Ses eşleştirme: 76.9/100 | whisper-large-v3
-Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 3
-Ses eşleştirme: 76.9/100 | whisper-large-v3
-Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
 Ses bölümü 2, deneme 4
-Ses eşleştirme: 76.9/100 | whisper-large-v3
-Ses eşleştirme: 76.9/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.5/100 | whisper-large-v3
+Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
 HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
