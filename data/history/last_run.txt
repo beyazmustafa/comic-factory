@@ -1,11 +1,11 @@
-run_id: 39315650166  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261019T200125426000Z/run.json
+run_id: 39432433748  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261020T134118095599Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,39 +40,19 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39315650166",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "34db3f9569d72c91f66de610d1aed7a34f6728f16d6923680b9dfc6147d45989",
-  "metadata_sha256": "b203ca045b06f49dbb575c56068ae5acfaed1668a160721ee146842d992eb715",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 20,
-  "duration": 100.74,
-  "voice": "Charon",
-  "event": {
-    "id": "film_moon-tour_20261019T200125426000Z",
-    "title": "The Moon Mapped in Detail",
-    "series": "NASA footage",
-    "issue": "moon-tour",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "moon-tour",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
-      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
-      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
-    ]
-  },
-  "localized": []
+  "run_id": "39432433748",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261019T200125426000Z/diagnostics/provider_events.json
+--- data/runs/20261020T134118095599Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:4143: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261019T200125426000Z/diagnostics/providers.json
+--- data/runs/20261020T134118095599Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -95,9 +75,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -191,76 +171,66 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261020T134118095599Z/audio/chunk_001/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.7 sn); whisper-large-v3-turbo: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.7 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 18.6 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 18.6 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.0 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “This 570 kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.0 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.3 sn); whisper-large-v3-turbo: 76.9/100 (duyulan: “This 570-kilogram spacecraft separates from its rocket to begin a solo journey through spa”, 17.3 sn)"
+]
 --- studio.log (son 300 satır)
-→ Konu: moon-tour
-Görüntü adayları: 75 (moon-tour)
-Sıralanan aday: 12
-Çözümlenen video: 12
-svs:4619: elendi (1/10, visualization) Black title or coordinate screens showing lunar coordinates and scale 
-Görüntü değerlendirme nasa:GSFC_20110315_LRO_m10146_PDS: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution orbital views and mosaic imagery of the lunar surface 
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) 3D orbital digital terrain visualization of the Lee Lincoln Scarp faul
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (7/10, visualization) NASA Lunar Reconnaissance Orbiter imagery and 3D terrain models of lun
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 10/13 kare elendi); atlandı
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (5/10, animation) NASA produced news video featuring an interview with scientist Thomas 
-nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (5/10, visualization) A produced NASA documentary video with scientist interviews explaining
-nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Scientific visualizations of the Moon's permanently shadowed regions m
-Kullanılır kesit: 5 (86 sn temiz görüntü)
+→ Konu: cassini-finale
+Görüntü adayları: 44 (cassini-finale)
+Sıralanan aday: 7
+Çözümlenemedi svs:14162: ValueError: no usable rendition
+Çözümlenemedi svs:12735: ValueError: no usable rendition
+Çözümlenen video: 5
+Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: elendi (6/10, visualization) NASA produced documentary featurette about Cassini's infrared CIRS obs
+Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: elendi (7/10, visualization) NASA produced documentary about Cassini's CIRS instrument with present
+svs:4665: elendi (6/10, visualization) Scientific 3D visualization showing Saturn's magnetic field lines and 
+Görüntü değerlendirme svs:4143: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+svs:4143: elendi (4/10, visualization) 3D visualization of Saturn's magnetic field lines and moon orbits
+nasa:GSFC_20121025_Saturn_m11038_Storm: konu dışı (5/10, visualization) A science feature about Saturn's 2010 Great White Spot storm recorded 
+Görüntü adayları: 4 (cassini-finale, Commons)
+Sıralanan aday: 4
+Çözümlenemedi commons:Cassini's Grand Finale.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Video - Spinning Saturn - Cassini (51784196854).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Saturn ring spokes (captured by Cassini).ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Cassini Reveals New Ring Quirks, Shadows During Saturn Equinox.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (cassini-finale): Yeterli temiz görüntü yok (0 kesit, 0 sn).
+→ Konu: dart
+Görüntü adayları: 36 (dart)
+Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 6
+Süre uygun değil nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a: 5633 sn
+Süre uygun değil hubble:heic2212a: 3 sn
+Çözümlenen video: 4
+hubble:heic2302a: elendi (8/10, footage) Hubble Space Telescope time-lapse footage of the debris cloud and tail
+svs:14215: kullanılır (7/10, footage) Hubble Space Telescope observations of the DART impact aftermath and o
+svs:14215: üretilmiş program gibi (0 karede insan, 21/24 kare elendi); atlandı
+svs:14322: kullanılır (8/10, visualization) A cinematic visualization of the DART mission to Dimorphos and OSIRIS-
+nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675: kullanılır (7/10, footage) Launch of the DART spacecraft from Vandenberg Space Force Base, includ
+Kullanılır kesit: 6 (107 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses eşleştirme: 97.1/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 90.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 93.9/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (100.7 sn, 9 beat, 5 kesit)
-  kurgu 10/101 sn
-  kurgu 20/101 sn
-  kurgu 30/101 sn
-  kurgu 40/101 sn
-  kurgu 50/101 sn
-  kurgu 60/101 sn
-  kurgu 70/101 sn
-  kurgu 80/101 sn
-  kurgu 90/101 sn
-  kurgu 100/101 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T200125426000Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: A NASA spacecraft has mapped nearly every metre of the Moon #Shorts
-Görünürlük: public
-
-Yükleme: %5
-Yükleme: %11
-Yükleme: %17
-Yükleme: %22
-Yükleme: %28
-Yükleme: %34
-Yükleme: %39
-Yükleme: %45
-Yükleme: %51
-Yükleme: %56
-Yükleme: %62
-Yükleme: %68
-Yükleme: %74
-Yükleme: %79
-Yükleme: %85
-Yükleme: %91
-Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=9mSfUmlbct8&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261019T200125426000Z/video.mp4
-Boyut: 140.4 MB
-Açıklama uzunluğu: 398 karakter
-Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 147256283. Maximum is 104857600.
+Ses eşleştirme: 76.9/100 | whisper-large-v3
+Ses eşleştirme: 76.9/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 76.9/100 | whisper-large-v3
+Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 3
+Ses eşleştirme: 76.9/100 | whisper-large-v3
+Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 4
+Ses eşleştirme: 76.9/100 | whisper-large-v3
+Ses eşleştirme: 76.9/100 | whisper-large-v3-turbo
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
