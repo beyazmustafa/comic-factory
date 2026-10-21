@@ -3769,5 +3769,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "li1k5kEJ_Vs",
+    "platform": "youtube",
+    "run_id": "39655666490",
+    "published_at": "2026-10-21T19:11:37+00:00",
+    "event": {
+      "title": "Filming a landing on another world",
+      "series": "NASA footage",
+      "issue": "perseverance-landing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 134,
+      "duration": 70.5,
+      "words_per_minute": 114,
+      "hook": "Cameras on the spacecraft filmed the landing of this rover on the surface of Mars.",
+      "hook_words": 15,
+      "title": "How a rover filmed its own landing on Mars",
+      "title_length": 42,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

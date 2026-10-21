@@ -1,0 +1,308 @@
+{
+  "duration": 70.49,
+  "handle": "@Facctsaboutspace",
+  "hook": "Filming a landing on another world",
+  "kicker": "Real footage · NASA",
+  "closing": "The rover landed in Jezero Crater on 18 February 2021.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 6.593,
+      "src_out": 14.607,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 7.68,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 17.478,
+      "src_out": 23.522,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 7.68,
+      "t1": 13.39,
+      "label": "NASA · MARS 2020 · 2020",
+      "callout": {
+        "value": "20,000 km/h",
+        "label": "speed at entry"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 13.39,
+      "t1": 19.89,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.133,
+      "src_out": 15.867,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.89,
+      "t1": 25.29,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.688,
+      "src_out": 10.612,
+      "speed": 1.0,
+      "focus": [
+        0.47,
+        0.45
+      ],
+      "active": [
+        0,
+        30,
+        1920,
+        900
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 25.29,
+      "t1": 33.88,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.078,
+      "src_out": 8.992,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 33.88,
+      "t1": 42.46,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 9.07,
+      "speed": 0.993,
+      "focus": [
+        0.78,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 42.46,
+      "t1": 51.26,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 6.5,
+      "src_out": 15.0,
+      "speed": 0.917,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 51.26,
+      "t1": 60.2,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.5,
+      "src_out": 3.5,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.2,
+      "t1": 63.617,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T184701051220Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.932,
+      "src_out": 8.138,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 63.617,
+      "t1": 70.49,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
