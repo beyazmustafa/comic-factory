@@ -1,0 +1,549 @@
+{
+  "duration": 87.31,
+  "handle": "@Facctsaboutspace",
+  "hook": "We hit an asteroid on purpose.",
+  "kicker": "Real footage · NASA",
+  "closing": "The asteroid's orbit is permanently changed.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c03",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.907,
+      "src_out": 16.093,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.852,
+      "label": "NASA · DART · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c04",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.439,
+      "src_out": 15.561,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.852,
+      "t1": 10.64,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c05",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.786,
+      "src_out": 10.184,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        172,
+        104,
+        1108,
+        616
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.64,
+      "t1": 15.706,
+      "label": "NASA · DART · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 19.661,
+      "src_out": 24.139,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.706,
+      "t1": 19.85,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.752,
+      "src_out": 17.048,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 19.85,
+      "t1": 25.812,
+      "label": "NASA · VISUALIZATION · 2023",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c05",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 15.844,
+      "src_out": 21.056,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        172,
+        104,
+        1108,
+        616
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 25.812,
+      "t1": 30.69,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c01",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.956,
+      "src_out": 6.244,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 30.69,
+      "t1": 35.645,
+      "label": "NASA · VISUALIZATION · 2023",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c05",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 21.9,
+      "src_out": 26.0,
+      "speed": 0.934,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        172,
+        104,
+        1108,
+        616
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 35.645,
+      "t1": 39.7,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 19.543,
+      "src_out": 25.157,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        100,
+        1920,
+        980
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 39.7,
+      "t1": 44.98,
+      "label": "NASA · DART · 2021",
+      "callout": {
+        "value": "22,000 km/h",
+        "label": "impact speed"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 5.158,
+      "src_out": 9.812,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        172,
+        104,
+        1108,
+        616
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 44.98,
+      "t1": 49.3,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 7.77,
+      "src_out": 13.6,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        100,
+        1920,
+        980
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 49.3,
+      "t1": 56.254,
+      "label": "NASA · VISUALIZATION · 2023",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 15.48,
+      "src_out": 16.82,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        100,
+        1920,
+        980
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.254,
+      "t1": 57.26,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.8,
+      "src_out": 7.77,
+      "speed": 0.925,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        100,
+        1920,
+        980
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 57.26,
+      "t1": 62.298,
+      "label": "NASA · VISUALIZATION · 2023",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.672,
+      "src_out": 16.128,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 62.298,
+      "t1": 66.42,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c02",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 2.8,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        100,
+        1920,
+        980
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 66.42,
+      "t1": 69.587,
+      "label": "NASA · VISUALIZATION · 2023",
+      "callout": {
+        "value": "32 min",
+        "label": "orbit shortened"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c01",
+      "asset": "svs:14322",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/svs_14322/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 18.797,
+      "src_out": 25.003,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 69.587,
+      "t1": 75.46,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c04",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 75.46,
+      "t1": 81.96,
+      "label": "NASA · DART · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/footage/nasa_ksc_20211123_mh_ajw01_0001_spacex_dart_isolated_launch_/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.158,
+      "src_out": 15.842,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 81.96,
+      "t1": 87.31,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

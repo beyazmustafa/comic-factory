@@ -1,11 +1,11 @@
-run_id: 39475679185  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261020T183352396710Z/run.json
+run_id: 39612469063  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261021T135757576794Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,28 +40,43 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "39475679185",
-  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "39612469063",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "641bda46589934aadc45f2c7858a60a5b5803fb4399cbf8173dc7356be1766ba",
+  "metadata_sha256": "3688bbfff8fca7a5033d0b2f7e3a828c1709cf8f9502a168323cc5cbf1086572",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 32,
+  "duration": 87.31,
+  "voice": "Charon",
+  "event": {
+    "id": "film_dart_20261021T135757576794Z",
+    "title": "We hit an asteroid on purpose.",
+    "series": "NASA footage",
+    "issue": "dart",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "dart",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+      "https://svs.gsfc.nasa.gov/14322"
+    ]
+  },
+  "localized": []
 }
---- data/runs/20261020T183352396710Z/diagnostics/provider_events.json
+--- data/runs/20261021T135757576794Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme hubble:heic2302a: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme hubble:heic2302a: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme hubble:heic2302a: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme hubble:heic2302a: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme hubble:heic2302a: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme hubble:heic2302a: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:DART Recap Video: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:14215: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261020T183352396710Z/diagnostics/providers.json
+--- data/runs/20261021T135757576794Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -84,9 +99,9 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
+    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-120b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -180,74 +195,79 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261020T183352396710Z/audio/chunk_001/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, dare mighty things across the”, 18.5 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling DARE MIGHTY THINGS across the ”, 18.5 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling dare mighty things across the ”, 18.4 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling dare mighty things across the ”, 18.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, dare mighty things across the”, 18.4 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls its binary pattern spelling DARE MIGHTY THINGS across the s”, 18.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling, DARE MIGHTY THINGS, across th”, 18.8 sn); whisper-large-v3-turbo: 77.5/100 (duyulan: “A 21.5-meter parachute unfurls, its binary pattern spelling DARE MIGHTY THINGS across the ”, 18.8 sn)"
-]
 --- studio.log (son 300 satır)
 → Konu: dart
 Görüntü adayları: 36 (dart)
-Sıralanan aday: 7
-Süre uygun değil nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a: 5633 sn
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Sıralanan aday: 6
 Süre uygun değil hubble:heic2212a: 3 sn
 Çözümlenen video: 5
-Görüntü değerlendirme hubble:heic2302a: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme hubble:heic2302a: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme hubble:heic2302a: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme hubble:heic2302a: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme hubble:heic2302a: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme hubble:heic2302a: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-hubble:heic2302a: elendi (8/10, footage) Hubble Space Telescope time-lapse footage of the debris cloud and tail
-svs:14215: kullanılır (7/10, footage) Hubble Space Telescope observations of the DART impact aftermath and o
-svs:14215: üretilmiş program gibi (0 karede insan, 21/24 kare elendi); atlandı
-Görüntü değerlendirme nasa:DART Recap Video: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:DART Recap Video: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:DART Recap Video: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:DART Recap Video: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:DART Recap Video: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:DART Recap Video: elendi (5/10, animation) NASA recap video of the DART spacecraft mission targeting asteroid Dim
-nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675: elendi (4/10, footage) DART spacecraft launch and ascent views from Vandenberg Space Force Ba
-svs:14322: kullanılır (8/10, animation) Visualizations and spacecraft footage of asteroid missions DART and OS
-Görüntü adayları: 4 (dart, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 4
-Çözümlenemedi commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Dart impact replay stabilized.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Dart impact replay.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Orbital effect of DART's impact on Dimorphos.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 3 (31 sn temiz görüntü)
-Konu atlandı (dart): Yeterli temiz görüntü yok (3 kesit, 31 sn).
-→ Konu: perseverance-landing
-Görüntü adayları: 49 (perseverance-landing)
-Sıralanan aday: 6
-Çözümlenen video: 6
-nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Perseverance rover's onboard camera views during descent and landing o
-nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (8/10, footage) Perseverance rover landing on Mars captured by onboard cameras
-nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: kullanılır (8/10, footage) First 360-degree view of the landing site captured by NASA's Persevera
-nasa:JPL-20210218-M2020f-0003-Perseverance Landing Wrap v2: kullanılır (8/10, animation) NASA's Perseverance rover landing sequence on Mars and first camera vi
-nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Animations depicting key events during the entry, descent, and landing
-Kullanılır kesit: 8 (145 sn temiz görüntü)
+hubble:heic2302a: kullanılır (8/10, footage) Hubble Space Telescope observations of debris expanding from the DART 
+hubble:heic2302a: üretilmiş program gibi (0 karede insan, 7/8 kare elendi); atlandı
+Görüntü değerlendirme svs:14215: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+svs:14215: kullanılır (6/10, visualization) Hubble Space Telescope observations and animations depicting NASA's DA
+svs:14215: üretilmiş program gibi (0 karede insan, 22/24 kare elendi); atlandı
+svs:14322: kullanılır (8/10, animation) Visualizations and animations of the DART mission to Didymos/Dimorphos
+Görüntü değerlendirme nasa:DART Recap Video: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:DART Recap Video: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:DART Recap Video: elendi (7/10, animation) A recap of the DART mission including launch, asteroid approach, and m
+nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675: kullanılır (7/10, footage) Raw launch footage of the DART mission from Vandenberg Space Force Bas
+Kullanılır kesit: 6 (107 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 93.7/100 | whisper-large-v3
+Ses eşleştirme: 85.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 77.5/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 2
-Ses eşleştirme: 77.5/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 3
-Ses eşleştirme: 77.5/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
-Ses bölümü 2, deneme 4
-Ses eşleştirme: 77.5/100 | whisper-large-v3
-Ses eşleştirme: 77.5/100 | whisper-large-v3-turbo
-HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 82.7/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 94.2/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 90.9/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (87.3 sn, 9 beat, 6 kesit)
+  kurgu 10/87 sn
+  kurgu 20/87 sn
+  kurgu 30/87 sn
+  kurgu 40/87 sn
+  kurgu 50/87 sn
+  kurgu 60/87 sn
+  kurgu 70/87 sn
+  kurgu 80/87 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: The first time humanity moved an asteroid #Shorts
+Görünürlük: public
+
+Yükleme: %8
+Yükleme: %16
+Yükleme: %24
+Yükleme: %32
+Yükleme: %40
+Yükleme: %48
+Yükleme: %56
+Yükleme: %64
+Yükleme: %72
+Yükleme: %80
+Yükleme: %88
+Yükleme: %96
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=EENhIN-7lnw&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261021T135757576794Z/video.mp4
+Boyut: 99.1 MB
+Açıklama uzunluğu: 295 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Cloudinary: geçici video silindi (ok).
+instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Wednesday, 21-Oct-26 07:19:53 PDT. (code=190, subcode=0)

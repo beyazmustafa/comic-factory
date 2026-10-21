@@ -1,0 +1,184 @@
+{
+  "script": {
+    "title": "The first time humanity moved an asteroid",
+    "description": "In September 2022, NASA crashed a spacecraft into a moonlet to test planetary defense. The impact successfully altered the orbit of the asteroid Dimorphos.",
+    "hook_card": "We hit an asteroid on purpose.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c03",
+        "narration": "A spacecraft travels eleven million kilometres from Earth, designed for a mission that ends in a deliberate collision.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c04",
+        "narration": "The five hundred and seventy kilogram DART craft begins its journey to test humanity's first asteroid deflection system.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c00",
+        "narration": "The target is Dimorphos, a moonlet one hundred and sixty metres wide orbiting a larger asteroid called Didymos.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c01",
+        "narration": "On twenty-six September twenty-twenty-two, the craft steers itself toward the smaller rock for a high-speed kinetic impact.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c05",
+        "narration": "The spacecraft strikes the surface of Dimorphos at a speed of approximately twenty-two thousand kilometres per hour.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "The impact is so rapid that the final full image is captured just two seconds before the collision.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c00",
+        "narration": "An Italian satellite photographed the resulting debris plume, which formed a tail thousands of kilometres in length.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c01",
+        "narration": "While seventy-three seconds would define success, the impact shortened the moonlet's orbital period by thirty-two minutes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c04",
+        "narration": "This mission marks the first time humanity has ever intentionally changed the motion of a celestial body.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "A spacecraft travels eleven million kilometres from Earth, designed for a mission that ends in a deliberate collision. The five hundred and seventy kilogram DART craft begins its journey to test humanity's first asteroid deflection system. The target is Dimorphos, a moonlet one hundred and sixty metres wide orbiting a larger asteroid called Didymos. On twenty-six September twenty-twenty-two, the craft steers itself toward the smaller rock for a high-speed kinetic impact. The spacecraft strikes the surface of Dimorphos at a speed of approximately twenty-two thousand kilometres per hour. The impact is so rapid that the final full image is captured just two seconds before the collision. An Italian satellite photographed the resulting debris plume, which formed a tail thousands of kilometres in length. While seventy-three seconds would define success, the impact shortened the moonlet's orbital period by thirty-two minutes. This mission marks the first time humanity has ever intentionally changed the motion of a celestial body.",
+    "event": {
+      "id": "film_dart_20261021T135757576794Z",
+      "title": "We hit an asteroid on purpose.",
+      "series": "NASA footage",
+      "issue": "dart",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "dart",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+        "https://svs.gsfc.nasa.gov/14322"
+      ]
+    },
+    "scenario": "dart",
+    "beats": [
+      {
+        "clip": "c03",
+        "narration": "A spacecraft travels eleven million kilometres from Earth, designed for a mission that ends in a deliberate collision.",
+        "label": "NASA · DART · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The five hundred and seventy kilogram DART craft begins its journey to test humanity's first asteroid deflection system.",
+        "label": "NASA · DART · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The target is Dimorphos, a moonlet one hundred and sixty metres wide orbiting a larger asteroid called Didymos.",
+        "label": "NASA · VISUALIZATION · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "On twenty-six September twenty-twenty-two, the craft steers itself toward the smaller rock for a high-speed kinetic impact.",
+        "label": "NASA · VISUALIZATION · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "The spacecraft strikes the surface of Dimorphos at a speed of approximately twenty-two thousand kilometres per hour.",
+        "label": "NASA · DART · 2021",
+        "callout": {
+          "value": "22,000 km/h",
+          "label": "impact speed"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "The impact is so rapid that the final full image is captured just two seconds before the collision.",
+        "label": "NASA · VISUALIZATION · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "An Italian satellite photographed the resulting debris plume, which formed a tail thousands of kilometres in length.",
+        "label": "NASA · VISUALIZATION · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "While seventy-three seconds would define success, the impact shortened the moonlet's orbital period by thirty-two minutes.",
+        "label": "NASA · VISUALIZATION · 2023",
+        "callout": {
+          "value": "32 min",
+          "label": "orbit shortened"
+        }
+      },
+      {
+        "clip": "c04",
+        "narration": "This mission marks the first time humanity has ever intentionally changed the motion of a celestial body.",
+        "label": "NASA · DART · 2021",
+        "callout": null
+      }
+    ],
+    "closing": "The asteroid's orbit is permanently changed.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In September 2022, NASA crashed a spacecraft into a moonlet to test planetary defense. The impact successfully altered the orbit of the asteroid Dimorphos.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: {'Produced by': [{'name': 'James Tralie', 'employer': 'ADNET Systems, Inc.'}], ' — Cosmic Cycles 6: Travelers (DART and OSIRIS-REx) (https://svs.gsfc.nasa.gov/14322); KSC — DART Isolated Launch Views (https://images.nasa.gov/details/KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The first time humanity moved an asteroid\n\nIn September 2022, NASA crashed a spacecraft into a moonlet to test planetary defense. The impact successfully altered the orbit of the asteroid Dimorphos.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

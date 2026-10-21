@@ -3728,5 +3728,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "EENhIN-7lnw",
+    "platform": "youtube",
+    "run_id": "39612469063",
+    "published_at": "2026-10-21T14:19:39+00:00",
+    "event": {
+      "title": "We hit an asteroid on purpose.",
+      "series": "NASA footage",
+      "issue": "dart",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 156,
+      "duration": 87.3,
+      "words_per_minute": 107,
+      "hook": "A spacecraft travels eleven million kilometres from Earth, designed for a mission that ends in a deliberate collision.",
+      "hook_words": 18,
+      "title": "The first time humanity moved an asteroid",
+      "title_length": 41,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
