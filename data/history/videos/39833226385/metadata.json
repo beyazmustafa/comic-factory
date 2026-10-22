@@ -1,0 +1,184 @@
+{
+  "script": {
+    "title": "Europa's Hidden Ocean and the Clipper Mission",
+    "description": "Europa hides a salty ocean beneath thick ice, potentially holding twice Earth's water. The Europa Clipper will explore it with dozens of close flybys.",
+    "hook_card": "An ocean under the ice.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c05",
+        "narration": "This frozen moon may hold about twice the water of all Earth's oceans.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c06",
+        "narration": "Europa Clipper lifted off on fourteen October 2024, the largest NASA planetary spacecraft ever built.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "Its solar arrays span about thirty metres, capturing sunlight for the long journey to Jupiter.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c00",
+        "narration": "Europa's surface is cracked water ice, streaked with reddish lines across a moon slightly smaller than ours.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c03",
+        "narration": "Beneath fifteen to twenty‑five kilometres of ice, a salty ocean stays liquid, kept warm by Jupiter's tidal flexing.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c04",
+        "narration": "Juno flew three hundred fifty kilometres above Europa in September 2022, photographing its icy surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c02",
+        "narration": "When it arrives in 2030, the Clipper will perform forty‑nine close flybys, some as low as twenty‑five kilometres.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c07",
+        "narration": "The launch vehicle lifted the spacecraft beyond Earth's gravity, beginning its journey toward the icy world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c05",
+        "narration": "Europa may hold about twice the water of all Earth's oceans, a remarkable reservoir beneath its ice.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This frozen moon may hold about twice the water of all Earth's oceans. Europa Clipper lifted off on fourteen October 2024, the largest NASA planetary spacecraft ever built. Its solar arrays span about thirty metres, capturing sunlight for the long journey to Jupiter. Europa's surface is cracked water ice, streaked with reddish lines across a moon slightly smaller than ours. Beneath fifteen to twenty‑five kilometres of ice, a salty ocean stays liquid, kept warm by Jupiter's tidal flexing. Juno flew three hundred fifty kilometres above Europa in September 2022, photographing its icy surface. When it arrives in 2030, the Clipper will perform forty‑nine close flybys, some as low as twenty‑five kilometres. The launch vehicle lifted the spacecraft beyond Earth's gravity, beginning its journey toward the icy world. Europa may hold about twice the water of all Earth's oceans, a remarkable reservoir beneath its ice.",
+    "event": {
+      "id": "film_europa_20261022T184004965931Z",
+      "title": "An ocean under the ice.",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "europa",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://esahubble.org/videos/heic1322a/",
+        "https://esahubble.org/videos/heic1322b/",
+        "https://esahubble.org/videos/heic1504a/",
+        "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+        "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
+      ]
+    },
+    "scenario": "europa",
+    "beats": [
+      {
+        "clip": "c05",
+        "narration": "This frozen moon may hold about twice the water of all Earth's oceans.",
+        "label": "NASA · JUPITER · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "Europa Clipper lifted off on fourteen October 2024, the largest NASA planetary spacecraft ever built.",
+        "label": "NASA · LAUNCH · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Its solar arrays span about thirty metres, capturing sunlight for the long journey to Jupiter.",
+        "label": "NASA · CLIPPER · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Europa's surface is cracked water ice, streaked with reddish lines across a moon slightly smaller than ours.",
+        "label": "NASA · EUROPA · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Beneath fifteen to twenty‑five kilometres of ice, a salty ocean stays liquid, kept warm by Jupiter's tidal flexing.",
+        "label": "NASA · TIDES · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Juno flew three hundred fifty kilometres above Europa in September 2022, photographing its icy surface.",
+        "label": "NASA · JUNO · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "When it arrives in 2030, the Clipper will perform forty‑nine close flybys, some as low as twenty‑five kilometres.",
+        "label": "NASA · CLIPPER · 2030",
+        "callout": {
+          "value": "49",
+          "label": "flybys planned"
+        }
+      },
+      {
+        "clip": "c07",
+        "narration": "The launch vehicle lifted the spacecraft beyond Earth's gravity, beginning its journey toward the icy world.",
+        "label": "SpaceX · LAUNCH · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Europa may hold about twice the water of all Earth's oceans, a remarkable reservoir beneath its ice.",
+        "label": "NASA · EUROPA · 2024",
+        "callout": null
+      }
+    ],
+    "closing": "Europa's hidden ocean waits for humanity's next great explorer.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Europa hides a salty ocean beneath thick ice, potentially holding twice Earth's water. The Europa Clipper will explore it with dozens of close flybys.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — NASA’s Europa Clipper Mission Animations (https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations); NASA, ESA, and M. Kornmesser Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne, — Flying past Europa’s plumes (artist’s impression) (https://esahubble.org/videos/heic1322b/); NASA, ESA, and M. Kornmesser. Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne — Illustrated fly-by of Europa's plumes (artist's impression) (https://esahubble.org/videos/heic1322a/); NASA , ESA , Hubble Heritage Team — Time-lapse of Jupiter’s three moon transit (https://esahubble.org/videos/heic1504a/); KSC — NASA'S SpaceX Europa Clipper Isolated Launch Views (https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336)\nLicences: CC BY 4.0, public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "Europa's Hidden Ocean and the Clipper Mission\n\nEuropa hides a salty ocean beneath thick ice, potentially holding twice Earth's water. The Europa Clipper will explore it with dozens of close flybys.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

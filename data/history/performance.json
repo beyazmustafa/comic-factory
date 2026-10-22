@@ -3810,5 +3810,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "kU8oKKzjUl4",
+    "platform": "youtube",
+    "run_id": "39833226385",
+    "published_at": "2026-10-22T18:58:10+00:00",
+    "event": {
+      "title": "An ocean under the ice.",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 144,
+      "duration": 84.9,
+      "words_per_minute": 102,
+      "hook": "This frozen moon may hold about twice the water of all Earth's oceans.",
+      "hook_words": 13,
+      "title": "Europa's Hidden Ocean and the Clipper Mission",
+      "title_length": 45,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
