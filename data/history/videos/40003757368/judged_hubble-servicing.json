@@ -1,0 +1,593 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+   "title": "HST Out and Around",
+   "date": "2008-05-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+   "title": "HST Fly-By",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_BOX_BTY_001",
+   "title": "Fine Guidance Sensor Installation EVA Unpacking New Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_Remove_BTY_003",
+   "title": "Fine Guidance Sensor Installation EVA Removal of Old Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10328_FGS_Install_BTY_001",
+   "title": "Fine Guidance Sensor Installation EVA Installing New Box",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+   "title": "Slow Look at HST 1",
+   "date": "2008-05-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+   "title": "Slow Look at HST 2",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_BTY_002",
+   "title": "HST SM4 Hubble Deploy Released Clip 2",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_BTY_008",
+   "title": "HST SM4 Hubble Deploy Released",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Aperture_BTY_005",
+   "title": "HST SM4 Hubble Deploy Release Apature",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Revers_007",
+   "title": "HST SM4 Hubble Deploy On Robotic Arm",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10235_Release_Fire_006",
+   "title": "HST SM4 Hubble Deploy Released from Arm",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10237_Close_Door",
+   "title": "HST SM4 — Astronauts Close HST Doors for Last Time",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Light_Dark_BTY_007",
+   "title": "HST SM4 Battery Module Replacement EVA Zoom Out",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Door_Close_BTY",
+   "title": "HST SM4 Battery Module Replacement EVA Closing Door",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Door_Open_BTY_005",
+   "title": "HST SM4 Battery Module Replacement EVA Door Opening",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Fly_BTY_016",
+   "title": "HST SM4 Battery Module Replacement EVA Fly In",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10231_BATTERY_Cable_Remove_BTY",
+   "title": "HST SM4 Battery Module Replacement EVA Cable Removal",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10217_Zoom_Out",
+   "title": "HST Zoom-Way-Out",
+   "date": "2008-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_PowerSupply",
+   "title": "HST SM4 ACS Power Supply",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_RemoveCard_B",
+   "title": "HST SM4 ACS Card Removal 2",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_CEPR_Replace",
+   "title": "HST SM4 ACS CEPR Replace",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_PowerConnect",
+   "title": "HST SM4 ACS Power Connect",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_Open_Door",
+   "title": "HST SM4 ACS Opening Door",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20080822_HST_m10229_ACS_RemoveCard",
+   "title": "HST SM4 ACS CEPR Removal of Card",
+   "date": "2008-08-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_062708_ssm",
+   "title": "KSC-08-S-00054",
+   "date": "2008-06-27",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20394",
+   "title": "Habitable Worlds Observatory (HWO) Animations and Stills",
+   "date": "2024-11-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20395",
+   "title": "Habitable Worlds Observatory Additional Spacecraft Designs",
+   "date": "2024-11-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15102",
+   "title": "Dying Star Creates Brand New Planet",
+   "date": "2026-10-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "date": "2026-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15090",
+   "title": "Flash Talk: Roman Spacecraft Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15091",
+   "title": "Flash Talk: Roman Science Overview",
+   "date": "2026-09-04",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15080",
+   "title": "Roman: Go For Launch",
+   "date": "2026-08-28",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15072",
+   "title": "Roman and Hubble Space Telescope Mirror Comparison Turntables",
+   "date": "2026-08-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15070",
+   "title": "Roman and Hubble Scale Graphic with Andromeda Galaxy and Moon",
+   "date": "2026-07-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15050",
+   "title": "Ancient Galaxy Amazes Scientists",
+   "date": "2026-06-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14983",
+   "title": "“Cosmic Echoes” Audio Activation",
+   "date": "2026-05-08",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0907b",
+   "title": "Space Shuttle Atlantis with Hubble",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1808b",
+   "title": "The centre of the Lagoon Nebula over time",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0618a",
+   "title": "New Hubble Servicing Mission to upgrade instruments",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0202b",
+   "title": "Capturing Hubble with the robotic arm",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:potw2514a",
+   "title": "Pan: Kohoutek 4-55",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic0202a",
+   "title": "Positioning the Space Shuttle before the capture",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1608c",
+   "title": "Pan across the Bubble Nebula",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:mountain-neb_4kultrahd",
+   "title": "Mystic Mountain",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2408b",
+   "title": "Pan: Little Dumbbell Nebula (M76)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hubble_15_full_movie",
+   "title": "Hubble - 15 years of discovery",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:ann1515a",
+   "title": "Winner of the 25 and under category — Hubble's Universe",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hst15_black_hole",
+   "title": "Black hole (artist's impression)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:hst15_light_speed",
+   "title": "Light speed animation",
+   "date": "",
+   "source": "hubble"
+  }
+ ],
+ "ranked": [
+  "nasa:GSFC_20080519_HST_m10212_OutNaround",
+  "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+  "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+  "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+  "nasa:GSFC_20080520_HST_m10237_Close_Door",
+  "hubble:heic0907b",
+  "hubble:heic0202b",
+  "hubble:heic0202a",
+  "hubble:heic1608c",
+  "hubble:mountain-neb_4kultrahd",
+  "hubble:heic1808b",
+  "hubble:heic2408b"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+   "title": "HST Out and Around",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Computer animation showing the Hubble Space Telescope orbiting Earth in its post-servicing mission 3B configuration",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.55,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Hubble Space Telescope orbiting above Earth with solar arrays deployed",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+   "title": "HST Fly-By",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "3D computer animation of the Hubble Space Telescope fly-by in orbit around Earth",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Animation of Hubble Space Telescope flying past camera above Earth",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+   "title": "Slow Look at HST 1",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Slow close-up shot of the Hubble Space Telescope in orbit over Earth",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.45
+     ],
+     "width": 0.6,
+     "shows": "The Hubble Space Telescope floating in orbit above Earth",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+   "title": "Slow Look at HST 2",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Slow pan and zoom out showing the Hubble Space Telescope in orbit after Servicing Mission 3B",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up slow camera movement revealing the Hubble Space Telescope floating above Earth",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20080520_HST_m10237_Close_Door",
+   "title": "HST SM4 — Astronauts Close HST Doors for Last Time",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "An animation of an astronaut closing the Hubble Space Telescope's aft doors and giving a thumbs-up.",
+   "excluded": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 0,
+     "focus": [
+      0.45,
+      0.4
+     ],
+     "width": 0.6,
+     "shows": "Astronaut working on the Hubble Space Telescope in orbit.",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic0907b",
+   "title": "Space Shuttle Atlantis with Hubble",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "An animation of the Space Shuttle Atlantis carrying the Hubble Space Telescope in its cargo bay over Earth.",
+   "excluded": [
+    0,
+    7
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 6,
+     "focus": [
+      0.5,
+      0.45
+     ],
+     "width": 0.6,
+     "shows": "The Space Shuttle Atlantis orbiting Earth with the Hubble Space Telescope secured in the payload bay.",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic1608c",
+   "title": "Pan across the Bubble Nebula",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "visualization",
+   "what": "A slow pan and zoom across the Bubble Nebula (NGC 7635) captured by the Hubble Space Telescope.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "A cinematic pan across the glowing gas and dust of the Bubble Nebula, revealing the spherical shell created by stellar w",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "hubble:mountain-neb_4kultrahd",
+   "title": "Mystic Mountain",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "visualization",
+   "what": "A 3D fly-through visualization of the Mystic Mountain pillar in the Carina Nebula, based on Hubble data.",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 7,
+     "focus": [
+      0.55,
+      0.45
+     ],
+     "width": 0.32,
+     "shows": "Cinematic 3D camera movement through the gas and dust pillars of the Carina Nebula.",
+     "score": 10
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic1808b",
+   "title": "The centre of the Lagoon Nebula over time",
+   "relevant": true,
+   "usable": false,
+   "quality": 8,
+   "kind": "footage",
+   "what": "A comparison of Hubble Space Telescope imagery of the Lagoon Nebula's core across different years.",
+   "excluded": [
+    0,
+    1,
+    3,
+    4,
+    6,
+    7
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up of the turbulent gas and dust in the Lagoon Nebula core",
+     "score": 9
+    },
+    {
+     "start": 5,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Detailed view of the interstellar clouds in the Lagoon Nebula",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic2408b",
+   "title": "Pan: Little Dumbbell Nebula (M76)",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "A slow pan across the Little Dumbbell Nebula (M76) captured by the Hubble Space Telescope.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Detailed view of the glowing gas and dust structures within the Little Dumbbell Nebula.",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}

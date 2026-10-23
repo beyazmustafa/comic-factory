@@ -1,0 +1,168 @@
+{
+  "title": "How Astronauts Repaired the Hubble Space Telescope",
+  "description": "Launched with a flawed mirror in 1990, the Hubble Space Telescope required five daring shuttle missions to fix its vision. These servicing missions transformed a blurry failure into the most productive observatory in human history.",
+  "hook_card": "The telescope that was born blind",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c02",
+      "narration": "Hubble launched on 24 April 1990 aboard the shuttle Discovery, carrying a 2.4-metre primary mirror into orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c07",
+      "narration": "The mirror was ground to the wrong shape by two microns, about a fiftieth of the width of a hair.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "This tiny error meant the first images were blurred, as the mirror was unable to focus correctly.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c04",
+      "narration": "In December 1993, shuttle astronauts performed five spacewalks to install corrective optics and restore the telescope's vision.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "With its vision finally sharp, Hubble began capturing clear and detailed views of glowing gas and dust.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "The telescope circles Earth every 95 minutes, maintaining an orbit about 540 kilometres above the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "Five servicing missions, the last in 2009, replaced essential parts including cameras, gyroscopes, and solar panels.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c06",
+      "narration": "These upgrades allowed the telescope to peer deep into space, revealing the complex structures of distant nebulae.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "Hubble has now made more than 1.6 million observations, fundamentally changing our understanding of the universe.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Hubble launched on 24 April 1990 aboard the shuttle Discovery, carrying a 2.4-metre primary mirror into orbit. The mirror was ground to the wrong shape by two microns, about a fiftieth of the width of a hair. This tiny error meant the first images were blurred, as the mirror was unable to focus correctly. In December 1993, shuttle astronauts performed five spacewalks to install corrective optics and restore the telescope's vision. With its vision finally sharp, Hubble began capturing clear and detailed views of glowing gas and dust. The telescope circles Earth every 95 minutes, maintaining an orbit about 540 kilometres above the surface. Five servicing missions, the last in 2009, replaced essential parts including cameras, gyroscopes, and solar panels. These upgrades allowed the telescope to peer deep into space, revealing the complex structures of distant nebulae. Hubble has now made more than 1.6 million observations, fundamentally changing our understanding of the universe.",
+  "event": {
+    "id": "film_hubble-servicing_20261023T183058106856Z",
+    "title": "The telescope that was born blind",
+    "series": "NASA footage",
+    "issue": "hubble-servicing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hubble-servicing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic0907b/",
+      "https://esahubble.org/videos/heic1608c/",
+      "https://esahubble.org/videos/heic2408b/",
+      "https://esahubble.org/videos/mountain-neb_4kultrahd/",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10214_Slow_Look2",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan"
+    ]
+  },
+  "scenario": "hubble-servicing",
+  "beats": [
+    {
+      "clip": "c02",
+      "narration": "Hubble launched on 24 April 1990 aboard the shuttle Discovery, carrying a 2.4-metre primary mirror into orbit.",
+      "label": "NASA · DISCOVERY · 1990",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "The mirror was ground to the wrong shape by two microns, about a fiftieth of the width of a hair.",
+      "label": "NASA · HUBBLE · 2023",
+      "callout": {
+        "value": "2 microns",
+        "label": "the error in the mirror"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "This tiny error meant the first images were blurred, as the mirror was unable to focus correctly.",
+      "label": "NASA · HUBBLE · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "In December 1993, shuttle astronauts performed five spacewalks to install corrective optics and restore the telescope's vision.",
+      "label": "NASA · ENDEAVOUR · 1993",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "With its vision finally sharp, Hubble began capturing clear and detailed views of glowing gas and dust.",
+      "label": "NASA · HUBBLE · 2016",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The telescope circles Earth every 95 minutes, maintaining an orbit about 540 kilometres above the surface.",
+      "label": "NASA · HUBBLE · 2008",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Five servicing missions, the last in 2009, replaced essential parts including cameras, gyroscopes, and solar panels.",
+      "label": "NASA · ATLANTIS · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "These upgrades allowed the telescope to peer deep into space, revealing the complex structures of distant nebulae.",
+      "label": "NASA · HUBBLE · 2010",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Hubble has now made more than 1.6 million observations, fundamentally changing our understanding of the universe.",
+      "label": "NASA · HUBBLE · 2008",
+      "callout": null
+    }
+  ],
+  "closing": "Hubble has been operating for over thirty years.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
