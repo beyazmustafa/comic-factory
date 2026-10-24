@@ -1,11 +1,11 @@
-run_id: 40095336023  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261024T124748980163Z/run.json
+run_id: 40116379769  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261024T173101836136Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,42 +40,25 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "40095336023",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "ea9f66a4e488089ee7723a62d5f4bf8899118c28f4b2c27a6bbe147344b01ed2",
-  "metadata_sha256": "f6ef989f46465728d97618ea9b171e8d58411f1dcfdca6b08e41a5268ba068f8",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 39,
-  "duration": 84.55,
-  "voice": "Charon",
-  "event": {
-    "id": "film_launch-power_20261024T124748980163Z",
-    "title": "The most powerful machines ever built.",
-    "series": "NASA footage",
-    "issue": "launch-power",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "launch-power",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/Artemis I Launch 2022 CU tracking from Press Site_compressed",
-      "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
-      "https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
-      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
-    ]
-  },
-  "localized": []
+  "run_id": "40116379769",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261024T124748980163Z/diagnostics/provider_events.json
+--- data/runs/20261024T173101836136Z/diagnostics/provider_events.json
 [
-  "Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261024T124748980163Z/diagnostics/providers.json
+--- data/runs/20261024T173101836136Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -98,9 +81,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -191,98 +174,56 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261024T173101836136Z/audio/chunk_001/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 15.6 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 15.6 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 16.1 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 16.1 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 17.1 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 17.1 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 15.8 sn); whisper-large-v3-turbo: 77.0/100 (duyulan: “Mars air is about 1% as dense as Earth's at sea level, requiring strong lift. To achieve l”, 15.8 sn)"
+]
 --- studio.log (son 300 satır)
 → Konu: ingenuity
 Görüntü adayları: 46 (ingenuity)
-Sıralanan aday: 11
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Sıralanan aday: 10
 Düşük çözünürlük nasa:JPL-20220527-M2020f-0001-NASAs_Ingenuity_Mars_Helicopter_Captures_Video_of_Record_Flight2: 640x480
 Süre uygun değil nasa:Mars Helicopter Flights VF 929 FINAL: 2941 sn
-Çözümlenen video: 9
-nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter performing its historic first flight 
-nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) NASA's Perseverance rover Mastcam-Z captures Ingenuity's third flight 
-nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (5/10, footage) Ingenuity flight team monitoring Flight 4 from mission control with br
-nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: kullanılır (8/10, footage) NASA JPL control room reactions followed by Perseverance rover footage
-nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: üretilmiş program gibi (0 karede insan, 7/8 kare elendi); atlandı
-nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: elendi (4/10, footage) Mission control room during Ingenuity's third flight operations, endin
-nasa:JPL-20210507-TECHf-0001-Ingenuity 5th Flight Recap: elendi (5/10, footage) Ingenuity operations room reacting to flight data and brief views of t
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: kullanılır (7/10, footage) Perseverance rover Mastcam-Z footage capturing Ingenuity's flight over
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: üretilmiş program gibi (0 karede insan, 15/24 kare elendi); atlandı
-Görüntü adayları: 4 (ingenuity, Commons)
-Sıralanan aday: 3
-Çözümlenemedi commons:NASA-MarsIngenuityHelicopter-FirstFlightVideo-20210419.webm: ValueError: licence not reusable: unknown
-Çözümlenemedi commons:Perseverance Rover Watches Ingenuity Mars Helicopter's 54th Flight (SVS31246 - PIA25970-1280).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:NASA's Perseverance Captures Video, Audio of Fourth Ingenuity Flight.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 3 (69 sn temiz görüntü)
-Konu atlandı (ingenuity): Yeterli temiz görüntü yok (3 kesit, 69 sn).
-→ Konu: launch-power
-Görüntü adayları: 49 (launch-power)
-Sıralanan aday: 12
-Çözümlenen video: 12
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) Slow motion night launch and liftoff of NASA's Space Launch System for
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) Launch camera views and pad tracking of the Artemis I SLS rocket launc
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (0 karede insan, 15/24 kare elendi); atlandı
-nasa:Ultimate Saturn V Launch w Enhanced Sound: kullanılır (8/10, footage) Archival footage of the Saturn V rocket launch sequence with close-ups
-nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) Nighttime launch tracking footage of NASA's Space Launch System for th
-nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: kullanılır (8/10, footage) Night launch and ascent of NASA's Space Launch System on Artemis I
-Kullanılır kesit: 8 (175 sn temiz görüntü)
+Çözümlenen video: 8
+nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) NASA's Ingenuity Mars Helicopter taking off, hovering, and landing on 
+nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) NASA's Ingenuity helicopter taking off, flying, and landing on Mars re
+nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: kullanılır (8/10, footage) Footage of the Ingenuity Mars helicopter flying on Mars and aerial ima
+nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (5/10, footage) NASA team monitoring Ingenuity's fourth flight on Mars from control ro
+nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: elendi (5/10, footage) NASA team monitoring Ingenuity's second flight and brief distant foota
+nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: kullanılır (6/10, footage) NASA JPL mission control team watching Ingenuity flight data alongside
+nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: üretilmiş program gibi (0 karede insan, 5/8 kare elendi); atlandı
+nasa:JPL-20210507-TECHf-0001-Ingenuity 5th Flight Recap: elendi (5/10, footage) NASA JPL mission control team monitoring Ingenuity's fifth flight on M
+nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: kullanılır (8/10, animation) 3D computer animation depicting NASA's Perseverance rover and the Inge
+Kullanılır kesit: 8 (180 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Senaryo yeniden yazılıyor: Senaryo biçimi uygun değil (5 beat, 78 kelime).
+Belgesel senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Senaryo düzelti: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
+Ses eşleştirme: 90.3/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (84.5 sn, 9 beat, 8 kesit)
-  kurgu 10/85 sn
-  kurgu 20/85 sn
-  kurgu 30/85 sn
-  kurgu 40/85 sn
-  kurgu 50/85 sn
-  kurgu 60/85 sn
-  kurgu 70/85 sn
-  kurgu 80/85 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: How America's Largest Rockets Escaped Earth's Gravity #Shorts
-Görünürlük: public
-
-Yükleme: %8
-Yükleme: %16
-Yükleme: %24
-Yükleme: %32
-Yükleme: %40
-Yükleme: %48
-Yükleme: %56
-Yükleme: %64
-Yükleme: %73
-Yükleme: %81
-Yükleme: %89
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=1ebbLJ1dwIo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/video.mp4
-Boyut: 98.5 MB
-Açıklama uzunluğu: 313 karakter
-Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Cloudinary: geçici video silindi (ok).
-instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Saturday, 24-Oct-26 06:40:12 PDT. (code=190, subcode=0)
+Ses eşleştirme: 77.0/100 | whisper-large-v3
+Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 77.0/100 | whisper-large-v3
+Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 3
+Ses eşleştirme: 77.0/100 | whisper-large-v3
+Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 4
+Ses eşleştirme: 79.2/100 | whisper-large-v3
+Ses eşleştirme: 77.0/100 | whisper-large-v3-turbo
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
