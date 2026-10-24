@@ -1,0 +1,183 @@
+{
+  "script": {
+    "title": "How America's Largest Rockets Escaped Earth's Gravity",
+    "description": "A close look at the immense power behind the Saturn V and Space Launch System rockets. Discover how NASA built the most capable launch vehicles in human history.",
+    "hook_card": "The most powerful machines ever built.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c01",
+        "narration": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fully fuelled for flight.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c00",
+        "narration": "At liftoff, most of that mass was fuel, while the Apollo capsule formed a tiny fraction of the stack.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "Its five F-1 engines produced about 34 million newtons of thrust during its initial launch sequence.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "The massive engines burned roughly 13 tonnes of propellant every single second as the rocket ascended.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c07",
+        "narration": "The sound of a Saturn V launch was among the loudest ever produced by any machine in history.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c04",
+        "narration": "Thirteen Saturn Vs flew between 1967 and 1973, and every single one of those missions succeeded.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c00",
+        "narration": "NASA's Space Launch System stands 98 metres tall, preparing for its eventual night launch into space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c02",
+        "narration": "This rocket flew Artemis I in 2022, climbing high into the night sky on its maiden flight.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c05",
+        "narration": "It produces about 39 million newtons of thrust at liftoff, which is more than the historic Saturn V.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fully fuelled for flight. At liftoff, most of that mass was fuel, while the Apollo capsule formed a tiny fraction of the stack. Its five F-1 engines produced about 34 million newtons of thrust during its initial launch sequence. The massive engines burned roughly 13 tonnes of propellant every single second as the rocket ascended. The sound of a Saturn V launch was among the loudest ever produced by any machine in history. Thirteen Saturn Vs flew between 1967 and 1973, and every single one of those missions succeeded. NASA's Space Launch System stands 98 metres tall, preparing for its eventual night launch into space. This rocket flew Artemis I in 2022, climbing high into the night sky on its maiden flight. It produces about 39 million newtons of thrust at liftoff, which is more than the historic Saturn V.",
+    "event": {
+      "id": "film_launch-power_20261024T124748980163Z",
+      "title": "The most powerful machines ever built.",
+      "series": "NASA footage",
+      "issue": "launch-power",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "launch-power",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/Artemis I Launch 2022 CU tracking from Press Site_compressed",
+        "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+        "https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+        "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
+      ]
+    },
+    "scenario": "launch-power",
+    "beats": [
+      {
+        "clip": "c01",
+        "narration": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fully fuelled for flight.",
+        "label": "NASA · APOLLO · 1967",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "At liftoff, most of that mass was fuel, while the Apollo capsule formed a tiny fraction of the stack.",
+        "label": "NASA · SATURN V · 1967",
+        "callout": {
+          "value": "110 m",
+          "label": "tall"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "Its five F-1 engines produced about 34 million newtons of thrust during its initial launch sequence.",
+        "label": "NASA · APOLLO · 1967",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The massive engines burned roughly 13 tonnes of propellant every single second as the rocket ascended.",
+        "label": "NASA · ARTEMIS · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "The sound of a Saturn V launch was among the loudest ever produced by any machine in history.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Thirteen Saturn Vs flew between 1967 and 1973, and every single one of those missions succeeded.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "NASA's Space Launch System stands 98 metres tall, preparing for its eventual night launch into space.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "This rocket flew Artemis I in 2022, climbing high into the night sky on its maiden flight.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "It produces about 39 million newtons of thrust at liftoff, which is more than the historic Saturn V.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      }
+    ],
+    "closing": "Humanity's return to the Moon relies on this immense power.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "A close look at the immense power behind the Saturn V and Space Launch System rockets. Discover how NASA built the most capable launch vehicles in human history.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: KSC — Artemis I Slow Motion Liftoff (https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595); MSFC — Ultimate Saturn V Launch w Enhanced Sound (https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound); KSC — Artemis I Launch Imagery (https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254); N/A — Artemis I Launch (Press Site) (https://images.nasa.gov/details/Artemis I Launch 2022 CU tracking from Press Site_compressed)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "How America's Largest Rockets Escaped Earth's Gravity\n\nA close look at the immense power behind the Saturn V and Space Launch System rockets. Discover how NASA built the most capable launch vehicles in human history.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

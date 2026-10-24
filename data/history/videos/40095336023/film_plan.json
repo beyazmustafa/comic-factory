@@ -1,0 +1,509 @@
+{
+  "duration": 84.55,
+  "handle": "@Facctsaboutspace",
+  "hook": "The most powerful machines ever built.",
+  "kicker": "Real footage · NASA",
+  "closing": "Humanity's return to the Moon relies on this immense power.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.768,
+      "src_out": 18.262,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.16,
+      "label": "NASA · APOLLO · 1967",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.313,
+      "src_out": 15.687,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": [
+        1118,
+        798,
+        2176,
+        1124
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.16,
+      "t1": 11.2,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 6.13,
+      "src_out": 11.73,
+      "speed": 0.733,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.2,
+      "t1": 18.51,
+      "label": "NASA · SATURN V · 1967",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 21.8,
+      "src_out": 25.37,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.51,
+      "t1": 22.639,
+      "label": "NASA · APOLLO · 1967",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.723,
+      "src_out": 15.207,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 22.639,
+      "t1": 27.79,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.63,
+      "src_out": 6.13,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 27.79,
+      "t1": 31.832,
+      "label": "NASA · ARTEMIS · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c07",
+      "asset": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_artemis_i_launch_2022_cu_tracking_from_press_site_compr/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.874,
+      "src_out": 15.126,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.44
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 31.832,
+      "t1": 35.75,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 18.3,
+      "src_out": 21.8,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 35.75,
+      "t1": 39.792,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.384,
+      "src_out": 15.616,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.55
+      ],
+      "active": [
+        464,
+        18,
+        1156,
+        1024
+      ],
+      "crop_width": 0.45,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 39.792,
+      "t1": 44.69,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c04",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.929,
+      "src_out": 9.641,
+      "speed": 1.0,
+      "focus": [
+        0.83,
+        0.44
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 44.69,
+      "t1": 50.069,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c01",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 2.63,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 50.069,
+      "t1": 53.023,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_artemis_i_launch_2022_cu_tracking_from_press_site_compr/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.11,
+      "src_out": 13.89,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.48
+      ],
+      "active": [
+        432,
+        400,
+        2168,
+        1760
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 53.023,
+      "t1": 54.47,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c06",
+      "asset": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_artemis_i_launch_2022_cu_tracking_from_press_site_compr/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.034,
+      "src_out": 15.966,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.88
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 54.47,
+      "t1": 60.069,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.543,
+      "src_out": 15.457,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": [
+        1118,
+        798,
+        2176,
+        1124
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 60.069,
+      "t1": 64.65,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 8.883,
+      "src_out": 17.117,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.55
+      ],
+      "active": [
+        464,
+        18,
+        1156,
+        1024
+      ],
+      "crop_width": 0.45,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 64.65,
+      "t1": 72.55,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c05",
+      "asset": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_artemis_i_launch_2022_cu_tracking_from_press_site_compr/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.48
+      ],
+      "active": [
+        432,
+        400,
+        2168,
+        1760
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 72.55,
+      "t1": 79.05,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261024T124748980163Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.083,
+      "src_out": 15.917,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": [
+        1118,
+        798,
+        2176,
+        1124
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 79.05,
+      "t1": 84.55,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

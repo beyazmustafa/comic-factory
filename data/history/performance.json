@@ -3892,5 +3892,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "1ebbLJ1dwIo",
+    "platform": "youtube",
+    "run_id": "40095336023",
+    "published_at": "2026-10-24T13:39:57+00:00",
+    "event": {
+      "title": "The most powerful machines ever built.",
+      "series": "NASA footage",
+      "issue": "launch-power",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 153,
+      "duration": 84.5,
+      "words_per_minute": 109,
+      "hook": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fully fuelled for flight.",
+      "hook_words": 17,
+      "title": "How America's Largest Rockets Escaped Earth's Gravity",
+      "title_length": 53,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
