@@ -3933,5 +3933,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "VsY4r52CvYo",
+    "platform": "youtube",
+    "run_id": "40196710111",
+    "published_at": "2026-10-25T13:45:17+00:00",
+    "event": {
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 150,
+      "duration": 78.5,
+      "words_per_minute": 115,
+      "hook": "This is the first aircraft ever to fly on another planet, captured by the Perseverance rover.",
+      "hook_words": 16,
+      "title": "The First Aircraft to Ever Fly on Mars",
+      "title_length": 38,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

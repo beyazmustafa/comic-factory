@@ -1,0 +1,186 @@
+{
+  "script": {
+    "title": "The First Aircraft to Ever Fly on Mars",
+    "description": "NASA's Ingenuity helicopter made history by completing the first powered flight on another planet. Filmed by the Perseverance rover, it completed dozens of flights across the Martian surface.",
+    "hook_card": "A helicopter on Mars.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "This is the first aircraft ever to fly on another planet, captured by the Perseverance rover.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c02",
+        "narration": "Here sits Ingenuity on the Martian surface, weighing one point eight kilograms with a one point two metre rotor span.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c06",
+        "narration": "Mars air is about one percent as dense as Earth's air at sea level.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c00",
+        "narration": "To produce lift in this thin atmosphere, its twin rotors must spin at around two thousand four hundred rpm.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c01",
+        "narration": "On nineteen April 2021, it made a three-metre hover lasting about thirty-nine seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c04",
+        "narration": "Its navigation camera tracked the surface as it later reached thirty-six kilometres per hour and climbed to twenty-four metres.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c03",
+        "narration": "Engineers designed it for five test flights in thirty days, but it flew seventy-two flights over almost three years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c05",
+        "narration": "Across all those flights above the red planet, the small craft covered more than seventeen kilometres.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c02",
+        "narration": "The mission ended in January 2024 when a rotor blade was damaged on landing.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This is the first aircraft ever to fly on another planet, captured by the Perseverance rover. Here sits Ingenuity on the Martian surface, weighing one point eight kilograms with a one point two metre rotor span. Mars air is about one percent as dense as Earth's air at sea level. To produce lift in this thin atmosphere, its twin rotors must spin at around two thousand four hundred rpm. On nineteen April 2021, it made a three-metre hover lasting about thirty-nine seconds. Its navigation camera tracked the surface as it later reached thirty-six kilometres per hour and climbed to twenty-four metres. Engineers designed it for five test flights in thirty days, but it flew seventy-two flights over almost three years. Across all those flights above the red planet, the small craft covered more than seventeen kilometres. The mission ended in January 2024 when a rotor blade was damaged on landing.",
+    "event": {
+      "id": "film_ingenuity_20261025T131527607688Z",
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "ingenuity",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+        "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+        "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+        "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+      ]
+    },
+    "scenario": "ingenuity",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "This is the first aircraft ever to fly on another planet, captured by the Perseverance rover.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Here sits Ingenuity on the Martian surface, weighing one point eight kilograms with a one point two metre rotor span.",
+        "label": "NASA · INGENUITY · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "Mars air is about one percent as dense as Earth's air at sea level.",
+        "label": "NASA · JPL · 2020",
+        "callout": {
+          "value": "1%",
+          "label": "of Earth's air density"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "To produce lift in this thin atmosphere, its twin rotors must spin at around two thousand four hundred rpm.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "On nineteen April 2021, it made a three-metre hover lasting about thirty-nine seconds.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Its navigation camera tracked the surface as it later reached thirty-six kilometres per hour and climbed to twenty-four metres.",
+        "label": "NASA · INGENUITY · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Engineers designed it for five test flights in thirty days, but it flew seventy-two flights over almost three years.",
+        "label": "NASA · PERSEVERANCE · 2023",
+        "callout": {
+          "value": "72",
+          "label": "flights, planned for 5"
+        }
+      },
+      {
+        "clip": "c05",
+        "narration": "Across all those flights above the red planet, the small craft covered more than seventeen kilometres.",
+        "label": "NASA · JPL · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "The mission ended in January 2024 when a rotor blade was damaged on landing.",
+        "label": "NASA · PERSEVERANCE · 2023",
+        "callout": null
+      }
+    ],
+    "closing": "It carried a small piece of fabric from the Wright brothers' 1903 Flyer.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "NASA's Ingenuity helicopter made history by completing the first powered flight on another planet. Filmed by the Perseverance rover, it completed dozens of flights across the Martian surface.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — First Video of NASA’s Ingenuity Mars Helicopter in Flight, Including Takeoff and (https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight); JPL — Perseverance Rover's Mastcam-Z Captures Ingenuity's Third FlightNASA’s Ingenuity (https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video); JPL — Ingenuity Mars Helicopter Flight Update Media Reel (https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080); JPL — JPL-20200429-TECHf-0002-Mars Helicopter Animation (https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The First Aircraft to Ever Fly on Mars\n\nNASA's Ingenuity helicopter made history by completing the first powered flight on another planet. Filmed by the Perseverance rover, it completed dozens of flights across the Martian surface.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
