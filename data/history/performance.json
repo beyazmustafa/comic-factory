@@ -3974,5 +3974,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "SViDAsaCAOM",
+    "platform": "youtube",
+    "run_id": "40217754691",
+    "published_at": "2026-10-25T18:09:44+00:00",
+    "event": {
+      "title": "Inside the eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 146,
+      "duration": 78.1,
+      "words_per_minute": 112,
+      "hook": "From orbit, a hurricane appears as a vast spiral with a calm center known as the eye.",
+      "hook_words": 17,
+      "title": "A hurricane releases 200 times the world's electricity",
+      "title_length": 54,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

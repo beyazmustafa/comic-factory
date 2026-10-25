@@ -1,0 +1,185 @@
+{
+  "script": {
+    "title": "A hurricane releases 200 times the world's electricity",
+    "description": "From the International Space Station, astronauts witness the immense power and scale of hurricanes. These massive storms release heat at a rate far exceeding global electricity generation.",
+    "hook_card": "Inside the eye",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "From orbit, a hurricane appears as a vast spiral with a calm center known as the eye.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c04",
+        "narration": "This quiet eye is typically thirty to sixty-five kilometres wide, surrounded by a wall of clouds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c03",
+        "narration": "The strongest winds blow in this eyewall, reaching speeds that exceed two hundred fifty kilometres per hour.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c06",
+        "narration": "A large hurricane can be more than one thousand kilometres across, stretching toward the Earth's horizon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c07",
+        "narration": "The International Space Station travels so fast that it crosses this entire storm in about two minutes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c01",
+        "narration": "North of the equator, these clouds spin anticlockwise, while storms in the southern hemisphere spin clockwise.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c05",
+        "narration": "A mature hurricane releases heat at a rate about two hundred times the world's electricity generation.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c02",
+        "narration": "GOES weather satellites watch from thirty-five thousand eight hundred kilometres up to monitor the storm's progress.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c04",
+        "narration": "These satellites can image a storm every thirty seconds, tracking the eyewall as it moves.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "From orbit, a hurricane appears as a vast spiral with a calm center known as the eye. This quiet eye is typically thirty to sixty-five kilometres wide, surrounded by a wall of clouds. The strongest winds blow in this eyewall, reaching speeds that exceed two hundred fifty kilometres per hour. A large hurricane can be more than one thousand kilometres across, stretching toward the Earth's horizon. The International Space Station travels so fast that it crosses this entire storm in about two minutes. North of the equator, these clouds spin anticlockwise, while storms in the southern hemisphere spin clockwise. A mature hurricane releases heat at a rate about two hundred times the world's electricity generation. GOES weather satellites watch from thirty-five thousand eight hundred kilometres up to monitor the storm's progress. These satellites can image a storm every thirty seconds, tracking the eyewall as it moves.",
+    "event": {
+      "id": "film_hurricane_20261025T174343806537Z",
+      "title": "Inside the eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "hurricane",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+        "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+        "https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009"
+      ]
+    },
+    "scenario": "hurricane",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "From orbit, a hurricane appears as a vast spiral with a calm center known as the eye.",
+        "label": "NASA · EXPEDITION 71 · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "This quiet eye is typically thirty to sixty-five kilometres wide, surrounded by a wall of clouds.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The strongest winds blow in this eyewall, reaching speeds that exceed two hundred fifty kilometres per hour.",
+        "label": "NASA · ISS · 2024",
+        "callout": {
+          "value": "250 km/h",
+          "label": "in the eyewall"
+        }
+      },
+      {
+        "clip": "c06",
+        "narration": "A large hurricane can be more than one thousand kilometres across, stretching toward the Earth's horizon.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "The International Space Station travels so fast that it crosses this entire storm in about two minutes.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "North of the equator, these clouds spin anticlockwise, while storms in the southern hemisphere spin clockwise.",
+        "label": "NASA · EXPEDITION 71 · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "A mature hurricane releases heat at a rate about two hundred times the world's electricity generation.",
+        "label": "NASA · ISS · 2024",
+        "callout": {
+          "value": "200×",
+          "label": "the world's electricity"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "GOES weather satellites watch from thirty-five thousand eight hundred kilometres up to monitor the storm's progress.",
+        "label": "NASA · EXPEDITION 71 · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "These satellites can image a storm every thirty seconds, tracking the eyewall as it moves.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      }
+    ],
+    "closing": "The station crosses the entire storm in two minutes.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "From the International Space Station, astronauts witness the immense power and scale of hurricanes. These massive storms release heat at a rate far exceeding global electricity generation.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JSC — Expedition 71 International Space Station Flyover of Hurricane Beryl - Monday, J (https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701); JSC — INTERNATIONAL SPACE STATION CAMERAS CAPTURE NEW VIEWS OF HURRICANE MILTON (https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008); JSC — Cameras On The International Space Station Capture New Views Of Hurricane Milton (https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A hurricane releases 200 times the world's electricity\n\nFrom the International Space Station, astronauts witness the immense power and scale of hurricanes. These massive storms release heat at a rate far exceeding global electricity generation.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
