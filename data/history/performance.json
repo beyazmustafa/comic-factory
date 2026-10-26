@@ -4015,5 +4015,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "m4ireWVvg5c",
+    "platform": "youtube",
+    "run_id": "40347939814",
+    "published_at": "2026-10-26T15:42:38+00:00",
+    "event": {
+      "title": "The Windiest World",
+      "series": "NASA footage",
+      "issue": "neptune",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 7,
+      "words": 113,
+      "duration": 66.8,
+      "words_per_minute": 101,
+      "hook": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft ever to visit this distant world.",
+      "hook_words": 17,
+      "title": "Only One Spacecraft Has Ever Visited Neptune",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 7
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

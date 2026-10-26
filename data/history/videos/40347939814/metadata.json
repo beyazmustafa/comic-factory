@@ -1,0 +1,154 @@
+{
+  "script": {
+    "title": "Only One Spacecraft Has Ever Visited Neptune",
+    "description": "In 1989, Voyager 2 flew past Neptune and revealed a distant, dynamic ice giant. Today, space telescopes continue to monitor its violent weather and bizarre moons.",
+    "hook_card": "The Windiest World",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft ever to visit this distant world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c04",
+        "narration": "Neptune sits 4.5 billion kilometres from the Sun, where light takes over four hours to reach Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c00",
+        "narration": "Winds here reach 2,000 kilometres per hour, the fastest speeds measured on any planet in our system.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c04",
+        "narration": "Voyager saw an Earth-sized storm called the Great Dark Spot, which had vanished when Hubble later looked.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c02",
+        "narration": "The moon Triton orbits backwards and features active geysers of nitrogen erupting from its surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c03",
+        "narration": "Evidence suggests Triton is a captured world pulled into orbit from the distant Kuiper Belt.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "In this remote reach of space, a single year on Neptune lasts 165 Earth years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft ever to visit this distant world. Neptune sits 4.5 billion kilometres from the Sun, where light takes over four hours to reach Earth. Winds here reach 2,000 kilometres per hour, the fastest speeds measured on any planet in our system. Voyager saw an Earth-sized storm called the Great Dark Spot, which had vanished when Hubble later looked. The moon Triton orbits backwards and features active geysers of nitrogen erupting from its surface. Evidence suggests Triton is a captured world pulled into orbit from the distant Kuiper Belt. In this remote reach of space, a single year on Neptune lasts 165 Earth years.",
+    "event": {
+      "id": "film_neptune_20261026T151852788418Z",
+      "title": "The Windiest World",
+      "series": "NASA footage",
+      "issue": "neptune",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "neptune",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://esahubble.org/videos/ann1115a/",
+        "https://esahubble.org/videos/heic1904a/",
+        "https://esahubble.org/videos/heic2113b/"
+      ]
+    },
+    "scenario": "neptune",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft ever to visit this distant world.",
+        "label": "NASA · VOYAGER 2 · 1989",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Neptune sits 4.5 billion kilometres from the Sun, where light takes over four hours to reach Earth.",
+        "label": "NASA · HUBBLE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Winds here reach 2,000 kilometres per hour, the fastest speeds measured on any planet in our system.",
+        "label": "NASA · VOYAGER 2 · 1989",
+        "callout": {
+          "value": "2,000 km/h",
+          "label": "winds"
+        }
+      },
+      {
+        "clip": "c04",
+        "narration": "Voyager saw an Earth-sized storm called the Great Dark Spot, which had vanished when Hubble later looked.",
+        "label": "NASA · HUBBLE · 1994",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "The moon Triton orbits backwards and features active geysers of nitrogen erupting from its surface.",
+        "label": "ESA · HUBBLE · 2019",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Evidence suggests Triton is a captured world pulled into orbit from the distant Kuiper Belt.",
+        "label": "ESA · HUBBLE · 2019",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "In this remote reach of space, a single year on Neptune lasts 165 Earth years.",
+        "label": "ESA · HUBBLE · 2019",
+        "callout": null
+      }
+    ],
+    "closing": "Voyager 2 remains our only close visit to Neptune.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In 1989, Voyager 2 flew past Neptune and revealed a distant, dynamic ice giant. Today, space telescopes continue to monitor its violent weather and bizarre moons.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: NASA, ESA, the Hubble Heritage Team (STScI/OPO) and G. Bacon (STScI) — Neptune and its moons (https://esahubble.org/videos/ann1115a/); ESA/Hubble, L.Calçada — Animation of Neptune’s moon Hippocamp (https://esahubble.org/videos/heic1904a/); NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley) and the OPAL team  — Pans of Hubble’s Grand Tour of the Solar System (https://esahubble.org/videos/heic2113b/)\nLicences: CC BY 4.0\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "Only One Spacecraft Has Ever Visited Neptune\n\nIn 1989, Voyager 2 flew past Neptune and revealed a distant, dynamic ice giant. Today, space telescopes continue to monitor its violent weather and bizarre moons.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

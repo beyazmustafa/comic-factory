@@ -1,0 +1,312 @@
+{
+  "duration": 66.82,
+  "handle": "@Facctsaboutspace",
+  "hook": "The Windiest World",
+  "kicker": "Real footage · ESA/Hubble",
+  "closing": "Voyager 2 remains our only close visit to Neptune.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "hubble:ann1115a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_ann1115a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.583,
+      "src_out": 16.417,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.5,
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c04",
+      "asset": "hubble:heic2113b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic2113b/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.453,
+      "src_out": 10.147,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.5,
+      "t1": 12.86,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.173,
+      "src_out": 10.357,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 12.86,
+      "t1": 21.71,
+      "label": "NASA · HUBBLE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.832,
+      "src_out": 8.698,
+      "speed": 1.0,
+      "focus": [
+        0.4,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 21.71,
+      "t1": 27.243,
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": {
+        "value": "2,000 km/h",
+        "label": "winds"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.17,
+      "src_out": 6.03,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 27.243,
+      "t1": 31.77,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "hubble:heic2113b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic2113b/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.693,
+      "src_out": 10.907,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 31.77,
+      "t1": 39.65,
+      "label": "NASA · HUBBLE · 1994",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.112,
+      "src_out": 8.418,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 39.65,
+      "t1": 44.622,
+      "label": "ESA · HUBBLE · 2019",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "hubble:ann1115a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_ann1115a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.799,
+      "src_out": 15.201,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 44.622,
+      "t1": 48.69,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c03",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.413,
+      "src_out": 9.117,
+      "speed": 1.0,
+      "focus": [
+        0.4,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.69,
+      "t1": 55.06,
+      "label": "ESA · HUBBLE · 2019",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_heic1904a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.199,
+      "src_out": 7.001,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 55.06,
+      "t1": 61.528,
+      "label": "ESA · HUBBLE · 2019",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "hubble:ann1115a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T151852788418Z/footage/hubble_ann1115a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.187,
+      "src_out": 15.813,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 61.528,
+      "t1": 66.82,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
