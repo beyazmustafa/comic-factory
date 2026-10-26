@@ -1,0 +1,369 @@
+{
+  "duration": 78.02,
+  "handle": "@Facctsaboutspace",
+  "hook": "Lakes of liquid methane",
+  "kicker": "NASA visualization",
+  "closing": "A robotic drone will fly these skies in the 2030s.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.673,
+      "src_out": 17.327,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.45,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 8.32,
+      "label": "NASA · WEBB · 2025",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.968,
+      "src_out": 11.262,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 8.32,
+      "t1": 17.28,
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 13.23,
+      "src_out": 19.6,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 17.28,
+      "t1": 24.909,
+      "label": "NASA · WEBB · 2025",
+      "callout": {
+        "value": "-180 °C",
+        "label": "on the surface"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.348,
+      "src_out": 13.652,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 24.909,
+      "t1": 25.88,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.923,
+      "src_out": 12.677,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 25.88,
+      "t1": 33.3,
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.298,
+      "src_out": 15.702,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.45,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 33.3,
+      "t1": 38.371,
+      "label": "NASA · WEBB · 2025",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.374,
+      "src_out": 8.856,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 38.371,
+      "t1": 42.52,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 13.23,
+      "src_out": 19.6,
+      "speed": 0.889,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 42.52,
+      "t1": 49.35,
+      "label": "ESA · HUYGENS · 2005",
+      "callout": {
+        "value": "2.5 h",
+        "label": "parachute descent"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.001,
+      "src_out": 15.999,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 49.35,
+      "t1": 55.015,
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.516,
+      "src_out": 15.484,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.45,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 55.015,
+      "t1": 59.65,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.993,
+      "src_out": 12.607,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 59.65,
+      "t1": 66.93,
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c01",
+      "asset": "svs:13562",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_13562/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.784,
+      "src_out": 16.216,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 66.93,
+      "t1": 73.029,
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "svs:5530",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261026T200147517212Z/footage/svs_5530/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.338,
+      "src_out": 15.662,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.45,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 73.029,
+      "t1": 78.02,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    }
+  ]
+}

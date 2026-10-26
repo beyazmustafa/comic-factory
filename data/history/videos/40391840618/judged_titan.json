@@ -1,0 +1,461 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_012805_touchdown",
+   "title": "KSC-05-S-00034",
+   "date": "2005-01-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_110404_cassini_flyby",
+   "title": "KSC-04-S-00352",
+   "date": "2004-11-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_061404_cassini",
+   "title": "KSC-04-S-00195",
+   "date": "2004-06-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "date": "2013-09-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_071304_ctitan",
+   "title": "KSC-04-S-00236",
+   "date": "2004-07-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute Jul. 17, 2026",
+   "title": "NASA Minute: Jul. 17, 2026",
+   "date": "2026-07-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute March 27, 2026",
+   "title": "NASA Minute: March 27, 2026",
+   "date": "2026-03-27",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:79",
+   "title": "Lunar Rotation and Flyby from Clementine Data (with route map)",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:80",
+   "title": "Lunar Rotation and Flyby from Clementine Data",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20311",
+   "title": "Dragonfly Animation Resource Page",
+   "date": "2020-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14951",
+   "title": "Are Titan’s Lakes Teeming with Primitive Cells?",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14843",
+   "title": "Webb Spies Rain Clouds, New Molecule on Titan",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14460",
+   "title": "Roman Wide Field Instrument Fully Integrated at Ball Aerospace",
+   "date": "2023-11-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14162",
+   "title": "Saturn Through the Veil of Enceladus – Artist’s Concept",
+   "date": "2022-05-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13947",
+   "title": "Video Visions of the Future",
+   "date": "2021-10-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13692",
+   "title": "Ocean Worlds Social Videos",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13693",
+   "title": "Ocean Worlds: The Search for Life",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13562",
+   "title": "The Science of Dragonfly",
+   "date": "2020-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Huygens descent.ogv",
+   "title": "Huygens descent",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:KSC-05-S-00003 (ksc 010605 huygen separates).webm",
+   "title": "KSC-05-S-00003 (ksc 010605 huygen separates)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:KSC-05-S-00034 (ksc 012805 touchdown).webm",
+   "title": "KSC-05-S-00034 (ksc 012805 touchdown)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Titan's Surface Features.ogv",
+   "title": "Titan's Surface Features",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "nasa:ksc_012805_touchdown",
+  "nasa:ksc_071304_ctitan",
+  "nasa:ksc_110404_cassini_flyby",
+  "svs:20411",
+  "svs:20403",
+  "nasa:GSFC_20130930_Titan_m11339_Propylene",
+  "svs:5530",
+  "svs:20311",
+  "svs:13562",
+  "svs:14162",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+  "commons:Huygens descent.ogv",
+  "commons:Titan's Surface Features.ogv"
+ ],
+ "judged": [
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "relevant": false,
+   "usable": false,
+   "quality": 4,
+   "kind": "animation",
+   "what": "Molecular animation of acrylonitrile molecules in a simulated Titan environment",
+   "excluded": [
+    3,
+    4,
+    5
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "relevant": false,
+   "usable": false,
+   "quality": 7,
+   "kind": "animation",
+   "what": "An artist's animation of the James Webb Space Telescope observing Saturn and its moons.",
+   "excluded": [
+    6
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "A NASA Goddard feature on the discovery of propylene on Titan, featuring interviews and chemical visualizations.",
+   "excluded": [
+    2,
+    4,
+    6,
+    7,
+    8,
+    9,
+    12,
+    14,
+    15,
+    16,
+    18,
+    19,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 1,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "Animation of Saturn and its moons Enceladus and Titan.",
+     "score": 7
+    },
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Cassini radar visualization of a hydrocarbon lake on Titan.",
+     "score": 8
+    },
+    {
+     "start": 10,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Animation of the Cassini spacecraft orbiting Saturn.",
+     "score": 7
+    },
+    {
+     "start": 21,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "Artist's impression of Titan's hazy atmosphere and surface landscape.",
+     "score": 6
+    }
+   ]
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "A global circulation model of Titan's atmosphere showing seasonal cloud and wind patterns.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.45,
+     "shows": "A rotating visualization of Titan's atmosphere with shifting methane clouds and seasonal lighting changes.",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "svs:20311",
+   "title": "Dragonfly Animation Resource Page",
+   "relevant": false,
+   "usable": false,
+   "quality": 4,
+   "kind": "animation",
+   "what": "Molecular diagrams and signal graphs illustrating chirality, likely for astrobiology research.",
+   "excluded": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:13562",
+   "title": "The Science of Dragonfly",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Artist's animation of the Dragonfly rotorcraft mission exploring the surface and atmosphere of Titan.",
+   "excluded": [
+    5,
+    6,
+    14,
+    17,
+    18,
+    19,
+    22
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.4
+     ],
+     "width": 0.32,
+     "shows": "Dragonfly lander descending through Titan's hazy atmosphere and flying over dunes.",
+     "score": 9
+    },
+    {
+     "start": 7,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up animation of Dragonfly's sampling drill and internal chemical analysis instruments.",
+     "score": 7
+    },
+    {
+     "start": 15,
+     "end": 16,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Internal view of the mass spectrometer carousel and sample processing.",
+     "score": 7
+    },
+    {
+     "start": 20,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "The Dragonfly rotorcraft on the surface of Titan with mountains in the background.",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "A produced documentary about the Cassini mission's infrared and radar findings at Saturn and its moons.",
+   "excluded": [
+    0,
+    1,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    12,
+    13,
+    16,
+    17,
+    18,
+    20,
+    21
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "animation",
+   "what": "A produced documentary about the Cassini-Huygens mission featuring interviews and scientific diagrams.",
+   "excluded": [
+    0,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    22
+   ],
+   "stretches": [
+    {
+     "start": 19,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Artist's animation of the Cassini spacecraft orbiting Saturn and its rings.",
+     "score": 8
+    }
+   ]
+  }
+ ]
+}

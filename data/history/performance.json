@@ -4056,5 +4056,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "iGn1kqOwcCY",
+    "platform": "youtube",
+    "run_id": "40391840618",
+    "published_at": "2026-10-26T20:37:54+00:00",
+    "event": {
+      "title": "Lakes of liquid methane",
+      "series": "NASA footage",
+      "issue": "titan",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 139,
+      "duration": 78.0,
+      "words_per_minute": 107,
+      "hook": "Titan is bigger than the planet Mercury and is wrapped in a thick nitrogen atmosphere.",
+      "hook_words": 15,
+      "title": "The moon with rivers and seas of liquid methane",
+      "title_length": 47,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

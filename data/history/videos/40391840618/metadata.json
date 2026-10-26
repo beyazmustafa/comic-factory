@@ -1,0 +1,184 @@
+{
+  "script": {
+    "title": "The moon with rivers and seas of liquid methane",
+    "description": "Titan is the only moon in our solar system with a thick atmosphere and liquid on its surface. NASA's Dragonfly mission will soon fly across this frozen world to study its chemistry.",
+    "hook_card": "Lakes of liquid methane",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick nitrogen atmosphere.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c02",
+        "narration": "The surface pressure is 1.5 times Earth's, but the temperature is minus 180 degrees Celsius.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c00",
+        "narration": "At these temperatures, the rivers and lakes are filled with liquid methane and ethane.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "Kraken Mare, the largest sea on Titan, is even bigger than the Caspian Sea on Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c00",
+        "narration": "On 14 January 2005, the Huygens probe parachuted for two and a half hours to reach the surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "This was the farthest landing ever made, and the probe transmitted from the ground for 72 minutes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "NASA's Dragonfly rotorcraft is scheduled to launch in 2028 to explore this distant world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "The mission will fly across the moon in the 2030s to study its unique environment.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c01",
+        "narration": "Watch as this robotic drone prepares to navigate the thick atmosphere of a methane-rich world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick nitrogen atmosphere. The surface pressure is 1.5 times Earth's, but the temperature is minus 180 degrees Celsius. At these temperatures, the rivers and lakes are filled with liquid methane and ethane. Kraken Mare, the largest sea on Titan, is even bigger than the Caspian Sea on Earth. On 14 January 2005, the Huygens probe parachuted for two and a half hours to reach the surface. This was the farthest landing ever made, and the probe transmitted from the ground for 72 minutes. NASA's Dragonfly rotorcraft is scheduled to launch in 2028 to explore this distant world. The mission will fly across the moon in the 2030s to study its unique environment. Watch as this robotic drone prepares to navigate the thick atmosphere of a methane-rich world.",
+    "event": {
+      "id": "film_titan_20261026T200147517212Z",
+      "title": "Lakes of liquid methane",
+      "series": "NASA footage",
+      "issue": "titan",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "titan",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://svs.gsfc.nasa.gov/13562",
+        "https://svs.gsfc.nasa.gov/5530"
+      ]
+    },
+    "scenario": "titan",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick nitrogen atmosphere.",
+        "label": "NASA · WEBB · 2025",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "The surface pressure is 1.5 times Earth's, but the temperature is minus 180 degrees Celsius.",
+        "label": "NASA · DRAGONFLY · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "At these temperatures, the rivers and lakes are filled with liquid methane and ethane.",
+        "label": "NASA · WEBB · 2025",
+        "callout": {
+          "value": "-180 °C",
+          "label": "on the surface"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "Kraken Mare, the largest sea on Titan, is even bigger than the Caspian Sea on Earth.",
+        "label": "NASA · DRAGONFLY · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "On 14 January 2005, the Huygens probe parachuted for two and a half hours to reach the surface.",
+        "label": "NASA · WEBB · 2025",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "This was the farthest landing ever made, and the probe transmitted from the ground for 72 minutes.",
+        "label": "ESA · HUYGENS · 2005",
+        "callout": {
+          "value": "2.5 h",
+          "label": "parachute descent"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "NASA's Dragonfly rotorcraft is scheduled to launch in 2028 to explore this distant world.",
+        "label": "NASA · DRAGONFLY · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The mission will fly across the moon in the 2030s to study its unique environment.",
+        "label": "NASA · DRAGONFLY · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Watch as this robotic drone prepares to navigate the thick atmosphere of a methane-rich world.",
+        "label": "NASA · DRAGONFLY · 2020",
+        "callout": null
+      }
+    ],
+    "closing": "A robotic drone will fly these skies in the 2030s.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Titan is the only moon in our solar system with a thick atmosphere and liquid on its surface. NASA's Dragonfly mission will soon fly across this frozen world to study its chemistry.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: {'Visualizations by': [{'name': 'AJ Christensen', 'employer': 'SSAI'}, {'name':  — Webb Confirms Seasonal Variations in Titan Climate Model (https://svs.gsfc.nasa.gov/5530); {'Produced by': [{'name': 'Dan Gallagher', 'employer': 'eMITS'}], 'Visualization — The Science of Dragonfly (https://svs.gsfc.nasa.gov/13562)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The moon with rivers and seas of liquid methane\n\nTitan is the only moon in our solar system with a thick atmosphere and liquid on its surface. NASA's Dragonfly mission will soon fly across this frozen world to study its chemistry.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
