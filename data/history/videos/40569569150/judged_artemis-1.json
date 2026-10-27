@@ -1,0 +1,813 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:Artemis I FD15 Orion Moon",
+   "title": "Artemis I FD15 Orion Moon",
+   "date": "2022-11-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022",
+   "title": "Artemis I Flight Day Five: Orion and the Moon",
+   "date": "2022-11-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+   "title": "Artemis I Flight Day 5: Orion and Earth",
+   "date": "2022-11-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1203451716",
+   "title": "Reentry video as Orion returns from Artemis I",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20230117-MH-GEB01-0001-Artemis_I_Orion_Post_Flight_Payload_Payload_Processing_MARE_B-Roll-3321153",
+   "title": "Artemis I Orion Post Flight Payload Processing - MARE",
+   "date": "2023-01-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221211-VP-MWC01-001-ARTEMIS-SPLASHDOWN-3296595",
+   "title": "Artemis I Orion Splashdown",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Flight Day 14",
+   "title": "Artemis I Flight Day 14: Orion Sees the Earth and Moon",
+   "date": "2022-11-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-Orion-2020-GA_V_SAJ_Stacking_Artemis_I-00001",
+   "title": "Artemis I Orion Spacecraft Adapter Jettison Fairing Installation",
+   "date": "2020-10-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221211-MH-AMD01-0001-Artemis_1_Orion_Splash_Down-3312491",
+   "title": "Artemis I Orion Splash Down",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221211-VP-MWC01-001-ARTEMIS-SPLASHDOWN-RECOVERY-3312491",
+   "title": "Artemis I Orion Splashdown Recovery",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210503-MH-KLS01_0001-Artemis_I_NASA_Worm_On_Orion_CMA-3272973",
+   "title": "Artemis I - NASA Worm on Orion Crew Module Adapter",
+   "date": "2021-05-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595",
+   "title": "Artemis I Orion First Imagery of Earth",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis_I_Orion_in_space_animation4K_2021",
+   "title": "Artemis_I_Orion_in_space_animation4K_2021",
+   "date": "2021-10-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220718-MH-GEB01-Orion_Payload_Install-WON_3309593",
+   "title": "Orion payload installed - Campos Install Into Orion",
+   "date": "2022-07-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200325-MH-JBS01_0001-Orion_Artemis_I_Crew_and_Service_Module_Return_to_Kennedy_Arrival_at_SLF-3242558",
+   "title": "Orion Artemis I Crew and Service Module Return to Kennedy - Arrival",
+   "date": "2020-03-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211103-MH-GEB01-0001-Artemis_I_Weather_Simulation-3285537",
+   "title": "Artemis I Orion Weather Simulation",
+   "date": "2021-11-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Moon Below Orion art001m1013251756",
+   "title": "Flight Day 6: Orion Focuses on Moon",
+   "date": "2022-11-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308",
+   "title": "Orion Captures Moon with Camera on Solar Array",
+   "date": "2022-11-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200325-MH-JBS01_0002-Orion_Artemis_I_Crew_and_Service_Module_Return_to_Kennedy_Arrival_Offload_and_Transport-3242558",
+   "title": "Orion Artemis I Crew and Service Module Return to Kennedy - Arrival, Offload, Transport to O&C",
+   "date": "2020-03-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211019-MH-GEB01-0001-Orion_Transfered_to_VAB-8315137",
+   "title": "Artemis I Orion Transport from LASF to VAB",
+   "date": "2021-10-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+   "title": "Flight Day 20: Orion Completes Lunar Flyby",
+   "date": "2022-12-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+   "title": "Flight Day 20: Orion Sees Earth After Lunar Flyby",
+   "date": "2022-12-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:LAS Jettison",
+   "title": "Flight Day 1: Launch Abort System Jettison",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000210_Artemis_All_Access_221129-MP4",
+   "title": "Artemis All Access – Updates on Orion’s Journey in Space – 11/29/22",
+   "date": "2022-11-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000211_Artemis_All_Access_221202-MP4",
+   "title": "Artemis All Access – Updates on Orion’s Journey in Space – 12/2/22",
+   "date": "2022-12-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200325-MH-ILW01_0001-Orion_Artemis_I_Crew_and_Service_Module_Return_to_Kennedy_Inside_O&C_Building-3242558",
+   "title": "Orion Artemis I Crew and Service Module Return to Kennedy - Inside O&C Building",
+   "date": "2020-03-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:FD 19 Earth",
+   "title": "Flight Day 19: Looking Toward Earth",
+   "date": "2022-12-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+   "title": "Orion Completes Upper Stage Separation Burn",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed",
+   "title": "Artemis I Launch (Press Site)",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis I Launches to the Moon (Official NASA Recap)",
+   "title": "Artemis I Launches to the Moon (Official NASA Recap)",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221104-MH-CSH01_0001-Artemis_I_Rollout_for_Launch_Reupload-3317651",
+   "title": "Artemis I Launch Rollout",
+   "date": "2022-11-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221104-MH-GEB01-0001-Artemis_I_Rollout_for_Launch-3317651",
+   "title": "Artemis I Launch Rollout",
+   "date": "2022-11-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220816-MH-RLB01-0001-Artemis_I_Launch_Rollout_AERIALS-3312013",
+   "title": "Artemis I Launch Rollout - Aerials",
+   "date": "2022-08-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220816-MH-GEB01-0001-Artemis_I_Rollout_for_Launch_LCC-311906",
+   "title": "Artemis I Rollout for Launch -- LCC",
+   "date": "2022-08-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906",
+   "title": "Artemis I Rollout for Launch - TIMELAPSE",
+   "date": "2022-08-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+   "title": "Artemis I Isolated Launch Views",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+   "title": "Artemis I Launch Imagery",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210624-RV-GEB01-0001-Terminal_Count_Launch_SIM_Firing_Room_1_2-3277934",
+   "title": "Artemis I Terminal Count Launch Simulation",
+   "date": "2021-06-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20220804-MH-GEB01-0002-Artemis_1_Last_Launch_Sim-3310052",
+   "title": "Artemis I Final Launch Simulation",
+   "date": "2022-08-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221104-MH-ICH01-0001-Artemis_I_Rollout_for_Launch_HELO-3317810",
+   "title": "Artemis I Rollout for Launch -- HELO / AERIALS",
+   "date": "2022-11-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200730-MH-FMX01_0001-Artemis_I_Launch_Vehicle_Stage_Adapter_Offload_Timelapse-3243034",
+   "title": "Artemis I Launch Vehicle Stage Adapter Offload",
+   "date": "2020-07-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200729-MH-JNB01_0001-Artemis_I_Launch_Vehicle_Stage_Adapter_Arrival_Drone-3242036",
+   "title": "Artemis I Launch Vehicle Stage Adapter Arrival",
+   "date": "2020-07-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Post_Launch_Ground_Systems_LC_39B-3318786",
+   "title": "Artemis I Post Launch Ground Systems Assessment of LC-39B",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_Onboard_LC_39B-3319020",
+   "title": "Artemis I Launch - Engineering Views - Onboard",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_ML_Tower_LC_39B-3319019",
+   "title": "Artemis I Launch - Engineering Views - ML Tower",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_Tracking_LC_39B-3319023",
+   "title": "Artemis I Launch - Engineering Views - Tracking",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_ML_Deck_LC_39B-3318973",
+   "title": "Artemis I Launch - Engineering Views - ML Deck",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_Pad_LC_39B-3319021",
+   "title": "Artemis I Launch - Engineering Views - Pad 39B",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-GEB01-High_Speed_Film_Artemis_I-Tracking_Cameras_WON-3327398",
+   "title": "Artemis I Launch - Tracking Cameras, High Speed Cameras",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-GEB01-High_Speed_Film_Artemis_I_Pad_Cameras_WON-3327396",
+   "title": "Artemis I Launch Pad Cameras - High Speed Cameras",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Launch_Engineering_Views_Perimeter_LC_39B-3319022",
+   "title": "Artemis I Launch - Engineering Views - Pad 39B Perimeter",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:A1Launch",
+   "title": "Artemis I Launch Collage",
+   "date": "2022-12-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+   "title": "Earthset as Orion Prepares for Outbound Powered Flyby",
+   "date": "2022-11-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:FD13",
+   "title": "Flight Day 13: Orion Looks Back at Moon and Earth",
+   "date": "2022-11-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:FD14 SAW",
+   "title": "Flight Day 14: Orion's Solar Array Splits Earth and Moon",
+   "date": "2022-11-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1013321410_1",
+   "title": "Orion sees the Earth and the Moon",
+   "date": "2022-11-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250",
+   "title": "Earthrise after Orion Executes Outbound Powered Flyby",
+   "date": "2022-11-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis I FD 15 Earth",
+   "title": "Artemis I FD 15: Earth Snapshot",
+   "date": "2022-11-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116-MH-GEB01-0002-Artemis_Firing_Room_Launch_Day-WON_3321120",
+   "title": "Artemis I Launch - Firing Room 1, LCC",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+   "title": "Artemis I Slow Motion Liftoff",
+   "date": "2022-11-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:FD 19 Moon",
+   "title": "Flight Day 19: Sights Set on the Moon",
+   "date": "2022-12-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
+   "title": "Flight Day 6: Orion Captures Earthset",
+   "date": "2022-11-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:SLS-Built-to-Explore-020922_V5_0077",
+   "title": "SLS-Built-to-Explore-020922_V5_0077",
+   "date": "2022-02-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:jsc2022m000286_Artemis I Post Splashdown News Conference 221211",
+   "title": "Artemis I Leaders Discuss Orion Entry, Splashdown, Recovery",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221210-MH-GEB01-0001-Artemis_1_Orion_Recovery_Balloon_Release-3312491",
+   "title": "Astronaut Shannon Walker prepares to release a weather balloon from the deck of the USS Portland",
+   "date": "2022-12-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1503422200-Artemis_I_Leaders_Preview_Entry_Splashdown_Operations_221208_1737271",
+   "title": "Artemis I Leaders Preview Orion Entry, Splashdown Operations",
+   "date": "2022-12-09",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200320-MH-FMX01_001-URT-8_Underway_Recovery_Test-8-3246325",
+   "title": "Underway Recovery Test-8",
+   "date": "2020-03-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Artemis-1_Orion_Recovery_training_b-roll",
+   "title": "Artemis I Recovery Teams Prepare for Splashdown",
+   "date": "2022-12-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20250128-MH-NAS02-0001-Artemis_Success_and_Preparation_Short_Versions-M11615",
+   "title": "Artemis Success and Preparation - Short Version (5 Minutes)",
+   "date": "2025-01-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Success and Preparation",
+   "title": "Success and Preparation",
+   "date": "2024-04-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20250128-MH-NAS01-0001-Artemis_Success_and_Preparation_Short_Versions-M11615",
+   "title": "Artemis Success and Preparation - Short Version (2 Minutes)",
+   "date": "2025-01-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1503392159_Artemis_I_Leaders_Discuss_RPF_Preview_Recovery_221205",
+   "title": "Artemis I Leaders Discuss Orion Return, Preview Recovery Operations Dec. 5, 2022",
+   "date": "2022-12-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210716-VP-MWC01-001-INSIDEKSC-3279129",
+   "title": "Inside KSC! for July 16, 2021",
+   "date": "2021-07-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221208-MH-GEB01-0001-Artemis_1_Orion_Recovery-3312491",
+   "title": "Orion Recovery Operations Aboard the USS Portland",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221208-MH-GEB02-0001-Artemis_1_Orion_Recovery-3312491",
+   "title": "Orion Splashdown and Recovery Operations Aboard the USS Portland",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20221211-MH-JBP01-0001-Artemis_1_Orion_Splash_Down_6K_Video-3312491",
+   "title": "Orion Splashdown 6k Video",
+   "date": "2022-12-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:20200807-KSC-VP-FJM01-0001_IKSC Hannah 4K",
+   "title": "Inside KSC! for Aug.. 7, 2020",
+   "date": "2020-08-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:art001m1503342203-Artemis_I_RPF_DRD_Preview_Briefing_221130_1731178",
+   "title": "NASA & ESA Leaders Discuss Distant Retrograde Orbit Departure Burn of Orion Vehicle",
+   "date": "2022-11-30",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5646",
+   "title": "How to See the Proposed Carroll Crater",
+   "date": "2026-05-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5633",
+   "title": "Simulating the Artemis II Lunar Flyby on April 6, 2026",
+   "date": "2026-04-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5632",
+   "title": "Artemis II mission trajectory",
+   "date": "2026-04-06",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5622",
+   "title": "Artemis II: Sending Humans Beyond the Magnetosphere",
+   "date": "2026-03-05",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5610",
+   "title": "Nominal (reference) Artemis II mission trajectory",
+   "date": "2026-01-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5609",
+   "title": "Heliophysics Satellite Fleet - 2026",
+   "date": "2026-01-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14938",
+   "title": "Artemis Science: Visualizing NASA’s Next Lunar Flyby",
+   "date": "2025-12-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5535",
+   "title": "What Apollo Saw in Sunlight While in Orbit",
+   "date": "2025-08-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5536",
+   "title": "Simulated Artemis II Lunar Flyby",
+   "date": "2025-08-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5571",
+   "title": "NASA's Fleet of Active Satellites (July 2025)",
+   "date": "2025-07-22",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5443",
+   "title": "Heliophysics Sentinels 2024",
+   "date": "2024-12-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5326",
+   "title": "Moon Essentials: Orbit",
+   "date": "2024-07-18",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250",
+  "nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+  "nasa:ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
+  "nasa:Moon Below Orion art001m1013251756",
+  "nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+  "nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022",
+  "nasa:Flight Day 14",
+  "nasa:FD13",
+  "nasa:Artemis I FD15 Orion Moon",
+  "nasa:art001m1203451716",
+  "nasa:KSC-20221211-VP-MWC01-001-ARTEMIS-SPLASHDOWN-3296595",
+  "nasa:KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595"
+ ],
+ "judged": [
+  {
+   "id": "nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250",
+   "title": "Earthrise after Orion Executes Outbound Powered Flyby",
+   "relevant": true,
+   "usable": false,
+   "quality": 2,
+   "kind": "footage",
+   "what": "Earthrise view after Orion's outbound powered flyby of the Moon, mostly showing pitch black frames with a tiny distant Earth pixel.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+   "title": "Earthset as Orion Prepares for Outbound Powered Flyby",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Earth setting behind the Moon as seen from Orion's solar array camera during Artemis I",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "Orion spacecraft structure on the left with the lunar limb and Earth setting in the background",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
+   "title": "Flight Day 6: Orion Captures Earthset",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Camera on Orion's solar array captures Earth setting behind the Moon during Artemis I",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "Orion spacecraft with the Moon and Earth setting behind its horizon",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:Moon Below Orion art001m1013251756",
+   "title": "Flight Day 6: Orion Focuses on Moon",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Real camera footage from the Orion spacecraft showing parts of its structure and solar array with the crescent Moon in the deep space background during Flight D",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 23,
+     "focus": [
+      0.48,
+      0.45
+     ],
+     "width": 0.6,
+     "shows": "Orion spacecraft structure visible in shadow with the illuminated Moon crescent below in deep space.",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+   "title": "Flight Day 20: Orion Completes Lunar Flyby",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Raw onboard footage from the Orion spacecraft during its lunar flyby for the Artemis I mission.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "The Orion spacecraft's service module and solar array in the foreground with the lunar surface receding in the backgroun",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022",
+   "title": "Artemis I Flight Day Five: Orion and the Moon",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Orion capsule and the Moon seen from a solar array camera during Artemis I",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 5,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Orion spacecraft with NASA logo and the distant Moon",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:Flight Day 14",
+   "title": "Artemis I Flight Day 14: Orion Sees the Earth and Moon",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "The Orion spacecraft in deep space with the Earth and Moon visible in the distance during Artemis I.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 23,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "The Orion capsule in the foreground with the Earth and Moon as small dots in the distant background.",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:FD13",
+   "title": "Flight Day 13: Orion Looks Back at Moon and Earth",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "The Orion spacecraft in distant retrograde orbit with the Moon and Earth visible in the distance.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 11,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 1.0,
+     "shows": "The Orion capsule with the NASA logo in the foreground, looking back at the Moon and Earth as small spheres in the deep ",
+     "score": 10
+    }
+   ]
+  },
+  {
+   "id": "nasa:art001m1203451716",
+   "title": "Reentry video as Orion returns from Artemis I",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Onboard camera footage of the Orion spacecraft's atmospheric reentry and parachute deployment during Artemis I.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.7
+     ],
+     "width": 0.32,
+     "shows": "Earth's horizon and clouds from space before reentry",
+     "score": 8
+    },
+    {
+     "start": 4,
+     "end": 5,
+     "focus": [
+      0.7,
+      0.3
+     ],
+     "width": 0.4,
+     "shows": "Plasma trail and intense heating during peak reentry",
+     "score": 9
+    },
+    {
+     "start": 6,
+     "end": 18,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "View through the capsule window during descent through the atmosphere",
+     "score": 6
+    },
+    {
+     "start": 19,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.4
+     ],
+     "width": 0.32,
+     "shows": "Deployment and inflation of the main parachutes",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}
