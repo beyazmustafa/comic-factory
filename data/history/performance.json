@@ -4097,5 +4097,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "FnbVjEsHy2g",
+    "platform": "youtube",
+    "run_id": "40523381390",
+    "published_at": "2026-10-27T15:04:28+00:00",
+    "event": {
+      "title": "400 kilometres up, moving fast.",
+      "series": "NASA footage",
+      "issue": "spacewalk",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 141,
+      "duration": 78.1,
+      "words_per_minute": 108,
+      "hook": "Astronauts breathe pure oxygen for hours beforehand because the suit pressure is only a third of sea level.",
+      "hook_words": 18,
+      "title": "What Astronauts See During a Spacewalk",
+      "title_length": 38,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

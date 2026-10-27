@@ -1,0 +1,148 @@
+{
+  "title": "What Astronauts See During a Spacewalk",
+  "description": "Experience the perspective of an astronaut working outside the International Space Station. This footage shows the extreme conditions and specialized equipment required to maintain our home in orbit.",
+  "hook_card": "400 kilometres up, moving fast.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "Astronauts breathe pure oxygen for hours beforehand because the suit pressure is only a third of sea level.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "The first spacewalk by Alexei Leonov in March 1965 lasted twelve minutes, starting a long orbital history.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "More than 270 spacewalks have been made to build and repair the station, usually lasting six to eight hours.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c01",
+      "narration": "The suit has 14 layers and weighs 145 kilograms on Earth, though in orbit it weighs nothing.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c00",
+      "narration": "In sunlight the suit faces plus 120 degrees Celsius, while in shadow it drops to minus 150 degrees.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c03",
+      "narration": "A sunrise comes every 90 minutes, rapidly changing the temperature as astronauts work on the station truss.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "Astronauts wear a small jetpack called SAFER as a backup measure in case a safety tether fails.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "The suit remains heavy to move in orbit, requiring constant effort to maneuver through the vacuum of space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Astronauts breathe pure oxygen for hours beforehand because the suit pressure is only a third of sea level. The first spacewalk by Alexei Leonov in March 1965 lasted twelve minutes, starting a long orbital history. More than 270 spacewalks have been made to build and repair the station, usually lasting six to eight hours. The suit has 14 layers and weighs 145 kilograms on Earth, though in orbit it weighs nothing. In sunlight the suit faces plus 120 degrees Celsius, while in shadow it drops to minus 150 degrees. A sunrise comes every 90 minutes, rapidly changing the temperature as astronauts work on the station truss. Astronauts wear a small jetpack called SAFER as a backup measure in case a safety tether fails. The suit remains heavy to move in orbit, requiring constant effort to maneuver through the vacuum of space.",
+  "event": {
+    "id": "film_spacewalk_20261027T144145903023Z",
+    "title": "400 kilometres up, moving fast.",
+    "series": "NASA footage",
+    "issue": "spacewalk",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "spacewalk",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
+    ]
+  },
+  "scenario": "spacewalk",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "Astronauts breathe pure oxygen for hours beforehand because the suit pressure is only a third of sea level.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The first spacewalk by Alexei Leonov in March 1965 lasted twelve minutes, starting a long orbital history.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "More than 270 spacewalks have been made to build and repair the station, usually lasting six to eight hours.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The suit has 14 layers and weighs 145 kilograms on Earth, though in orbit it weighs nothing.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "In sunlight the suit faces plus 120 degrees Celsius, while in shadow it drops to minus 150 degrees.",
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "A sunrise comes every 90 minutes, rapidly changing the temperature as astronauts work on the station truss.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Astronauts wear a small jetpack called SAFER as a backup measure in case a safety tether fails.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The suit remains heavy to move in orbit, requiring constant effort to maneuver through the vacuum of space.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "More than 270 spacewalks have been made to build the station.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
