@@ -1,0 +1,433 @@
+{
+  "duration": 73.93,
+  "handle": "@Facctsaboutspace",
+  "hook": "Touching an Asteroid 320 Million Kilometres Away",
+  "kicker": "Real footage · NASA",
+  "closing": "Bennu has a 1-in-2,700 chance of hitting Earth in 2182.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.084,
+      "src_out": 18.016,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        424,
+        0,
+        2992,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.599,
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.608,
+      "src_out": 6.522,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.599,
+      "t1": 10.18,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 4.1,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        424,
+        0,
+        2992,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.18,
+      "t1": 14.972,
+      "label": "NASA · OSIRIS-REx · 2018",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c00",
+      "asset": "svs:20360",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/svs_20360/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.934,
+      "src_out": 11.896,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 14.972,
+      "t1": 16.6,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20200227_M13565_Nightingale",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20200227_m13565_nightingale/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.408,
+      "src_out": 17.692,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 16.6,
+      "t1": 23.55,
+      "label": "NASA · OSIRIS-REx · 2018",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20200227_M13565_Nightingale",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20200227_m13565_nightingale/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.8,
+      "src_out": 10.93,
+      "speed": 0.98,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        0,
+        3336,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 23.55,
+      "t1": 30.49,
+      "label": "NASA · OSIRIS-REx · 2019",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "svs:20360",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/svs_20360/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 21.83,
+      "src_out": 26.0,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 30.49,
+      "t1": 35.369,
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20200227_M13565_Nightingale",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20200227_m13565_nightingale/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.933,
+      "src_out": 6.797,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.6
+      ],
+      "active": [
+        0,
+        984,
+        3840,
+        1176
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 35.369,
+      "t1": 37.9,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 11.263,
+      "src_out": 18.837,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        424,
+        0,
+        2992,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 37.9,
+      "t1": 45.14,
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "svs:20360",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/svs_20360/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 6.573,
+      "src_out": 15.257,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 45.14,
+      "t1": 53.49,
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": {
+        "value": "121.6 g",
+        "label": "brought home"
+      },
+      "kind": "visualization",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20200227_M13565_Nightingale",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20200227_m13565_nightingale/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.327,
+      "src_out": 8.403,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.6
+      ],
+      "active": [
+        0,
+        984,
+        3840,
+        1176
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 53.49,
+      "t1": 59.232,
+      "label": "NASA · OSIRIS-REx · 2023",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 4.1,
+      "speed": 0.815,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        424,
+        0,
+        2992,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 59.232,
+      "t1": 63.93,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.148,
+      "src_out": 6.982,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 63.93,
+      "t1": 69.43,
+      "label": "NASA · OSIRIS-REx · 2023",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20210415_M13837_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/footage/nasa_gsfc_20210415_m13837_flyover/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.633,
+      "src_out": 17.467,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        424,
+        0,
+        2992,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 69.43,
+      "t1": 73.93,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

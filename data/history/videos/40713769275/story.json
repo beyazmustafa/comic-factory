@@ -1,0 +1,163 @@
+{
+  "title": "A space probe touched an asteroid to collect ancient dust",
+  "description": "In October 2020, NASA's OSIRIS-REx spacecraft touched the surface of asteroid Bennu to collect a sample. The space probe returned 121.6 grams of material to Earth in September 2023.",
+  "hook_card": "Touching an Asteroid 320 Million Kilometres Away",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c01",
+      "narration": "Watch a robot arm touch an asteroid more than 320 million kilometres away from Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "This is Bennu, a rubble-pile asteroid about 500 metres wide.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "The spacecraft reached the asteroid in December 2018 after a long journey through space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c05",
+      "narration": "Scientists searched the boulder-covered terrain to find a safe spot for sampling.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c00",
+      "narration": "On 20 October 2020, the sampling arm extended and touched the surface for a few seconds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "The surface gave way like a ball pit, allowing the arm to sink about half a metre.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "Thrusters pulled the spacecraft back, securing 121.6 grams of pristine space material.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c04",
+      "narration": "It is the largest sample returned from beyond the Moon, landing in Utah on 24 September 2023.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "Analysis shows these ancient rocks contain water-bearing minerals and organic molecules.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Watch a robot arm touch an asteroid more than 320 million kilometres away from Earth. This is Bennu, a rubble-pile asteroid about 500 metres wide. The spacecraft reached the asteroid in December 2018 after a long journey through space. Scientists searched the boulder-covered terrain to find a safe spot for sampling. On 20 October 2020, the sampling arm extended and touched the surface for a few seconds. The surface gave way like a ball pit, allowing the arm to sink about half a metre. Thrusters pulled the spacecraft back, securing 121.6 grams of pristine space material. It is the largest sample returned from beyond the Moon, landing in Utah on 24 September 2023. Analysis shows these ancient rocks contain water-bearing minerals and organic molecules.",
+  "event": {
+    "id": "film_bennu_20261028T151426201322Z",
+    "title": "Touching an Asteroid 320 Million Kilometres Away",
+    "series": "NASA footage",
+    "issue": "bennu",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "bennu",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20200227_M13565_Nightingale",
+      "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
+      "https://svs.gsfc.nasa.gov/20360"
+    ]
+  },
+  "scenario": "bennu",
+  "beats": [
+    {
+      "clip": "c01",
+      "narration": "Watch a robot arm touch an asteroid more than 320 million kilometres away from Earth.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "This is Bennu, a rubble-pile asteroid about 500 metres wide.",
+      "label": "NASA · OSIRIS-REx · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "The spacecraft reached the asteroid in December 2018 after a long journey through space.",
+      "label": "NASA · OSIRIS-REx · 2018",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Scientists searched the boulder-covered terrain to find a safe spot for sampling.",
+      "label": "NASA · OSIRIS-REx · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "On 20 October 2020, the sampling arm extended and touched the surface for a few seconds.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The surface gave way like a ball pit, allowing the arm to sink about half a metre.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Thrusters pulled the spacecraft back, securing 121.6 grams of pristine space material.",
+      "label": "NASA · OSIRIS-REx · 2020",
+      "callout": {
+        "value": "121.6 g",
+        "label": "brought home"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "It is the largest sample returned from beyond the Moon, landing in Utah on 24 September 2023.",
+      "label": "NASA · OSIRIS-REx · 2023",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Analysis shows these ancient rocks contain water-bearing minerals and organic molecules.",
+      "label": "NASA · OSIRIS-REx · 2023",
+      "callout": null
+    }
+  ],
+  "closing": "Bennu has a 1-in-2,700 chance of hitting Earth in 2182.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
