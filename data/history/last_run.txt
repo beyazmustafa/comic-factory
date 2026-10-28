@@ -1,11 +1,11 @@
-run_id: 40713769275  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261028T151426201322Z/run.json
+run_id: 40756425193  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261028T194130552929Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,41 +40,28 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "40713769275",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "06e5764b1b9a26617d9a6ce3bfeb8e9998b8175b82736304115e6e910737d9c9",
-  "metadata_sha256": "ac1cb7b7c811ce9a96b988782fe1021a50669a32bb483c33ec810db4ae5375c2",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 24,
-  "duration": 73.93,
-  "voice": "Charon",
-  "event": {
-    "id": "film_bennu_20261028T151426201322Z",
-    "title": "Touching an Asteroid 320 Million Kilometres Away",
-    "series": "NASA footage",
-    "issue": "bennu",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "bennu",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20200227_M13565_Nightingale",
-      "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
-      "https://svs.gsfc.nasa.gov/20360"
-    ]
-  },
-  "localized": []
+  "run_id": "40756425193",
+  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261028T151426201322Z/diagnostics/provider_events.json
+--- data/runs/20261028T194130552929Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5649: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5649: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5649: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261028T151426201322Z/diagnostics/providers.json
+--- data/runs/20261028T194130552929Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -98,8 +85,8 @@ produce step outcome: success
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -190,70 +177,81 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261028T194130552929Z/audio/chunk_000/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 18.4 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 18.4 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.5 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.5 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.6 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.6 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 16.7 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 16.7 sn)"
+]
 --- studio.log (son 300 satır)
-→ Konu: bennu
-Görüntü adayları: 52 (bennu)
+→ Konu: sdo-sun
+Görüntü adayları: 92 (sdo-sun)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
 Çözümlenen video: 12
-nasa:GSFC_20201021_M13745_TAG: elendi (7/10, footage) A produced NASA broadcast covering the OSIRIS-REx Touch-And-Go (TAG) s
-svs:4862: elendi (7/10, visualization) Trajectory visualization of the OSIRIS-REx spacecraft approaching aste
-svs:20360: kullanılır (9/10, visualization) Data-driven animation showing OSIRIS-REx touching down and collecting 
-svs:5010: elendi (6/10, visualization) 3D visualization map showing surface height changes and annotations at
-nasa:GSFC_20210415_M13837_Flyover: kullanılır (8/10, footage) Footage and visualization showing the aftermath and direct imagery of 
-Kesitte temiz pencere yok nasa:GSFC_20210415_M13837_Flyover 54-60 (yazı: 1, kesme: 5)
-nasa:GSFC_20210510_M13854_BennuFarewell: elendi (8/10, animation) A look back at OSIRIS-REx's mission at asteroid Bennu, including the T
-nasa:GSFC_20200227_M13565_Nightingale: kullanılır (8/10, visualization) Visualization and animations of OSIRIS-REx evaluating and selecting sa
-Kullanılır kesit: 6 (94 sn temiz görüntü)
+sdo:20240510_0171: elendi (8/10, footage) Full-disk view of the Sun showing extreme ultraviolet coronal loops at
+sdo:20240510_0131: elendi (8/10, footage) Full-disk view of the Sun in extreme ultraviolet (131 Å) showing flari
+sdo:20240510_0304: elendi (8/10, footage) Full-disk view of the Sun in 304 Angstrom extreme ultraviolet showing 
+sdo:20240510_0193: elendi (8/10, footage) Full-disk view of the solar corona observed by SDO in 193 Å extreme ul
+sdo:20240510_0094: elendi (8/10, footage) Solar Dynamics Observatory view of the Sun in 94 Å extreme ultraviolet
+sdo:20241003_0171: elendi (8/10, footage) Solar Dynamics Observatory 171 Å extreme ultraviolet footage of the Su
+sdo:20241003_0131: elendi (8/10, footage) Full-disk view of the Sun captured by SDO at 131 Angstroms showing fla
+sdo:20241003_0304: elendi (8/10, footage) Full-disk view of the Sun in 304 Angstroms extreme ultraviolet light f
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA SDO extreme ultraviolet observations of an M6.7 solar flare and a
+Görüntü değerlendirme svs:5649: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5649: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:5649: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+svs:5649: elendi (8/10, footage) Solar Dynamics Observatory view of the Sun showing surface activity an
+Görüntü adayları: 4 (sdo-sun, Commons)
+Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Sıralanan aday: 4
+Çözümlenemedi commons:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
+Çözümlenemedi commons:NASA's SDO Captures a February Solar Flare Triple Play (SVS14536).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
+Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
+Çözümlenemedi commons:Solar flare X2.1 2011-09-06.ogv: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
+Çözümlenen video: 0
+Kullanılır kesit: 2 (40 sn temiz görüntü)
+Konu atlandı (sdo-sun): Yeterli temiz görüntü yok (2 kesit, 40 sn).
+→ Konu: moon-tour
+Görüntü adayları: 75 (moon-tour)
+Sıralanan aday: 10
+Çözümlenen video: 10
+svs:4619: elendi (5/10, visualization) A lunar flyover visualization with coordinate and scale overlays
+nasa:GSFC_20190618_LRO_m13229_10Years: elendi (6/10, footage) A 10-year retrospective of NASA's Lunar Reconnaissance Orbiter mission
+nasa:GSFC_20120220_LRO_m10915_ graben_moon: kullanılır (7/10, animation) NASA Lunar Reconnaissance Orbiter revealing recent geological activity
+nasa:GSFC_20120220_LRO_m10915_ graben_moon: üretilmiş program gibi (0 karede insan, 14/22 kare elendi); atlandı
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (7/10, visualization) NASA's Lunar Reconnaissance Orbiter data revealing deep pits on the lu
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 11/13 kare elendi); atlandı
+nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (8/10, visualization) Flyover visualization of the Lee Lincoln scarp in the Taurus-Littrow v
+nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global mosaics and surface imagery of the Moon mapped 
+nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (6/10, visualization) NASA documentary on LRO discovering new impact craters on the Moon
+nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Data visualizations of the Moon's permanently shadowed regions mapped 
+nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt2: elendi (6/10, visualization) A visualization of the Lunar Reconnaissance Orbiter mapping the Moon's
+nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt1: elendi (5/10, visualization) An educational video about the Lunar Reconnaissance Orbiter and lunar 
+Kullanılır kesit: 7 (91 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (73.9 sn, 9 beat, 6 kesit)
-  kurgu 10/74 sn
-  kurgu 20/74 sn
-  kurgu 30/74 sn
-  kurgu 40/74 sn
-  kurgu 50/74 sn
-  kurgu 60/74 sn
-  kurgu 70/74 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: A space probe touched an asteroid to collect ancient dust #Shorts
-Görünürlük: public
-
-Yükleme: %6
-Yükleme: %13
-Yükleme: %20
-Yükleme: %26
-Yükleme: %33
-Yükleme: %40
-Yükleme: %47
-Yükleme: %53
-Yükleme: %60
-Yükleme: %67
-Yükleme: %74
-Yükleme: %80
-Yükleme: %87
-Yükleme: %94
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=z0eO9LPEXIo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261028T151426201322Z/video.mp4
-Boyut: 118.8 MB
-Açıklama uzunluğu: 337 karakter
-Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 124537128. Maximum is 104857600.
+Ses eşleştirme: 68.4/100 | whisper-large-v3
+Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 2
+Ses eşleştirme: 68.4/100 | whisper-large-v3
+Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 3
+Ses eşleştirme: 68.4/100 | whisper-large-v3
+Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
+Ses bölümü 1, deneme 4
+Ses eşleştirme: 68.4/100 | whisper-large-v3
+Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
+HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
