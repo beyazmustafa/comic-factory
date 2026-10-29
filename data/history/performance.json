@@ -4261,5 +4261,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "QrfM6bWba6w",
+    "platform": "youtube",
+    "run_id": "40942616877",
+    "published_at": "2026-10-29T20:14:43+00:00",
+    "event": {
+      "title": "The Moon in 4K",
+      "series": "NASA footage",
+      "issue": "moon-tour",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 10,
+      "words": 162,
+      "duration": 97.8,
+      "words_per_minute": 99,
+      "hook": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre of the surface.",
+      "hook_words": 18,
+      "title": "A spacecraft has mapped the Moon in 4K resolution",
+      "title_length": 49,
+      "emphasis": {
+        "normal": 10
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

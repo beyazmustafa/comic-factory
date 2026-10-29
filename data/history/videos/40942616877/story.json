@@ -1,0 +1,181 @@
+{
+  "title": "A spacecraft has mapped the Moon in 4K resolution",
+  "description": "The Lunar Reconnaissance Orbiter has spent over a decade mapping the lunar surface in unprecedented detail. These visualizations reveal the frozen craters and historic landing sites of our closest celestial neighbor.",
+  "hook_card": "The Moon in 4K",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c05",
+      "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre of the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "This 3,474 km wide world orbits our planet from a distance of 384,400 km.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c07",
+      "narration": "Every year, the Moon drifts 3.8 cm further away from Earth as it continues its ancient journey.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c00",
+      "narration": "The South Pole-Aitken basin spans 2,500 km across and 8 km deep, one of the largest known impact craters.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c03",
+      "narration": "Some polar craters have not seen sunlight in billions of years, keeping their floors in total darkness.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c02",
+      "narration": "These shadowed floors are colder than minus 230 °C and hold deposits of water ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "This map shows the distribution of these dark craters across the lunar poles.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c06",
+      "narration": "The orbiter has mapped the water ice that remains frozen in these dark polar craters.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c00",
+      "narration": "Tycho crater is 86 km wide, with a central peak that stands about 2 km tall.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "c05",
+      "narration": "With no wind or rain to erode the surface, the astronauts' footprints will last for millions of years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre of the surface. This 3,474 km wide world orbits our planet from a distance of 384,400 km. Every year, the Moon drifts 3.8 cm further away from Earth as it continues its ancient journey. The South Pole-Aitken basin spans 2,500 km across and 8 km deep, one of the largest known impact craters. Some polar craters have not seen sunlight in billions of years, keeping their floors in total darkness. These shadowed floors are colder than minus 230 °C and hold deposits of water ice. This map shows the distribution of these dark craters across the lunar poles. The orbiter has mapped the water ice that remains frozen in these dark polar craters. Tycho crater is 86 km wide, with a central peak that stands about 2 km tall. With no wind or rain to erode the surface, the astronauts' footprints will last for millions of years.",
+  "event": {
+    "id": "film_moon-tour_20261029T194422140963Z",
+    "title": "The Moon in 4K",
+    "series": "NASA footage",
+    "issue": "moon-tour",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "moon-tour",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD",
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+    ]
+  },
+  "scenario": "moon-tour",
+  "beats": [
+    {
+      "clip": "c05",
+      "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre of the surface.",
+      "label": "NASA · LRO · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "This 3,474 km wide world orbits our planet from a distance of 384,400 km.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Every year, the Moon drifts 3.8 cm further away from Earth as it continues its ancient journey.",
+      "label": "NASA · LRO · 2021",
+      "callout": {
+        "value": "3.8 cm",
+        "label": "farther away every year"
+      }
+    },
+    {
+      "clip": "c00",
+      "narration": "The South Pole-Aitken basin spans 2,500 km across and 8 km deep, one of the largest known impact craters.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Some polar craters have not seen sunlight in billions of years, keeping their floors in total darkness.",
+      "label": "NASA · LRO · 2013",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "These shadowed floors are colder than minus 230 °C and hold deposits of water ice.",
+      "label": "NASA · LRO · 2013",
+      "callout": {
+        "value": "-230 °C",
+        "label": "inside polar craters"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "This map shows the distribution of these dark craters across the lunar poles.",
+      "label": "NASA · LRO · 2013",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "The orbiter has mapped the water ice that remains frozen in these dark polar craters.",
+      "label": "NASA · LRO · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Tycho crater is 86 km wide, with a central peak that stands about 2 km tall.",
+      "label": "NASA · LRO · 2011",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "With no wind or rain to erode the surface, the astronauts' footprints will last for millions of years.",
+      "label": "NASA · LRO · 2019",
+      "callout": null
+    }
+  ],
+  "closing": "The lunar dust will hold these footprints for millions of years.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

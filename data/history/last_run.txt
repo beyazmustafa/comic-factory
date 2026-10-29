@@ -1,6 +1,6 @@
-run_id: 40900158037  attempt: 1  event: schedule
+run_id: 40942616877  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261029T151912720255Z/run.json
+--- data/runs/20261029T194422140963Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,43 +40,45 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "40900158037",
+  "run_id": "40942616877",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "af6c1476de513ad637658503b12613fa48234dbbabf7421060ce2f5e03dc6471",
-  "metadata_sha256": "9331400ebfa7a401ef54aebb4d64bda255caa34e36895a45c16a224fbe193336",
+  "video_sha256": "789a9d1aa04e7523fbd0d3941e052e907ec24b0618d2ee9c127b269040a421cd",
+  "metadata_sha256": "90fd9f5424acdfc6e373623573d501c52d6e2e4663ca9a20010a11a8f05a2dd0",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 29,
-  "duration": 92.1,
+  "api_calls": 40,
+  "duration": 97.84,
   "voice": "Charon",
   "event": {
-    "id": "film_sdo-sun_20261029T151912720255Z",
-    "title": "The Sun, every twelve seconds.",
+    "id": "film_moon-tour_20261029T194422140963Z",
+    "title": "The Moon in 4K",
     "series": "NASA footage",
-    "issue": "sdo-sun",
+    "issue": "moon-tour",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "sdo-sun",
+    "scenario": "moon-tour",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      "https://images.nasa.gov/details/ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD",
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
     ]
   },
   "localized": []
 }
---- data/runs/20261029T151912720255Z/diagnostics/provider_events.json
+--- data/runs/20261029T194422140963Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0171: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261029T151912720255Z/diagnostics/providers.json
+--- data/runs/20261029T194422140963Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -99,9 +101,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -193,51 +195,56 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: sdo-sun
-Görüntü adayları: 92 (sdo-sun)
-Sıralanan aday: 12
-Çözümlenemedi svs:5649: HTTPError: 503 Server Error: Service Unavailable for url: https://svs.gsfc.nasa.gov/api/5649
-Çözümlenen video: 11
-nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's Solar Dynamics Observatory captures an M6.7 solar flare in mult
-Görüntü değerlendirme sdo:20240510_0171: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20240510_0171: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20240510_0171: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-sdo:20240510_0171: elendi (8/10, footage) Solar Dynamics Observatory extreme ultraviolet view of the Sun at 171 
-Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory 131 Ångström view of the Sun showing active
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) Solar Dynamics Observatory footage of a mid-level solar flare and magn
-Kullanılır kesit: 6 (84 sn temiz görüntü)
+→ Konu: moon-tour
+Görüntü adayları: 75 (moon-tour)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Sıralanan aday: 10
+Çözümlenen video: 10
+svs:4619: elendi (8/10, visualization) A tour of various lunar surface features mapped by the Lunar Reconnais
+nasa:GSFC_20190618_LRO_m13229_10Years: kullanılır (7/10, animation) Retrospective celebrating 10 years of NASA's Lunar Reconnaissance Orbi
+nasa:GSFC_20190618_LRO_m13229_10Years: üretilmiş program gibi (0 karede insan, 13/19 kare elendi); atlandı
+nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global imagery and terrain mapping of the lunar surfac
+nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Visualization of permanently shadowed regions on the Moon based on dat
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: elendi (6/10, visualization) NASA's Lunar Reconnaissance Orbiter data showing steep-walled lunar pi
+nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (6/10, visualization) NASA video explaining recent geological activity and stretching on the
+nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (7/10, visualization) A documentary segment explaining how NASA's Lunar Reconnaissance Orbit
+nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) 3D visualization flyover of the Lee Lincoln scarp at the Apollo 17 lan
+Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: kullanılır (8/10, visualization) A visualization of the Moon's South Pole and the VIPER rover mission l
+Kullanılır kesit: 8 (121 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses eşleştirme: 87.3/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 91.7/100 | whisper-large-v3-turbo
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 94.7/100 | whisper-large-v3-turbo
+Ses eşleştirme: 93.9/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 91.2/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (92.1 sn, 9 beat, 6 kesit)
-  kurgu 10/92 sn
-  kurgu 20/92 sn
-  kurgu 30/92 sn
-  kurgu 40/92 sn
-  kurgu 50/92 sn
-  kurgu 60/92 sn
-  kurgu 70/92 sn
-  kurgu 80/92 sn
-  kurgu 90/92 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/review.html
+Ses eşleştirme: 91.2/100 | whisper-large-v3
+→ Kurgu (97.8 sn, 10 beat, 8 kesit)
+  kurgu 10/98 sn
+  kurgu 20/98 sn
+  kurgu 30/98 sn
+  kurgu 40/98 sn
+  kurgu 50/98 sn
+  kurgu 60/98 sn
+  kurgu 70/98 sn
+  kurgu 80/98 sn
+  kurgu 90/98 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T194422140963Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A satellite has photographed the Sun every 12 seconds #Shorts
+Başlık: A spacecraft has mapped the Moon in 4K resolution #Shorts
 Görünürlük: public
 
 Yükleme: %6
@@ -246,22 +253,22 @@ Yükleme: %18
 Yükleme: %24
 Yükleme: %30
 Yükleme: %36
-Yükleme: %43
-Yükleme: %49
-Yükleme: %55
-Yükleme: %61
+Yükleme: %42
+Yükleme: %48
+Yükleme: %54
+Yükleme: %60
 Yükleme: %67
 Yükleme: %73
 Yükleme: %79
-Yükleme: %86
-Yükleme: %92
-Yükleme: %98
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=BWUFqUciMfQ&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %85
+Yükleme: %91
+Yükleme: %97
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=QrfM6bWba6w&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/video.mp4
-Boyut: 130.1 MB
-Açıklama uzunluğu: 363 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T194422140963Z/video.mp4
+Boyut: 131.2 MB
+Açıklama uzunluğu: 364 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 136458152. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 137523265. Maximum is 104857600.
