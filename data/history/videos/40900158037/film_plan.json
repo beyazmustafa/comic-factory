@@ -1,0 +1,559 @@
+{
+  "duration": 92.1,
+  "handle": "@Facctsaboutspace",
+  "hook": "The Sun, every twelve seconds.",
+  "kicker": "Real footage · NASA",
+  "closing": "The Sun's magnetic poles swap every eleven years.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.57,
+      "src_out": 10.36,
+      "speed": 1.0,
+      "focus": [
+        0.65,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.457,
+      "label": "NASA · SDO · 2016",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.077,
+      "src_out": 12.693,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.457,
+      "t1": 11.74,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.43,
+      "src_out": 7.87,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        860
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.74,
+      "t1": 16.957,
+      "label": "NASA · SDO · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.952,
+      "src_out": 15.048,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 16.957,
+      "t1": 20.72,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.83,
+      "src_out": 7.87,
+      "speed": 0.894,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 20.72,
+      "t1": 27.144,
+      "label": "NASA · SDO · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.99,
+      "src_out": 15.58,
+      "speed": 1.0,
+      "focus": [
+        0.7,
+        0.5
+      ],
+      "active": [
+        2,
+        68,
+        3452,
+        2024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 27.144,
+      "t1": 32.4,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 3.2,
+      "speed": 0.8,
+      "focus": [
+        0.7,
+        0.5
+      ],
+      "active": [
+        2,
+        68,
+        3452,
+        2024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 32.4,
+      "t1": 36.067,
+      "label": "NASA · SDO · 2016",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 2.93,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        860
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 36.067,
+      "t1": 39.396,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.911,
+      "src_out": 10.859,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 39.396,
+      "t1": 41.01,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.902,
+      "src_out": 16.098,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 41.01,
+      "t1": 46.873,
+      "label": "NASA · SDO · 2014",
+      "callout": {
+        "value": "1,000,000 °C",
+        "label": "the outer atmosphere"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.32,
+      "src_out": 12.45,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 46.873,
+      "t1": 51.67,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.383,
+      "src_out": 17.187,
+      "speed": 1.0,
+      "focus": [
+        0.7,
+        0.5
+      ],
+      "active": [
+        2,
+        68,
+        3452,
+        2024
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 51.67,
+      "t1": 60.14,
+      "label": "NASA · SDO · 2016",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.081,
+      "src_out": 9.849,
+      "speed": 1.0,
+      "focus": [
+        0.65,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.14,
+      "t1": 65.574,
+      "label": "NASA · SDO · 2016",
+      "callout": {
+        "value": "8 min 20 s",
+        "label": "for its light to reach us"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.495,
+      "src_out": 12.275,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.5,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 65.574,
+      "t1": 70.02,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.07,
+      "src_out": 15.93,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 70.02,
+      "t1": 75.548,
+      "label": "NASA · SDO · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.457,
+      "src_out": 12.313,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.5,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 75.548,
+      "t1": 80.07,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20160426_sdo_m12224_solarflare_4k/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 6.468,
+      "src_out": 13.302,
+      "speed": 1.0,
+      "focus": [
+        0.75,
+        0.4
+      ],
+      "active": [
+        0,
+        124,
+        3348,
+        1968
+      ],
+      "crop_width": 0.5,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 80.07,
+      "t1": 86.57,
+      "label": "NASA · SDO · 2016",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20140404_SDO_m11517_Flare",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/footage/nasa_gsfc_20140404_sdo_m11517_flare/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.068,
+      "src_out": 15.932,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 86.57,
+      "t1": 92.1,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

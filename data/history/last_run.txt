@@ -1,11 +1,11 @@
-run_id: 40756425193  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261028T194130552929Z/run.json
+run_id: 40900158037  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261029T151912720255Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,28 +40,43 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "40756425193",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "40900158037",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "af6c1476de513ad637658503b12613fa48234dbbabf7421060ce2f5e03dc6471",
+  "metadata_sha256": "9331400ebfa7a401ef54aebb4d64bda255caa34e36895a45c16a224fbe193336",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 29,
+  "duration": 92.1,
+  "voice": "Charon",
+  "event": {
+    "id": "film_sdo-sun_20261029T151912720255Z",
+    "title": "The Sun, every twelve seconds.",
+    "series": "NASA footage",
+    "issue": "sdo-sun",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "sdo-sun",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+    ]
+  },
+  "localized": []
 }
---- data/runs/20261028T194130552929Z/diagnostics/provider_events.json
+--- data/runs/20261029T151912720255Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
-  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
+  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20240510_0171: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261028T194130552929Z/diagnostics/providers.json
+--- data/runs/20261029T151912720255Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -177,81 +192,76 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261028T194130552929Z/audio/chunk_000/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 18.4 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 18.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.5 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.5 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.6 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 17.6 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 16.7 sn); whisper-large-v3-turbo: 68.4/100 (duyulan: “A spacecraft has mapped the Moon so precisely you can see the Apollo landing sites. The Mo”, 16.7 sn)"
-]
 --- studio.log (son 300 satır)
 → Konu: sdo-sun
 Görüntü adayları: 92 (sdo-sun)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
-Çözümlenen video: 12
-sdo:20240510_0171: elendi (8/10, footage) Full-disk view of the Sun showing extreme ultraviolet coronal loops at
-sdo:20240510_0131: elendi (8/10, footage) Full-disk view of the Sun in extreme ultraviolet (131 Å) showing flari
-sdo:20240510_0304: elendi (8/10, footage) Full-disk view of the Sun in 304 Angstrom extreme ultraviolet showing 
-sdo:20240510_0193: elendi (8/10, footage) Full-disk view of the solar corona observed by SDO in 193 Å extreme ul
-sdo:20240510_0094: elendi (8/10, footage) Solar Dynamics Observatory view of the Sun in 94 Å extreme ultraviolet
-sdo:20241003_0171: elendi (8/10, footage) Solar Dynamics Observatory 171 Å extreme ultraviolet footage of the Su
-sdo:20241003_0131: elendi (8/10, footage) Full-disk view of the Sun captured by SDO at 131 Angstroms showing fla
-sdo:20241003_0304: elendi (8/10, footage) Full-disk view of the Sun in 304 Angstroms extreme ultraviolet light f
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA SDO extreme ultraviolet observations of an M6.7 solar flare and a
-Görüntü değerlendirme svs:5649: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:5649: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:5649: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-svs:5649: elendi (8/10, footage) Solar Dynamics Observatory view of the Sun showing surface activity an
-Görüntü adayları: 4 (sdo-sun, Commons)
-Görüntü adayları: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Sıralanan aday: 4
-Çözümlenemedi commons:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
-Çözümlenemedi commons:NASA's SDO Captures a February Solar Flare Triple Play (SVS14536).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
-Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
-Çözümlenemedi commons:Solar flare X2.1 2011-09-06.ogv: HTTPError: 429 Client Error: Too many requests. Please contact noc@wikimedia.org for further informat
-Çözümlenen video: 0
-Kullanılır kesit: 2 (40 sn temiz görüntü)
-Konu atlandı (sdo-sun): Yeterli temiz görüntü yok (2 kesit, 40 sn).
-→ Konu: moon-tour
-Görüntü adayları: 75 (moon-tour)
-Sıralanan aday: 10
-Çözümlenen video: 10
-svs:4619: elendi (5/10, visualization) A lunar flyover visualization with coordinate and scale overlays
-nasa:GSFC_20190618_LRO_m13229_10Years: elendi (6/10, footage) A 10-year retrospective of NASA's Lunar Reconnaissance Orbiter mission
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: kullanılır (7/10, animation) NASA Lunar Reconnaissance Orbiter revealing recent geological activity
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: üretilmiş program gibi (0 karede insan, 14/22 kare elendi); atlandı
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (7/10, visualization) NASA's Lunar Reconnaissance Orbiter data revealing deep pits on the lu
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 11/13 kare elendi); atlandı
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (8/10, visualization) Flyover visualization of the Lee Lincoln scarp in the Taurus-Littrow v
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global mosaics and surface imagery of the Moon mapped 
-nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (6/10, visualization) NASA documentary on LRO discovering new impact craters on the Moon
-nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Data visualizations of the Moon's permanently shadowed regions mapped 
-nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt2: elendi (6/10, visualization) A visualization of the Lunar Reconnaissance Orbiter mapping the Moon's
-nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt1: elendi (5/10, visualization) An educational video about the Lunar Reconnaissance Orbiter and lunar 
-Kullanılır kesit: 7 (91 sn temiz görüntü)
+Çözümlenemedi svs:5649: HTTPError: 503 Server Error: Service Unavailable for url: https://svs.gsfc.nasa.gov/api/5649
+Çözümlenen video: 11
+nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's Solar Dynamics Observatory captures an M6.7 solar flare in mult
+Görüntü değerlendirme sdo:20240510_0171: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20240510_0171: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20240510_0171: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+sdo:20240510_0171: elendi (8/10, footage) Solar Dynamics Observatory extreme ultraviolet view of the Sun at 171 
+Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory 131 Ångström view of the Sun showing active
+nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) Solar Dynamics Observatory footage of a mid-level solar flare and magn
+Kullanılır kesit: 6 (84 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
-Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 68.4/100 | whisper-large-v3
-Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 68.4/100 | whisper-large-v3
-Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 68.4/100 | whisper-large-v3
-Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 68.4/100 | whisper-large-v3
-Ses eşleştirme: 68.4/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 94.7/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 91.2/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (92.1 sn, 9 beat, 6 kesit)
+  kurgu 10/92 sn
+  kurgu 20/92 sn
+  kurgu 30/92 sn
+  kurgu 40/92 sn
+  kurgu 50/92 sn
+  kurgu 60/92 sn
+  kurgu 70/92 sn
+  kurgu 80/92 sn
+  kurgu 90/92 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: A satellite has photographed the Sun every 12 seconds #Shorts
+Görünürlük: public
+
+Yükleme: %6
+Yükleme: %12
+Yükleme: %18
+Yükleme: %24
+Yükleme: %30
+Yükleme: %36
+Yükleme: %43
+Yükleme: %49
+Yükleme: %55
+Yükleme: %61
+Yükleme: %67
+Yükleme: %73
+Yükleme: %79
+Yükleme: %86
+Yükleme: %92
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=BWUFqUciMfQ&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T151912720255Z/video.mp4
+Boyut: 130.1 MB
+Açıklama uzunluğu: 363 karakter
+Cloudinary: video geçici olarak yükleniyor...
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 136458152. Maximum is 104857600.

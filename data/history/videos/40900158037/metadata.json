@@ -1,0 +1,184 @@
+{
+  "script": {
+    "title": "A satellite has photographed the Sun every 12 seconds",
+    "description": "The Solar Dynamics Observatory has monitored our star for over a decade, capturing 1.5 terabytes of data every day. These images reveal the complex magnetic behavior and extreme temperatures of the solar corona.",
+    "hook_card": "The Sun, every twelve seconds.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c02",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds in several different wavelengths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c05",
+        "narration": "The spacecraft sends back 1.5 terabytes of data daily, capturing the star across a vast range of light.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c04",
+        "narration": "The Sun is 1.39 million kilometres across, wide enough for 109 Earths to fit side by side.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c00",
+        "narration": "Glowing loops of plasma ride magnetic field lines, with a single loop often stretching larger than many Earths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c03",
+        "narration": "The surface is 5,500 °C, yet the outer corona is over a million degrees for reasons not fully known.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c01",
+        "narration": "A large solar flare releases as much energy as millions of hydrogen bombs erupting at the same time.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c02",
+        "narration": "Light reaches Earth in 8 minutes 20 seconds, while a cloud of particles takes one to three days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "These magnetic structures shift constantly as the Sun's magnetic poles swap places roughly every eleven years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c00",
+        "narration": "By observing these eruptions, we study the magnetic mechanics of the star that sustains all life on Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds in several different wavelengths. The spacecraft sends back 1.5 terabytes of data daily, capturing the star across a vast range of light. The Sun is 1.39 million kilometres across, wide enough for 109 Earths to fit side by side. Glowing loops of plasma ride magnetic field lines, with a single loop often stretching larger than many Earths. The surface is 5,500 °C, yet the outer corona is over a million degrees for reasons not fully known. A large solar flare releases as much energy as millions of hydrogen bombs erupting at the same time. Light reaches Earth in 8 minutes 20 seconds, while a cloud of particles takes one to three days. These magnetic structures shift constantly as the Sun's magnetic poles swap places roughly every eleven years. By observing these eruptions, we study the magnetic mechanics of the star that sustains all life on Earth.",
+    "event": {
+      "id": "film_sdo-sun_20261029T151912720255Z",
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "sdo-sun",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      ]
+    },
+    "scenario": "sdo-sun",
+    "beats": [
+      {
+        "clip": "c02",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds in several different wavelengths.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "The spacecraft sends back 1.5 terabytes of data daily, capturing the star across a vast range of light.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The Sun is 1.39 million kilometres across, wide enough for 109 Earths to fit side by side.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Glowing loops of plasma ride magnetic field lines, with a single loop often stretching larger than many Earths.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The surface is 5,500 °C, yet the outer corona is over a million degrees for reasons not fully known.",
+        "label": "NASA · SDO · 2014",
+        "callout": {
+          "value": "1,000,000 °C",
+          "label": "the outer atmosphere"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "A large solar flare releases as much energy as millions of hydrogen bombs erupting at the same time.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Light reaches Earth in 8 minutes 20 seconds, while a cloud of particles takes one to three days.",
+        "label": "NASA · SDO · 2016",
+        "callout": {
+          "value": "8 min 20 s",
+          "label": "for its light to reach us"
+        }
+      },
+      {
+        "clip": "c03",
+        "narration": "These magnetic structures shift constantly as the Sun's magnetic poles swap places roughly every eleven years.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "By observing these eruptions, we study the magnetic mechanics of the star that sustains all life on Earth.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      }
+    ],
+    "closing": "The Sun's magnetic poles swap every eleven years.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The Solar Dynamics Observatory has monitored our star for over a decade, capturing 1.5 terabytes of data every day. These images reveal the complex magnetic behavior and extreme temperatures of the solar corona.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein, Tom Bridgman, Sarah Frazier — NASA’s SDO Captures Stunning 4K View of April 17 Solar Flare (https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K); Genna Duberstein — Graceful Eruption (https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A satellite has photographed the Sun every 12 seconds\n\nThe Solar Dynamics Observatory has monitored our star for over a decade, capturing 1.5 terabytes of data every day. These images reveal the complex magnetic behavior and extreme temperatures of the solar corona.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
