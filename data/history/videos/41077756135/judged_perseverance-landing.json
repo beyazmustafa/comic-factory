@@ -1,0 +1,471 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:JPL-20201110-M2020f-0001-Preparing to Land Perseverance",
+   "title": "Preparing to Land Perseverance",
+   "date": "2020-11-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210218-M2020f-0003-Perseverance Landing Wrap v2",
+   "title": "NASA's Perseverance Rover Lands Successfully on Mars",
+   "date": "2021-02-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+   "title": "NASA's Mars 2020 Perseverance Rover Landing Animations",
+   "date": "2020-12-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210305-M2020f-0001Perseverance Lands on Mars UHD Master",
+   "title": "Perseverance Rover Lands on Mars, as the World Watches",
+   "date": "2021-03-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+   "title": "NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+   "title": "Perseverance Rover’s Descent and Touchdown on Mars: Onboard Camera Views",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201221-M2020f-0001-Perseverance Arrives at Mars - UHD Master",
+   "title": "Perseverance Arrives at Mars: Feb. 18, 2021",
+   "date": "2020-12-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+   "title": "NASA’S Perseverance Rover’s First 360 View of Mars",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210625-M2020f-0001-Taking a Selfie on Mars UHD",
+   "title": "How NASA’s Perseverance Rover Takes a Selfie",
+   "date": "2021-06-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+   "title": "Perseverance Rover's Mastcam-Z Captures Ingenuity's Third FlightNASA’s Ingenuity Mars Helicopter takes off and lands in this video captured on April 25, 2021, by Mastcam-Z, an imager aboard NASA’s Perseverance Mars rover. As expected, the helicopter flew out of its field of vision while completing a flight plan that took it 164 feet (50 meters) downrange of the landing spot. Keep watching, the helicopter will return to stick the landing. The Ingenuity Mars Helicopter was built by JPL, which also manages this technology demonstration project for NASA Headquarters. It is supported by NASA’s Science Mission Directorate, Aeronautics Research Mission Directorate, and Space Technology Mission Directorate. NASA’s Ames Research Center and Langley Research Center provided significant flight performance analysis and technical assistance during Ingenuity’s development. A key objective for Perseverance’s mission on Mars is astrobiology, including the search for signs of ancient microbial life. The rover will characterize the planet’s geology and past climate, pave the way for human exploration of the Red Planet, and be the first mission to collect and cache Martian rock and regolith (broken rock and dust). Subsequent NASA missions, in cooperation with ESA (European Space Agency), would send spacecraft to Mars to collect these sealed samples from the surface and return them to Earth for in-depth analysis. The Mars 2020 Perseverance mission is part of NASA’s Moon to Mars exploration approach, which includes Artemis missions to the Moon that will help prepare for human exploration of the Red Planet. JPL, which is managed for NASA by Caltech in Pasadena, California, built and manages operations of the Perseverance rover. For more about Perseverance: -mars.nasa.gov/mars2020/ -nasa.gov/perseverance Credit: NASA/JPL-Caltech/ASU/MSSS",
+   "date": "2021-04-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+   "title": "First Video of NASA’s Ingenuity Mars Helicopter in Flight, Including Takeoff and Landing (High-Res)",
+   "date": "2021-04-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20220405-M2020f-0001-How Perseverance Drives on Mars-1080cc",
+   "title": "How Perseverance Drives on Mars",
+   "date": "2022-04-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200617-M2020f-0002-L-30 Perseverance Video File",
+   "title": "Video File: Launch of NASA’s Next Mars Rover Perseverance Approaches",
+   "date": "2020-06-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201006-M2020f-0001-Twin Rover Gets to Work",
+   "title": "Twin of NASA’s Perseverance Mars Rover Now on the Move",
+   "date": "2020-10-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200730-M2020f-0003-NASA’s Perseverance Rover Launches",
+   "title": "NASA's Perseverance Rover Launches to Mars",
+   "date": "2020-07-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210721-M2020f-0001-NASAs Perseverance Rover to Acquire First Sample VF",
+   "title": "Video File: NASA Perseverance Rover to Acquire First Sample",
+   "date": "2021-07-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210305-M2020f-0001-POTUS Calls M2020 Team",
+   "title": "President Biden Calls JPL to Congratulate the Perseverance Mars Rover Team",
+   "date": "2021-03-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200904-M2020f-0001-Rover Twin Moves Into New Home - 1080",
+   "title": "Twin of NASA’s Perseverance Mars Rover Moves Into New Home",
+   "date": "2020-09-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200617-M2020f-0003-Countdown to Mars-1080",
+   "title": "Getting NASA’s Perseverance Mars Rover to Launch During the COVID-19 Pandemic",
+   "date": "2020-06-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200713-TECHf-0001-Mars Helicopter Mission Overview",
+   "title": "NASA’s Ingenuity Mars Helicopter: The First Aircraft on Mars",
+   "date": "2020-07-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20240710-Perseverance_Rover_Spots_an_Unusual_Rock_in_Ancient_River_Channel_Mars_Report",
+   "title": "Perseverance Explores Ancient River Channel (Mars Report)",
+   "date": "2024-07-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210610-M2020f-Mars-Report-NASAs-Perseverance-Rover-SuperCam-Instrument-June-2021",
+   "title": "Mars Report: Update on NASA’s Perseverance Rover SuperCam Instrument",
+   "date": "2021-06-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230516-M2020f-0002-Sounds of Mars NoVoiceOver",
+   "title": "How Do Sounds on Mars Differ from Sounds on Earth?",
+   "date": "2023-05-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20230516-M2020f-0001-Sounds of Mars VoiceOver",
+   "title": "How Do Sounds on Mars Differ from Sounds on Earth?",
+   "date": "2023-05-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0003b-M2020_Audio_B_002",
+   "title": "NASA’s Perseverance Rover Microphone Captures Sounds from Mars - B",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0003a-M2020_Audio_A_002",
+   "title": "NASA’s Perseverance Rover Microphone Captures Sounds from Mars - A",
+   "date": "2021-02-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20190628-M2020f-0001-Mars_2020_Terrain_Relative_Navigation",
+   "title": "Landing NASA’s Mars 2020 Rover with Terrain Relative Navigation",
+   "date": "2019-06-28",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200511-MH-CSH01_0001-Mars_2020_ACA_Arrival_at_LLF-3249848",
+   "title": "Mars 2020 Adaptive Caching Assembly Arrival at LLF",
+   "date": "2020-05-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200212-MH-CMS01-0001-Mars_2020_Rover_Arrival-3241966",
+   "title": "Mars 2020 Rover Arrival",
+   "date": "2020-02-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200515-M2020f-0001-Mars 2020 Media Reel Updated",
+   "title": "JPL-20200515-M2020f-0001-Mars 2020 Media Reel Updated",
+   "date": "2020-05-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20201001-TECHf-0001-Ingenuity Team Meetings during COVID Media Reel - UHD",
+   "title": "NASA’s Ingenuity Helicopter Team Meeting Media Reel",
+   "date": "2020-10-01",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+   "title": "JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+   "date": "2020-04-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200518-M2020f-0001-Shake Rattle and Roll Testing NASAs Mars 2020 Perseverance Rover",
+   "title": "Shake, Rattle and Roll: Testing NASA’s Mars 2020 Perseverance Rover",
+   "date": "2020-05-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:Mars 2020 Perseverance - Surface Update and what it's like to Land on Mars",
+   "title": "Surface Update and What it's like to Land on Mars",
+   "date": "2021-02-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200429-TECHf-0001-Mars Helicopter Media Reel 04272020",
+   "title": "JPL-20200429-TECHf-0001-Mars Helicopter Media Reel 04272020",
+   "date": "2020-04-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200325-MH-JBS01_0002-Orion_Artemis_I_Crew_and_Service_Module_Return_to_Kennedy_Arrival_Offload_and_Transport-3242558",
+   "title": "Orion Artemis I Crew and Service Module Return to Kennedy - Arrival, Offload, Transport to O&C",
+   "date": "2020-03-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200325-MH-JBS01_0001-Orion_Artemis_I_Crew_and_Service_Module_Return_to_Kennedy_Arrival_at_SLF-3242558",
+   "title": "Orion Artemis I Crew and Service Module Return to Kennedy - Arrival",
+   "date": "2020-03-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_XP01_V_0133_FSB1_4K_DRONEBROLL",
+   "title": "Booster Test for Future Space Launch System Flights 4K",
+   "date": "2020-09-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:MSFC_XP01_V_0133_FSB1_BROLL",
+   "title": "Booster Test for Future Space Launch System Flights",
+   "date": "2020-09-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20210218-VP-MWC01-001_INSIDEKSC-3266355",
+   "title": "Inside KSC! for Feb.19, 2021",
+   "date": "2021-02-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20231227-M2020f-0001-Perseverance Rover Zooms in on Ancient Mars River",
+   "title": "Perseverance Rover Zooms in on Ancient Mars River",
+   "date": "2023-12-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200407-MH-JPL01-0001-Mars_2020_Perseverance_Rover_Turnover_in_PHSF-3247923",
+   "title": "Mars 2020 Perseverance Rover Turnover",
+   "date": "2020-04-07",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210318-M2020-0001-Mars Report Update on Perseverance and Ingenuity",
+   "title": "Mars Report: Update on NASA’s Perseverance Rover & Ingenuity Helicopter",
+   "date": "2021-03-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200506-MH-JPL01-0001-Mars_2020_Perseverance_Rover_Lift-3249787",
+   "title": "Mars 2020 Perseverance Rover Lift Operations",
+   "date": "2020-05-06",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200408-MH-JPL01-0001-Mars_2020_Rover_Mass_Properties_Test_in_PHSF-3248264",
+   "title": "Mars 2020 Perseverance Rover Mass Properties Test",
+   "date": "2020-04-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20200713-M2020f-0001-MOXIE Media Reel",
+   "title": "NASA's Mars 2020 Perseverance Rover: MOXIE Instrument Media Reel",
+   "date": "2020-07-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20200403-MH-JPL01-0001-Mars_2020_Parachute_Integration_ATLO_PDS_Assembly_and_Installation-3247896",
+   "title": "Mars 2020 Perseverance: Parachute Integration, ATLO PDS Assembly and Installation",
+   "date": "2020-04-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:JPL-20210520-M2020f-0001-Mars Report May 20",
+   "title": "Mars Report: Update on NASA’s Perseverance Rover & Curiosity Rover (May 20, 2021)",
+   "date": "2021-05-20",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:13803",
+   "title": "Destination Mars! On February 18 NASA’s Newest and Most Ambitious Rover Lands on the Red Planet",
+   "date": "2021-02-08",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+  "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+  "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+  "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars"
+ ],
+ "judged": [
+  {
+   "id": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+   "title": "Perseverance Rover’s Descent and Touchdown on Mars: Onboard Camera Views",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Real onboard footage of Perseverance rover's descent and landing in Jezero Crater on Mars.",
+   "excluded": [
+    0,
+    1,
+    2,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 4,
+     "end": 18,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Downward camera view of the Martian surface during descent",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+   "title": "NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "footage",
+   "what": "Onboard camera footage of Perseverance rover landing on Mars and its initial view of the Martian surface",
+   "excluded": [
+    0,
+    1,
+    8,
+    14,
+    15,
+    16
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Descent stage view looking down at the surface of Mars as rover approaches touchdown",
+     "score": 9
+    },
+    {
+     "start": 9,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Up-look cameras showing parachute inflation and descent stage mechanics",
+     "score": 10
+    },
+    {
+     "start": 13,
+     "end": 13,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "First high-definition panorama of the Martian landscape from the Perseverance rover",
+     "score": 9
+    },
+    {
+     "start": 17,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Aerial down-look camera footage of the Martian terrain during descent",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+   "title": "NASA's Mars 2020 Perseverance Rover Landing Animations",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Computer animation sequence depicting NASA's Perseverance rover entry, descent, and landing on Mars",
+   "excluded": [
+    0,
+    1,
+    2,
+    22,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Animated sequence of the Perseverance rover spacecraft entry, heat shield separation, parachute deployment, sky crane ma",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+   "title": "NASA’S Perseverance Rover’s First 360 View of Mars",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "A 360-degree panoramic view of the Martian surface at Jezero Crater, captured by the Perseverance rover's Navcams.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.1,
+      0.2
+     ],
+     "width": 0.32,
+     "shows": "The rear of the Perseverance rover deck and the rocky Martian landscape.",
+     "score": 8
+    },
+    {
+     "start": 3,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "The desolate, rocky horizon of Jezero Crater under a hazy Martian sky.",
+     "score": 7
+    },
+    {
+     "start": 5,
+     "end": 6,
+     "focus": [
+      0.9,
+      0.2
+     ],
+     "width": 0.32,
+     "shows": "The front of the rover and its scientific instruments against the Martian soil.",
+     "score": 8
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,452 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a",
+   "title": "DART’s Impact with Asteroid Dimorphos (Official NASA Broadcast)",
+   "date": "2022-09-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA's DART Mission, First-Ever Planetary Defense Test",
+   "title": "NASA's DART Mission: First-Ever Planetary Defense Test",
+   "date": "2022-10-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+   "title": "DART Isolated Launch Views",
+   "date": "2021-11-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211129-VP_FJM03_KCD_Derrol_Nail_3291727",
+   "title": "Inside KSC! for Mar. 6, 2020",
+   "date": "2021-11-29",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:DART Recap Video",
+   "title": "DART Recap Video",
+   "date": "2026-08-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_041505_dart_harding1",
+   "title": "KSC-05-S-00094",
+   "date": "2005-04-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_041505_dart_harding",
+   "title": "KSC-05-S-00084",
+   "date": "2005-04-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:DART_explainer_video",
+   "title": "DART: chocando contra un asteroide... a propósito",
+   "date": "2021-11-22",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute March 13, 2026",
+   "title": "NASA Minute: March 13, 2026",
+   "date": "2026-03-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:DART_L-20_Press-Conference_11-04-21_final",
+   "title": "DART_L-20_Press-Conference_11-04-21_final",
+   "date": "2021-11-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211119-VP-MWC01-001-KENNEDYCOUNTDOWN-3291728",
+   "title": "Kennedy Countdown for Nov. 19, 2021",
+   "date": "2021-11-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211004-MH-JND01_0001-DART_Spacecraft_Removal_from_Shipping_Container_Move_to_SC_Dolly-3288355",
+   "title": "DART Spacecraft Removal from Shipping Container and Move to Spacecraft Dolly",
+   "date": "2021-10-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:KSC-20211002-MH-CNO01_0001-DART_Spacecraft_Arrival_VSFB-3288243",
+   "title": "DART Spacecraft Arrival",
+   "date": "2021-10-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Administrator Bill Nelson - A Look Back at Two Years of Success",
+   "title": "NASA Administrator Bill Nelson: A Look Back at Two Years of Success",
+   "date": "2023-05-04",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:4885",
+   "title": "Antarctic Ocean Flows: an excerpt from Atlas of a Changing Earth (Dome Master format)",
+   "date": "2021-08-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4888",
+   "title": "Antarctic Ocean Flows: an excerpt from Atlas of a Changing Earth (4k format)",
+   "date": "2021-08-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14322",
+   "title": "Cosmic Cycles 6: Travelers (DART and OSIRIS-REx)",
+   "date": "2023-05-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14215",
+   "title": "Hubble Views Aftermath of DART Impact",
+   "date": "2022-09-29",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13724",
+   "title": "OSIRIS-REx: Countdown to TAG",
+   "date": "2020-09-24",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13156",
+   "title": "NASA’s Fermi Satellite Clocks a ‘Cannonball’ Pulsar",
+   "date": "2019-03-19",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1711b",
+   "title": "Pan across Abell 370",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2212a",
+   "title": "Hubble Captures DART Impact (Annotated)",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1711a",
+   "title": "Zoom-in on Abell 370",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1711c",
+   "title": "Increased depth of Abell 370",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1816b",
+   "title": "Pan across Abell 370",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1816a",
+   "title": "Zooming onto the galaxy cluster Abell 370",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2302a",
+   "title": "Hubble Captures Movie of DART Asteroid Impact Debris",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "webb:weic2316a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2219a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2215a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2215b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2215c",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2426c",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2214a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2213a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "commons:Dart impact replay.webm",
+   "title": "Dart impact replay",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm",
+   "title": "DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Dart impact replay stabilized.webm",
+   "title": "Dart impact replay stabilized",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Orbital effect of DART's impact on Dimorphos.webm",
+   "title": "Orbital effect of DART's impact on Dimorphos",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "hubble:heic2302a",
+  "hubble:heic2212a",
+  "svs:14215",
+  "svs:14322",
+  "nasa:DART Recap Video",
+  "nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a",
+  "nasa:KSC-20211123-MH-AJW01-0001-SpaceX_DART_Isolated_Launch_Views_WON_3290675",
+  "commons:Dart impact replay stabilized.webm",
+  "commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm",
+  "commons:Orbital effect of DART's impact on Dimorphos.webm",
+  "commons:Dart impact replay.webm"
+ ],
+ "judged": [
+  {
+   "id": "hubble:heic2302a",
+   "title": "Hubble Captures Movie of DART Asteroid Impact Debris",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "footage",
+   "what": "Hubble Space Telescope timelapse showing the evolving debris cone and tail from the DART impact on Dimorphos",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:14215",
+   "title": "Hubble Views Aftermath of DART Impact",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "animation",
+   "what": "Animation and views depicting NASA's DART impact and Hubble space telescope observations",
+   "excluded": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up view of the rocky surface of asteroid Dimorphos",
+     "score": 8
+    },
+    {
+     "start": 9,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Animation of the Didymos and Dimorphos binary asteroid system",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:14322",
+   "title": "Cosmic Cycles 6: Travelers (DART and OSIRIS-REx)",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Visualizations and imagery of DART impacting Dimorphos and the OSIRIS-REx mission to Bennu",
+   "excluded": [
+    2,
+    4,
+    5,
+    6,
+    10,
+    11,
+    12,
+    13,
+    16,
+    17,
+    18,
+    21,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 0,
+     "focus": [
+      0.45,
+      0.45
+     ],
+     "width": 0.6,
+     "shows": "3D visualization of Didymos and Dimorphos with orbit line",
+     "score": 7
+    },
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Asteroid Dimorphos close-up before impact",
+     "score": 8
+    },
+    {
+     "start": 8,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Spacecraft approaching asteroid surfaces",
+     "score": 8
+    },
+    {
+     "start": 14,
+     "end": 15,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "OSIRIS-REx spacecraft sampling asteroid surface",
+     "score": 8
+    },
+    {
+     "start": 19,
+     "end": 20,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up rocky asteroid surface with boulders",
+     "score": 9
+    },
+    {
+     "start": 22,
+     "end": 22,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Detailed texture of asteroid surface regolith",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:DART Recap Video",
+   "title": "DART Recap Video",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "A produced recap of NASA's DART mission featuring graphics, launch footage, control room reactions, and interviews",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    15
+   ],
+   "stretches": []
+  }
+ ]
+}

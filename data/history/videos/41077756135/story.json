@@ -1,0 +1,167 @@
+{
+  "title": "Real footage of a rover landing on Mars",
+  "description": "Onboard cameras captured the high-stakes descent of the Perseverance rover into Jezero Crater. This is the first time a planetary landing has been filmed from multiple perspectives.",
+  "hook_card": "Seven minutes of terror.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "This is footage of the Perseverance rover landing on Mars on 18 February 2021.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "The spacecraft hits the top of the atmosphere at about 20,000 km/h during a 7-minute descent.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "While the craft is still supersonic, a 21.5-metre parachute opens above.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "The cameras view Jezero Crater, the site of a lake and river delta billions of years ago.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "Radio signals take 11 minutes to reach Earth, meaning the landing is already over by then.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c04",
+      "narration": "A rocket-powered descent stage hovers and lowers the rover on 7.6-metre cables before flying away.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "The rover weighs about 1,025 kg, which is roughly the size of a small car.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c07",
+      "narration": "The front of the rover and its scientific instruments rest against the Martian soil.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c06",
+      "narration": "This was the first time a landing on another planet was filmed by the vehicle's cameras.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This is footage of the Perseverance rover landing on Mars on 18 February 2021. The spacecraft hits the top of the atmosphere at about 20,000 km/h during a 7-minute descent. While the craft is still supersonic, a 21.5-metre parachute opens above. The cameras view Jezero Crater, the site of a lake and river delta billions of years ago. Radio signals take 11 minutes to reach Earth, meaning the landing is already over by then. A rocket-powered descent stage hovers and lowers the rover on 7.6-metre cables before flying away. The rover weighs about 1,025 kg, which is roughly the size of a small car. The front of the rover and its scientific instruments rest against the Martian soil. This was the first time a landing on another planet was filmed by the vehicle's cameras.",
+  "event": {
+    "id": "film_perseverance-landing_20261030T150826827859Z",
+    "title": "Seven minutes of terror.",
+    "series": "NASA footage",
+    "issue": "perseverance-landing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "perseverance-landing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
+    ]
+  },
+  "scenario": "perseverance-landing",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "This is footage of the Perseverance rover landing on Mars on 18 February 2021.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The spacecraft hits the top of the atmosphere at about 20,000 km/h during a 7-minute descent.",
+      "label": "NASA · MARS 2020 · 2020",
+      "callout": {
+        "value": "20,000 km/h",
+        "label": "speed at entry"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "While the craft is still supersonic, a 21.5-metre parachute opens above.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The cameras view Jezero Crater, the site of a lake and river delta billions of years ago.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Radio signals take 11 minutes to reach Earth, meaning the landing is already over by then.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "A rocket-powered descent stage hovers and lowers the rover on 7.6-metre cables before flying away.",
+      "label": "NASA · MARS 2020 · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The rover weighs about 1,025 kg, which is roughly the size of a small car.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "The front of the rover and its scientific instruments rest against the Martian soil.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "This was the first time a landing on another planet was filmed by the vehicle's cameras.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    }
+  ],
+  "closing": "The parachute pattern spelled 'Dare Mighty Things' in binary.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

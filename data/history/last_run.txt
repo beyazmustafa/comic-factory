@@ -1,6 +1,6 @@
-run_id: 40942616877  attempt: 1  event: schedule
+run_id: 41077756135  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261029T194422140963Z/run.json
+--- data/runs/20261030T150826827859Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,45 +40,51 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "40942616877",
+  "run_id": "41077756135",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "789a9d1aa04e7523fbd0d3941e052e907ec24b0618d2ee9c127b269040a421cd",
-  "metadata_sha256": "90fd9f5424acdfc6e373623573d501c52d6e2e4663ca9a20010a11a8f05a2dd0",
+  "video_sha256": "e5c5acc835962c5ca3de51355d82a93c05144c1f893444c79c01f714c4a025f7",
+  "metadata_sha256": "77c440f0df6204411d8ff0958cbac5c2c6e7de73cf42b4883230115060255006",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 40,
-  "duration": 97.84,
+  "api_calls": 52,
+  "duration": 72.49,
   "voice": "Charon",
   "event": {
-    "id": "film_moon-tour_20261029T194422140963Z",
-    "title": "The Moon in 4K",
+    "id": "film_perseverance-landing_20261030T150826827859Z",
+    "title": "Seven minutes of terror.",
     "series": "NASA footage",
-    "issue": "moon-tour",
+    "issue": "perseverance-landing",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "moon-tour",
+    "scenario": "perseverance-landing",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD",
-      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
-      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
-      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
     ]
   },
   "localized": []
 }
---- data/runs/20261029T194422140963Z/diagnostics/provider_events.json
+--- data/runs/20261030T150826827859Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme nasa:DART Recap Video: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261029T194422140963Z/diagnostics/providers.json
+--- data/runs/20261030T150826827859Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -101,8 +107,8 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
     "qwen/qwen3.8-27b"
   ],
   "errors": [],
@@ -195,80 +201,91 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: moon-tour
-Görüntü adayları: 75 (moon-tour)
+→ Konu: dart
+Görüntü adayları: 36 (dart)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Sıralanan aday: 10
-Çözümlenen video: 10
-svs:4619: elendi (8/10, visualization) A tour of various lunar surface features mapped by the Lunar Reconnais
-nasa:GSFC_20190618_LRO_m13229_10Years: kullanılır (7/10, animation) Retrospective celebrating 10 years of NASA's Lunar Reconnaissance Orbi
-nasa:GSFC_20190618_LRO_m13229_10Years: üretilmiş program gibi (0 karede insan, 13/19 kare elendi); atlandı
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global imagery and terrain mapping of the lunar surfac
-nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Visualization of permanently shadowed regions on the Moon based on dat
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: elendi (6/10, visualization) NASA's Lunar Reconnaissance Orbiter data showing steep-walled lunar pi
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (6/10, visualization) NASA video explaining recent geological activity and stretching on the
-nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (7/10, visualization) A documentary segment explaining how NASA's Lunar Reconnaissance Orbit
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) 3D visualization flyover of the Lee Lincoln scarp at the Apollo 17 lan
-Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-nasa:ARC-20210920-AAV3366-VIPER-LandingSiteAnnouncement-YouTubeHD: kullanılır (8/10, visualization) A visualization of the Moon's South Pole and the VIPER rover mission l
-Kullanılır kesit: 8 (121 sn temiz görüntü)
+Sıralanan aday: 7
+Süre uygun değil hubble:heic2212a: 3 sn
+Süre uygun değil nasa:20220926-GSFC-DARTs_Impact_with_Asteroid_Dimorphos_REV1a: 5633 sn
+Çözümlenen video: 5
+hubble:heic2302a: elendi (7/10, footage) Hubble Space Telescope timelapse showing the evolving debris cone and 
+svs:14215: kullanılır (7/10, animation) Animation and views depicting NASA's DART impact and Hubble space tele
+svs:14215: üretilmiş program gibi (0 karede insan, 22/24 kare elendi); atlandı
+svs:14322: kullanılır (8/10, visualization) Visualizations and imagery of DART impacting Dimorphos and the OSIRIS-
+Görüntü değerlendirme nasa:DART Recap Video: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:DART Recap Video: elendi (6/10, animation) A produced recap of NASA's DART mission featuring graphics, launch foo
+Görüntü adayları: 4 (dart, Commons)
+Sıralanan aday: 4
+Çözümlenemedi commons:DART- Double Asteroid Redirection Test (SVS31194 - dart impact replay 1080p25).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Orbital effect of DART's impact on Dimorphos.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Dart impact replay.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 1
+Kullanılır kesit: 3 (31 sn temiz görüntü)
+Konu atlandı (dart): Yeterli temiz görüntü yok (3 kesit, 31 sn).
+→ Konu: perseverance-landing
+Görüntü adayları: 49 (perseverance-landing)
+Sıralanan aday: 4
+Çözümlenen video: 4
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (9/10, footage) Real onboard footage of Perseverance rover's descent and landing in Je
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Onboard camera footage of Perseverance rover landing on Mars and its i
+nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Computer animation sequence depicting NASA's Perseverance rover entry,
+Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: kullanılır (8/10, footage) A 360-degree panoramic view of the Martian surface at Jezero Crater, c
+Kullanılır kesit: 8 (139 sn temiz görüntü)
 → Senaryo
+Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Senaryo düzelti: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 87.3/100 | whisper-large-v3
+Ses eşleştirme: 93.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 91.7/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 93.9/100 | whisper-large-v3
+Ses eşleştirme: 96.5/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 91.2/100 | whisper-large-v3
-→ Kurgu (97.8 sn, 10 beat, 8 kesit)
-  kurgu 10/98 sn
-  kurgu 20/98 sn
-  kurgu 30/98 sn
-  kurgu 40/98 sn
-  kurgu 50/98 sn
-  kurgu 60/98 sn
-  kurgu 70/98 sn
-  kurgu 80/98 sn
-  kurgu 90/98 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T194422140963Z/review.html
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (72.5 sn, 9 beat, 8 kesit)
+  kurgu 10/72 sn
+  kurgu 20/72 sn
+  kurgu 30/72 sn
+  kurgu 40/72 sn
+  kurgu 50/72 sn
+  kurgu 60/72 sn
+  kurgu 70/72 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261030T150826827859Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A spacecraft has mapped the Moon in 4K resolution #Shorts
+Başlık: Real footage of a rover landing on Mars #Shorts
 Görünürlük: public
 
-Yükleme: %6
-Yükleme: %12
-Yükleme: %18
-Yükleme: %24
+Yükleme: %7
+Yükleme: %15
+Yükleme: %23
 Yükleme: %30
-Yükleme: %36
-Yükleme: %42
-Yükleme: %48
-Yükleme: %54
-Yükleme: %60
-Yükleme: %67
-Yükleme: %73
-Yükleme: %79
-Yükleme: %85
-Yükleme: %91
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=QrfM6bWba6w&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %38
+Yükleme: %46
+Yükleme: %53
+Yükleme: %61
+Yükleme: %69
+Yükleme: %77
+Yükleme: %84
+Yükleme: %92
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=vq4YXnLbL_c&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261029T194422140963Z/video.mp4
-Boyut: 131.2 MB
-Açıklama uzunluğu: 364 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261030T150826827859Z/video.mp4
+Boyut: 103.7 MB
+Açıklama uzunluğu: 319 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 137523265. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 108788549. Maximum is 104857600.

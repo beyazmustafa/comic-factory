@@ -4302,5 +4302,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "vq4YXnLbL_c",
+    "platform": "youtube",
+    "run_id": "41077756135",
+    "published_at": "2026-10-30T16:04:20+00:00",
+    "event": {
+      "title": "Seven minutes of terror.",
+      "series": "NASA footage",
+      "issue": "perseverance-landing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 134,
+      "duration": 72.5,
+      "words_per_minute": 111,
+      "hook": "This is footage of the Perseverance rover landing on Mars on 18 February 2021.",
+      "hook_words": 14,
+      "title": "Real footage of a rover landing on Mars",
+      "title_length": 39,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
