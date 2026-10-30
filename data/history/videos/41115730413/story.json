@@ -1,0 +1,165 @@
+{
+  "title": "NASA is searching for life on a frozen moon",
+  "description": "The Europa Clipper mission will investigate a salty ocean hidden beneath the icy crust of Jupiter's moon. This massive spacecraft is designed to determine if the moon's subsurface environment could support life.",
+  "hook_card": "An ocean under the ice",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c06",
+      "narration": "Europa is slightly smaller than our Moon, with a surface of water ice marked by long reddish lines.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c03",
+      "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean holding twice the water of Earth's oceans.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the subsurface ocean liquid.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c07",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 kilometres from the surface to photograph the ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "NASA launched the Europa Clipper on 14 October 2024 to study this world and its potential habitability.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c02",
+      "narration": "This is the largest spacecraft NASA has built for a planetary mission, with solar arrays spanning 30 metres.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c05",
+      "narration": "The spacecraft arrives at Jupiter in 2030 to begin its investigation of the moon and its shell.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "It will make 49 flybys of Europa, passing as low as 25 kilometres above the cracked surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c04",
+      "narration": "The mission will study the ice and the salty ocean that lies beneath the moon's fractured exterior.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Europa is slightly smaller than our Moon, with a surface of water ice marked by long reddish lines. Beneath 15 to 25 kilometres of ice lies a salty ocean holding twice the water of Earth's oceans. Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the subsurface ocean liquid. In September 2022, the Juno spacecraft flew about 350 kilometres from the surface to photograph the ice. NASA launched the Europa Clipper on 14 October 2024 to study this world and its potential habitability. This is the largest spacecraft NASA has built for a planetary mission, with solar arrays spanning 30 metres. The spacecraft arrives at Jupiter in 2030 to begin its investigation of the moon and its shell. It will make 49 flybys of Europa, passing as low as 25 kilometres above the cracked surface. The mission will study the ice and the salty ocean that lies beneath the moon's fractured exterior.",
+  "event": {
+    "id": "film_europa_20261030T193055915165Z",
+    "title": "An ocean under the ice",
+    "series": "NASA footage",
+    "issue": "europa",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "europa",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic1322a/",
+      "https://esahubble.org/videos/heic1322b/",
+      "https://esahubble.org/videos/heic1504a/",
+      "https://esahubble.org/videos/heic2017a/",
+      "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations"
+    ]
+  },
+  "scenario": "europa",
+  "beats": [
+    {
+      "clip": "c06",
+      "narration": "Europa is slightly smaller than our Moon, with a surface of water ice marked by long reddish lines.",
+      "label": "NASA · HUBBLE · 2014",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean holding twice the water of Earth's oceans.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the subsurface ocean liquid.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 kilometres from the surface to photograph the ice.",
+      "label": "NASA · HUBBLE · 2015",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "NASA launched the Europa Clipper on 14 October 2024 to study this world and its potential habitability.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "This is the largest spacecraft NASA has built for a planetary mission, with solar arrays spanning 30 metres.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The spacecraft arrives at Jupiter in 2030 to begin its investigation of the moon and its shell.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "It will make 49 flybys of Europa, passing as low as 25 kilometres above the cracked surface.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": {
+        "value": "49",
+        "label": "flybys planned"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "The mission will study the ice and the salty ocean that lies beneath the moon's fractured exterior.",
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null
+    }
+  ],
+  "closing": "The mission arrives at Jupiter in 2030.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

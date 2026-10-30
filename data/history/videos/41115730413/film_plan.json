@@ -1,0 +1,438 @@
+{
+  "duration": 81.16,
+  "handle": "@Facctsaboutspace",
+  "hook": "An ocean under the ice",
+  "kicker": "Real footage · ESA/Hubble",
+  "closing": "The mission arrives at Jupiter in 2030.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c06",
+      "asset": "hubble:heic2017a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic2017a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.921,
+      "src_out": 14.579,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.324,
+      "label": "NASA · HUBBLE · 2014",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c07",
+      "asset": "hubble:heic1504a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1504a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 5.555,
+      "src_out": 10.245,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        902,
+        62,
+        2036,
+        2036
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.324,
+      "t1": 9.68,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "hubble:heic1322b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1322b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 4.243,
+      "src_out": 13.457,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 9.68,
+      "t1": 18.56,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.32,
+      "src_out": 15.68,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        228,
+        2868,
+        1588
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.56,
+      "t1": 23.587,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.377,
+      "src_out": 13.823,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 23.587,
+      "t1": 27.7,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "hubble:heic1322b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1322b/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 5.13,
+      "speed": 0.905,
+      "focus": [
+        0.6,
+        0.8
+      ],
+      "active": [
+        114,
+        0,
+        1268,
+        1000
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 27.7,
+      "t1": 33.035,
+      "label": "NASA · HUBBLE · 2015",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c05",
+      "asset": "hubble:heic1322a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1322a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.051,
+      "src_out": 15.749,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        196,
+        0,
+        1724,
+        1080
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 33.035,
+      "t1": 37.4,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.595,
+      "src_out": 10.605,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        1252,
+        108,
+        2492,
+        1756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 37.4,
+      "t1": 43.076,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 5.111,
+      "src_out": 10.089,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        1252,
+        108,
+        2492,
+        1756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 43.076,
+      "t1": 47.72,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.418,
+      "src_out": 15.782,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 47.72,
+      "t1": 55.75,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c05",
+      "asset": "hubble:heic1322a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1322a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.093,
+      "src_out": 17.707,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        196,
+        0,
+        1724,
+        1080
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 55.75,
+      "t1": 64.03,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.128,
+      "src_out": 16.872,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        228,
+        2868,
+        1588
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 64.03,
+      "t1": 71.44,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": {
+        "value": "49",
+        "label": "flybys planned"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c04",
+      "asset": "hubble:heic1322b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic1322b/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 5.13,
+      "speed": 0.903,
+      "focus": [
+        0.6,
+        0.8
+      ],
+      "active": [
+        114,
+        0,
+        1268,
+        1000
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 71.44,
+      "t1": 76.786,
+      "label": "NASA · ARTIST CONCEPT",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c06",
+      "asset": "hubble:heic2017a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261030T193055915165Z/footage/hubble_heic2017a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.396,
+      "src_out": 14.104,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 76.786,
+      "t1": 81.16,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
