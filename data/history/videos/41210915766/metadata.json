@@ -1,0 +1,173 @@
+{
+  "script": {
+    "title": "How Astronauts Repaired Hubble in Orbit",
+    "description": "Hubble launched in 1990 with a microscopic mirror flaw that blurred its view of the cosmos. Spacewalking astronauts later installed corrective optics to give the telescope sharp sight.",
+    "hook_card": "The telescope that was born blind",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c02",
+        "narration": "On April 24, 1990, space shuttle Discovery launched the Hubble Space Telescope into orbit above Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c00",
+        "narration": "The observatory was equipped with a 2.4-metre mirror designed to capture deep space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c03",
+        "narration": "However, the mirror was ground to the wrong shape by about two microns, a fiftieth of a hair's width.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c05",
+        "narration": "Because of this tiny manufacturing error, the initial images returned from the telescope were blurred.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c06",
+        "narration": "In December 1993, shuttle astronauts installed corrective optics during five spacewalks, making its vision sharp.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c04",
+        "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels over time.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "Hubble orbits about 540 kilometres above Earth, completing a full circle around the planet every 95 minutes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c07",
+        "narration": "Through these astronaut repairs, the space telescope has made more than 1.6 million observations.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "On April 24, 1990, space shuttle Discovery launched the Hubble Space Telescope into orbit above Earth. The observatory was equipped with a 2.4-metre mirror designed to capture deep space. However, the mirror was ground to the wrong shape by about two microns, a fiftieth of a hair's width. Because of this tiny manufacturing error, the initial images returned from the telescope were blurred. In December 1993, shuttle astronauts installed corrective optics during five spacewalks, making its vision sharp. Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels over time. Hubble orbits about 540 kilometres above Earth, completing a full circle around the planet every 95 minutes. Through these astronaut repairs, the space telescope has made more than 1.6 million observations.",
+    "event": {
+      "id": "film_hubble-servicing_20261031T143728535321Z",
+      "title": "The telescope that was born blind",
+      "series": "NASA footage",
+      "issue": "hubble-servicing",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "hubble-servicing",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
+        "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
+        "https://images.nasa.gov/details/GSFC_20080520_HST_m10214_Slow_Look2",
+        "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan",
+        "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002",
+        "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_008",
+        "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_Fire_006",
+        "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_Revers_007"
+      ]
+    },
+    "scenario": "hubble-servicing",
+    "beats": [
+      {
+        "clip": "c02",
+        "narration": "On April 24, 1990, space shuttle Discovery launched the Hubble Space Telescope into orbit above Earth.",
+        "label": "NASA · HUBBLE · 1990",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The observatory was equipped with a 2.4-metre mirror designed to capture deep space.",
+        "label": "NASA · HUBBLE · 1990",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "However, the mirror was ground to the wrong shape by about two microns, a fiftieth of a hair's width.",
+        "label": "NASA · HUBBLE · 1990",
+        "callout": {
+          "value": "2 microns",
+          "label": "the error in the mirror"
+        }
+      },
+      {
+        "clip": "c05",
+        "narration": "Because of this tiny manufacturing error, the initial images returned from the telescope were blurred.",
+        "label": "NASA · HUBBLE · 1990",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "In December 1993, shuttle astronauts installed corrective optics during five spacewalks, making its vision sharp.",
+        "label": "NASA · SERVICING MISSION 1 · 1993",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels over time.",
+        "label": "NASA · SERVICING MISSION 4 · 2009",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Hubble orbits about 540 kilometres above Earth, completing a full circle around the planet every 95 minutes.",
+        "label": "NASA · HUBBLE · 2008",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "Through these astronaut repairs, the space telescope has made more than 1.6 million observations.",
+        "label": "NASA · HUBBLE · 2009",
+        "callout": null
+      }
+    ],
+    "closing": "It completes an orbit every 95 minutes.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Hubble launched in 1990 with a microscopic mirror flaw that blurred its view of the cosmos. Spacewalking astronauts later installed corrective optics to give the telescope sharp sight.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Michael McClare, Jake Dean — HST Out and Around (https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround); Michael McClare, Jake Dean — HST Fly-By (https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan); Michael McClare, Jake Dean — Slow Look at HST 1 (https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1); Michael McClare, Jake Dean — Slow Look at HST 2 (https://images.nasa.gov/details/GSFC_20080520_HST_m10214_Slow_Look2); Michael McClare, Bob Sauls — HST SM4 Hubble Deploy Released Clip 2 (https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002); Michael McClare, Bob Sauls — HST SM4 Hubble Deploy Released (https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_008); Michael McClare, Bob Sauls — HST SM4 Hubble Deploy On Robotic Arm (https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_Revers_007); Michael McClare, Bob Sauls — HST SM4 Hubble Deploy Released from Arm (https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_Fire_006)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "How Astronauts Repaired Hubble in Orbit\n\nHubble launched in 1990 with a microscopic mirror flaw that blurred its view of the cosmos. Spacewalking astronauts later installed corrective optics to give the telescope sharp sight.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

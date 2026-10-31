@@ -4384,5 +4384,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "XJjf8zi5g1o",
+    "platform": "youtube",
+    "run_id": "41210915766",
+    "published_at": "2026-10-31T14:53:55+00:00",
+    "event": {
+      "title": "The telescope that was born blind",
+      "series": "NASA footage",
+      "issue": "hubble-servicing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 124,
+      "duration": 74.9,
+      "words_per_minute": 99,
+      "hook": "On April 24, 1990, space shuttle Discovery launched the Hubble Space Telescope into orbit above Earth.",
+      "hook_words": 16,
+      "title": "How Astronauts Repaired Hubble in Orbit",
+      "title_length": 39,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
