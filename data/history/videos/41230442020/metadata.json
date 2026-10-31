@@ -1,0 +1,185 @@
+{
+  "script": {
+    "title": "The First Powered Aircraft Flight on Another World",
+    "description": "NASA's Ingenuity helicopter achieved the first powered, controlled flight on another planet in April 2021. Designed for just five flights over thirty days, the 1.8-kilogram craft completed 72 flights over almost three years on Mars.",
+    "hook_card": "A helicopter on Mars.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "This is the first powered, controlled flight on another planet.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c05",
+        "narration": "Here on Mars, the thin air is about one percent as dense as Earth's at sea level.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "To generate lift, the 1.8-kilogram craft spins its 1.2-metre rotors at around 2,400 rpm.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "On 19 April 2021, Ingenuity made a 3-metre hover lasting about 39 seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c04",
+        "narration": "Engineers built the craft for five test flights over 30 days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "Instead, it flew 72 flights over almost three years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "It covered more than 17 km, climbed to 24 metres, and reached 36 km/h.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c05",
+        "narration": "It carried a small piece of fabric from the Wright brothers' 1903 Flyer.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c00",
+        "narration": "The mission ended in January 2024 when a rotor blade was damaged on landing.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This is the first powered, controlled flight on another planet. Here on Mars, the thin air is about one percent as dense as Earth's at sea level. To generate lift, the 1.8-kilogram craft spins its 1.2-metre rotors at around 2,400 rpm. On 19 April 2021, Ingenuity made a 3-metre hover lasting about 39 seconds. Engineers built the craft for five test flights over 30 days. Instead, it flew 72 flights over almost three years. It covered more than 17 km, climbed to 24 metres, and reached 36 km/h. It carried a small piece of fabric from the Wright brothers' 1903 Flyer. The mission ended in January 2024 when a rotor blade was damaged on landing.",
+    "event": {
+      "id": "film_ingenuity_20261031T184013375888Z",
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "ingenuity",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+        "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+        "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+      ]
+    },
+    "scenario": "ingenuity",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "This is the first powered, controlled flight on another planet.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Here on Mars, the thin air is about one percent as dense as Earth's at sea level.",
+        "label": "NASA · INGENUITY · 2023",
+        "callout": {
+          "value": "1%",
+          "label": "of Earth's air density"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "To generate lift, the 1.8-kilogram craft spins its 1.2-metre rotors at around 2,400 rpm.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "On 19 April 2021, Ingenuity made a 3-metre hover lasting about 39 seconds.",
+        "label": "NASA · PERSEVERANCE · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Engineers built the craft for five test flights over 30 days.",
+        "label": "NASA · PERSEVERANCE · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Instead, it flew 72 flights over almost three years.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": {
+          "value": "72",
+          "label": "flights, planned for 5"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "It covered more than 17 km, climbed to 24 metres, and reached 36 km/h.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "It carried a small piece of fabric from the Wright brothers' 1903 Flyer.",
+        "label": "NASA · INGENUITY · 2023",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The mission ended in January 2024 when a rotor blade was damaged on landing.",
+        "label": "NASA · PERSEVERANCE · 2021",
+        "callout": null
+      }
+    ],
+    "closing": "It completed 72 flights on a world with 1% air density.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "NASA's Ingenuity helicopter achieved the first powered, controlled flight on another planet in April 2021. Designed for just five flights over thirty days, the 1.8-kilogram craft completed 72 flights over almost three years on Mars.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — First Video of NASA’s Ingenuity Mars Helicopter in Flight, Including Takeoff and (https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight); JPL — Perseverance Rover's Mastcam-Z Captures Ingenuity's Third FlightNASA’s Ingenuity (https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video); JPL — Ingenuity Mars Helicopter Flight Update Media Reel (https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The First Powered Aircraft Flight on Another World\n\nNASA's Ingenuity helicopter achieved the first powered, controlled flight on another planet in April 2021. Designed for just five flights over thirty days, the 1.8-kilogram craft completed 72 flights over almost three years on Mars.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

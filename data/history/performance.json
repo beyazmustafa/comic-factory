@@ -4425,5 +4425,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "2zQEESlVUtg",
+    "platform": "youtube",
+    "run_id": "41230442020",
+    "published_at": "2026-10-31T19:25:29+00:00",
+    "event": {
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 115,
+      "duration": 70.7,
+      "words_per_minute": 98,
+      "hook": "This is the first powered, controlled flight on another planet.",
+      "hook_words": 10,
+      "title": "The First Powered Aircraft Flight on Another World",
+      "title_length": 50,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

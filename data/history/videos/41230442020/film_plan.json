@@ -1,0 +1,384 @@
+{
+  "duration": 70.71,
+  "handle": "@Facctsaboutspace",
+  "hook": "A helicopter on Mars.",
+  "kicker": "Real footage · NASA",
+  "closing": "It completed 72 flights on a world with 1% air density.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210419_techf_0001_first_video_of_nasa_s_ingenuity/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.313,
+      "src_out": 16.687,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 7.04,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c05",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 14.693,
+      "src_out": 22.107,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        240,
+        0,
+        1440,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 7.04,
+      "t1": 14.12,
+      "label": "NASA · INGENUITY · 2023",
+      "callout": {
+        "value": "1%",
+        "label": "of Earth's air density"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210425_techf_0001_ingenuity_third_flight_mastcamz/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.476,
+      "src_out": 15.094,
+      "speed": 1.0,
+      "focus": [
+        0.15,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 14.12,
+      "t1": 19.405,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210425_techf_0001_ingenuity_third_flight_mastcamz/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 6.671,
+      "src_out": 11.329,
+      "speed": 1.0,
+      "focus": [
+        0.12,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.405,
+      "t1": 23.73,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.968,
+      "src_out": 9.702,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 23.73,
+      "t1": 29.131,
+      "label": "NASA · PERSEVERANCE · 2023",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.624,
+      "src_out": 15.376,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.6
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.131,
+      "t1": 33.55,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.693,
+      "src_out": 6.507,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        240,
+        0,
+        1440,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 33.55,
+      "t1": 39.03,
+      "label": "NASA · PERSEVERANCE · 2023",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c03",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 16.933,
+      "src_out": 22.737,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 39.03,
+      "t1": 44.5,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "72",
+        "label": "flights, planned for 5"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210425_techf_0001_ingenuity_third_flight_mastcamz/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.324,
+      "src_out": 15.246,
+      "speed": 1.0,
+      "focus": [
+        0.15,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 44.5,
+      "t1": 50.088,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210419_techf_0001_first_video_of_nasa_s_ingenuity/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.547,
+      "src_out": 15.453,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 50.088,
+      "t1": 54.66,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c05",
+      "asset": "nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20230406_techf_0001_ingenuity_flight_update_media_r/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 14.813,
+      "src_out": 21.987,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        240,
+        0,
+        1440,
+        1080
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 54.66,
+      "t1": 61.5,
+      "label": "NASA · INGENUITY · 2023",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210419_techf_0001_first_video_of_nasa_s_ingenuity/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.301,
+      "src_out": 15.699,
+      "speed": 1.0,
+      "focus": [
+        0.49,
+        0.65
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 61.5,
+      "t1": 66.566,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c01",
+      "asset": "nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261031T184013375888Z/footage/nasa_jpl_20210425_techf_0001_ingenuity_third_flight_mastcamz/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.046,
+      "src_out": 14.524,
+      "speed": 1.0,
+      "focus": [
+        0.15,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 66.566,
+      "t1": 70.71,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
