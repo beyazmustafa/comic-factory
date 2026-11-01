@@ -1,6 +1,6 @@
-run_id: 41320497965  attempt: 1  event: schedule
+run_id: 41339430092  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261101T151846860015Z/run.json
+--- data/runs/20261101T190045466869Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,14 +40,16 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "41320497965",
-  "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "41339430092",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261101T151846860015Z/diagnostics/provider_events.json
+--- data/runs/20261101T190045466869Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:Ultimate Saturn V Launch w Enhanced Sound: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261101T151846860015Z/diagnostics/providers.json
+--- data/runs/20261101T190045466869Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -70,9 +72,9 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b"
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -163,35 +165,39 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261101T151846860015Z/audio/chunk_000/failures.json
+--- data/runs/20261101T190045466869Z/audio/chunk_001/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.0 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.0 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.4 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.0 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 16.0 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 17.6 sn); whisper-large-v3-turbo: 76.8/100 (duyulan: “This rocket burned roughly 13 tons of propellant every second it climbed toward orbit. The”, 17.6 sn)"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 19.8 sn); whisper-large-v3-turbo: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 19.8 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 19.9 sn); whisper-large-v3-turbo: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 19.9 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 20.0 sn); whisper-large-v3-turbo: 77.1/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 20.0 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 18.4 sn); whisper-large-v3-turbo: 79.6/100 (duyulan: “When fully fueled, the massive Saturn V rocket weighed about 2,900 tons before liftoff. It”, 18.4 sn)"
 ]
 --- studio.log (son 300 satır)
 → Konu: launch-power
 Görüntü adayları: 49 (launch-power)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
 Çözümlenen video: 12
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) Slow-motion night liftoff of Artemis I Space Launch System from Pad 39
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) NASA Space Launch System (SLS) Artemis I night launch isolated camera 
-Görüntü değerlendirme nasa:Ultimate Saturn V Launch w Enhanced Sound: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:Ultimate Saturn V Launch w Enhanced Sound: kullanılır (8/10, footage) Archival footage of the Saturn V launch showing engine ignition, lifto
-Kullanılır kesit: 5 (80 sn temiz görüntü)
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (9/10, footage) Slow-motion night liftoff of NASA's Space Launch System for the Artemi
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) Isolated camera angles showing the night launch of NASA's Space Launch
+nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) Launch imagery of NASA's Space Launch System for the Artemis I mission
+Kullanılır kesit: 7 (142 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 76.8/100 | whisper-large-v3
-Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 2
-Ses eşleştirme: 76.8/100 | whisper-large-v3
-Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 3
-Ses eşleştirme: 76.8/100 | whisper-large-v3
-Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
-Ses bölümü 1, deneme 4
-Ses eşleştirme: 76.8/100 | whisper-large-v3
-Ses eşleştirme: 76.8/100 | whisper-large-v3-turbo
-HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 79.6/100 | whisper-large-v3
+Ses eşleştirme: 79.6/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 79.6/100 | whisper-large-v3
+Ses eşleştirme: 79.6/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 3
+Ses eşleştirme: 79.6/100 | whisper-large-v3
+Ses eşleştirme: 77.1/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 4
+Ses eşleştirme: 79.6/100 | whisper-large-v3
+Ses eşleştirme: 79.6/100 | whisper-large-v3-turbo
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
