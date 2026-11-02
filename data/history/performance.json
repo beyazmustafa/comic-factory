@@ -4466,5 +4466,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "LNkfVzdCgGY",
+    "platform": "youtube",
+    "run_id": "41501523537",
+    "published_at": "2026-11-02T18:58:49+00:00",
+    "event": {
+      "title": "The most powerful machines ever built.",
+      "series": "NASA footage",
+      "issue": "launch-power",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 110,
+      "duration": 69.6,
+      "words_per_minute": 95,
+      "hook": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fully fuelled.",
+      "hook_words": 15,
+      "title": "How Saturn V and SLS compares in launch power",
+      "title_length": 45,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

@@ -1,0 +1,398 @@
+{
+  "duration": 69.6,
+  "handle": "@Facctsaboutspace",
+  "hook": "The most powerful machines ever built.",
+  "kicker": "Real footage · NASA",
+  "closing": "The sound of a Saturn V launch was among the loudest ever made.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.779,
+      "src_out": 18.251,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.138,
+      "label": "NASA · APOLLO · 1967",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.322,
+      "src_out": 15.678,
+      "speed": 1.0,
+      "focus": [
+        0.48,
+        0.45
+      ],
+      "active": [
+        1118,
+        798,
+        2176,
+        1124
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.138,
+      "t1": 11.16,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 6.13,
+      "src_out": 11.73,
+      "speed": 0.752,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.16,
+      "t1": 18.27,
+      "label": "NASA · APOLLO · 1967",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 21.8,
+      "src_out": 25.37,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.27,
+      "t1": 22.399,
+      "label": "NASA · APOLLO · 1967",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.678,
+      "src_out": 9.322,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 22.399,
+      "t1": 26.71,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c06",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 4.055,
+      "src_out": 9.515,
+      "speed": 1.0,
+      "focus": [
+        0.83,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 26.71,
+      "t1": 31.836,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.63,
+      "src_out": 6.13,
+      "speed": 0.773,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 31.836,
+      "t1": 36.03,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 15.753,
+      "src_out": 25.047,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 36.03,
+      "t1": 44.99,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 8.913,
+      "src_out": 17.087,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 44.99,
+      "t1": 52.83,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 18.3,
+      "src_out": 21.8,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 52.83,
+      "t1": 56.872,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c03",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.134,
+      "src_out": 5.066,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 56.872,
+      "t1": 59.47,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.048,
+      "src_out": 15.952,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 59.47,
+      "t1": 65.041,
+      "label": "NASA · APOLLO · 1973",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 2.63,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 65.041,
+      "t1": 67.996,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261102T183459928456Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.031,
+      "src_out": 13.969,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 67.996,
+      "t1": 69.6,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
