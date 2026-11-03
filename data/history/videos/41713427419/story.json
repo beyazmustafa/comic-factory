@@ -1,0 +1,167 @@
+{
+  "title": "The moon with rivers and seas of liquid methane",
+  "description": "Titan is the only moon in our solar system with a thick atmosphere and liquid seas on its surface. NASA's Dragonfly mission will soon return to explore these alien landscapes in the 2030s.",
+  "hook_card": "Lakes of liquid methane.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c05",
+      "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick atmosphere of nitrogen.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "The surface pressure is 1.5 times Earth's, with temperatures reaching about minus 180 degrees Celsius.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "At these extremes, liquid methane and ethane flow through rivers and fill vast, dark basins.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "The largest sea, Kraken Mare, covers an area even bigger than the Caspian Sea on Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c07",
+      "narration": "On 14 January 2005, the Huygens probe made the farthest landing ever achieved in space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c01",
+      "narration": "The probe parachuted for two and a half hours before landing on the cold, alien surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "Huygens continued transmitting data from the ground for about 72 minutes before its mission ended.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "NASA's Dragonfly rotorcraft is scheduled to launch toward this distant moon in 2028.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c04",
+      "narration": "This new mission will fly across the surface of Titan during the 2030s.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick atmosphere of nitrogen. The surface pressure is 1.5 times Earth's, with temperatures reaching about minus 180 degrees Celsius. At these extremes, liquid methane and ethane flow through rivers and fill vast, dark basins. The largest sea, Kraken Mare, covers an area even bigger than the Caspian Sea on Earth. On 14 January 2005, the Huygens probe made the farthest landing ever achieved in space. The probe parachuted for two and a half hours before landing on the cold, alien surface. Huygens continued transmitting data from the ground for about 72 minutes before its mission ended. NASA's Dragonfly rotorcraft is scheduled to launch toward this distant moon in 2028. This new mission will fly across the surface of Titan during the 2030s.",
+  "event": {
+    "id": "film_titan_20261103T203327729717Z",
+    "title": "Lakes of liquid methane.",
+    "series": "NASA footage",
+    "issue": "titan",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "titan",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://svs.gsfc.nasa.gov/13562",
+      "https://svs.gsfc.nasa.gov/14843",
+      "https://svs.gsfc.nasa.gov/20403",
+      "https://svs.gsfc.nasa.gov/5530"
+    ]
+  },
+  "scenario": "titan",
+  "beats": [
+    {
+      "clip": "c05",
+      "narration": "Titan is bigger than the planet Mercury and is wrapped in a thick atmosphere of nitrogen.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The surface pressure is 1.5 times Earth's, with temperatures reaching about minus 180 degrees Celsius.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "At these extremes, liquid methane and ethane flow through rivers and fill vast, dark basins.",
+      "label": "NASA · WEBB · 2025",
+      "callout": {
+        "value": "-180 °C",
+        "label": "on the surface"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "The largest sea, Kraken Mare, covers an area even bigger than the Caspian Sea on Earth.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "On 14 January 2005, the Huygens probe made the farthest landing ever achieved in space.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The probe parachuted for two and a half hours before landing on the cold, alien surface.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Huygens continued transmitting data from the ground for about 72 minutes before its mission ended.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": {
+        "value": "2.5 h",
+        "label": "parachute descent"
+      }
+    },
+    {
+      "clip": "c00",
+      "narration": "NASA's Dragonfly rotorcraft is scheduled to launch toward this distant moon in 2028.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "This new mission will fly across the surface of Titan during the 2030s.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    }
+  ],
+  "closing": "Dragonfly will fly across Titan in the 2030s.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
