@@ -4507,5 +4507,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "s_UwjAMW1n8",
+    "platform": "youtube",
+    "run_id": "41673222878",
+    "published_at": "2026-11-03T16:40:16+00:00",
+    "event": {
+      "title": "Inside the Eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 117,
+      "duration": 72.0,
+      "words_per_minute": 98,
+      "hook": "From orbit, a hurricane reveals its quiet center and the intense storm system surrounding it.",
+      "hook_words": 15,
+      "title": "How Hurricanes Look From Space Station",
+      "title_length": 38,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

@@ -1,0 +1,182 @@
+{
+  "script": {
+    "title": "How Hurricanes Look From Space Station",
+    "description": "Astronauts aboard the International Space Station observe massive hurricane systems moving across Earth's oceans. Weather satellites continuously monitor these storms from tens of thousands of kilometres away.",
+    "hook_card": "Inside the Eye",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c01",
+        "narration": "From orbit, a hurricane reveals its quiet center and the intense storm system surrounding it.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c02",
+        "narration": "The central eye is typically 30 to 65 km wide and almost calm.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c04",
+        "narration": "The strongest winds blow in the eyewall directly surrounding this quiet center.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "In a category 5 storm, eyewall winds exceed 250 km/h.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c05",
+        "narration": "A mature hurricane releases heat at a rate about 200 times the world's electricity generation.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c06",
+        "narration": "These storms spin anticlockwise north of the equator and clockwise south of it.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "A large hurricane can measure more than 1,000 km across.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c00",
+        "narration": "The space station crosses one of these massive systems in about two minutes.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c01",
+        "narration": "Farther out, GOES weather satellites watch from 35,800 km up, imaging a storm every thirty seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "From orbit, a hurricane reveals its quiet center and the intense storm system surrounding it. The central eye is typically 30 to 65 km wide and almost calm. The strongest winds blow in the eyewall directly surrounding this quiet center. In a category 5 storm, eyewall winds exceed 250 km/h. A mature hurricane releases heat at a rate about 200 times the world's electricity generation. These storms spin anticlockwise north of the equator and clockwise south of it. A large hurricane can measure more than 1,000 km across. The space station crosses one of these massive systems in about two minutes. Farther out, GOES weather satellites watch from 35,800 km up, imaging a storm every thirty seconds.",
+    "event": {
+      "id": "film_hurricane_20261103T162222976790Z",
+      "title": "Inside the Eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "hurricane",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926",
+        "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+        "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008"
+      ]
+    },
+    "scenario": "hurricane",
+    "beats": [
+      {
+        "clip": "c01",
+        "narration": "From orbit, a hurricane reveals its quiet center and the intense storm system surrounding it.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "The central eye is typically 30 to 65 km wide and almost calm.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The strongest winds blow in the eyewall directly surrounding this quiet center.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "In a category 5 storm, eyewall winds exceed 250 km/h.",
+        "label": "NASA · ISS · 2024",
+        "callout": {
+          "value": "250 km/h",
+          "label": "in the eyewall"
+        }
+      },
+      {
+        "clip": "c05",
+        "narration": "A mature hurricane releases heat at a rate about 200 times the world's electricity generation.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "These storms spin anticlockwise north of the equator and clockwise south of it.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "A large hurricane can measure more than 1,000 km across.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The space station crosses one of these massive systems in about two minutes.",
+        "label": "NASA · ISS · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Farther out, GOES weather satellites watch from 35,800 km up, imaging a storm every thirty seconds.",
+        "label": "NOAA · GOES · 2024",
+        "callout": null
+      }
+    ],
+    "closing": "Weather satellites watch them constantly from 35,800 kilometres up.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Astronauts aboard the International Space Station observe massive hurricane systems moving across Earth's oceans. Weather satellites continuously monitor these storms from tens of thousands of kilometres away.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JSC — Expedition 71 International Space Station Flyover of Hurricane Beryl - Monday, J (https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701); JSC — INTERNATIONAL SPACE STATION CAMERAS CAPTURE NEW VIEWS OF HURRICANE MILTON (https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008); JSC — Live Views of Hurricane Helene from the International Space Station – Thursday,  (https://images.nasa.gov/details/iss072m262701649_Live_Views_of_Hurricane_Helene_from_the_International_Space_Station_240926)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "How Hurricanes Look From Space Station\n\nAstronauts aboard the International Space Station observe massive hurricane systems moving across Earth's oceans. Weather satellites continuously monitor these storms from tens of thousands of kilometres away.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
