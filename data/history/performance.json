@@ -4548,5 +4548,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "PnB0lB0eIFU",
+    "platform": "youtube",
+    "run_id": "41867033560",
+    "published_at": "2026-11-04T16:46:38+00:00",
+    "event": {
+      "title": "The windiest world in our system.",
+      "series": "NASA footage",
+      "issue": "neptune",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 130,
+      "duration": 73.7,
+      "words_per_minute": 106,
+      "hook": "In August 1989, Voyager 2 became the only spacecraft to ever fly past the distant planet Neptune.",
+      "hook_words": 17,
+      "title": "The Only Spacecraft to Visit Neptune",
+      "title_length": 36,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

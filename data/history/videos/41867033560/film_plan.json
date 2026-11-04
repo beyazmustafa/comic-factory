@@ -1,0 +1,342 @@
+{
+  "duration": 73.74,
+  "handle": "@Facctsaboutspace",
+  "hook": "The windiest world in our system.",
+  "kicker": "Real footage · ESA/Hubble",
+  "closing": "One Neptune year has not passed since its discovery.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c04",
+      "asset": "hubble:heic2113b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic2113b/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.383,
+      "src_out": 10.217,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.5,
+      "label": "NASA · HUBBLE · 2018",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "hubble:ann1115a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_ann1115a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.063,
+      "src_out": 15.937,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.5,
+      "t1": 12.04,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.578,
+      "src_out": 9.952,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 12.04,
+      "t1": 20.08,
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.887,
+      "src_out": 8.643,
+      "speed": 1.0,
+      "focus": [
+        0.4,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 20.08,
+      "t1": 25.503,
+      "label": "NASA · HUBBLE · 2018",
+      "callout": {
+        "value": "2,000 km/h",
+        "label": "winds"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.215,
+      "src_out": 5.985,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 25.503,
+      "t1": 29.94,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c00",
+      "asset": "hubble:ann1115a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_ann1115a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.008,
+      "src_out": 16.992,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.94,
+      "t1": 37.59,
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.678,
+      "src_out": 8.852,
+      "speed": 1.0,
+      "focus": [
+        0.4,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 37.59,
+      "t1": 43.431,
+      "label": "NASA · HUBBLE · 2013",
+      "callout": {
+        "value": "165 years",
+        "label": "one orbit"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "hubble:heic2113b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic2113b/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.244,
+      "src_out": 9.356,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 43.431,
+      "t1": 48.21,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 1.803,
+      "src_out": 9.727,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.21,
+      "t1": 55.8,
+      "label": "NASA · HUBBLE · 2013",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 7.2,
+      "speed": 0.868,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 55.8,
+      "t1": 63.76,
+      "label": "NASA · HUBBLE · 2013",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "hubble:heic1904a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic1904a/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.854,
+      "src_out": 8.676,
+      "speed": 1.0,
+      "focus": [
+        0.4,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 63.76,
+      "t1": 69.249,
+      "label": "NASA · HUBBLE · 2013",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c04",
+      "asset": "hubble:heic2113b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261104T162618785193Z/footage/hubble_heic2113b/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.388,
+      "src_out": 9.212,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 69.249,
+      "t1": 73.74,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

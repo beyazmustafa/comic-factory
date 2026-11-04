@@ -1,0 +1,171 @@
+{
+  "script": {
+    "title": "The Only Spacecraft to Visit Neptune",
+    "description": "Voyager 2 remains the only spacecraft to ever visit the distant ice giant Neptune. These images reveal a world of supersonic winds and a moon captured from the Kuiper Belt.",
+    "hook_card": "The windiest world in our system.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c04",
+        "narration": "In August 1989, Voyager 2 became the only spacecraft to ever fly past the distant planet Neptune.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c00",
+        "narration": "Neptune sits 4.5 billion kilometers from the Sun, where light takes over four hours to reach it.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c04",
+        "narration": "Winds here reach 2,000 kilometers per hour, the fastest speeds measured on any planet in our system.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c00",
+        "narration": "Voyager saw an Earth-sized Great Dark Spot, but the storm had vanished when Hubble looked years later.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c03",
+        "narration": "This world is so far from the Sun that a single Neptune year lasts 165 Earth years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "The moon Triton orbits backwards and features geysers of nitrogen erupting from its surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "Triton is likely a captured world, pulled into orbit from the debris of the Kuiper Belt.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "Since Voyager 2 passed by, no other mission has returned to study these supersonic storms.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "In August 1989, Voyager 2 became the only spacecraft to ever fly past the distant planet Neptune. Neptune sits 4.5 billion kilometers from the Sun, where light takes over four hours to reach it. Winds here reach 2,000 kilometers per hour, the fastest speeds measured on any planet in our system. Voyager saw an Earth-sized Great Dark Spot, but the storm had vanished when Hubble looked years later. This world is so far from the Sun that a single Neptune year lasts 165 Earth years. The moon Triton orbits backwards and features geysers of nitrogen erupting from its surface. Triton is likely a captured world, pulled into orbit from the debris of the Kuiper Belt. Since Voyager 2 passed by, no other mission has returned to study these supersonic storms.",
+    "event": {
+      "id": "film_neptune_20261104T162618785193Z",
+      "title": "The windiest world in our system.",
+      "series": "NASA footage",
+      "issue": "neptune",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "neptune",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://esahubble.org/videos/ann1115a/",
+        "https://esahubble.org/videos/heic1904a/",
+        "https://esahubble.org/videos/heic2113b/"
+      ]
+    },
+    "scenario": "neptune",
+    "beats": [
+      {
+        "clip": "c04",
+        "narration": "In August 1989, Voyager 2 became the only spacecraft to ever fly past the distant planet Neptune.",
+        "label": "NASA · HUBBLE · 2018",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Neptune sits 4.5 billion kilometers from the Sun, where light takes over four hours to reach it.",
+        "label": "NASA · VOYAGER 2 · 1989",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Winds here reach 2,000 kilometers per hour, the fastest speeds measured on any planet in our system.",
+        "label": "NASA · HUBBLE · 2018",
+        "callout": {
+          "value": "2,000 km/h",
+          "label": "winds"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "Voyager saw an Earth-sized Great Dark Spot, but the storm had vanished when Hubble looked years later.",
+        "label": "NASA · VOYAGER 2 · 1989",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "This world is so far from the Sun that a single Neptune year lasts 165 Earth years.",
+        "label": "NASA · HUBBLE · 2013",
+        "callout": {
+          "value": "165 years",
+          "label": "one orbit"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "The moon Triton orbits backwards and features geysers of nitrogen erupting from its surface.",
+        "label": "NASA · HUBBLE · 2013",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Triton is likely a captured world, pulled into orbit from the debris of the Kuiper Belt.",
+        "label": "NASA · HUBBLE · 2013",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Since Voyager 2 passed by, no other mission has returned to study these supersonic storms.",
+        "label": "NASA · HUBBLE · 2013",
+        "callout": null
+      }
+    ],
+    "closing": "One Neptune year has not passed since its discovery.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Voyager 2 remains the only spacecraft to ever visit the distant ice giant Neptune. These images reveal a world of supersonic winds and a moon captured from the Kuiper Belt.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: NASA, ESA, the Hubble Heritage Team (STScI/OPO) and G. Bacon (STScI) — Neptune and its moons (https://esahubble.org/videos/ann1115a/); ESA/Hubble, L.Calçada — Animation of Neptune’s moon Hippocamp (https://esahubble.org/videos/heic1904a/); NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley) and the OPAL team  — Pans of Hubble’s Grand Tour of the Solar System (https://esahubble.org/videos/heic2113b/)\nLicences: CC BY 4.0\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The Only Spacecraft to Visit Neptune\n\nVoyager 2 remains the only spacecraft to ever visit the distant ice giant Neptune. These images reveal a world of supersonic winds and a moon captured from the Kuiper Belt.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
