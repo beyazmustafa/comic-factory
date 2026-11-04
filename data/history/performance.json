@@ -4589,5 +4589,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "kILU7J7Gvgs",
+    "platform": "youtube",
+    "run_id": "41910592968",
+    "published_at": "2026-11-04T21:22:54+00:00",
+    "event": {
+      "title": "Outside the station.",
+      "series": "NASA footage",
+      "issue": "spacewalk",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 154,
+      "duration": 87.2,
+      "words_per_minute": 106,
+      "hook": "This helmet camera captures the perspective of an astronaut working on a mission outside the station.",
+      "hook_words": 16,
+      "title": "The view from an astronaut helmet camera",
+      "title_length": 40,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

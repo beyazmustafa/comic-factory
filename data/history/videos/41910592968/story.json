@@ -1,0 +1,167 @@
+{
+  "title": "The view from an astronaut helmet camera",
+  "description": "Experience the extreme conditions of a spacewalk outside the International Space Station. From temperature swings to high-speed orbits, this is how astronauts maintain our home in space.",
+  "hook_card": "Outside the station.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "This helmet camera captures the perspective of an astronaut working on a mission outside the station.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c05",
+      "narration": "Before stepping outside, astronauts breathe pure oxygen for hours because suit pressure is a third of sea level.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "The suit has 14 layers and weighs 145 kilograms on Earth, but in orbit it weighs nothing.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c06",
+      "narration": "In sunlight the suit faces plus 120 °C, while in the shadows it drops to minus 150 °C.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "A sunrise comes every 90 minutes, forcing the crew to work through constant cycles of light and dark.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c07",
+      "narration": "Although the suit is weightless, the astronaut must still move its 145 kilograms of weight to work.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "If a tether fails, the crew wears a small jetpack called SAFER to fly themselves back to the station.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "These missions are far longer than Alexei Leonov's first spacewalk in March 1965, which lasted twelve minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c00",
+      "narration": "Astronauts perform this work during missions that usually last between six and eight hours.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This helmet camera captures the perspective of an astronaut working on a mission outside the station. Before stepping outside, astronauts breathe pure oxygen for hours because suit pressure is a third of sea level. The suit has 14 layers and weighs 145 kilograms on Earth, but in orbit it weighs nothing. In sunlight the suit faces plus 120 °C, while in the shadows it drops to minus 150 °C. A sunrise comes every 90 minutes, forcing the crew to work through constant cycles of light and dark. Although the suit is weightless, the astronaut must still move its 145 kilograms of weight to work. If a tether fails, the crew wears a small jetpack called SAFER to fly themselves back to the station. These missions are far longer than Alexei Leonov's first spacewalk in March 1965, which lasted twelve minutes. Astronauts perform this work during missions that usually last between six and eight hours.",
+  "event": {
+    "id": "film_spacewalk_20261104T205405169699Z",
+    "title": "Outside the station.",
+    "series": "NASA footage",
+    "issue": "spacewalk",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "spacewalk",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000176_Russian_European_Space_Agency_Spacewalk_Animation",
+      "https://images.nasa.gov/details/jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
+    ]
+  },
+  "scenario": "spacewalk",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "This helmet camera captures the perspective of an astronaut working on a mission outside the station.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Before stepping outside, astronauts breathe pure oxygen for hours because suit pressure is a third of sea level.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The suit has 14 layers and weighs 145 kilograms on Earth, but in orbit it weighs nothing.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "In sunlight the suit faces plus 120 °C, while in the shadows it drops to minus 150 °C.",
+      "label": "NASA · ISS · 2022",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "A sunrise comes every 90 minutes, forcing the crew to work through constant cycles of light and dark.",
+      "label": "ROSCOSMOS · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Although the suit is weightless, the astronaut must still move its 145 kilograms of weight to work.",
+      "label": "ESA · ISS · 2022",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "If a tether fails, the crew wears a small jetpack called SAFER to fly themselves back to the station.",
+      "label": "ROSCOSMOS · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "These missions are far longer than Alexei Leonov's first spacewalk in March 1965, which lasted twelve minutes.",
+      "label": "ROSCOSMOS · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Astronauts perform this work during missions that usually last between six and eight hours.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    }
+  ],
+  "closing": "More than 270 spacewalks have been made to build the station.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
