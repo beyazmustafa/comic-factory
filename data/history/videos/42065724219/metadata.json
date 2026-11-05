@@ -1,0 +1,185 @@
+{
+  "script": {
+    "title": "A spacecraft for humans has traveled farther than Apollo",
+    "description": "In 2022, the Artemis I mission sent an uncrewed Orion capsule on a record-breaking journey around the Moon. These are the real views captured by the spacecraft as it reached 432,000 kilometres from Earth.",
+    "hook_card": "Farther than Apollo.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Artemis I launched on 16 November 2022 on the Space Launch System, the most powerful rocket ever to fly.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c03",
+        "narration": "The uncrewed Orion capsule flew for 25.5 days, reaching a distance of 432,000 kilometres from our home planet.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c05",
+        "narration": "This spacecraft travelled farther from Earth than any other vehicle ever built for a human crew.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "In the commander's seat sat a mannequin nicknamed Commander Moonikin Campos, wired with sensors to record the flight.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c01",
+        "narration": "Cameras mounted on the solar arrays filmed the Earth and the Moon together as the capsule moved through space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c06",
+        "narration": "From the farthest point of the mission, the Earth and Moon appear as small crescents in the deep black.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "After its loop around the Moon, the spacecraft began its high-speed return journey back to the atmosphere.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c04",
+        "narration": "Orion hit the air at 40,000 kilometres per hour, with the heat shield reaching 2,800 degrees Celsius.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c00",
+        "narration": "The mission ended on 11 December 2022, when the capsule successfully splashed down in the Pacific Ocean.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Artemis I launched on 16 November 2022 on the Space Launch System, the most powerful rocket ever to fly. The uncrewed Orion capsule flew for 25.5 days, reaching a distance of 432,000 kilometres from our home planet. This spacecraft travelled farther from Earth than any other vehicle ever built for a human crew. In the commander's seat sat a mannequin nicknamed Commander Moonikin Campos, wired with sensors to record the flight. Cameras mounted on the solar arrays filmed the Earth and the Moon together as the capsule moved through space. From the farthest point of the mission, the Earth and Moon appear as small crescents in the deep black. After its loop around the Moon, the spacecraft began its high-speed return journey back to the atmosphere. Orion hit the air at 40,000 kilometres per hour, with the heat shield reaching 2,800 degrees Celsius. The mission ended on 11 December 2022, when the capsule successfully splashed down in the Pacific Ocean.",
+    "event": {
+      "id": "film_artemis-1_20261105T163550774485Z",
+      "title": "Farther than Apollo.",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "artemis-1",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+        "https://images.nasa.gov/details/ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B",
+        "https://images.nasa.gov/details/FD13",
+        "https://images.nasa.gov/details/Flight Day 14",
+        "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+        "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+      ]
+    },
+    "scenario": "artemis-1",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Artemis I launched on 16 November 2022 on the Space Launch System, the most powerful rocket ever to fly.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The uncrewed Orion capsule flew for 25.5 days, reaching a distance of 432,000 kilometres from our home planet.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "This spacecraft travelled farther from Earth than any other vehicle ever built for a human crew.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "In the commander's seat sat a mannequin nicknamed Commander Moonikin Campos, wired with sensors to record the flight.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Cameras mounted on the solar arrays filmed the Earth and the Moon together as the capsule moved through space.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "From the farthest point of the mission, the Earth and Moon appear as small crescents in the deep black.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "After its loop around the Moon, the spacecraft began its high-speed return journey back to the atmosphere.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Orion hit the air at 40,000 kilometres per hour, with the heat shield reaching 2,800 degrees Celsius.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": {
+          "value": "2,800 °C",
+          "label": "on the heat shield"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "The mission ended on 11 December 2022, when the capsule successfully splashed down in the Pacific Ocean.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      }
+    ],
+    "closing": "The next crew will fly this same path.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In 2022, the Artemis I mission sent an uncrewed Orion capsule on a record-breaking journey around the Moon. These are the real views captured by the spacecraft as it reached 432,000 kilometres from Earth.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JSC — Earthset as Orion Prepares for Outbound Powered Flyby (https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209); JSC — Flight Day 6: Orion Captures Earthset (https://images.nasa.gov/details/ART-SAW2_2022_325_1230B_SHARED_art001m1203251230B); JSC — Artemis I Flight Day Five: Orion and the Moon (https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022); JSC — Artemis I Flight Day 5: Orion and Earth (https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946); JSC — Artemis I Flight Day 14: Orion Sees the Earth and Moon (https://images.nasa.gov/details/Flight Day 14); JSC — Flight Day 13: Orion Looks Back at Moon and Earth (https://images.nasa.gov/details/FD13)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A spacecraft for humans has traveled farther than Apollo\n\nIn 2022, the Artemis I mission sent an uncrewed Orion capsule on a record-breaking journey around the Moon. These are the real views captured by the spacecraft as it reached 432,000 kilometres from Earth.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
