@@ -1,0 +1,646 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:GSFC_20210415_M13837_Flyover",
+   "title": "OSIRIS-REx Leaves its Mark on Bennu",
+   "date": "2021-04-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20201016_M13733_BennuIn360",
+   "title": "Sample Asteroid Bennu in 360",
+   "date": "2020-10-16",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200813_M13677_OREX_WNBA",
+   "title": "How We Prepare: OSIRIS-REx and WNBA",
+   "date": "2020-08-13",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200918_M13719_OREx_Superlatives",
+   "title": "OSIRIS-REx: Above and Beyond",
+   "date": "2020-09-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:20201009_Osiris_Rex_TAG_Espanol",
+   "title": "OSIRIS-REx: Explorando el asteroide Bennu",
+   "date": "2020-10-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20201021_M13745_TAG",
+   "title": "OSIRIS-REx Touches Asteroid Bennu",
+   "date": "2020-10-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20140204_OSIRIS-REx_m11435_TAGSAM",
+   "title": "Playing Tag With an Asteroid",
+   "date": "2014-02-04",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20201020_M13741_OSIRIS_TaG",
+   "title": "OSIRIS-REx TaG Live Event",
+   "date": "2020-10-20",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20201019_M13740_BeauBierhaus",
+   "title": "OSIRIS-REx_flight_operations_BeauBierhaus",
+   "date": "2020-10-19",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20210510_M13854_BennuFarewell",
+   "title": "Farewell to Asteroid Bennu",
+   "date": "2021-05-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200923_M13718_surprises",
+   "title": "OSIRIS-REx Meets Bennu’s Surprises",
+   "date": "2020-09-23",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181203_Arrival_m12166_Bennu",
+   "title": "OSIRIS-REx Mission Arrives at Asteroid Bennu",
+   "date": "2018-12-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20180824_M13051_orex_approach",
+   "title": "NASA's OSIRIS-REx Approaches Asteroid Bennu",
+   "date": "2018-08-24",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181203_Arrival_m12166_OSIRIS-REx",
+   "title": "OSIRIS-REx Mission Arrives at Asteroid Bennu",
+   "date": "2018-12-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190812_OSIRIS_REx_m4744_Bennu_Sites",
+   "title": "OSIRIS-REx - Asteroid Bennu Sample Site Finalists",
+   "date": "2019-08-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20210510_OSIRIS_Departure",
+   "title": "OSIRIS-REx Departure: Farewell to Asteroid Bennu",
+   "date": "2021-05-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20210510_M13856_Web",
+   "title": "A Web Around Asteroid Bennu",
+   "date": "2021-05-10",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200226_M4795_BennuGlobal",
+   "title": "Global Model of Asteroid Bennu",
+   "date": "2020-02-26",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181231_Bennu_m13123_Orbit_Insertion",
+   "title": "Bennu Orbit Insertion",
+   "date": "2018-12-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181203_Design_m11825_OSIRIS-REx",
+   "title": "OSIRIS-REx Mission Design: Narrated Feature",
+   "date": "2018-12-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181231_M13123_Bennu_Orbit_Insertion",
+   "title": "Bennu Orbit Insertion",
+   "date": "2018-12-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20191202_M13428_BennuSurprises",
+   "title": "Surprises from Asteroid Bennu",
+   "date": "2019-12-02",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20150630_OSIRIS_REx_m11910_Astro",
+   "title": "Studying an Asteroid on Earth",
+   "date": "2015-06-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20210511_M13857_OREx_Imagery",
+   "title": "Imaging Asteroid Bennu",
+   "date": "2021-05-11",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160725_OVIRS_m12309_OSIRIS_REx",
+   "title": "OSIRIS-REx Technology: OVIRS",
+   "date": "2016-07-25",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200921_M13707_VestaBennu",
+   "title": "Meteorites from Vesta Found on Asteroid Bennu",
+   "date": "2020-09-21",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20181203_WhyBennu_m13112_OSIRIS-REx",
+   "title": "Why Bennu?",
+   "date": "2018-12-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20200227_M13565_Nightingale",
+   "title": "Asteroid Bennu: Selecting Site Nightingale",
+   "date": "2020-02-27",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20201008_M13729_BennuTour",
+   "title": "Tour of Asteroid Bennu",
+   "date": "2020-10-08",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20191212_M4771_site_flyovers",
+   "title": "Asteroid Bennu Sample Site Flyovers",
+   "date": "2019-12-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20141118_M20220_BennuLetterbox_h264",
+   "title": "Bennu's Journey - Letterbox",
+   "date": "2014-11-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20141118_M20220_BennuHalfRes83",
+   "title": "Bennu's Journey",
+   "date": "2014-11-18",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190712_M13207_Amy_1stSights",
+   "title": "Dr. Amy Simon, OVIRS Deputy Instrument Scientist at NASA's GSFC",
+   "date": "2019-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190712_M13207_Dante",
+   "title": "Dr. Dante Lauretta - OSIRIS-REx Principal Investigator, University of Arizona",
+   "date": "2019-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190712_M13207_Olivia",
+   "title": "Olivia Billett - OSIRIS-REx Spacecraft Science Lead at Lockheed Martin",
+   "date": "2019-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190712_M13207_Sandy",
+   "title": "Sandy Freund - OSIRIS-REx Spacecraft Manager at Lockheed Martin",
+   "date": "2019-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20190712_M13207_Amy_Spectrometers",
+   "title": "Dr. Amy Simon, OVIRS Deputy Instrument Scientist, spectrometers",
+   "date": "2019-07-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20160909_M12368_OSIRIS_launch",
+   "title": "Rocket-Lovers Watch OSIRIS-REx Launch",
+   "date": "2016-09-09",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5582",
+   "title": "OSIRIS-APEX Earth Flyby September 23, 2025",
+   "date": "2025-12-18",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5143",
+   "title": "OSIRIS-REx Sample Landing and Recovery in Utah",
+   "date": "2023-08-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5133",
+   "title": "OSIRIS-REx Return Cruise/Extended Mission to Apophis",
+   "date": "2023-07-26",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5069",
+   "title": "Asteroid Bennu 3D Models",
+   "date": "2023-02-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5010",
+   "title": "Bennu TAG Surface Change",
+   "date": "2022-07-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4921",
+   "title": "Bennu 2135/2182 orbits",
+   "date": "2021-08-11",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4886",
+   "title": "Bennu visualization on the cover of Science",
+   "date": "2021-02-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4862",
+   "title": "TAG Event – Visualizations",
+   "date": "2020-10-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4863",
+   "title": "Tour of Asteroid Bennu – Visualizations",
+   "date": "2020-10-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20381",
+   "title": "OSIRIS-REx Sample Return: Animations",
+   "date": "2023-08-30",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20362",
+   "title": "Gravity on the Moon vs. Asteroid Bennu: Animation",
+   "date": "2022-07-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20360",
+   "title": "Thirty Seconds on Asteroid Bennu: Animation",
+   "date": "2022-07-07",
+   "source": "svs"
+  },
+  {
+   "id": "svs:5651",
+   "title": "Asteroid Apophis 2029 Earth Flyby – Orbit Visualizations",
+   "date": "2026-09-23",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20414",
+   "title": "Asteroid Apophis 2029 Earth Flyby – Animations",
+   "date": "2026-09-23",
+   "source": "svs"
+  }
+ ],
+ "ranked": [
+  "nasa:GSFC_20201021_M13745_TAG",
+  "svs:20360",
+  "svs:4862",
+  "svs:5010",
+  "nasa:GSFC_20210415_M13837_Flyover",
+  "nasa:GSFC_20201008_M13729_BennuTour",
+  "nasa:GSFC_20191212_M4771_site_flyovers",
+  "nasa:GSFC_20210510_M13854_BennuFarewell",
+  "nasa:GSFC_20200227_M13565_Nightingale",
+  "nasa:GSFC_20210510_OSIRIS_Departure",
+  "svs:5069",
+  "nasa:GSFC_20200226_M4795_BennuGlobal"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20201021_M13745_TAG",
+   "title": "OSIRIS-REx Touches Asteroid Bennu",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "footage",
+   "what": "NASA coverage of the OSIRIS-REx Touch-And-Go sample collection event at asteroid Bennu",
+   "excluded": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:20360",
+   "title": "Thirty Seconds on Asteroid Bennu: Animation",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "animation",
+   "what": "Data-driven scientific animation showing OSIRIS-REx touching down and sampling asteroid Bennu.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.45
+     ],
+     "width": 0.32,
+     "shows": "OSIRIS-REx spacecraft contacting the surface of asteroid Bennu and firing thrusters to depart.",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "svs:4862",
+   "title": "TAG Event – Visualizations",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "3D visualization showing OSIRIS-REx trajectory during the TAG event at asteroid Bennu with burned-in labels and orbital grid lines",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5010",
+   "title": "Bennu TAG Surface Change",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Visualization of surface height changes at Bennu's Nightingale site after the OSIRIS-REx TAG sampling event",
+   "excluded": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20210415_M13837_Flyover",
+   "title": "OSIRIS-REx Leaves its Mark on Bennu",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Before and after imagery of OSIRIS-REx's sample collection site on asteroid Bennu.",
+   "excluded": [
+    1,
+    7,
+    8,
+    10,
+    12
+   ],
+   "stretches": [
+    {
+     "start": 2,
+     "end": 6,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up spacecraft camera view of asteroid Bennu's surface and TAGSAM arm.",
+     "score": 8
+    },
+    {
+     "start": 9,
+     "end": 9,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "High-resolution view of rocky asteroid terrain on Bennu.",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20201008_M13729_BennuTour",
+   "title": "Tour of Asteroid Bennu",
+   "relevant": true,
+   "usable": true,
+   "quality": 9,
+   "kind": "visualization",
+   "what": "A tour of asteroid Bennu's surface features and shape model based on OSIRIS-REx mission data.",
+   "excluded": [
+    0,
+    2,
+    3,
+    6,
+    8,
+    10,
+    13,
+    15,
+    20,
+    22,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 4,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Spinning global shape model of asteroid Bennu",
+     "score": 8
+    },
+    {
+     "start": 11,
+     "end": 12,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up 3D flyover of boulder-strewn surface on Bennu",
+     "score": 9
+    },
+    {
+     "start": 16,
+     "end": 19,
+     "focus": [
+      0.5,
+      0.6
+     ],
+     "width": 0.32,
+     "shows": "Detailed surface visualization of large boulders on Bennu",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20191212_M4771_site_flyovers",
+   "title": "Asteroid Bennu Sample Site Flyovers",
+   "relevant": true,
+   "usable": true,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Visualization of asteroid Bennu with multi-panel close-ups of candidate sample sites",
+   "excluded": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 0,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Spinning 3D model view of asteroid Bennu against black space",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "nasa:GSFC_20210510_M13854_BennuFarewell",
+   "title": "Farewell to Asteroid Bennu",
+   "relevant": true,
+   "usable": false,
+   "quality": 8,
+   "kind": "animation",
+   "what": "A summary of the OSIRIS-REx mission at asteroid Bennu, from sample collection to departure and Earth return.",
+   "excluded": [
+    0,
+    1,
+    6,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    17
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20200227_M13565_Nightingale",
+   "title": "Asteroid Bennu: Selecting Site Nightingale",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "NASA video detailing the selection of Site Nightingale on asteroid Bennu for OSIRIS-REx sample collection.",
+   "excluded": [
+    1,
+    2,
+    5,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    23
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.6
+     ],
+     "width": 0.32,
+     "shows": "3D topographic model of Bennu's rocky surface",
+     "score": 7
+    },
+    {
+     "start": 6,
+     "end": 6,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up orbital view of Bennu's boulder-strewn terrain",
+     "score": 8
+    },
+    {
+     "start": 18,
+     "end": 18,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "High-resolution overhead view of potential sample site Nightingale",
+     "score": 8
+    },
+    {
+     "start": 19,
+     "end": 21,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Animation of OSIRIS-REx spacecraft approaching asteroid Bennu",
+     "score": 9
+    }
+   ]
+  }
+ ]
+}
