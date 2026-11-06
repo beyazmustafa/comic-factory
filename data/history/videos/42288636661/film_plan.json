@@ -1,0 +1,512 @@
+{
+  "duration": 92.01,
+  "handle": "@Facctsaboutspace",
+  "hook": "The Moon in 4K",
+  "kicker": "NASA visualization",
+  "closing": "The lunar surface remains a preserved record of solar history.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 6.369,
+      "src_out": 12.401,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.698,
+      "label": "NASA · LRO · 2019",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.617,
+      "src_out": 8.613,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.698,
+      "t1": 10.36,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c07",
+      "asset": "nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt2",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20171006_lro_m12739_100lunardays_pt2/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.092,
+      "src_out": 15.908,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.36,
+      "t1": 15.843,
+      "label": "NASA · LRO · 2017",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c00",
+      "asset": "nasa:GSFC_20110315_LRO_m10146_PDS",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20110315_lro_m10146_pds/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.59,
+      "src_out": 15.41,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.843,
+      "t1": 20.33,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 1.183,
+      "src_out": 8.017,
+      "speed": 1.0,
+      "focus": [
+        0.84,
+        0.49
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 20.33,
+      "t1": 26.83,
+      "label": "NASA · LRO · 2013",
+      "callout": {
+        "value": "3.8 cm",
+        "label": "farther away every year"
+      },
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20110315_LRO_m10146_PDS",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20110315_lro_m10146_pds/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 3.758,
+      "src_out": 9.912,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 26.83,
+      "t1": 32.65,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.693,
+      "src_out": 9.337,
+      "speed": 1.0,
+      "focus": [
+        0.52,
+        0.44
+      ],
+      "active": [
+        620,
+        0,
+        660,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 32.65,
+      "t1": 40.96,
+      "label": "NASA · LROC · 2011",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.0,
+      "src_out": 13.6,
+      "speed": 0.8,
+      "focus": [
+        0.52,
+        0.44
+      ],
+      "active": [
+        620,
+        0,
+        660,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 40.96,
+      "t1": 45.127,
+      "label": "NASA · LRO · 2013",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 2.8,
+      "src_out": 7.2,
+      "speed": 0.8,
+      "focus": [
+        0.49,
+        0.49
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 45.127,
+      "t1": 50.293,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.375,
+      "src_out": 5.655,
+      "speed": 1.0,
+      "focus": [
+        0.52,
+        0.44
+      ],
+      "active": [
+        620,
+        0,
+        660,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 50.293,
+      "t1": 51.24,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20130306_Moons_m11218_Shadowed",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20130306_moons_m11218_shadowed/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 2.8,
+      "src_out": 7.2,
+      "speed": 0.803,
+      "focus": [
+        0.49,
+        0.49
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 51.24,
+      "t1": 56.388,
+      "label": "NASA · LRO · 2013",
+      "callout": {
+        "value": "-230 °C",
+        "label": "inside polar craters"
+      },
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 7.112,
+      "src_out": 11.658,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.388,
+      "t1": 60.6,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20110315_LRO_m10146_PDS",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20110315_lro_m10146_pds/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 3.555,
+      "src_out": 10.115,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.6,
+      "t1": 66.826,
+      "label": "NASA · LROC · 2011",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 6.671,
+      "src_out": 12.099,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 66.826,
+      "t1": 71.92,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.063,
+      "src_out": 10.167,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 71.92,
+      "t1": 79.69,
+      "label": "NASA · LRO · 2019",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.968,
+      "src_out": 12.802,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "active": [
+        0,
+        112,
+        1920,
+        968
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 79.69,
+      "t1": 86.19,
+      "label": "NASA · LRO · 2019",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/footage/nasa_gsfc_20190513_m4714_lee_lincoln_scarp_moon_flyover/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.038,
+      "src_out": 9.192,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 86.19,
+      "t1": 92.01,
+      "label": "",
+      "callout": null,
+      "kind": "visualization",
+      "transition": "cut"
+    }
+  ]
+}

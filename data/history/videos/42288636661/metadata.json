@@ -1,0 +1,186 @@
+{
+  "script": {
+    "title": "A spacecraft has mapped the Moon in high resolution",
+    "description": "The Lunar Reconnaissance Orbiter has spent over a decade mapping the lunar surface in unprecedented detail. These visualizations show the craters and landing sites where human footprints remain preserved.",
+    "hook_card": "The Moon in 4K",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c05",
+        "narration": "The Lunar Reconnaissance Orbiter has circled the Moon since 2009, photographing almost every square metre of the surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c07",
+        "narration": "This spacecraft captures high-resolution terrain details, mapping the lunar landscape with unprecedented precision from its polar orbit.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c04",
+        "narration": "The Moon is 3,474 kilometres wide and drifts away from Earth by 3.8 centimetres every year.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c00",
+        "narration": "Impacts have shaped this world, including the Tycho crater which features a central peak two kilometres tall.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c02",
+        "narration": "At the poles, some craters have not seen sunlight in billions of years, creating regions of permanent shadow.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c03",
+        "narration": "The floors of these polar craters are colder than minus 230 °C and hold deposits of water ice.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "The South Pole-Aitken basin is about 2,500 kilometres across and 8 kilometres deep, a massive impact crater.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c06",
+        "narration": "With no wind or rain to erode the soil, the astronauts' footprints will last for millions of years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c05",
+        "narration": "The orbiter continues to document the lunar surface, preserving a detailed record of this ancient, changing landscape.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "The Lunar Reconnaissance Orbiter has circled the Moon since 2009, photographing almost every square metre of the surface. This spacecraft captures high-resolution terrain details, mapping the lunar landscape with unprecedented precision from its polar orbit. The Moon is 3,474 kilometres wide and drifts away from Earth by 3.8 centimetres every year. Impacts have shaped this world, including the Tycho crater which features a central peak two kilometres tall. At the poles, some craters have not seen sunlight in billions of years, creating regions of permanent shadow. The floors of these polar craters are colder than minus 230 °C and hold deposits of water ice. The South Pole-Aitken basin is about 2,500 kilometres across and 8 kilometres deep, a massive impact crater. With no wind or rain to erode the soil, the astronauts' footprints will last for millions of years. The orbiter continues to document the lunar surface, preserving a detailed record of this ancient, changing landscape.",
+    "event": {
+      "id": "film_moon-tour_20261106T202914417233Z",
+      "title": "The Moon in 4K",
+      "series": "NASA footage",
+      "issue": "moon-tour",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "moon-tour",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+        "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+        "https://images.nasa.gov/details/GSFC_20171006_LRO_m12739_100LunarDays_Pt2",
+        "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+      ]
+    },
+    "scenario": "moon-tour",
+    "beats": [
+      {
+        "clip": "c05",
+        "narration": "The Lunar Reconnaissance Orbiter has circled the Moon since 2009, photographing almost every square metre of the surface.",
+        "label": "NASA · LRO · 2019",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "This spacecraft captures high-resolution terrain details, mapping the lunar landscape with unprecedented precision from its polar orbit.",
+        "label": "NASA · LRO · 2017",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The Moon is 3,474 kilometres wide and drifts away from Earth by 3.8 centimetres every year.",
+        "label": "NASA · LRO · 2013",
+        "callout": {
+          "value": "3.8 cm",
+          "label": "farther away every year"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "Impacts have shaped this world, including the Tycho crater which features a central peak two kilometres tall.",
+        "label": "NASA · LROC · 2011",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "At the poles, some craters have not seen sunlight in billions of years, creating regions of permanent shadow.",
+        "label": "NASA · LRO · 2013",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The floors of these polar craters are colder than minus 230 °C and hold deposits of water ice.",
+        "label": "NASA · LRO · 2013",
+        "callout": {
+          "value": "-230 °C",
+          "label": "inside polar craters"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "The South Pole-Aitken basin is about 2,500 kilometres across and 8 kilometres deep, a massive impact crater.",
+        "label": "NASA · LROC · 2011",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "With no wind or rain to erode the soil, the astronauts' footprints will last for millions of years.",
+        "label": "NASA · LRO · 2019",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "The orbiter continues to document the lunar surface, preserving a detailed record of this ancient, changing landscape.",
+        "label": "NASA · LRO · 2019",
+        "callout": null
+      }
+    ],
+    "closing": "The lunar surface remains a preserved record of solar history.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The Lunar Reconnaissance Orbiter has spent over a decade mapping the lunar surface in unprecedented detail. These visualizations show the craters and landing sites where human footprints remain preserved.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein, Ernie Wright, Chris Smith — LRO PDS Release (https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS); Dan Gallagher, Chris Smith — The Moon's Permanently Shadowed Regions (https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed); David Ladd, Tom Waters, Ernie Wright — Lee Lincoln Scarp at the Apollo 17 Landing Site (https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover); David Ladd — 100 Lunar Days - Part II (https://images.nasa.gov/details/GSFC_20171006_LRO_m12739_100LunarDays_Pt2)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A spacecraft has mapped the Moon in high resolution\n\nThe Lunar Reconnaissance Orbiter has spent over a decade mapping the lunar surface in unprecedented detail. These visualizations show the craters and landing sites where human footprints remain preserved.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

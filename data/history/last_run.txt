@@ -1,6 +1,6 @@
-run_id: 42248283710  attempt: 1  event: schedule
+run_id: 42288636661  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261106T165414140190Z/run.json
+--- data/runs/20261106T202914417233Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,41 +40,45 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "42248283710",
+  "run_id": "42288636661",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "e532b3a2a87ea355ab956810a53961f2727757cf60b59be08783a9567e39e567",
-  "metadata_sha256": "7c97873568690d8b5b110986b9f6f38d7a54e24b52584634af30a7353554d2c1",
+  "video_sha256": "a61cb97708016ba87d0cf1507da13d19e4ff1ccce2e5a0ede8065591ae2e8ffc",
+  "metadata_sha256": "c349d4f226b7bc16bf2ef8b81db52e1d8add52032e074b0599cc79e69be6d53b",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 31,
-  "duration": 84.12,
+  "api_calls": 40,
+  "duration": 92.01,
   "voice": "Charon",
   "event": {
-    "id": "film_sdo-sun_20261106T165414140190Z",
-    "title": "The Sun, every twelve seconds.",
+    "id": "film_moon-tour_20261106T202914417233Z",
+    "title": "The Moon in 4K",
     "series": "NASA footage",
-    "issue": "sdo-sun",
+    "issue": "moon-tour",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "sdo-sun",
+    "scenario": "moon-tour",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+      "https://images.nasa.gov/details/GSFC_20171006_LRO_m12739_100LunarDays_Pt2",
+      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
     ]
   },
   "localized": []
 }
---- data/runs/20261106T165414140190Z/diagnostics/provider_events.json
+--- data/runs/20261106T202914417233Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20120220_LRO_m10915_ graben_moon: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261106T165414140190Z/diagnostics/providers.json
+--- data/runs/20261106T202914417233Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -98,9 +102,9 @@ produce step outcome: success
     "gemini-4-argon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -194,82 +198,76 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: sdo-sun
-Görüntü adayları: 92 (sdo-sun)
+→ Konu: moon-tour
+Görüntü adayları: 75 (moon-tour)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Sıralanan aday: 12
-Çözümlenen video: 12
-sdo:20240510_0171: elendi (8/10, footage) Full-disk SDO 171 Angstrom view of the Sun with coronal loops on May 1
-sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory view of solar flaring regions in 131 Å extr
-sdo:20241003_0171: elendi (8/10, footage) SDO solar imagery in 171 Angstrom wavelength showing coronal loops
-sdo:20241003_0131: elendi (8/10, footage) Full-disk SDO 131 Angstrom solar movie showing flaring active regions 
-sdo:20240510_0304: elendi (8/10, footage) Full-disk SDO 304 Angstrom view of the Sun's chromosphere showing sola
-sdo:20240510_0193: elendi (8/10, footage) Solar Dynamics Observatory daily video of the solar corona in 193 Å ex
-svs:5649: elendi (8/10, footage) Time-lapse footage of the Sun observed by NASA's Solar Dynamics Observ
-nasa:GSFC_20150211_SDO_m11762_5Years: kullanılır (9/10, footage) A 5-year time-lapse of the Sun observed by the Solar Dynamics Observat
-nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's SDO captures views of an M6.7 solar flare in extreme ultraviole
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) NASA Solar Dynamics Observatory observations of a mid-level solar flar
-Görüntü adayları: 4 (sdo-sun, Commons)
-Sıralanan aday: 4
-Süre uygun değil commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: 5 sn
-Süre uygun değil commons:Solar flare X2.1 2011-09-06.ogv: 4 sn
-Çözümlenen video: 2
-Kullanılır kesit: 4 (92 sn temiz görüntü)
+Sıralanan aday: 11
+Çözümlenen video: 11
+svs:4619: elendi (8/10, visualization) Tour of the Moon created from Lunar Reconnaissance Orbiter (LRO) data
+nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global mosaic and surface detail visualizations of the
+nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Visualization of the Moon's permanently shadowed regions mapped by LRO
+nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (9/10, visualization) 3D visualization flyover of Lee Lincoln Scarp at the Apollo 17 landing
+nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: elendi (6/10, visualization) An educational video about lunar pits imaged by the Lunar Reconnaissan
+Görüntü değerlendirme nasa:GSFC_20120220_LRO_m10915_ graben_moon: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (6/10, visualization) NASA video explaining geological activity on the Moon detected by the 
+Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (7/10, visualization) A NASA documentary about the Lunar Reconnaissance Orbiter detecting ne
+nasa:GSFC_20171006_LRO_m12739_100LunarDays_Pt2: kullanılır (7/10, visualization) A series of scientific visualizations and data-driven renders of the M
+Kullanılır kesit: 8 (120 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 96.9/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 95.3/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 94.6/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 90.9/100 | whisper-large-v3
-→ Kurgu (84.1 sn, 9 beat, 4 kesit)
-  kurgu 10/84 sn
-  kurgu 20/84 sn
-  kurgu 30/84 sn
-  kurgu 40/84 sn
-  kurgu 50/84 sn
-  kurgu 60/84 sn
-  kurgu 70/84 sn
-  kurgu 80/84 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T165414140190Z/review.html
+Ses eşleştirme: 97.1/100 | whisper-large-v3
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+→ Kurgu (92.0 sn, 9 beat, 8 kesit)
+  kurgu 10/92 sn
+  kurgu 20/92 sn
+  kurgu 30/92 sn
+  kurgu 40/92 sn
+  kurgu 50/92 sn
+  kurgu 60/92 sn
+  kurgu 70/92 sn
+  kurgu 80/92 sn
+  kurgu 90/92 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A Satellite Captures the Sun Every 12 Seconds #Shorts
+Başlık: A spacecraft has mapped the Moon in high resolution #Shorts
 Görünürlük: public
 
-Yükleme: %5
-Yükleme: %10
-Yükleme: %15
+Yükleme: %6
+Yükleme: %13
 Yükleme: %20
 Yükleme: %26
-Yükleme: %31
-Yükleme: %36
-Yükleme: %41
-Yükleme: %47
-Yükleme: %52
-Yükleme: %57
-Yükleme: %62
-Yükleme: %67
+Yükleme: %33
+Yükleme: %40
+Yükleme: %46
+Yükleme: %53
+Yükleme: %60
+Yükleme: %66
 Yükleme: %73
-Yükleme: %78
-Yükleme: %83
-Yükleme: %88
-Yükleme: %94
-Yükleme: %99
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=uN2Q5lSKYkk&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %80
+Yükleme: %86
+Yükleme: %93
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=C1guWgJepus&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T165414140190Z/video.mp4
-Boyut: 153.2 MB
-Açıklama uzunluğu: 358 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T202914417233Z/video.mp4
+Boyut: 119.9 MB
+Açıklama uzunluğu: 354 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 160606581. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 125719703. Maximum is 104857600.
