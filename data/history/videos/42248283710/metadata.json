@@ -1,0 +1,185 @@
+{
+  "script": {
+    "title": "A Satellite Captures the Sun Every 12 Seconds",
+    "description": "Since 2010, NASA's Solar Dynamics Observatory has been observing the Sun continuously across multiple wavelengths. This constant watch reveals towering coronal loops, powerful flares, and complex magnetic activity.",
+    "hook_card": "The Sun, every twelve seconds.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds across several different wavelengths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c01",
+        "narration": "Transmitting 1.5 terabytes of data daily, the observatory monitors a star measuring 1.39 million kilometres across.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c00",
+        "narration": "Across that immense solar disk, 109 Earths could fit side by side.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "While the visible surface is 5,500 °C, the thin outer corona reaches over a million degrees.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c03",
+        "narration": "In these active regions, glowing plasma traces magnetic field lines high above the surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c00",
+        "narration": "A single towering magnetic loop in the solar atmosphere can be larger than many Earths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c01",
+        "narration": "When active regions erupt, a large flare releases energy equal to millions of hydrogen bombs.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "Light from the eruption reaches Earth in 8 minutes 20 seconds; particle clouds take one to three days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c02",
+        "narration": "Every eleven years, this continuous magnetic activity causes the Sun's magnetic poles to swap places.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds across several different wavelengths. Transmitting 1.5 terabytes of data daily, the observatory monitors a star measuring 1.39 million kilometres across. Across that immense solar disk, 109 Earths could fit side by side. While the visible surface is 5,500 °C, the thin outer corona reaches over a million degrees. In these active regions, glowing plasma traces magnetic field lines high above the surface. A single towering magnetic loop in the solar atmosphere can be larger than many Earths. When active regions erupt, a large flare releases energy equal to millions of hydrogen bombs. Light from the eruption reaches Earth in 8 minutes 20 seconds; particle clouds take one to three days. Every eleven years, this continuous magnetic activity causes the Sun's magnetic poles to swap places.",
+    "event": {
+      "id": "film_sdo-sun_20261106T165414140190Z",
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "sdo-sun",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+        "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      ]
+    },
+    "scenario": "sdo-sun",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds across several different wavelengths.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "Transmitting 1.5 terabytes of data daily, the observatory monitors a star measuring 1.39 million kilometres across.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "Across that immense solar disk, 109 Earths could fit side by side.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "While the visible surface is 5,500 °C, the thin outer corona reaches over a million degrees.",
+        "label": "NASA · SDO · 2016",
+        "callout": {
+          "value": "1,000,000 °C",
+          "label": "the outer atmosphere"
+        }
+      },
+      {
+        "clip": "c03",
+        "narration": "In these active regions, glowing plasma traces magnetic field lines high above the surface.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "A single towering magnetic loop in the solar atmosphere can be larger than many Earths.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "When active regions erupt, a large flare releases energy equal to millions of hydrogen bombs.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Light from the eruption reaches Earth in 8 minutes 20 seconds; particle clouds take one to three days.",
+        "label": "NASA · SDO · 2014",
+        "callout": {
+          "value": "8 min 20 s",
+          "label": "for its light to reach us"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "Every eleven years, this continuous magnetic activity causes the Sun's magnetic poles to swap places.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      }
+    ],
+    "closing": "The observatory records another image every twelve seconds.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Since 2010, NASA's Solar Dynamics Observatory has been observing the Sun continuously across multiple wavelengths. This constant watch reveals towering coronal loops, powerful flares, and complex magnetic activity.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein — Five Year Time-lapse of SDO (https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years); Genna Duberstein, Tom Bridgman, Sarah Frazier — NASA’s SDO Captures Stunning 4K View of April 17 Solar Flare (https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K); Genna Duberstein — Graceful Eruption (https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A Satellite Captures the Sun Every 12 Seconds\n\nSince 2010, NASA's Solar Dynamics Observatory has been observing the Sun continuously across multiple wavelengths. This constant watch reveals towering coronal loops, powerful flares, and complex magnetic activity.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

@@ -4712,5 +4712,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "uN2Q5lSKYkk",
+    "platform": "youtube",
+    "run_id": "42248283710",
+    "published_at": "2026-11-06T17:19:53+00:00",
+    "event": {
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 138,
+      "duration": 84.1,
+      "words_per_minute": 98,
+      "hook": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds across several different wavelengths.",
+      "hook_words": 17,
+      "title": "A Satellite Captures the Sun Every 12 Seconds",
+      "title_length": 45,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

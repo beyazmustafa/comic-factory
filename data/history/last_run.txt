@@ -1,6 +1,6 @@
-run_id: 42109773858  attempt: 1  event: schedule
+run_id: 42248283710  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261105T210850315513Z/run.json
+--- data/runs/20261106T165414140190Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,42 +40,41 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "42109773858",
+  "run_id": "42248283710",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "26b74d3e7ef53f9fc82c876ede713db2e2f96ae2ed308a8ed524a8dce8644fde",
-  "metadata_sha256": "b0a473ff5e83c8e78e27d14a2ec3ecfa4efa4e40d2cf3a2aa5eb91158e09b3c6",
+  "video_sha256": "e532b3a2a87ea355ab956810a53961f2727757cf60b59be08783a9567e39e567",
+  "metadata_sha256": "7c97873568690d8b5b110986b9f6f38d7a54e24b52584634af30a7353554d2c1",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 25,
-  "duration": 80.92,
+  "api_calls": 31,
+  "duration": 84.12,
   "voice": "Charon",
   "event": {
-    "id": "film_bennu_20261105T210850315513Z",
-    "title": "Touching an asteroid.",
+    "id": "film_sdo-sun_20261106T165414140190Z",
+    "title": "The Sun, every twelve seconds.",
     "series": "NASA footage",
-    "issue": "bennu",
+    "issue": "sdo-sun",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "bennu",
+    "scenario": "sdo-sun",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20200227_M13565_Nightingale",
-      "https://images.nasa.gov/details/GSFC_20201008_M13729_BennuTour",
-      "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
-      "https://svs.gsfc.nasa.gov/20360"
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
     ]
   },
   "localized": []
 }
---- data/runs/20261105T210850315513Z/diagnostics/provider_events.json
+--- data/runs/20261106T165414140190Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261105T210850315513Z/diagnostics/providers.json
+--- data/runs/20261106T165414140190Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -100,8 +99,8 @@ produce step outcome: success
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -195,77 +194,82 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: bennu
-Görüntü adayları: 52 (bennu)
+→ Konu: sdo-sun
+Görüntü adayları: 92 (sdo-sun)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
-Süre uygun değil nasa:GSFC_20210510_OSIRIS_Departure: 3540 sn
-Çözümlenemedi svs:5069: ValueError: no usable rendition
-Çözümlenen video: 10
-nasa:GSFC_20201021_M13745_TAG: elendi (6/10, footage) NASA coverage of the OSIRIS-REx Touch-And-Go sample collection event a
-svs:20360: kullanılır (9/10, animation) Data-driven scientific animation showing OSIRIS-REx touching down and 
-svs:4862: elendi (7/10, visualization) 3D visualization showing OSIRIS-REx trajectory during the TAG event at
-svs:5010: elendi (6/10, visualization) Visualization of surface height changes at Bennu's Nightingale site af
-nasa:GSFC_20210415_M13837_Flyover: kullanılır (8/10, footage) Before and after imagery of OSIRIS-REx's sample collection site on ast
-Kesitte temiz pencere yok nasa:GSFC_20210415_M13837_Flyover 54-60 (yazı: 1, kesme: 5)
-nasa:GSFC_20201008_M13729_BennuTour: kullanılır (9/10, visualization) A tour of asteroid Bennu's surface features and shape model based on O
-nasa:GSFC_20191212_M4771_site_flyovers: kullanılır (6/10, visualization) Visualization of asteroid Bennu with multi-panel close-ups of candidat
-nasa:GSFC_20191212_M4771_site_flyovers: üretilmiş program gibi (0 karede insan, 12/13 kare elendi); atlandı
-nasa:GSFC_20210510_M13854_BennuFarewell: elendi (8/10, animation) A summary of the OSIRIS-REx mission at asteroid Bennu, from sample col
-nasa:GSFC_20200227_M13565_Nightingale: kullanılır (8/10, visualization) NASA video detailing the selection of Site Nightingale on asteroid Ben
-Kullanılır kesit: 8 (144 sn temiz görüntü)
+Çözümlenen video: 12
+sdo:20240510_0171: elendi (8/10, footage) Full-disk SDO 171 Angstrom view of the Sun with coronal loops on May 1
+sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory view of solar flaring regions in 131 Å extr
+sdo:20241003_0171: elendi (8/10, footage) SDO solar imagery in 171 Angstrom wavelength showing coronal loops
+sdo:20241003_0131: elendi (8/10, footage) Full-disk SDO 131 Angstrom solar movie showing flaring active regions 
+sdo:20240510_0304: elendi (8/10, footage) Full-disk SDO 304 Angstrom view of the Sun's chromosphere showing sola
+sdo:20240510_0193: elendi (8/10, footage) Solar Dynamics Observatory daily video of the solar corona in 193 Å ex
+svs:5649: elendi (8/10, footage) Time-lapse footage of the Sun observed by NASA's Solar Dynamics Observ
+nasa:GSFC_20150211_SDO_m11762_5Years: kullanılır (9/10, footage) A 5-year time-lapse of the Sun observed by the Solar Dynamics Observat
+nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's SDO captures views of an M6.7 solar flare in extreme ultraviole
+nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) NASA Solar Dynamics Observatory observations of a mid-level solar flar
+Görüntü adayları: 4 (sdo-sun, Commons)
+Sıralanan aday: 4
+Süre uygun değil commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: 5 sn
+Süre uygun değil commons:Solar flare X2.1 2011-09-06.ogv: 4 sn
+Çözümlenen video: 2
+Kullanılır kesit: 4 (92 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 95.6/100 | whisper-large-v3
+Ses eşleştirme: 96.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 95.3/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (80.9 sn, 9 beat, 8 kesit)
-  kurgu 10/81 sn
-  kurgu 20/81 sn
-  kurgu 30/81 sn
-  kurgu 40/81 sn
-  kurgu 50/81 sn
-  kurgu 60/81 sn
-  kurgu 70/81 sn
-  kurgu 80/81 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261105T210850315513Z/review.html
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 90.9/100 | whisper-large-v3
+→ Kurgu (84.1 sn, 9 beat, 4 kesit)
+  kurgu 10/84 sn
+  kurgu 20/84 sn
+  kurgu 30/84 sn
+  kurgu 40/84 sn
+  kurgu 50/84 sn
+  kurgu 60/84 sn
+  kurgu 70/84 sn
+  kurgu 80/84 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T165414140190Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A space probe touched an asteroid millions of miles away #Shorts
+Başlık: A Satellite Captures the Sun Every 12 Seconds #Shorts
 Görünürlük: public
 
 Yükleme: %5
-Yükleme: %11
-Yükleme: %17
-Yükleme: %23
-Yükleme: %29
-Yükleme: %35
+Yükleme: %10
+Yükleme: %15
+Yükleme: %20
+Yükleme: %26
+Yükleme: %31
+Yükleme: %36
 Yükleme: %41
 Yükleme: %47
-Yükleme: %53
-Yükleme: %59
-Yükleme: %65
-Yükleme: %71
-Yükleme: %77
+Yükleme: %52
+Yükleme: %57
+Yükleme: %62
+Yükleme: %67
+Yükleme: %73
+Yükleme: %78
 Yükleme: %83
-Yükleme: %89
-Yükleme: %95
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=aO8jwmt5WjQ&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %88
+Yükleme: %94
+Yükleme: %99
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=uN2Q5lSKYkk&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261105T210850315513Z/video.mp4
-Boyut: 134.1 MB
-Açıklama uzunluğu: 302 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261106T165414140190Z/video.mp4
+Boyut: 153.2 MB
+Açıklama uzunluğu: 358 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 140595232. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 160606581. Maximum is 104857600.
