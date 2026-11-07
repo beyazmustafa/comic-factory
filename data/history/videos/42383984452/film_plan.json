@@ -1,0 +1,441 @@
+{
+  "duration": 81.99,
+  "handle": "@Facctsaboutspace",
+  "hook": "Real footage of landing on Mars.",
+  "kicker": "Real footage · NASA",
+  "closing": "The first touchdown filmed from another world.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.006,
+      "src_out": 15.994,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.654,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.52,
+      "src_out": 15.48,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.654,
+      "t1": 10.28,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.782,
+      "src_out": 13.418,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.28,
+      "t1": 15.582,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.664,
+      "src_out": 15.336,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.582,
+      "t1": 19.92,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.643,
+      "src_out": 10.657,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": [
+        0,
+        30,
+        1920,
+        900
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 19.92,
+      "t1": 28.6,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "20,000 km/h",
+        "label": "speed at entry"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c07",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.265,
+      "src_out": 15.735,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 28.6,
+      "t1": 33.737,
+      "label": "NASA · PERSEVERANCE · 2020",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c06",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.267,
+      "src_out": 6.803,
+      "speed": 1.0,
+      "focus": [
+        0.8,
+        0.6
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 33.737,
+      "t1": 37.94,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.8,
+      "src_out": 7.27,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 37.94,
+      "t1": 43.077,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.732,
+      "src_out": 15.268,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 43.077,
+      "t1": 47.28,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.138,
+      "src_out": 16.862,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 47.28,
+      "t1": 54.67,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c04",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.563,
+      "src_out": 10.737,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": [
+        0,
+        30,
+        1920,
+        900
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 54.67,
+      "t1": 63.51,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.848,
+      "src_out": 8.222,
+      "speed": 1.0,
+      "focus": [
+        0.8,
+        0.6
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 63.51,
+      "t1": 70.55,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c05",
+      "asset": "nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0002_nasa_s_perseverance_rover_s_fi/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 1.222,
+      "src_out": 7.848,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 70.55,
+      "t1": 76.842,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261107T145803796683Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.259,
+      "src_out": 15.741,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 76.842,
+      "t1": 81.99,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
