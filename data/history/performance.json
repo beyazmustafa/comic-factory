@@ -4794,5 +4794,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "MdJeKQibXBs",
+    "platform": "youtube",
+    "run_id": "42403510509",
+    "published_at": "2026-11-07T19:12:46+00:00",
+    "event": {
+      "title": "An ocean under the ice",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 141,
+      "duration": 83.2,
+      "words_per_minute": 102,
+      "hook": "On 14 October 2024, a powerful rocket carried NASA's Europa Clipper into space.",
+      "hook_words": 13,
+      "title": "NASA sent a spacecraft to explore Jupiter's icy ocean moon",
+      "title_length": 58,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

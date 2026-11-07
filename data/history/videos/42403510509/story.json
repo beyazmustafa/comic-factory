@@ -1,0 +1,164 @@
+{
+  "title": "NASA sent a spacecraft to explore Jupiter's icy ocean moon",
+  "description": "Beneath a thick outer crust of water ice, Europa conceals a vast ocean kept liquid by Jupiter's massive gravity. NASA's Europa Clipper launched in October 2024 to determine if this distant world could support life.",
+  "hook_card": "An ocean under the ice",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c05",
+      "narration": "On 14 October 2024, a powerful rocket carried NASA's Europa Clipper into space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c07",
+      "narration": "Europa Clipper launched on 14 October 2024 to explore Jupiter's distant moon Europa.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c06",
+      "narration": "Slightly smaller than our Moon, Europa has a surface of water ice cracked by long reddish lines.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c00",
+      "narration": "Solar arrays spanning about 30 metres deployed on the largest spacecraft NASA has built for a planetary mission.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c04",
+      "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean holding about twice Earth's ocean water.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c03",
+      "narration": "Jupiter's gravity flexes Europa as it orbits, and that flexing keeps the hidden ocean liquid.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 kilometres from Europa's surface to photograph its ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "Europa Clipper arrives at Jupiter in 2030 to make 49 flybys of the moon.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c01",
+      "narration": "The spacecraft will perform flybys of Europa, passing some as low as 25 kilometres above the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "On 14 October 2024, a powerful rocket carried NASA's Europa Clipper into space. Europa Clipper launched on 14 October 2024 to explore Jupiter's distant moon Europa. Slightly smaller than our Moon, Europa has a surface of water ice cracked by long reddish lines. Solar arrays spanning about 30 metres deployed on the largest spacecraft NASA has built for a planetary mission. Beneath 15 to 25 kilometres of ice lies a salty ocean holding about twice Earth's ocean water. Jupiter's gravity flexes Europa as it orbits, and that flexing keeps the hidden ocean liquid. In September 2022, the Juno spacecraft flew about 350 kilometres from Europa's surface to photograph its ice. Europa Clipper arrives at Jupiter in 2030 to make 49 flybys of the moon. The spacecraft will perform flybys of Europa, passing some as low as 25 kilometres above the surface.",
+  "event": {
+    "id": "film_europa_20261107T185426717024Z",
+    "title": "An ocean under the ice",
+    "series": "NASA footage",
+    "issue": "europa",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "europa",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic1322a/",
+      "https://esahubble.org/videos/heic1322b/",
+      "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
+    ]
+  },
+  "scenario": "europa",
+  "beats": [
+    {
+      "clip": "c05",
+      "narration": "On 14 October 2024, a powerful rocket carried NASA's Europa Clipper into space.",
+      "label": "NASA · KENNEDY SPACE CENTER · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Europa Clipper launched on 14 October 2024 to explore Jupiter's distant moon Europa.",
+      "label": "NASA · FALCON HEAVY LAUNCH · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Slightly smaller than our Moon, Europa has a surface of water ice cracked by long reddish lines.",
+      "label": "NASA · SPACEX · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Solar arrays spanning about 30 metres deployed on the largest spacecraft NASA has built for a planetary mission.",
+      "label": "NASA · ARTIST CONCEPT · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean holding about twice Earth's ocean water.",
+      "label": "ESO · ARTIST IMPRESSION",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Jupiter's gravity flexes Europa as it orbits, and that flexing keeps the hidden ocean liquid.",
+      "label": "ESO · ARTIST IMPRESSION",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 kilometres from Europa's surface to photograph its ice.",
+      "label": "NASA · ARTIST CONCEPT · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Europa Clipper arrives at Jupiter in 2030 to make 49 flybys of the moon.",
+      "label": "NASA · ARTIST CONCEPT · 2024",
+      "callout": {
+        "value": "49",
+        "label": "flybys planned"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "The spacecraft will perform flybys of Europa, passing some as low as 25 kilometres above the surface.",
+      "label": "NASA · ARTIST CONCEPT · 2024",
+      "callout": null
+    }
+  ],
+  "closing": "A deep salty sea orbits Jupiter inside a cage of ice.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
