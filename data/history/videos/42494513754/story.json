@@ -1,0 +1,154 @@
+{
+  "title": "How Astronauts Saved Hubble in Orbit",
+  "description": "Hubble launched in 1990 with a flawed primary mirror that produced blurred images of the cosmos. Five spacewalks by shuttle astronauts installed corrective optics and rescued humanity's window on the universe.",
+  "hook_card": "The telescope that was born blind",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c04",
+      "narration": "Hubble launched on 24 April 1990 aboard the space shuttle Discovery, carrying a 2.4-metre mirror into space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c06",
+      "narration": "Its mirror was ground wrong by 2 microns, a fiftieth of a hair's width, blurring first images.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c07",
+      "narration": "Hubble orbits about 540 kilometres above Earth, completing a full circle around our planet every 95 minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "In December 1993, shuttle astronauts installed corrective optics during five spacewalks, restoring Hubble's sharp vision completely.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "Astronauts conducted demanding spacewalks to service the telescope, repairing essential systems directly in Earth orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels on the observatory.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "Astronauts deployed and released the upgraded space telescope back into orbit after completing critical hardware repairs.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c05",
+      "narration": "The Hubble Space Telescope has made more than 1.6 million observations while orbiting far above Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Hubble launched on 24 April 1990 aboard the space shuttle Discovery, carrying a 2.4-metre mirror into space. Its mirror was ground wrong by 2 microns, a fiftieth of a hair's width, blurring first images. Hubble orbits about 540 kilometres above Earth, completing a full circle around our planet every 95 minutes. In December 1993, shuttle astronauts installed corrective optics during five spacewalks, restoring Hubble's sharp vision completely. Astronauts conducted demanding spacewalks to service the telescope, repairing essential systems directly in Earth orbit. Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels on the observatory. Astronauts deployed and released the upgraded space telescope back into orbit after completing critical hardware repairs. The Hubble Space Telescope has made more than 1.6 million observations while orbiting far above Earth.",
+  "event": {
+    "id": "film_hubble-servicing_20261108T152345426322Z",
+    "title": "The telescope that was born blind",
+    "series": "NASA footage",
+    "issue": "hubble-servicing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hubble-servicing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic0907b/",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10212_OutNaround",
+      "https://images.nasa.gov/details/GSFC_20080519_HST_m10213-SlowLook1",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10214_Slow_Look2",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10216_Whip_Pan",
+      "https://images.nasa.gov/details/GSFC_20080520_HST_m10237_Close_Door",
+      "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_BTY_002",
+      "https://images.nasa.gov/details/GSFC_20080822_HST_m10235_Release_Revers_007"
+    ]
+  },
+  "scenario": "hubble-servicing",
+  "beats": [
+    {
+      "clip": "c04",
+      "narration": "Hubble launched on 24 April 1990 aboard the space shuttle Discovery, carrying a 2.4-metre mirror into space.",
+      "label": "NASA · DISCOVERY · 1990",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Its mirror was ground wrong by 2 microns, a fiftieth of a hair's width, blurring first images.",
+      "label": "NASA · HUBBLE · 1990",
+      "callout": {
+        "value": "2 microns",
+        "label": "the error in the mirror"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "Hubble orbits about 540 kilometres above Earth, completing a full circle around our planet every 95 minutes.",
+      "label": "NASA · HUBBLE · 1990",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "In December 1993, shuttle astronauts installed corrective optics during five spacewalks, restoring Hubble's sharp vision completely.",
+      "label": "NASA · SERVICE MISSION · 1993",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Astronauts conducted demanding spacewalks to service the telescope, repairing essential systems directly in Earth orbit.",
+      "label": "NASA · SERVICE MISSION · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Five servicing missions, the last in 2009, replaced cameras, gyroscopes, and solar panels on the observatory.",
+      "label": "NASA · ATLANTIS · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Astronauts deployed and released the upgraded space telescope back into orbit after completing critical hardware repairs.",
+      "label": "NASA · DEPLOYMENT · 2009",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The Hubble Space Telescope has made more than 1.6 million observations while orbiting far above Earth.",
+      "label": "NASA · HUBBLE · 2009",
+      "callout": null
+    }
+  ],
+  "closing": "Hubble still orbits Earth every 95 minutes.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
