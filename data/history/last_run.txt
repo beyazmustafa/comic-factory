@@ -1,6 +1,6 @@
-run_id: 42512249736  attempt: 1  event: schedule
+run_id: 42678451653  attempt: 1  event: schedule
 produce step outcome: failure
---- data/runs/20261108T185437610879Z/run.json
+--- data/runs/20261109T185638308807Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,16 +40,17 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "42512249736",
+  "run_id": "42678451653",
   "error": "SpeechFailure: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261108T185437610879Z/diagnostics/provider_events.json
+--- data/runs/20261109T185638308807Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
 ]
---- data/runs/20261108T185437610879Z/diagnostics/providers.json
+--- data/runs/20261109T185638308807Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -73,9 +74,9 @@ produce step outcome: failure
     "gemini-4-argon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3.8-27b"
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -168,61 +169,54 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261108T185437610879Z/audio/chunk_000/failures.json
+--- data/runs/20261109T185638308807Z/audio/chunk_000/failures.json
 [
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 19.4 sn); whisper-large-v3-turbo: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 19.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 20.6 sn); whisper-large-v3-turbo: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 20.6 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 18.4 sn); whisper-large-v3-turbo: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 18.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 20.6 sn); whisper-large-v3-turbo: 79.5/100 (duyulan: “Decades before Artemis, the Saturn V stood 110 meters tall and weighed about 2,900 tons. I”, 20.6 sn)"
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 18.3 sn); whisper-large-v3-turbo: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 18.3 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 16.9 sn); whisper-large-v3-turbo: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 16.9 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 16.2 sn); whisper-large-v3-turbo: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 16.2 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 18.3 sn); whisper-large-v3-turbo: 77.7/100 (duyulan: “In 2022, NASA's Space Launch System stood 98 meters tall on its launch pad. Decades before”, 18.3 sn)"
 ]
 --- studio.log (son 300 satır)
 → Konu: ingenuity
 Görüntü adayları: 46 (ingenuity)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
 Düşük çözünürlük nasa:JPL-20220527-M2020f-0001-NASAs_Ingenuity_Mars_Helicopter_Captures_Video_of_Record_Flight2: 640x480
 Süre uygun değil nasa:Mars Helicopter Flights VF 929 FINAL: 2941 sn
 Çözümlenen video: 10
-nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) Perseverance Mastcam-Z footage capturing Ingenuity's historic first po
-nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) NASA's Perseverance Mastcam-Z view of Ingenuity Mars helicopter perfor
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: kullanılır (7/10, footage) NASA's Perseverance rover Mastcam-Z footage of Ingenuity Mars Helicopt
-nasa:JPL-20210506-Listen to NASA’s Ingenuity Helicopter as it Flies on Mars-1080: üretilmiş program gibi (0 karede insan, 15/24 kare elendi); atlandı
-Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (5/10, footage) NASA control room team celebrating Ingenuity fourth flight success alo
 Görüntü adayları: 4 (ingenuity, Commons)
 Sıralanan aday: 3
 Çözümlenemedi commons:NASA-MarsIngenuityHelicopter-FirstFlightVideo-20210419.webm: ValueError: licence not reusable: unknown
 Çözümlenemedi commons:Perseverance Rover Watches Ingenuity Mars Helicopter's 54th Flight (SVS31246 - PIA25970-1280).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenemedi commons:NASA's Perseverance Captures Video, Audio of Fourth Ingenuity Flight.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenen video: 0
-Kullanılır kesit: 3 (69 sn temiz görüntü)
-Konu atlandı (ingenuity): Yeterli temiz görüntü yok (3 kesit, 69 sn).
+Kullanılır kesit: 0 (0 sn temiz görüntü)
+Konu atlandı (ingenuity): Yeterli temiz görüntü yok (0 kesit, 0 sn).
 → Konu: launch-power
 Görüntü adayları: 49 (launch-power)
 Sıralanan aday: 12
 Çözümlenen video: 12
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (9/10, footage) Slow motion footage of the Artemis I SLS rocket launching at night
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) Isolated launch angles of NASA's Space Launch System for the Artemis I
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (0 karede insan, 15/24 kare elendi); atlandı
-nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) Footage of the Space Launch System (SLS) rocket launching during the A
+nasa:Ultimate Saturn V Launch w Enhanced Sound: elendi (8/10, footage) Footage of Saturn V rocket launches with high-speed close-ups and pres
+nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (9/10, footage) Slow motion footage of NASA's Space Launch System launching for Artemi
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) Isolated camera angles of the Space Launch System Artemis I night laun
+nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (8/10, footage) Footage of the Artemis I launch of NASA's Space Launch System rocket.
 nasa:Artemis I Launch 2022 CU tracking from Press Site_compressed: kullanılır (8/10, footage) Nighttime launch of NASA's Space Launch System rocket for Artemis I
-nasa:Ultimate Saturn V Launch w Enhanced Sound: elendi (8/10, footage) Saturn V rocket launch archival footage and close-ups
-nasa:Artemis I Launches to the Moon (Official NASA Recap): elendi (7/10, footage) Recap of the Artemis I launch featuring launch footage, control room s
-nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034: kullanılır (8/10, animation) 3D animation depicting the SLS rocket rollout, launch, staging, and Or
-Kullanılır kesit: 8 (192 sn temiz görüntü)
+Kullanılır kesit: 8 (168 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 79.5/100 | whisper-large-v3
-Ses eşleştirme: 79.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.7/100 | whisper-large-v3
+Ses eşleştirme: 77.7/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 2
-Ses eşleştirme: 79.5/100 | whisper-large-v3
-Ses eşleştirme: 79.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.7/100 | whisper-large-v3
+Ses eşleştirme: 77.7/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 3
-Ses eşleştirme: 79.5/100 | whisper-large-v3
-Ses eşleştirme: 79.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.7/100 | whisper-large-v3
+Ses eşleştirme: 77.7/100 | whisper-large-v3-turbo
 Ses bölümü 1, deneme 4
-Ses eşleştirme: 79.5/100 | whisper-large-v3
-Ses eşleştirme: 79.5/100 | whisper-large-v3-turbo
+Ses eşleştirme: 77.7/100 | whisper-large-v3
+Ses eşleştirme: 77.7/100 | whisper-large-v3-turbo
 HATA: 1. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
