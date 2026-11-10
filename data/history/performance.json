@@ -4917,5 +4917,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "3JDBHEP4964",
+    "platform": "youtube",
+    "run_id": "42854904461",
+    "published_at": "2026-11-10T16:49:30+00:00",
+    "event": {
+      "title": "A helicopter on Mars.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 135,
+      "duration": 76.4,
+      "words_per_minute": 106,
+      "hook": "On 19 April 2021, Ingenuity made the first powered, controlled flight on another planet.",
+      "hook_words": 14,
+      "title": "The First Aircraft to Fly on Another World",
+      "title_length": 42,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
