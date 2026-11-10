@@ -4876,5 +4876,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "2AN7opdvrFc",
+    "platform": "youtube",
+    "run_id": "42720794225",
+    "published_at": "2026-11-10T00:20:17+00:00",
+    "event": {
+      "title": "The most powerful machines ever built.",
+      "series": "NASA footage",
+      "issue": "launch-power",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 136,
+      "duration": 77.9,
+      "words_per_minute": 105,
+      "hook": "The Saturn V rocket burned roughly thirteen tonnes of propellant every second of its flight.",
+      "hook_words": 15,
+      "title": "The Rocket That Burns Thirteen Tonnes of Fuel Every Second",
+      "title_length": 58,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

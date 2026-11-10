@@ -1,0 +1,164 @@
+{
+  "title": "The Rocket That Burns Thirteen Tonnes of Fuel Every Second",
+  "description": "A comparison of the Saturn V and the Space Launch System reveals the immense power required for lunar exploration. These rockets generate millions of newtons of thrust to lift their massive fuel loads into orbit.",
+  "hook_card": "The most powerful machines ever built.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "The Saturn V rocket burned roughly thirteen tonnes of propellant every second of its flight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c07",
+      "narration": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fuelled.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "At liftoff most of the mass is fuel; the Apollo capsule was a tiny fraction of the stack.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c07",
+      "narration": "Thirteen Saturn Vs flew between 1967 and 1973, and every single one succeeded.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "The five F-1 engines produced about thirty-four million newtons of thrust during flight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c06",
+      "narration": "NASA's Space Launch System is ninety-eight metres tall and produces more power than the Saturn V.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "The Artemis I mission generated thirty-nine million newtons of thrust at liftoff in 2022.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c04",
+      "narration": "The sound of a Saturn V launch was among the loudest ever produced by a machine.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c05",
+      "narration": "Both rockets demonstrate immense scale, with the Space Launch System exceeding the Saturn V in liftoff thrust.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "The Saturn V rocket burned roughly thirteen tonnes of propellant every second of its flight. The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fuelled. At liftoff most of the mass is fuel; the Apollo capsule was a tiny fraction of the stack. Thirteen Saturn Vs flew between 1967 and 1973, and every single one succeeded. The five F-1 engines produced about thirty-four million newtons of thrust during flight. NASA's Space Launch System is ninety-eight metres tall and produces more power than the Saturn V. The Artemis I mission generated thirty-nine million newtons of thrust at liftoff in 2022. The sound of a Saturn V launch was among the loudest ever produced by a machine. Both rockets demonstrate immense scale, with the Space Launch System exceeding the Saturn V in liftoff thrust.",
+  "event": {
+    "id": "film_launch-power_20261109T232950754202Z",
+    "title": "The most powerful machines ever built.",
+    "series": "NASA footage",
+    "issue": "launch-power",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "launch-power",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/Artemis I Launch 2022 CU tracking from Press Site_compressed",
+      "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
+    ]
+  },
+  "scenario": "launch-power",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "The Saturn V rocket burned roughly thirteen tonnes of propellant every second of its flight.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "The Saturn V stood 110 metres tall and weighed about 2,900 tonnes when fuelled.",
+      "label": "NASA · APOLLO · 1969",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "At liftoff most of the mass is fuel; the Apollo capsule was a tiny fraction of the stack.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Thirteen Saturn Vs flew between 1967 and 1973, and every single one succeeded.",
+      "label": "NASA · APOLLO · 1972",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The five F-1 engines produced about thirty-four million newtons of thrust during flight.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "NASA's Space Launch System is ninety-eight metres tall and produces more power than the Saturn V.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The Artemis I mission generated thirty-nine million newtons of thrust at liftoff in 2022.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The sound of a Saturn V launch was among the loudest ever produced by a machine.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Both rockets demonstrate immense scale, with the Space Launch System exceeding the Saturn V in liftoff thrust.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "Artemis I flew in 2022.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
