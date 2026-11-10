@@ -4958,5 +4958,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "pQ5rXr5WNpI",
+    "platform": "youtube",
+    "run_id": "42899818598",
+    "published_at": "2026-11-10T21:32:00+00:00",
+    "event": {
+      "title": "Inside the eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 148,
+      "duration": 84.5,
+      "words_per_minute": 105,
+      "hook": "From space, a hurricane is calm in the middle and terrifying everywhere else.",
+      "hook_words": 13,
+      "title": "How the Space Station Flies Over a Hurricane",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
