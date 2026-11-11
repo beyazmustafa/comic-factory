@@ -1,0 +1,149 @@
+{
+  "title": "The only spacecraft to visit Neptune",
+  "description": "Voyager 2 reached the edge of our solar system in 1989 to capture the first close-up images of Neptune. These observations revealed a world of supersonic winds and a moon captured from the Kuiper Belt.",
+  "hook_card": "The windiest world.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c04",
+      "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft to ever visit this distant world.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c00",
+      "narration": "Located about 4.5 billion kilometres from the Sun, the planet's light takes over four hours to reach Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "Winds here reach about 2,000 kilometres per hour, the fastest speeds ever measured on any planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c00",
+      "narration": "Voyager saw a Great Dark Spot the size of Earth, which vanished when Hubble looked years later.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c03",
+      "narration": "The moon Triton orbits backwards and is probably a captured world from the distant Kuiper Belt.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c02",
+      "narration": "This moon is one of several objects circling the giant planet 4.5 billion kilometres from the Sun.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "At a distance of 4.5 billion kilometres, the Sun is the primary light source for this world.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c03",
+      "narration": "Triton also features geysers of nitrogen that erupt from the surface of this probably captured world.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft to ever visit this distant world. Located about 4.5 billion kilometres from the Sun, the planet's light takes over four hours to reach Earth. Winds here reach about 2,000 kilometres per hour, the fastest speeds ever measured on any planet. Voyager saw a Great Dark Spot the size of Earth, which vanished when Hubble looked years later. The moon Triton orbits backwards and is probably a captured world from the distant Kuiper Belt. This moon is one of several objects circling the giant planet 4.5 billion kilometres from the Sun. At a distance of 4.5 billion kilometres, the Sun is the primary light source for this world. Triton also features geysers of nitrogen that erupt from the surface of this probably captured world.",
+  "event": {
+    "id": "film_neptune_20261111T212841214683Z",
+    "title": "The windiest world.",
+    "series": "NASA footage",
+    "issue": "neptune",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "neptune",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/ann1115a/",
+      "https://esahubble.org/videos/heic1904a/",
+      "https://esahubble.org/videos/heic2113b/"
+    ]
+  },
+  "scenario": "neptune",
+  "beats": [
+    {
+      "clip": "c04",
+      "narration": "Voyager 2 reached Neptune on 25 August 1989, the only spacecraft to ever visit this distant world.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Located about 4.5 billion kilometres from the Sun, the planet's light takes over four hours to reach Earth.",
+      "label": "NASA · HUBBLE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Winds here reach about 2,000 kilometres per hour, the fastest speeds ever measured on any planet.",
+      "label": "NASA · HUBBLE · 2021",
+      "callout": {
+        "value": "2,000 km/h",
+        "label": "winds"
+      }
+    },
+    {
+      "clip": "c00",
+      "narration": "Voyager saw a Great Dark Spot the size of Earth, which vanished when Hubble looked years later.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "The moon Triton orbits backwards and is probably a captured world from the distant Kuiper Belt.",
+      "label": "NASA · HUBBLE · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "This moon is one of several objects circling the giant planet 4.5 billion kilometres from the Sun.",
+      "label": "NASA · HUBBLE · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "At a distance of 4.5 billion kilometres, the Sun is the primary light source for this world.",
+      "label": "NASA · HUBBLE · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Triton also features geysers of nitrogen that erupt from the surface of this probably captured world.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    }
+  ],
+  "closing": "A year on Neptune lasts 165 Earth years.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

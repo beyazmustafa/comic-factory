@@ -1,4 +1,298 @@
-run_id: 43057313788  attempt: 1  event: schedule
-produce step outcome: skipped
+run_id: 43103257692  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261111T212841214683Z/run.json
+{
+  "schema": 2,
+  "version": "",
+  "status": "ready",
+  "stage": "Tamamlandı",
+  "topic": "",
+  "settings": {
+    "target_seconds": 150,
+    "max_events": 3,
+    "max_pages": 16,
+    "max_shots": 40,
+    "max_api_calls": 250,
+    "max_minutes": 110,
+    "repair_attempts": 4,
+    "chunk_words": 42,
+    "alignment_threshold": 86,
+    "panel_threshold": 85,
+    "gemini_model": "gemini-3.7-flash",
+    "gemini_fallback_models": "gemini-3.8-flash,gemini-3.7-flash,gemini-3.8-flash-lite,gemini-3.1-flash,gemini-2.5-flash",
+    "groq_model": "meta-llama/llama-4-maverick-17b-128e-instruct,meta-llama/llama-4-scout-17b-16e-instruct",
+    "edge_voices": "en-US-ChristopherNeural,en-US-GuyNeural",
+    "tts_model": "gemini-3.1-flash-tts-preview",
+    "whisper_model": "whisper-large-v3",
+    "voice": "auto",
+    "music_file": "",
+    "music_gain_db": -25,
+    "caption_offset": 0,
+    "language": "en",
+    "languages": "en",
+    "channel_theme": "space",
+    "archive_theme_query": "subject:(superhero OR superheroes OR \"super hero\" OR \"super heroes\" OR heroes) OR title:(hero OR heroes OR terror OR daredevil OR samson OR yank OR flame OR beetle OR \"amazing man\" OR wonder OR captain OR mask OR phantom OR atom OR super OR exciting OR mystery OR thrilling OR startling OR fantastic OR \"fighting\")",
+    "source": "film",
+    "brand_handle": "@Facctsaboutspace",
+    "sim_seconds": 28,
+    "image_model": "",
+    "archive_query": "mediatype:texts AND collection:(comics)",
+    "archive_max_year": 1963,
+    "archive_scan_limit": 72
+  },
+  "run_id": "43103257692",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "c2e23ff261af134c11cb80eeb64c7b1f4ca949d46bd689e5b3240d880829b2f5",
+  "metadata_sha256": "0d5847f2d982952306996e962ec1028134a45d3f07aa53bafb16d0b9b5e910e9",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 65,
+  "duration": 75.56,
+  "voice": "Charon",
+  "event": {
+    "id": "film_neptune_20261111T212841214683Z",
+    "title": "The windiest world.",
+    "series": "NASA footage",
+    "issue": "neptune",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "neptune",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/ann1115a/",
+      "https://esahubble.org/videos/heic1904a/",
+      "https://esahubble.org/videos/heic2113b/"
+    ]
+  },
+  "localized": []
+}
+--- data/runs/20261111T212841214683Z/diagnostics/provider_events.json
+[
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme svs:15092: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:15092: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak."
+]
+--- data/runs/20261111T212841214683Z/diagnostics/providers.json
+{
+  "gemini": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-omni-1.2-flash",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-4-argon",
+    "gemini-4-carbon"
+  ],
+  "groq": [
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
+  ],
+  "errors": [],
+  "gemini_raw": [
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash-preview-tts",
+    "gemini-2.5-pro-preview-tts",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-31b-it",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash-image",
+    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-pro-preview-customtools",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-3-pro-image-preview",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "gemini-nano-banana-2.1",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-omni-flash-preview",
+    "gemini-omni-1.1-flash",
+    "gemini-omni-1.2-flash",
+    "gemini-3.5-transcribe",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-4-argon",
+    "gemini-4-carbon",
+    "lyria-3-clip-preview",
+    "lyria-3-pro-preview",
+    "lyria-3.5",
+    "gemini-3.1-flash-tts-preview",
+    "gemini-3.8-flash-tts",
+    "gemini-3.8-flash-lite-tts",
+    "gemini-robotics-er-2-preview",
+    "gemini-2.5-computer-use-preview-10-2025",
+    "antigravity-preview-05-2026",
+    "antigravity-preview-09-2026",
+    "antigravity-preview-latest",
+    "deep-research-max-preview-04-2026",
+    "deep-research-preview-04-2026",
+    "deep-research-pro-preview-12-2025",
+    "gemini-embedding-001",
+    "gemini-embedding-2-preview",
+    "gemini-embedding-2",
+    "aqa",
+    "gemini-3.5-transcribe-live",
+    "gemini-2.5-flash-native-audio-latest",
+    "gemini-2.5-flash-native-audio-preview-09-2025",
+    "gemini-2.5-flash-native-audio-preview-12-2025",
+    "gemini-3.1-flash-live-preview",
+    "gemini-3.8-live",
+    "gemini-3.8-live-extended-thinking",
+    "gemini-robotics-er-2-streaming-preview",
+    "gemini-3.5-live-translate-preview",
+    "lyria-realtime-exp",
+    "gemini-decision-1"
+  ],
+  "gemini_chain": [
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-2.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.1-pro-preview",
+    "gemini-3-flash-preview",
+    "gemini-2.5-pro",
+    "gemini-omni-1.2-flash",
+    "gemini-omni-1.1-flash",
+    "gemini-flash-latest",
+    "gemini-omni-flash-preview",
+    "gemini-pro-latest",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.1-flash-lite-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-flash-lite-latest"
+  ],
+  "groq_chain": [],
+  "groq_text_chain": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ]
+}
+--- data/runs/20261111T212841214683Z/diagnostics/api_040.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=175 candidates_tokens_details=None prompt_token_count=1921 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=846\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 381,
+  "response_text": "[\n  {\n    \"relevant\": false,\n    \"usable\": false,\n    \"quality\": 7,\n    \"kind\": \"animation\",\n    \"what\": \"A video about Trans-Neptunian Objects (TNOs) like Eris and Sedna, rather than Neptune itself as seen by Voyager 2, Hubble, and Webb.\",\n    \"text_frames\": [0, 1, 2, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23],\n    \"people_frames\": [],\n    \"stretches\": []\n  }\n]"
+}
 --- studio.log (son 300 satır)
-(log yok)
+→ Konu: titan
+Görüntü adayları: 24 (titan)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Sıralanan aday: 12
+Düşük çözünürlük nasa:ksc_071304_ctitan: 320x212
+Çözümlenemedi svs:14162: ValueError: no usable rendition
+Çözümlenen video: 10
+nasa:GSFC_20130930_Titan_m11339_Propylene: elendi (6/10, animation) Educational video about the detection of propylene in Titan's atmosphe
+svs:5530: konu dışı (6/10, visualization) Global circulation climate model simulation of Titan's atmospheric sea
+svs:20411: kullanılır (6/10, animation) Molecular animation illustrating acrylonitrile molecules in Titan's hy
+svs:20403: konu dışı (6/10, animation) Animation pushing in on James Webb Space Telescope towards Saturn and 
+svs:14843: konu dışı (6/10, animation) NASA Webb Telescope video discussing a newly discovered molecule in Ti
+svs:14951: elendi (6/10, animation) NASA video explaining potential primitive cell-like vesicles in Titan'
+nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: konu dışı (5/10, visualization) Overview of Cassini's CIRS instrument findings on Saturn and its moons
+nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: konu dışı (6/10, visualization) Overview of Cassini's infrared spectral observations of Saturn and its
+svs:20311: konu dışı (3/10, animation) Diagrams and molecular graphics explaining chirality and spectroscopy 
+svs:13562: kullanılır (8/10, animation) Computer animation demonstrating the science instruments and flight of
+Görüntü adayları: 4 (titan, Commons)
+Sıralanan aday: 4
+Düşük çözünürlük commons:Huygens descent.ogv: 800x608
+Çözümlenemedi commons:Titan's Surface Features.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:KSC-05-S-00034 (ksc 012805 touchdown).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:KSC-05-S-00003 (ksc 010605 huygen separates).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 0
+Kullanılır kesit: 3 (31 sn temiz görüntü)
+Konu atlandı (titan): Yeterli temiz görüntü yok (3 kesit, 31 sn).
+→ Konu: neptune
+Görüntü adayları: 21 (neptune)
+Sıralanan aday: 11
+Çözümlenen video: 11
+svs:14840: elendi (6/10, visualization) Documentary short explaining newly discovered mid-latitude auroras on 
+svs:14397: kullanılır (6/10, visualization) Hubble and Keck observations showing Neptune's cloud activity linked t
+svs:14397: üretilmiş program gibi (0 karede insan, 15/16 kare elendi); atlandı
+svs:4667: elendi (5/10, visualization) 3D science visualization of Neptune's complex magnetic field lines rot
+svs:4145: elendi (5/10, visualization) 3D visualization model of Neptune's complex magnetic field lines and m
+hubble:ann1115a: kullanılır (8/10, footage) Hubble Space Telescope time-lapse showing the rotation of Neptune and 
+svs:4559: kullanılır (7/10, visualization) NASA Kepler telescope visualization of Neptune against the starfield
+Kesitte temiz pencere yok svs:4559 7-31 (yazı: 22, kesme: 0)
+svs:4140: konu dışı (5/10, visualization) Trajectory visualization of Voyager 1 and 2 through the solar system
+hubble:heic1904a: kullanılır (8/10, animation) Artist's animation of Neptune's small moon Hippocamp orbiting Neptune
+Görüntü değerlendirme svs:15092: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Görüntü değerlendirme svs:15092: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme svs:15092: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+svs:15092: konu dışı (3/10, visualization) Tiny Worlds Discovered by Hubble and Webb
+hubble:heic2113c: elendi (7/10, footage) A multi-panel collage showing Hubble observations of Jupiter, Saturn, 
+hubble:heic2113b: kullanılır (9/10, footage) Hubble Space Telescope observations of Jupiter, Saturn, Uranus, and Ne
+Kullanılır kesit: 5 (70 sn temiz görüntü)
+→ Senaryo
+→ Anlatım sesi
+Ses bölümü 1, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 2, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 3, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 99.9/100 | whisper-large-v3
+→ Kurgu (75.6 sn, 8 beat, 5 kesit)
+  kurgu 10/76 sn
+  kurgu 20/76 sn
+  kurgu 30/76 sn
+  kurgu 40/76 sn
+  kurgu 50/76 sn
+  kurgu 60/76 sn
+  kurgu 70/76 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261111T212841214683Z/review.html
+Aynı başlıklı video son günlerde yayınlanmış (PnB0lB0eIFU); tekrar yüklenmedi.
