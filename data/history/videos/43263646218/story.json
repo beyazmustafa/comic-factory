@@ -1,0 +1,151 @@
+{
+  "title": "Life Outside the International Space Station",
+  "description": "A look at the engineering and endurance required for spacewalks. Discover the reality of working in the extreme environment of orbit.",
+  "hook_card": "Outside.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "A helmet camera shows astronauts working on the ISS truss, high above Earth in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "Astronauts prepare by breathing pure oxygen for hours, as the suit pressure is only one third of sea level.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "A spacesuit has fourteen layers and weighs 145 kilograms on Earth, though it feels weightless in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "In the sun, the suit faces 120 °C, but drops to minus 150 °C in the shadow.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c04",
+      "narration": "A sunrise occurs every 90 minutes, marking the rhythm of a spacewalk that lasts six to eight hours.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "To ensure safety, a small jetpack called SAFER is worn in case a tether fails during the work.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "More than 270 spacewalks have been performed to build and repair the station orbiting above us.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c01",
+      "narration": "It is a long way from the first twelve minute spacewalk completed by Alexei Leonov in 1965.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "A helmet camera shows astronauts working on the ISS truss, high above Earth in orbit. Astronauts prepare by breathing pure oxygen for hours, as the suit pressure is only one third of sea level. A spacesuit has fourteen layers and weighs 145 kilograms on Earth, though it feels weightless in orbit. In the sun, the suit faces 120 °C, but drops to minus 150 °C in the shadow. A sunrise occurs every 90 minutes, marking the rhythm of a spacewalk that lasts six to eight hours. To ensure safety, a small jetpack called SAFER is worn in case a tether fails during the work. More than 270 spacewalks have been performed to build and repair the station orbiting above us. It is a long way from the first twelve minute spacewalk completed by Alexei Leonov in 1965.",
+  "event": {
+    "id": "film_spacewalk_20261112T165444704179Z",
+    "title": "Outside.",
+    "series": "NASA footage",
+    "issue": "spacewalk",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "spacewalk",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
+    ]
+  },
+  "scenario": "spacewalk",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "A helmet camera shows astronauts working on the ISS truss, high above Earth in orbit.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Astronauts prepare by breathing pure oxygen for hours, as the suit pressure is only one third of sea level.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "A spacesuit has fourteen layers and weighs 145 kilograms on Earth, though it feels weightless in orbit.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "In the sun, the suit faces 120 °C, but drops to minus 150 °C in the shadow.",
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "A sunrise occurs every 90 minutes, marking the rhythm of a spacewalk that lasts six to eight hours.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "To ensure safety, a small jetpack called SAFER is worn in case a tether fails during the work.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "More than 270 spacewalks have been performed to build and repair the station orbiting above us.",
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "It is a long way from the first twelve minute spacewalk completed by Alexei Leonov in 1965.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    }
+  ],
+  "closing": "The first spacewalk lasted twelve minutes; today, they last for hours.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

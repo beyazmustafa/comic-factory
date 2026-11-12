@@ -4999,5 +4999,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "ANK92AiaU08",
+    "platform": "youtube",
+    "run_id": "43263646218",
+    "published_at": "2026-11-12T17:40:17+00:00",
+    "event": {
+      "title": "Outside.",
+      "series": "NASA footage",
+      "issue": "spacewalk",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 137,
+      "duration": 75.1,
+      "words_per_minute": 109,
+      "hook": "A helmet camera shows astronauts working on the ISS truss, high above Earth in orbit.",
+      "hook_words": 15,
+      "title": "Life Outside the International Space Station",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

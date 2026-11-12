@@ -1,6 +1,6 @@
-run_id: 43103257692  attempt: 1  event: schedule
+run_id: 43263646218  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261111T212841214683Z/run.json
+--- data/runs/20261112T165444704179Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,51 +40,53 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "43103257692",
+  "run_id": "43263646218",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "c2e23ff261af134c11cb80eeb64c7b1f4ca949d46bd689e5b3240d880829b2f5",
-  "metadata_sha256": "0d5847f2d982952306996e962ec1028134a45d3f07aa53bafb16d0b9b5e910e9",
+  "video_sha256": "6145accf53293ee2d850a5c4480cac73404de9d16939096e9352d977d2354ef1",
+  "metadata_sha256": "638397295f22cbdadd5ccfef5b13e8fa1abf20f5d91974983e7065881b126d17",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 65,
-  "duration": 75.56,
+  "api_calls": 66,
+  "duration": 75.07,
   "voice": "Charon",
   "event": {
-    "id": "film_neptune_20261111T212841214683Z",
-    "title": "The windiest world.",
+    "id": "film_spacewalk_20261112T165444704179Z",
+    "title": "Outside.",
     "series": "NASA footage",
-    "issue": "neptune",
+    "issue": "spacewalk",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "neptune",
+    "scenario": "spacewalk",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://esahubble.org/videos/ann1115a/",
-      "https://esahubble.org/videos/heic1904a/",
-      "https://esahubble.org/videos/heic2113b/"
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
     ]
   },
   "localized": []
 }
---- data/runs/20261111T212841214683Z/diagnostics/provider_events.json
+--- data/runs/20261112T165444704179Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme svs:15092: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:15092: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
+  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261111T212841214683Z/diagnostics/providers.json
+--- data/runs/20261112T165444704179Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -109,9 +111,9 @@ produce step outcome: success
     "gemini-4-carbon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -206,18 +208,18 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261111T212841214683Z/diagnostics/api_040.json
+--- data/runs/20261112T165444704179Z/diagnostics/api_035.json
 {
   "provider": "gemini",
   "model": "gemini-3-flash-preview",
   "info": {
     "finish_reason": "FinishReason.STOP",
     "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=175 candidates_tokens_details=None prompt_token_count=1921 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=846\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=402 candidates_tokens_details=None prompt_token_count=1875 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
   },
   "error": "JSON nesnesi gerekli.",
-  "response_length": 381,
-  "response_text": "[\n  {\n    \"relevant\": false,\n    \"usable\": false,\n    \"quality\": 7,\n    \"kind\": \"animation\",\n    \"what\": \"A video about Trans-Neptunian Objects (TNOs) like Eris and Sedna, rather than Neptune itself as seen by Voyager 2, Hubble, and Webb.\",\n    \"text_frames\": [0, 1, 2, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23],\n    \"people_frames\": [],\n    \"stretches\": []\n  }\n]"
+  "response_length": 1205,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 7,\n    \"kind\": \"animation\",\n    \"what\": \"A 3D animation demonstrating the installation of an iROSA solar array on the International Space Station.\",\n    \"text_frames\": [],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 3,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Animation of the ISS truss and solar arrays against the black of space.\",\n        \"score\": 7\n      },\n      {\n        \"start\": 5,\n        \"end\": 14,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Animated astronauts and robotic arms maneuvering the iROSA hardware near the truss.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 16,\n        \"end\": 18,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Close-up animation of the solar array deployment mechanism and astronaut positioning.\",\n        \"score\": 7\n      },\n      {\n        \"start\": 20,\n        \"end\": 23,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Wide view of the ISS with the new solar array installed and Earth in the background.\",\n        \"score\": 8\n      }\n    ]\n  }\n]"
 }
 --- studio.log (son 300 satır)
 → Konu: titan
@@ -227,72 +229,100 @@ Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
 Düşük çözünürlük nasa:ksc_071304_ctitan: 320x212
-Çözümlenemedi svs:14162: ValueError: no usable rendition
-Çözümlenen video: 10
-nasa:GSFC_20130930_Titan_m11339_Propylene: elendi (6/10, animation) Educational video about the detection of propylene in Titan's atmosphe
-svs:5530: konu dışı (6/10, visualization) Global circulation climate model simulation of Titan's atmospheric sea
-svs:20411: kullanılır (6/10, animation) Molecular animation illustrating acrylonitrile molecules in Titan's hy
-svs:20403: konu dışı (6/10, animation) Animation pushing in on James Webb Space Telescope towards Saturn and 
-svs:14843: konu dışı (6/10, animation) NASA Webb Telescope video discussing a newly discovered molecule in Ti
-svs:14951: elendi (6/10, animation) NASA video explaining potential primitive cell-like vesicles in Titan'
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Short: konu dışı (5/10, visualization) Overview of Cassini's CIRS instrument findings on Saturn and its moons
-nasa:GSFC_20170912_Cassini_m12709_CIRS_Long: konu dışı (6/10, visualization) Overview of Cassini's infrared spectral observations of Saturn and its
-svs:20311: konu dışı (3/10, animation) Diagrams and molecular graphics explaining chirality and spectroscopy 
-svs:13562: kullanılır (8/10, animation) Computer animation demonstrating the science instruments and flight of
+Düşük çözünürlük nasa:ksc_012805_touchdown: 320x212
+Düşük çözünürlük nasa:ksc_110404_cassini_flyby: 320x212
+Düşük çözünürlük nasa:ksc_061404_cassini: 320x212
+Çözümlenen video: 8
+nasa:GSFC_20130930_Titan_m11339_Propylene: elendi (6/10, animation) NASA produced featurette on the discovery of propylene in Titan's atmo
+svs:5530: kullanılır (8/10, visualization) Global circulation model simulation of Titan's climate and atmosphere 
+svs:20411: konu dışı (5/10, animation) Molecular animation illustrating acrylonitrile molecules related to pr
+svs:20403: konu dışı (6/10, animation) Animation pushing in to JWST as it observes Saturn and Titan
+svs:14951: elendi (6/10, animation) NASA video explaining potential primitive cell membranes and vesicle s
+svs:14843: elendi (6/10, animation) NASA produced featurette on Webb telescope observations of Titan's atm
+svs:20311: konu dışı (3/10, animation) Diagrams and molecular chirality graphics related to Dragonfly science
+svs:13562: kullanılır (8/10, animation) Artist animation of NASA's Dragonfly rotorcraft mission to Saturn's mo
 Görüntü adayları: 4 (titan, Commons)
 Sıralanan aday: 4
-Düşük çözünürlük commons:Huygens descent.ogv: 800x608
+Çözümlenemedi commons:Huygens descent.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenemedi commons:Titan's Surface Features.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenemedi commons:KSC-05-S-00034 (ksc 012805 touchdown).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenemedi commons:KSC-05-S-00003 (ksc 010605 huygen separates).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
 Çözümlenen video: 0
-Kullanılır kesit: 3 (31 sn temiz görüntü)
-Konu atlandı (titan): Yeterli temiz görüntü yok (3 kesit, 31 sn).
-→ Konu: neptune
-Görüntü adayları: 21 (neptune)
-Sıralanan aday: 11
+Kullanılır kesit: 3 (54 sn temiz görüntü)
+Konu atlandı (titan): Yeterli temiz görüntü yok (3 kesit, 54 sn).
+→ Konu: spacewalk
+Görüntü adayları: 32 (spacewalk)
+Sıralanan aday: 12
+Süre uygun değil svs:13566: 2779 sn
 Çözümlenen video: 11
-svs:14840: elendi (6/10, visualization) Documentary short explaining newly discovered mid-latitude auroras on 
-svs:14397: kullanılır (6/10, visualization) Hubble and Keck observations showing Neptune's cloud activity linked t
-svs:14397: üretilmiş program gibi (0 karede insan, 15/16 kare elendi); atlandı
-svs:4667: elendi (5/10, visualization) 3D science visualization of Neptune's complex magnetic field lines rot
-svs:4145: elendi (5/10, visualization) 3D visualization model of Neptune's complex magnetic field lines and m
-hubble:ann1115a: kullanılır (8/10, footage) Hubble Space Telescope time-lapse showing the rotation of Neptune and 
-svs:4559: kullanılır (7/10, visualization) NASA Kepler telescope visualization of Neptune against the starfield
-Kesitte temiz pencere yok svs:4559 7-31 (yazı: 22, kesme: 0)
-svs:4140: konu dışı (5/10, visualization) Trajectory visualization of Voyager 1 and 2 through the solar system
-hubble:heic1904a: kullanılır (8/10, animation) Artist's animation of Neptune's small moon Hippocamp orbiting Neptune
-Görüntü değerlendirme svs:15092: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme svs:15092: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:15092: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-svs:15092: konu dışı (3/10, visualization) Tiny Worlds Discovered by Hubble and Webb
-hubble:heic2113c: elendi (7/10, footage) A multi-panel collage showing Hubble observations of Jupiter, Saturn, 
-hubble:heic2113b: kullanılır (9/10, footage) Hubble Space Telescope observations of Jupiter, Saturn, Uranus, and Ne
-Kullanılır kesit: 5 (70 sn temiz görüntü)
+nasa:NHQ_2019_1018_all woman spacewalk: elendi (5/10, footage) News report on the first all-woman spacewalk featuring quotes, intervi
+nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: kullanılır (8/10, footage) Helmet camera footage and views of astronauts conducting the first all
+Görüntü değerlendirme nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: elendi (3/10, animation) Computer-generated 3D animation previewing Russian Spacewalk 56 proced
+nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4: elendi (5/10, animation) 3D computer animation graphics showing planned spacewalk procedures on
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: kullanılır (7/10, animation) Animation of NASA astronauts performing a spacewalk to install an iROS
+Kullanılır kesit: 6 (116 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
+Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 94.1/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 86.1/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 97.2/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-→ Kurgu (75.6 sn, 8 beat, 5 kesit)
-  kurgu 10/76 sn
-  kurgu 20/76 sn
-  kurgu 30/76 sn
-  kurgu 40/76 sn
-  kurgu 50/76 sn
-  kurgu 60/76 sn
-  kurgu 70/76 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261111T212841214683Z/review.html
-Aynı başlıklı video son günlerde yayınlanmış (PnB0lB0eIFU); tekrar yüklenmedi.
+Ses eşleştirme: 96.8/100 | whisper-large-v3
+→ Kurgu (75.1 sn, 8 beat, 6 kesit)
+  kurgu 10/75 sn
+  kurgu 20/75 sn
+  kurgu 30/75 sn
+  kurgu 40/75 sn
+  kurgu 50/75 sn
+  kurgu 60/75 sn
+  kurgu 70/75 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Life Outside the International Space Station #Shorts
+Görünürlük: public
+
+Yükleme: %8
+Yükleme: %17
+Yükleme: %26
+Yükleme: %35
+Yükleme: %44
+Yükleme: %53
+Yükleme: %61
+Yükleme: %70
+Yükleme: %79
+Yükleme: %88
+Yükleme: %97
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=ANK92AiaU08&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/video.mp4
+Boyut: 90.4 MB
+Açıklama uzunluğu: 276 karakter
+Cloudinary: video geçici olarak yükleniyor...
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Cloudinary: geçici video silindi (ok).
+instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Thursday, 12-Nov-26 09:40:23 PST. (code=190, subcode=0)

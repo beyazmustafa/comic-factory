@@ -1,0 +1,409 @@
+{
+  "duration": 75.07,
+  "handle": "@Facctsaboutspace",
+  "hook": "Outside.",
+  "kicker": "Real footage · NASA",
+  "closing": "The first spacewalk lasted twelve minutes; today, they last for hours.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.632,
+      "src_out": 15.268,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        36,
+        44,
+        1228,
+        676
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.302,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 15.084,
+      "src_out": 19.756,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.302,
+      "t1": 9.64,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.333,
+      "src_out": 8.637,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 9.64,
+      "t1": 17.61,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_jsc2022m000290_u_s_spacewalk_83_animation_221221/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.072,
+      "src_out": 15.928,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        188,
+        1272,
+        532
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 17.61,
+      "t1": 23.132,
+      "label": "NASA · ISS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c02",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.644,
+      "src_out": 13.496,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 23.132,
+      "t1": 27.65,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 0.128,
+      "src_out": 5.742,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 27.65,
+      "t1": 32.93,
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_jsc2022m000290_u_s_spacewalk_83_animation_221221/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 11.358,
+      "src_out": 16.012,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        76,
+        1280,
+        644
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 32.93,
+      "t1": 37.25,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_jsc2022m000290_u_s_spacewalk_83_animation_221221/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 3.363,
+      "src_out": 9.307,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        2,
+        0,
+        924,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 37.25,
+      "t1": 42.86,
+      "label": "NASA · ISS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_jsc2022m000290_u_s_spacewalk_83_animation_221221/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 11.223,
+      "src_out": 16.147,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        76,
+        1280,
+        644
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 42.86,
+      "t1": 47.45,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_jsc2022m000290_u_s_spacewalk_83_animation_221221/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 14.033,
+      "src_out": 22.307,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        2,
+        0,
+        924,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 47.45,
+      "t1": 55.39,
+      "label": "NASA · ISS · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 7.843,
+      "src_out": 17.057,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        36,
+        44,
+        1228,
+        676
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 55.39,
+      "t1": 64.27,
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      },
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c01",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 14.283,
+      "src_out": 20.557,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 64.27,
+      "t1": 70.21,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261112T165444704179Z/footage/nasa_nhq_201_0163_vf_first_all_woman_spacewalk_replaces_faul/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.853,
+      "src_out": 15.047,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        36,
+        44,
+        1228,
+        676
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 70.21,
+      "t1": 75.07,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
