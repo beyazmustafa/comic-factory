@@ -1,0 +1,181 @@
+{
+  "title": "The moon with rivers and seas of liquid methane",
+  "description": "Titan is the only moon in our solar system with a thick atmosphere and liquid seas on its surface. NASA's Dragonfly mission will return to this frozen world in the 2030s to explore its unique chemistry.",
+  "hook_card": "Lakes of liquid methane",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c04",
+      "narration": "Titan is bigger than the planet Mercury and has a thick nitrogen atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "The surface pressure here is one point five times the pressure on Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "At minus 180 degrees Celsius, liquid methane and ethane form the rivers and seas.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "Kraken Mare, the largest sea on Titan, is bigger than the Caspian Sea.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c01",
+      "narration": "On 14 January 2005, the Huygens probe performed the farthest landing ever made.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "The probe parachuted for two and a half hours before touching down on the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "Huygens kept transmitting from the surface for about 72 minutes before it stopped.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c07",
+      "narration": "NASA is now preparing the Dragonfly rotorcraft to launch in 2028.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c05",
+      "narration": "This robotic explorer will fly across Titan in the 2030s.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "c06",
+      "narration": "The craft will fly across the nitrogen skies of this moon in the 2030s.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Titan is bigger than the planet Mercury and has a thick nitrogen atmosphere. The surface pressure here is one point five times the pressure on Earth. At minus 180 degrees Celsius, liquid methane and ethane form the rivers and seas. Kraken Mare, the largest sea on Titan, is bigger than the Caspian Sea. On 14 January 2005, the Huygens probe performed the farthest landing ever made. The probe parachuted for two and a half hours before touching down on the surface. Huygens kept transmitting from the surface for about 72 minutes before it stopped. NASA is now preparing the Dragonfly rotorcraft to launch in 2028. This robotic explorer will fly across Titan in the 2030s. The craft will fly across the nitrogen skies of this moon in the 2030s.",
+  "event": {
+    "id": "film_titan_20261112T213037285419Z",
+    "title": "Lakes of liquid methane",
+    "series": "NASA footage",
+    "issue": "titan",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "titan",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://svs.gsfc.nasa.gov/13562",
+      "https://svs.gsfc.nasa.gov/20403",
+      "https://svs.gsfc.nasa.gov/20411",
+      "https://svs.gsfc.nasa.gov/5530"
+    ]
+  },
+  "scenario": "titan",
+  "beats": [
+    {
+      "clip": "c04",
+      "narration": "Titan is bigger than the planet Mercury and has a thick nitrogen atmosphere.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The surface pressure here is one point five times the pressure on Earth.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "At minus 180 degrees Celsius, liquid methane and ethane form the rivers and seas.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Kraken Mare, the largest sea on Titan, is bigger than the Caspian Sea.",
+      "label": "NASA · 2026",
+      "callout": {
+        "value": "-180 °C",
+        "label": "on the surface"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "On 14 January 2005, the Huygens probe performed the farthest landing ever made.",
+      "label": "NASA · WEBB · 2025",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The probe parachuted for two and a half hours before touching down on the surface.",
+      "label": "ESA · CASSINI · 2005",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Huygens kept transmitting from the surface for about 72 minutes before it stopped.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": {
+        "value": "2.5 h",
+        "label": "parachute descent"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "NASA is now preparing the Dragonfly rotorcraft to launch in 2028.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "This robotic explorer will fly across Titan in the 2030s.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "The craft will fly across the nitrogen skies of this moon in the 2030s.",
+      "label": "NASA · DRAGONFLY · 2020",
+      "callout": null
+    }
+  ],
+  "closing": "Dragonfly will fly through the nitrogen skies in the 2030s.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
