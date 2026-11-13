@@ -1,11 +1,11 @@
-run_id: 43463882289  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261113T163417731891Z/run.json
+run_id: 43506004497  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261113T205626317256Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,46 +40,28 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "43463882289",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "313879813bccce740039ab2d58d82f99a9e45dffc2e55449e02c559132afa78e",
-  "metadata_sha256": "4a3e9b0cfbb0b4fdecea233325e8f17b844fe30c2c11974c274ce36532d00bfa",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 25,
-  "duration": 79.35,
-  "voice": "Charon",
-  "event": {
-    "id": "film_artemis-1_20261113T163417731891Z",
-    "title": "Farther Than Apollo",
-    "series": "NASA footage",
-    "issue": "artemis-1",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "artemis-1",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
-      "https://images.nasa.gov/details/Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
-      "https://images.nasa.gov/details/BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308",
-      "https://images.nasa.gov/details/Flight Day 14",
-      "https://images.nasa.gov/details/Moon Below Orion art001m1013251756",
-      "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
-      "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
-    ]
-  },
-  "localized": []
+  "run_id": "43506004497",
+  "error": "SpeechFailure: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261113T163417731891Z/diagnostics/provider_events.json
+--- data/runs/20261113T205626317256Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme sdo:20241003_0171: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme svs:5649: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme nasa:GSFC_20150501_SDO_m11864_Phoenix: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor."
 ]
---- data/runs/20261113T163417731891Z/diagnostics/providers.json
+--- data/runs/20261113T205626317256Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -105,9 +87,9 @@ produce step outcome: success
     "gemini-4-hydrogen"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -203,69 +185,110 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261113T205626317256Z/diagnostics/api_034.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=208 candidates_tokens_details=None prompt_token_count=1848 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=756\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 619,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"footage\",\n    \"what\": \"Solar Dynamics Observatory 171 Ångström view of the Sun showing coronal loops and magnetic activity.\",\n    \"text_frames\": [0, 1, 2, 3, 4, 5, 6, 7],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 7,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Full disk of the Sun in extreme ultraviolet light with visible coronal loops and active regions. Note: small timestamp text at bottom is outside the vertical crop area.\",\n        \"score\": 9\n      }\n    ]\n  }\n]"
+}
+--- data/runs/20261113T205626317256Z/diagnostics/api_053.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=271 candidates_tokens_details=None prompt_token_count=1862 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 698,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"footage\",\n    \"what\": \"High-resolution extreme ultraviolet footage of the Sun's corona showing magnetic loops and active regions from the Solar Dynamics Observatory.\",\n    \"text_frames\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 23,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Continuous observation of the solar disk in the 171 Angstrom wavelength, revealing the complex dance of magnetic field lines and plasma loops.\",\n        \"score\": 9\n      }\n    ]\n  }\n]"
+}
+--- data/runs/20261113T205626317256Z/diagnostics/api_055.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=627 candidates_tokens_details=None prompt_token_count=1875 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=795\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 1788,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"footage\",\n    \"what\": \"Solar Dynamics Observatory footage of a wing-like prominence eruption and magnetic loops in extreme ultraviolet wavelengths.\",\n    \"text_frames\": [0, 20],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 1,\n        \"end\": 2,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Close-up of active regions and magnetic loops on the solar surface in gold 171 angstroms.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 3,\n        \"end\": 5,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Towering magnetic loops rising from the solar limb.\",\n        \"score\": 9\n      },\n      {\n        \"start\": 6,\n        \"end\": 7,\n        \"focus\": [0.6, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"The start of the wing-like prominence eruption.\",\n        \"score\": 10\n      },\n      {\n        \"start\": 8,\n        \"end\": 9,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Complex magnetic structures and plasma flows.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 10,\n        \"end\": 10,\n        \"focus\": [0.6, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"A dramatic burst of solar material erupting into space.\",\n        \"score\": 10\n      },\n      {\n        \"start\": 11,\n        \"end\": 14,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Post-eruption loops and cooling plasma falling back to the surface.\",\n        \"score\": 9\n      },\n      {\n        \"start\": 15,\n        \"end\": 19,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Transition to orange 304 angstroms showing the dense, cooler plasma of the prominence.\",\n        \"score\":
+--- data/runs/20261113T205626317256Z/audio/chunk_001/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: ValueError: Geçersiz veya sırasız ses zamanları: ASR kelimesi 18.; whisper-large-v3-turbo: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 21.0 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 20.2 sn); whisper-large-v3-turbo: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 20.2 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 21.2 sn); whisper-large-v3-turbo: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 21.2 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 20.1 sn); whisper-large-v3-turbo: 78.9/100 (duyulan: “The Sun is 1.39 million kilometers across, wide enough for 109 Earths side by side. Glowin”, 20.1 sn)"
+]
 --- studio.log (son 300 satır)
-→ Konu: artemis-1
-Görüntü adayları: 90 (artemis-1)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+→ Konu: bennu
+Görüntü adayları: 52 (bennu)
 Sıralanan aday: 12
-Süre uygun değil nasa:Artemis I FD15 Orion Moon: 6552 sn
+Çözümlenemedi svs:5069: ValueError: no usable rendition
 Çözümlenen video: 11
-nasa:ART-CMA1_2022_325_1250_SHARED_art001m1203251250: elendi (2/10, footage) Mostly dark footage with extremely tiny distant Earth visible in a few
-nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209: kullanılır (8/10, footage) Earth setting behind the Moon as seen from Orion's solar array camera 
-nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022: kullanılır (8/10, footage) Camera on Orion's solar array wing showing the capsule with NASA logo 
-nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946: kullanılır (9/10, footage) Real camera footage from Orion's solar array wing showing the spacecra
-nasa:Flight Day 14: kullanılır (9/10, footage) The Orion spacecraft looking back at the distant Earth and Moon during
-nasa:Moon Below Orion art001m1013251756: kullanılır (8/10, footage) Real camera footage from Orion showing part of the spacecraft structur
-nasa:BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308: kullanılır (8/10, footage) The Orion spacecraft maneuvers its solar array in deep space during th
-Görüntü değerlendirme nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009: kullanılır (9/10, footage) Real imagery of the Orion spacecraft with its solar array wing and the
-Kullanılır kesit: 8 (193 sn temiz görüntü)
+Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:GSFC_20201021_M13745_TAG: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+nasa:GSFC_20201021_M13745_TAG: elendi (6/10, footage) Coverage of the OSIRIS-REx Touch-And-Go (TAG) sample collection event 
+svs:20360: kullanılır (9/10, animation) Data-driven 3D animation of OSIRIS-REx touching down on asteroid Bennu
+svs:5010: elendi (6/10, visualization) Visualization of surface height changes on asteroid Bennu pre- and pos
+nasa:GSFC_20210415_M13837_Flyover: kullanılır (8/10, footage) Footage and imagery showing asteroid Bennu and the OSIRIS-REx sample c
+Görüntü adayları: 4 (bennu, Commons)
+Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Sıralanan aday: 4
+Çözümlenemedi commons:Asteroid Bennu's Surprising Surface Revealed by OSIRIS-REx (no titles).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Asteroid Bennu's Surprising Surface Revealed by OSIRIS-REx (short form).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenemedi commons:Asteroid Bennu's Surprising Surface Revealed by OSIRIS-REx (long form).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
+Çözümlenen video: 1
+Kullanılır kesit: 3 (43 sn temiz görüntü)
+Konu atlandı (bennu): Yeterli temiz görüntü yok (3 kesit, 43 sn).
+→ Konu: sdo-sun
+Görüntü adayları: 92 (sdo-sun)
+Sıralanan aday: 12
+Çözümlenen video: 12
+nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's SDO captures high-definition views of an M6.7 solar flare in mu
+sdo:20240510_0171: elendi (8/10, footage) Full disk view of the Sun in 171 Angstrom extreme ultraviolet showing 
+sdo:20240510_0131: elendi (8/10, footage) Full-disk view of the Sun in extreme ultraviolet (131 Å) showing activ
+Görüntü değerlendirme sdo:20241003_0171: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Görüntü değerlendirme sdo:20241003_0171: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme sdo:20241003_0171: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+sdo:20241003_0171: elendi (8/10, footage) Solar Dynamics Observatory 171 Angstrom coronal loops
+sdo:20241003_0131: elendi (8/10, footage) Solar Dynamics Observatory footage of the Sun in the 131 Ångström wave
+Görüntü değerlendirme svs:5649: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+svs:5649: elendi (8/10, footage) Solar Dynamics Observatory view of the Sun evolving over four days
+Görüntü değerlendirme nasa:GSFC_20150501_SDO_m11864_Phoenix: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+nasa:GSFC_20150501_SDO_m11864_Phoenix: kullanılır (9/10, footage) NASA Solar Dynamics Observatory captures a dramatic solar prominence e
+nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA SDO footage of a massive solar eruption and coronal mass ejection
+Kullanılır kesit: 7 (135 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
+Ses eşleştirme: 89.7/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
-Ses bölümü 4, deneme 1
-Ses eşleştirme: 90.9/100 | whisper-large-v3
-→ Kurgu (79.3 sn, 8 beat, 8 kesit)
-  kurgu 10/79 sn
-  kurgu 20/79 sn
-  kurgu 30/79 sn
-  kurgu 40/79 sn
-  kurgu 50/79 sn
-  kurgu 60/79 sn
-  kurgu 70/79 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261113T163417731891Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: The Spacecraft That Flew Farther Than Apollo #Shorts
-Görünürlük: public
-
-Yükleme: %15
-Yükleme: %31
-Yükleme: %46
-Yükleme: %62
-Yükleme: %77
-Yükleme: %93
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=sAlBUaO51rg&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261113T163417731891Z/video.mp4
-Boyut: 51.4 MB
-Açıklama uzunluğu: 367 karakter
-Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Cloudinary: geçici video silindi (ok).
-instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Friday, 13-Nov-26 08:52:03 PST. (code=190, subcode=0)
+Ses eşleştirme: 78.9/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 2
+Ses eşleştirme: 78.9/100 | whisper-large-v3
+Ses eşleştirme: 78.9/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 3
+Ses eşleştirme: 78.9/100 | whisper-large-v3
+Ses eşleştirme: 78.9/100 | whisper-large-v3-turbo
+Ses bölümü 2, deneme 4
+Ses eşleştirme: 78.9/100 | whisper-large-v3
+Ses eşleştirme: 78.9/100 | whisper-large-v3-turbo
+HATA: 2. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
