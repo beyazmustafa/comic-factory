@@ -5081,5 +5081,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "sAlBUaO51rg",
+    "platform": "youtube",
+    "run_id": "43463882289",
+    "published_at": "2026-11-13T16:52:00+00:00",
+    "event": {
+      "title": "Farther Than Apollo",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 133,
+      "duration": 79.3,
+      "words_per_minute": 101,
+      "hook": "On 16 November 2022, Artemis I launched on the Space Launch System, the most powerful rocket ever to fly.",
+      "hook_words": 19,
+      "title": "The Spacecraft That Flew Farther Than Apollo",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

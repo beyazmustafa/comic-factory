@@ -1,0 +1,153 @@
+{
+  "title": "The Spacecraft That Flew Farther Than Apollo",
+  "description": "In 2022, NASA launched the Artemis I mission to test a new spacecraft built for human deep space exploration. The uncrewed Orion capsule traveled hundreds of thousands of kilometres beyond Earth before returning home safely.",
+  "hook_card": "Farther Than Apollo",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "On 16 November 2022, Artemis I launched on the Space Launch System, the most powerful rocket ever to fly.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c00",
+      "narration": "The uncrewed Orion capsule flew for 25.5 days, carrying a sensor-wired mannequin named Commander Moonikin Campos.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c01",
+      "narration": "Inside the cabin, the commander seat held this mannequin to collect crucial data during the voyage.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c06",
+      "narration": "Cameras mounted on Orion's solar arrays captured breathtaking views of Earth and the Moon together in deep space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "During its journey, Orion reached 432,000 kilometres from Earth, farther than any spacecraft built for humans.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c07",
+      "narration": "As the spacecraft completed its mission, it began the long return trip back toward our planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "Re-entering the atmosphere at about 40,000 kilometres per hour, Orion's heat shield endured temperatures of around 2,800 °C.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "On 11 December 2022, the Orion capsule successfully splashed down in the Pacific Ocean.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "On 16 November 2022, Artemis I launched on the Space Launch System, the most powerful rocket ever to fly. The uncrewed Orion capsule flew for 25.5 days, carrying a sensor-wired mannequin named Commander Moonikin Campos. Inside the cabin, the commander seat held this mannequin to collect crucial data during the voyage. Cameras mounted on Orion's solar arrays captured breathtaking views of Earth and the Moon together in deep space. During its journey, Orion reached 432,000 kilometres from Earth, farther than any spacecraft built for humans. As the spacecraft completed its mission, it began the long return trip back toward our planet. Re-entering the atmosphere at about 40,000 kilometres per hour, Orion's heat shield endured temperatures of around 2,800 °C. On 11 December 2022, the Orion capsule successfully splashed down in the Pacific Ocean.",
+  "event": {
+    "id": "film_artemis-1_20261113T163417731891Z",
+    "title": "Farther Than Apollo",
+    "series": "NASA footage",
+    "issue": "artemis-1",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "artemis-1",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+      "https://images.nasa.gov/details/Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+      "https://images.nasa.gov/details/BR__NOV_18_ORION_DOWNLINK_2022_322_1229_41000_1723121_1723308",
+      "https://images.nasa.gov/details/Flight Day 14",
+      "https://images.nasa.gov/details/Moon Below Orion art001m1013251756",
+      "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+      "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+    ]
+  },
+  "scenario": "artemis-1",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "On 16 November 2022, Artemis I launched on the Space Launch System, the most powerful rocket ever to fly.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "The uncrewed Orion capsule flew for 25.5 days, carrying a sensor-wired mannequin named Commander Moonikin Campos.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Inside the cabin, the commander seat held this mannequin to collect crucial data during the voyage.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Cameras mounted on Orion's solar arrays captured breathtaking views of Earth and the Moon together in deep space.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "During its journey, Orion reached 432,000 kilometres from Earth, farther than any spacecraft built for humans.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "As the spacecraft completed its mission, it began the long return trip back toward our planet.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Re-entering the atmosphere at about 40,000 kilometres per hour, Orion's heat shield endured temperatures of around 2,800 °C.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": {
+        "value": "2,800 °C",
+        "label": "on the heat shield"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "On 11 December 2022, the Orion capsule successfully splashed down in the Pacific Ocean.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "The next crew will fly this same path.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
