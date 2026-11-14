@@ -1,0 +1,196 @@
+{
+  "script": {
+    "title": "A space probe touched an asteroid to bring back pieces of it",
+    "description": "In October 2020, NASA's OSIRIS-REx spacecraft touched the surface of asteroid Bennu over 320 million kilometres from Earth. The probe collected a historic sample that landed back in the Utah desert three years later.",
+    "hook_card": "Touching an asteroid",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c02",
+        "narration": "Watch a robotic arm reach toward an asteroid located more than 320 million kilometres from Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c04",
+        "narration": "This is Bennu, a rubble-pile asteroid measuring about 500 metres across.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "The OSIRIS-REx spacecraft reached this boulder-strewn world in December 2018.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "On October 20, 2020, its arm touched the surface for just a few seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c00",
+        "narration": "The surface gave way like a ball pit, and the arm sank about half a metre.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c05",
+        "narration": "Thrusters quickly fired to pull the spacecraft safely back from the surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c03",
+        "narration": "It collected 121.6 grams, the largest sample returned from beyond the Moon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c00",
+        "narration": "The sample capsule returned to Earth and landed in the Utah desert on September 24, 2023.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c01",
+        "narration": "The returned rocks contain water-bearing minerals alongside organic molecules.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_009",
+        "panel_id": "c04",
+        "narration": "Bennu has about a 1-in-2,700 chance of hitting Earth in the year 2182.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Watch a robotic arm reach toward an asteroid located more than 320 million kilometres from Earth. This is Bennu, a rubble-pile asteroid measuring about 500 metres across. The OSIRIS-REx spacecraft reached this boulder-strewn world in December 2018. On October 20, 2020, its arm touched the surface for just a few seconds. The surface gave way like a ball pit, and the arm sank about half a metre. Thrusters quickly fired to pull the spacecraft safely back from the surface. It collected 121.6 grams, the largest sample returned from beyond the Moon. The sample capsule returned to Earth and landed in the Utah desert on September 24, 2023. The returned rocks contain water-bearing minerals alongside organic molecules. Bennu has about a 1-in-2,700 chance of hitting Earth in the year 2182.",
+    "event": {
+      "id": "film_bennu_20261114T151309340004Z",
+      "title": "Touching an asteroid",
+      "series": "NASA footage",
+      "issue": "bennu",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "bennu",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20201008_M13729_BennuTour",
+        "https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover",
+        "https://svs.gsfc.nasa.gov/20360"
+      ]
+    },
+    "scenario": "bennu",
+    "beats": [
+      {
+        "clip": "c02",
+        "narration": "Watch a robotic arm reach toward an asteroid located more than 320 million kilometres from Earth.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "This is Bennu, a rubble-pile asteroid measuring about 500 metres across.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "The OSIRIS-REx spacecraft reached this boulder-strewn world in December 2018.",
+        "label": "NASA · OSIRIS-REx · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "On October 20, 2020, its arm touched the surface for just a few seconds.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The surface gave way like a ball pit, and the arm sank about half a metre.",
+        "label": "NASA · OSIRIS-REx · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Thrusters quickly fired to pull the spacecraft safely back from the surface.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "It collected 121.6 grams, the largest sample returned from beyond the Moon.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": {
+          "value": "121.6 g",
+          "label": "brought home"
+        }
+      },
+      {
+        "clip": "c00",
+        "narration": "The sample capsule returned to Earth and landed in the Utah desert on September 24, 2023.",
+        "label": "NASA · OSIRIS-REx · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "The returned rocks contain water-bearing minerals alongside organic molecules.",
+        "label": "NASA · OSIRIS-REx · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Bennu has about a 1-in-2,700 chance of hitting Earth in the year 2182.",
+        "label": "NASA · OSIRIS-REx · 2020",
+        "callout": null
+      }
+    ],
+    "closing": "The returned rocks contain water-bearing minerals and organic molecules.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In October 2020, NASA's OSIRIS-REx spacecraft touched the surface of asteroid Bennu over 320 million kilometres from Earth. The probe collected a historic sample that landed back in the Utah desert three years later.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: {'Visualizations by': [{'name': 'Jonathan North', 'employer': 'KBR Wyle Services — Thirty Seconds on Asteroid Bennu: Animation (https://svs.gsfc.nasa.gov/20360); GSFC — OSIRIS-REx Leaves its Mark on Bennu (https://images.nasa.gov/details/GSFC_20210415_M13837_Flyover); GSFC — Tour of Asteroid Bennu (https://images.nasa.gov/details/GSFC_20201008_M13729_BennuTour)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A space probe touched an asteroid to bring back pieces of it\n\nIn October 2020, NASA's OSIRIS-REx spacecraft touched the surface of asteroid Bennu over 320 million kilometres from Earth. The probe collected a historic sample that landed back in the Utah desert three years later.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

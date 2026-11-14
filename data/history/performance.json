@@ -5122,5 +5122,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "8gl5fGKq1pI",
+    "platform": "youtube",
+    "run_id": "43608903473",
+    "published_at": "2026-11-14T15:36:01+00:00",
+    "event": {
+      "title": "Touching an asteroid",
+      "series": "NASA footage",
+      "issue": "bennu",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 10,
+      "words": 129,
+      "duration": 79.4,
+      "words_per_minute": 97,
+      "hook": "Watch a robotic arm reach toward an asteroid located more than 320 million kilometres from Earth.",
+      "hook_words": 16,
+      "title": "A space probe touched an asteroid to bring back pieces of it",
+      "title_length": 60,
+      "emphasis": {
+        "normal": 10
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
