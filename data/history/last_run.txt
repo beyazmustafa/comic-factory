@@ -1,11 +1,11 @@
-run_id: 43731503536  attempt: 1  event: schedule
-produce step outcome: success
---- data/runs/20261115T154443533433Z/run.json
+run_id: 43754699223  attempt: 1  event: schedule
+produce step outcome: failure
+--- data/runs/20261115T195145546193Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "ready",
-  "stage": "Tamamlandı",
+  "status": "failed",
+  "stage": "setup",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,42 +40,16 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "43731503536",
-  "technical_passed": true,
-  "quality_passed": true,
-  "video_sha256": "d2333337175e0741392effa1f8d68f95e88a249c580873fdc5bce3453de080d2",
-  "metadata_sha256": "4f9fdaa83c69125ee150dd98aef12338a0567f9116b734fe798bb1448700defc",
-  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 24,
-  "duration": 82.12,
-  "voice": "Charon",
-  "event": {
-    "id": "film_sdo-sun_20261115T154443533433Z",
-    "title": "The Sun, Every Twelve Seconds",
-    "series": "NASA footage",
-    "issue": "sdo-sun",
-    "year": 2026,
-    "publisher": "NASA",
-    "universe": "science",
-    "scenario": "sdo-sun",
-    "_source": "film",
-    "url": "",
-    "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
-      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
-    ]
-  },
-  "localized": []
+  "run_id": "43754699223",
+  "error": "SpeechFailure: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
 }
---- data/runs/20261115T154443533433Z/diagnostics/provider_events.json
+--- data/runs/20261115T195145546193Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261115T154443533433Z/diagnostics/providers.json
+--- data/runs/20261115T195145546193Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -102,8 +76,8 @@ produce step outcome: success
   ],
   "groq": [
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -199,76 +173,46 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
+--- data/runs/20261115T195145546193Z/audio/chunk_003/failures.json
+[
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.5 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.5 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.4 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.4 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.2 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.2 sn)",
+  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.5 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.5 sn)"
+]
 --- studio.log (son 300 satır)
-→ Konu: sdo-sun
-Görüntü adayları: 92 (sdo-sun)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Sıralanan aday: 12
-Çözümlenen video: 12
-sdo:20240510_0171: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 171 Angstroms showing corona
-sdo:20240510_0304: elendi (8/10, footage) Solar Dynamics Observatory daily observation of the Sun at 304 Å wavel
-sdo:20240510_0131: elendi (8/10, footage) Full-disk SDO 131 Å extreme ultraviolet footage of the Sun displaying 
-sdo:20240510_0193: elendi (8/10, footage) Solar Dynamics Observatory daily video showing the Sun's corona at 193
-sdo:20240510_0094: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 94 Angstrom extreme ultravio
-svs:5649: elendi (9/10, footage) Time-lapse footage of the Sun's dynamic atmosphere captured by NASA's 
-nasa:GSFC_20150211_SDO_m11762_5Years: kullanılır (9/10, footage) Five-year time-lapse of the Sun observed by NASA's Solar Dynamics Obse
-nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's SDO captures views of an M6.7 solar flare in extreme ultraviole
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) Solar Dynamics Observatory footage of a mid-level solar flare and grac
-nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA SDO imagery of a coronal mass ejection and solar magnetic loops i
-Kullanılır kesit: 8 (159 sn temiz görüntü)
+→ Konu: perseverance-landing
+Görüntü adayları: 49 (perseverance-landing)
+Sıralanan aday: 6
+Çözümlenen video: 6
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Onboard camera views of NASA's Perseverance rover descending towards J
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Descent and landing footage of NASA's Perseverance rover arriving on M
+nasa:JPL-20210218-M2020f-0003-Perseverance Landing Wrap v2: elendi (6/10, animation) CGI animation of the Perseverance landing sequence followed by NASA JP
+Görüntü adayları: 4 (perseverance-landing, Commons)
+Sıralanan aday: 4
+Çözümlenen video: 4
+Kullanılır kesit: 4 (99 sn temiz görüntü)
 → Senaryo
+Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 96.8/100 | whisper-large-v3
+Ses eşleştirme: 90.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 94.3/100 | whisper-large-v3
+Ses eşleştirme: 88.1/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 84.8/100 | whisper-large-v3
-→ Kurgu (82.1 sn, 8 beat, 8 kesit)
-  kurgu 10/82 sn
-  kurgu 20/82 sn
-  kurgu 30/82 sn
-  kurgu 40/82 sn
-  kurgu 50/82 sn
-  kurgu 60/82 sn
-  kurgu 70/82 sn
-  kurgu 80/82 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261115T154443533433Z/review.html
-
-==============================================================================
-YOUTUBE YÜKLEME
-==============================================================================
-
-Başlık: A Satellite Has Watched the Sun Nonstop Since 2010 #Shorts
-Görünürlük: public
-
-Yükleme: %5
-Yükleme: %11
-Yükleme: %17
-Yükleme: %23
-Yükleme: %29
-Yükleme: %34
-Yükleme: %40
-Yükleme: %46
-Yükleme: %52
-Yükleme: %58
-Yükleme: %63
-Yükleme: %69
-Yükleme: %75
-Yükleme: %81
-Yükleme: %87
-Yükleme: %93
-Yükleme: %98
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=kGeMQtNfNQI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
-====================================================================
-COMIC FACTORY - INSTAGRAM REELS
-====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261115T154443533433Z/video.mp4
-Boyut: 137.5 MB
-Açıklama uzunluğu: 389 karakter
-Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 144182029. Maximum is 104857600.
+Ses eşleştirme: 79.2/100 | whisper-large-v3
+Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 2
+Ses eşleştirme: 79.2/100 | whisper-large-v3
+Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 3
+Ses eşleştirme: 79.2/100 | whisper-large-v3
+Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 4
+Ses eşleştirme: 79.2/100 | whisper-large-v3
+Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
+HATA: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
