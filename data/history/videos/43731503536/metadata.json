@@ -1,0 +1,172 @@
+{
+  "script": {
+    "title": "A Satellite Has Watched the Sun Nonstop Since 2010",
+    "description": "The Solar Dynamics Observatory captures high-resolution imagery of the Sun's dynamic surface and corona every twelve seconds. This narration explores the magnetic loops, massive flares, and extreme temperature mysteries of our central star.",
+    "hook_card": "The Sun, Every Twelve Seconds",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds, sending back 1.5 terabytes daily.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c01",
+        "narration": "The spacecraft captures dynamic flares and active regions across multiple wavelengths of light.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c06",
+        "narration": "The Sun measures 1.39 million kilometres across, a distance where 109 Earths could fit side by side.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c02",
+        "narration": "Its surface reaches 5,500 °C, yet its thin outer atmosphere, the corona, rises above a million degrees.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c04",
+        "narration": "Glowing plasma traces magnetic field lines, forming loops that can each be larger than many Earths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c03",
+        "narration": "A large solar flare releases as much energy as millions of hydrogen bombs exploding at once.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "Flare light reaches Earth in eight minutes twenty seconds, while particle clouds take one to three days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c05",
+        "narration": "Roughly every eleven years, the Sun's magnetic poles swap places as plasma arches across its limb.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds, sending back 1.5 terabytes daily. The spacecraft captures dynamic flares and active regions across multiple wavelengths of light. The Sun measures 1.39 million kilometres across, a distance where 109 Earths could fit side by side. Its surface reaches 5,500 °C, yet its thin outer atmosphere, the corona, rises above a million degrees. Glowing plasma traces magnetic field lines, forming loops that can each be larger than many Earths. A large solar flare releases as much energy as millions of hydrogen bombs exploding at once. Flare light reaches Earth in eight minutes twenty seconds, while particle clouds take one to three days. Roughly every eleven years, the Sun's magnetic poles swap places as plasma arches across its limb.",
+    "event": {
+      "id": "film_sdo-sun_20261115T154443533433Z",
+      "title": "The Sun, Every Twelve Seconds",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "sdo-sun",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+        "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
+        "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      ]
+    },
+    "scenario": "sdo-sun",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "Since 2010, the Solar Dynamics Observatory has imaged the Sun every twelve seconds, sending back 1.5 terabytes daily.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "The spacecraft captures dynamic flares and active regions across multiple wavelengths of light.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "The Sun measures 1.39 million kilometres across, a distance where 109 Earths could fit side by side.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Its surface reaches 5,500 °C, yet its thin outer atmosphere, the corona, rises above a million degrees.",
+        "label": "NASA · SDO · 2016",
+        "callout": {
+          "value": "1,000,000 °C",
+          "label": "the outer atmosphere"
+        }
+      },
+      {
+        "clip": "c04",
+        "narration": "Glowing plasma traces magnetic field lines, forming loops that can each be larger than many Earths.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "A large solar flare releases as much energy as millions of hydrogen bombs exploding at once.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "Flare light reaches Earth in eight minutes twenty seconds, while particle clouds take one to three days.",
+        "label": "NASA · SDO · 2015",
+        "callout": {
+          "value": "8 min 20 s",
+          "label": "for its light to reach us"
+        }
+      },
+      {
+        "clip": "c05",
+        "narration": "Roughly every eleven years, the Sun's magnetic poles swap places as plasma arches across its limb.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      }
+    ],
+    "closing": "It continues to watch our star, frame by frame.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The Solar Dynamics Observatory captures high-resolution imagery of the Sun's dynamic surface and corona every twelve seconds. This narration explores the magnetic loops, massive flares, and extreme temperature mysteries of our central star.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein — Five Year Time-lapse of SDO (https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years); Genna Duberstein, Tom Bridgman, Sarah Frazier — NASA’s SDO Captures Stunning 4K View of April 17 Solar Flare (https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K); Genna Duberstein — Graceful Eruption (https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare); Genna Duberstein, Tom Bridgman, Karen Fox — Arching Eruption (https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A Satellite Has Watched the Sun Nonstop Since 2010\n\nThe Solar Dynamics Observatory captures high-resolution imagery of the Sun's dynamic surface and corona every twelve seconds. This narration explores the magnetic loops, massive flares, and extreme temperature mysteries of our central star.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

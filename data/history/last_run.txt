@@ -1,6 +1,6 @@
-run_id: 43631273794  attempt: 1  event: schedule
+run_id: 43731503536  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261114T191817954437Z/run.json
+--- data/runs/20261115T154443533433Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,59 +40,42 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "43631273794",
+  "run_id": "43731503536",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "6e4389e16475945336201ac3e446e5b953d1a7ab289fcb079871978e5623bbab",
-  "metadata_sha256": "5f304dbca11324ded2676f052d66a8015f2813839c5e09e0c9d37bfee6b05d84",
+  "video_sha256": "d2333337175e0741392effa1f8d68f95e88a249c580873fdc5bce3453de080d2",
+  "metadata_sha256": "4f9fdaa83c69125ee150dd98aef12338a0567f9116b734fe798bb1448700defc",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 68,
-  "duration": 73.48,
+  "api_calls": 24,
+  "duration": 82.12,
   "voice": "Charon",
   "event": {
-    "id": "film_moon-tour_20261114T191817954437Z",
-    "title": "The Moon in 4K",
+    "id": "film_sdo-sun_20261115T154443533433Z",
+    "title": "The Sun, Every Twelve Seconds",
     "series": "NASA footage",
-    "issue": "moon-tour",
+    "issue": "sdo-sun",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "moon-tour",
+    "scenario": "sdo-sun",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
-      "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
-      "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover",
-      "https://svs.gsfc.nasa.gov/5633"
+      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+      "https://images.nasa.gov/details/GSFC_20150211_SDO_m11762_5Years",
+      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
     ]
   },
   "localized": []
 }
---- data/runs/20261114T191817954437Z/diagnostics/provider_events.json
+--- data/runs/20261115T154443533433Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0171: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme sdo:20241003_0304: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20130306_Moons_m11218_Shadowed: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20130603_LEND_m11292_Water: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261114T191817954437Z/diagnostics/providers.json
+--- data/runs/20261115T154443533433Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -118,8 +101,8 @@ produce step outcome: success
     "gemini-4-hydrogen"
   ],
   "groq": [
-    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b"
   ],
   "errors": [],
@@ -216,45 +199,6 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261114T191817954437Z/diagnostics/api_053.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=267 candidates_tokens_details=None prompt_token_count=1875 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=783\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 809,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"visualization\",\n    \"what\": \"A 3D visualization of the Lee Lincoln scarp at the Apollo 17 landing site based on Lunar Reconnaissance Orbiter data.\",\n    \"text_frames\": [],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 2,\n        \"focus\": [\n          0.5,\n          0.5\n        ],\n        \"width\": 0.32,\n        \"shows\": \"Top-down orbital view of the lunar surface showing the Lee Lincoln scarp and craters.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 3,\n        \"end\": 7,\n        \"focus\": [\n          0.6,\n          0.6\n        ],\n        \"width\": 0.32,\n        \"shows\": \"Low-angle cinematic flyover of the lobate scarp and lunar hills.\",\n        \"score\": 10\n      }\n    ]\n  }\n]"
-}
---- data/runs/20261114T191817954437Z/diagnostics/api_056.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=552 candidates_tokens_details=None prompt_token_count=1886 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=806\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 1562,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 8,\n    \"kind\": \"visualization\",\n    \"what\": \"A visualization of the Moon's permanently shadowed regions and topographic mapping by the Lunar Reconnaissance Orbiter.\",\n    \"text_frames\": [0, 2, 3, 8, 14, 19],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 1,\n        \"end\": 1,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"The full Moon against a black background\",\n        \"score\": 8\n      },\n      {\n        \"start\": 4,\n        \"end\": 5,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Blue highlights indicating permanently shadowed regions in lunar craters\",\n        \"score\": 7\n      },\n      {\n        \"start\": 6,\n        \"end\": 7,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Animation of the LRO spacecraft and a close-up of a dark crater rim\",\n        \"score\": 9\n      },\n      {\n        \"start\": 11,\n        \"end\": 13,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Close-up lunar surface texture and data visualization of shadowed spots\",\n        \"score\": 7\n      },\n      {\n        \"start\": 15,\n        \"end\": 15,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Blue-tinted topographic visualization of a lunar crater\",\n        \"score\": 8\n      },\n      {\n        \"start\": 17,\n        \"end\": 18,\n        \"focus\": [0.8, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"The Moon in phase against a black background\",\n        \"score\": 8\n      }\n    ]\n  }\n]"
-}
---- data/runs/20261114T191817954437Z/diagnostics/api_058.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=351 candidates_tokens_details=None prompt_token_count=1891 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=811\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 909,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 8,\n    \"kind\": \"visualization\",\n    \"what\": \"A visualization of the Lunar Reconnaissance Orbiter mapping water ice at the Moon's south pole.\",\n    \"text_frames\": [0, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 18],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 1,\n        \"end\": 1,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Close-up orbital view of the lunar cratered surface\",\n        \"score\": 8\n      },\n      {\n        \"start\": 15,\n        \"end\": 15,\n        \"focus\": [0.2, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"The Moon in partial shadow against black space\",\n        \"score\": 9\n      },\n      {\n        \"start\": 16,\n        \"end\": 16,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.6,\n        \"shows\": \"Artist's render of the LRO spacecraft in orbit\",\n        \"score\": 7\n      }\n    ]\n  }\n]"
-}
 --- studio.log (son 300 satır)
 → Konu: sdo-sun
 Görüntü adayları: 92 (sdo-sun)
@@ -263,104 +207,68 @@ Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 12
 Çözümlenen video: 12
-Görüntü değerlendirme sdo:20240510_0171: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-sdo:20240510_0171: elendi (8/10, footage) SDO 171 Å extreme ultraviolet footage of the Sun's atmosphere showing 
-sdo:20240510_0304: elendi (8/10, footage) Full disk observation of the Sun's chromosphere at 304 Angstroms by SD
-Görüntü değerlendirme sdo:20240510_0131: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20240510_0131: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-sdo:20240510_0131: elendi (8/10, footage) Solar Dynamics Observatory 131 Ångström view of the Sun showing flarin
-Görüntü değerlendirme sdo:20241003_0171: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme sdo:20241003_0171: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20241003_0171: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20241003_0171: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20241003_0171: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme sdo:20241003_0171: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-sdo:20241003_0171: elendi (8/10, footage) Solar Dynamics Observatory daily movie showing coronal loops in 171 an
-Görüntü değerlendirme sdo:20241003_0304: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-sdo:20241003_0304: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 304 angstroms showing the so
-sdo:20241003_0131: elendi (8/10, footage) Solar Dynamics Observatory footage of the Sun in the 131 Angstrom wave
-Görüntü adayları: 4 (sdo-sun, Commons)
-Sıralanan aday: 4
-Çözümlenemedi commons:Largest Flare yet from Solar Cycle 25 (SVS14592 SDO X8pt7 flare May 14 2024 ProRes Outro).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:February 16, 2024 X2 5 Solar Flare (SVS14531 - SDO 131 02162024 033333-093333 4k).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:NASA's SDO Captures a February Solar Flare Triple Play (SVS14536).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Solar flare X2.1 2011-09-06.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 0 (0 sn temiz görüntü)
-Konu atlandı (sdo-sun): Yeterli temiz görüntü yok (0 kesit, 0 sn).
-→ Konu: moon-tour
-Görüntü adayları: 76 (moon-tour)
-Sıralanan aday: 12
-Çözümlenen video: 12
-svs:4619: elendi (1/10, visualization) A series of black screens with white text showing lunar coordinates an
-nasa:GSFC_20190618_LRO_m13229_10Years: kullanılır (7/10, animation) A retrospective of the Lunar Reconnaissance Orbiter mission including 
-nasa:GSFC_20190618_LRO_m13229_10Years: üretilmiş program gibi (0 karede insan, 13/19 kare elendi); atlandı
-nasa:GSFC_20110315_LRO_m10146_PDS: kullanılır (8/10, visualization) High-resolution global mosaics and detailed surface morphology of the 
-nasa:GSFC_20120220_LRO_m10915_ graben_moon: elendi (7/10, visualization) NASA's Lunar Reconnaissance Orbiter data showing geological activity a
-Görüntü değerlendirme nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: kullanılır (8/10, visualization) NASA LRO observations of lunar pits and spacecraft
-nasa:GSFC_20140717_LROC_m11612_Lunar_Pit: üretilmiş program gibi (0 karede insan, 10/13 kare elendi); atlandı
-Görüntü değerlendirme nasa:GSFC_20150317_LRO_m11806_NewCrater: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:GSFC_20150317_LRO_m11806_NewCrater: elendi (5/10, visualization) NASA LRO tracking new impact craters on the Moon
-Görüntü değerlendirme nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover: kullanılır (8/10, visualization) Flyover and orbital visualization of the Lee Lincoln scarp from LRO da
-nasa:GSFC_20140324_LROC_m11494_JGarvin: elendi (7/10, footage) High-resolution lunar surface imagery from the Lunar Reconnaissance Or
-Görüntü değerlendirme nasa:GSFC_20130306_Moons_m11218_Shadowed: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:GSFC_20130306_Moons_m11218_Shadowed: kullanılır (8/10, visualization) Mapping permanently shadowed regions on the Moon using LRO data
-Görüntü değerlendirme nasa:GSFC_20130603_LEND_m11292_Water: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:GSFC_20130603_LEND_m11292_Water: kullanılır (7/10, visualization) Lunar Reconnaissance Orbiter data and visualizations of polar water ic
-nasa:GSFC_20130603_LEND_m11292_Water: üretilmiş program gibi (0 karede insan, 13/19 kare elendi); atlandı
-svs:5633: kullanılır (8/10, visualization) A simulation of the Moon as seen from the Artemis II spacecraft during
-Kullanılır kesit: 8 (117 sn temiz görüntü)
+sdo:20240510_0171: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 171 Angstroms showing corona
+sdo:20240510_0304: elendi (8/10, footage) Solar Dynamics Observatory daily observation of the Sun at 304 Å wavel
+sdo:20240510_0131: elendi (8/10, footage) Full-disk SDO 131 Å extreme ultraviolet footage of the Sun displaying 
+sdo:20240510_0193: elendi (8/10, footage) Solar Dynamics Observatory daily video showing the Sun's corona at 193
+sdo:20240510_0094: elendi (8/10, footage) Solar Dynamics Observatory daily movie in 94 Angstrom extreme ultravio
+svs:5649: elendi (9/10, footage) Time-lapse footage of the Sun's dynamic atmosphere captured by NASA's 
+nasa:GSFC_20150211_SDO_m11762_5Years: kullanılır (9/10, footage) Five-year time-lapse of the Sun observed by NASA's Solar Dynamics Obse
+nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) NASA's SDO captures views of an M6.7 solar flare in extreme ultraviole
+nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) Solar Dynamics Observatory footage of a mid-level solar flare and grac
+nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA SDO imagery of a coronal mass ejection and solar magnetic loops i
+Kullanılır kesit: 8 (159 sn temiz görüntü)
 → Senaryo
-Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.6/100 | whisper-large-v3
+Ses eşleştirme: 96.8/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
+Ses eşleştirme: 94.3/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 94.7/100 | whisper-large-v3
-→ Kurgu (73.5 sn, 9 beat, 8 kesit)
-  kurgu 10/73 sn
-  kurgu 20/73 sn
-  kurgu 30/73 sn
-  kurgu 40/73 sn
-  kurgu 50/73 sn
-  kurgu 60/73 sn
-  kurgu 70/73 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261114T191817954437Z/review.html
+Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses bölümü 4, deneme 1
+Ses eşleştirme: 84.8/100 | whisper-large-v3
+→ Kurgu (82.1 sn, 8 beat, 8 kesit)
+  kurgu 10/82 sn
+  kurgu 20/82 sn
+  kurgu 30/82 sn
+  kurgu 40/82 sn
+  kurgu 50/82 sn
+  kurgu 60/82 sn
+  kurgu 70/82 sn
+  kurgu 80/82 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261115T154443533433Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A spacecraft has mapped the Moon in high definition #Shorts
+Başlık: A Satellite Has Watched the Sun Nonstop Since 2010 #Shorts
 Görünürlük: public
 
-Yükleme: %8
+Yükleme: %5
+Yükleme: %11
 Yükleme: %17
-Yükleme: %26
-Yükleme: %35
-Yükleme: %44
-Yükleme: %53
-Yükleme: %62
-Yükleme: %70
-Yükleme: %79
-Yükleme: %88
-Yükleme: %97
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=PGBiCa5n7Bo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %23
+Yükleme: %29
+Yükleme: %34
+Yükleme: %40
+Yükleme: %46
+Yükleme: %52
+Yükleme: %58
+Yükleme: %63
+Yükleme: %69
+Yükleme: %75
+Yükleme: %81
+Yükleme: %87
+Yükleme: %93
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=kGeMQtNfNQI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261114T191817954437Z/video.mp4
-Boyut: 90.2 MB
-Açıklama uzunluğu: 348 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261115T154443533433Z/video.mp4
+Boyut: 137.5 MB
+Açıklama uzunluğu: 389 karakter
 Cloudinary: video geçici olarak yükleniyor...
-Cloudinary: video hazır.
-Cloudinary CDN erişimi kontrol ediliyor...
-Cloudinary CDN: video erişilebilir.
-Instagram: Reel container oluşturuluyor...
-Cloudinary: geçici video silindi (ok).
-instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Saturday, 14-Nov-26 12:00:30 PST. (code=190, subcode=0)
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 144182029. Maximum is 104857600.
