@@ -1,0 +1,300 @@
+{
+  "duration": 62.04999999999999,
+  "handle": "@Facctsaboutspace",
+  "hook": "An ocean under the ice.",
+  "kicker": "Real footage · ESA/Hubble",
+  "closing": "In September 2022 Juno photographed this ice from 350 kilometres away.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "hubble:heic1504a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/hubble_heic1504a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.818,
+      "src_out": 10.982,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        902,
+        62,
+        2036,
+        2036
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.83,
+      "label": "HUBBLE · NASA · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.048,
+      "src_out": 14.152,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.83,
+      "t1": 10.6,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.728,
+      "src_out": 19.002,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.6,
+      "t1": 18.54,
+      "label": "JUNO · NASA · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "hubble:heic1322b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/hubble_heic1322b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 6.083,
+      "src_out": 14.317,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.52
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.54,
+      "t1": 26.44,
+      "label": "NASA · ARTIST IMPRESSION · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "hubble:heic1322a",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/hubble_heic1322a/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.613,
+      "src_out": 17.187,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        212,
+        0,
+        1708,
+        1080
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 26.44,
+      "t1": 33.68,
+      "label": "NASA · ARTIST IMPRESSION · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.663,
+      "src_out": 11.537,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.45
+      ],
+      "active": [
+        1252,
+        108,
+        2492,
+        1756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 33.68,
+      "t1": 41.22,
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 3.73,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 41.22,
+      "t1": 45.549,
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.238,
+      "src_out": 12.962,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 45.549,
+      "t1": 47.94,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 11.878,
+      "src_out": 17.852,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 47.94,
+      "t1": 53.58,
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": {
+        "value": "49",
+        "label": "flybys planned"
+      },
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c01",
+      "asset": "nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T232702269026Z/footage/nasa_jpl_20220310_clipprf_0001_europa_clipper_mission_animat/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.198,
+      "src_out": 16.002,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 53.58,
+      "t1": 62.04999999999999,
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    }
+  ]
+}

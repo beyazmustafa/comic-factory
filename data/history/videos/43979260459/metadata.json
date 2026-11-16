@@ -1,0 +1,169 @@
+{
+  "script": {
+    "title": "NASA sent a massive spacecraft to search a frozen ocean world",
+    "description": "Beneath a thick crust of ice, Jupiter's moon Europa hides a massive liquid ocean. NASA's Europa Clipper is now on its way to investigate its potential for life.",
+    "hook_card": "An ocean under the ice.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c05",
+        "narration": "Slightly smaller than our Moon, Europa shows a surface of water ice cracked by long reddish lines.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c02",
+        "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean with twice the water of Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c03",
+        "narration": "Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the ocean liquid.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c04",
+        "narration": "Europa Clipper launched on 14 October 2024 to investigate this distant world.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c00",
+        "narration": "This is NASA's largest planetary spacecraft, featuring solar arrays that span about 30 metres.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c01",
+        "narration": "It arrives at Jupiter in 2030 to begin its detailed study of the moon.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c02",
+        "narration": "The spacecraft will make 49 flybys of Europa to gather data.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c01",
+        "narration": "Some of these passes will sweep as low as 25 kilometres above the surface.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Slightly smaller than our Moon, Europa shows a surface of water ice cracked by long reddish lines. Beneath 15 to 25 kilometres of ice lies a salty ocean with twice the water of Earth. Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the ocean liquid. Europa Clipper launched on 14 October 2024 to investigate this distant world. This is NASA's largest planetary spacecraft, featuring solar arrays that span about 30 metres. It arrives at Jupiter in 2030 to begin its detailed study of the moon. The spacecraft will make 49 flybys of Europa to gather data. Some of these passes will sweep as low as 25 kilometres above the surface.",
+    "event": {
+      "id": "film_europa_20261116T232702269026Z",
+      "title": "An ocean under the ice.",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "europa",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://esahubble.org/videos/heic1322a/",
+        "https://esahubble.org/videos/heic1322b/",
+        "https://esahubble.org/videos/heic1504a/",
+        "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations"
+      ]
+    },
+    "scenario": "europa",
+    "beats": [
+      {
+        "clip": "c05",
+        "narration": "Slightly smaller than our Moon, Europa shows a surface of water ice cracked by long reddish lines.",
+        "label": "HUBBLE · NASA · 2021",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Beneath 15 to 25 kilometres of ice lies a salty ocean with twice the water of Earth.",
+        "label": "JUNO · NASA · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "Jupiter's gravity flexes the moon as it orbits, and that flexing keeps the ocean liquid.",
+        "label": "NASA · ARTIST IMPRESSION · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Europa Clipper launched on 14 October 2024 to investigate this distant world.",
+        "label": "NASA · ARTIST IMPRESSION · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "This is NASA's largest planetary spacecraft, featuring solar arrays that span about 30 metres.",
+        "label": "NASA · EUROPA CLIPPER · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "It arrives at Jupiter in 2030 to begin its detailed study of the moon.",
+        "label": "NASA · EUROPA CLIPPER · 2024",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "The spacecraft will make 49 flybys of Europa to gather data.",
+        "label": "NASA · EUROPA CLIPPER · 2024",
+        "callout": {
+          "value": "49",
+          "label": "flybys planned"
+        }
+      },
+      {
+        "clip": "c01",
+        "narration": "Some of these passes will sweep as low as 25 kilometres above the surface.",
+        "label": "NASA · EUROPA CLIPPER · 2024",
+        "callout": null
+      }
+    ],
+    "closing": "In September 2022 Juno photographed this ice from 350 kilometres away.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Beneath a thick crust of ice, Jupiter's moon Europa hides a massive liquid ocean. NASA's Europa Clipper is now on its way to investigate its potential for life.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JPL — NASA’s Europa Clipper Mission Animations (https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations); NASA, ESA, and M. Kornmesser Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne, — Flying past Europa’s plumes (artist’s impression) (https://esahubble.org/videos/heic1322b/); NASA, ESA, and M. Kornmesser. Science Credit: NASA, ESA, L. Roth (Southwest Research Institute and University of Cologne — Illustrated fly-by of Europa's plumes (artist's impression) (https://esahubble.org/videos/heic1322a/); NASA , ESA , Hubble Heritage Team — Time-lapse of Jupiter’s three moon transit (https://esahubble.org/videos/heic1504a/)\nLicences: CC BY 4.0, public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "NASA sent a massive spacecraft to search a frozen ocean world\n\nBeneath a thick crust of ice, Jupiter's moon Europa hides a massive liquid ocean. NASA's Europa Clipper is now on its way to investigate its potential for life.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
