@@ -5245,5 +5245,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "UusccxP7p_0",
+    "platform": "youtube",
+    "run_id": "43931351903",
+    "published_at": "2026-11-16T19:11:22+00:00",
+    "event": {
+      "title": "Seven minutes of terror",
+      "series": "NASA footage",
+      "issue": "perseverance-landing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 134,
+      "duration": 75.6,
+      "words_per_minute": 106,
+      "hook": "This is real footage of a 1,025-kilogram rover descending toward the red surface of Mars.",
+      "hook_words": 15,
+      "title": "Real camera footage of a rover landing on Mars",
+      "title_length": 46,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

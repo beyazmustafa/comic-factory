@@ -1,11 +1,11 @@
-run_id: 43754699223  attempt: 1  event: schedule
-produce step outcome: failure
---- data/runs/20261115T195145546193Z/run.json
+run_id: 43931351903  attempt: 1  event: schedule
+produce step outcome: success
+--- data/runs/20261116T184144314944Z/run.json
 {
   "schema": 2,
   "version": "",
-  "status": "failed",
-  "stage": "setup",
+  "status": "ready",
+  "stage": "Tamamlandı",
   "topic": "",
   "settings": {
     "target_seconds": 150,
@@ -40,16 +40,41 @@ produce step outcome: failure
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "43754699223",
-  "error": "SpeechFailure: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir."
+  "run_id": "43931351903",
+  "technical_passed": true,
+  "quality_passed": true,
+  "video_sha256": "8c924c4ccaba2cd200c90249d3825e6a27d07a0c3fde8712a29582097be6120a",
+  "metadata_sha256": "5ee3c5bbcfc8755a6afaafb87fc59dd888d815db067d32b3c9ceeca2b4d1f7ed",
+  "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
+  "api_calls": 20,
+  "duration": 75.64,
+  "voice": "Charon",
+  "event": {
+    "id": "film_perseverance-landing_20261116T184144314944Z",
+    "title": "Seven minutes of terror",
+    "series": "NASA footage",
+    "issue": "perseverance-landing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "perseverance-landing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
+    ]
+  },
+  "localized": []
 }
---- data/runs/20261115T195145546193Z/diagnostics/provider_events.json
+--- data/runs/20261116T184144314944Z/diagnostics/provider_events.json
 [
-  "Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261115T195145546193Z/diagnostics/providers.json
+--- data/runs/20261116T184144314944Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -75,9 +100,9 @@ produce step outcome: failure
     "gemini-4-hydrogen"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "openai/gpt-oss-20b"
+    "qwen/qwen3.8-27b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -173,46 +198,65 @@ produce step outcome: failure
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261115T195145546193Z/audio/chunk_003/failures.json
-[
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.5 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.5 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.4 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.4 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.2 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 16.2 sn)",
-  "Bu ses bölümü eşleşmedi: whisper-large-v3: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.5 sn); whisper-large-v3-turbo: 79.2/100 (duyulan: “The descent stage lowered the 1,025-kilogram rover using 7.6-meter cables. After touchdown”, 15.5 sn)"
-]
 --- studio.log (son 300 satır)
 → Konu: perseverance-landing
-Görüntü adayları: 49 (perseverance-landing)
-Sıralanan aday: 6
-Çözümlenen video: 6
-nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Onboard camera views of NASA's Perseverance rover descending towards J
-nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Descent and landing footage of NASA's Perseverance rover arriving on M
-nasa:JPL-20210218-M2020f-0003-Perseverance Landing Wrap v2: elendi (6/10, animation) CGI animation of the Perseverance landing sequence followed by NASA JP
-Görüntü adayları: 4 (perseverance-landing, Commons)
+SVS araması (Jezero): SSLError: HTTPSConnectionPool(host='svs.gsfc.nasa.gov', port=443): Max retries exceeded wi
+Görüntü adayları: 48 (perseverance-landing)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 Sıralanan aday: 4
 Çözümlenen video: 4
-Kullanılır kesit: 4 (99 sn temiz görüntü)
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (9/10, footage) Real onboard camera footage of the Perseverance rover descending and l
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Real camera footage of Perseverance rover's descent and landing on Mar
+nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (9/10, animation) Computer animations depicting key entry, descent, and landing phases o
+Kullanılır kesit: 7 (151 sn temiz görüntü)
 → Senaryo
-Belgesel senaryosu: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Belgesel senaryosu: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Belgesel senaryosu: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 90.9/100 | whisper-large-v3
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 88.1/100 | whisper-large-v3
+Ses eşleştirme: 99.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 79.2/100 | whisper-large-v3
-Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 2
-Ses eşleştirme: 79.2/100 | whisper-large-v3
-Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 3
-Ses eşleştirme: 79.2/100 | whisper-large-v3
-Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
-Ses bölümü 4, deneme 4
-Ses eşleştirme: 79.2/100 | whisper-large-v3
-Ses eşleştirme: 79.2/100 | whisper-large-v3-turbo
-HATA: 4. ses bölümü tamamlanamadı. Başarılı bölümler saklandı; aynı çalışmadan devam edilebilir.
+Ses eşleştirme: 97.0/100 | whisper-large-v3
+→ Kurgu (75.6 sn, 9 beat, 7 kesit)
+  kurgu 10/76 sn
+  kurgu 20/76 sn
+  kurgu 30/76 sn
+  kurgu 40/76 sn
+  kurgu 50/76 sn
+  kurgu 60/76 sn
+  kurgu 70/76 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/review.html
+
+==============================================================================
+YOUTUBE YÜKLEME
+==============================================================================
+
+Başlık: Real camera footage of a rover landing on Mars #Shorts
+Görünürlük: public
+
+Yükleme: %7
+Yükleme: %15
+Yükleme: %22
+Yükleme: %30
+Yükleme: %37
+Yükleme: %45
+Yükleme: %52
+Yükleme: %60
+Yükleme: %67
+Yükleme: %75
+Yükleme: %83
+Yükleme: %90
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=UusccxP7p_0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+====================================================================
+COMIC FACTORY - INSTAGRAM REELS
+====================================================================
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/video.mp4
+Boyut: 105.9 MB
+Açıklama uzunluğu: 312 karakter
+Cloudinary: video geçici olarak yükleniyor...
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 111051326. Maximum is 104857600.

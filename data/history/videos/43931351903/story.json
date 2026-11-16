@@ -1,0 +1,166 @@
+{
+  "title": "Real camera footage of a rover landing on Mars",
+  "description": "On 18 February 2021, NASA landed the Perseverance rover inside Jezero Crater on Mars. Cameras captured the entire landing sequence from atmospheric entry to touchdown.",
+  "hook_card": "Seven minutes of terror",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "This is real footage of a 1,025-kilogram rover descending toward the red surface of Mars.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c06",
+      "narration": "On 18 February 2021, the spacecraft entered the Martian atmosphere at 20,000 kilometres per hour.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c02",
+      "narration": "A 21.5-metre parachute deployed while the craft was still traveling faster than sound.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c01",
+      "narration": "The journey from the top of the atmosphere to touchdown took about seven minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "A rocket-powered descent stage hovered and lowered the car-sized vehicle on 7.6-metre cables.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c03",
+      "narration": "Cameras on the back shell, descent stage, and rover recorded the ground rising below.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c04",
+      "narration": "After touchdown, the descent stage cut the cables and flew off to crash at a safe distance.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "Radio signals took eleven minutes to reach Earth, so the landing was complete before mission control knew.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "This was the first time a landing on another planet was filmed by its own cameras.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This is real footage of a 1,025-kilogram rover descending toward the red surface of Mars. On 18 February 2021, the spacecraft entered the Martian atmosphere at 20,000 kilometres per hour. A 21.5-metre parachute deployed while the craft was still traveling faster than sound. The journey from the top of the atmosphere to touchdown took about seven minutes. A rocket-powered descent stage hovered and lowered the car-sized vehicle on 7.6-metre cables. Cameras on the back shell, descent stage, and rover recorded the ground rising below. After touchdown, the descent stage cut the cables and flew off to crash at a safe distance. Radio signals took eleven minutes to reach Earth, so the landing was complete before mission control knew. This was the first time a landing on another planet was filmed by its own cameras.",
+  "event": {
+    "id": "film_perseverance-landing_20261116T184144314944Z",
+    "title": "Seven minutes of terror",
+    "series": "NASA footage",
+    "issue": "perseverance-landing",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "perseverance-landing",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
+    ]
+  },
+  "scenario": "perseverance-landing",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "This is real footage of a 1,025-kilogram rover descending toward the red surface of Mars.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "On 18 February 2021, the spacecraft entered the Martian atmosphere at 20,000 kilometres per hour.",
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": {
+        "value": "20,000 km/h",
+        "label": "speed at entry"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "A 21.5-metre parachute deployed while the craft was still traveling faster than sound.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The journey from the top of the atmosphere to touchdown took about seven minutes.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "A rocket-powered descent stage hovered and lowered the car-sized vehicle on 7.6-metre cables.",
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Cameras on the back shell, descent stage, and rover recorded the ground rising below.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "After touchdown, the descent stage cut the cables and flew off to crash at a safe distance.",
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Radio signals took eleven minutes to reach Earth, so the landing was complete before mission control knew.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "This was the first time a landing on another planet was filmed by its own cameras.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    }
+  ],
+  "closing": "Perseverance landed in Jezero Crater, ancient site of a lake and river delta.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "duration": 75.64,
+  "handle": "@Facctsaboutspace",
+  "hook": "Seven minutes of terror",
+  "kicker": "Real footage · NASA",
+  "closing": "Perseverance landed in Jezero Crater, ancient site of a lake and river delta.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.891,
+      "src_out": 16.109,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.885,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.426,
+      "src_out": 15.574,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.885,
+      "t1": 10.7,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 4.798,
+      "src_out": 10.202,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.7,
+      "t1": 15.771,
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": {
+        "value": "20,000 km/h",
+        "label": "speed at entry"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.359,
+      "src_out": 12.841,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 15.771,
+      "t1": 19.92,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.613,
+      "src_out": 17.387,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 19.92,
+      "t1": 28.36,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.403,
+      "src_out": 16.697,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.6
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 28.36,
+      "t1": 34.32,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 12.638,
+      "src_out": 20.592,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 34.32,
+      "t1": 41.94,
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 7.23,
+      "speed": 0.843,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 41.94,
+      "t1": 50.18,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 14.4,
+      "src_out": 20.4,
+      "speed": 0.856,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 50.18,
+      "t1": 56.86,
+      "label": "NASA · MARS 2020 · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 20.4,
+      "src_out": 25.47,
+      "speed": 0.918,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.86,
+      "t1": 62.052,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": {
+        "value": "11 min",
+        "label": "for the signal to reach Earth"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20210222_m2020f_0001_perseverance_rover_s_descent_a/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 10.709,
+      "src_out": 15.291,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        842,
+        0,
+        2264,
+        1808
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 62.052,
+      "t1": 66.3,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c06",
+      "asset": "nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_jpl_20201221_m2020f_0002_edl_full_version_w_sfx/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 3.57,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 66.3,
+      "t1": 70.429,
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c02",
+      "asset": "nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261116T184144314944Z/footage/nasa_nhq_2021_0222_vf_nasa_provides_first_front_row_seat_to_/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 7.828,
+      "src_out": 13.372,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        570,
+        0,
+        2700,
+        2160
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 70.429,
+      "t1": 75.64,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
