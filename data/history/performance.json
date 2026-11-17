@@ -5327,5 +5327,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "hqPfO-BGsBg",
+    "platform": "youtube",
+    "run_id": "44139682487",
+    "published_at": "2026-11-17T18:10:06+00:00",
+    "event": {
+      "title": "The telescope that was born blind",
+      "series": "NASA footage",
+      "issue": "hubble-servicing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 127,
+      "duration": 74.0,
+      "words_per_minute": 103,
+      "hook": "In April 1990, the space shuttle Discovery carried the Hubble Space Telescope into orbit with a 2.4-metre mirror.",
+      "hook_words": 18,
+      "title": "How astronauts repaired the Hubble Space Telescope",
+      "title_length": 50,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
