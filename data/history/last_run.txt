@@ -1,6 +1,6 @@
-run_id: 44357808791  attempt: 1  event: schedule
+run_id: 44408736295  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261118T172234307463Z/run.json
+--- data/runs/20261118T221007582277Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,36 +40,36 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "44357808791",
+  "run_id": "44408736295",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "ce7e38c691dad4713000a3d5211ac9816a6b1b6c34e5c52e281a79f4baa6d8f8",
-  "metadata_sha256": "9604df6b84308a83a3e1241d200afba628681863db054e51bf20ab7d4521886a",
+  "video_sha256": "69c9204f65a3e9133cf5bb57d9049ad9a3e200b9059a392f0301fd6b8cb0d658",
+  "metadata_sha256": "cee2cb4d9a998bfac75696b2dd11a9ce8876867994b42beccf987c8fc84cf938",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 77,
-  "duration": 97.82,
+  "api_calls": 48,
+  "duration": 81.29,
   "voice": "Charon",
   "event": {
-    "id": "film_ingenuity_20261118T172234307463Z",
-    "title": "A helicopter on another planet.",
+    "id": "film_launch-power_20261118T221007582277Z",
+    "title": "The most powerful machines ever built.",
     "series": "NASA footage",
-    "issue": "ingenuity",
+    "issue": "launch-power",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "ingenuity",
+    "scenario": "launch-power",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
-      "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
-      "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
-      "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+      "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "https://images.nasa.gov/details/MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
     ]
   },
   "localized": []
 }
---- data/runs/20261118T172234307463Z/diagnostics/provider_events.json
+--- data/runs/20261118T221007582277Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
@@ -77,23 +77,17 @@ produce step outcome: success
   "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
   "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:Ingenuity_Takes_Flight_UHD_H264: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.",
+  "Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi."
 ]
---- data/runs/20261118T172234307463Z/diagnostics/providers.json
+--- data/runs/20261118T221007582277Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -116,7 +110,8 @@ produce step outcome: success
     "gemini-3.8-flash",
     "gemini-4-argon",
     "gemini-4-carbon",
-    "gemini-4-hydrogen"
+    "gemini-4-hydrogen",
+    "gemini-4-neon"
   ],
   "groq": [
     "qwen/qwen3.8-27b",
@@ -160,6 +155,7 @@ produce step outcome: success
     "gemini-4-argon",
     "gemini-4-carbon",
     "gemini-4-hydrogen",
+    "gemini-4-neon",
     "lyria-3-clip-preview",
     "lyria-3-pro-preview",
     "lyria-3.5",
@@ -217,44 +213,6 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261118T172234307463Z/diagnostics/api_051.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=210 candidates_tokens_details=None prompt_token_count=1903 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1092\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 628,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": false,\n    \"quality\": 6,\n    \"kind\": \"footage\",\n    \"what\": \"NASA mission control team monitoring the Ingenuity helicopter flight on Mars\",\n    \"text_frames\": [\n      1,\n      3,\n      4,\n      7\n    ],\n    \"people_frames\": [\n      0,\n      1,\n      2,\n      3,\n      4\n    ],\n    \"stretches\": [\n      {\n        \"start\": 5,\n        \"end\": 6,\n        \"focus\": [\n          0.5,\n          0.5\n        ],\n        \"width\": 0.32,\n        \"shows\": \"Black and white downward-facing camera footage from Ingenuity showing its shadow on the Martian surface\",\n        \"score\": 7\n      }\n    ]\n  }\n]"
-}
---- data/runs/20261118T172234307463Z/diagnostics/api_061.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=222 candidates_tokens_details=None prompt_token_count=1818 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=745\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 559,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": false,\n    \"quality\": 6,\n    \"kind\": \"footage\",\n    \"what\": \"NASA JPL team monitoring the Ingenuity helicopter's flight from a control room on Earth.\",\n    \"text_frames\": [0, 1, 2, 15, 16],\n    \"people_frames\": [3, 4, 5, 6, 7, 9, 10, 11, 12, 14, 15],\n    \"stretches\": [\n      {\n        \"start\": 13,\n        \"end\": 13,\n        \"focus\": [0.5, 0.7],\n        \"width\": 0.32,\n        \"shows\": \"The Ingenuity helicopter as a small speck on the Martian surface seen from Perseverance.\",\n        \"score\": 7\n      }\n    ]\n  }\n]"
-}
---- data/runs/20261118T172234307463Z/diagnostics/api_064.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=1184 candidates_tokens_details=None prompt_token_count=1870 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT:"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 3235,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 8,\n    \"kind\": \"animation\",\n    \"what\": \"An artist's animation of the Perseverance rover and Ingenuity helicopter on the Martian surface.\",\n    \"text_frames\": [],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 1,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Perseverance rover driving on the Martian surface\",\n        \"score\": 8\n      },\n      {\n        \"start\": 2,\n        \"end\": 2,\n        \"focus\": [0.8, 0.6],\n        \"width\": 0.4,\n        \"shows\": \"Ingenuity helicopter deployed on the ground next to the rover\",\n        \"score\": 7\n      },\n      {\n        \"start\": 3,\n        \"end\": 4,\n        \"focus\": [0.5, 0.5],\n        \"width\": 1.0,\n        \"shows\": \"Wide aerial view of the rover and helicopter on the vast Martian plain\",\n        \"score\": 6\n      },\n      {\n        \"start\": 5,\n        \"end\": 6,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Close-up of Ingenuity spinning its rotors on the ground\",\n        \"score\": 9\n      },\n      {\n        \"start\": 7,\n        \"end\": 7,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Perseverance rover observing from a distance\",\n        \"score\": 8\n      },\n      {\n        \"start\": 9,\n        \"end\": 10,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Ingenuity helicopter lifting off and hovering\",\n        \"score\": 9\n      },\n      {\n        \"start\": 11,\n        \"end\": 11,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Detail of Ingenuity's landing legs as it takes flight\",\n        \"score\": 7\n      },\n      {\n        \"start\": 12,\n        \"end\": 13,\n        \"focus\": [0.5, 0.6],\n
 --- studio.log (son 300 satır)
 → Konu: launch-power
 Görüntü adayları: 49 (launch-power)
@@ -266,79 +224,48 @@ Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
 Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
 Çözümlenen video: 12
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (9/10, footage) Slow motion night launch of the Artemis I Space Launch System (SLS) ro
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (7/10, footage) NASA Space Launch System Artemis I liftoff and ascent views
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (0 karede insan, 15/24 kare elendi); atlandı
-Görüntü değerlendirme nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (9/10, footage) The launch and ascent of the Space Launch System (SLS) rocket for the 
-Görüntü adayları: 4 (launch-power, Commons)
-Sıralanan aday: 2
-Çözümlenemedi commons:Apollo11 Saturn V separation.ogv: HTTPError: 429 Client Error: Too many requests. Please contact the Wikimedia SRE team at noc@wikimedi
-Çözümlenemedi commons:Film to Tape - Apollo, Saturn V, Crawler, VAB, Pad 39A (KSC-1960s-MH-NAS01-0001-Apollo Saturn V Crawler, VAB Pad Film To Tape).webm: HTTPError: 429 Client Error: Too many requests. Please contact the Wikimedia SRE team at noc@wikimedi
-Çözümlenen video: 0
-Kullanılır kesit: 3 (61 sn temiz görüntü)
-Konu atlandı (launch-power): Yeterli temiz görüntü yok (3 kesit, 61 sn).
-→ Konu: ingenuity
-Görüntü adayları: 46 (ingenuity)
-Sıralanan aday: 12
-Düşük çözünürlük nasa:JPL-20220527-M2020f-0001-NASAs_Ingenuity_Mars_Helicopter_Captures_Video_of_Record_Flight2: 640x480
-Süre uygun değil nasa:Mars Helicopter Flights VF 929 FINAL: 2941 sn
-Çözümlenen video: 10
-nasa:JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight: kullanılır (8/10, footage) Raw footage of the Ingenuity helicopter's first flight on Mars, captur
-nasa:JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video: kullanılır (8/10, footage) Raw footage from the Perseverance rover's Mastcam-Z showing the Ingenu
-Görüntü değerlendirme nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080: kullanılır (8/10, footage) Ingenuity helicopter flight and Mars surface imagery captured by the P
-Görüntü değerlendirme nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: kullanılır (8/10, footage) Ingenuity helicopter in flight and its shadow on the Martian surface.
-nasa:JPL-20210425-TECHf-0002-Ingenuity Third Flight: üretilmiş program gibi (0 karede insan, 6/8 kare elendi); atlandı
-nasa:JPL-20210430-TECHs-0002-Ingenuity 4th Flight Recap: elendi (6/10, footage) NASA mission control personnel monitoring the fourth flight of the Ing
-nasa:JPL-20210422-TECHf-0001-Ingenuity 2nd Flight Recap: elendi (7/10, footage) NASA mission control personnel monitoring the second flight of the Ing
-nasa:JPL-20210507-TECHf-0001-Ingenuity 5th Flight Recap: elendi (6/10, footage) NASA mission control personnel monitoring the Ingenuity helicopter's f
-Görüntü değerlendirme nasa:Ingenuity_Takes_Flight_UHD_H264: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:Ingenuity_Takes_Flight_UHD_H264: kullanılır (8/10, footage) The Ingenuity helicopter resting on the Martian surface.
-nasa:Ingenuity_Takes_Flight_UHD_H264: üretilmiş program gibi (0 karede insan, 15/17 kare elendi); atlandı
-Görüntü değerlendirme nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-nasa:JPL-20200429-TECHf-0002-Mars Helicopter Animation: kullanılır (8/10, animation) Computer-generated animation of the Ingenuity helicopter and Persevera
-Kullanılır kesit: 8 (164 sn temiz görüntü)
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) NASA's Space Launch System liftoff during the Artemis I mission
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) NASA Space Launch System (SLS) Artemis I launch views
+nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: üretilmiş program gibi (0 karede insan, 16/24 kare elendi); atlandı
+nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254: kullanılır (7/10, footage) NASA's Space Launch System (SLS) launching from pad 39B for the Artemi
+nasa:Ultimate Saturn V Launch w Enhanced Sound: kullanılır (8/10, footage) Archival footage of the Saturn V rocket launch and ascent
+nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034: kullanılır (8/10, animation) Animation depicting the Artemis I Space Launch System liftoff, ascent,
+Kullanılır kesit: 8 (136 sn temiz görüntü)
 → Senaryo
-Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Belgesel senaryosu: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
+Senaryo düzelti: Gemini'de yalnız küçük model kaldı; metin işi Groq'a verildi.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 97.3/100 | whisper-large-v3
+Ses eşleştirme: 83.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 94.3/100 | whisper-large-v3
+Ses eşleştirme: 94.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 94.4/100 | whisper-large-v3
+Ses eşleştirme: 97.3/100 | whisper-large-v3-turbo
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 89.5/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (97.8 sn, 9 beat, 8 kesit)
-  kurgu 10/98 sn
-  kurgu 20/98 sn
-  kurgu 30/98 sn
-  kurgu 40/98 sn
-  kurgu 50/98 sn
-  kurgu 60/98 sn
-  kurgu 70/98 sn
-  kurgu 80/98 sn
-  kurgu 90/98 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261118T172234307463Z/review.html
+Ses eşleştirme: 93.3/100 | whisper-large-v3
+→ Kurgu (81.3 sn, 10 beat, 8 kesit)
+  kurgu 10/81 sn
+  kurgu 20/81 sn
+  kurgu 30/81 sn
+  kurgu 40/81 sn
+  kurgu 50/81 sn
+  kurgu 60/81 sn
+  kurgu 70/81 sn
+  kurgu 80/81 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: The First Aircraft to Fly on Mars #Shorts
+Başlık: Saturn V vs SLS: The Mightiest Rockets Ever Built #Shorts
 Görünürlük: public
 
 Yükleme: %7
@@ -349,17 +276,17 @@ Yükleme: %37
 Yükleme: %44
 Yükleme: %52
 Yükleme: %59
-Yükleme: %67
+Yükleme: %66
 Yükleme: %74
 Yükleme: %81
 Yükleme: %89
 Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5AB58xzAZiI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=6lR5_jw8nsI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261118T172234307463Z/video.mp4
-Boyut: 107.4 MB
-Açıklama uzunluğu: 331 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/video.mp4
+Boyut: 107.6 MB
+Açıklama uzunluğu: 347 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 112627997. Maximum is 104857600.
+instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 112871596. Maximum is 104857600.

@@ -1,0 +1,178 @@
+{
+  "title": "Saturn V vs SLS: The Mightiest Rockets Ever Built",
+  "description": "We compare the legendary Saturn V with NASA’s modern Space Launch System, exploring their size, thrust and legacy. Discover how these super‑heavy rockets shaped human journeys to the Moon and beyond.",
+  "hook_card": "The most powerful machines ever built.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "This rocket burned about thirteen tonnes of fuel every second.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c04",
+      "narration": "It stands one hundred ten metres tall, a towering column of steel and fire.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "Its five F‑one engines together produce thirty‑four million newtons, thrusting the massive stack skyward.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "Decades later, NASA’s Space Launch System stands ninety‑eight metres tall, ready for Artemis.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c00",
+      "narration": "At liftoff it delivers thirty‑nine million newtons, surpassing its historic predecessor.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "The rocket’s mass is mostly propellant, the Orion capsule a tiny fraction of the stack.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "Artemis I sent Orion on a deep‑space flight, completing re‑entry and splashdown.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c04",
+      "narration": "The roar of its launch remains one of the loudest ever recorded by a machine.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c01",
+      "narration": "The bright plume climbs into the night, marking SLS liftoff.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "c07",
+      "narration": "Thirteen Saturn V rockets flew successfully, each a stepping stone to today’s super‑heavy launch vehicle.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "This rocket burned about thirteen tonnes of fuel every second. It stands one hundred ten metres tall, a towering column of steel and fire. Its five F‑one engines together produce thirty‑four million newtons, thrusting the massive stack skyward. Decades later, NASA’s Space Launch System stands ninety‑eight metres tall, ready for Artemis. At liftoff it delivers thirty‑nine million newtons, surpassing its historic predecessor. The rocket’s mass is mostly propellant, the Orion capsule a tiny fraction of the stack. Artemis I sent Orion on a deep‑space flight, completing re‑entry and splashdown. The roar of its launch remains one of the loudest ever recorded by a machine. The bright plume climbs into the night, marking SLS liftoff. Thirteen Saturn V rockets flew successfully, each a stepping stone to today’s super‑heavy launch vehicle.",
+  "event": {
+    "id": "film_launch-power_20261118T221007582277Z",
+    "title": "The most powerful machines ever built.",
+    "series": "NASA footage",
+    "issue": "launch-power",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "launch-power",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "https://images.nasa.gov/details/KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "https://images.nasa.gov/details/MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "https://images.nasa.gov/details/Ultimate Saturn V Launch w Enhanced Sound"
+    ]
+  },
+  "scenario": "launch-power",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "This rocket burned about thirteen tonnes of fuel every second.",
+      "label": "NASA · Apollo · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "It stands one hundred ten metres tall, a towering column of steel and fire.",
+      "label": "NASA · Apollo · 1969",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "Its five F‑one engines together produce thirty‑four million newtons, thrusting the massive stack skyward.",
+      "label": "NASA · Apollo · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Decades later, NASA’s Space Launch System stands ninety‑eight metres tall, ready for Artemis.",
+      "label": "NASA · Artemis · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "At liftoff it delivers thirty‑nine million newtons, surpassing its historic predecessor.",
+      "label": "NASA · Artemis · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The rocket’s mass is mostly propellant, the Orion capsule a tiny fraction of the stack.",
+      "label": "NASA · Artemis · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "Artemis I sent Orion on a deep‑space flight, completing re‑entry and splashdown.",
+      "label": "NASA · Artemis · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "The roar of its launch remains one of the loudest ever recorded by a machine.",
+      "label": "NASA · Apollo · 1969",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The bright plume climbs into the night, marking SLS liftoff.",
+      "label": "NASA · Artemis · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Thirteen Saturn V rockets flew successfully, each a stepping stone to today’s super‑heavy launch vehicle.",
+      "label": "NASA · Apollo · 1969",
+      "callout": null
+    }
+  ],
+  "closing": "The roar of its launch still echoes across the desert.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

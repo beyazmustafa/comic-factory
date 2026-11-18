@@ -5409,5 +5409,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "6lR5_jw8nsI",
+    "platform": "youtube",
+    "run_id": "44408736295",
+    "published_at": "2026-11-18T22:34:43+00:00",
+    "event": {
+      "title": "The most powerful machines ever built.",
+      "series": "NASA footage",
+      "issue": "launch-power",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 10,
+      "words": 129,
+      "duration": 81.3,
+      "words_per_minute": 95,
+      "hook": "This rocket burned about thirteen tonnes of fuel every second.",
+      "hook_words": 10,
+      "title": "Saturn V vs SLS: The Mightiest Rockets Ever Built",
+      "title_length": 49,
+      "emphasis": {
+        "normal": 10
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

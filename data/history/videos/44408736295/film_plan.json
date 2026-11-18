@@ -1,0 +1,452 @@
+{
+  "duration": 81.29,
+  "handle": "@Facctsaboutspace",
+  "hook": "The most powerful machines ever built.",
+  "kicker": "Real footage · NASA",
+  "closing": "The roar of its launch still echoes across the desert.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 18.87,
+      "src_out": 25.43,
+      "speed": 0.855,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 7.34,
+      "label": "NASA · Apollo · 1969",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c04",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.0,
+      "src_out": 6.2,
+      "speed": 0.742,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 7.34,
+      "t1": 15.36,
+      "label": "NASA · Apollo · 1969",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 13.346,
+      "src_out": 18.794,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 15.36,
+      "t1": 20.475,
+      "label": "NASA · Apollo · 1969",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.741,
+      "src_out": 15.259,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        14,
+        0,
+        3708,
+        2088
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 20.475,
+      "t1": 24.66,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.498,
+      "src_out": 11.072,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 24.66,
+      "t1": 32.9,
+      "label": "NASA · Artemis · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.33,
+      "src_out": 7.1,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 32.9,
+      "t1": 37.279,
+      "label": "NASA · Artemis · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c01",
+      "asset": "nasa:KSC-20221116-MH-WEL01-0001-Artemis_I_Launch_Imagery-3319254",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ksc_20221116_mh_wel01_0001_artemis_i_launch_imagery_331/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.083,
+      "src_out": 14.917,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 37.279,
+      "t1": 40.78,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 13.293,
+      "src_out": 20.937,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 40.78,
+      "t1": 48.09,
+      "label": "NASA · Artemis · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c06",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.598,
+      "src_out": 19.172,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.09,
+      "t1": 56.33,
+      "label": "NASA · Artemis · 2022",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.77,
+      "src_out": 13.27,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 56.33,
+      "t1": 60.372,
+      "label": "NASA · Apollo · 1969",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c05",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.779,
+      "src_out": 5.991,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 60.372,
+      "t1": 63.25,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 0.33,
+      "src_out": 3.33,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 63.25,
+      "t1": 66.667,
+      "label": "NASA · Artemis · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c05",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 22.507,
+      "src_out": 25.393,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 66.667,
+      "t1": 69.22,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 9,
+      "clip": "c07",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.568,
+      "src_out": 16.402,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 69.22,
+      "t1": 75.72,
+      "label": "NASA · Apollo · 1969",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 9,
+      "clip": "c03",
+      "asset": "nasa:Ultimate Saturn V Launch w Enhanced Sound",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_ultimate_saturn_v_launch_w_enhanced_sound/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 7.1,
+      "src_out": 9.77,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 75.72,
+      "t1": 78.724,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 9,
+      "clip": "c07",
+      "asset": "nasa:MSFC_SLS_01142021_SLS_Orion_Animation_0034",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261118T221007582277Z/footage/nasa_msfc_sls_01142021_sls_orion_animation_0034/clip_2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 11.535,
+      "src_out": 14.435,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 78.724,
+      "t1": 81.29,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    }
+  ]
+}
