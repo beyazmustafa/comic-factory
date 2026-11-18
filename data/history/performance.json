@@ -5368,5 +5368,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "5AB58xzAZiI",
+    "platform": "youtube",
+    "run_id": "44357808791",
+    "published_at": "2026-11-18T18:07:28+00:00",
+    "event": {
+      "title": "A helicopter on another planet.",
+      "series": "NASA footage",
+      "issue": "ingenuity",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 164,
+      "duration": 97.8,
+      "words_per_minute": 101,
+      "hook": "Ingenuity lifts off from the Martian surface, becoming the first aircraft to achieve powered, controlled flight on another planet.",
+      "hook_words": 19,
+      "title": "The First Aircraft to Fly on Mars",
+      "title_length": 33,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

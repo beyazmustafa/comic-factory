@@ -1,0 +1,167 @@
+{
+  "title": "The First Aircraft to Fly on Mars",
+  "description": "NASA's Ingenuity helicopter completed seventy-two flights on Mars, far exceeding its original mission goals. This small aircraft proved that powered flight is possible in the thin Martian atmosphere.",
+  "hook_card": "A helicopter on another planet.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "Ingenuity lifts off from the Martian surface, becoming the first aircraft to achieve powered, controlled flight on another planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c03",
+      "narration": "On 19 April 2021, the helicopter performed a three-metre hover that lasted for approximately thirty-nine seconds above the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c05",
+      "narration": "Mars air is about one percent as dense as Earth's at sea level, making flight a significant engineering challenge.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c07",
+      "narration": "To generate lift, the 1.2-metre rotors spin at 2,400 rpm, pushing against the extremely thin Martian atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c04",
+      "narration": "Weighing 1.8 kg, the helicopter was originally designed for five test flights over thirty days on the planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c06",
+      "narration": "It far exceeded these goals, completing 72 flights over almost three years of exploration across the Martian landscape.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "During its mission, the aircraft covered more than 17 km, climbed to 24 metres, and reached 36 km/h.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c01",
+      "narration": "The mission concluded in January 2024 after a rotor blade was damaged during a final landing on Mars.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c00",
+      "narration": "Ingenuity carried a small piece of fabric from the Wright brothers' 1903 Flyer, connecting two eras of aviation.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Ingenuity lifts off from the Martian surface, becoming the first aircraft to achieve powered, controlled flight on another planet. On 19 April 2021, the helicopter performed a three-metre hover that lasted for approximately thirty-nine seconds above the surface. Mars air is about one percent as dense as Earth's at sea level, making flight a significant engineering challenge. To generate lift, the 1.2-metre rotors spin at 2,400 rpm, pushing against the extremely thin Martian atmosphere. Weighing 1.8 kg, the helicopter was originally designed for five test flights over thirty days on the planet. It far exceeded these goals, completing 72 flights over almost three years of exploration across the Martian landscape. During its mission, the aircraft covered more than 17 km, climbed to 24 metres, and reached 36 km/h. The mission concluded in January 2024 after a rotor blade was damaged during a final landing on Mars. Ingenuity carried a small piece of fabric from the Wright brothers' 1903 Flyer, connecting two eras of aviation.",
+  "event": {
+    "id": "film_ingenuity_20261118T172234307463Z",
+    "title": "A helicopter on another planet.",
+    "series": "NASA footage",
+    "issue": "ingenuity",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "ingenuity",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/JPL-20200429-TECHf-0002-Mars Helicopter Animation",
+      "https://images.nasa.gov/details/JPL-20210419-TECHf-0001-First Video of NASA’s Ingenuity Mars Helicopter in Flight",
+      "https://images.nasa.gov/details/JPL-20210425-TECHf-0001-Ingenuity Third Flight MastcamZ Video",
+      "https://images.nasa.gov/details/JPL-20230406-TECHf-0001-Ingenuity Flight Update Media Reel 1080"
+    ]
+  },
+  "scenario": "ingenuity",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "Ingenuity lifts off from the Martian surface, becoming the first aircraft to achieve powered, controlled flight on another planet.",
+      "label": "NASA · INGENUITY · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "On 19 April 2021, the helicopter performed a three-metre hover that lasted for approximately thirty-nine seconds above the surface.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Mars air is about one percent as dense as Earth's at sea level, making flight a significant engineering challenge.",
+      "label": "NASA · MARS · 2023",
+      "callout": {
+        "value": "1%",
+        "label": "of Earth's air density"
+      }
+    },
+    {
+      "clip": "c07",
+      "narration": "To generate lift, the 1.2-metre rotors spin at 2,400 rpm, pushing against the extremely thin Martian atmosphere.",
+      "label": "NASA · JPL · 2020",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "Weighing 1.8 kg, the helicopter was originally designed for five test flights over thirty days on the planet.",
+      "label": "NASA · INGENUITY · 2023",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "It far exceeded these goals, completing 72 flights over almost three years of exploration across the Martian landscape.",
+      "label": "NASA · MARS · 2023",
+      "callout": {
+        "value": "72",
+        "label": "flights, planned for 5"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "During its mission, the aircraft covered more than 17 km, climbed to 24 metres, and reached 36 km/h.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The mission concluded in January 2024 after a rotor blade was damaged during a final landing on Mars.",
+      "label": "NASA · PERSEVERANCE · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Ingenuity carried a small piece of fabric from the Wright brothers' 1903 Flyer, connecting two eras of aviation.",
+      "label": "NASA · INGENUITY · 2021",
+      "callout": null
+    }
+  ],
+  "closing": "It remains on the Martian surface following the end of its mission.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
