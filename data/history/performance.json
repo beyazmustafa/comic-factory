@@ -5491,5 +5491,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "sGBbydezlSw",
+    "platform": "youtube",
+    "run_id": "44627313513",
+    "published_at": "2026-11-19T22:43:08+00:00",
+    "event": {
+      "title": "Calm in the middle, terrifying everywhere.",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 132,
+      "duration": 73.7,
+      "words_per_minute": 108,
+      "hook": "Seen from above, a large hurricane can span more than one thousand kilometres across the planet.",
+      "hook_words": 16,
+      "title": "What a Category 5 Hurricane Looks Like From Orbit",
+      "title_length": 49,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

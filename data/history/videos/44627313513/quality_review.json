@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "review_mode": "film",
+  "subtitle_sync": 100,
+  "scene_match": 100,
+  "delivery": 100,
+  "visual_readability": 95,
+  "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis.",
+  "failed_checks": [],
+  "issues": []
+}

@@ -1,0 +1,149 @@
+{
+  "title": "What a Category 5 Hurricane Looks Like From Orbit",
+  "description": "Cameras aboard the International Space Station reveal the immense scale and structure of powerful ocean storms. From orbital altitude, a mature hurricane releases heat at hundreds of times the world's electricity generation.",
+  "hook_card": "Calm in the middle, terrifying everywhere.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c04",
+      "narration": "Seen from above, a large hurricane can span more than one thousand kilometres across the planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "At its center lies the eye, typically thirty to sixty-five kilometres wide and almost completely calm.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c05",
+      "narration": "The strongest winds rage within the surrounding wall, exceeding two hundred and fifty kilometres per hour in category five storms.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c03",
+      "narration": "North of the equator, the entire storm spins anticlockwise, while systems south of the equator turn clockwise.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c06",
+      "narration": "A mature hurricane releases heat at a rate about two hundred times the world's electricity generation.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c07",
+      "narration": "Moving along its orbital path, the space station crosses one of these massive storms in about two minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c00",
+      "narration": "Farther out, GOES weather satellites watch from thirty-five thousand eight hundred kilometres up.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c02",
+      "narration": "From that high orbit, instruments can capture a new image of the storm every thirty seconds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Seen from above, a large hurricane can span more than one thousand kilometres across the planet. At its center lies the eye, typically thirty to sixty-five kilometres wide and almost completely calm. The strongest winds rage within the surrounding wall, exceeding two hundred and fifty kilometres per hour in category five storms. North of the equator, the entire storm spins anticlockwise, while systems south of the equator turn clockwise. A mature hurricane releases heat at a rate about two hundred times the world's electricity generation. Moving along its orbital path, the space station crosses one of these massive storms in about two minutes. Farther out, GOES weather satellites watch from thirty-five thousand eight hundred kilometres up. From that high orbit, instruments can capture a new image of the storm every thirty seconds.",
+  "event": {
+    "id": "film_hurricane_20261119T221905666017Z",
+    "title": "Calm in the middle, terrifying everywhere.",
+    "series": "NASA footage",
+    "issue": "hurricane",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hurricane",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+      "https://images.nasa.gov/details/jsc2024m000174_Cameras_On_The_International_Space_Station_Capture_New_Views_Of_Hurricane_Milton-241009"
+    ]
+  },
+  "scenario": "hurricane",
+  "beats": [
+    {
+      "clip": "c04",
+      "narration": "Seen from above, a large hurricane can span more than one thousand kilometres across the planet.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "At its center lies the eye, typically thirty to sixty-five kilometres wide and almost completely calm.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "The strongest winds rage within the surrounding wall, exceeding two hundred and fifty kilometres per hour in category five storms.",
+      "label": "NASA · ISS · 2024",
+      "callout": {
+        "value": "250 km/h",
+        "label": "in the eyewall"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "North of the equator, the entire storm spins anticlockwise, while systems south of the equator turn clockwise.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "A mature hurricane releases heat at a rate about two hundred times the world's electricity generation.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Moving along its orbital path, the space station crosses one of these massive storms in about two minutes.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Farther out, GOES weather satellites watch from thirty-five thousand eight hundred kilometres up.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "From that high orbit, instruments can capture a new image of the storm every thirty seconds.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    }
+  ],
+  "closing": "Releasing heat at two hundred times the world's electricity generation.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
