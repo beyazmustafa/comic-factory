@@ -1,0 +1,180 @@
+{
+  "title": "The Reality of Working Outside the Space Station",
+  "description": "Astronauts face extreme temperature shifts and vacuum conditions while maintaining the International Space Station. This footage shows the precision required to work in orbit while moving at twenty-eight thousand kilometres an hour.",
+  "hook_card": "Working 400 kilometres above the Earth.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "More than 270 spacewalks have been made to build and repair the International Space Station.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c03",
+      "narration": "A spacesuit has 14 layers and weighs about 145 kg on Earth, though it weighs nothing in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c01",
+      "narration": "In sunlight the suit faces plus 120 °C, while in shadow it drops to minus 150 °C.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c05",
+      "narration": "Because the station orbits the Earth, a sunrise comes every 90 minutes, changing the thermal environment.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c02",
+      "narration": "Astronauts breathe pure oxygen for hours beforehand to avoid the bends, as suit pressure is one-third sea level.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c00",
+      "narration": "A spacewalk usually lasts six to eight hours, requiring constant work on the exterior of the station.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c06",
+      "narration": "A small jetpack called SAFER is worn by the astronaut in case a tether fails during the mission.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c01",
+      "narration": "The first spacewalk was Alexei Leonov's in March 1965, lasting only twelve minutes in the vacuum of space.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c07",
+      "narration": "Today, these missions continue to build and repair the station, maintaining a permanent human presence in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_009",
+      "panel_id": "c04",
+      "narration": "This is the view from the station, where astronauts step out to maintain the laboratory in orbit.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "More than 270 spacewalks have been made to build and repair the International Space Station. A spacesuit has 14 layers and weighs about 145 kg on Earth, though it weighs nothing in orbit. In sunlight the suit faces plus 120 °C, while in shadow it drops to minus 150 °C. Because the station orbits the Earth, a sunrise comes every 90 minutes, changing the thermal environment. Astronauts breathe pure oxygen for hours beforehand to avoid the bends, as suit pressure is one-third sea level. A spacewalk usually lasts six to eight hours, requiring constant work on the exterior of the station. A small jetpack called SAFER is worn by the astronaut in case a tether fails during the mission. The first spacewalk was Alexei Leonov's in March 1965, lasting only twelve minutes in the vacuum of space. Today, these missions continue to build and repair the station, maintaining a permanent human presence in orbit. This is the view from the station, where astronauts step out to maintain the laboratory in orbit.",
+  "event": {
+    "id": "film_spacewalk_20261119T172754018603Z",
+    "title": "Working 400 kilometres above the Earth.",
+    "series": "NASA footage",
+    "issue": "spacewalk",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "spacewalk",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2021m000170_US_Spacewalk_74_Animation",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
+    ]
+  },
+  "scenario": "spacewalk",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "More than 270 spacewalks have been made to build and repair the International Space Station.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "A spacesuit has 14 layers and weighs about 145 kg on Earth, though it weighs nothing in orbit.",
+      "label": "NASA · ISS · 2022",
+      "callout": {
+        "value": "270+",
+        "label": "spacewalks"
+      }
+    },
+    {
+      "clip": "c01",
+      "narration": "In sunlight the suit faces plus 120 °C, while in shadow it drops to minus 150 °C.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "Because the station orbits the Earth, a sunrise comes every 90 minutes, changing the thermal environment.",
+      "label": "NASA · ISS · 2021",
+      "callout": {
+        "value": "+120 °C / -150 °C",
+        "label": "sun and shade"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "Astronauts breathe pure oxygen for hours beforehand to avoid the bends, as suit pressure is one-third sea level.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "A spacewalk usually lasts six to eight hours, requiring constant work on the exterior of the station.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "A small jetpack called SAFER is worn by the astronaut in case a tether fails during the mission.",
+      "label": "NASA · ISS · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The first spacewalk was Alexei Leonov's in March 1965, lasting only twelve minutes in the vacuum of space.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Today, these missions continue to build and repair the station, maintaining a permanent human presence in orbit.",
+      "label": "NASA · ISS · 2021",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "This is the view from the station, where astronauts step out to maintain the laboratory in orbit.",
+      "label": "NASA · ISS · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "The first spacewalk in 1965 lasted only twelve minutes.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

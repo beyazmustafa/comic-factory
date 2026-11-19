@@ -5450,5 +5450,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "TOYJtEZPDvA",
+    "platform": "youtube",
+    "run_id": "44577258785",
+    "published_at": "2026-11-19T18:46:56+00:00",
+    "event": {
+      "title": "Working 400 kilometres above the Earth.",
+      "series": "NASA footage",
+      "issue": "spacewalk",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 10,
+      "words": 171,
+      "duration": 94.0,
+      "words_per_minute": 109,
+      "hook": "More than 270 spacewalks have been made to build and repair the International Space Station.",
+      "hook_words": 15,
+      "title": "The Reality of Working Outside the Space Station",
+      "title_length": 48,
+      "emphasis": {
+        "normal": 10
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
