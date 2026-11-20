@@ -1,0 +1,406 @@
+{
+  "duration": 78.38,
+  "handle": "@Facctsaboutspace",
+  "hook": "Farther than any Apollo mission.",
+  "kicker": "Real footage · NASA",
+  "closing": "Orion splashed down in the Pacific on 11 December 2022.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c03",
+      "asset": "nasa:Flight Day 14",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_flight_day_14/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 9.83,
+      "src_out": 16.17,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "active": [
+        2,
+        214,
+        984,
+        864
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.006,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_artemis_i_post_rpf_leaving_moon_221205_1735009/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.376,
+      "src_out": 15.624,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": [
+        2,
+        190,
+        1180,
+        368
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.006,
+      "t1": 10.92,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c01",
+      "asset": "nasa:art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_art001m1013241924art_dl_1_2022_324_1924_43000_1724160_1/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.578,
+      "src_out": 17.422,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.55
+      ],
+      "active": [
+        0,
+        144,
+        652,
+        576
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.92,
+      "t1": 19.43,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c04",
+      "asset": "nasa:Moon Below Orion art001m1013251756",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_moon_below_orion_art001m1013251756/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.006,
+      "src_out": 15.994,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.43,
+      "t1": 25.084,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c07",
+      "asset": "nasa:FD13",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_fd13/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.52,
+      "src_out": 15.48,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.5
+      ],
+      "active": [
+        2,
+        212,
+        1056,
+        868
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 25.084,
+      "t1": 29.71,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c00",
+      "asset": "nasa:ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_art_dl_1_2022_325_1209_shared_art001m1013251209/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.033,
+      "src_out": 16.967,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        0,
+        12,
+        1280,
+        596
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.71,
+      "t1": 37.31,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_art001m1013241859art_dl_1_2022_324_1859_53000_11202022_/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.003,
+      "src_out": 16.997,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 37.31,
+      "t1": 44.97,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c06",
+      "asset": "nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_fd_20_artemis_i_post_rpf_aos_221205_1735031/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.073,
+      "src_out": 16.927,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 44.97,
+      "t1": 52.49,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "nasa:art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_art001m1013241859art_dl_1_2022_324_1859_53000_11202022_/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.793,
+      "src_out": 16.207,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 52.49,
+      "t1": 58.57,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_fd_20_artemis_i_post_rpf_aos_221205_1735031/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.193,
+      "src_out": 15.807,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 58.57,
+      "t1": 63.85,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": {
+        "value": "2,800 °C",
+        "label": "on the heat shield"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "nasa:Flight Day 14",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_flight_day_14/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.673,
+      "src_out": 15.327,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "active": [
+        2,
+        214,
+        984,
+        864
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 63.85,
+      "t1": 68.17,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c03",
+      "asset": "nasa:Flight Day 14",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_flight_day_14/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 10.026,
+      "src_out": 15.974,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "active": [
+        2,
+        214,
+        984,
+        864
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 68.17,
+      "t1": 73.785,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 8,
+      "clip": "c05",
+      "asset": "nasa:Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261120T170358548196Z/footage/nasa_artemis_i_post_rpf_leaving_moon_221205_1735009/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.536,
+      "src_out": 15.464,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": [
+        2,
+        190,
+        1180,
+        368
+      ],
+      "crop_width": 1.0,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 73.785,
+      "t1": 78.38,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

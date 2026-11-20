@@ -5532,5 +5532,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "zZfdI5hypWU",
+    "platform": "youtube",
+    "run_id": "44779234749",
+    "published_at": "2026-11-20T17:44:35+00:00",
+    "event": {
+      "title": "Farther than any Apollo mission.",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 134,
+      "duration": 78.4,
+      "words_per_minute": 103,
+      "hook": "On 16 November 2022, Orion launched, filming the Moon and Earth shown here together.",
+      "hook_words": 14,
+      "title": "The spacecraft that flew farther than any human vehicle",
+      "title_length": 55,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

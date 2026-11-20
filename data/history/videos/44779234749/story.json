@@ -1,0 +1,168 @@
+{
+  "title": "The spacecraft that flew farther than any human vehicle",
+  "description": "In 2022, the Artemis I mission sent an uncrewed Orion capsule on a record-breaking journey around the Moon. This flight tested the heat shield and systems that will soon carry astronauts back to the lunar surface.",
+  "hook_card": "Farther than any Apollo mission.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c03",
+      "narration": "On 16 November 2022, Orion launched, filming the Moon and Earth shown here together.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "The spacecraft flew for 25.5 days after launching atop the most powerful rocket ever to fly at the time.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c04",
+      "narration": "It traveled farther than any spacecraft built for people, reaching 432,000 km from Earth.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c00",
+      "narration": "In the commander's seat, a mannequin nicknamed Commander Moonikin Campos sat wired with sensors.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c07",
+      "narration": "Cameras on the solar arrays filmed the Earth and Moon together during the uncrewed flight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c05",
+      "narration": "After 25.5 days in space, the capsule began its flight back into the atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c02",
+      "narration": "The vehicle traveled at about 40,000 km/h as it returned into the atmosphere.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c06",
+      "narration": "The heat shield reached around 2,800 °C while the Moon and Earth remained in view.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c03",
+      "narration": "On 11 December 2022, the capsule splashed down in the Pacific Ocean to complete its flight.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "On 16 November 2022, Orion launched, filming the Moon and Earth shown here together. The spacecraft flew for 25.5 days after launching atop the most powerful rocket ever to fly at the time. It traveled farther than any spacecraft built for people, reaching 432,000 km from Earth. In the commander's seat, a mannequin nicknamed Commander Moonikin Campos sat wired with sensors. Cameras on the solar arrays filmed the Earth and Moon together during the uncrewed flight. After 25.5 days in space, the capsule began its flight back into the atmosphere. The vehicle traveled at about 40,000 km/h as it returned into the atmosphere. The heat shield reached around 2,800 °C while the Moon and Earth remained in view. On 11 December 2022, the capsule splashed down in the Pacific Ocean to complete its flight.",
+  "event": {
+    "id": "film_artemis-1_20261120T170358548196Z",
+    "title": "Farther than any Apollo mission.",
+    "series": "NASA footage",
+    "issue": "artemis-1",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "artemis-1",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+      "https://images.nasa.gov/details/Artemis_I_Post-RPF_Leaving_Moon_221205_1735009",
+      "https://images.nasa.gov/details/FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+      "https://images.nasa.gov/details/FD13",
+      "https://images.nasa.gov/details/Flight Day 14",
+      "https://images.nasa.gov/details/Moon Below Orion art001m1013251756",
+      "https://images.nasa.gov/details/art001m1013241859ART-DL-1_2022_324_1859_53000_11202022_000000-033946",
+      "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+    ]
+  },
+  "scenario": "artemis-1",
+  "beats": [
+    {
+      "clip": "c03",
+      "narration": "On 16 November 2022, Orion launched, filming the Moon and Earth shown here together.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The spacecraft flew for 25.5 days after launching atop the most powerful rocket ever to fly at the time.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "It traveled farther than any spacecraft built for people, reaching 432,000 km from Earth.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "In the commander's seat, a mannequin nicknamed Commander Moonikin Campos sat wired with sensors.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "Cameras on the solar arrays filmed the Earth and Moon together during the uncrewed flight.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "After 25.5 days in space, the capsule began its flight back into the atmosphere.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The vehicle traveled at about 40,000 km/h as it returned into the atmosphere.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "The heat shield reached around 2,800 °C while the Moon and Earth remained in view.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": {
+        "value": "2,800 °C",
+        "label": "on the heat shield"
+      }
+    },
+    {
+      "clip": "c03",
+      "narration": "On 11 December 2022, the capsule splashed down in the Pacific Ocean to complete its flight.",
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null
+    }
+  ],
+  "closing": "Orion splashed down in the Pacific on 11 December 2022.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
