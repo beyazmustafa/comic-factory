@@ -1,0 +1,134 @@
+{
+  "title": "Only One Spacecraft Has Ever Visited Neptune",
+  "description": "In 1989, Voyager 2 provided our only close view of Neptune. Deep in the outer solar system, this icy giant features the fastest winds ever measured on any planet.",
+  "hook_card": "The Windiest World",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c00",
+      "narration": "Only one spacecraft has ever visited this planet, and it did so in nineteen eighty-nine.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c01",
+      "narration": "Neptune orbits about four point five billion kilometres from the Sun, where light takes over four hours to reach it.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c00",
+      "narration": "Here, winds reach about two thousand kilometres per hour, the fastest measured on any planet.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c02",
+      "narration": "Voyager saw a Great Dark Spot, an Earth-sized storm that vanished a few years later when Hubble looked.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c03",
+      "narration": "Its large moon Triton orbits backwards and features active geysers of nitrogen gas.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c02",
+      "narration": "Triton is probably a captured world pulled in from the distant Kuiper Belt.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c03",
+      "narration": "Because of its immense distance from the Sun, a single year on Neptune lasts one hundred sixty-five Earth years.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Only one spacecraft has ever visited this planet, and it did so in nineteen eighty-nine. Neptune orbits about four point five billion kilometres from the Sun, where light takes over four hours to reach it. Here, winds reach about two thousand kilometres per hour, the fastest measured on any planet. Voyager saw a Great Dark Spot, an Earth-sized storm that vanished a few years later when Hubble looked. Its large moon Triton orbits backwards and features active geysers of nitrogen gas. Triton is probably a captured world pulled in from the distant Kuiper Belt. Because of its immense distance from the Sun, a single year on Neptune lasts one hundred sixty-five Earth years.",
+  "event": {
+    "id": "film_neptune_20261121T161435197028Z",
+    "title": "The Windiest World",
+    "series": "NASA footage",
+    "issue": "neptune",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "neptune",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/ann1115a/",
+      "https://esahubble.org/videos/heic1904a/"
+    ]
+  },
+  "scenario": "neptune",
+  "beats": [
+    {
+      "clip": "c00",
+      "narration": "Only one spacecraft has ever visited this planet, and it did so in nineteen eighty-nine.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "Neptune orbits about four point five billion kilometres from the Sun, where light takes over four hours to reach it.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Here, winds reach about two thousand kilometres per hour, the fastest measured on any planet.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": {
+        "value": "2,000 km/h",
+        "label": "winds"
+      }
+    },
+    {
+      "clip": "c02",
+      "narration": "Voyager saw a Great Dark Spot, an Earth-sized storm that vanished a few years later when Hubble looked.",
+      "label": "HUBBLE · NASA · 1994",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Its large moon Triton orbits backwards and features active geysers of nitrogen gas.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Triton is probably a captured world pulled in from the distant Kuiper Belt.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Because of its immense distance from the Sun, a single year on Neptune lasts one hundred sixty-five Earth years.",
+      "label": "NASA · VOYAGER 2 · 1989",
+      "callout": null
+    }
+  ],
+  "closing": "It takes 165 Earth years for Neptune to orbit the Sun.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

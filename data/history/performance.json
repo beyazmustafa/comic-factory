@@ -5573,5 +5573,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "-MMcDD7RXts",
+    "platform": "youtube",
+    "run_id": "44923390380",
+    "published_at": "2026-11-21T16:40:21+00:00",
+    "event": {
+      "title": "The Windiest World",
+      "series": "NASA footage",
+      "issue": "neptune",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 7,
+      "words": 113,
+      "duration": 63.2,
+      "words_per_minute": 107,
+      "hook": "Only one spacecraft has ever visited this planet, and it did so in nineteen eighty-nine.",
+      "hook_words": 15,
+      "title": "Only One Spacecraft Has Ever Visited Neptune",
+      "title_length": 44,
+      "emphasis": {
+        "normal": 7
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

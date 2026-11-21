@@ -1,0 +1,381 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "date": "2018-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4140",
+   "title": "Voyager 2 Trajectory through the Solar System",
+   "date": "2017-08-31",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4145",
+   "title": "Neptune's Magnetosphere",
+   "date": "2017-07-12",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4559",
+   "title": "Kepler Stares at Neptune",
+   "date": "2017-04-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:4087",
+   "title": "IBEX Heliotail Observations",
+   "date": "2013-07-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3595",
+   "title": "Sentinels of the Heliosphere",
+   "date": "2009-07-27",
+   "source": "svs"
+  },
+  {
+   "id": "svs:3570",
+   "title": "NASA's Heliophysics Observatories Study the Sun and Geospace",
+   "date": "2008-12-15",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20245",
+   "title": "Roman Space Telescope Orbit Diagrams",
+   "date": "2016-09-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:15092",
+   "title": "Tiny Worlds Discovered by Hubble and Webb",
+   "date": "2026-09-08",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14840",
+   "title": "Why Is Neptune Glowing Like This?",
+   "date": "2025-05-20",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14780",
+   "title": "NASA Scientists Spot Candidate for Speediest Exoplanet System",
+   "date": "2025-02-10",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14397",
+   "title": "Neptune’s Disappearing Clouds Linked to the Solar Cycle",
+   "date": "2023-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "hubble:search",
+   "title": "Advanced Search",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1904a",
+   "title": "Animation of Neptune’s moon Hippocamp",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic1420a",
+   "title": "Zoom into HAT-P-11",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:ann1115a",
+   "title": "Neptune and its moons",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2113c",
+   "title": "Hubble Takes a Grand Tour of the Solar System",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "hubble:heic2113b",
+   "title": "Pans of Hubble’s Grand Tour of the Solar System",
+   "date": "",
+   "source": "hubble"
+  },
+  {
+   "id": "webb:weic2214b",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "webb:weic2214a",
+   "title": "Info and downloads",
+   "date": "",
+   "source": "webb"
+  },
+  {
+   "id": "commons:Voyager 2 neptune rotation 6-22-89.ogv",
+   "title": "Voyager 2 neptune rotation 6-22-89",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:How Far Away Is Voyager 1? One Light-Day, Explained (SVS15120 VoyagerLightDay 03 Earth to Moon to Neptune clean 4K ProRes).webm",
+   "title": "How Far Away Is Voyager 1? One Light-Day, Explained (SVS15120 VoyagerLightDay 03 Earth to Moon to Neptune clean 4K ProRes)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Animation of Voyager 2 trajectory.webm",
+   "title": "Animation of Voyager 2 trajectory",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Voyager the Grand Tour.ogv",
+   "title": "Voyager the Grand Tour",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "svs:14840",
+  "svs:14397",
+  "hubble:ann1115a",
+  "hubble:heic1904a",
+  "svs:4559",
+  "svs:4667",
+  "svs:4145",
+  "svs:4140",
+  "svs:15092",
+  "hubble:heic2113c",
+  "hubble:heic2113b",
+  "commons:Voyager 2 neptune rotation 6-22-89.ogv",
+  "commons:How Far Away Is Voyager 1? One Light-Day, Explained (SVS15120 VoyagerLightDay 03 Earth to Moon to Neptune clean 4K ProRes).webm",
+  "commons:Animation of Voyager 2 trajectory.webm"
+ ],
+ "judged": [
+  {
+   "id": "svs:14840",
+   "title": "Why Is Neptune Glowing Like This?",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Science documentary short explaining James Webb Space Telescope's discovery of mid-latitude auroras on Neptune.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:14397",
+   "title": "Neptune’s Disappearing Clouds Linked to the Solar Cycle",
+   "relevant": true,
+   "usable": true,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Visualization showing the link between Neptune's disappearing cloud coverage and the 11-year solar cycle.",
+   "excluded": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stretches": [
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Visualization of solar activity and magnetic field lines on the Sun",
+     "score": 6
+    }
+   ]
+  },
+  {
+   "id": "hubble:ann1115a",
+   "title": "Neptune and its moons",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "footage",
+   "what": "Hubble Space Telescope time-lapse showing the rotation of Neptune and its atmospheric bands.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 10,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Time-lapse of Neptune rotating against black space",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "hubble:heic1904a",
+   "title": "Animation of Neptune’s moon Hippocamp",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "animation",
+   "what": "Artist's animation of Neptune's small inner moon Hippocamp orbiting Neptune",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 2,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Artist's render of small moon Hippocamp against space and distant Sun",
+     "score": 7
+    },
+    {
+     "start": 3,
+     "end": 3,
+     "focus": [
+      0.4,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Hippocamp in orbit with blue globe of Neptune visible",
+     "score": 8
+    },
+    {
+     "start": 4,
+     "end": 5,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.32,
+     "shows": "Close-up animation of the irregular, cratered moon Hippocamp",
+     "score": 8
+    },
+    {
+     "start": 6,
+     "end": 7,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Hippocamp rotating in front of Neptune",
+     "score": 9
+    }
+   ]
+  },
+  {
+   "id": "svs:4559",
+   "title": "Kepler Stares at Neptune",
+   "relevant": true,
+   "usable": true,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "Rendered view of Neptune rotating in space based on Kepler observations",
+   "excluded": [
+    0
+   ],
+   "stretches": [
+    {
+     "start": 1,
+     "end": 4,
+     "focus": [
+      0.5,
+      0.53
+     ],
+     "width": 0.32,
+     "shows": "Animated 3D visualization of Neptune against a starfield",
+     "score": 7
+    }
+   ]
+  },
+  {
+   "id": "svs:4667",
+   "title": "Neptune's Magnetosphere",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Scientific visualization of Neptune's complex, rotating magnetosphere with magnetic field lines and moon orbits.",
+   "excluded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "stretches": []
+  }
+ ]
+}
