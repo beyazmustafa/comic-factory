@@ -1,0 +1,186 @@
+{
+  "script": {
+    "title": "A Spacecraft Has Mapped Almost Every Metre of the Moon",
+    "description": "Since 2009, NASA's Lunar Reconnaissance Orbiter has mapped the Moon's surface in precise detail. From ancient impact basins to silent astronaut footprints, these images reveal a world preserved in time.",
+    "hook_card": "The Moon in 4K",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c05",
+        "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c00",
+        "narration": "The Moon is 3,474 kilometres wide and orbits 384,400 kilometres away from Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "This distant world is constantly changing position, drifting outward by 3.8 centimetres every year.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c03",
+        "narration": "The South Pole-Aitken basin spans 2,500 kilometres across and drops 8 kilometres deep.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c04",
+        "narration": "Near the lunar poles, deep craters have not seen sunlight in billions of years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c06",
+        "narration": "Their frozen floors drop colder than minus 230 °C and hold ancient water ice.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "Tycho crater measures 86 kilometres wide, featuring a central peak about 2 kilometres tall.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c02",
+        "narration": "Without wind or rain, footprints left behind by astronauts will last for millions of years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c05",
+        "narration": "Detailed mapping preserves the exact landscape where human footsteps remain preserved in history.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre. The Moon is 3,474 kilometres wide and orbits 384,400 kilometres away from Earth. This distant world is constantly changing position, drifting outward by 3.8 centimetres every year. The South Pole-Aitken basin spans 2,500 kilometres across and drops 8 kilometres deep. Near the lunar poles, deep craters have not seen sunlight in billions of years. Their frozen floors drop colder than minus 230 °C and hold ancient water ice. Tycho crater measures 86 kilometres wide, featuring a central peak about 2 kilometres tall. Without wind or rain, footprints left behind by astronauts will last for millions of years. Detailed mapping preserves the exact landscape where human footsteps remain preserved in history.",
+    "event": {
+      "id": "film_moon-tour_20261122T162751536838Z",
+      "title": "The Moon in 4K",
+      "series": "NASA footage",
+      "issue": "moon-tour",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "moon-tour",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS",
+        "https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed",
+        "https://images.nasa.gov/details/GSFC_20171006_LRO_m12739_100LunarDays_Pt2",
+        "https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+      ]
+    },
+    "scenario": "moon-tour",
+    "beats": [
+      {
+        "clip": "c05",
+        "narration": "Since 2009, the Lunar Reconnaissance Orbiter has circled the Moon, photographing almost every square metre.",
+        "label": "NASA · LRO · 2019",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "The Moon is 3,474 kilometres wide and orbits 384,400 kilometres away from Earth.",
+        "label": "NASA · LRO · 2017",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "This distant world is constantly changing position, drifting outward by 3.8 centimetres every year.",
+        "label": "NASA · LRO · 2017",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "The South Pole-Aitken basin spans 2,500 kilometres across and drops 8 kilometres deep.",
+        "label": "NASA · LRO · 2011",
+        "callout": {
+          "value": "3.8 cm",
+          "label": "farther away every year"
+        }
+      },
+      {
+        "clip": "c04",
+        "narration": "Near the lunar poles, deep craters have not seen sunlight in billions of years.",
+        "label": "NASA · LRO · 2011",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "Their frozen floors drop colder than minus 230 °C and hold ancient water ice.",
+        "label": "NASA · LRO · 2013",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "Tycho crater measures 86 kilometres wide, featuring a central peak about 2 kilometres tall.",
+        "label": "NASA · LRO · 2013",
+        "callout": {
+          "value": "-230 °C",
+          "label": "inside polar craters"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "Without wind or rain, footprints left behind by astronauts will last for millions of years.",
+        "label": "NASA · LRO · 2017",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Detailed mapping preserves the exact landscape where human footsteps remain preserved in history.",
+        "label": "NASA · LRO · 2019",
+        "callout": null
+      }
+    ],
+    "closing": "The footprints remain undisturbed in the lunar dust.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "Since 2009, NASA's Lunar Reconnaissance Orbiter has mapped the Moon's surface in precise detail. From ancient impact basins to silent astronaut footprints, these images reveal a world preserved in time.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: David Ladd — 100 Lunar Days - Part II (https://images.nasa.gov/details/GSFC_20171006_LRO_m12739_100LunarDays_Pt2); Genna Duberstein, Ernie Wright, Chris Smith — LRO PDS Release (https://images.nasa.gov/details/GSFC_20110315_LRO_m10146_PDS); David Ladd, Tom Waters, Ernie Wright — Lee Lincoln Scarp at the Apollo 17 Landing Site (https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover); Dan Gallagher, Chris Smith — The Moon's Permanently Shadowed Regions (https://images.nasa.gov/details/GSFC_20130306_Moons_m11218_Shadowed)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A Spacecraft Has Mapped Almost Every Metre of the Moon\n\nSince 2009, NASA's Lunar Reconnaissance Orbiter has mapped the Moon's surface in precise detail. From ancient impact basins to silent astronaut footprints, these images reveal a world preserved in time.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}

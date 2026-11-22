@@ -1,0 +1,380 @@
+{
+ "candidates": [
+  {
+   "id": "nasa:ksc_012805_touchdown",
+   "title": "KSC-05-S-00034",
+   "date": "2005-01-31",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_110404_cassini_flyby",
+   "title": "KSC-04-S-00352",
+   "date": "2004-11-05",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_061404_cassini",
+   "title": "KSC-04-S-00195",
+   "date": "2004-06-15",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "date": "2017-09-12",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_020105_why_jpl",
+   "title": "KSC-05-S-00036",
+   "date": "2005-02-03",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "date": "2013-09-30",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:ksc_071304_ctitan",
+   "title": "KSC-04-S-00236",
+   "date": "2004-07-14",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute Jul. 17, 2026",
+   "title": "NASA Minute: Jul. 17, 2026",
+   "date": "2026-07-17",
+   "source": "nasa"
+  },
+  {
+   "id": "nasa:NASA Minute March 27, 2026",
+   "title": "NASA Minute: March 27, 2026",
+   "date": "2026-03-27",
+   "source": "nasa"
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:79",
+   "title": "Lunar Rotation and Flyby from Clementine Data (with route map)",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:80",
+   "title": "Lunar Rotation and Flyby from Clementine Data",
+   "date": "1995-06-09",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:20311",
+   "title": "Dragonfly Animation Resource Page",
+   "date": "2020-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14951",
+   "title": "Are Titan’s Lakes Teeming with Primitive Cells?",
+   "date": "2026-01-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14843",
+   "title": "Webb Spies Rain Clouds, New Molecule on Titan",
+   "date": "2025-05-14",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14460",
+   "title": "Roman Wide Field Instrument Fully Integrated at Ball Aerospace",
+   "date": "2023-11-16",
+   "source": "svs"
+  },
+  {
+   "id": "svs:14162",
+   "title": "Saturn Through the Veil of Enceladus – Artist’s Concept",
+   "date": "2022-05-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13947",
+   "title": "Video Visions of the Future",
+   "date": "2021-10-19",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13692",
+   "title": "Ocean Worlds Social Videos",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13693",
+   "title": "Ocean Worlds: The Search for Life",
+   "date": "2020-08-17",
+   "source": "svs"
+  },
+  {
+   "id": "svs:13562",
+   "title": "The Science of Dragonfly",
+   "date": "2020-02-25",
+   "source": "svs"
+  },
+  {
+   "id": "commons:Huygens descent.ogv",
+   "title": "Huygens descent",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:KSC-05-S-00003 (ksc 010605 huygen separates).webm",
+   "title": "KSC-05-S-00003 (ksc 010605 huygen separates)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:KSC-05-S-00034 (ksc 012805 touchdown).webm",
+   "title": "KSC-05-S-00034 (ksc 012805 touchdown)",
+   "date": "",
+   "source": "commons"
+  },
+  {
+   "id": "commons:Titan's Surface Features.ogv",
+   "title": "Titan's Surface Features",
+   "date": "",
+   "source": "commons"
+  }
+ ],
+ "ranked": [
+  "nasa:ksc_071304_ctitan",
+  "nasa:GSFC_20130930_Titan_m11339_Propylene",
+  "svs:5530",
+  "svs:20403",
+  "svs:20411",
+  "svs:14843",
+  "svs:14951",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+  "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+  "nasa:ksc_012805_touchdown",
+  "nasa:ksc_110404_cassini_flyby",
+  "nasa:ksc_061404_cassini",
+  "commons:Huygens descent.ogv"
+ ],
+ "judged": [
+  {
+   "id": "nasa:GSFC_20130930_Titan_m11339_Propylene",
+   "title": "Propylene on Titan",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "NASA Goddard video explaining the discovery of propylene on Titan featuring a presenter",
+   "excluded": [
+    2,
+    4,
+    6,
+    7,
+    8,
+    9,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:5530",
+   "title": "Webb Confirms Seasonal Variations in Titan Climate Model",
+   "relevant": true,
+   "usable": true,
+   "quality": 8,
+   "kind": "visualization",
+   "what": "Global circulation model visualization of Titan's climate and atmosphere over seasonal variations.",
+   "excluded": [],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 8,
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "width": 0.6,
+     "shows": "Global climate simulation of Titan showing atmospheric haze and seasonal variations",
+     "score": 8
+    }
+   ]
+  },
+  {
+   "id": "svs:20403",
+   "title": "Titan science results from James Webb Space Telescope: animation resource page",
+   "relevant": false,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "Animation pushing in on James Webb Space Telescope pointing towards Saturn and Titan",
+   "excluded": [
+    6
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:20411",
+   "title": "A Pathway to Protocells on Titan – Animations",
+   "relevant": true,
+   "usable": true,
+   "quality": 6,
+   "kind": "animation",
+   "what": "Molecular animation of organic molecules (acrylonitrile) in Titan's lakes",
+   "excluded": [
+    3,
+    4,
+    5
+   ],
+   "stretches": [
+    {
+     "start": 0,
+     "end": 2,
+     "focus": [
+      0.45,
+      0.52
+     ],
+     "width": 0.32,
+     "shows": "3D render of an acrylonitrile organic molecule floating in Titan environment",
+     "score": 6
+    },
+    {
+     "start": 6,
+     "end": 7,
+     "focus": [
+      0.45,
+      0.52
+     ],
+     "width": 0.32,
+     "shows": "Organic molecular animation of acrylonitrile without labels",
+     "score": 6
+    }
+   ]
+  },
+  {
+   "id": "svs:14843",
+   "title": "Webb Spies Rain Clouds, New Molecule on Titan",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "NASA JWST findings on Titan's atmosphere, clouds, and chemical composition.",
+   "excluded": [
+    2,
+    4,
+    6,
+    11,
+    13,
+    14
+   ],
+   "stretches": []
+  },
+  {
+   "id": "svs:14951",
+   "title": "Are Titan’s Lakes Teeming with Primitive Cells?",
+   "relevant": true,
+   "usable": false,
+   "quality": 6,
+   "kind": "animation",
+   "what": "Exploration of Titan's hydrocarbon lakes and potential cell-like vesicle structures with presenter segments.",
+   "excluded": [
+    2,
+    6,
+    8,
+    18,
+    19,
+    20,
+    23
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Long",
+   "title": "Cassini's Infrared Saturn (Directors Cut)",
+   "relevant": true,
+   "usable": false,
+   "quality": 7,
+   "kind": "visualization",
+   "what": "A produced documentary video featuring interview presenters, graphics, and animations about Cassini's infrared observations of Saturn and its moons.",
+   "excluded": [
+    0,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    22
+   ],
+   "stretches": []
+  },
+  {
+   "id": "nasa:GSFC_20170912_Cassini_m12709_CIRS_Short",
+   "title": "Cassini's Infrared Saturn (Short Version)",
+   "relevant": false,
+   "usable": false,
+   "quality": 6,
+   "kind": "visualization",
+   "what": "Overview of Cassini CIRS instrument findings on Saturn, Mimas, Tethys, Enceladus, and Titan with presenters",
+   "excluded": [
+    0,
+    1,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    12,
+    16,
+    17,
+    18,
+    20,
+    21
+   ],
+   "stretches": []
+  }
+ ]
+}
