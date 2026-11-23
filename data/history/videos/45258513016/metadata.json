@@ -1,0 +1,182 @@
+{
+  "script": {
+    "title": "A satellite has photographed the Sun every twelve seconds",
+    "description": "The Solar Dynamics Observatory has monitored our star without blinking for over a decade. These high-definition views reveal the violent magnetic forces shaping the solar atmosphere.",
+    "hook_card": "The Sun, every twelve seconds.",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "A satellite has been staring at the Sun without blinking for over a decade, capturing a new image every twelve seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c04",
+        "narration": "The Solar Dynamics Observatory sends back one point five terabytes of data every day to help us understand this star.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c06",
+        "narration": "The Sun is one point three nine million kilometres across, wide enough for one hundred and nine Earths to fit side by side.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c05",
+        "narration": "These glowing loops are plasma riding invisible magnetic field lines, often stretching to a size larger than many Earths.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c01",
+        "narration": "While the visible surface is five thousand five hundred degrees Celsius, the thin outer atmosphere is over a million degrees.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c02",
+        "narration": "A large flare releases energy equal to millions of hydrogen bombs, and its light reaches Earth in eight minutes twenty seconds.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c07",
+        "narration": "Here, a massive plasma eruption detaches, sending a particle cloud that reaches the planets in one to three days.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c03",
+        "narration": "After the eruption, plasma rains back down along the magnetic structures, revealing the constant motion of the solar environment.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_008",
+        "panel_id": "c00",
+        "narration": "This cycle of activity continues until the Sun's magnetic poles swap places, which happens roughly every eleven years.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "A satellite has been staring at the Sun without blinking for over a decade, capturing a new image every twelve seconds. The Solar Dynamics Observatory sends back one point five terabytes of data every day to help us understand this star. The Sun is one point three nine million kilometres across, wide enough for one hundred and nine Earths to fit side by side. These glowing loops are plasma riding invisible magnetic field lines, often stretching to a size larger than many Earths. While the visible surface is five thousand five hundred degrees Celsius, the thin outer atmosphere is over a million degrees. A large flare releases energy equal to millions of hydrogen bombs, and its light reaches Earth in eight minutes twenty seconds. Here, a massive plasma eruption detaches, sending a particle cloud that reaches the planets in one to three days. After the eruption, plasma rains back down along the magnetic structures, revealing the constant motion of the solar environment. This cycle of activity continues until the Sun's magnetic poles swap places, which happens roughly every eleven years.",
+    "event": {
+      "id": "film_sdo-sun_20261123T202701895116Z",
+      "title": "The Sun, every twelve seconds.",
+      "series": "NASA footage",
+      "issue": "sdo-sun",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "sdo-sun",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
+        "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
+        "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      ]
+    },
+    "scenario": "sdo-sun",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "A satellite has been staring at the Sun without blinking for over a decade, capturing a new image every twelve seconds.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "The Solar Dynamics Observatory sends back one point five terabytes of data every day to help us understand this star.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c06",
+        "narration": "The Sun is one point three nine million kilometres across, wide enough for one hundred and nine Earths to fit side by side.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "These glowing loops are plasma riding invisible magnetic field lines, often stretching to a size larger than many Earths.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "While the visible surface is five thousand five hundred degrees Celsius, the thin outer atmosphere is over a million degrees.",
+        "label": "NASA · SDO · 2016",
+        "callout": {
+          "value": "1,000,000 °C",
+          "label": "the outer atmosphere"
+        }
+      },
+      {
+        "clip": "c02",
+        "narration": "A large flare releases energy equal to millions of hydrogen bombs, and its light reaches Earth in eight minutes twenty seconds.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "Here, a massive plasma eruption detaches, sending a particle cloud that reaches the planets in one to three days.",
+        "label": "NASA · SDO · 2015",
+        "callout": null
+      },
+      {
+        "clip": "c03",
+        "narration": "After the eruption, plasma rains back down along the magnetic structures, revealing the constant motion of the solar environment.",
+        "label": "NASA · SDO · 2014",
+        "callout": null
+      },
+      {
+        "clip": "c00",
+        "narration": "This cycle of activity continues until the Sun's magnetic poles swap places, which happens roughly every eleven years.",
+        "label": "NASA · SDO · 2016",
+        "callout": null
+      }
+    ],
+    "closing": "The magnetic poles swap every eleven years.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "The Solar Dynamics Observatory has monitored our star without blinking for over a decade. These high-definition views reveal the violent magnetic forces shaping the solar atmosphere.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: Genna Duberstein, Tom Bridgman, Sarah Frazier — NASA’s SDO Captures Stunning 4K View of April 17 Solar Flare (https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K); Genna Duberstein — Graceful Eruption (https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare); Genna Duberstein, Tom Bridgman, Karen Fox — Arching Eruption (https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "A satellite has photographed the Sun every twelve seconds\n\nThe Solar Dynamics Observatory has monitored our star without blinking for over a decade. These high-definition views reveal the violent magnetic forces shaping the solar atmosphere.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
