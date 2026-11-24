@@ -1,6 +1,6 @@
-run_id: 45307289836  attempt: 1  event: schedule
+run_id: 45471568165  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261124T020346885404Z/run.json
+--- data/runs/20261124T193506348038Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,43 +40,43 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "45307289836",
+  "run_id": "45471568165",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "2a2ee8dcaa32e739198b2fc4a69ccf8da0c94a8b195c4ee7da4dd674b7a29a7c",
-  "metadata_sha256": "cd7bb4dac043102d9706fd3c4dde4fc724e3d42ae3c233c05878477d2f1b0540",
+  "video_sha256": "2947d410935bf01524ca608bc50230d28e3b9eadef8502c3862b6c019a7f38ac",
+  "metadata_sha256": "6c3cb670c5270aea959c29c05f93e63a4c5e8cca371267e340441629772cf474",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 25,
-  "duration": 74.37,
+  "api_calls": 22,
+  "duration": 77.55,
   "voice": "Charon",
   "event": {
-    "id": "film_perseverance-landing_20261124T020346885404Z",
-    "title": "Seven minutes of terror on Mars.",
+    "id": "film_europa_20261124T193506348038Z",
+    "title": "An ocean under the ice.",
     "series": "NASA footage",
-    "issue": "perseverance-landing",
+    "issue": "europa",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "perseverance-landing",
+    "scenario": "europa",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
-      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
-      "https://images.nasa.gov/details/JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
-      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
+      "https://esahubble.org/videos/heic1322a/",
+      "https://esahubble.org/videos/heic1322b/",
+      "https://esahubble.org/videos/heic1504a/",
+      "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
     ]
   },
   "localized": []
 }
---- data/runs/20261124T020346885404Z/diagnostics/provider_events.json
+--- data/runs/20261124T193506348038Z/diagnostics/provider_events.json
 [
-  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi."
+  "Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak."
 ]
---- data/runs/20261124T020346885404Z/diagnostics/providers.json
+--- data/runs/20261124T193506348038Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -103,8 +103,8 @@ produce step outcome: success
     "gemini-4-neon"
   ],
   "groq": [
-    "qwen/qwen3.8-27b",
     "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
     "openai/gpt-oss-120b"
   ],
   "errors": [],
@@ -203,70 +203,70 @@ produce step outcome: success
   ]
 }
 --- studio.log (son 300 satır)
-→ Konu: perseverance-landing
-Görüntü adayları: 49 (perseverance-landing)
-Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 6
-Çözümlenen video: 6
-nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Onboard descent camera footage of Perseverance landing on Mars
-nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Original onboard camera views of Perseverance rover's descent and touc
-Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: kullanılır (8/10, footage) A 360-degree panorama of the Martian surface and Perseverance rover de
-nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Computer animated depiction of NASA's Perseverance rover entry, descen
-Kullanılır kesit: 8 (177 sn temiz görüntü)
+→ Konu: europa
+Görüntü adayları: 54 (europa)
+Sıralanan aday: 12
+Çözümlenemedi svs:2946: ValueError: no usable rendition
+Düşük çözünürlük svs:2947: 640x480
+Çözümlenen video: 10
+Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+nasa:JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations: kullanılır (8/10, animation) Artist animations of the Europa Clipper spacecraft's journey from Eart
+hubble:heic1322b: kullanılır (8/10, animation) Artist's impression of flying past Europa and its water vapour plumes 
+hubble:heic1322a: kullanılır (8/10, animation) Artist's impression of water vapor plumes erupting from Europa as it o
+svs:13966: elendi (7/10, animation) Visualization and animations detailing water vapor detection in Europa
+hubble:heic1504a: kullanılır (9/10, footage) Hubble Space Telescope time-lapse of Jupiter with transiting moons inc
+hubble:heic1504c: elendi (4/10, visualization) Simulation of Galilean Satellites orbiting Jupiter with text labels an
+nasa:KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336: kullanılır (8/10, footage) Isolated camera angles showing the SpaceX Falcon Heavy rocket launch c
+Kullanılır kesit: 8 (163 sn temiz görüntü)
 → Senaryo
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 97.1/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 96.8/100 | whisper-large-v3
+Ses eşleştirme: 96.9/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.7/100 | whisper-large-v3
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-Ses bölümü 5, deneme 1
-Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
-Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (74.4 sn, 9 beat, 8 kesit)
-  kurgu 10/74 sn
-  kurgu 20/74 sn
-  kurgu 30/74 sn
-  kurgu 40/74 sn
-  kurgu 50/74 sn
-  kurgu 60/74 sn
-  kurgu 70/74 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T020346885404Z/review.html
+Ses eşleştirme: 96.5/100 | whisper-large-v3
+→ Kurgu (77.5 sn, 9 beat, 8 kesit)
+  kurgu 10/78 sn
+  kurgu 20/78 sn
+  kurgu 30/78 sn
+  kurgu 40/78 sn
+  kurgu 50/78 sn
+  kurgu 60/78 sn
+  kurgu 70/78 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T193506348038Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: Real Footage of a One Ton Rover Landing on Mars #Shorts
+Başlık: The NASA spacecraft built to explore a hidden icy ocean #Shorts
 Görünürlük: public
 
-Yükleme: %8
-Yükleme: %17
-Yükleme: %26
-Yükleme: %35
+Yükleme: %10
+Yükleme: %21
+Yükleme: %32
 Yükleme: %43
-Yükleme: %52
-Yükleme: %61
-Yükleme: %70
-Yükleme: %78
+Yükleme: %54
+Yükleme: %65
+Yükleme: %76
 Yükleme: %87
-Yükleme: %96
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=CB6ism8FFyU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %98
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=QJJHg2TWrzA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T020346885404Z/video.mp4
-Boyut: 91.2 MB
-Açıklama uzunluğu: 326 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T193506348038Z/video.mp4
+Boyut: 73.3 MB
+Açıklama uzunluğu: 387 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
 Cloudinary: geçici video silindi (ok).
-instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Monday, 23-Nov-26 18:29:54 PST. (code=190, subcode=0)
+instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Tuesday, 24-Nov-26 11:59:42 PST. (code=190, subcode=0)

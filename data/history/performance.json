@@ -5778,5 +5778,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "QJJHg2TWrzA",
+    "platform": "youtube",
+    "run_id": "45471568165",
+    "published_at": "2026-11-24T19:59:37+00:00",
+    "event": {
+      "title": "An ocean under the ice.",
+      "series": "NASA footage",
+      "issue": "europa",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 132,
+      "duration": 77.5,
+      "words_per_minute": 102,
+      "hook": "Europa is slightly smaller than our Moon, covered in water ice cracked by long reddish lines.",
+      "hook_words": 16,
+      "title": "The NASA spacecraft built to explore a hidden icy ocean",
+      "title_length": 55,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

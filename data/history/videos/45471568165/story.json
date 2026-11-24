@@ -1,0 +1,162 @@
+{
+  "title": "The NASA spacecraft built to explore a hidden icy ocean",
+  "description": "Beneath the frozen shell of Jupiter's moon Europa lies a salty ocean that may hold twice the water of all Earth's oceans combined. NASA has launched the Europa Clipper mission to investigate its secrets during dozens of close flybys.",
+  "hook_card": "An ocean under the ice.",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c05",
+      "narration": "Europa is slightly smaller than our Moon, covered in water ice cracked by long reddish lines.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "Beneath 15 to 25 km of ice lies a salty ocean holding twice the water of Earth's oceans.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c03",
+      "narration": "Jupiter's gravity flexes Europa as it orbits, and that constant flexing keeps the ocean liquid.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c04",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 km from Europa's surface to photograph its ice.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c07",
+      "narration": "NASA launched Europa Clipper on 14 October 2024 to explore this ocean world.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c06",
+      "narration": "With solar arrays spanning about 30 metres, it is the largest planetary spacecraft NASA has built.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c01",
+      "narration": "The spacecraft will arrive at Jupiter in 2030.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "It will make 49 flybys of Europa, passing as low as 25 km from the surface.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_008",
+      "panel_id": "c02",
+      "narration": "Watch the spacecraft begin its mission to study Europa and its hidden ocean.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "Europa is slightly smaller than our Moon, covered in water ice cracked by long reddish lines. Beneath 15 to 25 km of ice lies a salty ocean holding twice the water of Earth's oceans. Jupiter's gravity flexes Europa as it orbits, and that constant flexing keeps the ocean liquid. In September 2022, the Juno spacecraft flew about 350 km from Europa's surface to photograph its ice. NASA launched Europa Clipper on 14 October 2024 to explore this ocean world. With solar arrays spanning about 30 metres, it is the largest planetary spacecraft NASA has built. The spacecraft will arrive at Jupiter in 2030. It will make 49 flybys of Europa, passing as low as 25 km from the surface. Watch the spacecraft begin its mission to study Europa and its hidden ocean.",
+  "event": {
+    "id": "film_europa_20261124T193506348038Z",
+    "title": "An ocean under the ice.",
+    "series": "NASA footage",
+    "issue": "europa",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "europa",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://esahubble.org/videos/heic1322a/",
+      "https://esahubble.org/videos/heic1322b/",
+      "https://esahubble.org/videos/heic1504a/",
+      "https://images.nasa.gov/details/JPL-20220310-CLIPPRf-0001-Europa Clipper Mission Animations",
+      "https://images.nasa.gov/details/KSC-20241014-MH-AJN01-0001-SpaceX_Europa_Clipper_Isolated_Launch_Views-M9336"
+    ]
+  },
+  "scenario": "europa",
+  "beats": [
+    {
+      "clip": "c05",
+      "narration": "Europa is slightly smaller than our Moon, covered in water ice cracked by long reddish lines.",
+      "label": "NASA · JUPITER · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Beneath 15 to 25 km of ice lies a salty ocean holding twice the water of Earth's oceans.",
+      "label": "NASA · EUROPA · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Jupiter's gravity flexes Europa as it orbits, and that constant flexing keeps the ocean liquid.",
+      "label": "ESO · ARTIST IMPRESSION",
+      "callout": null
+    },
+    {
+      "clip": "c04",
+      "narration": "In September 2022, the Juno spacecraft flew about 350 km from Europa's surface to photograph its ice.",
+      "label": "ESO · ARTIST IMPRESSION",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "NASA launched Europa Clipper on 14 October 2024 to explore this ocean world.",
+      "label": "NASA · FALCON HEAVY · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c06",
+      "narration": "With solar arrays spanning about 30 metres, it is the largest planetary spacecraft NASA has built.",
+      "label": "NASA · KENNEDY SPACE CENTER · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c01",
+      "narration": "The spacecraft will arrive at Jupiter in 2030.",
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "It will make 49 flybys of Europa, passing as low as 25 km from the surface.",
+      "label": "NASA · EUROPA CLIPPER · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "Watch the spacecraft begin its mission to study Europa and its hidden ocean.",
+      "label": "NASA · FLYBY CONCEPT · 2024",
+      "callout": null
+    }
+  ],
+  "closing": "Europa Clipper will make 49 flybys of Europa.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}
