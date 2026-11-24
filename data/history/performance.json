@@ -5737,5 +5737,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "CB6ism8FFyU",
+    "platform": "youtube",
+    "run_id": "45307289836",
+    "published_at": "2026-11-24T02:29:49+00:00",
+    "event": {
+      "title": "Seven minutes of terror on Mars.",
+      "series": "NASA footage",
+      "issue": "perseverance-landing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 9,
+      "words": 141,
+      "duration": 74.4,
+      "words_per_minute": 114,
+      "hook": "In February 2021, a spacecraft approached Jezero Crater, once the site of an ancient lake and river delta.",
+      "hook_words": 18,
+      "title": "Real Footage of a One Ton Rover Landing on Mars",
+      "title_length": 47,
+      "emphasis": {
+        "normal": 9
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

@@ -1,6 +1,6 @@
-run_id: 45258513016  attempt: 1  event: schedule
+run_id: 45307289836  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261123T202701895116Z/run.json
+--- data/runs/20261124T020346885404Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,59 +40,43 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "45258513016",
+  "run_id": "45307289836",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "20946cb9187be44a6845421c44245c35ceb5cfd315062b59acb4d55bb8041a70",
-  "metadata_sha256": "0ef25936d186ece5c93aa8b2cd93ce5ff10ad2c7ace9db70ebbb8b5a8cb34f2e",
+  "video_sha256": "2a2ee8dcaa32e739198b2fc4a69ccf8da0c94a8b195c4ee7da4dd674b7a29a7c",
+  "metadata_sha256": "cd7bb4dac043102d9706fd3c4dde4fc724e3d42ae3c233c05878477d2f1b0540",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 64,
-  "duration": 95.73,
+  "api_calls": 25,
+  "duration": 74.37,
   "voice": "Charon",
   "event": {
-    "id": "film_sdo-sun_20261123T202701895116Z",
-    "title": "The Sun, every twelve seconds.",
+    "id": "film_perseverance-landing_20261124T020346885404Z",
+    "title": "Seven minutes of terror on Mars.",
     "series": "NASA footage",
-    "issue": "sdo-sun",
+    "issue": "perseverance-landing",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "sdo-sun",
+    "scenario": "perseverance-landing",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/GSFC_20140404_SDO_m11517_Flare",
-      "https://images.nasa.gov/details/GSFC_20150630_SDO_m11908_ArchingEruption",
-      "https://images.nasa.gov/details/GSFC_20160426_SDO_m12224_SolarFlare_4K"
+      "https://images.nasa.gov/details/JPL-20201221-M2020f-0002-EDL Full Version w SFX",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars",
+      "https://images.nasa.gov/details/JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars",
+      "https://images.nasa.gov/details/NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars"
     ]
   },
   "localized": []
 }
---- data/runs/20261123T202701895116Z/diagnostics/provider_events.json
+--- data/runs/20261124T020346885404Z/diagnostics/provider_events.json
 [
   "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme svs:5649: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-3.1-flash-lite-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme svs:5649: gemini-2.5-flash-lite kapalı/erişilemez, bu koşuda atlanacak.",
-  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Senaryo düzelti: gemini-flash-lite-latest yanıt vermiyor, bu koşuda atlanacak.",
-  "Senaryo düzelti: Gemini yanıt vermedi; Groq zinciri deneniyor."
+  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi."
 ]
---- data/runs/20261123T202701895116Z/diagnostics/providers.json
+--- data/runs/20261124T020346885404Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -218,118 +202,71 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261123T202701895116Z/diagnostics/api_018.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=336 candidates_tokens_details=None prompt_token_count=1917 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=829\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 947,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"footage\",\n    \"what\": \"NASA SDO footage of an M6.7 solar flare and active regions in multiple wavelengths\",\n    \"text_frames\": [0, 6, 10, 11, 12],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 1,\n        \"end\": 2,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Full disk views of the sun in orange and teal extreme ultraviolet wavelengths\",\n        \"score\": 8\n      },\n      {\n        \"start\": 3,\n        \"end\": 5,\n        \"focus\": [0.7, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Close-up of a bright solar flare and magnetic loops on the solar limb\",\n        \"score\": 10\n      },\n      {\n        \"start\": 7,\n        \"end\": 9,\n        \"focus\": [0.6, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Detailed views of active regions and plasma movement in teal and purple filters\",\n        \"score\": 9\n      }\n    ]\n  }\n]"
-}
---- data/runs/20261123T202701895116Z/diagnostics/api_040.json
-{
-  "provider": "gemini",
-  "model": "gemini-3-flash-preview",
-  "info": {
-    "finish_reason": "FinishReason.STOP",
-    "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=263 candidates_tokens_details=None prompt_token_count=1862 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
-  },
-  "error": "JSON nesnesi gerekli.",
-  "response_length": 652,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 9,\n    \"kind\": \"footage\",\n    \"what\": \"High-resolution extreme ultraviolet footage of the Sun's corona and magnetic activity from the Solar Dynamics Observatory.\",\n    \"text_frames\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 23,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Continuous observation of solar magnetic loops, plasma filaments, and active regions in the 171 Angstrom wavelength.\",\n        \"score\": 9\n      }\n    ]\n  }\n]"
-}
 --- studio.log (son 300 satır)
-→ Konu: sdo-sun
-Görüntü adayları: 91 (sdo-sun)
+→ Konu: perseverance-landing
+Görüntü adayları: 49 (perseverance-landing)
 Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Sıralanan aday: 12
-Çözümlenen video: 12
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: gemini-3.5-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-nasa:GSFC_20160426_SDO_m12224_SolarFlare_4K: kullanılır (9/10, footage) Solar Dynamics Observatory captures high-resolution solar flares and m
-Görüntü değerlendirme svs:5649: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme svs:5649: gemini-3.1-flash-lite yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:5649: gemini-3.1-flash-lite-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme svs:5649: gemini-2.5-flash-lite kapalı/erişilemez, bu koşuda atlanacak.
-svs:5649: elendi (8/10, footage) Four days of solar dynamics and activity captured by the Solar Dynamic
-nasa:GSFC_20140404_SDO_m11517_Flare: kullanılır (9/10, footage) NASA Solar Dynamics Observatory footage of a mid-level solar flare and
-nasa:GSFC_20150630_SDO_m11908_ArchingEruption: kullanılır (9/10, footage) NASA Solar Dynamics Observatory footage of a massive arching eruption 
-Kullanılır kesit: 8 (143 sn temiz görüntü)
+Sıralanan aday: 6
+Çözümlenen video: 6
+nasa:JPL-20210222-M2020f-0001-Perseverance Rover’s Descent and Touchdown on Mars: kullanılır (8/10, footage) Onboard descent camera footage of Perseverance landing on Mars
+nasa:NHQ_2021_0222_VF_NASA Provides First Front-Row Seat to Perseverance Rover’s Landing on Mars: kullanılır (9/10, footage) Original onboard camera views of Perseverance rover's descent and touc
+Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+nasa:JPL-20210222-M2020f-0002-NASA’S Perseverance Rover’s First 360 View of Mars: kullanılır (8/10, footage) A 360-degree panorama of the Martian surface and Perseverance rover de
+nasa:JPL-20201221-M2020f-0002-EDL Full Version w SFX: kullanılır (8/10, animation) Computer animated depiction of NASA's Perseverance rover entry, descen
+Kullanılır kesit: 8 (177 sn temiz görüntü)
 → Senaryo
-Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
-Senaryo düzelti: gemini-flash-lite-latest yanıt vermiyor, bu koşuda atlanacak.
-Senaryo düzelti: Gemini yanıt vermedi; Groq zinciri deneniyor.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 90.2/100 | whisper-large-v3-turbo
+Ses eşleştirme: 99.9/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 80.9/100 | whisper-large-v3
+Ses eşleştirme: 96.8/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 85.4/100 | whisper-large-v3
+Ses eşleştirme: 99.7/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
-Ses eşleştirme: 100.0/100 | whisper-large-v3-turbo
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 5, deneme 1
-Ses eşleştirme: 94.4/100 | whisper-large-v3
-→ Kurgu (95.7 sn, 9 beat, 8 kesit)
-  kurgu 10/96 sn
-  kurgu 20/96 sn
-  kurgu 30/96 sn
-  kurgu 40/96 sn
-  kurgu 50/96 sn
-  kurgu 60/96 sn
-  kurgu 70/96 sn
-  kurgu 80/96 sn
-  kurgu 90/96 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261123T202701895116Z/review.html
+Ses modeli gemini-3.1-flash-tts-preview kotası doldu; sıradaki TTS modeline geçildi.
+Ses eşleştirme: 100.0/100 | whisper-large-v3
+→ Kurgu (74.4 sn, 9 beat, 8 kesit)
+  kurgu 10/74 sn
+  kurgu 20/74 sn
+  kurgu 30/74 sn
+  kurgu 40/74 sn
+  kurgu 50/74 sn
+  kurgu 60/74 sn
+  kurgu 70/74 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T020346885404Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: A satellite has photographed the Sun every twelve seconds #Shorts
+Başlık: Real Footage of a One Ton Rover Landing on Mars #Shorts
 Görünürlük: public
 
-Yükleme: %5
-Yükleme: %11
-Yükleme: %16
-Yükleme: %22
-Yükleme: %27
-Yükleme: %33
-Yükleme: %38
-Yükleme: %44
-Yükleme: %49
-Yükleme: %55
-Yükleme: %60
-Yükleme: %66
-Yükleme: %71
-Yükleme: %77
-Yükleme: %82
-Yükleme: %88
-Yükleme: %93
-Yükleme: %99
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TUTXuLqY4AA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %8
+Yükleme: %17
+Yükleme: %26
+Yükleme: %35
+Yükleme: %43
+Yükleme: %52
+Yükleme: %61
+Yükleme: %70
+Yükleme: %78
+Yükleme: %87
+Yükleme: %96
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=CB6ism8FFyU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261123T202701895116Z/video.mp4
-Boyut: 145.4 MB
-Açıklama uzunluğu: 338 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261124T020346885404Z/video.mp4
+Boyut: 91.2 MB
+Açıklama uzunluğu: 326 karakter
 Cloudinary: video geçici olarak yükleniyor...
-instagram: yükleme başarısız, YouTube yayını korunuyor: File size too large. Got 152484841. Maximum is 104857600.
+Cloudinary: video hazır.
+Cloudinary CDN erişimi kontrol ediliyor...
+Cloudinary CDN: video erişilebilir.
+Instagram: Reel container oluşturuluyor...
+Cloudinary: geçici video silindi (ok).
+instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Monday, 23-Nov-26 18:29:54 PST. (code=190, subcode=0)
