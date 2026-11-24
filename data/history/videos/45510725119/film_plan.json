@@ -1,0 +1,332 @@
+{
+  "duration": 72.35,
+  "handle": "@Facctsaboutspace",
+  "hook": "The telescope that was born blind",
+  "kicker": "Real footage · NASA",
+  "closing": "It still circles Earth every 95 minutes.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080520_hst_m10214_slow_look2/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 5.08,
+      "src_out": 11.65,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        304,
+        0,
+        964,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.237,
+      "label": "NASA · DISCOVERY · 1990",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080519_hst_m10213_slowlook1/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.747,
+      "src_out": 10.183,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.237,
+      "t1": 11.34,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c03",
+      "asset": "nasa:GSFC_20080519_HST_m10212_OutNaround",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080519_hst_m10212_outnaround/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.843,
+      "src_out": 17.157,
+      "speed": 1.0,
+      "focus": [
+        0.65,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.34,
+      "t1": 19.32,
+      "label": "NASA · HUBBLE · 1990",
+      "callout": {
+        "value": "2 microns",
+        "label": "the error in the mirror"
+      },
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "hubble:heic0907b",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/hubble_heic0907b/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 5.147,
+      "src_out": 11.223,
+      "speed": 1.0,
+      "focus": [
+        0.52,
+        0.45
+      ],
+      "active": [
+        0,
+        260,
+        1920,
+        820
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.32,
+      "t1": 25.062,
+      "label": "NASA · SERVICE MISSION · 1993",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:GSFC_20080822_HST_m10235_Release_Revers_007",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080822_hst_m10235_release_revers_007/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 4.769,
+      "src_out": 9.801,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.45
+      ],
+      "active": [
+        2,
+        324,
+        1812,
+        756
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 25.062,
+      "t1": 29.76,
+      "label": "",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20080822_HST_m10235_Release_Fire_006",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080822_hst_m10235_release_fire_006/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 2.908,
+      "src_out": 11.422,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 29.76,
+      "t1": 37.94,
+      "label": "NASA · ORBIT · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080520_hst_m10216_whip_pan/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 7.488,
+      "src_out": 15.412,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.48
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 37.94,
+      "t1": 45.53,
+      "label": "NASA · ATLANTIS · 2008",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c04",
+      "asset": "nasa:GSFC_20080520_HST_m10216_Whip_Pan",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080520_hst_m10216_whip_pan/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 6.933,
+      "src_out": 15.967,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.48
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 45.53,
+      "t1": 54.23,
+      "label": "NASA · HUBBLE · 2009",
+      "callout": null,
+      "kind": "animation",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c02",
+      "asset": "nasa:GSFC_20080822_HST_m10235_Release_Fire_006",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080822_hst_m10235_release_fire_006/clip_0.mp4",
+      "width": 1920,
+      "height": 1080,
+      "src_in": 3.748,
+      "src_out": 10.582,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 54.23,
+      "t1": 60.73,
+      "label": "NASA · ATLANTIS · 2009",
+      "callout": null,
+      "kind": "animation",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c05",
+      "asset": "nasa:GSFC_20080520_HST_m10214_Slow_Look2",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080520_hst_m10214_slow_look2/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 5.003,
+      "src_out": 11.727,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        304,
+        0,
+        964,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 60.73,
+      "t1": 67.121,
+      "label": "NASA · HUBBLE · 2008",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c06",
+      "asset": "nasa:GSFC_20080519_HST_m10213-SlowLook1",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261124T233236894039Z/footage/nasa_gsfc_20080519_hst_m10213_slowlook1/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 4.684,
+      "src_out": 10.246,
+      "speed": 1.0,
+      "focus": [
+        0.55,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 67.121,
+      "t1": 72.35,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}

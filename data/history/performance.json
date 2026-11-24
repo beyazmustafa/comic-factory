@@ -5819,5 +5819,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "pxLf8mzTMFQ",
+    "platform": "youtube",
+    "run_id": "45510725119",
+    "published_at": "2026-11-24T23:45:18+00:00",
+    "event": {
+      "title": "The telescope that was born blind",
+      "series": "NASA footage",
+      "issue": "hubble-servicing",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 118,
+      "duration": 72.3,
+      "words_per_minute": 98,
+      "hook": "Hubble launched on 24 April 1990 aboard the space shuttle Discovery with a 2.4-metre mirror.",
+      "hook_words": 15,
+      "title": "How Astronauts Fixed Hubble's Flawed Mirror in Orbit",
+      "title_length": 52,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]
