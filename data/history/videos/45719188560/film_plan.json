@@ -1,0 +1,312 @@
+{
+  "duration": 69.15,
+  "handle": "@Facctsaboutspace",
+  "hook": "The most powerful machines ever built",
+  "kicker": "Real footage · NASA",
+  "closing": "NASA's Space Launch System flew Artemis I in 2022.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 9.704,
+      "src_out": 16.296,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 6.259,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 17.673,
+      "src_out": 23.127,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 6.259,
+      "t1": 11.38,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 7.2,
+      "speed": 0.978,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 11.38,
+      "t1": 18.41,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c01",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 2.443,
+      "src_out": 11.557,
+      "speed": 1.0,
+      "focus": [
+        0.65,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 18.41,
+      "t1": 27.19,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": {
+        "value": "110 m",
+        "label": "tall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c03",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 8.718,
+      "src_out": 17.282,
+      "speed": 1.0,
+      "focus": [
+        0.35,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 27.19,
+      "t1": 35.42,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.149,
+      "src_out": 15.851,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 35.42,
+      "t1": 40.788,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 4,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 18.037,
+      "src_out": 22.763,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 40.788,
+      "t1": 45.18,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c02",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_1.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 0.0,
+      "src_out": 7.2,
+      "speed": 0.879,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 45.18,
+      "t1": 53.04,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_0.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 3.958,
+      "src_out": 10.042,
+      "speed": 1.0,
+      "focus": [
+        0.65,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 53.04,
+      "t1": 58.79,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 7,
+      "clip": "c03",
+      "asset": "nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_ajn01_0001_artemis_i_isolated_launch_vi/clip_2.mp4",
+      "width": 3840,
+      "height": 2160,
+      "src_in": 9.984,
+      "src_out": 16.016,
+      "speed": 1.0,
+      "focus": [
+        0.35,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 58.79,
+      "t1": 64.488,
+      "label": "NASA · ARTEMIS I · 2022",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/footage/nasa_ksc_20221116_mh_fmx_01_0001_artemis_1_slowmo_liftoff_33/clip_0.mp4",
+      "width": 4096,
+      "height": 2160,
+      "src_in": 10.502,
+      "src_out": 15.498,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 64.488,
+      "t1": 69.15,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
