@@ -1,6 +1,6 @@
-run_id: 45719188560  attempt: 1  event: schedule
+run_id: 45876331459  attempt: 1  event: schedule
 produce step outcome: success
---- data/runs/20261125T231051784798Z/run.json
+--- data/runs/20261126T183015191826Z/run.json
 {
   "schema": 2,
   "version": "",
@@ -40,48 +40,55 @@ produce step outcome: success
     "archive_max_year": 1963,
     "archive_scan_limit": 72
   },
-  "run_id": "45719188560",
+  "run_id": "45876331459",
   "technical_passed": true,
   "quality_passed": true,
-  "video_sha256": "dbff6b22ea68da735307f11860c8b90ae0f9fdde4782573540d49432fb5e099f",
-  "metadata_sha256": "0c5152b308a62a94d95b982af236c44cfd2e8baa94cd92ca65fe27d9db05d0db",
+  "video_sha256": "e2f888537b4df6377ac0752478640ef4a9be4d14626f782fd9c82fb981bdb936",
+  "metadata_sha256": "57e9c7a4300b2d143241fc789454da6c58f26ac656047915e77669de372fdc8d",
   "quality_sha256": "0fca8410984da0de311c830c8cce90314f4851c96d977b8439a787a8637af6ed",
-  "api_calls": 41,
-  "duration": 69.15,
+  "api_calls": 49,
+  "duration": 83.88,
   "voice": "Charon",
   "event": {
-    "id": "film_launch-power_20261125T231051784798Z",
-    "title": "The most powerful machines ever built",
+    "id": "film_spacewalk_20261126T183015191826Z",
+    "title": "Life outside the station.",
     "series": "NASA footage",
-    "issue": "launch-power",
+    "issue": "spacewalk",
     "year": 2026,
     "publisher": "NASA",
     "universe": "science",
-    "scenario": "launch-power",
+    "scenario": "spacewalk",
     "_source": "film",
     "url": "",
     "source_urls": [
-      "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
-      "https://images.nasa.gov/details/KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595"
+      "https://images.nasa.gov/details/NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION",
+      "https://images.nasa.gov/details/jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4",
+      "https://images.nasa.gov/details/jsc2022m000274_Russian_Spacewalk_56_221122-MP4",
+      "https://images.nasa.gov/details/jsc2022m000290_U.S._Spacewalk_83_Animation_221221"
     ]
   },
   "localized": []
 }
---- data/runs/20261125T231051784798Z/diagnostics/provider_events.json
+--- data/runs/20261126T183015191826Z/diagnostics/provider_events.json
 [
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
-  "Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak."
+  "Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.",
+  "Görüntü değerlendirme nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.",
+  "Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor."
 ]
---- data/runs/20261125T231051784798Z/diagnostics/providers.json
+--- data/runs/20261126T183015191826Z/diagnostics/providers.json
 {
   "gemini": [
     "gemini-2.5-flash",
@@ -108,9 +115,9 @@ produce step outcome: success
     "gemini-4-neon"
   ],
   "groq": [
-    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-120b"
   ],
   "errors": [],
   "gemini_raw": [
@@ -207,90 +214,126 @@ produce step outcome: success
     "qwen/qwen3.8-27b"
   ]
 }
---- data/runs/20261125T231051784798Z/diagnostics/api_019.json
+--- data/runs/20261126T183015191826Z/diagnostics/api_037.json
 {
   "provider": "gemini",
   "model": "gemini-3-flash-preview",
   "info": {
     "finish_reason": "FinishReason.STOP",
     "prompt_feedback": "",
-    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=431 candidates_tokens_details=None prompt_token_count=1901 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=826\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=161 candidates_tokens_details=None prompt_token_count=1866 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
   },
   "error": "JSON nesnesi gerekli.",
-  "response_length": 1156,
-  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 8,\n    \"kind\": \"footage\",\n    \"what\": \"Isolated launch views of the Artemis I Space Launch System (SLS) rocket at night.\",\n    \"text_frames\": [0, 1, 14, 15, 16, 17, 18, 20, 21, 23],\n    \"people_frames\": [1],\n    \"stretches\": [\n      {\n        \"start\": 3,\n        \"end\": 4,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"Long shot of the SLS rocket ascending with a bright engine plume\",\n        \"score\": 8\n      },\n      {\n        \"start\": 6,\n        \"end\": 7,\n        \"focus\": [0.4, 0.3],\n        \"width\": 0.32,\n        \"shows\": \"Close-up tracking shot of the rocket exhaust trail against the night sky\",\n        \"score\": 7\n      },\n      {\n        \"start\": 11,\n        \"end\": 13,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Cinematic views of the rocket engines and ascent from various angles\",\n        \"score\": 9\n      },\n      {\n        \"start\": 19,\n        \"end\": 19,\n        \"focus\": [0.5, 0.8],\n        \"width\": 0.6,\n        \"shows\": \"Wide shot of the SLS ignition and liftoff from the launch pad\",\n        \"score\": 9\n      }\n    ]\n  }\n]"
+  "response_length": 594,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": false,\n    \"quality\": 4,\n    \"kind\": \"animation\",\n    \"what\": \"3D animation of Russian Spacewalk 56 showing radiator relocation on the ISS\",\n    \"text_frames\": [\n      23\n    ],\n    \"people_frames\": [],\n    \"stretches\": [],\n    \"reason\": \"The video is an animation (CGI) rather than real mission footage or helmet camera video. It uses stylized 3D models and highlighted overlays (cyan/red) to demonstrate the mission steps, which does not meet the requirement for raw mission footage or high-quality cinematic imagery for a premium documentary.\"\n  }\n]"
+}
+--- data/runs/20261126T183015191826Z/diagnostics/api_039.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=277 candidates_tokens_details=None prompt_token_count=1864 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.TEXT: 'TEXT'>,\n  token_count=789\n), ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'I"
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 865,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": false,\n    \"quality\": 6,\n    \"kind\": \"animation\",\n    \"what\": \"A 3D animation demonstrating a spacewalk by Russian cosmonauts to activate the European Robotic Arm on the Nauka module.\",\n    \"text_frames\": [\n      0,\n      23\n    ],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 3,\n        \"end\": 10,\n        \"focus\": [\n          0.5,\n          0.5\n        ],\n        \"width\": 0.32,\n        \"shows\": \"Animated cosmonauts working on the exterior of the Nauka module against the backdrop of Earth.\",\n        \"score\": 6\n      },\n      {\n        \"start\": 13,\n        \"end\": 21,\n        \"focus\": [\n          0.5,\n          0.5\n        ],\n        \"width\": 0.32,\n        \"shows\": \"Animation of cosmonauts maneuvering equipment and moving along the station's exterior.\",\n        \"score\": 6\n      }\n    ]\n  }\n]"
+}
+--- data/runs/20261126T183015191826Z/diagnostics/api_041.json
+{
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "info": {
+    "finish_reason": "FinishReason.STOP",
+    "prompt_feedback": "",
+    "usage": "cache_tokens_details=None cached_content_token_count=None candidates_token_count=554 candidates_tokens_details=None prompt_token_count=1875 prompt_tokens_details=[ModalityTokenCount(\n  modality=<MediaModality.IMAGE: 'IMAGE'>,\n  token_count=1075\n), ModalityTokenCount(\n  modality=<MediaModality.TEXT: "
+  },
+  "error": "JSON nesnesi gerekli.",
+  "response_length": 1579,
+  "response_text": "[\n  {\n    \"relevant\": true,\n    \"usable\": true,\n    \"quality\": 7,\n    \"kind\": \"animation\",\n    \"what\": \"A 3D animation demonstrating the installation of an iROSA solar array on the International Space Station.\",\n    \"text_frames\": [],\n    \"people_frames\": [],\n    \"stretches\": [\n      {\n        \"start\": 0,\n        \"end\": 3,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Close-up views of the ISS truss and airlock modules in shadow.\",\n        \"score\": 6\n      },\n      {\n        \"start\": 5,\n        \"end\": 6,\n        \"focus\": [0.6, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"The robotic arm and truss structure against the blackness of space.\",\n        \"score\": 7\n      },\n      {\n        \"start\": 7,\n        \"end\": 7,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.6,\n        \"shows\": \"The Canadarm2 and ISS components with Earth's clouds in the background.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 8,\n        \"end\": 14,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Astronauts and the robotic arm positioning the iROSA solar array unit.\",\n        \"score\": 7\n      },\n      {\n        \"start\": 16,\n        \"end\": 18,\n        \"focus\": [0.5, 0.4],\n        \"width\": 0.32,\n        \"shows\": \"The iROSA solar array being unfurled on the station's power channel.\",\n        \"score\": 8\n      },\n      {\n        \"start\": 20,\n        \"end\": 23,\n        \"focus\": [0.5, 0.5],\n        \"width\": 0.32,\n        \"shows\": \"Final positioning and wide view of the station's exterior modules.\",\n        \"score\": 7\n      }\n    ]\n  }\n]"
 }
 --- studio.log (son 300 satır)
-→ Konu: launch-power
-Görüntü adayları: 49 (launch-power)
+→ Konu: spacewalk
+Görüntü adayları: 32 (spacewalk)
+Görüntü adayları: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü adayları: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
 Sıralanan aday: 12
-Çözümlenen video: 12
-nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595: kullanılır (8/10, footage) Slow motion night launch footage of NASA's Space Launch System for the
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.7-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.8-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-flash kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.6-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.5-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3.1-pro-preview yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
-Görüntü değerlendirme nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
-nasa:KSC-20221116-MH-AJN01-0001-Artemis_I_Isolated_Launch_Views-3314595: kullanılır (8/10, footage) Isolated engineering launch views of NASA's Artemis I Space Launch Sys
-Görüntü adayları: 4 (launch-power, Commons)
-Sıralanan aday: 3
-Çözümlenemedi commons:Apollo11 Saturn V separation.ogv: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Film to Tape - Apollo, Saturn V, Crawler, VAB, Pad 39A (KSC-1960s-MH-NAS01-0001-Apollo Saturn V Crawler, VAB Pad Film To Tape).webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenemedi commons:Power for Apollo - Saturn V.webm: HTTPError: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipe
-Çözümlenen video: 0
-Kullanılır kesit: 4 (74 sn temiz görüntü)
+Çözümlenemedi svs:13566: ValueError: ffprobe: https://svs.gsfc.nasa.gov/vis/a010000/a013500/a013566/GSFC_20021018_HST_m001.mp4:
+Çözümlenen video: 11
+nasa:NHQ_2019_1018_all woman spacewalk: elendi (7/10, footage) A produced news segment about the first all-woman spacewalk featuring 
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-2.5-pro kapalı/erişilemez, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-1.2-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-1.1-flash yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-flash-latest yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-omni-flash-preview yanıt vermiyor, bu koşuda atlanacak.
+Görüntü değerlendirme nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: gemini-pro-latest yanıt vermiyor, bu koşuda atlanacak.
+nasa:NHQ_201_0163_VF_FIRST ALL-WOMAN SPACEWALK REPLACES FAULTY ELECTRICAL BOX ON SPACE STATION: kullanılır (8/10, footage) Spacewalk outside the International Space Station
+Görüntü değerlendirme nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+nasa:jsc2022m000274_Russian_Spacewalk_56_221122-MP4: kullanılır (7/10, animation) Animation of cosmonauts conducting a spacewalk outside the Internation
+Görüntü değerlendirme nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+nasa:jsc2022m000105_Russian_Spacewalk_52_Animation_220415-MP4: kullanılır (7/10, visualization) Cosmonauts conduct a spacewalk outside the International Space Station
+Görüntü değerlendirme nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: gemini-3-flash-preview bozuk JSON verdi; sıkı istemle ve sıradaki modelle yeniden deneniyor.
+nasa:jsc2022m000290_U.S._Spacewalk_83_Animation_221221: kullanılır (8/10, animation) Animation of NASA astronauts performing Spacewalk 83 to install an iRO
+Kullanılır kesit: 8 (156 sn temiz görüntü)
 → Senaryo
-Senaryo düzelti: gemini-3-flash-preview yanıt vermiyor, bu koşuda atlanacak.
 → Anlatım sesi
 Ses bölümü 1, deneme 1
-Ses eşleştirme: 99.6/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 2, deneme 1
-Ses eşleştirme: 99.8/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 3, deneme 1
-Ses eşleştirme: 99.9/100 | whisper-large-v3
+Ses eşleştirme: 100.0/100 | whisper-large-v3
 Ses bölümü 4, deneme 1
 Ses eşleştirme: 100.0/100 | whisper-large-v3
-→ Kurgu (69.2 sn, 8 beat, 4 kesit)
-  kurgu 10/69 sn
-  kurgu 20/69 sn
-  kurgu 30/69 sn
-  kurgu 40/69 sn
-  kurgu 50/69 sn
-  kurgu 60/69 sn
-Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/review.html
+Ses bölümü 5, deneme 1
+Ses eşleştirme: 93.8/100 | whisper-large-v3
+→ Kurgu (83.9 sn, 9 beat, 8 kesit)
+  kurgu 10/84 sn
+  kurgu 20/84 sn
+  kurgu 30/84 sn
+  kurgu 40/84 sn
+  kurgu 50/84 sn
+  kurgu 60/84 sn
+  kurgu 70/84 sn
+  kurgu 80/84 sn
+Çalışma hazır: /home/runner/work/comic-factory/comic-factory/data/runs/20261126T183015191826Z/review.html
 
 ==============================================================================
 YOUTUBE YÜKLEME
 ==============================================================================
 
-Başlık: The Rocket That Burns Thirteen Tonnes of Fuel Every Second #Shorts
+Başlık: What Astronauts See During a Six Hour Spacewalk #Shorts
 Görünürlük: public
 
-Yükleme: %10
-Yükleme: %21
+Yükleme: %8
+Yükleme: %16
+Yükleme: %24
 Yükleme: %32
-Yükleme: %43
-Yükleme: %54
-Yükleme: %65
-Yükleme: %76
-Yükleme: %87
-Yükleme: %98
-Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=KU6ARmdI-l0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
+Yükleme: %40
+Yükleme: %48
+Yükleme: %56
+Yükleme: %64
+Yükleme: %72
+Yükleme: %80
+Yükleme: %89
+Yükleme: %97
+Kapak görseli yüklenemedi: HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=izdEWscUX24&alt=json&uploadType=media returned "The authenticated user doesn't have permissions t (Kanal telefonla doğrulanmamış: YouTube Studio → Ayarlar → Kanal → Özellik uygunluğu)
 ====================================================================
 COMIC FACTORY - INSTAGRAM REELS
 ====================================================================
-Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261125T231051784798Z/video.mp4
-Boyut: 73.1 MB
-Açıklama uzunluğu: 330 karakter
+Video: /home/runner/work/comic-factory/comic-factory/data/runs/20261126T183015191826Z/video.mp4
+Boyut: 98.8 MB
+Açıklama uzunluğu: 392 karakter
 Cloudinary: video geçici olarak yükleniyor...
 Cloudinary: video hazır.
 Cloudinary CDN erişimi kontrol ediliyor...
 Cloudinary CDN: video erişilebilir.
 Instagram: Reel container oluşturuluyor...
 Cloudinary: geçici video silindi (ok).
-instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Wednesday, 25-Nov-26 15:53:32 PST. (code=190, subcode=0)
+instagram: yükleme başarısız, YouTube yayını korunuyor: Instagram API hatası: HTTP 401 - Error validating access token: Session has expired on Wednesday, 21-Oct-26 06:39:40 PDT. The current time is Thursday, 26-Nov-26 10:55:27 PST. (code=190, subcode=0)
