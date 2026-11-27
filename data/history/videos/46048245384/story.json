@@ -1,0 +1,152 @@
+{
+  "title": "How Hurricanes Look From the Space Station",
+  "description": "Astronauts aboard the International Space Station capture high-altitude views of massive hurricane systems moving across the ocean. Satellite networks monitor these powerful storms from tens of thousands of kilometres above Earth.",
+  "hook_card": "Inside the Eye",
+  "shots": [
+    {
+      "id": "shot_000",
+      "panel_id": "c01",
+      "narration": "From space, the central eye of a hurricane spans thirty to sixty-five kilometres wide and remains almost calm.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_001",
+      "panel_id": "c02",
+      "narration": "The strongest winds blow in the eyewall around it, exceeding two hundred and fifty kilometres per hour in category five storms.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_002",
+      "panel_id": "c07",
+      "narration": "These massive storms spin anticlockwise north of the equator and clockwise south of the equator.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_003",
+      "panel_id": "c06",
+      "narration": "A mature hurricane can span more than one thousand kilometres across the ocean below.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_004",
+      "panel_id": "c05",
+      "narration": "It releases heat energy at a rate about two hundred times the world's total electricity generation.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_005",
+      "panel_id": "c04",
+      "narration": "The space station travels so fast that it crosses an entire storm system in about two minutes.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_006",
+      "panel_id": "c03",
+      "narration": "Far higher up, GOES weather satellites observe the planet from thirty-five thousand eight hundred kilometres away.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    },
+    {
+      "id": "shot_007",
+      "panel_id": "c00",
+      "narration": "Positioned high above Earth, these satellites can image an active storm once every thirty seconds.",
+      "fact_ids": [],
+      "motion": "footage",
+      "emphasis": "normal"
+    }
+  ],
+  "narration": "From space, the central eye of a hurricane spans thirty to sixty-five kilometres wide and remains almost calm. The strongest winds blow in the eyewall around it, exceeding two hundred and fifty kilometres per hour in category five storms. These massive storms spin anticlockwise north of the equator and clockwise south of the equator. A mature hurricane can span more than one thousand kilometres across the ocean below. It releases heat energy at a rate about two hundred times the world's total electricity generation. The space station travels so fast that it crosses an entire storm system in about two minutes. Far higher up, GOES weather satellites observe the planet from thirty-five thousand eight hundred kilometres away. Positioned high above Earth, these satellites can image an active storm once every thirty seconds.",
+  "event": {
+    "id": "film_hurricane_20261127T181736268530Z",
+    "title": "Inside the Eye",
+    "series": "NASA footage",
+    "issue": "hurricane",
+    "year": 2026,
+    "publisher": "NASA",
+    "universe": "science",
+    "scenario": "hurricane",
+    "_source": "film",
+    "url": "",
+    "source_urls": [
+      "https://images.nasa.gov/details/iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "https://images.nasa.gov/details/jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "https://images.nasa.gov/details/jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008"
+    ]
+  },
+  "scenario": "hurricane",
+  "beats": [
+    {
+      "clip": "c01",
+      "narration": "From space, the central eye of a hurricane spans thirty to sixty-five kilometres wide and remains almost calm.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c02",
+      "narration": "The strongest winds blow in the eyewall around it, exceeding two hundred and fifty kilometres per hour in category five storms.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c07",
+      "narration": "These massive storms spin anticlockwise north of the equator and clockwise south of the equator.",
+      "label": "NASA · ISS · 2024",
+      "callout": {
+        "value": "250 km/h",
+        "label": "in the eyewall"
+      }
+    },
+    {
+      "clip": "c06",
+      "narration": "A mature hurricane can span more than one thousand kilometres across the ocean below.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    },
+    {
+      "clip": "c05",
+      "narration": "It releases heat energy at a rate about two hundred times the world's total electricity generation.",
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "200×",
+        "label": "the world's electricity"
+      }
+    },
+    {
+      "clip": "c04",
+      "narration": "The space station travels so fast that it crosses an entire storm system in about two minutes.",
+      "label": "NASA · ISS · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c03",
+      "narration": "Far higher up, GOES weather satellites observe the planet from thirty-five thousand eight hundred kilometres away.",
+      "label": "NOAA · GOES · 2019",
+      "callout": null
+    },
+    {
+      "clip": "c00",
+      "narration": "Positioned high above Earth, these satellites can image an active storm once every thirty seconds.",
+      "label": "NASA · ISS · 2024",
+      "callout": null
+    }
+  ],
+  "closing": "From high above, immense power looks perfectly still.",
+  "panel_validation": {
+    "passed": true,
+    "shots": [],
+    "generated": true
+  }
+}

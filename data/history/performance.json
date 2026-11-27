@@ -5983,5 +5983,46 @@
     },
     "experiment": null,
     "stats": {}
+  },
+  {
+    "video_id": "6R56VEF-vyY",
+    "platform": "youtube",
+    "run_id": "46048245384",
+    "published_at": "2026-11-27T18:39:06+00:00",
+    "event": {
+      "title": "Inside the Eye",
+      "series": "NASA footage",
+      "issue": "hurricane",
+      "year": 2026,
+      "publisher": "NASA"
+    },
+    "profile": {
+      "shots": 8,
+      "words": 132,
+      "duration": 72.0,
+      "words_per_minute": 110,
+      "hook": "From space, the central eye of a hurricane spans thirty to sixty-five kilometres wide and remains almost calm.",
+      "hook_words": 18,
+      "title": "How Hurricanes Look From the Space Station",
+      "title_length": 42,
+      "emphasis": {
+        "normal": 8
+      }
+    },
+    "voice": "Charon",
+    "visibility": "public",
+    "review": {
+      "mode": "film",
+      "scores": {
+        "subtitle_sync": 100,
+        "scene_match": 100,
+        "delivery": 100,
+        "visual_readability": 95
+      },
+      "issues": [],
+      "summary": "Documentary edit from NASA footage; narration aligned per chunk at synthesis."
+    },
+    "experiment": null,
+    "stats": {}
   }
 ]

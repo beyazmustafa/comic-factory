@@ -1,0 +1,404 @@
+{
+  "duration": 71.99,
+  "handle": "@Facctsaboutspace",
+  "hook": "Inside the Eye",
+  "kicker": "Real footage · NASA",
+  "closing": "From high above, immense power looks perfectly still.",
+  "hook_seconds": 3.4,
+  "end_seconds": 2.8,
+  "dissolve_frames": 10,
+  "shots": [
+    {
+      "beat": 0,
+      "clip": "c01",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.836,
+      "src_out": 16.164,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 0.0,
+      "t1": 5.995,
+      "label": "NASA · ISS · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 0,
+      "clip": "c02",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.381,
+      "src_out": 15.619,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": [
+        166,
+        0,
+        860,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 5.995,
+      "t1": 10.9,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 1,
+      "clip": "c06",
+      "asset": "nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000173_international_space_station_cameras_capt/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 8.423,
+      "src_out": 17.577,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 10.9,
+      "t1": 19.72,
+      "label": "NASA · ISS · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c07",
+      "asset": "nasa:jsc2024m000173_International_Space_Station_Cameras_Capture_New_Views_Of_Hurricane_Milton_241008",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000173_international_space_station_cameras_capt/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.32,
+      "src_out": 15.68,
+      "speed": 1.0,
+      "focus": [
+        0.45,
+        0.45
+      ],
+      "active": [
+        6,
+        0,
+        1108,
+        720
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 19.72,
+      "t1": 24.747,
+      "label": "NASA · ISS · 2024",
+      "callout": {
+        "value": "250 km/h",
+        "label": "in the eyewall"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 2,
+      "clip": "c00",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.777,
+      "src_out": 15.223,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        196,
+        0,
+        892,
+        504
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 24.747,
+      "t1": 28.86,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 3,
+      "clip": "c04",
+      "asset": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_iss060m262471344_iss_hurricane_dorian_live_views_sept_4/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.693,
+      "src_out": 16.307,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        4,
+        8,
+        1276,
+        448
+      ],
+      "crop_width": 0.32,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 28.86,
+      "t1": 35.14,
+      "label": "NASA · ISS · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 4,
+      "clip": "c05",
+      "asset": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_iss060m262471344_iss_hurricane_dorian_live_views_sept_4/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 6.498,
+      "src_out": 15.232,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 35.14,
+      "t1": 43.54,
+      "label": "NASA · ISS · 2019",
+      "callout": {
+        "value": "200×",
+        "label": "the world's electricity"
+      },
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c05",
+      "asset": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_iss060m262471344_iss_hurricane_dorian_live_views_sept_4/clip_2.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 21.73,
+      "src_out": 26.0,
+      "speed": 0.8,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 43.54,
+      "t1": 48.544,
+      "label": "NASA · ISS · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 5,
+      "clip": "c03",
+      "asset": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_iss060m262471344_iss_hurricane_dorian_live_views_sept_4/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 11.735,
+      "src_out": 14.265,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        220,
+        6,
+        1060,
+        624
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 48.544,
+      "t1": 50.74,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 6,
+      "clip": "c03",
+      "asset": "nasa:iss060m262471344_ISS_Hurricane_Dorian_Live_Views_Sept_4_2019_0904",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_iss060m262471344_iss_hurricane_dorian_live_views_sept_4/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.99,
+      "src_out": 16.01,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        220,
+        6,
+        1060,
+        624
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 50.74,
+      "t1": 56.427,
+      "label": "NOAA · GOES · 2019",
+      "callout": null,
+      "kind": "footage",
+      "transition": "dissolve"
+    },
+    {
+      "beat": 6,
+      "clip": "c01",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.507,
+      "src_out": 15.493,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 56.427,
+      "t1": 61.08,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c00",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_0.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 9.833,
+      "src_out": 16.167,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "active": [
+        196,
+        0,
+        892,
+        504
+      ],
+      "crop_width": 0.6,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "t0": 61.08,
+      "t1": 67.081,
+      "label": "NASA · ISS · 2024",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    },
+    {
+      "beat": 7,
+      "clip": "c01",
+      "asset": "nasa:jsc2024m000130_Expedition_71_International_Space_Station_Flyover_of_Hurricane_Beryl_240701",
+      "file": "/home/runner/work/comic-factory/comic-factory/data/runs/20261127T181736268530Z/footage/nasa_jsc2024m000130_expedition_71_international_space_statio/clip_1.mp4",
+      "width": 1280,
+      "height": 720,
+      "src_in": 10.379,
+      "src_out": 15.621,
+      "speed": 1.0,
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "active": null,
+      "crop_width": 0.32,
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "t0": 67.081,
+      "t1": 71.99,
+      "label": "",
+      "callout": null,
+      "kind": "footage",
+      "transition": "cut"
+    }
+  ]
+}
