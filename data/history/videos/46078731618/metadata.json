@@ -1,0 +1,175 @@
+{
+  "script": {
+    "title": "The Spacecraft That Flew Farther Than Apollo",
+    "description": "In late 2022, NASA launched the Artemis I mission to test the uncrewed Orion capsule around the Moon. The historic flight pushed human spaceflight hardware farther into deep space than ever before.",
+    "hook_card": "Farther Than Apollo",
+    "shots": [
+      {
+        "id": "shot_000",
+        "panel_id": "c00",
+        "narration": "This capsule flew farther from Earth than any spacecraft built for humans.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_001",
+        "panel_id": "c02",
+        "narration": "Artemis I launched on 16 November 2022 aboard the Space Launch System, the most powerful rocket ever to fly at the time.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_002",
+        "panel_id": "c01",
+        "narration": "The uncrewed Orion capsule flew for 25.5 days, travelling deep into the lunar environment.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_003",
+        "panel_id": "c05",
+        "narration": "Here, cameras on Orion's solar arrays filmed Earth and the Moon together against deep space.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_004",
+        "panel_id": "c07",
+        "narration": "At its farthest point, Orion reached 432,000 kilometres from Earth.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_005",
+        "panel_id": "c03",
+        "narration": "Inside the commander's seat sat a mannequin wired with sensors, nicknamed Commander Moonikin Campos.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_006",
+        "panel_id": "c04",
+        "narration": "Re-entering the atmosphere at about 40,000 kilometres per hour, its heat shield reached around 2,800 °C.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      },
+      {
+        "id": "shot_007",
+        "panel_id": "c06",
+        "narration": "Orion completed its journey when it splashed down safely in the Pacific Ocean on 11 December 2022.",
+        "fact_ids": [],
+        "motion": "footage",
+        "emphasis": "normal"
+      }
+    ],
+    "narration": "This capsule flew farther from Earth than any spacecraft built for humans. Artemis I launched on 16 November 2022 aboard the Space Launch System, the most powerful rocket ever to fly at the time. The uncrewed Orion capsule flew for 25.5 days, travelling deep into the lunar environment. Here, cameras on Orion's solar arrays filmed Earth and the Moon together against deep space. At its farthest point, Orion reached 432,000 kilometres from Earth. Inside the commander's seat sat a mannequin wired with sensors, nicknamed Commander Moonikin Campos. Re-entering the atmosphere at about 40,000 kilometres per hour, its heat shield reached around 2,800 °C. Orion completed its journey when it splashed down safely in the Pacific Ocean on 11 December 2022.",
+    "event": {
+      "id": "film_artemis-1_20261127T224833739280Z",
+      "title": "Farther Than Apollo",
+      "series": "NASA footage",
+      "issue": "artemis-1",
+      "year": 2026,
+      "publisher": "NASA",
+      "universe": "science",
+      "scenario": "artemis-1",
+      "_source": "film",
+      "url": "",
+      "source_urls": [
+        "https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209",
+        "https://images.nasa.gov/details/FD 19 Moon",
+        "https://images.nasa.gov/details/FD 20 Artemis_I_Post-RPF_AOS_221205_1735031",
+        "https://images.nasa.gov/details/FD14 SAW",
+        "https://images.nasa.gov/details/Flight Day 14",
+        "https://images.nasa.gov/details/Moon Below Orion art001m1013251756",
+        "https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022"
+      ]
+    },
+    "scenario": "artemis-1",
+    "beats": [
+      {
+        "clip": "c00",
+        "narration": "This capsule flew farther from Earth than any spacecraft built for humans.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c02",
+        "narration": "Artemis I launched on 16 November 2022 aboard the Space Launch System, the most powerful rocket ever to fly at the time.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c01",
+        "narration": "The uncrewed Orion capsule flew for 25.5 days, travelling deep into the lunar environment.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c05",
+        "narration": "Here, cameras on Orion's solar arrays filmed Earth and the Moon together against deep space.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c07",
+        "narration": "At its farthest point, Orion reached 432,000 kilometres from Earth.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": {
+          "value": "432,000 km",
+          "label": "from Earth"
+        }
+      },
+      {
+        "clip": "c03",
+        "narration": "Inside the commander's seat sat a mannequin wired with sensors, nicknamed Commander Moonikin Campos.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      },
+      {
+        "clip": "c04",
+        "narration": "Re-entering the atmosphere at about 40,000 kilometres per hour, its heat shield reached around 2,800 °C.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": {
+          "value": "2,800 °C",
+          "label": "on the heat shield"
+        }
+      },
+      {
+        "clip": "c06",
+        "narration": "Orion completed its journey when it splashed down safely in the Pacific Ocean on 11 December 2022.",
+        "label": "NASA · ARTEMIS I · 2022",
+        "callout": null
+      }
+    ],
+    "closing": "The next crew will fly this same path.",
+    "panel_validation": {
+      "passed": true,
+      "shots": [],
+      "generated": true
+    },
+    "full_description": "In late 2022, NASA launched the Artemis I mission to test the uncrewed Orion capsule around the Moon. The historic flight pushed human spaceflight hardware farther into deep space than ever before.\n\nReal footage and visualizations from public space-agency archives, edited for @Facctsaboutspace.\nFootage: JSC — Earthset as Orion Prepares for Outbound Powered Flyby (https://images.nasa.gov/details/ART-DL-1_2022_325_1209_SHARED_art001m1013251209); JSC — Artemis I Flight Day 14: Orion Sees the Earth and Moon (https://images.nasa.gov/details/Flight Day 14); JSC — Artemis I Flight Day Five: Orion and the Moon (https://images.nasa.gov/details/art001m1013241924ART-DL-1_2022_324_1924_43000_1724160_11202022); JSC — Flight Day 6: Orion Focuses on Moon (https://images.nasa.gov/details/Moon Below Orion art001m1013251756); JSC — Flight Day 20: Orion Sees Earth After Lunar Flyby (https://images.nasa.gov/details/FD 20 Artemis_I_Post-RPF_AOS_221205_1735031); JSC — Flight Day 14: Orion's Solar Array Splits Earth and Moon (https://images.nasa.gov/details/FD14 SAW); JSC — Flight Day 19: Sights Set on the Moon (https://images.nasa.gov/details/FD 19 Moon)\nLicences: public domain (NASA)\n",
+    "hashtags": [
+      "space",
+      "nasa",
+      "shorts",
+      "astronomy",
+      "science",
+      "universe",
+      "documentary"
+    ],
+    "instagram_caption": "The Spacecraft That Flew Farther Than Apollo\n\nIn late 2022, NASA launched the Artemis I mission to test the uncrewed Orion capsule around the Moon. The historic flight pushed human spaceflight hardware farther into deep space than ever before.\n\nFootage: NASA (public domain)."
+  },
+  "sources": [],
+  "voice": {
+    "voice": "none"
+  },
+  "editing_profile": "film-v1",
+  "language": "en"
+}
